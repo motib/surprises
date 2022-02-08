@@ -1,0 +1,159 @@
+% \RequirePackage needed because of \qed bug
+\RequirePackage{amsmath,amsfonts,amssymb}
+
+\documentclass[envcountchap]{svmono}
+
+% SV packages
+
+\usepackage{makeidx}
+\usepackage{multicol}
+\usepackage[bottom]{footmisc}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+
+% TOC contains chapters and sections
+
+\setcounter{tocdepth}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Fix \smartqed bug
+
+\renewcommand\qedsymbol{\hbox{$\square$}}
+\smartqed
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% My added packages
+
+\usepackage{url}
+\usepackage{subeqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeindex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TikZ
+
+\usepackage{tikz}
+\usetikzlibrary{through,calc,intersections}
+\usetikzlibrary{arrows.meta,shapes.geometric}
+\tikzset{>=stealth}
+\usetikzlibrary{external}
+\tikzexternalize[prefix=tikz/]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% My new commands
+
+% Display vertex not affected by tikz scale
+\newcommand*{\vertex}[1]
+  {\fill[shift only] (#1) circle (1.5pt)}
+\newcommand*{\vertexcolor}[2]
+  {\fill[shift only,#2] (#1) circle (1.5pt)}
+
+% Very small math, used in drawings
+\newcommand*{\sm}[1]{$\scriptstyle #1$}
+
+% In heptdecagon chapter, stack numbers of occurrences, variables
+\newcommand*{\occ}[2]{\underset{#2\hfill}{r^{#1}}}
+
+% A bit more interline spacing
+\renewcommand{\baselinestretch}{1.1}
+
+% Theorem-like environment for axioms
+\spnewtheorem{axiom}[theorem]{Axiom}{\bfseries}{\rmfamily}
+
+% Box advanced material
+\newenvironment{advanced}
+{
+\begin{center}
+\begin{tabular}
+  {|@{\hspace*{1em}}p{0.9\textwidth}@{\hspace*{1em}}|}
+  \hline\smallskip
+}
+{ 
+\\\\\hline
+\end{tabular} 
+\end{center}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\includeonly{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\author{Mordechai Ben-Ari}
+\title{Mathematical Surprises}
+
+\frontmatter
+
+\tikzsetfigurename{front}
+\include{front}
+
+\mainmatter
+
+\tikzsetfigurename{collapse}
+\include{collapse}
+
+\tikzsetfigurename{trisect}
+\include{trisect}
+
+\tikzsetfigurename{square}
+\include{square}
+
+\tikzsetfigurename{five}
+\include{five}
+
+\tikzsetfigurename{museum}
+\include{museum}
+
+\tikzsetfigurename{induction}
+\include{induction}
+
+\tikzsetfigurename{quadratic}
+\include{quadratic}
+
+\tikzsetfigurename{ramsey}
+\include{ramsey}
+
+\tikzsetfigurename{langford}
+\include{langford}
+
+\tikzsetfigurename{origami-axioms}
+\include{origami-axioms}
+
+\tikzsetfigurename{origami-cube}
+\include{origami-cube}
+
+\tikzsetfigurename{origami-constructions}
+\include{origami-constructions}
+
+\tikzsetfigurename{compass}
+\include{compass}
+
+\tikzsetfigurename{straightedge}
+\include{straightedge}
+
+\tikzsetfigurename{congruent}
+\include{congruent}
+
+\tikzsetfigurename{heptadecagon}
+\include{heptadecagon}
+
+\appendix
+
+\tikzsetfigurename{trig}
+\include{trig}
+
+\backmatter
+
+\include{references}
+
+\include{ind}
+\end{document}

@@ -1,0 +1,529 @@
+% !TeX root = surprises.tex
+
+\chapter{Induction}\label{c.induction}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\abstract*{This chapter begins with a short review of mathematical induction. Inductive proofs are given of results that may not be known to most readers concerning Fibonacci and Fermat numbers. The chapter concludes with a discussion of John McCarthy $91$-function and the Josephus problem.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The axiom of mathematical induction is used extensively as a method of proof in mathematics. This chapter presents inductive proofs of results that may not be known to the reader. We begin with a short review of mathematical induction (Sect.~\ref{s.induction-axiom}). Section~\ref{s.induction-fibonacci} proves results about the familiar Fibonacci numbers, while Sect.~\ref{s.induction-fermat} proves results about Fermat numbers. Section~\ref{s.induction-mccarthy} presents the $91$-function discovered by John McCarthy; the proof is by induction on an unusual sequence, integers in an inverse ordering. The proof of the formula for the Josephus problem (Sect.~\ref{s.josephus}) is also unusual because of the double induction on two different parts of an expression.
+
+\section{The Axiom of Mathematical Induction}\label{s.induction-axiom}
+\index{Mathematical induction}
+
+Mathematical induction is the primary method of proving statements to be true for an unbounded set of numbers. Consider:
+\[
+1=1,\quad 1+2=3,\quad 1+2+3=6,\quad 1+2+3+4=10.
+\]
+We might notice that:
+\[
+1=(1\cdot 2)/2,\quad 3=(2\cdot 3)/2,\quad  6=(3\cdot 4)/2,\quad 10=(4\cdot 5)/2,
+\]
+and then conjecture that for \emph{all} integers $n\geq 1$:
+\[
+\sum_{i=1}^n i = \frac{n(n+1)}{2}\,.
+\]
+If you have enough patience, checking this formula for any specific value of $n$ is easy, but how can it be proved for \emph{all} of the infinite number of positive integers? This is where mathematical induction comes in.
+
+\begin{axiom}
+Let $P(n)$ be a property (such as an equation, a formula, or a theorem), where $n$ is a positive integer. Suppose that you can:
+\begin{itemize}
+\item \emph{Base case}: Prove that $P(1)$ is true.
+\item \emph{Inductive step}: For arbitrary $m$, prove that $P(m+1)$ is true, provided that you assume that $P(m)$ is true.
+\end{itemize}
+Then $P(n)$ is true for all $n\geq 1$.
+The assumption that $P(m)$ is true for arbitrary $m$ is called the \emph{inductive hypothesis}.
+\end{axiom}
+Here is a simple example of a proof by mathematical induction:
+\begin{theorem}\label{t.sum}
+For $n\geq 1$:
+\[
+\sum_{i=1}^n i = \frac{n(n+1)}{2}\,.
+\]
+\end{theorem}
+
+\begin{proof} The base case is trivial:
+\[
+\sum_{i=1}^1 i = 1 =\frac{1(1+1)}{2}\,.
+\]
+The inductive hypothesis is that the following equation is true for $m$:
+\[
+\sum_{i=1}^{m} i = \frac{m(m+1)}{2}\,.
+\]
+The inductive step is to prove the equation for $m+1$:
+\begin{eqnarray*}
+\sum_{i=1}^{m+1} i &=& \sum_{i=1}^m i + (m+1)\label{l.sum1}\\
+&=&\frac{m(m+1)}{2} + (m+1)\label{l.sum2}
+%&=&\frac{m(m+1) + 2(m+1)}{2}\label{l.sum3}\\
+=\frac{(m+1)(m+2)}{2}\,.\label{l.sum4}
+\end{eqnarray*}
+
+By the principle of mathematical induction for any $n\geq 1$:
+\[
+\sum_{i=1}^n i = \frac{n(n+1)}{2}\,.
+\]
+\end{proof}
+
+The inductive hypothesis can be confusing because it seems that we are assuming what we are trying to prove. The reasoning is \emph{not} circular because we assume the truth of a property for something \emph{small} and then use the assumption to prove the property for something \emph{larger}.
+
+Mathematical induction is an axiom so there can be no question of proving induction. You just have to accept induction like you accept other axioms of mathematics such as $x+0=x$. Of course, you are free to reject mathematical induction, but then you will have to reject much of modern mathematics.
+\begin{advanced}
+Mathematical induction is a rule of inference that is one of the \emph{Peano axioms}\index{Peano axioms} for formalizing natural numbers. The \emph{well-ordering axiom} can be used to prove the axiom of induction and, conversely, the axiom of induction can be used to prove the well-ordering axiom. However, the axiom of induction cannot be proved from the other, more elementary, Peano axioms.
+\end{advanced}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Fibonacci Numbers}\label{s.induction-fibonacci}
+\index{Fibonacci numbers}
+Fibonacci numbers are the classic example of a recursive definition:
+\begin{eqnarray*}
+f_1 &=& 1\\
+f_2 &=& 1\\
+f_n &=& f_{n-1} + f_{n-2}\; \textrm{for} \;\; n \geq 3\,.
+\end{eqnarray*}
+The first twelve Fibonacci numbers are:
+\[
+1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144\,.
+\]
+\begin{theorem}\label{thm.fib-div3}
+Every fourth Fibonacci number is divisible by $3$.
+\end{theorem}
+
+\begin{example}
+$f_4=3=3\cdot 1,\; f_8=21=3\cdot 7,\; f_{12}=144=3\cdot 48$.
+\end{example}
+
+\begin{proof}
+Base case: $f_4=3$ is divisible by $3$. The inductive hypothesis is that $f_{4n}$ is divisible by $3$. The inductive step is:
+\begin{eqnarray*}
+f_{4(n+1)} &=& f_{4n+4}\\
+&=& f_{4n+3}+f_{4n+2}\\
+&=& (f_{4n+2}+f_{4n+1})+f_{4n+2}\\
+&=& ((f_{4n+1}+f_{4n})+f_{4n+1})+f_{4n+2}\\
+&=& ((f_{4n+1}+f_{4n})+f_{4n+1})+(f_{4n+1}+f_{4n})\\
+&=& 3f_{4n+1}+2f_{4n}\,.
+\end{eqnarray*}
+$3f_{4n+1}$ is divisible by $3$, and by the inductive hypothesis, $f_{4n}$ is divisible by $3$. Therefore, $f_{4(n+1)}$ is divisible by $3$.
+\end{proof}
+
+\begin{theorem}\label{thm.seven-fourths}
+$f_n < \left(\displaystyle\frac{7}{4}\right)^n$.
+\end{theorem}
+
+\begin{proof}
+Base cases: $f_1=1<\left(\displaystyle\frac{7}{4}\right)^1$ and $f_2=1<\left(\displaystyle\frac{7}{4}\right)^2=\displaystyle\frac{49}{16}$. The inductive step is:
+\begin{eqnarray*}
+f_{n+1}&=&f_n+f_{n-1}\\
+%&<&\left(\frac{7}{4}\right)^n + f_{n-1}\\
+&<&\left(\frac{7}{4}\right)^n + \left(\frac{7}{4}\right)^{n-1}\\
+&=&\left(\frac{7}{4}\right)^{n-1}\cdot\left(\frac{7}{4}+1\right)\\
+&<&\left(\frac{7}{4}\right)^{n-1}\cdot\left(\frac{7}{4}\right)^2\\
+&=&\left(\frac{7}{4}\right)^{n+1},
+\end{eqnarray*}
+since:
+\[
+\left(\frac{7}{4}+1\right) = \frac{11}{4} = \frac{44}{16}<\frac{49}{16}=\left(\frac{7}{4}\right)^2.
+\]
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{theorem}[Binet's formula]
+
+\begin{displaymath}
+f_n = \frac{\phi^n - \bar{\phi}^n}{\sqrt{5}}, \;\; \mathrm{where} \;\;
+\phi = \frac{1+\sqrt{5}}{2},\;\bar{\phi} = \frac{1-\sqrt{5}}{2}\,.
+\end{displaymath}
+\end{theorem}\index{Binet's formula}
+
+\begin{proof}
+We first show that $\phi^2=\phi+1$:
+\begin{eqnarray*}
+\phi^2 &=& \left(\frac{1+\sqrt{5}}{2}\right)^2\\
+&=& \frac{1}{4} + \frac{2\sqrt{5}}{4} + \frac{5}{4}= \left(\frac{1}{2} + \frac{\sqrt{5}}{2}\right) + 1\\
+%&=& \frac{1+2\sqrt{5}}{2} + 1\\
+&=&\phi + 1\,.
+\end{eqnarray*}
+Similarly, we can show that $\bar{\phi}^2=\bar{\phi}+1$.
+
+The base case for Binet's formula is:
+\[
+\frac{\phi^1 - \bar{\phi}^1}{\sqrt{5}}=\frac{\frac{1+\sqrt{5}}{2}-\frac{1-\sqrt{5}}{2}}{\sqrt{5}}=\frac{\sqrt{5}}{\sqrt{5}}=1=f_1\,.
+\]
+
+\newpage
+
+Assume the inductive hypothesis for all $k\leq n$. The inductive step is:
+\begin{eqnarray*}
+\phi^{n+1} - \bar{\phi}^{n+1} &=& \phi^2\phi^{n-1} - \bar{\phi}^2\bar{\phi}^{n-1}\\
+&=&(\phi+1)\phi^{n-1} - (\bar{\phi}+1)\bar{\phi}^{n-1}\\
+&=&(\phi^{n} - \bar{\phi}^{n}) + (\phi^{n-1} - \bar{\phi}^{n-1})\\
+&=&\sqrt{5}f_{n} + \sqrt{5}f_{n-1}\\
+\frac{\phi^{n+1} - \bar{\phi}^{n+1}}{\sqrt{5}} &=& f_{n} + f_{n-1} = f_{n+1}\,.
+\end{eqnarray*}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{theorem}
+\[
+f_n = \binom{n}{0} + \binom{n-1}{1} + \binom{n-2}{2} + \cdots.
+\]
+\end{theorem}
+
+\begin{proof}
+Let us first prove Pascal's rule:\index{Pascal's rule}
+\[
+\binom{n}{k} + \binom{n}{k+1} = \binom{n+1}{k+1}.
+\]
+\begin{eqnarray*}
+\binom{n}{k} + \binom{n}{k+1} &=& \frac{n!}{k!(n-k)!} + \frac{n!}{(k+1)!(n-(k+1))!}\\
+\\
+&=&\frac{n!(k+1)}{(k+1)!(n-k)!}+\frac{n!(n-k)}{(k+1)!(n-k)!}\\\\
+%&=&\frac{n![(k+1)+(n-k)]}{(k+1)!(n-k)!}\\
+&=&\frac{n!(n+1)}{(k+1)!(n-k)!}\\\\
+&=&\frac{(n+1)!}{(k+1)!((n+1)-(k+1))!}\\\\
+&=&\binom{n+1}{k+1}\,.
+\end{eqnarray*}
+We will also use the equality $\displaystyle\binom{k}{0} = \frac{k!}{0!(k-0)!} = 1$ for any $k\geq 1$.
+
+\medskip
+
+We can now prove the theorem. The base case is:
+\[
+f_1 =  \binom{1}{0} = \frac{1!}{0!(1-0)!}=1\,.
+\]
+
+\newpage
+
+The inductive step is:
+\begin{eqnarray*}
+f_n=f_{n-1} + f_{n-2} &=& \binom{n-1}{0} + \binom{n-2}{1} + \binom{n-3}{2} + \binom{n-4}{3} + \cdots\\
+&&\quad\quad\quad\quad\binom{n-2}{0} + \binom{n-3}{1} + \binom{n-4}{2} + \cdots\\
+&=&\binom{n-1}{0} + \binom{n-1}{1} + \binom{n-2}{2} + \binom{n-3}{3} + \cdots\\
+&=&\binom{n}{0} + \binom{n-1}{1} + \binom{n-2}{2} + \binom{n-3}{3} + \cdots.
+\end{eqnarray*}
+
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Fermat Numbers}\label{s.induction-fermat}
+\index{Fermat numbers}
+\begin{definition}
+The integers $F_n=2^{2^{n}}+1$ for $n\geq 0$ are called \emph{Fermat numbers}.
+\end{definition}
+
+The first five Fermat numbers are prime:
+\[
+F_0=3,\quad F_1=5,\quad F_2=17,\quad F_3=257,\quad F_4=65537\,.
+\]
+The seventeenth-century mathematician Pierre de Fermat\index{Fermat, Pierre de} claimed that all Fermat numbers are prime, but nearly a hundred years later Leonhard Euler\index{Euler, Leonhard} showed that:
+\[F_5=2^{2^5}+1 = 2^{32}+1 = 4294967297 = 641 \;\times\; 6700417\,.\]
+Fermat numbers become extremely large as $n$ increases. It is known that Fermat numbers are not prime for $5\leq n \leq 32$, but the factorization of some of those numbers is still not known.
+
+\begin{theorem}
+For $n\geq 2$, the last digit of $F_n$ is $7$.
+\end{theorem}
+\begin{proof}
+The base case is: $F_2=2^{2^2}+1=17$.
+The inductive hypothesis is $F_n=10k_n+7$ for some $k\geq 1$. The inductive step is:
+\begin{eqnarray*}
+F_{n+1}&=&2^{2^{n+1}}+1=2^{2^{n}\cdot 2^1}+1=\left(2^{2^{n}}\right)^2+1\\
+&=&\left(\left(2^{2^{n}}+1\right)-1\right)^2+1\\
+&=&(10k_n+7-1)^2+1=(10k_n+6)^2+1\\
+&=&100k_n^2+120k_n+36+1\\
+&=&10(10k_n^2+12k_n+3)+6+1\\
+&=&10k_{n+1}+7,\quad \textrm{for some} \;\;k\geq 1\,.
+\end{eqnarray*}
+\end{proof}
+
+
+\begin{theorem}
+For $n\geq 1$, $\displaystyle F_n = \prod_{k=0}^{n-1} F_k + 2$.
+\end{theorem}
+\begin{proof}
+The base case is:
+\[
+F_1=\prod_{k=0}^{0} F_k + 2=F_0+2=3+2=5\,.
+\]
+The inductive step is:
+\begin{eqnarray*}
+\prod_{k=0}^{n}F_k&=&(\prod_{k=0}^{n-1}F_k) F_n \\
+&=& (F_n-2)F_n\\
+&=& (2^{2^n}+1-2)(2^{2^n}+1)\\
+&=& 2^{2^{n+1}}-1= (2^{2^{n+1}}+1)-2\\
+&=&F_{n+1}-2\\
+F_{n+1}&=&\prod_{k=0}^{n}F_k + 2\,.
+\end{eqnarray*}
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{McCarthy's $91$-function}\label{s.induction-mccarthy}
+
+\index{McCarthy, John}
+We usually associate induction with proofs of properties defined on the set of positive integers. Here we bring an inductive proof based on a strange ordering where larger numbers are less than smaller numbers. The induction works because the only property required of the set is that it be ordered under some relational operator.
+
+Consider the following recursive function defined on the intergers:\index{McCarthy's $91$-function}
+\[
+f(x) = \textrm{if}\;\; x > 100 \;\;\textrm{then}\;\; x - 10 \;\;\textrm{else}\;\; f(f(x+11))\,.
+\]
+For numbers greater than $100$, the result of applying the function is:
+\[
+f(101) = 91, \;\; f(102) = 92,\;\; f(103) = 93,\;\; f(104) = 94,\;\ldots\;.
+\]
+What about numbers less than or equal to $100$? Let us compute $f(x)$ for some numbers, where the computation in each line uses the results of previous lines:
+\begin{eqnarray*}
+f(100) &=& f(f(100+11)) = f(f(111)) = f(101) = 91\\
+f(99) &=& f(f(99+11)) = f(f(110)) = f(100) = 91\\
+f(98) &=& f(f(98+11)) = f(f(109)) = f(99) = 91\\
+&\cdots&\\
+f(91) &=& f(f(91+11)) = f(f(102)) = f(92)\\
+&& \quad = f(f(103)) = f(93) = \cdots =f(98) = 91\\
+f(90) &=& f(f(90+11)) = f(f(101)) = f(91) = 91\\
+f(89) &=& f(f(89+11)) = f(f(100)) = f(91) = 91\,.
+\end{eqnarray*}
+Define the function $g$ as:
+\[
+g(x) = \textrm{if}\;\; x > 100 \;\;\textrm{then}\;\; x - 10 \;\;\textrm{else}\;\; 91\,.
+\]
+
+\begin{theorem}
+For all $x$, $f(x) = g(x)$.
+\end{theorem}
+
+\begin{proof}
+The proof is by induction over the set of integers $S=\{x\,|\,x\leq 101\}$ using the relational operator $\prec$ defined by:
+\[
+y \prec x \;\; \textrm{if and only if}\;\; x < y\,,
+\]
+where on the right-hand side $<$ is the usual relational operator on the integers.
+This definition results in the following ordering:
+\[
+101 \prec 100 \prec 99 \prec 98 \prec 97 \prec \cdots\,.
+\]
+There are three cases to the proof. We use the results of the above computations.
+
+\textit{Case 1:}
+$x > 100$. This is trivial by the definitions of $f$ and $g$.
+
+\textit{Case 2:}
+$90\leq x \leq 100$. The base case of the induction is:
+\[
+f(100) =  91 = g(100)\,,
+\]
+since we showed that $f(100)=91$ and by definition $g(100)=91$.
+
+The inductive assumption is $f(y) = g(y)$ for $y\prec x$.
+
+The inductive step is:
+\begin{subeqnarray}
+f(x) &=& f(f(x+11))\slabel{m91-1}\\
+&=& f(x+11-10)= f(x+1)\slabel{m91-3}\\
+&=& g(x+1)\slabel{m91-4}\\
+&=& 91\slabel{m91-5}\\
+&=& g(x)\slabel{m91-6}\,.
+\end{subeqnarray}
+Equation~\ref{m91-1} holds by definition of $f$ since $x\leq 100$.
+The equality of Eq.~\ref{m91-1} and Eq.~\ref{m91-3} holds by the definition of $f$, because $x \geq 90$ so $x+11 > 100$. The equality of Eq.~\ref{m91-3} and Eq.~\ref{m91-4} follows by the inductive hypothesis $x\leq 100$, so $x+1 \leq 101$ which implies that $x+1\in S$ and $x+1\prec x$. The equality of Eq.~\ref{m91-4}, Eq.~\ref{m91-5} and Eq.~\ref{m91-6} follows by definition of $g$ and $x+1 \leq 101$, so $x \leq 100$.
+
+\textit{Case 3:}
+$x< 90$. The base case is:
+$f(89) = f(f(100)) = f(91) = 91 = g(89)$
+by definition of $g$ since $89<100$.
+
+The inductive assumption is $f(y) = g(y)$ for $y\prec x$.
+
+The inductive step is:
+\begin{subeqnarray}
+f(x) &=& f(f(x+11))\slabel{m91a}\\
+&=& f(g(x+11))\slabel{m91b}\\
+&=& f(91)\slabel{m91c}\\
+&=& 91\slabel{m91d}\\
+&=& g(x)\,.
+\end{subeqnarray}
+Equation~\ref{m91a} holds by definition of $f$ and $x<90\leq 100$.
+The equality of Eq.~\ref{m91a} and Eq~\ref{m91b} follows from the inductive hypothesis $x < 90$, so $x+11< 101$ which implies that $x+11\in S$ and $x+11 \prec x$. The equality of Eq.~\ref{m91b} and Eq~\ref{m91c} follows by definition of $g$ and $x+11 < 101$. Finally, we have already shown that $f(91)=91$ and $g(x)=91$ for $x<90$ by definition.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{The Josephus Problem}\label{s.josephus}
+\index{Josephus problem}
+
+Josephus was the commander of the city of Yodfat during the Jewish rebellion against the Romans. The overwhelming strength of the Roman army eventually crushed the city's resistance and Josephus took refuge in a cave with some of his men. They preferred to commit suicide rather than being killed or captured by the Romans. According the account by Josephus, he arranged to save himself and became an observer with the Romans, later writing a history of the rebellion. We present the problem as an abstract  mathematical one.
+
+\begin{definition}[Josephus problem]
+Consider the numbers $1,\ldots,n\!+\!1$ arranged in a circle. Delete every $q$'th number going around the circle $q, 2q, 3q, \ldots$ (where the computation is performed modulo $n\!+\!1$) until only one number $m$ remains. $J(n+1,q)=m$ is the \emph{Josephus number}.
+\end{definition}
+
+\begin{example}
+Let $n+1=41$ and let $q=3$. Arrange the numbers in a circle:
+\[
+\begin{array}{rrrrrrrrrrrrrrrrrrrrrrr}
+\rightarrow&1&2&3&4&5&6&7&8&9&10&
+           11&12&13&14&15&16&17&18&19&20&21&
+\downarrow\\
+\uparrow\quad&41&40&39&38&37&36&35&34&33&
+32&31&30&29&28&27&26&25&24&23&22&
+&\leftarrow
+\end{array}
+\]
+The first round of deletions leads to:
+\[
+\begin{array}{rrrrrrrrrrrrrrrrrrrrrrr}
+\rightarrow&1&2&\not\! 3&4&5&\not\! 6&7&8&\not\! 9&10&
+           11&\not\!\! 12&13&14&\not\!\! 15&16&17&\not\!\! 18&19&20&\not\!\! 21&
+\downarrow\\
+	\uparrow\quad&41&40&\not\!\! 39&38&37&\not\!\! 36&35&34&\not\!\! 33&
+32&31&\not\!\! 30&29&28&\not\!\! 27&26&25&\not\!\! 24&23&22&
+&\leftarrow
+\end{array}
+\]
+After removing the deleted numbers this can be written as:
+\[
+\begin{array}{rrrrrrrrrrrrrrrrrrrrrrrrrrrr}
+1&2&4&5&7&8&10&11&13&14&16&17&19&20&
+22&23&25&26&28&29&31&32&34&35&37&38&40&41
+\end{array}
+\]
+The second round of deletions (starting at the last deletion of $39$) leads to:
+\[
+\begin{array}{rrrrrrrrrrrrrrrrrrrrrrrrrrrr}
+\not\!\! 1&2&4&\not\!\! 5&7&8&\not\!\! 10&11&13&\not\!\! 14&16&17&\not\!\! 19&20&
+22&\not\!\! 23&25&26&\not\!\! 28&29&31&\not\!\! 32&34&35&\not\!\! 37&38&40&\not\!\! 41
+\end{array}
+\]
+We continue deleting every third number until only one remains:
+\[
+\begin{array}{rrrrrrrrrrrrrrrrrr}
+2&4&\not\!7&8&11&\not\!\!13&16&17&\not\!\!20&22&25&\not\!\!26&29&31&\not\!\!34&35&38&\not\!\!40
+\\
+2&4&\not\!8&11&16&\not\!\!17&22&25&\not\!\!29&31&35&\not\!\!38
+\\
+2&4&\not\!\!11&16&22&\not\!\!25&31&35
+\\
+\not\!2&4&16&\not\!\!22&31&35
+\\
+\not\!4&16&31&\not\!\!35
+\\
+\not\!\!16&31
+\\
+31
+\end{array}
+\]
+It follows that $J(41,3)=31$.
+\end{example}
+
+The reader is invited to perform the computation for deleting every seventh number from a circle of $40$ numbers in order to  verify that the last number is $30$.
+
+\begin{theorem}\label{thm.jo1}
+$J(n+1,q)=(J(n,q)+q) \pmod {n+1}$.
+\end{theorem}
+
+\begin{proof}
+The first number deleted in the first round is the $q$'th number and the numbers that remain after the deletion are the $n$ numbers:
+\[
+\begin{array}{rrrrrrrr}
+\;1&\;2&\;\ldots&\;q-1&\;q+1&\;\ldots&\;n&\;n+1 \pmod {n+1}\,.
+\end{array}
+\]
+Counting to find the next deletion starts with $q+1$. Mapping $1,\ldots,n$ into this sequence we get:
+\[
+\begin{array}{cccccccccc}
+1&\quad 2&\ldots& n-q&\quad n+1-q&\quad n+2-q&\ldots&n-1&\quad n& \!\!\!\!\!\!\pmod {n\!+\!1}\\
+\downarrow&\quad \downarrow&&\downarrow&\quad \downarrow&\quad \downarrow&&\downarrow&\quad \downarrow\\
+q+1&\quad q+2&\ldots&n&\quad n+1&\quad 1&\ldots&q-2&\quad q-1& \!\!\!\pmod {n\!+\!1}\,.
+\end{array}
+\]
+Remember that the computations are modulo $n+1$:
+\[
+\begin{array}{lclcl}
+(n+2-q)+q&=& (n+1)+1&=& 1 \quad\;\;\pmod {n+1}\\
+(n)+q&= &(n+1)-1+q&= &q-1\pmod {n+1}\,.
+\end{array}
+\]
+
+This is the Josephus problem for $n$ numbers, except that the numbers are offset by $q$. It follows that:
+\[
+J(n+1,q)=(J(n,q)+q) \pmod {n+1}\,.
+\]
+\end{proof}
+
+\begin{theorem}\label{lem.jo}
+For $n\geq 1$ there exist numbers $a\geq 0, 0\leq t < 2^a$ such that $n=2^a+t$.
+\end{theorem}
+\begin{proof}
+This can be proved from repeated application of the division algorithm with divisors $2^0, 2^1, 2^2, 2^4,\ldots$, but it is easy to see from the binary representation of $n$. For some $a$ and $b_{a-1},b_{a-2},\ldots,b_{1},b_{0}$, where for all $i$, $b_i=0$ or $b_i=1$, $n$ can be expressed as:
+\begin{eqnarray*}
+n&=&2^a+b_{a-1}2^{a-1}+\cdots+b_{0}2^{0}\\
+n&=&2^a+(b_{a-1}2^{a-1}+\cdots+b_{0}2^{0})\\
+n&=&2^a+t,\quad \textrm{where}\; t\leq 2^a-1\,.
+\end{eqnarray*}
+\end{proof}
+
+
+We now prove that there is simple closed form for $J(n,2)$. 
+\begin{theorem}\label{thm.jo2}
+For $n=2^a+t$, $a\geq 0, 0\leq t < 2^a$, $J(n,2)=2t+1$.
+\end{theorem}
+
+\begin{proof}
+By Thm.~\ref{lem.jo}, $n$ can be expressed as stated in the theorem. The proof that $J(n,2)=2t+1$ is by a double induction, first on $a$ and then on $t$.
+
+\textit{First induction:}
+
+Base case. Assume that $t=0$ so that $n=2^a$. Let $a=1$ so that there are two numbers in the circle $1,2$. Since $q=2$, the second number will be deleted, so the remaining number is $1$ and $J(2^1,2)=1$.
+
+The inductive hypothesis is that $J(2^a,2)=1$. What is $J(2^{a+1},2)$? In the first round all the even numbers are deleted:
+\[
+\begin{array}{rrrrrrrrrrrrrrrrrrrrrrrrrrrr}
+1&\quad\not\! 2&\quad3&\quad\not\! 4& \quad\ldots&\quad 2^{a+1}\!-\!1&\quad \not\! 2^{a+1}\,.
+\end{array}
+\]
+There are now $2^a$ numbers left:
+\[
+\begin{array}{rrrrrrrrrrrrrrrrrrrrrrrrrrrr}
+1&\quad3&\quad\ldots&\quad 2^{a+1}\!-\!1\,.
+\end{array}
+\]
+By the inductive hypothesis $J(2^{a+1},2)=J(2^a,2)=1$, so by induction $J(n,2)=1$, whenever $n=2^a+0$.
+
+\textit{Second induction:}
+
+We have proved $J(2^a+0,2)=2\cdot 0 +1$, the base case of the second induction.
+
+The inductive hypothesis is $J(2^a+t,2)=2t+1$. By Thm.~\ref{thm.jo1}:
+\[
+J(2^a+(t+1),2)=J(2^a+t,2)+2=2t+1+2=2(t+1)+1\,.
+\]
+\end{proof}
+
+
+Theorems~\ref{lem.jo} and~\ref{thm.jo2} give a simple algorithm for computing $J(n,2)$. From the proof of Thm.~\ref{lem.jo}:
+\[
+n=2^a+t=2^a+(b_{a-1}2^{a-1}+\cdots+b_{0}2^{0})\,,
+\]
+so $t=b_{a-1}2^{a-1}+\cdots+b_{0}2^{0}$. We simply multiply by $2$ (shift left by one digit) and add $1$. For example, since $n=41=2^5+2^3+2^0=101001$, it follows that $J(41,2)=2t+1$, and in binary notation:
+\begin{eqnarray*}
+41&=&101001\\
+9&=&01001\\
+2t+1&=&10011=16+2+1=19\,.
+\end{eqnarray*}
+The reader can verify the result by deleting every second number in a circle $1,\ldots,41$.
+
+There is a closed form for $J(n,3)$ but it is quite complicated.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{What Is the Surprise?}
+
+Induction is perhaps the most important proof technique in modern mathematics. While Fibonacci numbers are extremely well-known and Fermat numbers are also easy to understand, I was surprised to find so many formulas that I never knew, such as Thms.~\ref{thm.fib-div3} and \ref{thm.seven-fourths}, that can be proved by induction. McCarthy's $91$-function was discovered in the context of computer science although it is a purely mathematical result. What is surprising is not the function itself, but the strange induction used to prove it where $98\prec 97$. The surprise of the Josephus problem is the bidirectional inductive proof.
+
+\subsection*{Sources}
+
+For a comprehensive presentation of induction see \cite{gunderson}. The proof of McCarthy's $91$-function taken from \cite{manna} and attributed to Rod M. Burstall.\index{Burstall, Rod M.} The presentation of the Josephus problem is based on \cite[Chapter~17]{gunderson}, which also discusses the historical background. That chapter contains other interesting problems with inductive proofs, such as the muddy children, the counterfeit coin and the pennies in a box. Additional material on the Josephus problem can be found in \cite{schumer,wiki:josephus}.

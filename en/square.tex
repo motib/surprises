@@ -1,0 +1,710 @@
+% !TeX root = surprises.tex
+
+\chapter{Squaring the Circle}\label{c.square}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\abstract*{Squaring the circle---the construction of a square with the same area as a given circle---is one of the three famous problems that the Greeks posed but were unable to solve. Unlike trisecting the angle and doubling the cube, where the impossibility follows from the properties of roots of polynomials, the impossibility of squaring the circle follows from the transcendentality of $\pi$, meaning that $\pi$ is not the root of any polynomial with rational coefficients. This is a difficult theorem that was finally proved in 1882. 
+In this chapter we present three approximate constructions of the value of $\pi$, one by Adam Kocha\'{n}ski and two by Ramanujan. The chapter also shows that squaring the circle is possible using the quadratrix.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Squaring the circle, the construction of a square with the same area as a given circle, is one of the three construction problems that the Greeks posed but were unable to solve. Unlike trisecting the angle and doubling the cube, where the impossibility follows from properties of the roots of polynomials, the impossibility of squaring the circle follows from the transcendentality of $\pi$: it is not the root of any polynomial with rational coefficients. This is a difficult theorem that was proved in 1882 by Carl von Lindemann\index{Lindemann, Carl von}.
+
+Approximations to $\pi\approx 3.14159265359$ have been known since ancient times. Some simple, reasonably accurate, approximations are:
+\[
+\displaystyle\frac{22}{7}\approx 3.142857,\quad \displaystyle\frac{333}{106}\approx 3.141509,\quad \displaystyle\frac{355}{113}\approx 3.141593\,.
+\]
+
+We present three constructions by a straightedge and compass of  approximations to $\pi$. One is by by Adam Kocha\'{n}ski (Sect.~\ref{s.square-kochanski}) and two are by Ramanujan (Sects.~\ref{s.square-ramanujan-first}, \ref{s.square-ramanujan-second}). Section~\ref{s.square-quad} shows that squaring the circle is possible using the quadratrix.
+
+\enlargethispage{\baselineskip}
+
+The following table shows the formulas for the lengths that are constructed, their approximate values, the difference between these values and the value of $\pi$, and the error in meters that results if the approximation is used to compute the circumference of the earth given that its radius is $6378$ km.
+\[
+\begin{array}{l@{\hspace{5mm}}c@{\hspace{5mm}}c@{\hspace{5mm}}c@{\hspace{5mm}}r}
+\hline\noalign{\smallskip}
+\textrm{Construction} & \textrm{Formula} &\textrm{Value} & \textrm{Difference} & \textrm{Error (m)}\\\svhline\noalign{\medskip}
+\pi & -& 3.14159265359 & - & -\\\noalign{\medskip}
+\textrm{Kocha\'{n}ski} & \sqrt{\displaystyle\frac{40}{3}-2\sqrt{3}}&
+  3.14153333871 & 5.93 \times 10^{-5} & 757\\\noalign{\medskip}
+\textrm{Ramanujan}\; 1 & \displaystyle\frac{355}{113} &
+  3.14159292035 &2.67  \times 10^{-7}&3.4\\\noalign{\medskip}
+\textrm{Ramanujan}\; 2 &\left(9^2+\displaystyle\frac{19^2}{22}\right)^{1/4}&
+  3.14159265258 & 1.01 \times 10^{-9}& 0.013\\
+\hline\noalign{\smallskip}
+\end{array}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Kocha\'{n}ski's Construction}\label{s.square-kochanski}
+\index{Kocha\'{n}ski, Adam}\index{Squaring a circle!approximation}
+\textbf{Construction (Fig.~\ref{f.square-kochansky}):}
+\begin{enumerate}
+\item Construct a unit circle centered at $O$, let $\overline{AB}$ be a diameter and construct a tangent to the circle at $A$.
+\item Construct a unit circle centered at $A$ and denote its intersection with the first circle by $C$. Construct a unit circle centered at $C$ and denote its intersection with the second circle is $D$. 
+\item Construct $\overline{OD}$ and denote its intersection with the tangent by $E$.
+\item From $E$ construct $F,G,H$, each at distance $1$ from the previous point.
+\item Construct $\overline{BH}$.
+\end{enumerate}
+
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}[scale=.55]
+% Scale at 4
+
+% Coordinates of circle
+\coordinate (O) at (0,0);
+\coordinate (A) at (0,-4);
+\coordinate (B) at (0,4);
+\node[above right] at (O) {$O$};
+\vertex{O};
+\node[below right] at (A) {$A$};
+\node[above right] at (B) {$B$};
+\draw (A) rectangle +(14pt,14pt);
+
+% Draw circle and diameter
+\node [draw,circle through=(A),name path=circle] at (O) {};
+\draw (A) --  node[right] {$1$} (O) -- node[right] {$1$} (B);
+
+% Draw tangent at A
+\draw[name path=tangent] ($(A)+(-4.5,0)$) -- ($(A)+(10.5,0)$);
+
+% Draw arc centered at A which intersects circle at C
+\draw[name path=Aarc] (O)
+   arc [start angle=90,end angle=220,radius=4];
+\path[name intersections={of=circle and Aarc,by=C}];
+\node[left,xshift=-4pt] at (C) {$C$};
+
+% Draw arc centered at C which intersects the first arc at D
+\draw[name path=Carc] ($(C)+(200:4)$)
+   arc [start angle=200,end angle=310,radius=4];
+\path[name intersections={of=Carc and Aarc,by=D}];
+\node[below left] at (D) {$D$};
+
+% Draw O--D which intersects the tangent at E
+\draw[name path=OD] (O) -- (D);
+\path[name intersections={of=tangent and OD,by=E}];
+\node[above left] at (E) {$E$};
+
+% Find point H at length 3 from E
+\coordinate (F) at ($(E)+(4,0)$);
+\vertex{F};
+\node[above right,xshift=6pt] at (F) {$F$};
+\coordinate (G) at ($(F)+(4,0)$);
+\vertex{G};
+\node[above] at (G) {$G$};
+\coordinate (H) at ($(G)+(4,0)$);
+\node[above,xshift=2pt] at (H) {$H$};
+
+% Draw BH of length approximately pi
+\draw (B) -- (H);
+
+\draw[<->] ($(E)+(0,-.8)$) -- node[fill=white] {$1$} ($(F)+(0,-.8)$);
+\draw[<->] ($(F)+(0,-.8)$) -- node[fill=white] {$1$} ($(G)+(0,-.8)$);
+\draw[<->] ($(G)+(0,-.8)$) -- node[fill=white] {$1$} ($(H)+(0,-.8)$);
+
+\end{tikzpicture}
+\end{center}
+\caption{Kocha\'{n}ski's approximation to $\pi$}\label{f.square-kochansky}
+\end{figure}
+
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[rotate=0,scale=1]
+% Scale at 4
+
+\clip (-4.5,-6.5) rectangle +(5,7);
+% Coordinates of circle
+\coordinate (O) at (0,0);
+\coordinate (A) at (0,-4);
+\coordinate (B) at (0,4);
+
+% Draw circle
+\node [circle through=(A),name path=circle] at (O) {};
+\draw ($(O)+(200:4)$) arc [start angle=200,end angle=280,radius=4];
+
+% Draw tangent at A
+\draw[name path=tangent] ($(A)+(-4.5,0)$) -- ($(A)+(10.5,0)$);
+\draw (A) rectangle +(7pt,7pt);
+
+% Draw arc centered at O which intersects circle at C
+\draw[name path=Aarc] (O)
+   arc [start angle=90,end angle=220,radius=4];
+\path[name intersections={of=circle and Aarc,by=C}];
+
+% Draw arc centered at C which intersects the first arc at D
+\draw[name path=Carc] ($(C)+(260:4)$)
+   arc [start angle=260,end angle=280,radius=4];
+\path[name intersections={of=Carc and Aarc,by=D}];
+
+% Draw O--D which intersects the tangent at E
+\draw[name path=OD] (O) -- (D);
+\path[name intersections={of=tangent and OD,by=E}];
+
+% Find point H at length 3 from E
+\coordinate (F) at ($(E)+(4,0)$);
+\coordinate (G) at ($(F)+(4,0)$);
+\coordinate (H) at ($(G)+(4,0)$);
+
+% Draw BH of length approximately pi
+\draw (B) -- (H);
+
+\draw[very thick,dashed] (A) -- (O) -- (C) -- (D) -- cycle;
+\draw[very thick,dashed,name path=AC] (A) -- (C);
+
+\node[above left,yshift=10pt,xshift=2pt] at (A) {$60^\circ$};
+\node[left,yshift=10pt,xshift=-20pt] at (A) {$30^\circ$};
+
+\path[name intersections={of=AC and OD,by=K}];
+\draw[rotate=-30] (K) rectangle +(7pt,7pt);
+
+\path (A) -- node[above,xshift=2pt,yshift=2pt] {$1/2$} (K);
+\path (A) -- node[below,xshift=-10pt] {$1/\sqrt{3}$} (E);
+
+\node[above right] at (O) {$O$};
+\node[below right] at (A) {$A$};
+\node[above right] at (B) {$B$};
+\node[left,xshift=-4pt] at (C) {$C$};
+\node[below left] at (D) {$D$};
+\node[above left] at (E) {$E$};
+\node[above] at (H) {$H$};
+\node[above,yshift=4pt] at (K) {$K$};
+\end{tikzpicture}
+\end{center}
+\caption[Detail from Kocha\'{n}ski's construction]{\vspace{-4ex}Detail from Kocha\'{n}ski's construction}\label{f.square-kochansky-detail}
+\end{figure}
+
+\begin{theorem}
+$\overline{BH}=\sqrt{\displaystyle\frac{40}{3}-2\sqrt{3}}\approx \pi$.
+\end{theorem}
+\begin{proof}
+Figure~\ref{f.square-kochansky-detail} is an enlarged extract from Fig.~\ref{f.square-kochansky}, where dashed line segments have been added. Since all the circles are unit circles the lengths of the dashed lines are $1$. It follows that  $\overline{AOCD}$ is a rhombus so its diagonals are perpendicular to and bisect each other at the point labeled $K$. $\overline{AK}=1/2$.
+
+\newpage
+
+The diagonal $\overline{AC}$ forms two equilateral triangles $\triangle OAC, \triangle DAC$ so $\angle OAC=60^\circ$. Since the tangent forms a right angle with the radius $\overline{OA}$, $\angle KAE=30^\circ$. Now:
+\begin{displaymath}
+\renewcommand{\arraystretch}{1.5}
+\begin{array}{lcl}
+\displaystyle\frac{1/2}{\overline{EA}}&=&
+\cos 30^\circ=\displaystyle\frac{\sqrt{3}}{2}\\
+\overline{EA}&=&\displaystyle\frac{1}{\sqrt{3}}\\
+\overline{AH}&=&3-\overline{EA}=\left(3-\displaystyle\frac{1}{\sqrt{3}}\right)
+=\displaystyle\frac{3\sqrt{3}-1}{\sqrt{3}}\,.
+\end{array}
+\end{displaymath}
+
+$\triangle ABH$ is a right triangle and $\overline{AH}=3-\overline{EA}$, so by Pythagoras's Theorem:
+\begin{displaymath}
+\renewcommand{\arraystretch}{1.5}
+\begin{array}{lcl}
+\overline{BH}^2&=&\overline{AB}^2+\overline{AH}^2\\
+&=&4+\displaystyle\frac{27 -6\sqrt{3}+1}{3}=\frac{40}{3}-2\sqrt{3}\\
+\overline{BH}&=&\rule{0pt}{25pt}\sqrt{\displaystyle\frac{40}{3}-2\sqrt{3}}\approx 3.141533387\approx \pi\,.
+\end{array}
+\end{displaymath}
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\section{Ramanujan's First Construction}\label{s.square-ramanujan-first}
+\index{Ramanujan}\index{Squaring a circle!approximation}
+
+\textbf{Construction (Fig.~\ref{f.square-rama1a}):}
+\begin{enumerate}
+
+\item Construct a unit circle centered at $O$ and let $\overline{PR}$ be a diameter.
+
+\item Construct the point $H$ that bisects $\overline{PO}$ and the point $T$ that trisects $\overline{RO}$ (Thm.~\ref{thm.trisect-constructible}).
+
+\item Construct the  perpendicular at $T$ that intersects the circle at $Q$.
+
+\item Construct the chords $\overline{RS}=\overline{QT}$ and $\overline{PS}$.
+
+\item Construct a line parallel to $\overline{RS}$ from $T$ that intersects $\overline{PS}$ at $N$.
+
+\item Construct a line parallel to $\overline{RS}$ from $O$ that intersects $\overline{PS}$ at $M$.
+
+\item Construct the chord $\overline{PK}=\overline{PM}$.
+
+\item Construct the tangent at $P$ of length $\overline{PL}=\overline{MN}$.
+
+\item Connect the points $K,L,R$.
+
+\item Find point $C$ such that $\overline{RC}$ is equal to $\overline{RH}$.
+
+\item Construct $\overline{CD}$ parallel to $\overline{KL}$ that intersects $\overline{LR}$ at $D$. 
+\end{enumerate}
+
+\begin{figure}[b]
+\begin{center}
+\begin{tikzpicture}[scale=.95,align=left]
+\clip (-6,-5.1) rectangle +(11.5,10.2);
+% Draw circle and horizontal diameter
+\draw[name path=circle] (0,0)  coordinate (o) node[below] {$O$} circle[radius=5cm];
+\draw (-5,0) coordinate (p) node[left] {$P$} -- (5,0) coordinate (r) node[right] {$R$};
+\vertex{o};
+\coordinate (h) at (-2.5,0);
+\node[below] at (h) {$H$};
+\vertex{h};
+\coordinate (t) at (10/3,0);
+\node[below left] at (t) {$T$};
+\path (p) -- node[above,xshift=10pt] {\sm{1/2}} (h) -- node[above] {\sm{1/2}} (o) -- node[above] {\sm{2/3}} (t) -- node[above] {\sm{1/3}} (r);
+
+% Draw perpendicular TQ
+\path[name path=tq] (t) -- +(0,5);
+\path[name intersections={of=tq and circle,by=q}];
+\draw (t) -- (q) node[above] {$Q$};
+
+% Draw chord RS and line PS
+\path[name path=tq] (t) -- +(0,5);
+\path[name intersections={of=tq and circle,by=q}];
+\path[name path=rcirc] (r) let \p1 = ($ (t) - (q) $) in circle ({veclen(\x1,\y1)});
+\path[name intersections={of=rcirc and circle,by=s}];
+\draw (r) -- (s) node[above right] at (s) {$S$};
+\draw[name path=ps] (p) -- (s);
+
+% Draw TN
+\path[name path=tn] (t) -- +($(s)-(r)$);
+\path[name intersections={of=ps and tn,by=n}];
+\draw (t) -- (n) node[above] {$N$};
+
+
+% Draw OM
+\path[name path=om] (o) -- +($(s)-(r)$);
+\path[name intersections={of=ps and om,by=m}];
+\draw (o) -- (m) node[above left] {$M$};
+\path (p) -- (m);
+\path (m) -- (n);
+
+% Draw chord PK
+\draw (p) -- +(-62.3:4.64) coordinate (k) node[below left] {$K$};
+
+% Draw tangent PL
+\draw let \p1 = ($ (m) - (n) $), \n1 = {veclen(\x1,\y1)} in (p) -- (-5,-\n1) coordinate (l) node[left] {$L$};
+
+% Connect L and K to R
+\draw (r) -- (l) -- (k) -- cycle;
+
+% Find point C on RK
+\coordinate (c) at ($(r)!7.5cm!(k)$);
+\path (r) -- (c);
+\node[below] at (c) {$C$};
+
+% Draw CD
+\path[name path=cd] (c) -- +($(l)-(k)$);
+\path[name path=lr] (l) -- (r);
+\path[name intersections={of=cd and lr,by=d}];
+\draw (c) -- (d);
+\node[above,xshift=2pt] at (d) {$D$};
+\path (r) -- (d);
+
+\draw[rotate=90] (t) rectangle +(7pt,7pt);
+\draw[rotate=-90] (p) rectangle +(7pt,7pt);
+\draw[rotate=-160] (s) rectangle +(7pt,7pt);
+\draw[rotate=-160] (n) rectangle +(7pt,7pt);
+\draw[rotate=-160] (m) rectangle +(7pt,7pt);
+\draw[rotate=28] (k) rectangle +(7pt,7pt);
+\end{tikzpicture}
+\end{center}
+\caption{Ramanujan's first construction}\label{f.square-rama1a}
+\end{figure}
+
+\begin{theorem}
+$\overline{RD}^2=\displaystyle\frac{355}{113}\approx \pi$.
+\end{theorem}
+
+
+\begin{proof}
+$\overline{RS}=\overline{QT}$ by construction and by Pythagoras's Theorem for $\triangle QOT$:
+\[
+\overline{RS} =\overline{QT} =\sqrt{1^2-\left(\frac{2}{3}\right)^2}=\frac{\sqrt{5}}{3}\,.
+\]
+$\angle PSR$ is subtended by a diameter so $\triangle PSR$ is a right triangle. By Pythagoras's theorem:
+\[
+\overline{PS} = \sqrt{2^2-\left(\frac{\sqrt{5}}{3}\right)^2}=\sqrt{4-\frac{5}{9}}=\frac{\sqrt{31}}{3}\,.
+\]
+By construction $\overline{MO}\|\overline{RS}$ so
+$\triangle MPO\sim \triangle SPR$ and:
+%
+\begin{eqnarray*}
+\frac{\overline{PM}}{\overline{PO}}&=&\frac{\overline{PS}}{\overline{PR}}\\
+\frac{\overline{PM}}{1}&=&\frac{\sqrt{31}/3}{2}\\
+\overline{PM}&=&\frac{\sqrt{31}}{6}\,.
+\end{eqnarray*}
+By construction $\overline{NT}\|\overline{RS}$ so 
+$\triangle NPT\sim \triangle SPR$ and:
+\begin{eqnarray*}
+\frac{\overline{PN}}{\overline{PT}}&=&\frac{\overline{PS}}{\overline{PR}}\\
+\frac{\overline{PN}}{5/3}&=&\frac{\sqrt{31}/3}{2}\\
+\overline{PN}&=&\frac{5\sqrt{31}}{18}\\
+\overline{MN}&=&\overline{PN}-\overline{PM}=\sqrt{31}\left(\frac{5}{18}-\frac{1}{6}\right) = \frac{\sqrt{31}}{9}\,.
+\end{eqnarray*}
+$\triangle PKR$ is a right triangle because $\angle PKR$ is subtended by a diameter. By construction $\overline{PK}=\overline{PM}$ and by Pythagoras's Theorem:
+\[
+\overline{RK}=\sqrt{2^2-\left(\frac{\sqrt{31}}{6}\right)^2} = \frac{\sqrt{113}}{6}\,.
+\]
+$\triangle LPR$ is a right triangle because $\overline{PL}$ is a tangent so $\angle LPR$ is a right angle. $\overline{PL}=\overline{MN}$ by construction and by Pythagoras's Theorem:
+\[
+\overline{RL}=\sqrt{2^2+\left(\frac{\sqrt{31}}{9}\right)^2} = \frac{\sqrt{355}}{9}\,.
+\]
+By construction
+$\overline{RC}=\overline{RH}=3/2$ and $\overline{CD} \|\overline{LK}$. By similar triangles:
+%
+\begin{eqnarray*}
+\frac{\overline{RD}}{\overline{RC}}&=&\frac{\overline{RL}}{\overline{RK}}\\
+\frac{\overline{RD}}{3/2}&=&\frac{\sqrt{355}/9}{\sqrt{113}/6}\\
+\overline{RD}&=&\sqrt{\frac{355}{113}}\,.            
+\end{eqnarray*}
+In Fig.~\ref{f.square-rama1b} the line segments are labeled with their lengths.
+\end{proof}
+
+\begin{figure}[ht]
+\begin{center}
+\begin{tikzpicture}[scale=.95,align=left]
+\clip (-6,-5.1) rectangle +(11.5,10.2);
+% Draw circle and horizontal diameter
+\draw[name path=circle] (0,0)  coordinate (o) node[below] {$O$} circle[radius=5cm];
+
+\draw (-5,0) coordinate (p) node[left] {$P$} -- (5,0) coordinate (r) node[right] {$R$};
+\vertex{o};
+\coordinate (h) at (-2.5,0);
+\node[below] at (h) {$H$};
+\vertex{h};
+\coordinate (t) at (10/3,0);
+\node[below] at (t) {$T$};
+
+% Draw perpendicular TQ
+\path[name path=tq] (t) -- +(0,5);
+\path[name intersections={of=tq and circle,by=q}];
+\draw (t) -- (q) node[above] {$Q$};
+
+
+\path (p) -- node[above,xshift=10pt] {\sm{1/2}} (h) -- node[above] {\sm{1/2}} (o) -- node[above] {\sm{2/3}} (t) -- node[above] {\sm{1/3}} (r);
+% Draw chord RS and line PS
+\path[name path=tq] (t) -- +(0,5);
+\path[name intersections={of=tq and circle,by=q}];
+\path[name path=rcirc] (r) let \p1 = ($ (t) - (q) $) in circle ({veclen(\x1,\y1)});
+\path[name intersections={of=rcirc and circle,by=s}];
+\draw (r) -- node[left,xshift=-4pt] {\sm{\sqrt{5}/3}} (s);
+\node[above right] at (s) {$S$};
+\draw[name path=ps] (p) -- node[above right,xshift=-4pt,yshift=16pt] {\sm{\overline{PS}=\sqrt{31}/3}} (s);
+% Draw TN
+\path[name path=tn] (t) -- +($(s)-(r)$);
+\path[name intersections={of=ps and tn,by=n}];
+\draw (t) -- (n) node[above] {$N$};
+% Draw OM
+\path[name path=om] (o) -- +($(s)-(r)$);
+\path[name intersections={of=ps and om,by=m}];
+\draw (o) -- (m) node[above left] {$M$};
+\path (p) -- node[below,xshift=32pt,yshift=12pt] {\sm{\sqrt{31}/6}} (m);
+\path (m) -- node[below,xshift=8pt,yshift=0pt] {\sm{\sqrt{31}/9}} (n);
+% Draw chord PK
+\draw (p) -- node[right,xshift=-2pt,yshift=10pt] {\sm{\overline{PK}=\sqrt{31}/6}} +(-62.3:4.64) coordinate (k) node[below left] {$K$};
+% Draw tangent PL
+\draw let \p1 = ($ (m) - (n) $), \n1 = {veclen(\x1,\y1)} in (p) -- node[left] {\sm{\sqrt{31}/9}} (-5,-\n1) coordinate (l) node[left] {$L$};
+% Connect L and K to R
+\draw (r) -- (l) -- (k) -- cycle;
+% Find point C on RK
+\coordinate (c) at ($(r)!7.5cm!(k)$);
+\path (r) -- node[below,xshift=12pt,yshift=0pt] {\sm{\overline{RC}=3/2}} (c);
+\path (r) -- node[below,xshift=0pt,yshift=-12pt] {\sm{\overline{RK}=\sqrt{113}/6}} (k);
+\node[below] at (c) {$C$};
+% Draw CD
+\path[name path=cd] (c) -- +($(l)-(k)$);
+\path[name path=lr] (l) -- (r);
+\path[name intersections={of=cd and lr,by=d}];
+\draw (c) -- (d);
+\node[above,xshift=2pt] at (d) {$D$};
+\path (r) -- node[above,xshift=-40pt,yshift=-8pt] {\sm{\overline{RD}=\sqrt{355/113}}} (d);
+\path (r) -- node[below,xshift=-28pt,yshift=-15pt] {\sm{\overline{RL}=\sqrt{355}/9}} (l);
+\draw[rotate=28] (k) rectangle +(7pt,7pt);
+\draw[rotate=-160] (s) rectangle +(7pt,7pt);
+\draw[rotate=-160] (n) rectangle +(7pt,7pt);
+\draw[rotate=-160] (m) rectangle +(7pt,7pt);
+\draw[rotate=-90] (p) rectangle +(7pt,7pt);
+\end{tikzpicture}
+\end{center}
+\caption{Ramanujan's first construction with labeled line segments}\label{f.square-rama1b}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\section{Ramanujan's Second Construction}\label{s.square-ramanujan-second}
+\index{Ramanujan}\index{Squaring a circle!approximation}
+
+\textbf{Construction  (Fig.~\ref{f.square-ramanujan-2a}):}
+\begin{enumerate}
+
+\item Construct a unit circle centered at $O$ with diameter $\overline{AB}$, and let $C$ be the intersection of the perpendicular to $\overline{AB}$ at $O$ with the circle.
+
+\item Trisect the line segment $\overline{AO}$ such that $\overline{AT}=1/3$ and $\overline{TO}=2/3$ (Thm.~\ref{thm.trisect-constructible}).
+
+\item Construct $\overline{BC}$ and find points $M,N$ such that $\overline{CM}=\overline{MN}=\overline{AT}=1/3$.
+
+\item Construct $\overline{AM}$, $\overline{AN}$ and let $P$ be the point on $\overline{AN}$ such that $\overline{AP}=\overline{AM}$.
+
+\item From $P$ construct a line parallel to $\overline{MN}$ that intersects $\overline{AM}$ at $Q$.
+
+\item Construct $\overline{OQ}$ and then from $T$ construct a line parallel to $\overline{OQ}$ that intersects $\overline{AM}$ at $R$.
+
+\item Construct $\overline{AS}$ tangent to $A$ such that $\overline{AS}=\overline{AR}$.
+
+\item Construct $\overline{SO}$.
+\end{enumerate}
+
+\begin{figure}[ht]
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\clip (-4.4,-4.2) rectangle +(8.8,8.6);
+% Scale at 4
+
+% Coordinates of circle
+\coordinate (O) at (0,0);
+\vertex{O};
+\coordinate (A) at (-4,0);
+\coordinate (B) at (4,0);
+\coordinate (C) at (0,4);
+
+% Draw circle and diameter
+\node [draw,circle through=(A),name path=circle] at (O) {};
+\draw (A) -- (B);
+\draw [thick,dashed] (C) -- (O);
+\draw (O) rectangle +(7pt,7pt);
+\draw[rotate=-90] (A) rectangle +(7pt,7pt);
+
+\coordinate (T) at (-2.667,0);
+\path (A) -- node[below] {\sm{1/3}} (T);
+\path (T) -- node[below] {\sm{2/3}} (O);
+\path (O) -- node[below] {\sm{1}} (B);
+
+\draw (C) -- node[right] {\sm{1/3}} +(-45:1.333) coordinate (M);
+\draw (M) -- node[right] {\sm{1/3}} +(-45:1.333) coordinate (N);
+\draw (N) -- node[near start,right] {\sm{\sqrt{2}-2/3}}(B);
+
+\draw[name path=AM] (A) -- (M);
+\draw[name path=AN] (A) -- (N);
+
+\node [circle through=(M),name path=AMcircle] at (A) {};
+
+\path[name intersections={of=AMcircle and AN,by=P}];
+
+\path[name path=PQ] (P) -- +(135:2);
+\path[name intersections={of=PQ and AM,by=Q}];
+\draw (P) -- (Q) -- (O);
+
+\path[name path=QT] (T) -- ($(Q)+(-2.667,0)$) -- (Q);
+\path[name intersections={of=QT and AM,by=R}];
+\draw (T) -- (R);
+
+\node [circle through=(R),name path=ARcircle] at (A) {};
+\path[name path=AS] (A) -- ($(A)+(0,-2.5)$);
+\path[name intersections={of=ARcircle and AS,by=S}];
+\draw (A) -- (S);
+
+\draw (S) -- (O);
+
+\node[below right] at (O) {$O$};
+\node[left] at (A) {$A$};
+\node[right] at (B) {$B$};
+\node[above left,xshift=-8pt] at (B) {\sm{45^\circ}};
+\node[above] at (C) {$C$};
+\node[below] at (T) {$T$};
+\node[right] at (M) {$M$};
+\node[right] at (N) {$N$};
+\node[below] at (P) {$P$};
+\node[above left] at (Q) {$Q$};
+\node[above left] at (R) {$R$};
+\node[above left] at (S) {$S$};
+\end{tikzpicture}
+\end{center}
+\caption{Ramanujan's second construction}\label{f.square-ramanujan-2a}
+\end{figure}
+
+\newpage
+
+\begin{theorem}\label{thm.ramanujan2}
+$3\sqrt{\overline{SO}}=\left(9^2+\displaystyle\frac{19^2}{22}\right)^{1/4}\approx \pi$.
+\end{theorem}
+\begin{proof}
+$\triangle COB$ is a right triangle and by Pythagoras's Theorem $\overline{CB}=\sqrt{2}$ and $\overline{NB}=\sqrt{2}-2/3$. $\triangle COB$ is isoceles so $\angle NBA =\angle MBA=45^\circ$. By the Law of Cosines\index{Law of cosines}:
+\begin{eqnarray*}
+\overline{AN}^2&=&\overline{BA}^2 + \overline{BN}^2-2\cdot\overline{BA}\cdot\overline{BN}\cdot\cos \angle NBA\\
+&=&2^2+\left(\sqrt{2}-\frac{2}{3}\right)^2-2\cdot 2 \cdot \left(\sqrt{2}-\frac{2}{3}\right)\cdot \frac{\sqrt{2}}{2}
+%&=&\left(4+2+\frac{4}{9}-4\right) + \sqrt{2}\cdot \left(-\frac{4}{3}+\frac{4}{3}\right)
+=\frac{22}{9}\\
+\overline{AN}&=&\sqrt{\frac{22}{9}}\,.
+\end{eqnarray*}
+Again by the Law of Cosines\index{Law of cosines}:
+\begin{eqnarray*}
+\overline{AM}^2&=&\overline{BA}^2 + \overline{BM}^2-2\cdot\overline{BA}\cdot\overline{BM}\cdot\cos \angle MBA\\
+&=&2^2+\left(\sqrt{2}-\frac{1}{3}\right)^2-2\cdot 2 \cdot \left(\sqrt{2}-\frac{1}{3}\right)\cdot \frac{\sqrt{2}}{2}
+%&=&\left(4+2+\frac{1}{9}-4\right) + \sqrt{2}\cdot \left(-\frac{2}{3}+\frac{2}{3}\right)
+=\frac{19}{9}\\
+\overline{AM}&=&\sqrt{\frac{19}{9}}\,.
+\end{eqnarray*}
+By construction $\overline{QP}\| \overline{MN}$ so
+$\triangle MAN\sim \triangle QAP$, and by construction $\overline{AP}=\overline{AM}$:
+\begin{eqnarray*}
+\frac{\overline{AQ}}{\overline{AM}}&=&\frac{\overline{AP}}{\overline{AN}}=\frac{\overline{AM}}{\overline{AN}}\\
+\overline{AQ}&=&\frac{\overline{AM}^2}{\overline{AN}}=\frac{19/9}{\sqrt{22/9}}=\frac{19}{3\sqrt{22}}\,.
+\end{eqnarray*}
+By construction $\overline{TR}\| \overline{OQ}$ so
+$\triangle RAT\sim \triangle QAO$ giving:
+\begin{eqnarray*}
+\frac{\overline{AR}}{\overline{AQ}}&=&\frac{\overline{AT}}{\overline{AO}}\\
+\overline{AR}&=&\overline{AQ}\cdot\frac{\overline{AT}}{\overline{AO}}=\frac{19}{3\sqrt{22}}\cdot\frac{1/3}{1}=\frac{19}{9\sqrt{22}}\,.
+\end{eqnarray*}
+By construction $\overline{AS}=\overline{AR}$ and $\triangle OAS$ is a right triangle because $\overline{AS}$ is a tangent. By Pythagoras's Theorem:
+\begin{eqnarray*}
+\overline{SO}&=&\sqrt{1^2+\left(\frac{19}{9\sqrt{22}}\right)^2}\\
+3\sqrt{\overline{SO}}&=&3\left(1^2+\frac{19^2}{9^2\cdot 22}\right)^{1/4}=
+\left(9^2+\frac{19^2}{22}\right)^{1/4}\approx \pi\,.
+\end{eqnarray*}
+\enlargethispage{\baselineskip}
+In Fig.~\ref{f.square-ramanujan-2b} the line segments are labeled with their lengths.
+\end{proof}
+
+
+\begin{figure}[ht]
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\clip (-5,-4.2) rectangle +(10,8.6);
+% Scale at 4
+
+% Coordinates of circle
+\coordinate (O) at (0,0);
+\coordinate (A) at (-4,0);
+\coordinate (B) at (4,0);
+\coordinate (C) at (0,4);
+
+% Draw circle and diameter
+\node [draw,circle through=(A),name path=circle] at (O) {};
+\draw (A) -- (B);
+\draw [thick,dashed] (C) -- (O);
+\draw (O) rectangle +(9pt,9pt);
+\draw[rotate=-90] (A) rectangle +(9pt,9pt);
+
+\coordinate (T) at (-2.667,0);
+\path (A) -- node[below] {\sm{1/3}} (T);
+\path (T) -- node[below] {\sm{2/3}} (O);
+\path (O) -- node[below] {\sm{1}} (B);
+
+\draw (C) -- node[right] {\sm{1/3}} +(-45:1.333) coordinate (M);
+\draw (M) -- node[right] {\sm{1/3}} +(-45:1.333) coordinate (N);
+\draw (N) -- node[near start,right] {\sm{\sqrt{2}-2/3}}(B);
+
+\draw[name path=AM] (A) -- node[above,xshift=10pt,yshift=14pt] {\sm{\overline{AM}=\sqrt{19/9}}} (M);
+\draw[name path=AN] (A) -- node[below,yshift=-5pt] {\sm{\overline{AN}=\sqrt{22/9}}} (N);
+
+\node [circle through=(M),name path=AMcircle] at (A) {};
+
+\path[name intersections={of=AMcircle and AN,by=P}];
+
+\path[name path=PQ] (P) -- +(135:2);
+\path[name intersections={of=PQ and AM,by=Q}];
+\draw (P) -- (Q) -- (O);
+\path (A) -- node[above,xshift=-10pt,yshift=2pt] {\sm{\overline{AQ}=19/3\sqrt{22}}} (Q);
+
+\path[name path=QT] (T) -- ($(Q)+(-2.667,0)$) -- (Q);
+\path[name intersections={of=QT and AM,by=R}];
+\draw (T) -- (R);
+\path (A) -- node[above,xshift=-6pt,yshift=0pt] {\sm{19/9\sqrt{22}}} (R);
+
+\node [circle through=(R),name path=ARcircle] at (A) {};
+\path[name path=AS] (A) -- ($(A)+(0,-2.5)$);
+\path[name intersections={of=ARcircle and AS,by=S}];
+\draw (A) -- node[xshift=5pt,yshift=4pt] {\sm{\overline{AS}=\;\;\;19/9\sqrt{22}}} (S);
+
+\draw (S) -- node[right,xshift=-2pt,yshift=-6pt] {\sm{\overline{SO}=\sqrt{1+\left(\frac{19^2}{9^2\cdot 22}\right)}}} (O);
+\node[below right] at (O) {$O$};
+\node[left] at (A) {$A$};
+\node[right] at (B) {$B$};
+\node[above left,xshift=-8pt] at (B) {\sm{45^\circ}};
+\node[above] at (C) {$C$};
+\node[below] at (T) {$T$};
+\node[right] at (M) {$M$};
+\node[right] at (N) {$N$};
+\node[below] at (P) {$P$};
+\node[above left] at (Q) {$Q$};
+\node[above left] at (R) {$R$};
+\node[above left] at (S) {$S$};
+\end{tikzpicture}
+\end{center}
+\caption{Ramanujan's second construction with labeled line segments}\label{f.square-ramanujan-2b}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\section{Squaring a Circle Using a Quadratrix}\label{s.square-quad}
+\index{Squaring a circle!quadratrix@with a quadratrix}
+\index{Quadratrix!squaring a circle}
+
+The quadratrix is described in Sect.~\ref{s.q}.
+
+Let $t=\overline{DE}$ be the distance that the horizontal straightedge has moved down the $y$-axis, and let $\theta$ be the corresponding angle between the rotating straightedge and the $x$-axis. Let $P$ the position of the joint of the two straightedges. The locus of $P$ is the quadratrix curve. Let $F$ be the projection of $P$ onto the $x$-axis and let $G$ be the position of the joint when both straightedges reach the $x$-axis, that is, $G$ is the intersection of the quadratrix curve and the $x$-axis  (Fig.~\ref{f.square-quad}).
+\begin{figure}[ht]
+\begin{center}
+\begin{tikzpicture}[scale=.7,domain=.01:1.57,samples=100]
+\draw (0,0) node[below left] {$A$} node [above right,xshift=6pt] {$\theta$} -- (8,0) node[below right] {$B$} -- (8,8) node[above right] {$C$} -- (0,8) node[above left] {$D$} -- cycle;
+\draw[name path=horiz] (0,5) -- (8,5);
+\draw[name path=slant] (0,0) -- (61:8);
+\path[name intersections={of=horiz and slant,by=joint}];
+\draw (joint) -- node[right] {$y$} (joint |- 0,0) coordinate (f);
+\path (0,0) -- node[below] {$x$} (0,0 -| joint) node[below] {$F$};
+\coordinate (e) at (0,5);
+\path (e) node[left] {$E$} -- node[left] {$t$} (0,8);
+\path (0,0) -- node[left] {$1-t$} (0,5);
+\node[above right,xshift=4pt] at (joint) {$P$};
+\node[below] at (4.28,0) {$G$};
+\draw[name path=curve,thick] plot (4.3*.637*\x,{12.5*.637*\x*cot(\x r)});
+\end{tikzpicture}
+\end{center}
+\caption{Squaring the circle with a quadratrix}\label{f.square-quad}
+\end{figure}
+
+\begin{theorem}
+$\overline{AG}=2/\pi$.
+\end{theorem}
+
+\enlargethispage{\baselineskip}
+
+\begin{proof}
+Let $y=\overline{PF}=\overline{EA}=1-t$. Since on a quadratrix $\theta$ decreases at the same rate that $t$ increases:
+\begin{eqnarray*}
+\frac{1-t}{1} &=& \frac{\theta}{\pi/2}\\
+&&\\
+\theta &=&\frac{\pi}{2}(1-t)\,.
+\end{eqnarray*}
+Let $x=\overline{AF}=\overline{EP}$. Then $\tan \theta = y/x$ so:
+\begin{align}\label{eq.quad-square}
+x = \frac{y}{\tan\theta}=y\cot\theta=y\cot \frac{\pi}{2}(1-t)=y\cot \frac{\pi}{2}y\,.
+\end{align}
+We usually express a function as $y=f(x)$ but it can also be expressed as $x=f(y)$. 
+
+To obtain $x=\overline{AG}$ we can't simply plug $y=0$ into Eq.~\ref{eq.quad-square}, because $\cot 0$ is not defined, so let us compute the limit of $x$ as $y$ goes to $0$. 
+First perform the substitution $z=(\pi/2)y$ to obtain:
+\[
+x = y\cot \frac{\pi}{2}y = \frac{2}{\pi} \left(\frac{\pi}{2}y\cot \frac{\pi}{2}y\right)=\frac{2}{\pi}(z\cot z)\,,
+\]
+and then take the limit:
+\[
+\lim_{z\rightarrow 0} x=\frac{2}{\pi}\lim_{z\rightarrow 0} (z\cot z) = \frac{2}{\pi}\lim_{z\rightarrow 0} \left(\frac{z\cos z}{\sin z}\right) = \frac{2}{\pi}\lim_{z\rightarrow 0} \left(\frac{\cos z}{(\sin z)/z}\right) = \frac{2}{\pi}\frac{\cos 0}{1} = \frac{2}{\pi}\,,
+\]
+where we have used $\lim_{z\rightarrow 0} (\sin z/z)=1$ (Thm.~\ref{thm.limit-sine-over}).
+\end{proof}
+
+\subsection*{What Is the Surprise?}
+
+It is surprising that such accurate approximations to $\pi$ can be constructed. Of course one can't help but be astonished by Ramanujan's clever constructions.
+
+\subsection*{Sources}
+Kocha\'{n}ski's construction appears in \cite{bold}. Ramanujan's constructions are from \cite{ramanujan1,ramanujan2}. Squaring the circle using the quadratrix is from \cite[pp.~48--49]{martin} and \cite{wiki:quad}.
