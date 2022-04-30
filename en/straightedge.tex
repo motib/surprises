@@ -8,12 +8,12 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Can every construction with a straightedge and compass be done with only a straightedge? The answer is no because lines represent linear equations and cannot represent quadratic equations like circles. In 1822 Jean-Victor Poncelet\index{Poncelet, Jean-Victor} conjectured that a straightedge only is sufficient provided that one circle exists in the plane. This was proved in 1833 by Jakob Steiner.\index{Steiner, Jakob}.
+Can every construction with a straightedge and compass be done with only a straightedge? The answer is no because lines are defined by linear equations and cannot represent circles which are defined by quadratic equations. In 1822 Jean-Victor Poncelet\index{Poncelet, Jean-Victor} conjectured that a straightedge only is sufficient provided that \emph{one circle} exists in the plane. This was proved in 1833 by Jakob Steiner.\index{Steiner, Jakob}
 
-After explaining in Sect.~\ref{s.se-what} what is meant by performing a construction with only a straightedge and one circle, the proof is presented in stages starting with five auxiliary constructions: construction of a line parallel to a given line (Sect.~\ref{s.parallel}), construction of a perpendicular to a given line (Sect.~\ref{s.perp}), copying a line segment in a given direction (Sect.~\ref{s.copy}), construction of a line segment as a ratio of segments (Sect.~\ref{s.relative}) and construction of a square root (Sect.~\ref{s.root}). Then we show how to find the intersection of a line with a circle (Sect.~\ref{s.line-circle-straight}) and the intersection of two circles (Sect.~\ref{s.two-circles}).
+After explaining in Sect.~\ref{s.se-what} what is meant by performing a construction with only a straightedge and one circle, the proof is presented in stages starting with five auxiliary constructions: construction of a line parallel to a given line (Sect.~\ref{s.parallel}), construction of a perpendicular to a given line (Sect.~\ref{s.perp}), copying a line segment in a given direction (Sect.~\ref{s.copy}), construction of a line segment as a ratio of segments (Sect.~\ref{s.relative}) and construction of a square root (Sect.~\ref{s.root}). Section~\ref{s.line-circle-straight} shows how to find the intersection(s) of a line with a circle and Sect.~\ref{s.two-circles} shows how to find the intersection(s) of two circles.
 
 \section{What Is a Construction With Only a Straightedge?}\label{s.se-what}
-A construction by a straightedge and compass is a sequence of three operations:
+A construction using a straightedge and compass is a sequence of three operations:
 \begin{itemize}
 \item Find the point of intersection of two lines.
 \item Find the point(s) of intersection of a line and a circle.
@@ -38,8 +38,8 @@ The single given circle used in the constructions, called the \emph{fixed circle
 \node[above right,xshift=-2pt,yshift=4pt] at (X) {$X$};
 \node[above left] at (Y) {$Y$};
 \vertex{O};
-\vertex{X};
-\vertex{Y};
+%\vertex{X};
+%\vertex{Y};
 \end{tikzpicture}
 }
 \hfill
@@ -58,8 +58,8 @@ The single given circle used in the constructions, called the \emph{fixed circle
 \node[below,yshift=-4pt] at (Y) {$Y$};
 \vertex{O1};
 \vertex{O2};
-\vertex{X};
-\vertex{Y};
+%\vertex{X};
+%\vertex{Y};
 \end{tikzpicture}
 }
 \leftcaption{$X,Y$ are the points of intersection of a line and a circle}\label{f.se-only-line-circle}
@@ -77,9 +77,9 @@ Given a line $l$ defined by two points $A,B$ and a point $P$ not on the line, it
 There are two cases to the proof.
 
 \textit{Case 1:}
-$\overline{AB}$ is called a \emph{directed line} if the midpoint $M$ of $\overline{AB}$ is given.  Construct a ray that extends $\overline{AP}$ and choose any point $S$ on the ray beyond $P$. Construct the lines $\overline{BP}, \overline{SM}, \overline{SB}$. The intersection of $\overline{BP}$ and $\overline{SM}$ is denoted $O$. Construct a ray that extends $\overline{AO}$ and denote by $Q$ the intersection of the ray $\overline{AO}$ with $\overline{SB}$ (Fig.~\ref{f.se-parallel-directed}).
+$\overline{AB}$ is a \emph{directed line segment} if the midpoint $M$ of $\overline{AB}$ is given.  Construct a ray that extends $\overline{AP}$ and choose any point $S$ on the ray beyond $P$. Construct the lines $\overline{BP}, \overline{SM}, \overline{SB}$. The intersection of $\overline{BP}$ and $\overline{SM}$ is denoted $O$. Construct a ray that extends $\overline{AO}$ and denote by $Q$ the intersection of the ray $\overline{AO}$ with $\overline{SB}$ (Fig.~\ref{f.se-parallel-directed}).
 
-We claim that $\overline{PQ}\|\overline{AB}$. 
+We claim that $\overline{PQ}\parallel \overline{AB}$. 
 
 \begin{figure}[ht]
 \begin{center}
@@ -99,10 +99,10 @@ We claim that $\overline{PQ}\|\overline{AB}$.
 \coordinate (M) at (0,-2);
 \node[below right] at (M) {$M$};
 \draw (S) -- (M);
-\vertex{O};
-\vertex{P};
-\vertex{A};
-\vertex{B};
+%\vertex{O};
+%\vertex{P};
+%\vertex{A};
+%\vertex{B};
 \end{tikzpicture}
 \end{center}
 \caption{Construction of a parallel line in the case of a directed line}\label{f.se-parallel-directed}
@@ -111,17 +111,17 @@ We claim that $\overline{PQ}\|\overline{AB}$.
 \newpage
 The proof uses Ceva's theorem.
 
-\textit{Ceva's theorem  (Sect.~\ref{a.ceva}):}\index{Ceva's theorem} If the line segments from the vertices of a triangle to the opposite edges intersect in a point $O$, the lengths of the segments satisfy (Fig.~\ref{f.se-parallel-directed}):
+\textit{Ceva's theorem  (Thm.~\ref{thm.ceva}):}\index{Ceva's theorem} If the line segments from the vertices of a triangle to the opposite edges intersect in a point $O$ (as in Fig.~\ref{f.se-parallel-directed}), the lengths of the segments satisfy:
 \[
 \frac{\overline{AM}}{\overline{MB}}\cdot\frac{\overline{BQ}}{\overline{QS}}\cdot\frac{\overline{SP}}{\overline{PA}} = 1\,.
 \]
-In Fig.~\ref{f.se-parallel-directed}, $M$ is the midpoint of $\overline{AB}$, so $\displaystyle\frac{\overline{AM}}{\overline{MB}}=1$ and the equation becomes:
+In Fig.~\ref{f.se-parallel-directed} $M$ is the midpoint of $\overline{AB}$ so $\displaystyle\frac{\overline{AM}}{\overline{MB}}=1$ and the equation becomes:
 \begin{align}
 \frac{\overline{BQ}}{\overline{QS}}=\frac{\overline{PA}}{\overline{SP}}=\frac{\overline{AP}}{\overline{PS}}\,,\label{eq.ceva}
 \end{align}
 since the order of the endpoints of a line segment is not important.
 
-We claim that $\triangle ABS \sim \triangle PQS$ and therefore $\overline{PQ}\|\overline{AB}$:
+We claim that $\triangle ABS \sim \triangle PQS$:
 \begin{eqnarray*}
 \frac{\overline{BS}}{\overline{QS}}&=&\frac{\overline{BQ}}{\overline{QS}}+\frac{\overline{QS}}{\overline{QS}} = \frac{\overline{BQ}}{\overline{QS}}+1\\
 &&\\
@@ -131,22 +131,25 @@ Using Eq.~\ref{eq.ceva}:
 \[
 \frac{\overline{BS}}{\overline{QS}}=\frac{\overline{BQ}}{\overline{QS}}+1=\frac{\overline{AP}}{\overline{PS}}+1=\frac{\overline{AP}}{\overline{PS}}+\frac{\overline{PS}}{\overline{PS}}=\frac{\overline{AS}}{\overline{PS}}\,,
 \]
-and it follows that $\triangle ABS \sim \triangle PQS$.
-
+and it follows that $\triangle ABS \sim \triangle PQS$ and therefore $\overline{PQ}\parallel\overline{AB}$.
 
 \textit{Case 2:}
-$\overline{AB}$ is any line, not necessarily a directed line. Label the line by $l$ and the fixed circle by $c$, where the center of $c$ is $O$ and its radius is $r$. $P$ is the point not on the line through which it is required to construct a line parallel to $l$ (Fig.~\ref{f.se-parallel-other1}).
+$\overline{AB}$ is not necessarily a directed line segment. The fixed circle $c$ has center $O$ and radius $r$. $P$ is the point not on the line through which it is required to construct a line parallel to $l$ (Fig.~\ref{f.se-parallel-other1}).
 
 Choose $M$, any point on $l$, and construct a ray extending $\overline{MO}$ that intersects the circle at $U,V$.
-$\overline{UV}$ is a directed line because $O$, the center of the circle, bisects the diameter $\overline{UV}$. 
-\begin{figure}[ht]
-\begin{center}
-\begin{tikzpicture}[scale=.8]
+$\overline{UV}$ is a directed line segment because $O$, the center of the circle, bisects the diameter $\overline{UV}$. Choose a point $A$ on $l$ and use the construction for a directed line segment (Case 1) to construct a line through $A$ parallel to $\overline{UV}$ which intersects the circle at $X,Y$ (Fig.~\ref{f.se-parallel-other2}).
+
+\begin{figure}[t]
+\subfigures
+\leftfigure[c] {
+\begin{tikzpicture}[scale=.75]
 \coordinate (O) at (0,0);
 \node[below right] at (O) {$O$};
 \draw[name path=circle] (O) circle[radius=2cm];
-\draw[name path=l] (-4,-3) -- node[above, near end] {$l$} +(9,0);
-\path[name path=mo] (-2,-3) coordinate (M) -- ($(-2,-3)!1.65!(O)$);
+\draw[name path=l] (-4,-3) --
+  node[above, near end,xshift=24pt] {$l$} +(7,0);
+\path[name path=mo] (-2,-3) coordinate (M) -- 
+  ($(-2,-3)!1.65!(O)$);
 \node[below] at (M) {$M$};
 \path [name intersections={of=circle and mo,by={V,U}}];
 \node[below,xshift=2pt,yshift=-4pt] at (U) {$U$};
@@ -158,26 +161,24 @@ $\overline{UV}$ is a directed line because $O$, the center of the circle, bisect
 \vertex{O};
 \vertex{P};
 \end{tikzpicture}
-\end{center}
-\caption{Construction of  a directed line}\label{f.se-parallel-other1}
-\end{figure}
-
-Choose a point $A$ on $l$ and use the construction for a directed line (Case 1) to construct a line through $A$ parallel to $\overline{UV}$ which intersects the circle at $X,Y$ (Fig.~\ref{f.se-parallel-other2}).
-
-\begin{figure}[b]
-\begin{center}
-\begin{tikzpicture}[scale=.8]
+}
+\hfill
+\rightfigure[c] {
+\begin{tikzpicture}[scale=.75]
 \coordinate (O) at (0,0);
 \node[below right] at (O) {$O$};
 \draw[name path=circle] (O) circle[radius=2cm];
-\draw[name path=l] (-4,-3) -- node[above,near end,xshift=24pt] {$l$} +(9,0);
-\path[name path=mo] (-2,-3) coordinate (M) -- ($(-2,-3)!1.65!(O)$);
+\draw[name path=l] (-4,-3) --
+  node[above,near end,xshift=24pt] {$l$} +(7,0);
+\path[name path=mo] (-2,-3) coordinate (M) --
+  ($(-2,-3)!1.65!(O)$);
 \node[below] at (M) {$M$};
 \path [name intersections={of=circle and mo,by={V,U}}];
 \node[below,xshift=2pt,yshift=-4pt] at (U) {$U$};
 \node[right,xshift=4pt] at (V) {$V$};
 \draw (M) -- (V);
-\path[name path=ax] (-3,-3) coordinate (A) -- ($(-3,-3)!1.8!(-1,0)$);
+\path[name path=ax] (-3,-3) coordinate (A) --
+  ($(-3,-3)!1.8!(-1,0)$);
 \node[below] at (A) {$A$};
 \path [name intersections={of=circle and ax,by={Y,X}}];
 \node[left] at (X) {$X$};
@@ -189,26 +190,28 @@ Choose a point $A$ on $l$ and use the construction for a directed line (Case 1) 
 \vertex{O};
 \vertex{P};
 \end{tikzpicture}
-\end{center}
-\caption{Construction of  a line parallel to the directed line}\label{f.se-parallel-other2}
+}
+\leftcaption{Construction of  a directed line}\label{f.se-parallel-other1}
+\rightcaption{Construction of  a line parallel to the directed line}\label{f.se-parallel-other2}
 \end{figure}
 
-Construct the diameters $\overline{XX'}$ and $\overline{YY'}$. Construct the ray from $X'$ through $Y'$ and denote by $B$ its intersection with $l$. $\overline{AB}$ is a directed line because $M$ is the bisector of $\overline{AB}$ and therefore a line can be constructed through $P$ parallel to $l$ (Fig.~\ref{f.se-parallel-other3}).
-
-\begin{figure}[ht]
+\begin{figure}[b]
 \begin{center}
-\begin{tikzpicture}[scale=.8]
+\begin{tikzpicture}[scale=.75]
 \coordinate (O) at (0,0);
 \node[below right] at (O) {$O$};
 \draw[name path=circle] (O) circle[radius=2cm];
-\draw[name path=l] (-4,-3) -- node[above,near end,xshift=24pt] {$l$} +(9,0);
-\path[name path=mo] (-2,-3) coordinate (M) -- ($(-2,-3)!1.65!(O)$);
+\draw[name path=l] (-5,-3) --
+  node[above,near end,xshift=40pt] {$l$} +(9,0);
+\path[name path=mo] (-2,-3) coordinate (M) -- 
+  ($(-2,-3)!1.65!(O)$);
 \node[below] at (M) {$M$};
 \path [name intersections={of=circle and mo,by={V,U}}];
 \node[below,xshift=2pt,yshift=-4pt] at (U) {$U$};
-\node[right,xshift=4pt] at (V) {$V$};
+\node[above right] at (V) {$V$};
 \draw (M) -- (V);
-\path[name path=ax] (-3,-3) coordinate (A) -- ($(-3,-3)!1.8!(-1,0)$);
+\path[name path=ax] (-3,-3) coordinate (A) -- 
+  ($(-3,-3)!1.8!(-1,0)$);
 \node[below] at (A) {$A$};
 \path [name intersections={of=circle and ax,by={Y,X}}];
 \node[left] at (X) {$X$};
@@ -216,10 +219,10 @@ Construct the diameters $\overline{XX'}$ and $\overline{YY'}$. Construct the ray
 \node at (-1.6,1.6) {$c$};
 \draw (A) -- (Y);
 \coordinate (P) at (-4,1);
-\node[above left] at (P) {$P$};
+\node[above] at (P) {$P$};
 \path[name path=xo] (X) -- ($(X)!2.2!(O)$);
 \path[name intersections={of=circle and xo,by={Xp}}];
-\node[right,xshift=2pt,yshift=-2pt] at (Xp) {$X'$};
+\node[above right] at (Xp) {$X'$};
 \draw (X) -- (Xp);
 \path[name path=yo] (Y) -- ($(Y)!2.2!(O)$);
 \path[name intersections={of=circle and yo,by={y,Yp}}];
@@ -229,13 +232,13 @@ Construct the diameters $\overline{XX'}$ and $\overline{YY'}$. Construct the ray
 \path[name intersections={of=l and xy,by={B}}];
 \node[below] at (B) {$B$};
 \draw (Xp) -- (B);
-\draw[thick,dashed,name path=z] (-4,0) -- (4,0) node[above,near end,xshift=40pt] {$l'$};
+\draw[thick,dotted,name path=z] (-5,0) -- 
+  (4,0) node[above,near end,xshift=40pt] {$l'$};
+\draw[thick,dashed] (-5,1) -- +(9,0);
 \path[name intersections={of=ax and z,by={Z}}];
 \path[name intersections={of=xy and z,by={Zp}}];
 \node[above left] at (Z) {$Z$};
 \node[below right] at (Zp) {$Z'$};
-\coordinate (P) at (-4,1);
-\node[above left] at (P) {$P$};
 \vertex{O};
 \vertex{P};
 \end{tikzpicture}
@@ -243,7 +246,10 @@ Construct the diameters $\overline{XX'}$ and $\overline{YY'}$. Construct the ray
 \caption{Proof that $l'$ is parallel to $l$}\label{f.se-parallel-other3}
 \end{figure}
 
-$\overline{OX}, \overline{OX'}, \overline{OY}, \overline{OY'}$ are all radii of the circle and $\angle XOY = \angle X'OY'$ since they are vertical angles, so $\triangle XOY\cong\triangle X'OY'$ by side-angle-side. Define\footnote{We are in the middle of the proof that such a line can be constructed and we can't use the result before the proof is finished!} $l'$ to be a line through $O$ parallel to $l$ that intersects $\overline{XY}$ at $Z$ and $\overline{X'Y'}$ at $Z'$. $\angle XOZ=\angle X'OZ'$ are vertical angles, $\angle ZXO=\angle Z'X'O$ are alternate interior angles and $\overline{XO}=\overline{XO'}$ are radii, so $\triangle XOZ\cong\triangle X'OZ'$ by angle-side-angle and $\overline{ZO}=\overline{OZ'}$. Therefore, $\overline{AMOZ}$ and $\overline{BMOZ'}$ are parallelograms and $\overline{AM}=\overline{ZO}=\overline{OZ'}=\overline{MB}$.
+Construct a diameter from $X$ through $O$ that intersects the other side of the circle at $X'$, and similarly construct the diameter $\overline{YY'}$. Construct the ray from $X'$ through $Y'$ and denote by $B$ its intersection with $l$. We claim that $M$ is the bisector of $\overline{AB}$ so that $\overline{AB}$ is a directed line segment and therefore a line can be constructed through $P$ parallel to $l$ (Fig.~\ref{f.se-parallel-other3}).
+
+
+$\overline{OX}, \overline{OX'}, \overline{OY}, \overline{OY'}$ are all radii of the circle and $\angle XOY = \angle X'OY'$ since they are vertical angles, so $\triangle XOY\cong\triangle X'OY'$ by side-angle-side. Define\footnote{Define, not construct, because we are in the middle of the proof that such a line can be constructed.} $l'$ to be a line through $O$ parallel to $l$ that intersects $\overline{XY}$ at $Z$ and $\overline{X'Y'}$ at $Z'$. $\angle XOZ=\angle X'OZ'$ are vertical angles, $\angle ZXO=\angle Z'X'O$ are alternate interior angles and $\overline{XO}=\overline{XO'}$ are radii, so $\triangle XOZ\cong\triangle X'OZ'$ by angle-side-angle and $\overline{ZO}=\overline{OZ'}$. Therefore, $\overline{AMOZ}$ and $\overline{BMOZ'}$ are parallelograms and $\overline{AM}=\overline{ZO}=\overline{OZ'}=\overline{MB}$.
 \end{proof}
 
 \begin{theorem}
@@ -254,7 +260,7 @@ Given a line segment $\overline{AB}$ and a point $P$ not on the line, it is poss
 We have proved that it is possible to construct a line $m$ through $P$ parallel to $\overline{AB}$ and a line $n$ through $B$ to parallel to $\overline{AP}$. The quadrilateral $\overline{ABQP}$ is a parallelogram so opposite sides are equal $\overline{AB}=\overline{PQ}$ (Fig.~\ref{f.se-parallel-other4}).
 \end{proof}
 
-\begin{figure}[b]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.5]
 \coordinate (P) at (0,0);
@@ -280,9 +286,8 @@ We have proved that it is possible to construct a line $m$ through $P$ parallel 
 Given a line segment $l$ and a point $P$ not on $l$, it is possible to construct a perpendicular to $l$ through $P$.
 \end{theorem}
 
-The proof of this theorem is the first time that the given fixed circle is used in the construction. The fixed circle will be drawn with a thick line.
 \begin{proof}
-By Thm.~\ref{thm.straight-parallel} construct a line $l'$ parallel to $l$ that intersects the fixed circle at $U,V$. Construct the diameter $\overline{UOU'}$ and the chord $\overline{VU'}$ (Fig.~\ref{f.se-perp}). $\angle UVU'$ is a right angle because it is subtended by a semicircular arc. Therefore, $\overline{VU'}$ is perpendicular to $\overline{UV}$ and $l$. Again by Thm.~\ref{thm.straight-parallel} construct the parallel to $\overline{VU'}$ through $P$.
+By Thm.~\ref{thm.straight-parallel} construct a line $l'$ parallel to $l$ that intersects the fixed circle at $U,V$. Construct the diameter $\overline{UOU'}$ and the chord $\overline{VU'}$ (Fig.~\ref{f.se-perp}). $\angle UVU'$ is a right angle because it is subtended by a diameter. Therefore $\overline{VU'}$ is perpendicular to $\overline{UV}$ and $l$. Again by Thm.~\ref{thm.straight-parallel} construct the parallel to $\overline{VU'}$ through $P$.
 \end{proof}
 
 \begin{figure}[htb]
@@ -290,7 +295,7 @@ By Thm.~\ref{thm.straight-parallel} construct a line $l'$ parallel to $l$ that i
 \begin{tikzpicture}[scale=.7]
 \coordinate (O) at (0,0);
 \coordinate (P) at (3.5,.6);
-\draw[thick,name path=circle] (O) circle[radius=2cm];
+\draw[name path=circle] (O) circle[radius=2cm];
 \draw[name path=l] (-4,-3) -- node[above,near end,xshift=45pt] {$l$} ++(9,0);
 \draw[name path=lp] (-3,-1) -- node[above,near end,xshift=40pt] {$l'$} ++(8,0);
 \node[above left] at (O) {$O$};
@@ -324,13 +329,13 @@ By Thm.~\ref{thm.straight-parallel} construct a line $l'$ parallel to $l$ that i
 It is possible to construct a copy of a given line segment in the direction of another line.
 \end{theorem}
 
-The meaning of  ``direction'' is that the line defined by two points $A',H'$ is at an angle $\theta$ relative to some axis and the goal is to construct $\overline{AS}=\overline{PQ}$ such that $\overline{AS}$ will have the same angle $\theta$ relative to that axis (Fig.~\ref{f.se-copy1}). In the diagram $\overline{PQ}$ is on the $x$-axis but that is of no importance.
+The meaning of  ``direction'' is that the line defined by two points $A',H'$ is at an angle $\theta$ relative to some axis and the goal is to construct $\overline{AS}=\overline{PQ}$ such that $\overline{AS}$ will have the same angle $\theta$ relative to that axis (Fig.~\ref{f.se-copy1}).
 
 \begin{proof}
-By Thm.~\ref{thm.straight-parallel} it is possible to construct a line segment $\overline{AH}$ such that $\overline{AH}\|\overline{A'H'}$, and to construct a line segment $\overline{AK}$ such that $\overline{AK}\|\overline{PQ}$.
+By Thm.~\ref{thm.straight-parallel} it is possible to construct a line segment $\overline{AH}$ such that $\overline{AH}\parallel\overline{A'H'}$, and to construct a line segment $\overline{AK}$ such that $\overline{AK}\parallel\overline{PQ}$.
 $\angle HAK=\theta$ so it remains to find a point $S$ on $\overline{AH}$ so that $\overline{AS}=\overline{PQ}$.
 
-\begin{figure}[b]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.7]
 \coordinate (A) at (0,0);
@@ -363,11 +368,10 @@ $\angle HAK=\theta$ so it remains to find a point $S$ on $\overline{AH}$ so that
 \caption{Copying a line segment in a given direction}\label{f.se-copy1}
 \end{figure}
 
-Construct two radii $\overline{OU}, \overline{OV}$ of the fixed circle which are parallel to $\overline{AH}, \overline{AK}$, respectively, and construct a ray through $K$ parallel to $\overline{UV}$. Its intersection with $\overline{AH}$ is denoted by $S$ (Fig.~\ref{f.se-copy3}).
-By construction, $\overline{AH}\|\overline{OU}$ and $\overline{AK}\|\overline{OV}$, so $\angle SAK=\angle HAK=\angle UOV=\theta$. $\overline{SK}\|\overline{UV}$ and $\triangle SAK\sim\triangle UOV$ by angle-angle-angle, $\triangle UOV$ is isosceles, because $\overline{OU}, \overline{OV}$ are radii of the same circle. Therefore, $\triangle SAK$ is isosceles and $\overline{AS}=\overline{AK}=\overline{PQ}$.
+Construct two radii $\overline{OU}, \overline{OV}$ of the fixed circle which are parallel to $\overline{AH}, \overline{AK}$, respectively, and construct a ray through $K$ parallel to $\overline{UV}$. Denote its intersection with $\overline{AH}$ by $S$ (Fig.~\ref{f.se-copy3}). By construction, $\overline{AH}\parallel\overline{OU}$ and $\overline{AK}\parallel\overline{OV}$, so $\angle SAK=\angle HAK=\angle UOV=\theta$. $\overline{SK}\parallel\overline{UV}$ and $\triangle SAK\sim\triangle UOV$ by angle-angle-angle, $\triangle UOV$ is isosceles because $\overline{OU}, \overline{OV}$ are radii of the same circle. Therefore, $\triangle SAK$ is isosceles and $\overline{AS}=\overline{AK}=\overline{PQ}$.
 \end{proof}
 
-\begin{figure}[ht]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.7]
 \coordinate (A) at (0,0);
@@ -396,7 +400,7 @@ By construction, $\overline{AH}\|\overline{OU}$ and $\overline{AK}\|\overline{OV
 \vertex{Q};
 \begin{scope}[xshift=3cm]
 \coordinate (O) at (6,1);
-\draw[thick,name path=circle] (O) circle[radius=2.5cm];
+\draw[name path=circle] (O) circle[radius=2.5cm];
 \node[above left] at (O) {$O$};
 \path[name path=u] (O) -- ++(60:2.5cm);
 \path[name path=v] (O) -- ++(2.5,0);
@@ -421,12 +425,10 @@ Given line segments of lengths $n, m, s$, it is possible to construct a line seg
 \end{theorem}
 
 \begin{proof}
-Choose points $A,B,C$ not on the same line and construct rays $\overline{AB}, \overline{AC}$. By Thm.~\ref{thm.straight-direction} it is possible to construct points $M,N,S$ such that $\overline{AM}= m$, $\overline{AN} =n$, $\overline{AS}=s$. By Thm.~\ref{thm.straight-parallel} construct a line through $N$ parallel to $\overline{MS}$ which intersects $\overline{AC}$ at $X$ and label the length of $\overline{AX}$ by $x$ (Fig.~\ref{f.se-three2}).
-
-$\triangle MAS\sim\triangle NAX$ by angle-angle-angle so $\displaystyle\frac{m}{n}=\displaystyle\frac{s}{x}$ and $x=\displaystyle\frac{n}{m}s$.
+Choose points $A,B,C$ not on the same line and construct rays $\overline{AB}, \overline{AC}$. By Thm.~\ref{thm.straight-direction} it is possible to construct points $M,N,S$ such that $\overline{AM}= m$, $\overline{AN} =n$, $\overline{AS}=s$. By Thm.~\ref{thm.straight-parallel} construct a line through $N$ parallel to $\overline{MS}$ which intersects $\overline{AC}$ at $X$ and label $\overline{AX}$ by $x$ (Fig.~\ref{f.se-three2}). $\triangle MAS\sim\triangle NAX$ by angle-angle-angle so $\displaystyle\frac{m}{n}=\displaystyle\frac{s}{x}$ and $x=\displaystyle\frac{n}{m}s$.
 \end{proof}
 
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
 \coordinate (A) at (0,0);
@@ -471,7 +473,7 @@ h+k &=& \frac{d}{t}a + \frac{d}{t}b = \frac{d(a+b)}{t} = \frac{dt}{t} = d\,.
 \end{eqnarray*}
 
 By Thm.~\ref{thm.straight-direction} construct $\overline{HA}= h$ on a diameter $\overline{HK}$ of the fixed circle. From $h+k=d$ we have $\overline{AK}=k$ (Fig.~\ref{f.se-sqrt}). By Thm.~\ref{thm.straight-perp} construct a perpendicular to $\overline{HK}$ at $A$ and denote the intersection of this line with the circle by $S$. $\overline{OS}=\overline{OK}=d/2$ and $\overline{OA}=(d/2)-k$. 
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.7]
 \coordinate (O) at (0,0);
@@ -479,7 +481,7 @@ By Thm.~\ref{thm.straight-direction} construct $\overline{HA}= h$ on a diameter 
 \coordinate (K) at (3,0);
 \node at (-2.4,2.4) {$c$};
 \draw (H) -- (K);
-\draw[thick,name path=circle] (O) circle[radius=3cm];
+\draw[name path=circle] (O) circle[radius=3cm];
 \node[below] at (O) {$O$};
 \node[left] at (H) {$H$};
 \node[right] at (K) {$K$};
@@ -500,8 +502,6 @@ By Thm.~\ref{thm.straight-direction} construct $\overline{HA}= h$ on a diameter 
 \caption{Construction of a square root}\label{f.se-sqrt}
 \end{figure}
 
-\newpage
-
 By Pythagoras's Theorem:
 \begin{eqnarray*}
 s^2&=& \left(\frac{d}{2}\right)^2 - \left(\frac{d}{2}-k\right)^2\\
@@ -513,14 +513,12 @@ s&=&\sqrt{hk}\,.
 Now $x=\displaystyle\frac{t}{d}s$ can be constructed by Thm.~\ref{thm.straight-relative}.
 \end{proof}
 
-\vspace{-4ex}
-
 \section{Construction of the Intersection of a Line and a Circle}\label{s.line-circle-straight}
 
 \begin{theorem}
 Given a line $l$ and a circle $c(O,r)$, it is possible to construct their points of intersection (Fig.~\ref{f.se-line-circle1}).
 \end{theorem}
-\begin{figure}[b]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.7]
 \coordinate (O) at (0,0);
@@ -528,7 +526,8 @@ Given a line $l$ and a circle $c(O,r)$, it is possible to construct their points
 \vertex{O};
 \draw[thick,dashed,name path=circle] (O) circle[radius=3cm];
 \draw (O) -- node[above] {$r$} ++(-130:3cm) coordinate (R);
-\draw[name path=l] (O) ++(170:4cm) -- node[below, near end,xshift=40pt,yshift=12pt] {$l$} ++(20:8cm);
+\draw[name path=l] (O) ++(170:4cm) --
+  node[below, near end,xshift=30pt,yshift=10pt] {$l$} ++(20:8cm);
 \path[name intersections={of=circle and l,by={Y,X}}];
 \node[above left] at (X) {$X$};
 \node[above right] at (Y) {$Y$};
@@ -538,10 +537,8 @@ Given a line $l$ and a circle $c(O,r)$, it is possible to construct their points
 \end{figure}
 
 \begin{proof}
-By Thm.~\ref{thm.straight-perp} it is possible to construct a perpendicular from the center of the circle $O$ to the line $l$. The intersection of $l$ with the perpendicular is denoted by $M$. $\overline{OM}$ bisects the chord $\overline{XY}$, where $X, Y$ are the intersections of the line with the circle (Fig.~\ref{f.se-line-circle2}). Define $\overline{XY}=2s$ and $\overline{OM}=t$.
-
-$s,X,Y$ are just definitions not entities  have been constructed.
-\begin{figure}[ht]
+By Thm.~\ref{thm.straight-perp} it is possible to construct a perpendicular from the center of the circle $O$ to the line $l$. The intersection of $l$ with the perpendicular is denoted by $M$. $\overline{OM}$ bisects the chord $\overline{XY}$, where $X, Y$ are the intersections of the line with the circle (Fig.~\ref{f.se-line-circle2}). Define $\overline{XY}=2s$ and $\overline{OM}=t$. Note that $s,X,Y$ are just definitions not entities  have been constructed.
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.7]
 \coordinate (O) at (0,0);
@@ -551,7 +548,7 @@ $s,X,Y$ are just definitions not entities  have been constructed.
 \path (O) --  ++(-130:3cm) coordinate (R);
 \node[below left,yshift=2pt,xshift=2pt] at (R) {$R$};
 \draw[name path=l] (O) ++(170:4cm) --
-  node[below, near end,xshift=40pt,yshift=12pt] {$l$} ++(20:8cm);
+  node[below, near end,xshift=30pt,yshift=10pt] {$l$} ++(20:8cm);
 \path[name intersections={of=circle and l,by={Y,X}}];
 \node[above left] at (X) {$X$};
 \node[above right] at (Y) {$Y$};
@@ -578,6 +575,8 @@ By Pythagoras's Theorem $s^2=r^2-t^2=(r+t)(r-t)$. By Thm.~\ref{thm.straight-dire
 By Thm.~\ref{thm.straight-sqrt} a line segment of length $s=\sqrt{(r+t)(r-t)}$ can be constructed, and by Thm.~\ref{thm.straight-direction} line segments of length $s$ from $M$ along $l$ in both directions can be constructed. Their other endpoints are the points of intersection of $l$ and $c$.
 \end{proof}
 
+\newpage
+
 \section{Construction of the Intersection of Two Circles}\label{s.two-circles}
 
 \begin{theorem}
@@ -586,9 +585,9 @@ Given two circles $c(O_1,r_1), c(O_2,r_2)$, it is possible to construct their po
 
 \begin{proof}
 Construct $\overline{O_1O_2}$ and label its length $t$ (Fig.~\ref{f.se-circle-circle1}).
-Label by $A$ be the point of intersection of $\overline{O_1O_2}$ and $\overline{XY}$, and label the lengths $q=\overline{O_1A}$, $x=\overline{XA}$ (Fig.~\ref{f.se-circle-circle2}). $A$ has not yet been constructed, but if $q,x$ are constructed then by Thm.~\ref{thm.straight-direction}, the point $A$ at length $q$ from $O_1$ in the direction $\overline{O_1O_2}$ can be constructed.
+Label by $A$ be the point of intersection of $\overline{O_1O_2}$ and $\overline{XY}$, and label $q=\overline{O_1A}$, $x=\overline{XA}$ (Fig.~\ref{f.se-circle-circle2}). $A$ has not yet been constructed, but if $q,x$ are constructed then by Thm.~\ref{thm.straight-direction} the point $A$ at length $q$ from $O_1$ in the direction $\overline{O_1O_2}$ can be constructed.
 
-\begin{figure}[b]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.9]
 \coordinate (O1) at (0,0);
@@ -607,13 +606,13 @@ Label by $A$ be the point of intersection of $\overline{O_1O_2}$ and $\overline{
 \draw (O1) -- (O2);
 \node at (-1.7,1.6) {$c_1$};
 \node at (3.8,1.4) {$c_2$};
-\draw[<->] (0,-1) -- node[fill=white] {$t$} (2.5,-1);
+\draw[<->] (0,-.6) -- node[fill=white] {$t$} +(2.5,0);
 \end{tikzpicture}
 \end{center}
 \caption{Construction of the intersection of two circles (1)}\label{f.se-circle-circle1}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.9]
 \coordinate (O1) at (0,0);
@@ -638,7 +637,7 @@ Label by $A$ be the point of intersection of $\overline{O_1O_2}$ and $\overline{
 \draw (A) rectangle +(6pt,6pt);
 \path (O1) -- node[below,xshift=-2pt] {$q$} (A);
 \path (X) -- node[left,yshift=-2pt] {$x$} (A);
-\draw[<->] (0,-1) -- node[fill=white] {$t$} (2.5,-1);
+\draw[<->] (0,-.6) -- node[fill=white] {$t$} +(2.5,0);
 \end{tikzpicture}
 \end{center}
 \caption{Construction of the intersection of two circles (2)}\label{f.se-circle-circle2}
@@ -646,20 +645,18 @@ Label by $A$ be the point of intersection of $\overline{O_1O_2}$ and $\overline{
 
 Once $A$ has been constructed, by Thm.~\ref{thm.straight-perp} a perpendicular to $\overline{O_1O_2}$ at $A$ can be constructed, and by Thm.~\ref{thm.straight-direction} it is possible to construct line segments of length $x$ from $A$ in both directions along the perpendicular. Their other endpoints are  the points of intersection of the circles.
 
-\noindent\textbf{Construction of the length $q$:} Define $d=\sqrt{r_1^2+t^2}$, the hypotenuse of a right triangle, which can be constructed from the known lengths $r_1,t$. This right triangle can be constructed anywhere in the plane.
-
-Since $\cos\angle O_1O_2X=q/r_1$ by the Law of Cosines \index{Law of cosines} for $\triangle XO_1O_2$:
+\noindent\textbf{Construction of the length $q$:} Define $d=\sqrt{r_1^2+t^2}$, the hypotenuse of a right triangle, which can be constructed from the known lengths $r_1,t$. Note that $\triangle O_1XO_2$ is not necessarily a right triangle; the right triangle can be constructed anywhere in the plane. In the right triangle $\triangle XAO_1$, $\cos\angle XO_1A=q/r_1$. By the Law of Cosines \index{Law of cosines} for $\triangle XO_1O_2$:
 \begin{eqnarray*}
 r_2^2 &=& t^2 + r_1^2 - 2r_1t\cos\angle XO_1O_2\\
 &=& t^2 + r_1^2 - 2tq\\
-2tq &=& (r_1^2+t^2) - r_2^2=d^2-r_2^2\\
+2tq &=& (t^2+r_1^2) - r_2^2=d^2-r_2^2\\
 q&=&\frac{(d+r_2)(d-r_2)}{2t}\,.
 \end{eqnarray*}
 By Thm.~\ref{thm.straight-direction} these lengths can be constructed and by Thm.~\ref{thm.straight-relative} $q$ can be constructed from $d+r_2,d-r_2,2t$.
 
 \medskip
 
-\noindent\textbf{Construction of the length x:} By Pythagoras's Theorem:
+\noindent\textbf{Construction of the length $x$:} By Pythagoras's Theorem:
 \[
 x=\sqrt{r_1^2-q^2}=\sqrt{(r_1+q)(r_1-q)}\,.
 \]

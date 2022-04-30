@@ -1,0 +1,35 @@
+\ProvidesPackage{culmus}[0000/00/00 $Revision: 30 $ Culmus Fonts for Hebrew]
+% $Id: culmus.sty 30 2008-04-16 10:52:33Z guyru $
+
+% Add option to use legacy (small) font size (this font size was used
+% until culmus-latex-0.6
+\DeclareOption{legacy-size}{
+	\def\culmus@scale{1}
+}
+
+% whether to use David as the default Roman font.
+\def\culmus@useDavid{0}
+\DeclareOption{use-david}{
+	\def\culmus@useDavid{1}
+}
+% Set multipliers to adjust font size to be some sane value (make it about
+% the same size as the old Hebrew fonts.
+\def\culmus@scale{1.2}
+
+% Process options now to overide the size multipliers
+\ProcessOptions\relax
+
+\DeclareFontEncoding{HE8}{}{}
+\providecommand{\HeblatexEncoding}{HE8}%
+\providecommand{\HeblatexEncodingFile}{he8enc}%
+
+% an attempt to give some replacements to the original hebfonts:
+%
+\DeclareTextFontCommand{\textcrml}{\fontfamily{david}\selectfont}
+\DeclareTextFontCommand{\textfr}{\fontfamily{frank}\selectfont}
+\DeclareTextFontCommand{\textredis}{\fontfamily{aharoni}\selectfont}
+\DeclareTextFontCommand{\textclas}{\fontfamily{drugulin}\selectfont}
+\DeclareTextFontCommand{\textshold}{\fontfamily{frank}\selectfont}
+\DeclareTextFontCommand{\textshscr}{\fontfamily{yad}\selectfont}
+% note that redis is larger than shstk
+\DeclareTextFontCommand{\textshstk}{\fontfamily{aharoni}\selectfont}

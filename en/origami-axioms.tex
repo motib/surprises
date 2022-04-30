@@ -12,15 +12,13 @@ This chapter presents the axioms together with the equations of their folds and 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Origami, the art of paper folding, was developed several centuries ago in Japan and now has a worldwide following. In the late twentieth century the mathematical theory of origami was developed. Its foundation is a set of seven axioms, the 
-\emph{Huzita–Hatori axioms}, named after Humiaki Huzita\index{Huzita, Humiaki} who formalized the first six axioms and Koshiro Hatori\index{Hatori, Koshiro} who found the seventh. Jacques Justin published all seven axioms several years before Huzita and Hatori, and Margherita P. Beloch\index{Beloch, Margherita P.} formulated the sixth axiom already in 1936. Nevertheless, the axioms as known as the Huzita-Hatori axioms.
+\emph{Huzita–Hatori axioms}, named after Humiaki Huzita\index{Huzita, Humiaki} who formalized the first six axioms and Koshiro Hatori\index{Hatori, Koshiro} who found the seventh. Jacques Justin published all seven axioms several years before Huzita and Hatori, and Margherita P. Beloch\index{Beloch, Margherita P.} formulated the sixth axiom in 1936. Nevertheless, the axioms as known as the Huzita-Hatori axioms.
 
-In a series of three chapters we will explore the mathematics of origami. This chapter presents the axioms, Chap.~\ref{c.origami-cube} connects origami with the roots of polynomials and Chap.~\ref{c.origami-constructions} shows that constructions with origami can solve problems that are impossible using a straightedge and compass.
+In a sequence of three chapters we will explore the mathematics of origami. This chapter presents the axioms, Chap.~\ref{c.origami-cube} connects origami with the roots of polynomials and Chap.~\ref{c.origami-constructions} shows that constructions with origami can solve problems that are impossible using a straightedge and compass.
  
 This chapter contains a section for each of the seven axioms. Following a statement of an axiom and a diagram of the \emph{fold} it specifies, the equations of the fold and the points of intersection are developed using analytic geometry. A fold can also be defined as a \emph{geometric locus}\index{Geometric locus}, the set of all points satisfying some property. The term fold comes from the origami operation of folding a piece of paper, but here it is used to refer the geometric line that would be created by folding the paper.
 
-By definition folds result in \emph{reflections}\index{Origami!reflection}. Given a point $p$, its reflection around a fold $l$ results in a point $p'$, such that $l$ is the perpendicular bisector of the line segment $\overline{pp'}$ (Fig.~\ref{f.origami-def}).
-
-\vspace{-2ex}
+Folds result in \emph{reflections}\index{Origami!reflection}. Given a point $p$, its reflection around a fold $l$ results in a point $p'$ such that $l$ is the perpendicular bisector of the line segment $\overline{pp'}$ (Fig.~\ref{f.origami-def}).
 
 \begin{figure}[h]
 \begin{center}
@@ -145,7 +143,6 @@ y - \frac{y_1+y_2}{2} = -\frac{x_2-x_1}{y_2-y_1}\left(x-\frac{x_1+x_2}{2}\right)
 
 \begin{example}
 Let $p_1=(2,2), p_2=(6,4)$. The equation of $l$ is:
-%
 \begin{eqnarray*}
 y-\left(\frac{2+4}{2}\right)&=&-\frac{6-2}{4-2}\left(x-\left(\frac{2+6}{2}\right)\right)\\
 y&=&-2x+11\,.
@@ -207,14 +204,11 @@ The fold is the geometric locus of the points that are equidistant from $l_1$ an
 
 \noindent\textbf{Derivation of the equation of the fold:}
 
-If the lines are parallel, let $l_1$ be $y=mx+b_1$ and let $l_2$ be $y=mx+b_2$. The fold is the line parallel to $l_1$ and $l_2$ that is halfway between them:
+\noindent\textit{$l_1,l_2$ are parallel:} Let $l_1$ be $y=mx+b_1$ and let $l_2$ be $y=mx+b_2$. The fold is the line parallel to $l_1$ and $l_2$ that is halfway between them:
 \[
 y=mx+\frac{b_1+b_2}{2}\,.
 \]
-
-If the lines intersect, let $l_1$ be $y=m_1x+b_1$ and let $l_2$ be $y=m_2x+b_2$.
-$p_i=(x_i,y_i)$, the point of intersection of the two lines, is:
-%
+\noindent\textit{$l_1,l_2$ intersect:} Let $l_1$ be $y=m_1x+b_1$ and let $l_2$ be $y=m_2x+b_2$. $p_i=(x_i,y_i)$, the point of intersection of the two lines, is:
 \begin{eqnarray*}
 m_1x_i+b_1&=&m_2x_i+b_2\\
 x_i &=& \frac{b_2-b_1}{m_1-m_2}\\
@@ -294,8 +288,7 @@ The fold is the geometric locus of all points on the line perpendicular to $l_1$
 \end{figure}
 
 \noindent\textbf{Derivation of the equation of the fold:}
-Let $l_1$ be $y = m_1x + b_1$ and let $p_1=(x_1,y_1)$.  $l$ is perpendicular to $l_1$ so its slope is $-(1/m_1)$. Since it passes through $p_1$, we can compute the intercept $b$ and write down its equation:
-%
+Let $l_1$ be $y = m_1x + b_1$ and let $p_1=(x_1,y_1)$.  $l$ is perpendicular to $l_1$ so its slope is $-(1/m_1)$. Since it passes through $p_1$ we can compute the intercept $b$ and write down its equation:
 \begin{eqnarray*}
 y_1&=&-\frac{1}{m} x_1 + b\\
 b&=& \frac{(my_1+x_1)}{m}\\
@@ -319,7 +312,7 @@ y=-\frac{1}{2}x + \frac{2\cdot 6 + 2}{2}=-\frac{1}{2}x + 7\,.
 Given two points $p_1,p_2$ and a line $l_1$, there is a fold $l$ that places $p_1$ onto $l_1$ and passes through $p_2$ (Fig.~\ref{f.origami-axiom5}).
 \end{axiom}
 
-The geometric locus of the reflection of $p_1$ is the circle centered at $p_2$ with radius $\overline{p_1p_2}$, since the fold passes through $p_2$ and $p_2$ is on the perpendicular bisector of $\overline{p_1p_1'}$. The fold is constrained so that  the reflection $p_1'$ is on the given line $l_1$.
+Since the fold passes through $p_2$ and $p_2$ is on the perpendicular bisector of $\overline{p_1p_1'}$, the geometric locus of the reflection of $p_1$ is the circle centered at $p_2$ with radius $\overline{p_1p_2}$. The fold is constrained so that  the reflection $p_1'$ is on the given line $l_1$.
 
 \begin{figure}[ht]
 \begin{center}
@@ -382,11 +375,9 @@ and we obtain a quadratic equation for the $x$-coordinates of the possible inter
 \begin{align}
 x^2(1+m_1^2) \,+\, 2(-x_2+m_1(b-y_2))x \,+\,(x_2^2 + (b_1^2 - 2b_1y_2+y_2^2)-r^2)=0\,.\label{eq.intersections}
 \end{align}
-Since the quadratic equation has at most two solutions for a given pair of points and a line, there may be zero, one or two folds. From the solutions $x_1',x_1''$, we can compute $y_1',y_1''$ from $y=m_1x+b_1$. The reflected points are $p_1'=(x_1',y_1')$, $p_1''=(x_1'',y_1'')$.
+Since a quadratic equation has at most two solutions, for a given pair of points and a line there may be zero, one or two folds. From the solutions $x_1',x_1''$ we can compute $y_1',y_1''$ from $y=m_1x+b_1$. The reflected points are $p_1'=(x_1',y_1')$, $p_1''=(x_1'',y_1'')$.
 \begin{example}
-Let $p_1=(2,8)$, $p_2=(4,4)$ and let $l_1$ be $y=-\frac{1}{2}x +3$. The equation of the circle is $(x-4)^2 + (y-4)^2 = (4-2)^2+(4-8)^2=20$.
-
-Substitute the equation of the line into the equation of the circle to obtain a quadratic equation for the $x$-coordinates of the intersections (or use Eq.~\ref{eq.intersections}):
+Let $p_1=(2,8)$, $p_2=(4,4)$ and let $l_1$ be $y=-\frac{1}{2}x +3$. The equation of the circle is $(x-4)^2 + (y-4)^2 = (4-2)^2+(4-8)^2=20$. Substitute the equation of the line into the equation of the circle to obtain a quadratic equation for the $x$-coordinates of the intersections (or use Eq.~\ref{eq.intersections}):
 \begin{eqnarray*}
 (x-4)^2 + \left(\left(-\frac{1}{2}x+3\right)-4\right)^2&=&20\\
 (x-4)^2 + (-1)^2\cdot\left(\frac{1}{2}x+1\right)^2-20&=&0\\
@@ -408,7 +399,7 @@ y&=&-\frac{1}{2}x+6\,.
 \end{example}
 
 \begin{example}
-For $p_1=(2,8)$ and $p_1''=(6,0)$ the equation of the fold $l_{f_2}$ is:
+For $p_1=(2,8)$ and $p_1''=(6,0)$ the equation of  $l_{f_2}$ is:
 %
 \begin{eqnarray*}
 y-\frac{8+0}{2}&=&-\frac{6-2}{0-8}\left(x-\frac{2+6}{2}\right)\\
@@ -570,11 +561,11 @@ For a fold to simultaneously place $p_1$ onto $l_1$ and $p_2$ onto $l_2$, it mus
 \rightcaption{Three common tangents}\label{f.two-para-1-three}
 \end{figure}
 
-The formula for an arbitrary parabola is quite complex, so we limit the presentation to parabolas whose axis of symmetry is the $y$-axis.
+The formula for an arbitrary parabola is quite complex so we limit the presentation to parabolas whose axis of symmetry is the $x$- or $y$-axis.
 
 \subsection{Derivation of the Equation of a Fold}
 
-Let $(0,f)$ be the focus of a parabola with directrix $y=d$. Define $p=f-d$, the signed length of the line segment between the focus and the directrix.\footnote{We have been using the notation $p_i$ for points; the use of $p$ here might be confusing but it is the standard notation. The formal name for $p$ is one-half the \emph{latus rectum}.} If the vertex of the parabola is on the $x$-axis, the equation of the parabola is $y=x^2/2p$. To move the parabola up or down the $y$-axis so that its vertex is at $(0,h)$, add $h$ to the equation of the parabola (Fig.~\ref{f.elements-parabola}):
+Let $(0,f)$ be the focus of a parabola with directrix $y=d$. Define $p=f-d$, the signed length of the line segment between the focus and the directrix.\footnote{We have been using the notation $p_i$ for points; the use of $p$ here might be confusing but it is the standard notation. The formal name for $p$ is one-half the \emph{latus rectum}.} If the vertex of the parabola is on the $x$-axis the equation of the parabola is $y=x^2/2p$. To move the parabola up or down the $y$-axis so that its vertex is at $(0,h)$, add $h$ to the equation of the parabola (Fig.~\ref{f.elements-parabola}):
 \[y=\frac{x^2}{2p}+h\,.\]
 
 \begin{figure}[htb]
@@ -619,7 +610,7 @@ The line will be tangent to the parabola if and only if this quadratic equation 
 m^2p^2+2pb-a=0\,.\slabel{eq.disc}
 \end{subeqnarray}
 
-This is an equation with variables $m,b$ for the tangents to the parabola. To obtain the common tangents to both parabolas, the equations for the two parabolas have two unknowns and can be solved for $m$ and $b$.
+This is an equation with variables $m,b$ for the tangents to the parabola. To obtain the common tangents to both parabolas we must simultaneously solve the equations for the two parabolas.
 
 \newpage
 
@@ -655,7 +646,6 @@ are $m=\pm\sqrt{3}\approx \pm 1.73$ and $b=0$. There are two common tangents:
 \[
 y=\sqrt{3}x\,,\quad y=-\sqrt{3}x\,.
 \]
-Figure~\ref{f.two-para-1-two} shows parabolas with two common tangents of this form.
 \end{example}
 
 \begin{example}\mbox{}
@@ -682,7 +672,6 @@ are $m=\pm\sqrt{\displaystyle\frac{7}{3}}\approx \pm 1.53$ and $b=\displaystyle\
 \[
 y=\sqrt{\frac{7}{3}}x+\frac{2}{3}\,,\quad y=-\sqrt{\frac{7}{3}}x+\frac{2}{3}\,.
 \]
-Figure~\ref{f.two-para-1-two} shows parabolas with two common tangents of this form.
 \end{example}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -702,19 +691,16 @@ y^2-4x+12 = 0\,.\label{eq.x-symmetry-parabola}
 This is an equation with $x$ and $y^2$ instead of $x^2$ and $y$, so Eq.~\ref{eq.disc} can't be used and we must perform the derivation again.
 
 Substitute the equation for a line into Eq.~\ref{eq.x-symmetry-parabola}:
-%
 \begin{eqnarray*}
 (mx+b)^2-4x+12&=&0\\
 m^2x^2+(2mb-4)x+(b^2+12)&=&0\,.
 \end{eqnarray*}
 Set the discriminant equal to zero and simplify:
-%
 \begin{eqnarray*}
 (2mb-4)^2\:-\:4m^2(b^2+12)&=&0\\
 -3m^2-mb+1&=&0\,.
 \end{eqnarray*}
 If we try to solve the two equations:
-%
 \begin{eqnarray*}
 m^2+b-3&=&0\\
 -3m^2-mb+1&=&0\,,
@@ -736,8 +722,6 @@ From the form of Eq.~\ref{eq.cubic} we might guess that $m=1$ or $m=-1$ is a sol
 (-1)^3-3\cdot (-1)^2-3\cdot(-1)+1&=&0\,.
 \end{eqnarray*}
 Divide Eq.~\ref{eq.cubic} by $m-(-1)=m+1$ to obtain the quadratic equation $m^2-4m+1$ whose roots are the other two solutions of the cubic equation $m=2\pm\sqrt{3}\approx 3.73, 0.27$.
-
-Figure~\ref{f.two-para-1-three} shows parabolas.
 \end{example}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -782,7 +766,7 @@ y_1'&=&2y_t-y_1= 2\,.
 
 We wish to prove that the folds of Axiom~$6$ are tangents to the parabolas.\index{Parabola!folds of Axiom 6 are tangents}
 Figure~\ref{f.parabola-locus} shows five points
-$p_i$, $i=1,\ldots,5$, each point $p_i$ at a distance $a_i$ from both the focus and the directrix. Drop perpendicular lines from $p_i$ to the directrix and denote the intersections of these lines with the directrix by $p_i'$. By Axiom~$2$ there are folds $l_i$ through $p_i$ that place $p$ onto the directrix. The points $p_i'$ are the reflections of $p$ around the folds. The figure shows the fold $l_1$ through $p_1$.
+$p_i$, $i=1,\ldots,5$, each point $p_i$ at a distance $a_i$ from both the focus and the directrix. Drop perpendicular lines from $p_i$ to the directrix and denote the intersections of these lines with the directrix by $p_i'$. By Axiom~$2$ there are folds $l_i$ through $p_i$ that place $p$ onto the directrix. The points $p_i'$ are the reflections of $p$ around the folds. The figure shows the fold $l_1$ through $p_1$ and the reflection $p_1'$.
 
 \begin{figure}[ht]
 \begin{center}
@@ -873,7 +857,7 @@ The folds of Axiom~$6$ are the tangents to the parabolas that are the loci of th
 In Fig.~\ref{f.tangent-proof}, the focus is $p$ and the directrix is $d$. $p'$ is a point on the directrix and $l$ is the fold that reflects $p$ onto $p'$. Let $s$ be the intersection of $\overline{pp'}$ and $l$. Then $\overline{ps}=\overline{p's}=a$ and $l\perp \overline{pp'}$ since $l$ is the perpendicular bisector of $\overline{pp'}$.
 
 Let $r$ be the intersection of the line perpendicular to $d$ through $p'$ and the fold $l$. Then $\triangle psr\cong \triangle p'sr$ by side-angle-side. It follows that 
-$\overline{pr}=\overline{p'r}=b$ so $r$ is a point on the parabola. Choose a point $p''$ on the directrix that is distinct from $p'$ and assume that the fold $l$ also reflects $p$ onto $p''$. Let $q$ be the intersection of the perpendicular to $d$ through $p''$ and the fold $l$. $\triangle psq\cong \triangle p'sq$ so $\overline{pq}=\overline{p'q}=c$. Denote $\overline{qp''}=e$. If $q$ is a point on the parabola, then $e=\overline{qp''}=\overline{qp}=c$, but $c$ is the hypotenuse of the right triangle $\triangle qp''p'$ and it is not possible that the hypotenuse is equal to one of the other sides of the right triangle. Therefore, the fold $l$ has only one intersection with the parabola so it must be a tangent.
+$\overline{pr}=\overline{p'r}=b$ so $r$ is a point on the parabola. Choose a point $p''$ on the directrix that is distinct from $p'$ and assume that the fold $l$ also reflects $p$ onto $p''$. Let $q$ be the intersection of the perpendicular to $d$ through $p''$ and the fold $l$. $\triangle psq\cong \triangle p'sq$ so $\overline{pq}=\overline{p'q}=c$. Denote $\overline{qp''}=e$. If $q$ is a point on the parabola then $e=\overline{qp''}=\overline{qp}=c$, but $c$ is the hypotenuse of the right triangle $\triangle qp''p'$ and it is not possible that the hypotenuse is equal to one of the other sides of the right triangle. Therefore the fold $l$ has only one intersection with the parabola and must be a tangent.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -892,7 +876,7 @@ The fold is the geometric locus of all points on the line perpendicular to $l_2$
 \smallskip
 
 \noindent\textbf{Derivation of the equation of the fold:}
-Let $p_1=(x_1,y_1)$, let $l_1$ be $y = m_1x + b_1$ and let $l_2$ be $y=m_2x+b_2$. Let $l_p$ be the line containing $\overline{p_1p_1'}$. Since $l\perp l_2,l_p\perp l$, it follows that $l_p\|l_2$ and the equation of $l_p$ is $y=m_2x+b_p$.
+Let $p_1=(x_1,y_1)$, let $l_1$ be $y = m_1x + b_1$ and let $l_2$ be $y=m_2x+b_2$. Let $l_p$ be the line containing $\overline{p_1p_1'}$. Since $l\perp l_2,l_p\perp l$, it follows that $l_p\parallel l_2$ and the equation of $l_p$ is $y=m_2x+b_p$.
 
 \begin{figure}[tbh]
 \begin{center}
@@ -948,7 +932,7 @@ The equation of the midpoint $p_m=(x_m,y_m)$ of $l_p$ is:
 \[
 (x_m,y_m)=\left(\frac{x_1+x_1'}{2},\frac{y_1+y_1'}{2}\right)\,.
 \]
-$l\perp l_2$ and it passes through $p_m$, so its equation is:
+$l\perp l_2$ and it passes through $p_m$ so its equation is:
 \[
 y=-\frac{1}{m_2}x+b_m,
 \]

@@ -12,7 +12,7 @@ The rest of the chapter contains a somewhat informal proof of the impossibility 
 
 It is impossible to trisect an arbitrary angle (divide the angle into three equal parts) using only a straightedge and compass. Trisection requires the construction of cube roots, but a straightedge and compass can only construct lengths that are expressions built from integers, the four arithmetic operators and square roots. This was proved by Pierre Wantzel\index{Wantzel, Pierre} in 1837. Nevertheless, innumerable amateurs continue to attempt to trisect an angle. Their constructions are approximations though they are convinced that the constructions are correct. Section~\ref{s.trisect-approx} presents two such constructions, develops formulas for the angles and shows the errors in the approximations.
 
-Greek mathematicians discovered that if other instruments are allowed, angles can be trisected. Section~\ref{s.neusis} explains a construction by Archimedes\index{Archimedes} using a simple instrument called a \emph{neusis}, and Sect~\ref{s.neusis-doubling} shows how to double a cube using the neusis. Section~\ref{s.q} presents a construction for trisection by Hippias\index{Hippias} using an instrument called a \emph{quadratrix}. The rest of the chapter contains a proof of the impossibility of trisecting an angle. Section~\ref{s.trisect-constructible} characterizes constructible numbers, Sect.~\ref{s.trisect-poly} relates constructible numbers to roots of polynomials, and Sect.~\ref{s.trisect-impossible} uses this theory to show that trisecting an angle and doubling a cube are impossible.
+Greek mathematicians discovered that if other instruments are allowed, angles can be trisected. Section~\ref{s.neusis} explains a construction by Archimedes\index{Archimedes} using a simple instrument called a \emph{neusis} and Sect~\ref{s.neusis-doubling} shows how to double a cube using the neusis. Section~\ref{s.q} presents a construction for trisection by Hippias\index{Hippias} using an instrument called a \emph{quadratrix}. The rest of the chapter contains a proof of the impossibility of trisecting an angle. Section~\ref{s.trisect-constructible} characterizes constructible numbers, Sect.~\ref{s.trisect-poly} relates constructible numbers to roots of polynomials and Sect.~\ref{s.trisect-impossible} uses this theory to show that trisecting an angle and doubling a cube are impossible.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -120,7 +120,7 @@ $T$ is the midpoint of $\overline{DC}$ so $\overline{DT}=\overline{TC}=a$. But $
 \[
 \overline{OE}=\frac{1}{2} + \frac{1}{2}\left(\cos \frac{\theta}{2}-\frac{1}{2}\right)\,.
 \]
-Compute the length $2a=\overline{CD}$ from Pythagoras's Theorem in $\triangle DCF$:
+Compute the length $2a=\overline{CD}$ using Pythagoras's Theorem in $\triangle DCF$:
 \begin{eqnarray*}
 (2a)^2 &=&  \left(\cos \frac{\theta}{2}-\frac{1}{2}\right)^2+\sin^2\frac{\theta}{2}\,.
 \end{eqnarray*}
@@ -144,10 +144,7 @@ This is an approximation to a trisection $\phi=\theta/3$. For $\theta=60^\circ$:
 \tan^{-1}0.366\approx 20.1^\circ\approx 20^\circ\,.
 \]
 
-\newpage
-
 Table~\ref{t.trisect-first} shows the errors for a range of acute angles. The error is relatively small for small angles, rising to $1\%$ at $85^\circ$.
-
 
 \begin{table}[t]
 \caption{Errors in the first approximate trisection}\label{t.trisect-first}
@@ -191,7 +188,8 @@ Let $\theta=\angle AOB$ be an arbitrary angle and without loss of generality ass
 \begin{tikzpicture}[scale=.75]
 \coordinate (O) at (0,0)
   node[left] {$O$}
-  node[above right,xshift=14pt,yshift=14pt] {\sm{\theta/2}};
+  node[above right,xshift=10pt,yshift=12pt] {\sm{\theta/2}};
+
 \coordinate (A) at (9cm,0);
 \node[right] at (A) {$A$};
 \coordinate (B) at (60:9);
@@ -219,14 +217,17 @@ Let $\theta=\angle AOB$ be an arbitrary angle and without loss of generality ass
 \node at (4.2,0.35) {$\phi$}; 
 \node at (4.1,1.1) {$\phi$}; 
 
-\draw[dashed] (O) --  node[fill=white,near start] {\sm{\theta/2}} node[fill=white,near end] {$1$} (E);
+\draw[dashed] (O) --
+  node[fill=white,inner sep=0pt,very near start,
+       xshift=7pt,yshift=1pt] {\sm{\theta/2}} 
+  node[fill=white,near end] {$1$} (E);
 
 \draw[<->] (3,-.8) -- node[fill=white] {$2/3$} +(6,0);
 \draw[<->] (0,-.8) -- node[fill=white] {$1/3$} +(3,0);
-
 \end{tikzpicture}
 \end{center}
-\caption{Second approximate trisection}\label{f.trisect-second-approx}
+\caption{Second approximate trisection}
+\label{f.trisect-second-approx}
 \end{figure}
 
 \begin{theorem}
@@ -244,6 +245,9 @@ By the Law of Cosines in $\triangle EOA$:
 \[
 \overline{AE} = 1^2+1^2-2\cdot 1\cdot 1\cdot \cos \phi=2(1-\cos \phi)\,.
 \]
+
+\newpage
+
 Equating the two expressions for $\overline{CD}=\overline{AE}$ and simplifying we get:
 \[
 \cos \phi = 1 - \frac{1}{9}(1-\cos(\theta/2))\,.
@@ -258,8 +262,6 @@ This is an approximation to a trisection $2\phi=\theta/3$. For $\theta=60^\circ$
 \[
 2\cos^{-1}\left(1 - \frac{1}{9}(1-\cos 30^\circ)\right)\approx 19.8^\circ\approx 20^\circ\,.
 \]
-
-\newpage
 
 Table~\ref{t.trisect-second-approx} shows the errors for a range of acute angles. This construction is much less accurate than the one in Sect.~\ref{sub.trisect-approx1}.
 
@@ -296,14 +298,16 @@ Table~\ref{t.trisect-second-approx} shows the errors for a range of acute angles
 \end{table}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
 
 \section{Trisection Using a Neusis}\label{s.neusis}\index{Trisection of an angle!neusis@with a neusis}
 \index{Neusis!trisection of an angle}
 
 The term \emph{straightedge} is used instead of \emph{ruler} because a straightedge has no marks on it. It can only be used to construct a straight line between two given points. Archimedes\index{Archimedes} showed that a \emph{neusis}, a straightedge with two marks that are a fixed distance apart, can be used to trisect an angle (Fig.~\ref{f.neusis}). We define the distance between the marks to be $1$.
 
-\begin{figure}[h]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=3.5]
 \draw (-1,1.05) rectangle +(3.2,.1);
@@ -315,9 +319,7 @@ The term \emph{straightedge} is used instead of \emph{ruler} because a straighte
 \caption{A neusis}\label{f.neusis}
 \end{figure}
 
-\newpage
-
-\begin{figure}[tbh]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=2.1]
 \coordinate (origin) at (0,0) node[below] {$B$} ;
@@ -348,7 +350,7 @@ Let $\alpha=\angle ABE$ be an arbitrary angle in a unit circle with center $B$, 
 \end{theorem}
 \begin{proof}
 Construct $\overline{BC}$ and denote the angles and line segments as shown in Fig.~\ref{f.trisect-neusis-2}.
-$\triangle ABC$ and $\triangle BCD$ are isoceles triangles: $\overline{AB} = \overline{BC}$ are radii of the same circle, and $\overline{BC} = \overline{CD}$ by construction using the neusis. Since the sum of the angles of a triangle is equal to $180^\circ$ and the sum of supplementary angles is also equal to $180^\circ$, we have:
+$\triangle ABC$ and $\triangle BCD$ are isoceles triangles: $\overline{AB} = \overline{BC}$ are radii of the same circle and $\overline{BC} = \overline{CD}$ by construction using the neusis. Since the sum of the angles of a triangle is equal to $180^\circ$ and the sum of supplementary angles is also equal to $180^\circ$, we have:
 \begin{eqnarray*}
 \epsilon &=& 180^\circ - 2\beta\\
 \gamma &=& 180^\circ - \epsilon = 2\beta\\
@@ -447,6 +449,9 @@ By Menelaus's theorem (Thm.~\ref{thm.menelaus}):
 \displaystyle\frac{\overline{PQ}}{\overline{QC}}\cdot
 \displaystyle\frac{\overline{CD}}{\overline{DA}}=1\,.
 \]
+
+\newpage
+
 Therefore:
 \begin{subeqnarray}
 \displaystyle\frac{1}{y}\cdot
@@ -473,10 +478,7 @@ x&=&\sqrt[3]{2}\,.
 
 Let $\overline{ABCD}$ be a square. Let $l_1$ be a line segment placed initially at $\overline{DC}$ and let $l_2$ be a line segment placed initially at $\overline{AD}$. Move $l_1$ move at a constant linear velocity until it reaches $\overline{AB}$ and rotate $l_2$ at a constant angular velocity clockwise on $A$ until it also reaches $\overline{AB}$. Assume that they reach $\overline{AB}$ together. For example, if $l_2$ rotates at $1^\circ$/second and the side of the square is $9$ centimeters, $l_1$ must move at $0.1$ cm/second. The trace of their point of intersection $P$ is called a \emph{quadratrix curve}\index{Quadratrix} or simply a \emph{quadratrix} (Fig.~\ref{f.trisect-quad-curve}). Its definition is attributed to the mathematician Hippias\index{Hippias}.
 
-A quadratrix can be constructed using a \emph{quadratrix compass}\index{Quadratrix compass} as shown in Fig.~\ref{f.trisect-quad-compass}. It consists of two (unmarked) straightedges that move as described above. A joint constrains them to move together and traces out the curve.
-
-A quadratrix can be used to trisect an angle.
-\begin{figure}[ht]
+\begin{figure}[b]
 \subfigures
 \leftfigure[c]{
 \begin{tikzpicture}[scale=.6,domain=.03:1.555,samples=100]
@@ -509,6 +511,9 @@ A quadratrix can be used to trisect an angle.
 \leftcaption{A quadratrix curve}\label{f.trisect-quad-curve}
 \rightcaption{A quadratrix compass}\label{f.trisect-quad-compass}
 \end{figure}
+
+A quadratrix can be constructed using a \emph{quadratrix compass}\index{Quadratrix!compass} as shown in Fig.~\ref{f.trisect-quad-compass}. It consists of two (unmarked) straightedges that move as described above. A joint constrains them to move together and traces out the curve.
+
 
 \begin{figure}[b]
 \begin{center}
@@ -553,7 +558,7 @@ A quadratrix can be used to trisect an angle.
 \caption{Trisection of an angle using a quadratrix}\label{f.trisect-quad-trisect}
 \end{figure}
 
-\newpage
+A quadratrix can be used to trisect an angle.
 
 \noindent\textbf{Construction:}
 Let $\angle CDP_1=\alpha$ be an arbitrary angle, where $P_1$ is the intersection of the line defining the angle $\alpha$ relative to $\overline{DC}$ and the quadratrix. Construct a line through $P_1$ parallel to $\overline{DC}$ and denote its intersection with $\overline{AD}$ by $E$. Denote the line segment $\overline{DE}$ by $t$ and trisect it (Sect.~\ref{s.trisect-constructible}) to obtain point $F$ that is $t/3$ from $\overline{DC}$. Let $P_2$ be the intersection of a line from $F$ parallel to $\overline{DC}$ and the quadratrix, and denote by $\theta$ the angle between $\overline{DC}$ and $\overline{DP_2}$ (Fig.~\ref{f.trisect-quad-trisect}).
@@ -562,28 +567,24 @@ Let $\angle CDP_1=\alpha$ be an arbitrary angle, where $P_1$ is the intersection
 $\theta = \alpha/3$.
 \end{theorem}
 \begin{proof}
-$E$ has $y$-coordinate $1-t$ so by construction $F$ has $y$-coordinate $1-(t/3)$. Since the constant linear velocity of the horizontal line is proportional to the constant angular velocity of the rotating line:
-\begin{eqnarray*}
-\frac{\theta}{\alpha} &=& \frac{t/3}{t}\\
-&&\\
-\theta &=& \alpha/3\,.
-\end{eqnarray*}
+$E$ has $y$-coordinate $1-t$ so by construction $F$ has $y$-coordinate $1-(t/3)$. Since the constant linear velocity of the horizontal line is proportional to the constant angular velocity of the rotating line $\theta/\alpha = (t/3)/t$ and $\theta = \alpha/3$.
 \end{proof}
 
-\vspace{-3ex}
+\newpage
 
 \section{Constructible Numbers}\label{s.trisect-constructible}
 \index{Constructible number}
 
-Assume that line segment $l$ defined to be of length $1$ is given.
+Let $l$ be a line segment defined to be of length $1$.
+
 \begin{definition}
 A number $a$ is \emph{constructible} if and only if a line segment of length $a$ can be constructed with a straightedge and compass starting from $l$.
 \end{definition}
-Suppose that $a$ is constructible. Since a line segment double the length of $a$ can be constructed, the number $2$ is constructible. A line segment of length $1$ can be constructed perpendicular to $l$ at one of its endpoints. The hypotenuse of the resulting triangle shows that the number $\sqrt{2}$ is constructible.
+
+Given line segment $l=\overline{AB}$, construct a line containing $\overline{AB}$ and use the compass to find a point $C$ on the line that is a distance of $1$ from $B$. Then $\overline{AC}$ is of length $2$ so the number $2$ is constructible. A line segment $\overline{BD}$ of length $1$ can be constructed perpendicular to $\overline{AB}$ at $B$. The hypotenuse of the triangle $\triangle ABD$ is of length $\sqrt{2}$ so the number $\sqrt{2}$ is constructible.
 
 \begin{theorem}\label{thm.trisect-constructible}
-A number is \emph{constructible} if and only if it is the value of an expression built from the integers, the four arithmetic operations and the operation of taking a square root
-$\{+,-,\times,/,\surd\}$.
+A number is \emph{constructible} if and only if it is the value of an expression built from the integers, the four arithmetic operations $\{+,-,\times,/\}$ and the operation of taking a square root $\surd$.
 \end{theorem}
 
 \begin{proof} First we show that the values of these expressions are constructible.
@@ -624,7 +625,7 @@ $\{+,-,\times,/,\surd\}$.
 \end{figure}
 
 \noindent\textbf{Addition and subtraction:}
-Given line segments $\overline{PQ}=a$ and $\overline{RS}=b$, construct a circle centered at $Q$ with radius $b$ (Fig.~\ref{f.trisect-add-subtract}). Then $\overline{PTQU}$ is a line segment, where $\overline{PT}=a-b$ and $\overline{PU}=a+b$.
+Given line segments $\overline{PQ}=a$ and $\overline{RS}=b$, construct a circle centered at $Q$ with radius $b$ (Fig.~\ref{f.trisect-add-subtract}). Extend $\overline{PQ}$ until it intersects the circle at $U$. Then $\overline{PTQU}$ is a line segment, where $\overline{PT}=a-b$ and $\overline{PU}=a+b$.
 
 \newpage
 
@@ -723,7 +724,9 @@ Given a line segment $\overline{BC}=a$, construct $\overline{AB} =1+a$ and a sem
 \label{f.trisect-square-root}
 \end{figure}
 
-To prove the converse of the theorem, we ask what expressions can be constructed by a straightedge and compass. There are three constructions, which we illustrate for specific values rather than working with the most general equations.
+\medskip
+
+To prove the converse of the theorem, we need to determine what expressions can be constructed by a straightedge and compass. There are three constructions:\footnote{For clarity these are illustrated for specific values rather than the most general equations.}
 
 \begin{enumerate}
 \item Two lines intersect in a point (Fig.~\ref{f.constructible-two-lines}). The coordinates of the intersection can be derived from the equations of the two lines
@@ -782,7 +785,7 @@ $P=(\sqrt{2}, \sqrt{2})$ and $Q=(-\sqrt{2}, -\sqrt{2})$.
 \end{figure}
 
 
-\begin{figure}[t]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.66]
 \coordinate (O) at (0,0);
@@ -807,9 +810,10 @@ $P=(\sqrt{2}, \sqrt{2})$ and $Q=(-\sqrt{2}, -\sqrt{2})$.
 \end{center}
 \end{figure}
 
-To show that a number is not constructible, we need to prove that it cannot be expressed using just integers and the operations $\{+,-,\times,/,\surd\}$.
+\newpage
 
 \section{Constructible Numbers As Roots of Polynomials}\label{s.trisect-poly}
+To show that a number is not constructible, we need to prove that it cannot be expressed using just integers and the operations $\{+,-,\times,/,\surd\}$.
 
 We will show that constructible numbers are the roots of a certain class of polynomials and then prove that trisecting an angle and doubling a cube require the construction of roots of polynomials that are not in this class. Today these results are proved using field theory from abstract algebra, but here I give a proof that uses elementary mathematics. The proof is based on the following definition.
 
@@ -818,37 +822,26 @@ The \emph{depth} of an expression built from the integers and the operators $\{+
 \end{definition}\index{Constructible number!depth of square roots}
 
 \begin{example}
-Chapter~\ref{c.heptadecagon} derives the following expression for a constructible number:
-\begin{displaymath}
-\begin{array}{l}
--\displaystyle\frac{1}{16}+\frac{1}{16}\sqrt{17} + 
-     \frac{1}{16}\sqrt{34-2\sqrt{17}}
-   \: + \\
-   \\
-    \quad \quad \quad \displaystyle\frac{1}{8}\sqrt{
-     17+3\sqrt{17} - 
-     \sqrt{34-2\sqrt{17}}
-   -2
-     \sqrt{34+2\sqrt{17}}
-   }\,.
-\end{array}
-\end{displaymath}
-The depth is $3$ because at the right of the expression we have $\sqrt{17}$ which is nested within $\sqrt{34+2\sqrt{17}}$, which in turn is nested within $\frac{1}{8}\sqrt{\textit{long expression}}$.
+Consider the following expression:
+\[
+\sqrt{17+3\sqrt{17} - \sqrt{34-2\sqrt{17}}
+  -2\sqrt{34+2\sqrt{17}} }\,.
+\]
+The depth is $3$ because at the right of the expression we have $\sqrt{17}$ which is nested within $\sqrt{34+2\sqrt{17}}$, which in turn is nested within $\sqrt{17+\cdots-\cdots-2\sqrt{34+2\sqrt{17}}}$.
 \end{example}
 
 \begin{theorem}
-A number of depth $n$ can be expressed as $a+b\sqrt{c}$ where $a,b,c$ are numbers of depth at most $n-1$.
+A expression of depth $n$ can be expressed as $a+b\sqrt{c}$ where $a,b,c$ are expressions of depth at most $n-1$.
 \end{theorem}
 \begin{proof}
-Simple computations show that the numbers $(a_1+b_1\sqrt{c})\,\mathit{op}\,(a_2+b_2\sqrt{c})$ for the operators $\mathit{op}=\{+,-,\times\}$ result in numbers $a+b\sqrt{c}$ of depth $n-1$. For division the computation is a bit more complicated:
+Simple computations show that the expressions $(a_1+b_1\sqrt{c})\,\mathit{op}\,(a_2+b_2\sqrt{c})$ for the operators $\mathit{op}=\{+,-,\times\}$ result in expressions $a+b\sqrt{c}$ of depth $n-1$. For division the computation is a bit more complicated:
 \begin{eqnarray*}
 \frac{a_1+b_1\sqrt{c}}{a_2+b_2\sqrt{c}}&=&
 \frac{(a_1+b_1\sqrt{c})(a_2-b_2\sqrt{c_2})}{(a_2+b_2\sqrt{c})(a_2-b_2\sqrt{c})}\\
-%&=&\frac{(a_1+b_1\sqrt{c})(a_2-b_2\sqrt{c})}{a_2^2-b_2^2c}\\
 &=&\frac{a_1a_2-b_1b_2c}{a_2^2-b_2^2c}+\frac{a_2b_1-a_1b_2}{a_2^2-b_2^2c}\sqrt{c}\,,
 \end{eqnarray*}
 which is of the form $a+b\sqrt{c}$ and of depth $n-1$.
-Finally, the square root of a number of depth $n-1$ is a number of depth $n$.
+Finally, the square root of an expression of depth $n-1$ is an expression of depth $n$.
 \end{proof}
 
 
@@ -874,7 +867,7 @@ and let $r=a+b\sqrt{c}$ be a root of $p(x)$ \emph{of minimal depth} $n$, where $
 d+e\sqrt{c}&=&0\,.
 \end{array}
 \]
-where $d,e$ are numbers of depth $n-1$ formed from the rational coefficients and $a,b,c$. Then $\sqrt{c}=-d/e$, so $a+b\sqrt{c}$ can be expressed as an expression of depth $n-1$, contracting the assumption that $a+b\sqrt{c}$ is of minimal depth $n$. Since $\sqrt{c}\neq 0$ and is of depth $n$, for $d+e\sqrt{c}$ to be zero it must be that $d=e=0$.
+where $d,e$ are expressions of depth $n-1$ formed from the rational coefficients and $a,b,c$. Then $\sqrt{c}=-d/e$, so $a+b\sqrt{c}$ can be expressed as an expression of depth $n-1$, contracting the assumption that $a+b\sqrt{c}$ is of minimal depth $n$. Since $\sqrt{c}\neq 0$ and is of depth $n$, for $d+e\sqrt{c}$ to be zero it must be that $d=e=0$.
 
 Consider now $r'=a-b\sqrt{c}$. By examining the above computation we see that $p(r')=d-e\sqrt{c}=0+0\cdot\sqrt{c}=0$, so $r'$ is also a root of $p$.
 
@@ -883,7 +876,7 @@ If $r= r'$ then $0=r-r'=2b\sqrt{c}$, which is true only if $b=0$ so $r,r'$ would
 
 \begin{theorem}
 If a monic\index{Monic polynomial} cubic polynomial with rational coefficients:
-\[p(x)=x^3+a_2x^2+a_1x+a_0\] has no rational roots, then none of its roots is constructible.
+\[p(x)=x^3+a_2x^2+a_1x+a_0\] has no rational roots then none of its roots is constructible.
 \end{theorem}
 
 \begin{proof} By the Fundamental Theorem of Algebra\index{Fundamental theorem of algebra}  (Thm.~\ref{thm.fundamental}) $p(x)$ has three roots $r_1,r_2,r_3$. Let $r_1=a+b\sqrt{c}$ be a root of minimal depth $n$. By the assumption that there are no rational roots, $n\geq 1$, and therefore $b\neq 0$ and $c\neq 0$. By Thm.~\ref{thm.trisect.conjugate}, $r_2=a-b\sqrt{c}$ is also a root. Perform the following multiplication:
@@ -905,7 +898,7 @@ contradicting the assumption.
 $\sqrt[3]{2}$ is irrational.
 \end{theorem}
 \begin{proof}
-Assume that $\sqrt[3]{2}$ is rational and equal to $p/q$, where $p,q$ are integers with no common factors (other than $\pm 1$). Then:
+Assume that $\sqrt[3]{2}$ is rational and equal to $p/q$ where $p,q$ are integers with no common factors other than $\pm 1$. Then:
 \begin{eqnarray*}
 (p/q)^3&=&(\sqrt[3]{2})^3\\
 p^3&=&2q^3\,,
@@ -915,7 +908,7 @@ so $p$ must be divisible by $2$, say $p=2r$. Now:
 8r^3&=&2q^3\\
 q^3&=&4r^3\,,
 \end{eqnarray*}
-so $q$ is divisible by $2$. This contradicts the assumption that $p,q$ have no common factor.
+so $q$ is divisible by $2$, contradicting the assumption that $p,q$ have no common factor.
 \end{proof}
 
 \begin{theorem}
@@ -943,7 +936,7 @@ Denote $x=\cos 20^\circ$ and $2x$ by $y$. Since $\cos 60^\circ=1/2$ we have:
 y^3-3y-1&=&0\,.
 \end{eqnarray*}
 
-To prove that the polynomial $y^3-3y-1$ has no rational roots suppose that $y=a/b$ is a rational root with $a,b$ having no common factor (aside from $\pm 1$). Then:
+To prove that the polynomial $y^3-3y-1$ has no rational roots suppose that $y=a/b$ is a rational root with $a,b$ having no common factor other than $\pm 1$. Then:
 \begin{subeqnarray}
 (a/b)^3-3(a/b)-1&=&0\\
 a^3-3ab^2&=&b^3\\
@@ -970,7 +963,9 @@ To show the impossibility of trisecting an angle we need to show that $y^3-3y-1$
 
 \subsection*{What Is the Surprise?}
 
-Underwood Dudley has made an extensive study of what he calls ``cranks'' who waste years of their lives trying to trisect angles with a straightedge and compass. Not only do they delude themselves into thinking that this is possible, but even worse, they think that a solution would be important. Of course, a solution would have no practical use, since tools such as the neusis and quadratrix can solve the problem exactly. The sheer amount of such constructions is surprising, especially since many of them are clever and achieve good approximations. Computing the formulas associated with the constructions is an excellent exercise in trigonometry. It is also surprising that proofs of the impossibility of this geometric construction are purely algebraic.
+Underwood Dudley has made an extensive study of what he calls ``cranks'' who waste years of their lives trying to trisect angles with a straightedge and compass. Not only do they delude themselves into thinking that this is possible, but, even worse, they think that a solution would be important. Of course, a solution would have no practical use, since tools such as the neusis and quadratrix can solve the problem exactly. The sheer number of such constructions is surprising, especially since many of them are clever and achieve good approximations. Computing the formulas associated with the constructions is an excellent exercise in trigonometry.
+
+It is also surprising that proofs of the impossibility of these geometric constructions are purely algebraic using properties of roots of polynomials.
 
 \subsection*{Sources}
 

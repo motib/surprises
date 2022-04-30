@@ -45,13 +45,13 @@ Section~\ref{s.langford-covering} restates Langford's problem using a mathematic
 
 \section{Langford's Problem as a Covering Problem}\label{s.langford-covering}
 \index{Langford's problem!covering@as a covering problem}
-Langford's problem can be posed using an array. For $L(3)$ there are six columns, one for each position at which the six numbers can be placed. The rows are defined by the definition of the problem: the two occurrences of $k$ must have $k$ numbers between them. It is easy to see that there are four possible placements of $1$'s, three of $2$'s and two of $3$'s:
+Langford's problem can be posed using an array. For $L(3)$ there are six columns, one for each position at which the six numbers can be placed. There is one row for each possible placement of one of the numbers, that is, the two occurrences of $k$ must have $k$ numbers between them. There are four possible placements of $1$'s, three of $2$'s and two of $3$'s:
 
 \begin{center}
-\addtolength{\tabcolsep}{1mm}
-\begin{tabular}{|c|c|c|c|c|c|c|}
+\addtolength{\tabcolsep}{4pt}
+\begin{tabular}{|c||c|c|c|c|c|c|}
 \hline
-Row&1&2&3&4&5&6\\\hline\hline
+&1&2&3&4&5&6\\\hline\hline
 1&1&&1&&&\\\hline
 2&&1&&1&&\\\hline
 3&&&1&&1&\\\hline
@@ -63,7 +63,7 @@ Row&1&2&3&4&5&6\\\hline\hline
 9&&3&&&&3\\\hline
 \end{tabular}
 \end{center}
-To solve the problem, we need to select one row for the $1$'s in the sequence, one row for the $2$'s and one row for the $3$'s, such that if we stack these rows on top of each other, no column contains more than one number.
+To solve the problem we need to select one row for the $1$'s in the sequence, one row for the $2$'s and one row for the $3$'s, such that if we stack these rows on top of each other, no column contains more than one number.
 
 Row 9 needed not be considered because of symmetry: starting with row 9 just gives the reversal of the  sequence obtained by starting with row 8.
 
@@ -73,17 +73,18 @@ Row 8 is the only one containing $3$'s so it must be chosen and the sequence is 
 Row 7 is the only remaining row containing $2$'s so it must be chosen and the sequence is 3\textvisiblespace 2\textvisiblespace 3{}2. Deleting rows that can no longer be used gives:
 \[\not\! 1,2,\not\! 3,\not\! 4,\not\! 5, \not\! 6, 7, 8\,.\]
 
-Choosing the only remaining row, row 2, gives the solution 3{}1{}2{}1{}3{}2. Furthermore, the analysis has shown that this is the only solution, except for the symmetrical solution obtained by starting with row 9.
+Choosing the only remaining row, row 2, gives the solution 3{}1{}2{}1{}3{}2:
 \begin{center}
-\addtolength{\tabcolsep}{1mm}
+\addtolength{\tabcolsep}{4pt}
 \begin{tabular}{|c||c|c|c|c|c|c|}
 \hline
-Row&1&2&3&4&5&6\\\hline\hline
+&1&2&3&4&5&6\\\hline\hline
 2&&1&&1&&\\\hline
 7&&&2&&&2\\\hline
 8&3&&&&3&\\\hline
 \end{tabular}
 \end{center}
+The analysis has shown that this is the only solution, except for the symmetrical solution obtained by starting with row 9.
 
 \section{For Which Values of $N$ Is Langford's Problem Solvable?}\label{s.langford-theorem}
 
@@ -95,13 +96,13 @@ We prove the forward direction of the theorem. Proof~1 shows that if $L(n)$ has 
 
 \begin{proof}[1] If the first occurrence of the number $k$ is at position $i_k$, the second occurrence is at position $i_k+k+1$. For example, in 3{}1{}2{}1{}3{}2, the solution for $L(3)$,  choosing $k=2$ gives $i_k=3$ and $i_k+k+1=3+2+1=6$.
 
-The sum of the positions of all the numbers is:
+$S_n$, the sum of the positions of all the numbers, is:
 \begin{eqnarray*}
 S_n&=&\sum_{k=1}^{n}i_k+\sum_{k=1}^{n}(i_k+k+1)\\
 & =& 2\sum_{k=1}^{n}i_k+\sum_{k=1}^{n}(k+1)\\
 &=& 2\sum_{k=1}^{n}i_k+\frac{n(n+3)}{2}\,.
 \end{eqnarray*}
-But $S_n$, the sum of the positions, is simply $1+2+3+\cdots+2n$, so:
+But $S_n$ is simply $1+2+3+\cdots+2n$, so:
 \[
 S_n=\sum_{k=1}^{2n}k = \frac{2n(2n+1)}{2}\,.
 \]
@@ -123,7 +124,7 @@ When is $3n-1$ divisible by $4$? Any integer $n$ can be expressed as $n=4i+j$ fo
 
 To introduce the idea of the second proof consider what a solution for $n=4$ might look like. In the following tables the positions of the occurrences of 4 are 1 and 6, and the positions of the occurrences of 2 are 5 and 8. In both cases, one position is odd and the other is even. 
 \[
-\addtolength{\arraycolsep}{1mm}
+\addtolength{\arraycolsep}{4pt}
 \begin{array}{|c|c|c|c|c|c|c|c|}
 \hline
 1&2&3&4&5&6&7&8\\
@@ -150,7 +151,7 @@ which is an odd number. For the sum of two numbers to be odd, one must be odd an
 
 Let us now check the positions of the occurrences of odd numbers. The positions of the occurrences of 1 are 2 and 4, both even numbers, and the positions of the occurrences of 3 are 3 and 7, both odd numbers.
 \[
-\addtolength{\arraycolsep}{1mm}
+\addtolength{\arraycolsep}{4pt}
 \begin{array}{|c|c|c|c|c|c|c|c|}
 \hline
 1&2&3&4&5&6&7&8\\
@@ -177,7 +178,7 @@ The positions $1,2,\ldots,2n-1,2n$ contain an equal number of even and odd posit
 
 When two occurrences of an even number are placed, they cover one even position and one odd position, so the parity remains the same:
 \[
-\addtolength{\arraycolsep}{1mm}
+\addtolength{\arraycolsep}{4pt}
 \begin{array}{|c|c|c|c|c|c|c|c|}
 \hline
 1&2&3&4&5&6&7&8\\
@@ -196,7 +197,7 @@ When two occurrences of an even number are placed, they cover one even position 
 \]
 When two occurrences of an odd number are placed, the parity becomes $+2$ or $-2$, so we must be able to associate this pair with a pair of occurrences of \emph{another} odd number that are placed at positions that balance out the parity:
 \[
-\addtolength{\arraycolsep}{1mm}
+\addtolength{\arraycolsep}{4pt}
 \begin{array}{|c|c|c|c|c|c|c|c|}
 \hline
 1&2&3&4&5&6&7&8\\
@@ -218,7 +219,7 @@ The theorem claims that if this is true then either $n=4k$ or $n=4k-1$, and if n
 
 \begin{proof}[2] 
 The proof is by induction.
-For the base case:
+There are four base cases:
 \begin{itemize}
 \item $n=4k-3=1$. In $\{1\}$ there is an odd number of odd numbers and there is no solution.
 \item $n=4k-2=2$. In $\{1,2\}$ there is an odd number of odd numbers and there is no solution.
@@ -226,13 +227,13 @@ For the base case:
 \item $n=4k-0$. In $\{1,2,3,4\}$ there is an even number of odd numbers and Sect.~\ref{s.langford-four} gives a solution.
 \end{itemize}
 
-The inductive hypothesis is that the theorem is true for $\{1,\ldots,4k-j\}$, $k\ge 1$, $0\leq j\leq 3$ and we will prove that it is true for $n=4(k+1)-j$.
+The inductive hypothesis is that the theorem is true for $\{1,\ldots,4k-j\}$, $k\ge 1$, $0\leq j\leq 3$, and we will prove that it is true for $n=4(k+1)-j$.
 
 \begin{itemize}
-\item Let us add $4k+1=4(k+1)-3$ to $\{1,\ldots,4k\}$. By the inductive hypothesis for $4k=4k-0$ there is an even number of odd numbers. $4(k+1)-3$ is odd so there is now an odd number of odd numbers and there is no solution.
-\item Let us add $4k+2=4(k+1)-2$ to $\{1,\ldots,4k+1\}$. By the inductive hypothesis for $4k+1=4(k+1)-3$ there is an odd number of odd numbers. $4(k+1)-2$ is even so there is still an odd number of odd numbers and there is no solution.
-\item Let us add $4k+3=4(k+1)-1$ to $\{1,\ldots,4k+2\}$. By the inductive hypothesis for $4k+2=4(k+1)-2$ there is an odd number of odd numbers. $4(k+1)-1$ is odd so there is an even number of odd numbers and a solution likely exists.
-\item Let us add $4k+4=4(k+1)-0$ to $\{1,2,\ldots,4k+3\}$. By the inductive hypothesis for $4k+3=4(k+1)-1$ there is an even number of odd numbers. $4(k+1)-0$ is even so there is an even number of odd numbers and a solution likely exists.
+\item Add $4k+1=4(k+1)-3$ to $\{1,\ldots,4k\}$. By the inductive hypothesis for $4k=4k-0$ there is an even number of odd numbers. $4(k+1)-3$ is odd so there is now an odd number of odd numbers and there is no solution.
+\item Add $4k+2=4(k+1)-2$ to $\{1,\ldots,4k+1\}$. By the inductive hypothesis for $4k+1=4(k+1)-3$ there is an odd number of odd numbers. $4(k+1)-2$ is even so there is still an odd number of odd numbers and there is no solution.
+\item Add $4k+3=4(k+1)-1$ to $\{1,\ldots,4k+2\}$. By the inductive hypothesis for $4k+2=4(k+1)-2$ there is an odd number of odd numbers. $4(k+1)-1$ is odd so there is an even number of odd numbers and a solution likely exists.
+\item Add $4k+4=4(k+1)-0$ to $\{1,2,\ldots,4k+3\}$. By the inductive hypothesis for $4k+3=4(k+1)-1$ there is an even number of odd numbers. $4(k+1)-0$ is even so there is an even number of odd numbers and a solution likely exists.
 \end{itemize}
 \end{proof}
 
@@ -245,10 +246,10 @@ The inductive hypothesis is that the theorem is true for $\{1,\ldots,4k-j\}$, $k
 \index{Langford's problem!solution of $L(4)$}
 Here is the array for $L(4)$. Try to find the solution yourself.
 \begin{center}
-\addtolength{\tabcolsep}{1mm}
+\addtolength{\tabcolsep}{4pt}
 \begin{tabular}{|c||c|c|c|c|c|c|c|c|}
 \hline
-Row&1&2&3&4&5&6&7&8\\\hline\hline
+&1&2&3&4&5&6&7&8\\\hline\hline
 1&1&&1&&&&&\\\hline
 2&&1&&1&&&&\\\hline
 3&&&1&&1&&&\\\hline
@@ -287,7 +288,7 @@ $\not\! 1,2,\not\! 3,\not\! 4,\not\! 5,\not\! 6,\not\! 7,8,\not\! 9,\not\!\! 10,
 
 $\not\! 1,\not\! 2,\not\! 3,\not\! 4,\not\! 5,\not\! 6,\not\! 7,8,\not\! 9,\not\!\! 10,\not\!\! 11,\not\!\! 12,\not\!\! 13,14, \not\!\! 15,16,\not\!\! 17$
 
-\noindent All of the choices for 1's have been eliminated, so we must backtrack.
+\noindent All of the choices for 1's have been eliminated so we must backtrack.
 
 \smallskip
 
@@ -300,7 +301,7 @@ $\not\! 1,2,\not\! 3,\not\! 4,\not\! 5,\not\! 6,\not\! 7,\not\! 8,\not\! 9,\not\
 
 \smallskip
 
-\noindent Let us continue backtracking to see if there is another solution.
+\noindent Continue backtracking to see if there is another solution.
 
 \smallskip
 
@@ -335,7 +336,7 @@ $1,\not\! 2,\not\! 3,\not\! 4,\not\! 5,\not\! 6,\not\! 7,\not\! 8,9,\not\!\! 10,
 
 \smallskip
 
-\noindent Instead of row 15 choose row12 and the sequence is 3{}4\textvisiblespace \textvisiblespace 3\textvisiblespace 4.
+\noindent Instead of row 15 choose row 12 and the sequence is 3{}4\textvisiblespace \textvisiblespace 3\textvisiblespace 4.
 
 $\not\! 1,\not\! 2,\not\! 3,\not\! 4,\not\! 5,\not\! 6,\not\! 7,\not\! 8,9,\not\!\! 10,\not\!\! 11,12,\not\!\! 13,\not\!\! 14,\not\!\! 15,\not\!\! 16,17$
 

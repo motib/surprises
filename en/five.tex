@@ -10,9 +10,9 @@ In 1879 Alfred B. Kempe published a proof of the four-color theorem, but in 1890
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Maps use colors to distinguish one region from another by ensuring that adjacent regions are colored with different colors. In 1852 Francis Guthrie\index{Guthrie, Francis} noticed that a map of the counties of England could be colored using only four countries. The claim that four countries suffice to color any planar map is called the \emph{four-color theorem} and was only proved in 1976 by Kenneth Appel\index{Appel, Kenneth} and Wolfgang Haken\index{Haken, Wolfgang}. They used sophisticated mathematical arguments to show that if there is a counterexample (a map needing more than four colors) it had to be associated with one of $1834$ configurations. They then used a computer to check these configurations.
+Maps use colors to distinguish one region from another by ensuring that adjacent regions are colored with different colors. In 1852 Francis Guthrie\index{Guthrie, Francis} noticed that a map of the counties of England could be colored using only four countries. The claim that four countries suffice to color any planar map is called the \emph{four-color theorem} and was only proved in 1976 by Kenneth Appel\index{Appel, Kenneth} and Wolfgang Haken\index{Haken, Wolfgang}. They used sophisticated mathematical arguments to show that if there is a counterexample (a map needing more than four colors), it had to be associated with one of $1834$ configurations. They then used a computer to check these configurations.
 
-While the four-color theorem is extremely difficult to prove, the proofs of five- and six-color theorems stating that five or six colors are sufficient are relatively simple (Sects.~\ref{s.six-color}, ~\ref{s.five-color}). On the way to proving these theorems, we define planar maps and graphs (Sect.~\ref{s.planar}), prove Euler's formula (Sect.~\ref{s.euler}) and show that a planar graph must have vertex whose degree is less than or equal to five. In Sect.~\ref{s.nonplanar} Euler's formula is used to show that two graphs are not planar.
+While the four-color theorem is extremely difficult to prove, the proofs of the five- and six-color theorems are relatively simple (Sects.~\ref{s.six-color}, ~\ref{s.five-color}). On the way to proving these theorems, we define planar maps and graphs (Sect.~\ref{s.planar}), prove Euler's formula (Sect.~\ref{s.euler}) and show that a planar graph must have vertex whose degree is less than or equal to five. In Sect.~\ref{s.nonplanar} Euler's formula is used to show that two graphs are not planar.
 
 In 1879 Alfred B. Kempe\index{Kempe, Alfred B.} published a proof of the four-color theorem, but in 1890 Percy J. Heawood\index{Heawood, Percy J.} showed that the proof is incorrect. In Sect.~\ref{s.kempe} we present Kempe's flawed proof and Heawood's demonstration that it is not correct.
 
@@ -111,7 +111,7 @@ A \emph{coloring} of a planar graph is an assignment of colors to vertices such 
 Planar maps and planar graphs are dual and it is convenient to investigate coloring problems in graphs rather than maps.
 
 \begin{theorem}
-Given a planar map, a planar graph can be constructed such for each coloring of the regions of the map, there is a coloring of the vertices of the graph, and conversely.
+Given a planar map, a planar graph can be constructed such that for each coloring of the regions of the map there is a coloring of the vertices of the graph, and conversely.
 \end{theorem}
 
 \begin{proof}
@@ -165,7 +165,7 @@ Figure~\ref{f.five-planar-graph-map} shows the planar map from Fig.~\ref{f.five-
     1/1/E,-1/1/F,-1/-1/G,1/-1/H,
     0/2.5/A,2.5/0/B,0/-2.5/C,-2.5/0/D,
     } {
-  \fill (\x,\y) coordinate(\name) circle(5pt);
+  \fill (\x,\y) coordinate(\name) circle(4pt);
 }
 \end{tikzpicture}
 }
@@ -206,7 +206,7 @@ Figure~\ref{f.five-planar-graph-map} shows the planar map from Fig.~\ref{f.five-
     green/0cm/-2.5cm,
     red/-2.5cm/0cm
     }
- \fill[\cl] (\x,\y) circle (5pt);
+ \fill[\cl] (\x,\y) circle (4pt);
 \end{tikzpicture}
 }
 \leftcaption{Associating vertices with the regions of a planar map}\label{f.five-planar-graph-map}
@@ -266,12 +266,10 @@ Fig.~\ref{f.five-triangular-graph} (left) shows that a square can be two-colored
 \end{theorem}\index{Euler's formula}
 
 \begin{proof}
-By induction on the number of edges. If the number of edges in the connected planar graph is zero, there is only a single vertex and a single face, so $1-0+1=2$.
-
-Otherwise, there is at least one edge $e$ and it connects two vertices $v_1,v_2$. Delete edge $e$.
+By induction on the number of edges. If the number of edges in the graph is zero, there is only a single vertex and a single face, so $1-0+1=2$. Otherwise, there is at least one edge $e$ and it connects two vertices $v_1,v_2$. Delete edge $e$.
 
 \textit{Case 1:}
-The graph becomes disconnected (Fig.~\ref{f.five-disconnected-removing}). Merge $v_1$ with $v_2$ (Fig.~\ref{f.five-disconnected-merge}). The resulting graph $G'$ is a planar connected graph and has fewer edges than $G$, so by the induction hypothesis, $(V-1)-(E-1)+F=2$ since the number of vertices is also reduced by one. Simplifying, we get $V-E+F=2$ for $G$.
+The graph becomes disconnected (Fig.~\ref{f.five-disconnected-removing}). Merge $v_1$ with $v_2$ (Fig.~\ref{f.five-disconnected-merge}). The resulting graph $G'$ is a planar connected graph and has fewer edges than $G$, so by the induction hypothesis $(V-1)-(E-1)+F=2$ since the number of vertices is also reduced by one. Simplifying, we get $V-E+F=2$ for $G$.
 \begin{figure}[ht]
 \subfigures
 \leftfigure[c]{
@@ -290,7 +288,7 @@ The graph becomes disconnected (Fig.~\ref{f.five-disconnected-removing}). Merge 
 \end{figure}
 
 \textit{Case 2:}
-The graph remains connected (Fig.~\ref{f.five-connected-remains}). $G'$ has fewer edges than $G$ (Fig.~\ref{f.five-connected-fewer}), so by the induction hypothesis, $V-(E-1)+(F-1)=2$ since removing the edge joins two faces into one. Simplifying, we get $V-E+F=2$ for $G$.
+The graph remains connected (Fig.~\ref{f.five-connected-remains}). $G'$ has fewer edges than $G$ (Fig.~\ref{f.five-connected-fewer}), so by the induction hypothesis $V-(E-1)+(F-1)=2$ since removing the edge joins two faces into one. Simplifying, we get $V-E+F=2$ for $G$.
 \end{proof}
 
 \begin{figure}[ht]
@@ -339,7 +337,7 @@ Triangulate $G$ to obtain $G'$. $E'= 3V'-6$ by Thm.~\ref{thm.count}. Now remove 
 \end{proof}
 
 \begin{example}
-The graph in Fig.~\ref{f.five-fewer} has $8$ edges and $6$ vertices, and $8< 3\cdot 6 - 6= 12$.
+The graph in Fig.~\ref{f.five-fewer} has $8$ edges and $6$ vertices and $8< 3\cdot 6 - 6= 12$.
 Figure~\ref{f.five-upper-limit} shows a triangulated graph with $6$ vertices and $3\cdot 6 - 6= 12$ edges.
 \end{example}
 
@@ -470,7 +468,7 @@ $d(v)$, the \emph{degree} of vertex $v$, is the number of edges incident with $v
 \end{definition}\index{Degree of a vertex}
 
 \begin{example}
-The graph in Fig.~\ref{f.five-planar-graph-graph} contains $8$ vertices corresponding to the two rings, each of degree $5$. The vertex corresponding to the outer face is of degree $4$ as is the vertex corresponding to the inner face. Therefore:
+The graph in Fig.~\ref{f.five-planar-graph-graph} contains $8$ vertices corresponding to the two rings and each vertex is of degree $5$. The vertex corresponding to the outer face is of degree $4$ as is the vertex corresponding to the inner face. Therefore:
 \[
 \sum_{v\in V} d(v) = 5\cdot 8 + 4\cdot 2=48\,.
 \]
@@ -481,14 +479,14 @@ To get the total number of edges divide $48$ by $2$ because  each edge was count
 
 By generalizing the argument we get:
 \begin{theorem}\label{thm.degrees}
-Let $d_i$ for $i=1,2,3,\ldots,k$, be the number of vertices of degree $i$ in a connected planar graph $G$ with $V$ vertices and $E$ edges, where $k$ is the highest degree of a vertex in $V$. Then:
+Let $d_i$ for $i$ in $\{1,2,3,\ldots,k\}$ be the number of vertices of degree $i$ in a connected planar graph $G$ with $V$ vertices and $E$ edges, where $k$ is the highest degree of a vertex in $V$. Then:
 \[
 \sum_{v\in V} d(v) =\sum_{i=1}^{k} i\cdot d_i=2E\,.
 \]
 \end{theorem}
 
 \begin{theorem}\label{thm.degree5}
-Let $G$ be a connected planar graph with $E$ edges and $V$ vertices, and let $d_i$ for $i=1,\ldots,k$, be the number of vertices of degree $i$, where $k$ is the highest degree of a vertex in $V$. Then there must be a vertex $v$ in $V$ such that $d(v) \leq 5$.
+Let $G$ be a connected planar graph with $E$ edges and $V$ vertices, and let $d_i$ for $i$ in $\{1,2,3,\ldots,k\}$ be the number of vertices of degree $i$, where $k$ is the highest degree of a vertex in $V$. Then there must be a vertex $v$ in $V$ such that $d(v) \leq 5$.
 \end{theorem}
 
 \begin{proof}[1]
@@ -506,7 +504,7 @@ Since $12>0$ and all $d_i$ are positive, for least one $i$, $6-i>0$ and for that
 \end{proof}
 
 \begin{proof}[2]
-Let us compute the \emph{average} degree of the vertices, which is the sum of the degrees divided by the number of vertices:
+Let us compute the \emph{average} degree of the vertices which is the sum of the degrees divided by the number of vertices:
 \[
 d_{\textit{\footnotesize avg}}=\frac{\sum_{i=1}^{k} i\cdot d_i}{V}\,.
 \]
@@ -518,7 +516,7 @@ If the average is less than six there must be a vertex of degree less than six.
 \end{proof}
 
 \begin{example}
-In Fig.~\ref{f.five-planar-graph-graph}, the sum of the degrees is $8\cdot 5 + 2\cdot 4=48$. There are $10$ vertices, so the average degree is $48/10=4.8$ and there must be a vertex of degree $4$ or less.
+In Fig.~\ref{f.five-planar-graph-graph} the sum of the degrees is $8\cdot 5 + 2\cdot 4=48$. There are $10$ vertices so the average degree is $48/10=4.8$ and there must be a vertex of degree $4$ or less.
 \end{example}
 
 \section{The Six-Color Theorem}\label{s.six-color}
@@ -528,7 +526,7 @@ Any planar graph $G$ can be six-colored.
 \end{theorem}\index{Six-color theorem}
 \begin{proof}
 By induction on the number of vertices. If $G$ has six vertices or fewer, six colors suffice.
-For the inductive step, by Thm.~\ref{thm.degree5} $G$ has a vertex $v$ with degree $5$ or fewer. Delete vertex $v$ to obtain the graph $G'$. By the induction hypothesis, $G'$ can be six-colored, but $v$ has at most $5$ neighbors and at most $5$ colors are used to color them (Fig.~\ref{f.five-six-five}), so $v$ can be colored using the sixth color (Fig.~\ref{f.five-six-six}).
+For the inductive step, by Thm.~\ref{thm.degree5} $G$ has a vertex $v$ with degree $5$ or fewer. Delete vertex $v$ to obtain the graph $G'$. By the induction hypothesis $G'$ can be six-colored, but $v$ has at most $5$ neighbors and at most $5$ colors are used to color them (Fig.~\ref{f.five-six-five}), so $v$ can be colored using the sixth color (Fig.~\ref{f.five-six-six}).
 \end{proof}
 
 \begin{figure}[hbt]
@@ -776,7 +774,7 @@ Otherwise, $v_1,\ldots,v_5$ are colored with different colors in $G'$ (Fig.~\ref
 
 \clearpage
 
-Consider vertex $v_1$ which is colored blue and vertex $v_3$ which is colored red. If $v_1,v_3$ are not connected (say if the edge $\overline{v_6v_7}$ did not exist), we can exchange the colors along the path from $v_1$ to $v_6$ and color $v$ blue. Otherwise, consider the blue-red chain which contains $v_1,v_3$. By adding $v$ and the edges $\overline{vv_1},\overline{vv_3}$ we obtain a closed path $P$ (double line) that divides the plane into an ``inside'' region and an ``outside'' region (Fig.~\ref{f.five-color-proof}, middle)
+Consider vertex $v_1$ which is colored blue and vertex $v_3$ which is colored red. If $v_1,v_3$ are not connected by a blue-red path (say if the edge $\overline{v_6v_7}$ did not exist), we can exchange the colors along the path from $v_1$ to $v_6$ and color $v$ blue. Otherwise, consider the blue-red chain which contains $v_1,v_3$. By adding $v$ and the edges $\overline{vv_1},\overline{vv_3}$ we obtain a closed path $P$ (double line) that divides the plane into an ``inside'' region and an ``outside'' region (Fig.~\ref{f.five-color-proof}, middle)
 
 Consider $v_2$ which is colored green and $v_4$ which is colored orange. These vertices \emph{cannot} be contained in a single green-orange chain, because $v_2$ is \emph{inside} $P$ and $v_4$ is \emph{outside} $P$, so any path connecting them must cross $P$, contradicting the assumption that the graph is planar. Therefore, they must be contained in two \emph{unconnected} green-orange chains (double dashed line, in Fig.~\ref{f.five-color-proof}, middle).
 Exchange the colors on the chain containing $v_2$ and then $v$ can be colored green to obtain a five-coloring of $G$ (Fig.~\ref{f.five-color-proof}, bottom).
@@ -995,5 +993,5 @@ Heawood noted that the closed paths defined by the red-yellow chain and the red-
 The four-color theorem is notorious because it is so easy to state but extremely difficult to prove. Therefore, it is surprising that the proof of the five-color theorem is elementary. The clever part of the proof is Thm.~\ref{thm.degree5} (a planar graph must have a vertex of at most degree $5$), which is a theorem that has nothing to do with coloring. Instead, it results just from counting vertices and edges.
 
 \subsection*{Sources}
-On the four-color theorem see \cite{thomas,wiki:four}. The proof of the five-color theorem is based on \cite{thebook,wiki:five}.
+For the four-color theorem see \cite{thomas,wiki:four}. The proof of the five-color theorem is based on \cite{thebook,wiki:five}.
 \cite{eppstein} presents numerous proofs of Euler's formula. Kempe's incorrect proof of the four-color theorem is described in \cite{sipka}.

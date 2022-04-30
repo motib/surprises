@@ -85,7 +85,7 @@ Consider now a museum with saw-toothed walls (Fig.~\ref{f.museum.nonconvex}). Ve
 \caption{Visibility within each ``tooth''}\label{f.visibility-tooth}
 \end{figure}
 
-Furthermore, if the guard is placed near the top wall spanning the entire museum, she can observe all the horizontal walls (blue arrows in Fig.~\ref{f.museum.shaded}). Thus $15/3=5$ guards are sufficient to observe all the walls of the museum. Since the shaded triangles do not overlap, a guard in one shaded triangle will not be able to observe all the walls of another shaded triangle (green arrow), so $5$ guards are necessary.
+If at least one of the guards is placed near the top wall spanning the entire museum, she can observe all the horizontal walls (blue arrows in Fig.~\ref{f.museum.shaded}). Thus $5=15/3$ guards are sufficient to observe all the walls of the museum. Since the triangles do not overlap a guard in one triangle will not be able to observe all the walls of another triangle (green arrow) so $5$ guards are necessary.
 
 \begin{figure}[ht]
 \begin{center}
@@ -134,6 +134,10 @@ Section~\ref{s.museum-triangulating} proves that any triangulated polygon can be
 
 \section{Coloring Triangulated Polygons}\label{s.museum-triangulating}
 
+\begin{definition}
+A \emph{diagonal} a of polygon is an edge connecting two vertices that is not one of the (outside) edges of the polygon.
+\end{definition}
+
 \begin{definition} A polygon can be \emph{triangulated} if non-intersecting diagonals can be constructed such that the interior of the polygon is covered by triangles.
 \end{definition}\index{Polygon!triangulated}
 \vspace{-2ex}
@@ -172,7 +176,7 @@ In Fig.~\ref{f.museum.arbitrary} vertex $1$ is convex and vertex $2$ is concave.
 
 \begin{definition}
 A polygon with vertices $V$ can be \emph{three-colored} if there is a map:
-\[c: V \mapsto \{\mathit{red},\mathit{blue},\mathit{green}\}\,,\] such that the two vertices of all edges are assigned different colors.
+\[c: V \mapsto \{\mathit{red},\mathit{blue},\mathit{green}\}\,,\] such that no edge has two vertices that are assigned the same color.
 \end{definition}
 
 \begin{theorem}
@@ -180,13 +184,13 @@ A triangulated polygon can be three-colored.\label{thm.colored}
 \end{theorem}\index{Coloring!polygon@of a polygon}
 
 \begin{proof}
-By induction on the number of vertices. A triangle can be three-colored. A triangulated polygon with $n>3$ vertices must have a diagonal. Choose an arbitrary diagonal $\overline{AB}$ (Fig.~\ref{f.museum.three-1}) and divide the polygon along this diagonal into two smaller polygons (Fig.~\ref{f.museum.three-2}). By induction, each of these smaller polygons can be three-colored (Fig.~\ref{f.museum.three-3}).
+By induction on the number of vertices. A triangle can be three-colored. A triangulated polygon with $n>3$ vertices must have a diagonal. Choose an arbitrary diagonal $\overline{AB}$ (Fig.~\ref{f.museum.three-1}) and divide the polygon along this diagonal into two smaller polygons (Fig.~\ref{f.museum.three-2}). By induction each of these smaller polygons can be three-colored (Fig.~\ref{f.museum.three-3}).
 
 Since the colors assigned are arbitrary, if different colors are assigned to $A,B$ in the two polygons, we can rename the colors in one of them so that the colors of $A,B$ are the same in both polygons. For example, in Fig.~\ref{f.museum.three-4} exchange \emph{red} and \emph{green} in the lower polygon.
 Paste the two polygons together to recover the original polygon with $n$ vertices. It will be three-colored (Fig.~\ref{f.museum.three-5}).
 \end{proof}
 
-\begin{figure}[h]
+\begin{figure}[t]
 \subfigures
 \leftfigure[c]{
 \begin{tikzpicture}[scale=.6]
@@ -466,9 +470,8 @@ The sum of the interior angles of a polygon with $n$ vertices is:
 \[180^\circ(n-2)\,.\]
 \end{theorem}\index{Polygon!triangulated}
 \begin{proof}
-Consider a convex polygon.
-Denote its \emph{exterior angles} by $\theta_i$ (Fig.~\ref{f.museum.exterior}).
-As you move one dashed line to the next, you complete a rotation around a circle so:
+Consider a convex polygon and denote its \emph{exterior angles} by $\theta_i$ (Fig.~\ref{f.museum.exterior}).
+As you move from one dashed line in sequence to the next dashed line, you complete a rotation around a circle so:
 \[
 \sum_{i=1}^n \theta_i = 360^\circ\,.
 \]
@@ -501,18 +504,16 @@ As you move one dashed line to the next, you complete a rotation around a circle
 \end{center}
 \caption{The exterior angles of a convex polygon}\label{f.museum.exterior}
 \end{figure}
-For each exterior angle $\theta_i$, denote its corresponding interior angle by $\phi_i$. Then:
+For each exterior angle $\theta_i$ denote its corresponding interior angle by $\phi_i$. Then:
 \begin{eqnarray*}
 \displaystyle\sum_{i=1}^n \theta_i &=&\displaystyle\sum_{i=1}^n (180^\circ-\phi_i)= 360^\circ\\
 \displaystyle\sum_{i=1}^n \phi_i &=& n\cdot 180^\circ-360^\circ =180^\circ(n-2)\,.
 \end{eqnarray*}
-If there is a concave vertex (Fig.~\ref{f.museum.concave}), there is a triangle formed by the two edges incident with the concave vertex and the line connecting the other vertices of these edges (the dashed line in Fig.~\ref{f.museum.concave}). By summing the angles of the triangle we get:
+If there is a concave vertex ($B$ in Fig.~\ref{f.museum.concave}), there is a triangle formed by the two edges incident with the concave vertex and the line $\overline{AC}$ connecting the other two vertices. By summing the angles of the triangle we get:
 \begin{eqnarray*}
 (180^\circ - \alpha) + (360^\circ - \beta) + (180^\circ - \gamma) &=& 180^\circ\\
 \alpha + \beta + \gamma &=& 3\cdot 180^\circ\,.
 \end{eqnarray*}
-
-\newpage
 
 The sum of the interior angles increases by $\alpha+\beta+\gamma$ while the number of vertices increases by three preserving the equation in the theorem:
 \begin{eqnarray*}
@@ -534,7 +535,9 @@ The sum of the interior angles increases by $\alpha+\beta+\gamma$ while the numb
 \draw ($(A)+(-.4,0)$) arc(180:60:.4);
 \draw ($(B)+(-60:.3)$) arc(-60:240:.3);
 \draw ($(C)+(.4,0)$) arc(0:120:.4);
-
+\node[below] at (A) {$A$};
+\node[below,yshift=-5pt] at (B) {$B$};
+\node[below] at (C) {$C$};
 \draw[thick,dashed] (A) -- (C);
 \end{tikzpicture}
 \end{center}
@@ -546,7 +549,7 @@ The sum of the interior angles increases by $\alpha+\beta+\gamma$ while the numb
 There must be at least three convex vertices in a polygon.
 \end{theorem}
 
-\begin{proof} Let $k$ be the number of concave vertices, where the interior angle of each is $180^\circ+\epsilon_i$, $\epsilon_i>0$. The sum of the interior angles of the \emph{concave} vertices is certainly less than or equal to the sum of the interior angles of \emph{all} the vertices:
+\begin{proof} Let $k$ be the number of concave vertices where the interior angle of each is $180^\circ+\epsilon_i$, $\epsilon_i>0$. The sum of the interior angles of the \emph{concave} vertices is certainly less than or equal to the sum of the interior angles of \emph{all} the vertices:
 %
 \begin{eqnarray*}
 k\cdot 180^\circ +\displaystyle\sum_{i=1}^{k}\epsilon_i &\leq& 180^\circ(n-2)\\
@@ -558,12 +561,13 @@ It follows that there must at least three vertices that are convex, not concave.
 \end{proof}
 
 \begin{proof}[Theorem~\ref{thm.tri}]
-The proof that any polygon can be triangulated is by induction on the number of vertices. For $n=3$ there is nothing to prove. If $n>3$ by Thm.~\ref{thm.convex}, there must be a convex vertex $C$. Label its adjacent vertices by $B,D$. If $\overline{BD}$ is contained within the polygon (Fig.~\ref{f.contained}), it is a diagonal and the polygon can be split into the $\triangle BCD$ and another polygon $\overline{ABDE}$ with $\overline{BD}$ as an edge and which is smaller than the original polygon (Fig.~\ref{f.contained}). By the inductive hypothesis, the polygon can be triangulated and then pasted back to $\triangle BCD$, triangulating the original polygon.
+By induction on the number of vertices. For $n=3$ there is nothing to prove. If $n>3$, by Thm.~\ref{thm.convex} there must be a convex vertex $C$. Label its adjacent vertices by $B,D$. If $\overline{BD}$ is contained within the polygon (Fig.~\ref{f.contained}), it is a diagonal and the polygon can be split into $\triangle BCD$ and another polygon $\overline{ABDE}$ with $\overline{BD}$ as an edge and which is smaller than the original polygon (Fig.~\ref{f.contained}). By the inductive hypothesis, the polygon can be triangulated and then pasted back to $\triangle BCD$, triangulating the original polygon.
 
 \begin{figure}[t]
-\begin{center}
+\subfigures
+\leftfigure[c] {
 \begin{tikzpicture}[scale=1.4]
-\clip (-2,-.4) rectangle (3.8,2.2);
+\clip (-.5,-.4) rectangle (3.8,2.2);
 \draw
   (0,0) coordinate (A) -- 
   ++(1.5,0) coordinate (B) --
@@ -577,16 +581,11 @@ The proof that any polygon can be triangulated is by induction on the number of 
 \vertex{B};
 \vertex{D};
 \end{tikzpicture}
-\end{center}
-\caption{Triangulation where a diagonal is contained within the polygon}\label{f.contained}
-\end{figure}
-If $\overline{BD}$ is not contained in the polygon, there must be concave vertex $F$ that is \emph{closest} to $C$ (Fig.~\ref{f.museum.concave-vertices}). $\overline{CF}$ is a diagonal and splits the polygon into two smaller polygons $\overline{CFED}$ and $\overline{CFAB}$. By the inductive hypothesis these can be triangulated and pasted together.
-\end{proof}
-
-\begin{figure}[t]
-\begin{center}
-\begin{tikzpicture}[scale=1.8]
-\clip (-2,-.2) rectangle (3.8,2.2);
+}
+\hfill
+\rightfigure[c] {
+\begin{tikzpicture}[scale=1.4]
+\clip (-.2,-.4) rectangle (3.8,2.2);
 \draw
   (0,0) coordinate (A) -- 
   ++(1.5,0) coordinate (B) --
@@ -607,12 +606,16 @@ If $\overline{BD}$ is not contained in the polygon, there must be concave vertex
 \vertex{C};
 \vertex{F};
 \end{tikzpicture}
-\end{center}
-\caption{Triangulation where a diagonal is not contained within the polygon}\label{f.museum.concave-vertices}
+}
+\leftcaption{Triangulation where a diagonal is contained within the polygon}\label{f.contained}
+\rightcaption{Triangulation where a diagonal is not contained within the polygon}\label{f.museum.concave-vertices}
 \end{figure}
+If $\overline{BD}$ is not contained in the polygon, there must be concave vertex $F$ that is \emph{closest} to $C$ (Fig.~\ref{f.museum.concave-vertices}). $\overline{CF}$ is a diagonal and splits the polygon into two smaller polygons $\overline{CFED}$ and $\overline{CFAB}$. By the inductive hypothesis these can be triangulated and pasted together.
+\end{proof}
 
 \subsection*{What Is the Surprise?}
-Chapter~\ref{c.museum} was surprising because the proof of a theorem on coloring was based on the combinatorics of counting vertices and edges. Here the roles are reversed. What seems to be an interesting result in geometry is proved rather elegantly by an appeal to coloring a graph.
+The museum theorem is suprising because what seems to be a theorem in geometry is proved rather elegantly by an appeal to coloring a graph.
+
 \subsection*{Sources}
 
 This chapter is based on \cite[Chap.~39]{thebook}.

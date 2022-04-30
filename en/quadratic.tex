@@ -11,11 +11,9 @@
 Poh-Shen Loh\index{Loh, Poh-Shen} proposed a method for solving quadratic equations that is based on a relation between the coefficients of the quadratic polynomial and its roots. Section~\ref{s.traditional} reviews the traditional methods for solving quadratic equations. 
 Section~\ref{s.computing} tries to convince the reader that Loh's method makes sense and then explains how to compute the roots. In Sect.~\ref{s.examples} the computation is carried out for two quadratic polynomials and a similar computation for a quartic polynomial. Section~\ref{s.general} derives the traditional formula for the roots from Loh's formulas.
 
-The introduction of algebra and modern algebraic notation is relatively recent. Previously, mathematicians used geometry almost exclusively, so it is interesting to look at al-Khwarizmi's geometric construction of the formula for the roots of quadratic equations (Sect.~\ref{s.khwar}). Section~\ref{s.cardano} shows a clever geometric construct used by Cardano in developing the formula for the roots of cubic equations.
+The introduction of algebra and modern algebraic notation is relatively recent. Previously, mathematicians used geometry almost exclusively, so it is interesting to look at al-Khwarizmi's geometric construction of the formula for the roots of quadratic equations (Sect.~\ref{s.khwar}). Section~\ref{s.cardano} shows a clever geometric construction used by Cardano in developing the formula for the roots of cubic equations.
 
-Section~\ref{s.lill-quadratic} presents other geometric methods for finding the roots of quadratic equations, but Chap.~\ref{c.origami-cube} is a prerequisite for a full understanding of these methods.
-
-The chapter concludes with Sect.~\ref{s.numerical} which discusses numerical computation of roots of quadratic equations.
+Section~\ref{s.lill-quadratic} presents other geometric methods for finding the roots of quadratic equations.\footnote{Chapter~\ref{c.origami-cube} is a prerequisite for a full understanding of these methods.} The chapter concludes with Sect.~\ref{s.numerical} which discusses numerical computation of the roots of quadratic equations.
 
 \section{Traditional Methods for Solving Quadratic Equations}\label{s.traditional}
 \index{Quadratic equation}
@@ -23,7 +21,10 @@ Every student of mathematics memorizes the formula for obtaining the roots of a 
 \[
 x_1, x_2 = \frac{-b\pm\sqrt{b^2-4ac}}{2a}\,.
 \]                      
-For now we will work only with monic\index{Monic polynomial}. The roots of $x^2+bx+c=0$ are:
+
+\newpage
+
+For now we will work with monic\index{Monic polynomial} polynomials, $x^2+bx+c=0$, whose roots are:
 \begin{align}
 x_1, x_2 = \frac{-b\pm\sqrt{b^2-4c}}{2}\,.\label{eq.quadratic-roots}
 \end{align}
@@ -31,8 +32,6 @@ Another method of solving quadratic equations is by factoring the polynomials mo
 \begin{align}
 x^2-4x+3= (x-1)(x-3)\label{eq.quadratic-lill}\,.
 \end{align}
-
-
 It is much harder to factor $x^2-2x-24$ because there are many possible pairs of roots that must be considered:
 \[
 (\pm 1,\mp 24)\,, (\pm 2,\mp 12)\,, (\pm 3,\mp 8)\,, (\pm 4,\mp 6)\,.
@@ -82,7 +81,7 @@ Let $s$ be any number. Then:
 \[
 -b=-b+s+(-s)=\left(\frac{-b}{2}+s\right) + \left(\frac{-b}{2}-s\right)=r_1+r_2\,.
 \]
-If one root is at distance $s$ from the average $m_{12}$, the other root is at distance $-s$ from  the average. For $r_1,r_2=2,6$, where $m_{12}=4, s=2$, we have:
+If one root is at distance $s$ from the average, the other root is at distance $-s$ from  the average. For $r_1,r_2=2,6$, where $m_{12}=4, s=2$, we have:
 \[
 \renewcommand{\arraystretch}{1.2}
 \begin{array}{|@{\hspace{1em}}r|@{\hspace{1em}}r|@{\hspace{1em}}r|@{\hspace{1em}}r|r|r|}
@@ -100,7 +99,7 @@ If one root is at distance $s$ from the average $m_{12}$, the other root is at d
 Figure~\ref{f.loh-roots1} visualizes this relation.
 \begin{figure}[t]
 \begin{center}
-\begin{tikzpicture}[scale=.8]
+\begin{tikzpicture}[scale=.7]
 \begin{scope}[yshift=-4mm]
 \draw (0,0) -- (10,0);
 \foreach \x in {0,1,...,10}
@@ -121,10 +120,26 @@ Figure~\ref{f.loh-roots1} visualizes this relation.
 \caption{Relation between the roots $r_1,r_2=2,6$ and their average $m_{12}=4$}
 \label{f.loh-roots1}
 \end{figure}
-If we use other values $r_1,r_2=3,5$ for which $r_1+r_2=8$, then $m_{12}=4$ remains the same while $s$ becomes $1$ (Fig.~\ref{f.loh-roots2}).
-\begin{figure}[b]
+If we use other values $r_1,r_2=3,5$ for which $r_1+r_2=8$ then $m_{12}=4$ remains the same while $s$ becomes $1$ (Fig.~\ref{f.loh-roots2}).
+
+The offset $s$ seems to be arbitrary in:
+\[
+r_1=\left(\frac{-b}{2}+s\right)\,,\quad r_2=\left(\frac{-b}{2}-s\right)\,,
+\]
+
+\enlargethispage{\baselineskip}
+
+\noindent{}but there is an additional constraint $r_1r_2=c$, where $c$ is the constant term in the polynomial.
+By multiplying the two expressions we have derived for $r_1,r_2$, we can determine $s$ and then $r_1,r_2$:
+\begin{eqnarray*}
+c&=&\left(-\frac{b}{2} +s\right)\left(-\frac{b}{2} -s\right)=
+  \frac{b^2}{4}-s^s\\
+s&=&\frac{\sqrt{b^2-4c}}{2}\,.
+\end{eqnarray*}
+
+\begin{figure}[t]
 \begin{center}
-\begin{tikzpicture}[scale=.8]
+\begin{tikzpicture}[scale=.7]
 \begin{scope}[yshift=-4mm]
 \draw (0,0) -- (10,0);
 \foreach \x in {0,1,...,10}
@@ -145,21 +160,11 @@ If we use other values $r_1,r_2=3,5$ for which $r_1+r_2=8$, then $m_{12}=4$ rema
 \caption{Relation between the roots $r_1,r_2=3,5$ and their average $m_{12}=4$}
 \label{f.loh-roots2}
 \end{figure}
-The offset $s$ seems to be arbitrary in:
-\[
-r_1=\left(\frac{-b}{2}+s\right)\,,\quad r_2=\left(\frac{-b}{2}-s\right)\,,
-\]
-\enlargethispage{\baselineskip}
-\hspace*{-4pt}but there is an additional constraint $r_1r_2=c$, where $c$ is the constant term in the polynomial.
-By multiplying the two expressions we have derived for $r_1,r_2$, we can determine $s$ and then $r_1,r_2$:
-\[
-c=\left(-\frac{b}{2} +s\right)\left(-\frac{b}{2} -s\right)\,.
-\]
 
 \section{Examples of Loh's Method}\label{s.examples}
 
 \begin{example}
-Consider the polynomial  $x^2-2x-24$, where $b=-2,c=-24$:
+Consider the polynomial  $x^2-2x-24$ where $b=-2,c=-24$:
 \begin{eqnarray*}
 c&=&\left(-\frac{(-2)}{2} +s\right)\left(-\frac{(-2)}{2} -s\right)\\
 -24&=&(1 +s)(1 -s)\\
@@ -196,9 +201,9 @@ r_2&=&\frac{83+127}{2}=105\,.
 \end{example}
 
 \begin{example}
-Theorem~\ref{thm.roots-coefficients} can be generalized to polynomials of higher degrees. Here is an interesting example for a \emph{quartic equation}\index{Quartic equation} $x^4-10x^2-x+20=0$. As with quadratic equations, there are formulas for solving cubic and quartic equations (though not equations of higher powers), but the formulas are quite complicated.
+Theorem~\ref{thm.roots-coefficients} can be generalized to polynomials of higher degrees. Here is an interesting example for a \emph{quartic equation}\index{Quartic equation} $x^4-10x^2-x+20=0$. As with quadratic equations there are formulas for solving cubic and quartic equations (though not equations of higher powers), but the formulas are quite complicated.
 
-Does this polynomial of degree four factor into two quadratic polynomials with integer coefficients? \textit{If so, the coefficients of the $x$ terms must be equal and of opposite signs, since the coefficient of the $x^3$ term is zero!} Therefore, the form of the quadratic factors is:
+Does this polynomial of degree four factor into two quadratic polynomials with integer coefficients? If so, the coefficients of the $x$ terms must be \emph{equal and of opposite signs} since the coefficient of the $x^3$ term is zero. Therefore, the form of the quadratic factors is:
 \[
 f(x) = (x^2 - nx + k_1)\, (x^2 + nx + k_2)\,.
 \]
@@ -211,7 +216,7 @@ f(x) = &x^4 & + nx^3 & + k_2 x^2\\
 &&&+k_1x^2 &+ nk_1x &+ k_1k_2\,.
 \end{array}
 \]
-Equating the coefficients gives three equations in the three unknowns $n,k_1,k_2$:
+Equating the coefficients gives three equations in the three unknowns $n,k_1,k_2$ gives:
 \begin{eqnarray*}
 (k_1+k_2)-n^2 &=& -10\\
 n(k_1-k_2) &=& -1\\
@@ -322,7 +327,7 @@ The formula for the roots of cubic equations\index{Cubic equation} was first pub
 \end{align}
 Geometrically, we start with a cube whose side is $a+b$ so that its volume is $(a+b)^3$. The cube is decomposed into five pieces. The first two are cubes whose sides are $a$ and $b$ with volumes $a^3$ (blue) and $b^3$ (red), respectively (Fig.~\ref{f.cardano1}).
 
-The other three parts are boxes,\footnote{The technical term is \emph{cuboid}.} each with one side of length $a+b$ coinciding with a side of the cube, one side of length $a$ and one side of length $b$, so that the volume of each of the three boxes is $ab(a+b)$. In Fig.~\ref{f.cardano2}, there is one box at the left side of the cube (blue), one at the back of the cube (red) and one at the top of the cube (green).
+The other three parts are boxes (the technical term is \emph{cuboid}) each with one side of length $a+b$ coinciding with a side of the cube, one side of length $a$ and one side of length $b$, so that the volume of each of the three boxes is $ab(a+b)$. In Fig.~\ref{f.cardano2}, there is one box at the left side of the cube (blue), one at the back of the cube (red) and one at the top of the cube (green).
 By combining the five solids in Fig.~\ref{f.cardano1} and Fig.~\ref{f.cardano2} we obtain Eq.~\ref{eq.car}.
 
 
@@ -558,7 +563,7 @@ By combining the five solids in Fig.~\ref{f.cardano1} and Fig.~\ref{f.cardano2} 
 
 \section{They Weren't Intimidated by Imaginary Numbers}\label{s.imaginary}
 
-The history of mathematics demonstrates a progression of concepts that were initially considered to be meaningless, but were eventually understood, accepted and proved useful. ``Obviously,'' since numbers count things, $-1$, a negative number, is meaningless. ``Obviously,'' since numbers are ratios of integers (rational numbers), $\sqrt{2}$, which can easily be proved to be irrational, is meaningless. ``Obviously,'' $\sqrt{-1}$, the square root of a negative number, is meaningless since there is no number---integer, rational or even real---whose square is $-1$.
+The history of mathematics demonstrates a progression of concepts that were initially considered to be meaningless, but were eventually understood, accepted and proved to be useful. ``Obviously,'' since numbers count things, $-1$, a negative number, is meaningless. ``Obviously,'' since numbers are ratios of integers (rational numbers), $\sqrt{2}$, which can easily be proved to be irrational, is meaningless. ``Obviously,'' $\sqrt{-1}$, the square root of a negative number, is meaningless since there is no number---integer, rational or real---whose square is $-1$.
 
 A full understanding of the square roots of negative numbers, to this day called \emph{imaginary numbers} although they are no less real than real numbers, was not achieved until the nineteenth century. Therefore, it is surprising that already in the sixteenth century, Geralamo Cardano and Rafael Bombelli refused to be intimidated by the concept, and took the first small steps towards understanding these numbers.
 
@@ -577,7 +582,7 @@ r_1+r_2&=&(5+\sqrt{-15})+(5-\sqrt{-15})=10=-b\\
 r_1r_2&=&(5+\sqrt{-15})(5-\sqrt{-15})=25-5\sqrt{-15}+5\sqrt{-15}-(-15)=40=c\,.
 \end{array}
 \]
-which correspond with the coefficients of the quadratic equation Eq.~\ref{eq.cardano-quadratic}. It is rather intuitive that $a+(-a)=0$ even if we know nothing about $a$ and $-a$, and, similarly, it is rather intuitive that $\sqrt{a}\sqrt{a}=a$ even if we don't know what $\sqrt{a},\sqrt{-a}$ are.
+which correspond with the coefficients of the quadratic equation Eq.~\ref{eq.cardano-quadratic}. It is rather intuitive that $\sqrt{-15}+(-\sqrt{-15})=0$ even if we know nothing about $\sqrt{-15}$, and, similarly, it is rather intuitive that $\sqrt{-15}\cdot-(\sqrt{-15})=-(-15)=15$ even if we don't know what $\sqrt{-15}$ is.
 
 \enlargethispage{\baselineskip}
 
@@ -813,16 +818,18 @@ For the example, substituting $b=4,c=3$ and $y=0$, we see that  $x=1$ and $x=3$ 
 \section{Numerical Computation of the Roots}\label{s.numerical}
 \index{Quadratic equation!numerical computation of the roots}
 
-Students learn symbolic computation of roots, derivatives and so on. Today, most computation is performed by computers, so symbolic computation is less important. \emph{Numerical analysis} is the branch of mathematics and computer science that develops accurate and efficient computational methods. The main challenge is to deal with the finiteness of values stored in the computer's memory. The computation:
+Students learn symbolic computation of roots, derivatives and so on. Today, most computation is performed by computers so symbolic computation is less important. \emph{Numerical analysis} is the branch of mathematics and computer science that develops accurate and efficient computational methods. The main challenge is to deal with the finiteness of values stored in the computer's memory. The computation:
 \[0.12\times 0.14=0.0168\]
 is easy to do, but:
 \[
 0.123456789\times 0.123456789\]
-is a number with eighteen significant digits, which cannot be accurately represented in a computer word that stores at most sixteen digits. This error is called a \emph{round-off error}.\index{Round-off error}
+needs eighteen digits to be accurately represented and this cannot be done in a memory word that stores sixteen digits. This error is called a \emph{round-off error}.\index{Round-off error}
 
 An even more serious problem is encountered when \emph{floating point arithmetic} is performed. Clearly:
 \[(0.12\times 10^{-10})\times (0.14\times 10^{-8})\]
-would not be computed by writing out all the zero digits. Instead, we multiply the mantissas and add the exponents to obtain $0.0168\times 10^{-18}$, which is normalized to $0.168\times 10^{-19}$ so that the most significant digit appears after the decimal point, ensuring maximum precision given the fixed size of the mantissa. If the maximum exponent that can be represented is $-16$, the result simply cannot even be stored. This error is called \emph{floating-point underflow}.\index{Floating-point underflow}
+would not be computed by writing out all the zero digits. Instead, we multiply the mantissas and add the exponents to obtain $0.0168\times 10^{-18}$, which is normalized to $0.168\times 10^{-19}$ so that the most significant digit appears after the decimal point, ensuring maximum precision given the fixed size of the mantissa. If the maximum exponent that can be represented is $-16$ the result simply cannot even be stored. This error is called \emph{floating-point underflow}.\index{Floating-point underflow}
+
+\newpage
 
 The formula for finding the roots of the quadratic equation $x^2+bx+c$ is:
 \begin{align}
@@ -832,7 +839,7 @@ Consider what happens if $b=1000$ and $c=4$. The roots are:
 \[
 r_1, r_2 = \frac{-1000\pm\sqrt{1000000-16}}{2}\,.
 \]
-Depending on the precision of the arithmetic, it is possible that one of the roots is so close to zero that the value stored is zero. Evaluating the quadratic equation gives the surprising result $0^2+b\cdot 0 +4= 4\approx 0$.
+Depending on the precision of the arithmetic, it is possible that one of the roots is so close to zero that the value stored is zero. Evaluating the quadratic equation gives the surprising result $0^2+b\cdot 0 +4= 4= 0$.
 
 Can we do better? By Eq.~\ref{eq.viete-quad}:
 \[
@@ -840,17 +847,16 @@ r_1+r_2 = -b\,,\quad\quad r_1r_2=c\,.
 \]
 If $r_2$ is much less that $r_1$, written $r_2\ll r_1$, then $r_1\approx -b$ and $r_2=c/b$. Table~\ref{t.quadratic}, computed by a computer program, compares the values of the roots computed by these formulas with the values obtained from the traditional formula Eq.~\ref{eq.quadratic-numerical}. The value of $c$ is fixed at $4$ and the roots for increasing values of $b$ are shown.
 
-Initially, the true values computed by the traditional formula for $r_2$ are more accurate ($r_2-r_{2v}$ is negative), but from $b=100000$, the computation based upon Eq.~\ref{eq.viete-quad} is more accurate. Such are the surprises of numerical analysis.
+Initially, the true values computed by the traditional formula for $r_2$ are more accurate ($r_2-r_{2v}$ is negative) but from $b=100000$, the computation based upon Eq.~\ref{eq.viete-quad} is more accurate. Such are the surprises of numerical analysis.
 
 \begin{table}[bht]
 \caption[Two computations of the roots of a quadratic equation]{Two computations of the roots of a quadratic equation. $r_1,r_2$ are the roots computed by Eq.~\ref{eq.quadratic-numerical}. $r_{1v},r_{2v}$ are the roots computed using Eq.~\ref{eq.viete-quad}. The errors are $r_{i}-r_{iv}$. The values are truncated to four decimal places.
-
-$-4e-5$ is used in computers in place of $4\times 10^{-5}$ because computer programs are normally written as linear sequences of characters.} \label{t.quadratic}
+Floating-point numbers are written $-4e-5$ in place of $4\times 10^{-5}$ because computer programs are normally written as linear sequences of characters.} \label{t.quadratic}
 \[
 \begin{array}{r@{\hspace{2.5mm}}r@{\hspace{2.5mm}}r@{\hspace{2.5mm}}r@{\hspace{2.5mm}}r@{\hspace{2.5mm}}r@{\hspace{2.5mm}}r}
 \hline
 \noalign{\smallskip}
-b & r_1 & r_{1v} & \mathrm{Error} & r_2 & r_{2v} & \mathrm{Error}\\
+b & r_1 & r_{1v} & \mathrm{Error}_1 & r_2 & r_{2v} & \mathrm{Error}_2\\
 \noalign{\smallskip}\svhline\noalign{\smallskip}
 100  &  -99.9599  &  -100  &  0.0400  &  -0.04001\  &  -0.04  &  -1.6012e\!-\!05\\
 1000  &  -999.9959  &  -1000  &  0.0040  &  -0.0040  &  -0.004  &  -1.6000e\!-\!08\\
@@ -870,7 +876,7 @@ b & r_1 & r_{1v} & \mathrm{Error} & r_2 & r_{2v} & \mathrm{Error}\\
 
 Poh-Shen Loh's approach provides a new way of looking at the relation between the coefficients and the roots that one doesn't see simply by memorizing the traditional formula. What is surprising is that this relation is fundamental in Gauss's algebraic proof of the constructibility of a regular heptadecagon (Chap.~\ref{c.heptadecagon}).
 
-With the modern dominance of algebraic methods in geometry, it is important to be reminded that the reverse once held. As shown by the constructions of Al-Khwarizmi and Cardano, geometric methods were used to obtain results in algebra. Lill and Carlyle both developed geometric methods for solving quadratic equations. Considerations of numerical computation will surprise students who have not been exposed to such computations.
+With the modern dominance of algebraic methods in geometry it is important to be reminded that the reverse once held. As shown by the constructions of Al-Khwarizmi and Cardano, geometric methods were used to obtain results in algebra. Lill and Carlyle both developed geometric methods for solving quadratic equations. Considerations of numerical computation on computers will surprise students who have not experienced it before.
 
 \subsection*{Sources}
-Poh-Shen Loh's method is from \cite{loh1,loh2}. Al-Khwarizmi's construction is from \cite[Chapter~1]{jorg} and \cite{mastin}. Cardano's construction can be found in \cite[Chap.~1]{jorg}. For the colorful history of the development of Cardano's formula, see \cite{wiki:cardano}. The early attempts at computing with imaginary numbers are from \cite[Chapter~2]{jorg}. Lill's method and Carlyle's circle can be found in \cite{wiki:quadratic}, together with a discussion of numerical computation of the roots.
+Poh-Shen Loh's method is from \cite{loh1,loh2}. Al-Khwarizmi's construction is from \cite[Chapter~1]{jorg} and \cite{mastin}. Cardano's construction can be found in \cite[Chap.~1]{jorg}. For the colorful history of the development of Cardano's formula see \cite{wiki:cardano}. The early attempts at computing with imaginary numbers are from \cite[Chapter~2]{jorg}. Lill's method and Carlyle's circle can be found in \cite{wiki:quadratic} together with a discussion of numerical computation of the roots.

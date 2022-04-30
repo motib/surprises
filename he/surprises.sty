@@ -1,0 +1,72 @@
+% !TeX root = surprises.tex
+
+\usepackage[utf8x]{inputenc}
+\usepackage[english,hebrew]{babel}
+
+\usepackage[use-david]{culmus}
+
+\newtheorem{theorem}{משפט}[chapter]
+\newtheorem{definition}{הגדרה}[chapter]
+
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{eqnarray}
+\usepackage{float}
+\usepackage[skip=2pt]{caption}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning,through,calc,intersections,arrows.meta,external,shapes.geometric}
+\tikzset{>=stealth}
+\tikzexternalize[prefix=tikz/]
+
+\textwidth=147mm
+\textheight=235mm
+
+\topmargin=24pt
+\headheight=0pt
+\headsep=0pt
+\parindent=0pt
+\marginparwidth=0pt
+\marginparpush=0pt
+\marginparsep=0pt
+
+\setlength{\oddsidemargin}{6.3mm}
+
+\renewcommand{\baselinestretch}{1.3}
+\setlength{\parskip}{0.4\baselineskip plus 1pt minus 1pt}
+
+\newcommand*{\qed}{\hfill\rule{1ex}{2ex}}
+\newcommand*{\disfrac}[2]{\displaystyle\frac{#1}{#2}}
+\newcommand*{\erh}[1]{\setlength{\extrarowheight}{#1}}
+\newcommand*{\sm}[1]{$\scriptstyle #1$}
+
+\newcommand*{\occ}[2]{%
+  \stackrel{%
+    \textstyle r^{#1}}%
+    {\!\!\!\scriptscriptstyle #2}}
+
+
+\renewcommand*{\floatpagefraction}{.8}
+\setlength{\textfloatsep}{10pt plus 2pt minus 4pt}
+\renewcommand{\section}{%
+\@startsection{section}%
+{1}{0mm}{10pt}{4pt}{\Large\bfseries}%
+}
+
+
+
+\pagestyle{plain}
+\setcounter{tocdepth}{1}
+
+%  Less space above chapter title
+\makeatletter
+\def\@makechapterhead#1{%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+        \centering\huge \bfseries \@chapapp\space \thechapter
+        \hspace{.3em}
+    \fi
+    \huge \bfseries #1\par\nobreak
+    \vskip 20\p@
+  }}
+\makeatother

@@ -1,0 +1,1382 @@
+% !TeX root = surprises.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter[השיטה של
+\L{Lill}
+והקיפול של
+\L{Beloch}]%
+{השיטה של
+\L{Lill}\\
+והקיפול של
+\L{Beloch}%
+}\label{c.origami-cube}
+
+\section{קסם}\label{s.magic}
+
+עקבו אחר הבניה באיור שלהלן.
+%\ref{f.lill1}.
+בנו מסלול עם ארבעה קטעי קו באורכים הנתונים:
+\[
+\{a_3=1,a_2=6,a_1=11,a_06\}\,.
+\]
+הבניה מתחילה ממרכז מערכת הצירים בכיוון החיובי של ציר ה-%
+$x$
+תוך סיבוב של
+$90^\circ$
+בין הקטעים. בנו מסלול שני המתחיל עם קטע קו שיוצא ממרכז הצירים בזוויות
+$63.4^\circ$
+יחסית לציר ה-%
+$x$,
+וסמנו ב-%
+$P$ 
+את נקודת החיתוך שלו עם
+$a_2$.
+פנו שמאלה 
+$90^\circ$
+ובנו קטע קו כאשר
+$Q$
+היא נקודת החיתוך שלו עם
+$a_1$.
+פנו שמאלה 
+$90^\circ$
+פעם נוספת, בנו קו, ושימו לב שהוא חותך את קצה המסלול הראשון הנמצא ב-%
+$(-10,0)$.
+
+%\begin{figure}[hbt]
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.9]
+% Draw help lines and axes
+\draw[step=10mm,white!50!black] (-11,-1) grid (2,7);
+\draw[thick] (-11,0) -- (2,0);
+\draw[thick] (0,-1) -- (0,7);
+\foreach \x in {-10,...,2}
+  \node at (\x-.3,-.2) {\sm{\x}};
+\foreach \y in {1,...,7}
+  \node at (-.2,\y-.3) {\sm{\y}};
+
+% Draw first path
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (1,6);
+\coordinate (D) at (-10,6);
+\coordinate (E) at (-10,0);
+\foreach \x in {A,B,C,D,E}
+  \fill (\x) circle(2pt);
+\draw[very thick] (A) --
+  node[below,xshift=1pt,yshift=-10pt] {$a_3=1$} (B);
+\draw[very thick,name path=bc] (B) -- 
+  node[right,yshift=6pt] {$a_2=6$} (C);
+\draw[very thick,name path=cd] (C) --
+  node[above,xshift=4pt] {$a_1=11$}(D);
+\draw[very thick,name path=de] (D) --
+  node[left,xshift=3pt,yshift=6pt] {$a_0=6$}(E);
+
+% Draw first segment of second path
+\path[name path=a2] (A) -- +(63.4:4);
+\path [name intersections = {of = a2 and bc, by = {A2}}];
+\fill (A2) circle(2pt) node[above right] {$P$};
+\draw[very thick,dashed] (A) -- (A2);
+\draw ($(A) + (14pt,0)$)
+  arc [start angle=0, end angle = 63.4, radius=14pt];
+\node[above right,xshift=35pt,yshift=2pt] at (A) {$63.4^\circ$};
+\draw[->] ($(A)+(32pt,8pt)$) -- +(-18pt,0);
+\draw[rotate=153.4] (A2) rectangle +(10pt,10pt);
+
+% Draw second segment of second path
+\path[name path=b2] (A2) -- +(153.4:10);
+\path [name intersections = {of = b2 and cd, by = {B2}}];
+\fill (B2) circle(2pt) node[above left] {$Q$};
+\draw[very thick,dashed] (A2) -- (B2);
+\draw[rotate=243.4] (B2) rectangle +(10pt,10pt);
+
+% Draw third segment of second path%
+\draw[very thick,dashed] (B2) -- (E);
+\end{tikzpicture}
+\end{center}
+%\caption{בניה של המסלול הראשון והמסלול השני}\label{f.lill1}
+%\end{figure}
+נחשב
+$-\tan 63.4^\circ=-2$
+ונציב ערך זה בפולינום שהמקדמים שלו הם אורכי הקטעים במסלול הראשון:
+\erh{0pt}
+\begin{equationarray*}{rcl}
+p(x)&=&a_3x^3+a_2x^2+a_1x+a_0\\
+&=&x^3+6x^2+11x+6\\
+p(-\tan 63.4^\circ)&=&(-2)^3+6(-2)^2+11(-2)+6\\
+&=&0\,.
+\end{equationarray*}
+
+\vspace{-4ex}
+
+בשעה טובה! מצאנו שורש של 
+$x^3+6x^2+11x+6$,
+פולינום ממעלה שלוש.
+
+לפולינום 
+$x^3+6x^2+11x+6$
+שלושה שורשים
+$-1,-2,-3$.
+מחישוב השלילה של הטנגס שלהם מתקבל:
+\[
+\alpha=-\tan^{-1} -1 = 45^\circ,\quad \beta=-\tan^{-1}-2 = 63.4^\circ,\quad \gamma=-\tan^{-1} -3= 71.6^\circ\,.
+\]
+באיור~%
+\ref{f.lill2}
+רואים שעבור כל אחת מהזוויות, המסלול השני חותך את הקצה של המסלול הראשון.
+
+
+\begin{figure}[tb]
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.9]
+% Draw help lines and axes
+\draw[step=10mm,white!50!black] (-11,-1) grid (2,7);
+\draw[thick] (-11,0) -- (2,0);
+\draw[thick] (0,-1) -- (0,7);
+\foreach \x in {-10,...,2}
+  \node at (\x-.3,-.2) {\sm{\x}};
+\foreach \y in {1,...,7}
+  \node at (-.2,\y-.3) {\sm{\y}};
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (1,6);
+\coordinate (D) at (-10,6);
+\coordinate (E) at (-10,0);
+\foreach \x in {A,B,C,D,E}
+  \fill (\x) circle(2pt);
+\draw[very thick] (A) --
+  node[below,yshift=-5pt] {$1$} (B);
+\draw[very thick,name path=bc] (B) -- 
+  node[right,yshift=24pt] {$6$} (C);
+\draw[very thick,name path=cd] (C) --
+  node[above] {$11$}(D);
+\path[name path=de] (D) -- ($(E)+(0,-.8)$);
+\draw[very thick] (D) --
+  node[left,yshift=6pt] {$6$} (E);
+
+
+% Draw first segment of first second path
+\path[name path=a1] (A) -- +(45:3);
+\path [name intersections = {of = a1 and bc, by = {A1}}];
+\fill (A1) circle(2pt) node[above right] {$P_1$};
+\draw[very thick,dashed] (A) -- (A1);
+\draw[thick] ($(A) + (16pt,0)$)
+  arc [start angle=0, end angle = 45, radius=16pt];
+\node[above right,xshift=50pt,yshift=-4pt] at (A) {$\alpha$};
+\draw[rotate=135] (A1) rectangle +(10pt,10pt);
+\draw[Stealth-] ($(A) + (16pt,6pt)$) -- +(36pt,0);
+
+% Draw second segment of first second path
+\path[name path=b1] (A1) -- +(135:8);
+\path [name intersections = {of = b1 and cd, by = {B1}}];
+\fill (B1) circle(2pt) node[above right] {$Q_1$};
+\draw[very thick,dashed] (A1) -- (B1);
+\draw[rotate=225] (B1) rectangle +(10pt,10pt);
+
+% Draw third segment of first second path
+\draw[very thick,dashed] (B1) -- (E);
+
+% Draw first segment of second second path
+\path[name path=a2] (A) -- +(63.4:4);
+\path [name intersections = {of = a2 and bc, by = {A2}}];
+\fill (A2) circle(2pt) node[above right] {$P_2$};
+\draw[very thick,dashed] (A) -- (A2);
+\draw[thick] ($(A) + (24pt,0)$)
+  arc [start angle=0, end angle = 63.4, radius=24pt];
+\node[above right,xshift=50pt,yshift=4pt] at (A) {$\beta$};
+\draw[rotate=153.4] (A2) rectangle +(10pt,10pt);
+\draw[Stealth-] ($(A) + (22pt,14pt)$) -- +(30pt,0);
+
+% Draw second segment of second second path%
+\path[name path=b2] (A2) -- +(153.4:10);
+\path [name intersections = {of = b2 and cd, by = {B2}}];
+\fill (B2) circle(2pt) node[above right] {$Q_2$};
+\draw[very thick,dashed] (A2) -- (B2);
+\draw[rotate=243.4] (B2) rectangle +(10pt,10pt);
+
+% Draw third segment of second second path%
+\draw[very thick,dashed] (B2) -- (E);
+
+% Draw first segment of second second path%
+\path[name path=a3] (A) -- +(71.6:4);
+\path [name intersections = {of = a3 and bc, by = {A3}}];
+\fill (A3) circle(2pt) node[above right] {$P_3$};
+\draw[very thick,dashed] (A) -- (A3);
+\draw[thick] ($(A) + (38pt,0)$)
+  arc [start angle=0, end angle = 71.6, radius=40pt];
+\node[above right,xshift=50pt,yshift=16pt] at (A) {$\gamma$};
+\draw[rotate=161.6] (A3) rectangle +(10pt,10pt);
+\draw[<-] ($(A) + (32pt,25pt)$) -- +(20pt,0);
+
+% Draw second segment of second second path%
+\path[name path=b3] (A3) -- +(161.6:10);
+\path [name intersections = {of = b3 and cd, by = {B3}}];
+\fill (B3) circle(2pt) node[above right] {$Q_3$};
+\draw[very thick,dashed] (A3) -- (B3);
+\draw[rotate=251.6] (B3) rectangle +(10pt,10pt);
+
+% Draw third segment of second second path%
+\draw[very thick,dashed] (B3) -- (E);
+\end{tikzpicture}
+\end{center}
+\caption{שלושה מסלולים עבור שלושה שורשים}\label{f.lill2}
+\end{figure}
+
+
+באיור שלהלן אנו רואים שעבור זווית אחרת, נגיד
+$56.3^\circ$,
+שעבורה
+$-\tan 56.3=-1.5$
+אינו שורש, המסלול השני חותך את המשך קטע הקו עבור המקדם
+$a_0$,
+אבל לא ב-%
+$(-10,0)$,
+הקצה של המסלול הראשון.
+%\begin{figure}[tb]
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.9]
+% Draw help lines and axes
+\draw[step=10mm,white!50!black] (-11,-1) grid (2,7);
+\draw[thick] (-11,0) -- (2,0);
+\draw[thick] (0,-1) -- (0,7);
+\foreach \x in {-10,...,2}
+  \node at (\x-.3,-.2) {\sm{\x}};
+\foreach \y in {1,...,7}
+  \node at (-.2,\y-.3) {\sm{\y}};
+
+% Draw first path
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (1,6);
+\coordinate (D) at (-10,6);
+\coordinate (E) at (-10,0);
+\foreach \x in {A,B,C,D,E}
+  \fill (\x) circle(2pt);
+\draw[very thick] (A) --
+  node[below,yshift=-5pt] {$1$} (B);
+\draw[very thick,name path=bc] (B) -- 
+  node[right,yshift=6pt] {$6$} (C);
+\draw[very thick,name path=cd] (C) --
+  node[above] {$11$}(D);
+\draw[very thick] (D) --
+  node[left,yshift=6pt] {$6$}(E);
+\path[name path=de] (-10,-1) -- (-10,7);
+
+% Draw first segment of second path
+\path[name path=a2] (A) -- +(56.3:3);
+\path [name intersections = {of = a2 and bc, by = {A2}}];
+\fill (A2) circle(2pt) node[above right] {$P$};
+\draw[very thick,dashed] (A) -- (A2);
+\draw ($(A) + (14pt,0)$)
+  arc [start angle=0, end angle = 56.3, radius=14pt];
+\node[above right,xshift=10pt,yshift=6pt] at (A) {$56.3^\circ$};
+\draw[rotate=146.3] (A2) rectangle +(10pt,10pt);
+
+% Draw second segment of second path
+\path[name path=b2] (A2) -- +(146.3:10);
+\path [name intersections = {of = b2 and cd, by = {B2}}];
+\fill (B2) circle(2pt) node[above right] {$Q$};
+\draw[very thick,dashed] (A2) -- (B2);
+\draw[rotate=236.3] (B2) rectangle +(10pt,10pt);
+
+% Draw third segment of second path
+\path[name path=c2] (B2) -- +(236.3:8.5);
+\path [name intersections = {of = c2 and de, by = {C2}}];
+\fill (C2) circle(2pt);
+\draw[very thick,dashed] (B2) -- (C2);
+\end{tikzpicture}
+\end{center}
+%\caption{מסלול שאינו מתאים לשורש}\label{f.lill3}
+%\end{figure}
+
+
+דוגמה זו מדגימה שיטה גרפית שבודקת אם ערך נתון הוא  שורש של פולינום. את השיטה גילה 
+\L{Eduard Lill}
+ב-%
+$1867$.
+נראה בהמשך שלשיטה של 
+\L{Lill}
+קשר הדוק עם אוריגמי.
+
+\section{הצגת השיטה של
+\L{Lill}}\label{s.method}
+
+כדי להבין את השיטה מומלוץ לעיין בדוגמאות בסעיפים הבאים.
+\begin{itemize}
+\item 
+נתון פולינום שרירותי
+$p(x)=a_3x^3+a_2x^2+a_1x+a_0$.
+\item 
+בנו את המסלול הראשון: לכל מקדם
+$a_3,a_2,a_1,a_0$
+)בסדר זה( בנו קטע קו המתחיל במרכז הצירים
+$O=(0,0)$
+בכיוון החיובי של ציר ה-%
+$x$.
+פנו
+$90^\circ$
+נגד השעון בין הקטעים.
+\item 
+בנה את המסלול השני כך:
+\begin{itemize}
+\item
+סמנו ב-%
+$a_i$
+את קטע הקו שאורכו
+$a_i$.
+\item
+בנו קו מ-%
+$O$
+בזווית 
+$\theta$ 
+יחסית לכיוון החיובי של ציר ה-%
+$x$.
+סמנו ב-%
+$P$
+את הנקודה בה חותך הקו את 
+$a_2$.
+\item
+פנו
+$\pm 90^\circ$,
+בנו קו מ-%
+$P$
+וסמנו ב-%
+$Q$
+את הנקודת החיתוך של הקו עם
+$a_1$.
+\item
+פנו
+$\pm 90^\circ$,
+בנו קו מ-%
+$Q$
+וסמנו ב-%
+$R$
+את נקודת החיתוך של הקו עם
+$a_0$.
+\item
+אם 
+$R$
+היא נקודת הקצה של המסלול הראשון, 
+$p(-\tan\theta)=0$
+ו-%
+$-\tan\theta$
+הוא שורש של 
+$p(x)$.
+\end{itemize}
+\item
+מקרים מיוחדים:
+\begin{itemize}
+\item 
+בבניית המסלול הראשון, אם מקדם הוא שלילי, בנו את קטע הקו
+\textbf{בכיוון ההפוך}.
+\item
+בבניית המסלול הראשון, אם מקדם הוא אפס, אין לבנות קטע הקו, אבל כן מבצעים את הפנייה הבאה של
+$\pm90^\circ$.
+\end{itemize}
+\item הערות:
+\begin{itemize}
+\item 
+"נקודת החיתוך של קו עם
+$a_i$":
+מותר שהחיתוך יהיה עם הקו המכיל את
+$a_i$
+ולא רק עם קטע הקו 
+$a_i$
+עצמו.
+\item
+כאשר בונים את המסלול השני, בחר לפנות ימינה או שמאלה ב-%
+$90^\circ$
+כך שלמסלול השני תהיה נקודת חיתוך עם קטעי הקו של המסלול הראשון )או של קווים המכילים את קטעי הקו(.
+\end{itemize}
+\end{itemize}
+
+\section{מקדמים שליליים}\label{s.negative}
+לפולינום 
+$p(x)=x^3-3x^2-3x+1$
+בסעיף%
+~\ref{s.ax6}
+מקדמים שליליים. נפעיל את השיטה של 
+\L{Lill}
+עבור פולינום זה )איור~%
+\ref{f.lill4}(.
+נתחיל בבניית קטע קו באורך
+$1$
+לכיוון החיובי של ציר ה-%
+$x$. 
+אחר כך נפנה שמאלה
+$90^\circ$
+)עם הפנים למעלה(. המקדם שלילי ולכן נבנה קטע קו באורך 
+$-3$,
+זאת אומרת קטע קו באורך
+$3$
+\textbf{למטה},
+הפוך מהכיוון שאנו פונים אליו. לאחר פנייה נוספת
+$90^\circ$
+לשמאל, המקדם שוב שלילי כך שנבנה קו באורך
+$3$
+לאחור, לכיוון ימין. לבסוף, נפנה עם הפנים למטה ונבנה קטע קו באורך
+$1$.
+
+המסלול השני מתחיל עם קו בזווית
+$45^\circ$
+יחסית לציר ה-%
+$x$.
+נקודת החיתוך של הקו עם הקו המכיל את קטע ההקו
+$a_2$
+היא
+$(1,1)$.
+נפנה שוב
+$-90^\circ$
+)לכיוון ימין(, נבנה קו שנקודת החיתוך שלה עם הקו המכיל את קטע הקו 
+$a_1$
+היא
+$(5,-3)$.
+נפנה שוב
+ $-90^\circ$,
+נבנה קו שנקודת החיתוך שלו היא בנוקדת הקצה של המסלול הראשון ב-%
+$(4,-4)$.
+
+$-\tan 45^\circ=-1$,
+ולכן שורש ממשי של הפולינום הוא
+$-1$:
+\[
+p(-1)=(-1)^3-3(-1)^2-3(-1)+6=0\,.
+\]
+באיור שני מסלולים נוספים עבור שורשים אחרים של הפולינום 
+)\ref{s.noninteger}(.
+\begin{figure}[bt]
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.9]
+% Draw help lines and axes
+\draw[step=10mm,white!50!black] (-1,-6) grid (6,2);
+\draw (0,-6) -- (0,2);
+\foreach \x in {0,...,6}
+  \node at (\x-.3,-.2) {\sm{\x}};
+\foreach \y in {-5,...,-1}
+  \node at (-.3,\y-.3) {\sm{\y}};
+\foreach \y in {1,...,2}
+  \node at (-.3,\y-.3) {\sm{\y}};
+
+% Draw first path
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (1,-3);
+\coordinate (D) at (4,-3);
+\coordinate (E) at (4,-4);
+\foreach \x in {A,B,C,D,E}
+  \fill (\x) circle(1pt);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt,reversed]}-] (A) --
+  node[below,yshift=-5pt] {$1$} (B);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt]}-,name path=bc] (B) -- 
+  node[right,xshift=3pt] {$a_2=-3$} (C);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt]}-,name path=cd] (C) --
+  node[above,xshift=11pt] {$a_1=-3$}(D);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt,reversed]}-,name path=de] (D) --
+  node[right] {$1$}(E);
+
+% Draw extensions of first path
+\draw[very thick,loosely dotted,name path=a] (-1,0) -- (6,0);
+\draw[very thick,loosely dotted,name path=b] (1,-6) -- (1,2);
+\draw[very thick,loosely dotted,name path=c] (-1,-3) -- (6,-3);
+
+% Draw first second path
+\path[name path=a1] (A) -- +(-75:5);
+\path [name intersections = {of = a1 and b, by = {B1}}];
+\path[name path=b1] (B1) -- +(15:5);
+\path [name intersections = {of = b1 and c, by = {C1}}];
+\draw[thick,loosely dashed] (A) -- (B1) -- (C1) -- (E);
+
+% Draw second second path
+\draw[very thick,dashed] (4,-4) -- (5,-3) coordinate (A2);
+\fill (5,-3) circle (1.5pt) node[above right] {$P$};
+\draw[very thick,dashed] (5,-3) -- (1,1) coordinate (B2);
+\fill (1,1) circle (1.5pt) node[above right] {$Q$};
+\draw[very thick,dashed] (1,1) -- (0,0);
+
+% Draw third second path
+\path[name path=a3] (A) -- +(-15:5);
+\path [name intersections = {of = a3 and b, by = {B3}}];
+\path[name path=b3] (B3) -- +(-105:5);
+\path [name intersections = {of = b3 and c, by = {C3}}];
+\draw[thick,loosely dashed] (A) -- (B3) -- (C3) -- (E);
+\end{tikzpicture}
+\end{center}
+\caption{מסלול עבור פולינום עם מקדמים שליליים}\label{f.lill4}
+\end{figure}
+
+
+\section{מקדמים שהם אפס}\label{s.zero}
+
+$a_2$,
+המקדם של
+$x^2$
+ב-%
+$x^3-7x-6=0$,
+הוא אפס. עבור מקדם אפס, אנו "בונים" קטע קו באורך
+$0$,
+כלומר, אנחנו לא מציירים קו, אבל כן פונים
+$\pm 90^\circ$
+לפני ואחרי ש"בונים" אותו, כפי שניתן לראות באיור~%
+\ref{f.lill5}.
+חץ הפונה למעלה בנקודה
+$(1,0)$.
+קיימים שלושה מסלולים החותכים את קצה המסלול הראשון. הם מתחילים עם הזוויות:
+\[
+\alpha=45^\circ,\quad \beta=63.4^\circ,\quad \gamma=-71.6^\circ\,.
+\]
+מכאן אפשר להסיק שיש שלושה שורשים ממשיים:
+\[
+-\tan 45^\circ=-1,\quad -\tan 63.4^\circ =-2,\quad -\tan (-71.6^\circ)=3\,.
+\]
+בדיקה:
+\[
+(x+1)(x+2)(x-3)=(x^2+3x+2)(x-3) =x^3-7x-6\,.
+\]
+\begin{figure}[tb]
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.9]
+% Draw help lines and axes
+\draw[step=10mm,white!50!black] (-1,-4) grid (11,7);
+\foreach \x in {0,...,11}
+  \node at (\x-.3,-.2) {\sm{\x}};
+\foreach \y in {-3,...,-1}
+  \node at (-.3,\y-.3) {\sm{\y}};
+\foreach \y in {1,...,7}
+  \node at (-.3,\y-.3) {\sm{\y}};
+
+% Draw first path
+\coordinate (A) at (0,0) node[above left] {$O$};
+\coordinate (B) at (1,0);
+\coordinate (C) at (8,0);
+\coordinate (D) at (8,6);
+\node[below right] at (D) {$A$};
+\foreach \x in {A,B,C,D}
+  \fill (\x) circle(1.5pt); 
+\draw[very thick,{Stealth[scale=1.4,inset=2pt,reversed]}-] (A) --
+  node[below,yshift=-5pt] {$1$} (B);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] (B) --
+  ($(B)+(0,.1)$);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt]}-,name path=bc] (B) -- 
+  node[below,xshift=-6pt,yshift=-5pt] {$-7$} (C);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt]}-,name path=cd] (C) --
+  node[right,yshift=4pt] {$-6$}(D);
+
+% Draw extensions of first path
+\draw[very thick,loosely dotted] (1,-3) -- (1,7);
+\draw[very thick,loosely dotted] (-1,0) -- (11,0);
+
+% Draw first second path
+\draw[very thick,dashed,->] (0,0) -- (1,-3);
+\fill (1,-3) circle (1.5pt) node[below left] {$P_1$};
+\draw[very thick,dashed,->] (1,-3) coordinate (A1) -- (10,0);
+\fill (10,0) circle (1.5pt) node[below right] {$Q_1$};
+\draw[very thick,dashed,->] (10,0) coordinate (B1) -- (D);
+
+% Draw second second path
+\draw[very thick,dashed,->] (0,0) -- (1,1) coordinate (A2);
+\fill (A2) circle (1.5pt) node[above right] at (A2) {$P_2$};
+\draw[very thick,dashed,->] (A2) -- (2,0) coordinate (B2);
+\fill (B2) circle (1.5pt) node[below right] at (B2) {$Q_2$};
+\draw[very thick,dashed,->] (B2) -- (D);
+
+% Draw third second path
+\draw[very thick,dashed,->] (0,0) -- (1,2) coordinate (A3);
+\fill (A3) circle (1.5pt) node[above left] {$P_3$};
+\draw[very thick,dashed,->] (A3) -- (5,0) coordinate (B3);
+\fill (B3) circle (1.5pt) node[below right] at (B3) {$Q_3$};
+\draw[very thick,dashed,->] (B3) -- (D);
+\end{tikzpicture}
+\end{center}
+\caption{מסלול עבור פולינום עם מקדם שהוא אפס}\label{f.lill5}
+\end{figure}
+
+
+\section{שורשים שאינם מספרים שלמים}\label{s.noninteger}
+
+נבדוק את הפולינום
+$p(x)=x^3-2x+1$:
+%)איור~%
+%\ref{f.lill6}(.
+%\begin{figure}[htb]
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=1.2]
+% Draw help lines and axes
+\draw[step=10mm,white!70!black,] (-1,-2) grid (4,2);
+\foreach \x in {0,...,4}
+  \node at (\x-.2,-.1) {\sm{\x}};
+\foreach \y in {-1}
+  \node at (-.1,\y-.2) {\sm{\y}};
+\foreach \y in {1,2}
+  \node at (-.1,\y-.2) {\sm{\y}};
+
+% Draw first path
+\coordinate (A) at (0,0);
+\node[above left] at (A) {$O$};
+\coordinate (B) at (1,0);
+\coordinate (C) at (3,0);
+\coordinate (D) at (3,-1);
+\node[below right] at (D) {$A$};
+\foreach \x in {A,B,C,D}
+  \fill (\x) circle(1pt); 
+\draw[very thick] (A) -- node[above,yshift=2pt] {$1$} (B);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] ($(A)+(.1,0)$) --
+  ($(A)+(.15,0)$);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] ($(B)+(0,.05)$) --
+  ($(B)+(0,.1)$);
+\draw[very thick,name path=bc] (B) -- 
+  node[above,xshift=-4pt,yshift=2pt] {$-2$} (C);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] ($(B)+(.22,0)$) --
+  ($(B)+(.17,0)$);
+\draw[very thick,name path=cd] (C) --
+  node[right] {$1$}(D);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] ($(C)+(0,-.05)$) --
+ ($(C)+(0,-.1)$);
+
+% Draw extensions of first path
+\draw[very thick,loosely dotted,name path=b] (1,-2) -- (1,2);
+\draw[very thick,loosely dotted,name path=c] (-1,0) -- (4,0);
+\draw[very thick,loosely dotted,name path=d] (3,-2) -- (3,2);
+
+% Draw first second path
+\coordinate (A1) at (1,-1);
+\draw[very thick,dashed,->] (0,0) -- (A1);
+\fill (A1) circle (1pt) node[below right] {$P_1$};
+\coordinate (B1) at (2,0);
+\draw[very thick,dashed,->] (A1) -- (B1);
+\fill (B1) circle (1pt) node[above right,xshift=4pt] {$Q_1$};
+\draw[very thick,dashed,->] (B1) -- (D);
+\draw[rotate=45] (A1) rectangle +(6pt,6pt);
+\draw[rotate=-135] (B1) rectangle +(6pt,6pt);
+
+% Draw second second path
+\path[name path=a2] (0,0) -- +(-31.7:4);
+\path [name intersections = {of = a2 and b, by = {A2}}];
+\draw[very thick,dashed,->] (0,0) -- (A2);
+\fill (A2) circle (1pt) node[below right,yshift=2pt] {$P_2$};
+\path[name path=b2] (A2) -- +(58.3:2.5);
+\path [name intersections = {of = b2 and c, by = {B2}}];
+\draw[very thick,dashed,->] (A2) -- (B2);
+\fill (B2) circle (1pt) node[above] {$Q_2$};
+\draw[very thick,dashed,->] (B2) -- (D);
+\draw[rotate=58.3]   (A2) rectangle +(6pt,6pt);
+\draw[rotate=-121.7] (B2) rectangle +(6pt,6pt);
+
+% Draw third second path
+\path[name path=a3] (0,0) -- +(58.3:2.5);
+\path [name intersections = {of = a3 and b, by = {A3}}];
+\draw[very thick,dashed,->] (0,0) -- (A3);
+\fill (A3) circle (1pt) node[above left] {$P_3$};
+\path[name path=b3] (A3) -- +(-31.7:4);
+\path [name intersections = {of = b3 and c, by = {B3}}];
+\draw[very thick,dashed,->] (A3) -- (B3);
+\fill (B3) circle (1pt) node[above right] {$Q_3$};
+\path[name path=c3] (B3) -- +(-121.7:4);
+\draw[very thick,dashed,->] (B3) -- (D);
+\draw[rotate=-121.7]   (A3) rectangle +(6pt,6pt);
+\draw[rotate=-211.7]   (B3) rectangle +(6pt,6pt);
+\end{tikzpicture}
+\end{center}
+%\caption{שורשים שאינם מספרים שלמים}\label{f.lill6}
+%\end{figure}
+
+\vspace{-10ex}
+הקטע הראשון של המסלול הראשון עובר מ-%
+$(0,0)$
+ל-%
+$(1,0)$
+ואז פונה למעלה. המקדם של
+$x^2$
+הוא אפס כך שלא נצייר קטע קו ונפנה שמאלה. המקדם הבא הוא
+$-2$
+כך שהקטע הבא נבנה לאחור מ-%
+$(1,0)$
+ל-%
+$(3,0)$.
+לבסוף, המסלול פונה למטה וקו באורך 
+$1$
+נבנה מ-%
+$(3,0)$
+ל-%
+$(3,-1)$.
+קל לראות ש-%
+$1$
+הוא שורש של
+$p(x)$.
+$-\tan^{-1} -45^\circ=1$,
+ולכן קיים מסלול
+$\overline{OP_1Q_1A}$.
+
+אם נחלק את
+$p(x)$
+ב-%
+$x-1$,
+נקבל פולינום ריבועי
+$x^2+x-1$
+ששורשיו הם:
+\[
+\disfrac{-1\pm\sqrt{5}}{2} \approx 0.62,\; -1.62\,.
+\]
+לכן קיימים שני מסלולים נוספים: אחד שמתחיל בזווית
+$-31.8^\circ$
+כי
+$-\tan^{-1} 0.62=-31.8^\circ$,
+ואחד שמתחיל בזווית
+$58.3^\circ$
+כי
+$-\tan^{-1}1.62=58.3^\circ$.
+
+באופן דומה, לפולינום בסעיף%
+~\ref{s.negative}
+שני שורשים
+$ 2\pm\sqrt{3}\approx 3.73, 0.27$.
+הזוויות הן
+$-75^\circ$
+ו-%
+$-15^\circ$,
+כי
+$-\tan (-75^\circ)\approx 3.73$ 
+ו-%
+$-\tan (-15^\circ)\approx 0.27$.
+
+
+\section{השורש ממעלה שלוש של שניים}\label{s.cube-root}
+
+כדי להכפיל קוביה עלינו למצוא
+$\sqrt[3]{2}\approx 1.26$,
+שורש של הפולינום ממעלה שלוש
+$x^3-2$:
+%)איור~%
+%\ref{f.lill-cube2}(.
+%\begin{figure}[htb]
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=1.2]
+% Draw help lines and axes
+\draw[step=10mm,white!70!black,] (-1,-2) grid (3,3);
+\foreach \x in {0,...,3}
+  \node at (\x-.2,-.1) {\sm{\x}};
+\foreach \y in {-1}
+  \node at (-.2,\y-.2) {\sm{\y}};
+\foreach \y in {1,2,3}
+  \node at (-.2,\y-.2) {\sm{\y}};
+
+% Draw first path
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (1,2);
+\foreach \x in {A,B,C}
+  \fill (\x) circle(1pt); 
+\draw[very thick] (A) -- node[above,yshift=2pt] {$1$} (B);
+
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] ($(A)+(.05,0)$) --
+  ($(A)+(.1,0)$);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] ($(B)+(0,.05)$) --
+  ($(B)+(0,.1)$);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] ($(B)+(.1,.3)$) --
+  ($(B)+(.08,.3)$);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] ($(B)+(0,.55)$) --
+  ($(B)+(0,.5)$);
+
+\draw[very thick] (B) -- 
+  node[left,yshift=6pt] {$-2$} (C);
+
+% Draw extensions of first path
+\draw[very thick,loosely dotted,name path=a] (-1,0) -- (3,0);
+\draw[very thick,loosely dotted,name path=b] (1,-2) -- (1,3);
+
+% Draw first segment of second path
+\path[name path=a1] (0,0) -- +(-51.6:2);
+\path [name intersections = {of = a1 and b, by = {A1}}];
+\draw[very thick,dashed,->] (A) -- (A1);
+\fill (A1) circle (1pt) node[below left] {$P_1$};
+\draw[rotate=38.4]   (A1) rectangle +(6pt,6pt);
+
+% Draw second segment of second path
+\path[name path=b1] (A1) -- +(38.4:2.5);
+\path [name intersections = {of = b1 and a, by = {B1}}];
+\draw[very thick,dashed,->] (A1) -- (B1);
+\fill (B1) circle (1pt) node[above right] {$Q_1$};
+\draw[rotate=128.4] (B1) rectangle +(7pt,7pt);
+
+% Draw third segement of second path
+\draw[very thick,dashed,->] (B1) -- (C);
+\end{tikzpicture}
+\end{center}
+%\caption{השורש השלישי של $2$}\label{f.lill-cube2}
+%\end{figure}
+
+
+
+בבנייה של המסלול הראשון, אנו פונים פעמיים שמאלה בלי לבנות קטעי קו, כי המקדמים
+$a_2$
+ו-%
+$a_1$
+שניהם אפס. אז פונים שוב שמאלה )לכיוון למטה( ובונים קו לאחור כי 
+$a_0=-2$
+שלילי. הקטע הראשון של המסלול השני נבנה בזווית של
+$-51.6^\circ$
+ו-%
+$-\tan (-51.6^\circ)\approx 1.26\approx \sqrt[3]{2}$.
+
+
+
+\section{ההוכחה של השיטה של
+\L{Lill}}\label{s.proof}
+
+נגביל את הדיון לפולינומים שהמקדם הראשי שלהם הוא אחד )איור~%
+\ref{f.lill-proof}(:%
+\footnote{%
+אחרת, אפשר לחלק ב-%
+$a_3$
+ולפולינום המתקבל אותם שורשים.%
+}
+\[
+p(x)=x^3+a_2x^2+a_1x+a_0\,.
+\]
+סכום הזוויות של משולש הוא 
+$180^\circ$,
+ולכן אם זווית חדה אחת של משולש ישר-זווית היא
+$\theta$, 
+השנייה היא
+$90^\circ-\theta$.
+מכאן שהזווית מעל ל-%
+$P$
+והזווית משמאל ל-%
+$Q$
+שוות ל-%
+$\theta$.
+כעת נרשום סדרת משוואות עבור
+$\tan \theta$:
+\erh{8pt}
+\begin{equationarray*}{rcl}
+\tan \theta &=& \disfrac{b_2}{1}=b_2\\
+%a_2-b_2&=&a_2-\tan\theta\\
+\tan \theta &=& \disfrac{b_1}{a_2-b_2}=\disfrac{b_1}{a_2-\tan\theta}\\
+b_1&=&\tan\theta (a_2-\tan\theta)\\
+\tan \theta &=& \disfrac{a_0}{a_1-b_1}=\disfrac{a_0}{a_1-\tan\theta(a_2-\tan\theta)}\,.
+\end{equationarray*}
+נפשט את המשוואה האחרונה ונקבל:
+\erh{4pt}
+\begin{equationarray*}{rcl}
+(\tan\theta)^3-a_2(\tan\theta)^2+a_1(\tan\theta)-a_0&=&0\\
+-(\tan\theta)^3+a_2(\tan\theta)^2-a_1(\tan\theta)+a_0&=&0\\
+(-\tan\theta)^3+a_2(-\tan\theta)^2+a_1(-\tan\theta)+a_0&=&0\,.
+\end{equationarray*}
+נסיק ש-%
+$-\tan\theta$
+הוא שורש ממשי של
+$p(x)=x^3+a_2x^2+a_1x+a_0$.
+\begin{figure}[tb]
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.9]
+% Draw grid and axes
+\draw[step=10mm,white!50!black] (-11,-1) grid (2,7);
+\draw[thick] (-11,0) -- (2,0);
+\draw[thick] (0,-1) -- (0,7);
+\foreach \x in {-10,...,2}
+  \node at (\x-.3,-.2) {\sm{\x}};
+\foreach \y in {1,...,7}
+  \node at (-.2,\y-.3) {\sm{\y}};
+  
+% Draw the points of the first path
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (1,6);
+\coordinate (D) at (-10,6);
+\coordinate (E) at (-10,0);
+\foreach \x in {A,B,C,D,E}
+  \fill (\x) circle(2pt);
+\draw[rotate=90] (B) rectangle +(10pt,10pt);
+  
+% Draw A -- B and arrow
+\draw[very thick] (A) --(B);
+\draw[thick,<->] ($(A)+(0,-16pt)$) --
+  node[fill=white] {$1$} ($(B)+(0,-16pt)$);
+
+% Draw B -- C and arrow
+\draw[very thick,name path=bc] (B) -- (C);
+\draw[thick,<->] ($(B)+(36pt,0)$) --
+  node[fill=white] {$a_2$} ($(C)+(36pt,0)$);
+
+% Draw C -- D and arrow
+\draw[very thick,name path=cd] (C) --(D);
+\draw[thick,<->] ($(C)+(0,24pt)$) -- 
+  node[fill=white] {$a_1$} ($(D)+(0,24pt)$);
+
+% Draw D -- E and arrow
+\draw[very thick,name path=de] (D) -- (E);
+\draw[thick,<->] ($(D)+(-16pt,0)$) --
+  node[fill=white] {$a_0$} ($(E)+(-16pt,0)$);
+
+% Draw first angled segment of the second path and intersection A2 with BC
+\path[name path=a2] (A) -- +(63.4:4);
+\path [name intersections = {of = a2 and bc, by = {A2}}];
+\fill (A2) circle(2pt) node[above right] {$P$};
+\draw[very thick,dashed] (A) -- (A2);
+\path (B) -- node[right] {$b_2$} (A2);
+\path (A2) -- node[right,yshift=8pt] {$a_2-b_2$} (C);
+\draw[rotate=153.4] (A2) rectangle +(10pt,10pt);
+
+% Draw second segment of the second path and intersection B2 with CD
+\path[name path=b2] (A2) -- +(153.4:10);
+\path [name intersections = {of = b2 and cd, by = {B2}}];
+\fill (B2) circle(2pt) node[above right] {$Q$};
+\draw[very thick,dashed] (A2) -- (B2);
+\draw[rotate=243.4] (B2) rectangle +(10pt,10pt);
+\path (D) -- node[above] {$a_1-b_1$} (B2); 
+\path (B2) -- node[above] {$b_1$} (C);
+
+% Draw third segment of the second path to E
+\draw[very thick,dashed] (B2)-- (E);
+
+% Label A, A2, B2 with theta
+\draw ($(A) + (14pt,0)$)
+  arc [start angle=0, end angle = 63.4, radius=14pt];
+\node[above right,xshift=10pt,yshift=8pt] at (A) {$\theta$};
+\draw ($(A2) + (0,14pt)$)
+  arc [start angle=90, end angle = 153.4, radius=14pt];
+\node[above left,xshift=-4pt,yshift=14pt] at (A2) {$\theta$};
+\draw ($(B2) + (-14pt,0)$)
+  arc [start angle=180, end angle = 243.4, radius=14pt];
+\node[below left,xshift=-14pt,yshift=-4pt] at (B2) {$\theta$};
+\end{tikzpicture}
+\end{center}
+\caption{הוכחה של השיטה של \L{Lill}}\label{f.lill-proof}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{%
+הקיפול של
+\L{Beloch}}\label{s.beloch-fold}
+
+\L{Margharita P. Beloch}
+גילתה קשר מרתק בין אוריגמי והשיטה של
+\L{Lill}
+למציאת שורשים של פולינומים ממעלה שלוש. היא מצאה שהפעלה אחת בלבד של אקסיומה%
+~$6$
+מאפשרת מציאת שורש ממשי של כל פולינום ממעלה שלוש. לכבודה, לעתים מכנים את הפעולה של האקסיומה "הקיפול של
+\L{Beloch}".
+
+נדגים את השיטה על הפולינום
+$p(x)=x^3+6x^2+11x+6$
+מסעיף%
+~\ref{s.magic}.
+הקיפול
+$\overline{RS}$
+יהיה אנך אמצעי גם ל-%
+$\overline{QQ'}$
+וגם ל-%
+$\overline{PP'}$
+)איור~%
+\ref{f.beloch-fold1}(,
+כאשר 
+$P',Q'$
+הם השיקופים של
+$P,Q$.
+לפי השיטה של
+\L{Lill},
+הנקודה
+$R$
+תהיה על הקו
+$a_2$
+והנקודה
+$S$
+תהיה על הקו
+$a_1$.
+נבנה קו
+$a_2'$
+מקביל ל-%
+$a_2$
+ובאותו מרחק מ-%
+$a_2$
+כמו המרחק של
+$a_2$
+מ-%
+$P$,
+ונבנה את הקו
+$a_1'$
+מקביל ל-%
+$a_1$
+ובאותו מרחק מ-%
+$a_1$
+כמו המרחק של
+$a_1$
+מ-%
+$Q$.
+נפעיל את אקסיומה%
+~$6$
+כדי להניח בו-זמנית את 
+$P$
+ב-%
+$P'$
+על 
+$a_2'$
+ואת 
+$Q$
+ב-%
+$Q'$
+על
+$a_1'$.
+הקיפול 
+$\overline{RS}$
+הוא האנך האמצעי של הקווים
+$\overline{PP'}$
+ו-%
+$\overline{QQ'}$,
+ולכן הזוויות ב-%
+$R$
+ו-%
+$S$
+הן ישרות כפי שמתחייב.
+
+
+
+\begin{figure}
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.8]
+% Draw help lines and axes
+\draw[step=10mm,white!60!black] (-11,-1) grid (3,13);
+\draw[thick] (-11,0) -- (3,0);
+\draw[thick] (0,-1) -- (0,13);
+\foreach \x in {-10,...,3}
+  \node at (\x-.3,-.2) {\sm{\x}};
+\foreach \y in {1,...,13}
+  \node at (-.2,\y-.3) {\sm{\y}};
+  
+% Draw first path with five points
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (1,6);
+\coordinate (D) at (-10,6);
+\coordinate (E) at (-10,0);
+\foreach \x in {A,B,C,D,E}
+  \fill (\x) circle(2pt);
+\node[below right,yshift=-6pt] at (A) {$P$};
+\node[below left,yshift=-6pt] at (E) {$Q$};
+
+\draw[thick] (A) -- (B);
+\draw[thick,name path=bc] (B) -- node[right,near end] {$a_2$} (C);
+\draw[thick,name path=cd] (C) -- node[above] {$a_1$} (D);
+\draw[thick,name path=de] (D) -- (E);
+
+% Draw parallel lines
+\draw[ultra thick,dotted,name path=bpcp] ($(B)+(1,-1)$) --
+  node[above right] {$a_2'$}
+  ($(C)+(1,7)$);
+\draw[ultra thick,dotted,name path=cpdp] ($(C)+(2,6)$) -- 
+  node[above left,xshift=-24pt] {$a_1'$} 
+  ($(D)+(-1,6)$);
+
+% Draw first segment of second path
+\path[name path=a2] (A) -- +(63.4:4);
+\path [name intersections = {of = a2 and bc, by = {A2}}];
+\draw[ultra thick,dotted] (A) -- (A2);
+\fill (A2) circle(2pt) node[above right,xshift=4pt] {$R$};
+\draw[rotate=153.4] (A2) rectangle +(10pt,10pt);
+
+% Draw second segment of second path
+\path[name path=b2] (A2) -- +(153.4:10);
+\path [name intersections = {of = b2 and cd, by = {B2}}];
+\fill (B2) circle(2pt) node[above left]  {$S$};
+\draw[very thick,dashed] (A2) -- (B2);
+\draw[rotate=243.4] (B2) rectangle +(10pt,10pt);
+
+% Draw third segment of second path
+\draw[ultra thick,dotted] (B2) -- (E);
+
+% Locate reflections on parallel lines and draw lines
+\coordinate (PP) at ($(A2)+(1,2)$);
+\fill (PP) circle(2pt) node[above right] {$P'$};
+\draw[ultra thick,dotted] (A2) -- (PP);
+
+\coordinate (QP) at ($(B2)+(3,6)$);
+\fill (QP) circle(2pt) node[above right] {$Q'$};
+\draw[ultra thick,dotted] (B2) -- (QP);
+\end{tikzpicture}
+\end{center}
+\caption{הקיפול של \L{Beloch} עבור $x^3+6x^2+11x+6$}\label{f.beloch-fold1}
+\end{figure}
+
+\newpage
+
+ננסה את הקיפול של 
+\L{Beloch}
+על הפולינום
+$x^3-3x^2-3x+1$
+מסעיף%
+~\ref{s.negative}.
+%)איור~%
+%\ref{f.beloch-fold2}(.
+%\begin{figure}[htb]
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.9]
+% Draw help lines and axes
+\draw[step=10mm,white!50!black] (-1,-5) grid (6,2);
+\foreach \x in {0,...,6}
+  \node at (\x-.3,-.2) {\sm{\x}};
+\foreach \y in {-4,...,-1}
+  \node at (-.3,\y-.3) {\sm{\y}};
+\foreach \y in {1,...,2}
+  \node at (-.3,\y-.3) {\sm{\y}};
+
+% Draw first path
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (1,-3);
+\coordinate (D) at (4,-3);
+\coordinate (E) at (4,-4);
+\node[above left] at (A) {$P$};
+\node[below right] at (E) {$Q$};
+\foreach \x in {A,B,C,D,E}
+  \fill (\x) circle(2pt);
+
+\draw[very thick,{Stealth[scale=1.4,inset=2pt,reversed]}-] (A) --
+  (B);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt]}-,name path=bc] (B) -- 
+  node[left] {$a_2$} (C);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt]}-,name path=cd] (C) --
+  node[above] {$a_1$}(D);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt,reversed]}-,name path=de] (D) --
+ (E);
+
+% Draw extensions of first path
+\draw[very thick,loosely dotted,name path=b] (1,-4) -- (1,2);
+\draw[very thick,loosely dotted,name path=c] (-1,-3) -- (6,-3);
+
+% Draw reflected points
+\coordinate (PP) at (2,2);
+\coordinate (QP) at (6,-2);
+\fill (PP) circle(2pt) node[above left] {$P'$};
+\fill (QP) circle(2pt) node[below right] {$Q'$};
+
+% Midpoints of bisected lines
+\coordinate (R) at (1,1);
+\coordinate (S) at (5,-3);
+\fill (R) circle(2pt) node[above left] {$R$};
+\fill (S) circle(2pt) node[below right] {$S$};
+
+% Draw reflected lines
+\draw[ultra thick,dotted] ($(B)+(1,2)$) --
+  node[right,very near end,yshift=-8pt] {$a_2'$} ($(C)+(1,-2)$);
+\draw[ultra thick,dotted] ($(C)+(-2,1)$) --
+  node[above,very near start,xshift=-8pt,yshift=-1pt] {$a_1'$} ($(D)+(2,1)$);
+\draw[ultra thick,dotted] (A) -- (PP);
+\draw[ultra thick,dotted] (E) -- (QP);
+
+% Draw fold
+\draw[very thick,dashed] (R) -- (S);
+\draw[rotate=-45] (R) rectangle +(8pt,8pt);
+\draw[rotate=45] (S) rectangle +(8pt,8pt);
+\end{tikzpicture}
+\end{center}
+%\caption{הקיפול של \L{Beloch} עבור $x^3-3x^2+-3x+1$}\label{f.beloch-fold2}
+%\end{figure}
+
+
+
+$a_2$
+הוא קטע מהקו האנכי 
+$x=1$,
+והקו המקביל לו הוא
+$a_2'$
+הקו
+$x=2$.
+$a_1$
+הוא קטע מהקו האופקי 
+$y=-3$,
+והקו המקביל לו הוא
+$a_1'$
+הקו
+$y=-2$.
+$RS$
+הוא האנך האמצעי גם של
+$\overline{PP'}$
+וגם של
+$\overline{QQ'}$.
+המסלול
+$\overline{PRSQ}$
+זהה למסלול בסעיף%
+~\ref{s.negative}.
+%\begin{figure}[htb]
+%\begin{center}
+%\selectlanguage{english}
+%\begin{tikzpicture}[scale=.9]
+% Draw help lines and axes
+%\draw[step=10mm,white!50!black] (-1,-5) grid (6,2);
+%\foreach \x in {0,...,6}
+%  \node at (\x-.3,-.2) {\sm{\x}};
+%\foreach \y in {-4,...,-1}
+%  \node at (-.3,\y-.3) {\sm{\y}};
+%\foreach \y in {1,...,2}
+%  \node at (-.3,\y-.3) {\sm{\y}};
+%
+% Draw first path
+%\coordinate (A) at (0,0);
+%\coordinate (B) at (1,0);
+%\coordinate (C) at (1,-3);
+%\coordinate (D) at (4,-3);
+%\coordinate (E) at (4,-4);
+%\node[above left] at (A) {$P$};
+%\node[below right] at (E) {$Q$};
+%\foreach \x in {A,B,C,D,E}
+%  \fill (\x) circle(2pt);
+%
+%\draw[very thick,{Stealth[scale=1.4,inset=2pt,reversed]}-] (A) --
+%  (B);
+%\draw[very thick,{Stealth[scale=1.4,inset=2pt]}-,name path=bc] (B) -- 
+%  node[left] {$a_2$} (C);
+%\draw[very thick,{Stealth[scale=1.4,inset=2pt]}-,name path=cd] (C) --
+%  node[above] {$a_1$}(D);
+%\draw[very thick,{Stealth[scale=1.4,inset=2pt,reversed]}-,name path=de] (D) --
+% (E);
+%
+% Draw extensions of first path
+%\draw[very thick,loosely dotted,name path=b] (1,-4) -- (1,2);
+%\draw[very thick,loosely dotted,name path=c] (-1,-3) -- (6,-3);
+%
+% Draw reflected points
+%\coordinate (PP) at (2,2);
+%\coordinate (QP) at (6,-2);
+%\fill (PP) circle(2pt) node[above left] {$P'$};
+%\fill (QP) circle(2pt) node[below right] {$Q'$};
+%
+% Midpoints of bisected lines
+%\coordinate (R) at (1,1);
+%\coordinate (S) at (5,-3);
+%\fill (R) circle(2pt) node[above left] {$R$};
+%\fill (S) circle(2pt) node[below right] {$S$};
+%
+% Draw reflected lines
+%\draw[ultra thick,dotted] ($(B)+(1,2)$) --
+%  node[right,very near end,yshift=-8pt] {$a_2'$} ($(C)+(1,-2)$);
+%\draw[ultra thick,dotted] ($(C)+(-2,1)$) --
+%  node[above,very near start,xshift=-8pt,yshift=-1pt] {$a_1'$} ($(D)+(2,1)$);
+%\draw[ultra thick,dotted] (A) -- (PP);
+%\draw[ultra thick,dotted] (E) -- (QP);
+%
+% Draw fold
+%\draw[very thick,dashed] (R) -- (S);
+%\draw[rotate=-45] (R) rectangle +(8pt,8pt);
+%\draw[rotate=45] (S) rectangle +(8pt,8pt);
+%\end{tikzpicture}
+%\end{center}
+%\caption{הקיפול של \L{Beloch} עבור $x^3-3x^2+-3x+1$}\label{f.beloch-fold2}
+%\end{figure}
+
+\newpage
+
+\section{הריבוע של
+\L{Beloch}}\label{s.beloch-square}
+
+ניתן להציג את הבנייה בסעיף הקודם לפי הריבוע של
+\L{Beloch}:
+%\begin{figure}[thb]
+\begin{center}
+\selectlanguage{english}
+\begin{tikzpicture}[scale=.7]
+% Draw help lines and axes
+\draw[step=10mm,white!60!black] (-12,-7) grid (2,7);
+%\draw[thick] (-12,0) -- (2,0);
+%\draw[thick] (0,-7) -- (0,7);
+\foreach \x in {-11,...,3}
+  \node at (\x-.3,-.2) {\sm{\x}};
+\foreach \y in {1,...,7}
+  \node at (-.4,\y-.3) {\sm{\y}};
+\foreach \y in {-6,...,-1}
+  \node at (-.4,\y-.3) {\sm{\y}};
+
+% Draw first path
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (1,6);
+\coordinate (D) at (-10,6);
+\coordinate (E) at (-10,0);
+\foreach \x in {A,B,C,D,E}
+  \fill (\x) circle(2pt);
+\draw[thick] (A) -- (B);
+\draw[thick,name path=bc] (B) -- node[right,near end] {$a_2$} (C);
+\draw[thick,name path=cd] (C) -- node[above] {$a_1$} (D);
+\draw[thick,name path=de] (D) -- (E);
+
+% Find first segment of second path
+\path[name path=a2] (A) -- +(63.4:4);
+\path [name intersections = {of = a2 and bc, by = {A2}}];
+\draw[rotate=153.4] (A2) rectangle +(10pt,10pt);
+
+% Draw second segment of second path
+\path[name path=b2] (A2) -- +(153.4:10);
+\path [name intersections = {of = b2 and cd, by = {B2}}];
+\draw[very thick,dashed] (A2) -- (B2);
+\draw[rotate=243.4] (B2) rectangle +(10pt,10pt);
+
+% Draw square
+\draw[very thick,dashed] (B2) -- +(243.4:8.94) coordinate (AB);
+\draw[very thick,dashed] (A2) -- +(243.4:8.94) coordinate (BB);
+\fill (AB) circle (2pt) node[below left] {$B$};
+\fill (BB) circle (2pt) node[below right] {$A$};
+\draw[very thick,dashed] (AB) -- (BB);
+
+\path[fill=white!85!black,rotate=-26.6] (AB) rectangle +(8.94,8.94);
+
+% Draw labels of points
+\fill (A2) circle(2pt) node[above right,xshift=4pt] {$R$};
+\fill (B2) circle(2pt) node[above left]  {$S$};
+\fill (A)  circle(2pt) node[below right,yshift=-6pt]  {$P$};
+\fill (E)  circle(2pt) node[above left]  {$Q$};
+\end{tikzpicture}
+\end{center}
+%\caption{הריבוע של \L{Beloch}}\label{f.beloch-square}
+%\end{figure}
+
+נתונות שתי נקודות
+$P,Q$
+ושני קווים
+$a_2,a_1$,
+בנו ריבוע
+$\overline{ARSB}$
+כך ש:
+\begin{itemize}
+\item 
+צלע אחד הוא
+$\overline{RS}$
+כאשר
+$R$
+נמצאת על
+$a_2$
+ו-%
+$S$
+נמצאת על
+$a_1$;
+\item $P$
+נמצאת על
+$\overline{RA}$
+ו-%
+$Q$
+נמצאת על
+$\overline{SB}$.
+\end{itemize}
+האיור
+%\ref{f.beloch-square}
+מדגים את הריבוע של
+\L{Beloch}
+עבור 
+$x^3+6x^2+11x+6$.
+האורך של
+$RS$
+הוא
+$\sqrt{80}=4\sqrt{5}\approx 8.94$. 
+
+\subsection*{מקורות}
+
+פרק זה מבוסס על
+\L{\cite{bradford, hull-beloch, riaz}}.

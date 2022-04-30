@@ -9,14 +9,14 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The Greeks knew how to construct a triangle, a square, a pentagon and a regular polygon with $15$ sides with a straightedge and compass. Given a regular polygon with $n$ sides, a polygon with $2n$ sides can be constructed by circumscribing the polygon with a circle and bisecting the central angle (Fig.~\ref{f.hept-double}). In 1796, just before his $19$th birthday, Carl Friedrich Gauss\index{Gauss, Carl Friedrich} awoke one morning and by ``concentrated thought'' figured out how to construct a regular \emph{heptadecagon},\index{Heptadecagon} a regular polygon with $17$ sides. This achievement inspired him to become a mathematician.
+The only regular polygons that the Greeks knew how to construct with a straightedge and compass were the triangle, the square, the pentagon and the regular polygon with $15$ sides. Given a regular polygon with $n$ sides, a polygon with $2n$ sides can be constructed by circumscribing the polygon with a circle and bisecting the central angle (Fig.~\ref{f.hept-double}). No further progress was made until 1796 when Carl Friedrich Gauss\index{Gauss, Carl Friedrich} awoke one morning, just before his 19th birthday, and by ``concentrated thought'' figured out how to construct a regular \emph{heptadecagon},\index{Heptadecagon} a regular polygon with $17$ sides. This achievement inspired him to become a mathematician.
 
-Section~\ref{s.hept-regular} discusses the relation between the side of a polygon inscribed in a circle and the central angle that it subtends. Section~\ref{s.fundamental} states without proof the Fundamental Theorem of Algebra. Section~\ref{s.roots} presents the \emph{roots of unity}, the roots of the polynomial $x^n-1$, which are central to Gauss's proof. Sections~\ref{s.gauss} and~\ref{s.derivation} present Gauss's proof which is based upon symmetries of roots of polynomials. Gauss derived a \emph{formula} proving that the heptadecagon is constructible, but a geometric construction was not given for almost a century. Section~\ref{s.construction} gives an elegant construction by James J. Callagy\index{Callagy, James J.}. Section~\ref{s.hept-pentagon} shows how constructions of a regular pentagon can be derived using both geometry and trigonometry.
+Section~\ref{s.hept-regular} discusses the relation between the side of a polygon inscribed in a circle and the central angle that it subtends. Section~\ref{s.fundamental} states without proof the Fundamental Theorem of Algebra. Section~\ref{s.roots} presents the \emph{roots of unity}, the roots of the polynomial $x^n-1$, which are central to Gauss's proof. Sections~\ref{s.gauss} and~\ref{s.derivation} present Gauss's proof which is based on symmetries of roots of polynomials. Gauss derived a \emph{formula} proving that the heptadecagon is constructible, but a geometric construction was not given for almost a century. Section~\ref{s.construction} gives an elegant construction by James J. Callagy\index{Callagy, James J.}. Section~\ref{s.hept-pentagon} shows how constructions of a regular pentagon can be derived using both geometry and trigonometry.
 
 Some of the material is more straightforward if presented using complex numbers. This material is set off in boxes that can be skipped.
 \begin{figure}[b]
 \begin{center}
-\begin{tikzpicture}[scale=.45]
+\begin{tikzpicture}[scale=.4]
 \coordinate (O) at (0,0);
 \vertex{O};
 \foreach \x/\name/\n/\po in {0/a/A/right,1/b/B/above,2/c/C/left,3/d/D/below left,4/e/E/below right} {
@@ -39,7 +39,7 @@ F_0=3,\quad F_1=5,\quad F_2=17,\quad F_3=257,\quad F_4=65537\,.
 \]
 A regular polygon with $257$ sides was constructed by Magnus Georg Paucker\index{Paucker, Magnus Georg} in $1822$ and by Friedrich Julius Richelot $1832$.\index{Richelot, Friedrich Julius} In $1894$ Johann Gustav Hermes\index{Hermes, Johann Gustav} claimed to have constructed a regular polygon  with $65537$ sides.
 
-To construct a regular polygon it is sufficient to construct a line segment of length $\cos \theta$, where $\theta$ is the central angle subtended by a chord that is a side of the polygon inscribed in a unit circle.\index{Regular polygon!cosine of the central angle} Given the line segment $\overline{OB}=\cos\theta$ construct a perpendicular at $B$ and label its intersection with the unit circle by $C$. Then:
+To construct a regular polygon it is sufficient to construct a line segment of length $\cos \theta$, where $\theta$ is the central angle subtended by a chord that is a side of the polygon inscribed in a unit circle.\index{Regular polygon!cosine of the central angle} Given the line segment $\overline{OB}=\cos\theta$, construct a perpendicular at $B$ and label its intersection with the unit circle by $C$. Then:
 \begin{eqnarray*}
 \cos \theta&=&\displaystyle\frac{\overline{OB}}{\overline{OC}}=\overline{OB}\\
 \theta &=& \cos^{-1} (\overline{OB})\,.
@@ -66,7 +66,7 @@ The chord $\overline{AC}$ is a side of the regular polygon (Fig.~\ref{f.hept-cen
 \caption{The cosine of the central angle of a regular polygon}\label{f.hept-central1}
 \end{figure}
 
-Given a line segment defined to have length $1$, the lengths that are constructible are those which can be obtained from line segments of known length using the operations $\{+,-,\times,\div,\surd\}$ (Sect.~\ref{s.trisect-constructible}). Gauss showed that the cosine of the central angle of a heptadecagon $360^\circ/17\approx 21.12^\circ$ (Fig.~\ref{f.hept-central4}) is constructible since it can be expressed using only these operations:\index{Heptadecagon!cosine of the central angle}
+Given a line segment defined to have length $1$, the lengths that are constructible are those which can be obtained from line segments of known length using the operations $\{+,-,\times,/,\surd\}$ (Sect.~\ref{s.trisect-constructible}). Gauss showed that $\cos(360^\circ/17)$, the cosine of the central angle of a heptadecagon, is constructible since it can be expressed using only these operations:\index{Heptadecagon!cosine of the central angle}
 \begin{eqnarray*}
 \cos\left(\frac{360^\circ}{17}\right) &=& 
 -\frac{1}{16}+\frac{1}{16}\sqrt{17} + 
@@ -80,22 +80,6 @@ Given a line segment defined to have length $1$, the lengths that are constructi
      \sqrt{34+2\sqrt{17}}
    }\,.
 \end{eqnarray*}
-
-\begin{figure}[t]
-\begin{center}
-\begin{tikzpicture}[scale=.8]
-\coordinate (O) at (0,0);
-\foreach \x/\name in {0/a,1/b,2/c,3/d,4/e,5/f,6/g,7/h,8/i,9/j,10/k,11/l,12/m,13/n,14/o,15/p,16/q} {
-  \coordinate (\name) at ($(O)+(\x*21.12:3cm)$);
-  \draw (O) -- (\name);
-}
-\draw (a) -- (b) -- (c) -- (d) -- (e) -- (f) -- (g) -- (h) -- (i) -- (j) -- (k) -- (l) -- (m) -- (n) -- (o) -- (p) -- (q) -- cycle;
-\node[above right,xshift=20pt,yshift=-2pt] at (O) {\sm{360^\circ/17\approx 21.12^\circ}};
-\draw (O) circle (3cm);
-\end{tikzpicture}
-\end{center}
-\caption{The central angle of a regular heptadecagon}\label{f.hept-central4}
-\end{figure}
 
 \section{The Fundamental Theorem of Algebra}\label{s.fundamental}
 
@@ -128,7 +112,7 @@ It follows that the $n$ numbers:
 are $n$-th roots of unity.
 
 \begin{advanced}
-Let $r$ be $\cos \left(\frac{2\pi}{n}\right) + i\sin  \left(\frac{2\pi}{n}\right)$.
+Let $r=\cos \left(\frac{2\pi}{n}\right) + i\sin  \left(\frac{2\pi}{n}\right)$.
 By 	de Moivre's formula:\index{de Moivre's formula}
 \[
 \left[\cos \left(\frac{2\pi}{n}\right) + i\sin  \left(\frac{2\pi}{n}\right)\right]^{n}=
@@ -136,6 +120,8 @@ By 	de Moivre's formula:\index{de Moivre's formula}
 \]
 \vspace{-2ex}
 \end{advanced}
+
+\newpage
 
 \begin{theorem}
 Let $n$ be a \emph{prime number} and let $r$ an $n$-th root of unity. Then:
@@ -146,7 +132,7 @@ are distinct so they are \emph{all} the $n$-th roots of unity.
 \end{theorem}
 
 \begin{proof}
-Suppose that the powers are not distinct so that  $r^i=r^j$ for some $0\leq i<j\leq n-1$. Then $r^j/r^i=r^{j-i}=1$ and there is a positive integer $j\!-\!i<n$ such that $r^{j-i}=1$. Let $m$ be the smallest such positive integer. By the division algorithm for integers, $n=ml+k$ for some $0<l<n$ and $0\leq k<m$. From:
+Suppose that the powers are not distinct so that  $r^i=r^j$ for some $0\leq i<j\leq n-1$. Then $r^j/r^i=r^{j-i}=1$ so there exists at least one positive integer $i'$ less than $n$ such that $r^{i'}=1$. Let $m$ be the smallest such positive integer. By the division algorithm for integers $n=ml+k$ for some $0<l<n$ and $0\leq k<m$. From:
 \[
 1=r^n=r^{ml+k}=(r^m)^l\cdot r^k=1^l\cdot r^k=r^k\,,
 \]
@@ -159,10 +145,8 @@ f(x) =(x-a_1) (x-a_2)\cdots (x-a_{n-1})(x-a_n)\,.
 \end{align}
 \end{theorem}
 
-\newpage
-
 \begin{proof}
-If $a_i$ is a root of $f(x)$, by definition $f(a_i)=0$, but:
+If $a_i$ is a root of $f(x)$ by definition $f(a_i)=0$ but:
 \begin{eqnarray*}
 f(a_i)&=&(a_i-a_1) (a_i-a_2)\cdots (a_i-a_{n-1})(a_i-a_n)\\
 &=&\cdots (a_i-a_i) \cdots =0\,.
@@ -180,20 +164,21 @@ Since the coefficient of $x^{n-1}$ in $x^n-1$ for $n\geq 2$ is zero, we have:
 r+r^2+\cdots + r^{n-2}+r^{n-1}&=&-1\,.
 \end{eqnarray*}
 For the heptadecagon this is:
-\begin{align}
-r+r^2+r^3+r^4+r^5+r^6+r^7+r^8+r^9+r^{10}+r^{11}+r^{12}+r^{13}+r^{14} + r^{15}+r^{16}=-1.\label{eq.minus-one}
-\end{align}
+\begin{multline}
+r+r^2+r^3+r^4+r^5+r^6+r^7+r^8+\\
+r^9+r^{10}+r^{11}+r^{12}+r^{13}+r^{14} + r^{15}+r^{16}=-1.\label{eq.minus-one}
+\end{multline}
 
 \section{Gauss's Proof That a Heptadecagon Is Constructible}\label{s.gauss}
 
-What Gauss understood is that one need not work with the roots in their natural order $r,r^2,\ldots,r^{16}$. The powers of $r^3$ give all these roots but in a different order:
+What Gauss understood is that one need not work with the roots in their natural order $r,r^2,\ldots,r^{16}$. The powers of $r^3$ give all the roots but in a different order:
 \[
 \begin{array}{l}
 r^1, \;r^{1\cdot 3 =3},\; r^{3\cdot 3=9},\; r^{9\cdot 3=27=10},\; r^{10\cdot 3=30=13},\; r^{13\cdot 3=39=5},\; r^{5\cdot 3=15},\; r^{15\cdot 3=45=11},\\\\
-r^{11\cdot 3 =33=16}, \;r^{16\cdot 3=48=14},\; r^{14\cdot 3=42=8},\; r^{8\cdot 3=24=7},\;r^{7\cdot 3=21=4},\; r^{4\cdot 3=12},\; r^{12\cdot 3=36=2},\; r^{2\cdot 3=6}\,.
+r^{11\cdot 3 =33=16}, \;r^{16\cdot 3=48=14},\; r^{14\cdot 3=42=8},\; r^{8\cdot 3=24=7},\;r^{7\cdot 3=21=4},\; r^{4\cdot 3=12},\; r^{12\cdot 3=36=2},\; r^{2\cdot 3=6}\,,
 \end{array}
 \]
-Note that the roots have been reduced modulo $17$:
+where the roots have been reduced modulo $17$:
 \[
 r^{17m+k}=(r^{17})^m\cdot r^k=1^m\cdot r^k=r^k\,.
 \]
@@ -209,7 +194,7 @@ we can compute the coefficients $p,q$ from the roots (Chap.~\ref{c.quadratic}):
 \[
 p=-(a+b)\,,\quad q=ab\,.
 \]
-Therefore, \emph{given} $a+b$ and $ab$, we can write down the \emph{quadratic equation} of which $a,b$ are the roots.
+Therefore, \emph{given} $a+b$ and $ab$ we can write down the quadratic equation of which $a,b$ are the roots.
 
 Let $a_0$ be the sum of the roots in the odd positions in Eq.~\ref{eq.roots}:
 \[
@@ -223,7 +208,8 @@ To obtain $a_0,a_1$ as roots of a quadratic equation first compute their sum and
 \[
 a_0+a_1=r + r^2 + \cdots +r^{16}=-1\,.
 \]
-Now we have to work very hard to compute their product. Figure~\ref{fig.a0a1} shows the computation where the values of $r^ir^j$ are written after reducing the exponents modulo $17$. Check that each root occurs exactly four times so that---again using Eq.~\ref{eq.minus-one}---the value of the product is $-4$.
+Now we have to work very hard to compute their product. Figure~\ref{fig.a0a1} shows the computation where the values of $r^ir^j=r^{i+j}$ are written after reducing the exponents modulo $17$. Check that each root occurs exactly four times so that---again using Eq.~\ref{eq.minus-one}---the value of the product is $-4$.
+
 \begin{figure}[t]
 \[
 \renewcommand{\arraystretch}{1.8}
@@ -241,14 +227,16 @@ a_0a_1&=&(r + r^9 + r^{13} +r^{15} +r^{16} + r^8+r^4+r^2)\;\;\times\\
 &=&-4\,.
 \end{array}
 \]
-\caption{Computation of $a_0a_1$. Below each root is its number of occurrences so far.}\label{fig.a0a1}
+\caption{Computation of $a_0a_1$; below each root is the number of occurrences of the root so far}\label{fig.a0a1}
 \end{figure}
+
+\newpage
 
 Since $a_0+a_1=-1$ and $a_0 a_1=-4$, $a_1,a_2$ are the roots of the quadratic equation $y^2+y-4=0$ and they can be computed using the simple formula for the roots of a quadratic equation:
 \[
 a_{0,1} = \frac{-1\pm\sqrt{17}}{2}\,.
 \]
-Let $b_0,b_1,b_2,b_3$ be the sums of every fourth root starting from $r^1,r^3,r^9,r^{10}$, respectively:
+Now, let $b_0,b_1,b_2,b_3$ be the sums of every fourth root starting from $r^1,r^3,r^9,r^{10}$, respectively:
 \begin{eqnarray*}
 b_0&=& r^1+ r^{13} + r^{16} + r^4\\
 b_1&=& r^3+ r^{5} + r^{14} + r^{12}\\
@@ -257,16 +245,16 @@ b_3&=& r^{10}+ r^{11} + r^{7} + r^6\,.
 \end{eqnarray*}
 Check that $b_0+b_2=a_0, b_1+b_3=a_1$ and compute the corresponding products:
 \begin{eqnarray*}
-b_0b_2&=&(r + r^{13} + r^{16} +r^4)\;\times\;(r^9 + r^{15} + r^{8} +r^{2})\\
-&=&(r^{10}+r^{16}+r^9+r^3)\;+\;(r^{5}+r^{11}+r^4+r^{15})+\\
-&&(r^{8}+r^{14}+r^7+r^1)\;+\;(r^{13}+r^{2}+r^{12}+r^6)\\
-&=&-1\,,
+b_0b_2&=&(r + r^{13} + r^{16} +r^4)\;\;\times\;(r^9 + r^{15} + r^{8} +r^{2})\\
+&=&(r^{10}+r^{16}+r^9+r^3)\,+\;\,(r^{5}+r^{11}+r^4+r^{15})+\\
+&&(r^{8}+r^{14}+r^7+r^1)\,\;\,+\;\,(r^{13}+r^{2}+r^{12}+r^6)\\
+&=&-1\,.
 \end{eqnarray*}
-and:
+
 \begin{eqnarray*}
-b_1b_3&=&(r^3 + r^{5} + r^{14} +r^{12})\;\times\;(r^{10} + r^{11} + r^{7} +r^{6})\\
+b_1b_3&=&(r^3 + r^{5} + r^{14} +r^{12})\;\;\times\;(r^{10} + r^{11} + r^{7} +r^{6})\\
 &=&(r^{13}+r^{14}+r^{10}+r^9)\;+\;(r^{15}+r^{16}+r^{12}+r^{11})+\\
-&&(r^{7}+r^{8}+r^4+r^3)\;+(r^{5}+r^{6}+r^{2}+r^1)\\
+&&(r^{7}+r^{8}+r^4+r^3)\quad\;\, +\;(r^{5}+r^{6}+r^{2}+r^1)\\
 &=&-1\,.
 \end{eqnarray*}
 To summarize these computations:
@@ -309,8 +297,6 @@ b_1&=&\frac{a_1+\sqrt{a_1^2+4}}{2}\\
 \caption{Computation of $b_0$ and $b_1$}\label{f.b0b1}
 \end{figure}
 
-\newpage
-
 Finally, let $c_0,c_4$ be the sums of every eighth root starting with $r^1,r^{13}$:
 \begin{eqnarray*}
 c_0&=&r^1+r^{16}\\
@@ -319,7 +305,32 @@ c_0+c_4&=&r^1+r^{16}+r^{13}+r^4=b_0\\
 c_0c_4&=&(r^1+r^{16})\cdot(r^{13}+r^4)\\
 &=&r^{14}+r^5+r^{12}+r^3=b_1\,,
 \end{eqnarray*}
-so $c_0,c_4$ are the roots of $y^2-b_0y+b_1=0$. It suffices to compute the root $c_0=r^1+r^{16}$ (Fig.~\ref{fig.c0}).
+so $c_0,c_4$ are the roots of $y^2-b_0y+b_1=0$. Since $\cos(360^\circ/17) = c_0/2$ (Fig.~\ref{f.hept-cosine}) it suffices to compute the root $c_0=r^1+r^{16}$ (Fig.~\ref{fig.c0}).
+
+\begin{figure}[b]
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\coordinate (O) at (0,0) node[left] {$O$}
+  node[above right,xshift=20pt] {$\theta$}
+  node[below right,xshift=20pt] {$\theta$};
+\coordinate (A) at (4,0);
+\coordinate (C) at (21.12:4cm);
+\coordinate (D) at (-21.12:4cm);
+\draw (D) arc(-21.12:21.12:4);
+\draw (D) -- node[below] {$1$} (O) -- node[above] {$1$} (C);
+\node[right] at (C) {$r^1$};
+\node[right] at (D) {$r^{16}$};
+\draw (C) -- (C |- A) coordinate (B);
+\draw (D) -- (D |- A);
+\draw[rotate=90] (B) rectangle +(5pt,5pt);
+\draw (D) -- (A) -- (C);
+\draw[<->] ($(O)+(3pt,0)$) --
+  node[fill=white] {$\cos \theta$} (B);
+\end{tikzpicture}
+\end{center}
+\caption{The cosine of the central angle computed from $r_1,r_{16}$}\label{f.hept-cosine}
+\end{figure}
+
 \begin{figure}[t]
 \begin{eqnarray*}
 c_0&=&\frac{b_0+\sqrt{b_0^2-4b_1}}{2}\\
@@ -379,32 +390,7 @@ c_0&=&\frac{b_0+\sqrt{b_0^2-4b_1}}{2}\\
 \caption{Computation of $c_0$}\label{fig.c0}
 \end{figure}
 
-\begin{figure}[b]
-\begin{center}
-\begin{tikzpicture}[scale=1]
-\coordinate (O) at (0,0) node[left] {$O$} node[above right,xshift=32pt] {$\theta$} node[below right,xshift=32pt] {$\theta$};
-\coordinate (A) at (4,0);
-\node[right] at (A) {$1$};
-\draw (O) -- (A);
-\coordinate (C) at (21.12:4cm);
-\coordinate (D) at (-21.12:4cm);
-\draw (D) arc(-21.12:21.12:4);
-\draw (D) -- (O) -- (C);
-\node[right] at (C) {$r^1$};
-\node[right] at (D) {$r^{16}$};
-\draw (C) -- (C |- A) coordinate (B);
-\draw (D) -- (D |- A);
-\draw[rotate=90] (B) rectangle +(5pt,5pt);
-\draw (D) -- (A) -- (C);
-\path (O) -- node[below] {$\cos \theta$} (B);
-\end{tikzpicture}
-\end{center}
-\caption{The cosine of the central angle computed from $r_1,r_{16}$}\label{f.hept-cosine}
-\end{figure}
-
-\clearpage
-
-Therefore, the cosine of the central angle of a heptadecagon is constructible with a straightedge and compass, since it is composed only of rational numbers and the operations $\{+,-,\times,\div,\surd\}$:
+The cosine of the central angle of a heptadecagon is constructible with a straightedge and compass since it is composed only of rational numbers and the operations $\{+,-,\times,/,\surd\}$:
 \begin{flalign}
 \cos\left(\frac{360^\circ}{17}\right) &= 
 \frac{c_0}{2}\\
@@ -419,23 +405,23 @@ Therefore, the cosine of the central angle of a heptadecagon is constructible wi
    }\,.\label{eq.not-gauss2}
 \end{flalign}
 
+\newpage
+
 \begin{advanced}
 \vspace{-4ex}
 \begin{eqnarray*}
-c_0&=&r_1+r_{16}\\
-&=&\cos\left(\frac{2\pi}{17}\right)+i\sin\left(\frac{2\pi}{17}\right)+\cos\left(\frac{2\cdot 16\pi}{17}\right)+i\sin\left(\frac{2\cdot 16\pi}{17}\right)\\
+r_1+r_{16}&=&\cos\left(\frac{2\pi}{17}\right)+i\sin\left(\frac{2\pi}{17}\right)+\cos\left(\frac{2\cdot 16\pi}{17}\right)+i\sin\left(\frac{2\cdot 16\pi}{17}\right)\\
 &=&\cos\left(\frac{2\pi}{17}\right)+i\sin\left(\frac{2\pi}{17}\right)+\cos\left(\frac{-2\pi}{17}\right)+i\sin\left(\frac{-2\pi}{17}\right)\\
 &=&2\cos\left(\frac{2\pi}{17}\right)\,.
 \end{eqnarray*}
-\vspace{-4ex}
+\vspace{-6ex}
 \end{advanced}
 
 \section{Derivation of Gauss's Formula}\label{s.derivation}
 
 The above formula for $\cos(360^\circ /17)$ is not the one given by Gauss. Here is a derivation of Gauss's formula:
-\begin{proof}
+
 Let us simplify $2(-1+\sqrt{17})\sqrt{34-2\sqrt{17}}$:
-%
 \begin{eqnarray*}
 2(-1+\sqrt{17})\sqrt{34-2\sqrt{17}} &=&
 -2\sqrt{34-2\sqrt{17}} +2\sqrt{17}\sqrt{34-2\sqrt{17}}\\
@@ -445,9 +431,6 @@ Let us simplify $2(-1+\sqrt{17})\sqrt{34-2\sqrt{17}}$:
 &&-4\sqrt{34-2\sqrt{17}}\\
 &=&2(1+\sqrt{17})\sqrt{34-2\sqrt{17}}-4\sqrt{34-2\sqrt{17}}\,.
 \end{eqnarray*}
-
-\newpage
-
 We will remember the term $-4\sqrt{34-2\sqrt{17}}$ for now and simplify the first term by squaring it and then taking the square root:
 \begin{eqnarray*}
 2(1+\sqrt{17})\sqrt{34-2\sqrt{17}}&=&
@@ -477,14 +460,13 @@ Substituting terms results in Gauss's formula:
      \sqrt{34+2\sqrt{17}}
    }\,.
 \end{eqnarray*}
-\end{proof}
 
 \section{Construction of a Heptadecagon}\label{s.construction}
 
 \index{Construction!hept@of a regular heptadecagon}
 \index{Heptadecagon!construction}
 Construct a unit circle centered at  $O$ with perpendicular diameters  $\overline{QP}$ and $\overline{SR}$ (Fig.~\ref{f.hept-construction1}).
-\begin{figure}[t]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=1.2]
 \clip (-4.3,-1.8) rectangle (4.3,1.9);
@@ -513,11 +495,11 @@ Construct a unit circle centered at  $O$ with perpendicular diameters  $\overlin
   \node[\where] at (\c) {$\c$};
 }
 \draw (O) rectangle(+5pt,+5pt);
-\vertex{O};
+%\vertex{O};
 \node[below right,xshift=8pt,yshift=-4pt] at (A) {\sm{\alpha}};
-\node[below right,xshift=-3pt,yshift=-4pt] at (A) {\sm{\alpha}};
+\node[below right,xshift=-2pt,yshift=-6pt] at (A) {\sm{\alpha}};
 \node[below left,xshift=1pt,yshift=-2pt] at (A) {\sm{\beta}};
-\node[below left,xshift=-4pt,yshift=4pt] at (A) {\sm{\beta}};
+\node[below left,xshift=-4pt,yshift=3pt] at (A) {\sm{\beta}};
 \draw[<->] ($(C)+(0,-16pt)$) -- node[below] {$\frac{1+\sqrt{17}}{16}$} ($(O)+(0,-16pt)$);
 \draw[<->] ($(O)+(0,-16pt)$) -- node[below,xshift=4pt] {$
 \frac{-1+\sqrt{17}}{16}$} ($(B)+(0,-16pt)$);
@@ -525,11 +507,13 @@ Construct a unit circle centered at  $O$ with perpendicular diameters  $\overlin
 \end{center}
 \caption{Construction of a heptadecagon (1)}\label{f.hept-construction1}
 \end{figure}
-Construct $A$ so that $\overline{OA}=(1/4)\overline{OR}$. By Pythagoras's Theorem:
+Construct $A$ so that $\overline{OA}=(1/4)\overline{OR}$.
+
+By Pythagoras's Theorem:
 \[
-\overline{AP}=\sqrt{(1/4)^2+1^2}=\sqrt{17}/4\,.
+\overline{AP}=\sqrt{\overline{OA}^2+\overline{OP}^2}=\sqrt{(1/4)^2+1^2}=\sqrt{17}/4\,.
 \]
-Let $B$ be the intersection of the internal bisector of $\angle OAP$ and $\overline{OP}$, and let $C$ be the intersection of the external bisector of $\angle OAP$ and $\overline{QO}$. By the internal angle bisector theorem (Thm.~\ref{thm.angle-bisector}):
+Let $B$ be the intersection of the internal bisector of $\angle OAP$ and the line segment $\overline{OP}$ and let $C$ be the intersection of the external bisector of $\angle OAP$ and the line segment $\overline{QO}$. By the internal angle bisector theorem (Thm.~\ref{thm.angle-bisector}):
 \begin{eqnarray*}
 \frac{\overline{OB}}{\overline{BP}}&=&\frac{\overline{AO}}{\overline{AP}}\\
 \frac{\overline{OB}}{1-\overline{OB}}&=&\frac{1/4}{\sqrt{17}/{4}}\\
@@ -543,9 +527,6 @@ and by the external angle bisector theorem (Thm.~\ref{thm.external-angle-bisecto
 \overline{OC}&=&\frac{1}{-1+\sqrt{17}}=\frac{1}{-1+\sqrt{17}}\cdot \frac{1+\sqrt{17}}{1+\sqrt{17}}\\
 &=&\frac{1+\sqrt{17}}{16}\,.
 \end{eqnarray*}
-
-\newpage
-
 Construct $D$ on $\overline{OP}$ such that $\overline{CD}=\overline{CA}=a$ (Fig.~\ref{f.hept-construction2}). By Pythagoras's Theorem:
 \begin{eqnarray*}
 \overline{CD}=\overline{CA}&=&\sqrt{\overline{OA}^2+\overline{OC}^2}\\
@@ -591,7 +572,7 @@ Construct $D$ on $\overline{OP}$ such that $\overline{CD}=\overline{CA}=a$ (Fig.
   \node[\where] at (\c) {$\c$};
 }
 \draw (O) rectangle(+5pt,+5pt);
-\vertex{O};
+%\vertex{O};
 \vertex{E};
 \vertex{D};
 \end{tikzpicture}
@@ -599,12 +580,13 @@ Construct $D$ on $\overline{OP}$ such that $\overline{CD}=\overline{CA}=a$ (Fig.
 \caption{Construction of a heptadecagon (2)}\label{f.hept-construction2}
 \end{figure}
 
+\newpage
 
 Construct $E$ on $\overline{OP}$ such that $\overline{BE}=\overline{BA}=b$; again by Pythagoras's Theorem:
 
 \begin{eqnarray*}
 \overline{BE}=\overline{BA}&=&\sqrt{\overline{OA}^2+\overline{OB}^2}\\
-&=&\sqrt{\left(\frac{1}{4}\right)^2+\left(\frac{1-\sqrt{17}}{16}\right)^2}=\frac{1}{16}\sqrt{16+1+17-2\sqrt{17}}\\
+&=&\sqrt{\left(\frac{1}{4}\right)^2+\left(\frac{-1+\sqrt{17}}{16}\right)^2}=\frac{1}{16}\sqrt{16+1+17-2\sqrt{17}}\\
 &=&\frac{1}{16}\sqrt{34-2\sqrt{17}}\,.
 \end{eqnarray*}
 Construct $M$ as the midpoint of $\overline{QD}$ and construct $F$ on $\overline{OS}$ such that $\overline{MF}=\overline{MQ}=f$:
@@ -614,9 +596,9 @@ Construct $M$ as the midpoint of $\overline{QD}$ and construct $F$ on $\overline
 &=&\frac{1}{2}\left[1-\left(\frac{1+\sqrt{17}}{16}\right)+\frac{\sqrt{34+2\sqrt{17}}}{16}\right]\\
 &=&\frac{1}{32}\left(15-\sqrt{17}+\sqrt{34+2\sqrt{17}}\right)\,.
 \end{eqnarray*}
-
-Construct a circle whose diameter is $\overline{OE}$. Construct a chord $\overline{OG}=\overline{OF}=g$ (Fig.~\ref{f.hept-construction3}). Note that $\overline{MO}=1-\overline{MQ}=1-\overline{MF}$. By Pythagoras's Theorem:
-\begin{figure}[b]
+Note that $\overline{MO}=1-\overline{MQ}=1-\overline{MF}$.
+ 
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=1.2]
 \clip (-4.3,-1.8) rectangle (4.3,1.9);
@@ -666,9 +648,9 @@ Construct a circle whose diameter is $\overline{OE}$. Construct a chord $\overli
 \foreach \c/\where in {O/below left, P/right, Q/left, R/above, S/below, A/above left, B/below, C/below, D/below, E/below right, M/below left, F/below left, G/below, H/below} {
   \node[\where] at (\c) {$\c$};
 }
-\vertex{O};
+%\vertex{O};
 \vertex{D};
-
+\vertex{H};
 \draw (O) rectangle +(+5pt,+5pt);
 \draw[rotate=30] (G) rectangle +(+5pt,+5pt);
 \path (Q) -- node[below] {$f$} (M);
@@ -677,6 +659,9 @@ Construct a circle whose diameter is $\overline{OE}$. Construct a chord $\overli
 \caption{Construction of a heptadecagon (3)}\label{f.hept-construction3}
 \end{figure}
 
+\newpage
+
+Construct a semicircle whose diameter is $\overline{OE}$. Construct a chord $\overline{OG}=\overline{OF}=g$ (Fig.~\ref{f.hept-construction3}). By Pythagoras's Theorem:
 \begin{eqnarray*}
 \overline{OG}=\overline{OF}&=&\sqrt{\overline{MF}^2-\overline{MO}^2}=\sqrt{\overline{MF}^2-(1-\overline{MF})^2}\\
 &=&\sqrt{2\overline{MF}-1}\\
@@ -698,6 +683,9 @@ $\angle OGE$ is a right angle since it is subtended by a diameter of the circle.
 68+12\sqrt{17}-16\sqrt{34+2\sqrt{17}}-2(1-\sqrt{17})\sqrt{34-2\sqrt{17}}
 }\,.
 \end{eqnarray*}
+
+\newpage
+
 Compute $\overline{OE}$:
 \begin{eqnarray*}
 \overline{OE}=\overline{OB}+\overline{BE}&=&\frac{-1+\sqrt{17}}{16}+\frac{1}{16}\sqrt{34-2\sqrt{17}}\\
@@ -719,30 +707,11 @@ The complex fifth roots of unity are:
 \end{advanced}
 
 \subsection{Trigonometry}
-The central angle of a regular pentagon is $360^\circ/5=72^\circ$  (Fig.~\ref{f.hept-central-pentagon}). Let us compute $\cos 36^\circ$ using the  trigonometric identities for $2\theta$ and $\theta/2$ (Thms.~\ref{s.sum-of-trig}, \ref{thm.sine-cosine-half}):
-\begin{figure}[t]
-\begin{center}
-\begin{tikzpicture}[scale=.5]
-\coordinate (O) at (0,0);
-\vertex{O};
-\node[below right,xshift=6pt,yshift=2pt] at (O) {$72^\circ$};
-\foreach \x/\name/\n/\po in {0/a/A/right,1/b/B/above,2/c/C/left,3/d/D/below left,4/e/E/below right} {
-  \coordinate (\name) at ($(O)+(\x*72+18:3cm)$);
-}
-\draw (a) -- (b) -- (c) -- (d) -- (e) -- (a);
-\node[draw,circle through=(a)] at (O) {};
-\draw (a) -- (O) -- (e);
-\end{tikzpicture}
-\end{center}
-\caption{The central angle of a regular pentagon}\label{f.hept-central-pentagon}
-\end{figure}
+The central angle of a regular pentagon is $360^\circ/5=72^\circ$. Let us compute $\cos 36^\circ$ using the  trigonometric identities for $2\theta$ and $\theta/2$ (Thms.~\ref{s.sum-of-trig}, \ref{thm.sine-cosine-half}):
 \begin{eqnarray*}
 0=\cos 90^\circ &=& \cos(72^\circ+18^\circ)=\cos 2\cdot 36^\circ\cos 36^\circ/2 - \sin 2\cdot 36^\circ\sin 36^\circ/2\\
 &=&(2\cos^2 36^\circ-1)\sqrt{\frac{1+\cos 36^\circ}{2}}-2\sin 36^\circ\cos 36^\circ\sqrt{\frac{1-\cos 36^\circ}{2}}\,.
 \end{eqnarray*}
-
-\newpage
-
 There is now only one angle in the formula; let $x=\cos 36^\circ$. Then:
 \begin{eqnarray*}
 (2x^2-1)\sqrt{\frac{1+x}{2}}&=&2\sqrt{1-x^2}\cdot x \cdot \sqrt{\frac{1-x}{2}}\\
@@ -754,8 +723,6 @@ Solving the quadratic equation gives a constructible value:
 \[
 \cos 36^\circ = \frac{1+\sqrt{5}}{4}\,.
 \]
-
-%\vspace*{-6ex}
 
 \subsection{Geometry}\label{s.geometry-pentagon}
 
@@ -788,9 +755,20 @@ Let $\overline{ABCDE}$ be a regular pentagon (Fig.~\ref{f.hept-pentagon2}). By d
 \end{center}
 \caption{Construction of a regular pentagon (1)}\label{f.hept-pentagon2}
 \end{figure}
-$\triangle ACE\cong \triangle CAD$ by side-side-side so $\angle ACE=\angle CAD=\theta$. $\triangle AED\cong\triangle CDE$ by side-side-side so $\angle ADE=\angle CED=\phi$. $\angle AFC=\angle EFD=\psi$ are vertical angles.
-$\psi+2\theta=\psi+ 2\phi=180^\circ$ so $\theta=\phi$.
-By alternate interior angles, we conclude that $\overline{AC}\parallel \overline{DE}$.
+$\triangle ACE\cong \triangle CAD$ by side-side-side so $\angle ACE=\angle CAD=\theta$. $\triangle AED\cong\triangle CDE$ by side-side-side so $\angle ADE=\angle CED=\phi$. $\angle AFC=\angle EFD=\psi$ are vertical angles. In both triangles the sum of the angles is $180^\circ$ so
+$\psi+2\theta=\psi+ 2\phi$ and $\theta=\phi$.
+By alternate interior angles we conclude that $\overline{AC}\parallel \overline{DE}$.
+
+Construct a line through $E$ parallel to $\overline{DC}$ and let $F$ be its intersection with $\overline{AC}$ (Fig.~\ref{f.hept-pentagon3}). $\overline{CDEF}$ is a rhombus so $\overline{EF}=\overline{CD}=\overline{AE}=1$. $\triangle ACE$ is an isoceles triangle with base angles $\alpha$. $\triangle AEF$ is also isoceles and $\angle AFE=\angle FAE=\alpha$ so $\triangle ACE\sim\triangle AEF$. Taking ratios of the sides gives:
+\[
+\frac{x}{1}=\frac{1}{x-1}\,.
+\]
+The result is a quadratic equation $x^2-x-1=0$
+whose positive root is constructible:
+\[
+x=\frac{1+\sqrt{5}}{2}\,.
+\]
+
 \begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
@@ -824,24 +802,14 @@ By alternate interior angles, we conclude that $\overline{AC}\parallel \overline
 \caption{Construction of a regular pentagon (2)}\label{f.hept-pentagon3}
 \end{figure}
 
-Construct a line through $E$ parallel to $\overline{DC}$ and let $F$ be its intersection with $\overline{AC}$ (Fig.~\ref{f.hept-pentagon3}). $\overline{CDEF}$ is a rhombus so $\overline{EF}=\overline{CD}=\overline{AE}=1$. $\triangle ACE$ is an isoceles triangle with base angles $\alpha$. $\triangle AEF$ is also isoceles and $\angle AFE=\angle FAE=\alpha$. Therefore,$\triangle ACE\sim\triangle AEF$:
-\[
-\frac{x}{1}=\frac{1}{x-1}\,.
-\]
-The result is a quadratic equation $x^2-x-1=0$
-whose positive root is constructible:
-\[
-x=\frac{1+\sqrt{5}}{2}\,.
-\]
-
 \subsection*{What Is the Surprise?}
 
-It is surprising that two millennia passed from the work of the Greeks on construction to the discovery by Gauss of the constructibility of the regular heptadecagon. It is also surprising that the problem was solved not by using geometry, but by inventing new algebraic methods that had a far-reaching influence in mathematics.
+It is surprising that two millennia passed from the work of the Greeks on construction to the discovery by Gauss of the constructibility of the regular heptadecagon. It is also surprising that the problem was solved not by using geometry but by inventing new algebraic methods that had a far-reaching influence in mathematics.
 
 
 \subsection*{Sources}
 
 This chapter is based on \cite{jorg}. Gauss's original work is available in an English translation \cite{gauss}.
-Equation~\ref{eq.not-gauss1}--\ref{eq.not-gauss2} appears in \cite{rike}; the author assigns an exercise to transform it into Gauss's formula that appears in \cite[p.~458]{gauss} and \cite[p.~68]{jorg}.
+Equation~\ref{eq.not-gauss1}--\ref{eq.not-gauss2} appears in \cite{rike}; the author assigns an exercise to transform it into Gauss's formula as it appears in \cite[p.~458]{gauss} and \cite[p.~68]{jorg}.
 
 The construction of the heptadecagon is taken from \cite{callagy} while other constructions can be found in \cite{wiki:heptadecagon}. The trigonometric construction of the regular pentagon is from \cite{wiki:pentagon}. The geometric construction of the regular pentagon was obtained by solving exercises 2.3.3 and 2.3.4 in \cite{stillwell}.

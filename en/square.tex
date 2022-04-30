@@ -11,16 +11,16 @@ In this chapter we present three approximate constructions of the value of $\pi$
 
 Squaring the circle, the construction of a square with the same area as a given circle, is one of the three construction problems that the Greeks posed but were unable to solve. Unlike trisecting the angle and doubling the cube, where the impossibility follows from properties of the roots of polynomials, the impossibility of squaring the circle follows from the transcendentality of $\pi$: it is not the root of any polynomial with rational coefficients. This is a difficult theorem that was proved in 1882 by Carl von Lindemann\index{Lindemann, Carl von}.
 
-Approximations to $\pi\approx 3.14159265359$ have been known since ancient times. Some simple, reasonably accurate, approximations are:
+Approximations to $\pi\approx 3.14159265359$ have been known since ancient times. Some simple but reasonably accurate approximations are:
 \[
 \displaystyle\frac{22}{7}\approx 3.142857,\quad \displaystyle\frac{333}{106}\approx 3.141509,\quad \displaystyle\frac{355}{113}\approx 3.141593\,.
 \]
 
-We present three constructions by a straightedge and compass of  approximations to $\pi$. One is by by Adam Kocha\'{n}ski (Sect.~\ref{s.square-kochanski}) and two are by Ramanujan (Sects.~\ref{s.square-ramanujan-first}, \ref{s.square-ramanujan-second}). Section~\ref{s.square-quad} shows that squaring the circle is possible using the quadratrix.
+We present three constructions by a straightedge and compass of  approximations to $\pi$. One is by by Adam Kocha\'{n}ski (Sect.~\ref{s.square-kochanski}) and two are by Ramanujan (Sects.~\ref{s.square-ramanujan-first}, \ref{s.square-ramanujan-second}). Section~\ref{s.square-quad} how to square the circle using the quadratrix.
 
 \enlargethispage{\baselineskip}
 
-The following table shows the formulas for the lengths that are constructed, their approximate values, the difference between these values and the value of $\pi$, and the error in meters that results if the approximation is used to compute the circumference of the earth given that its radius is $6378$ km.
+The following table shows the formulas for the lengths that are constructed, their approximate values, the difference between these values and the value of $\pi$ and the error in meters that results if the approximation is used to compute the circumference of the earth given that its radius is $6378$ km.
 \[
 \begin{array}{l@{\hspace{5mm}}c@{\hspace{5mm}}c@{\hspace{5mm}}c@{\hspace{5mm}}r}
 \hline\noalign{\smallskip}
@@ -127,7 +127,7 @@ The following table shows the formulas for the lengths that are constructed, the
 
 % Draw tangent at A
 \draw[name path=tangent] ($(A)+(-4.5,0)$) -- ($(A)+(10.5,0)$);
-\draw (A) rectangle +(7pt,7pt);
+\draw (A) rectangle +(6pt,6pt);
 
 % Draw arc centered at O which intersects circle at C
 \draw[name path=Aarc] (O)
@@ -158,7 +158,7 @@ The following table shows the formulas for the lengths that are constructed, the
 \node[left,yshift=10pt,xshift=-20pt] at (A) {$30^\circ$};
 
 \path[name intersections={of=AC and OD,by=K}];
-\draw[rotate=-30] (K) rectangle +(7pt,7pt);
+\draw[rotate=-30] (K) rectangle +(6pt,6pt);
 
 \path (A) -- node[above,xshift=2pt,yshift=2pt] {$1/2$} (K);
 \path (A) -- node[below,xshift=-10pt] {$1/\sqrt{3}$} (E);
@@ -177,7 +177,7 @@ The following table shows the formulas for the lengths that are constructed, the
 \end{figure}
 
 \begin{theorem}
-$\overline{BH}=\sqrt{\displaystyle\frac{40}{3}-2\sqrt{3}}\approx \pi$.
+$\quad\overline{BH}=\sqrt{\displaystyle\frac{40}{3}-2\sqrt{3}}\approx \pi$.
 \end{theorem}
 \begin{proof}
 Figure~\ref{f.square-kochansky-detail} is an enlarged extract from Fig.~\ref{f.square-kochansky}, where dashed line segments have been added. Since all the circles are unit circles the lengths of the dashed lines are $1$. It follows that  $\overline{AOCD}$ is a rhombus so its diagonals are perpendicular to and bisect each other at the point labeled $K$. $\overline{AK}=1/2$.
@@ -315,7 +315,7 @@ $\triangle ABH$ is a right triangle and $\overline{AH}=3-\overline{EA}$, so by P
 \end{figure}
 
 \begin{theorem}
-$\overline{RD}^2=\displaystyle\frac{355}{113}\approx \pi$.
+$\quad\overline{RD}^2=\displaystyle\frac{355}{113}\approx \pi$.
 \end{theorem}
 
 
@@ -328,7 +328,7 @@ $\angle PSR$ is subtended by a diameter so $\triangle PSR$ is a right triangle. 
 \[
 \overline{PS} = \sqrt{2^2-\left(\frac{\sqrt{5}}{3}\right)^2}=\sqrt{4-\frac{5}{9}}=\frac{\sqrt{31}}{3}\,.
 \]
-By construction $\overline{MO}\|\overline{RS}$ so
+By construction $\overline{MO}\parallel \overline{RS}$ so
 $\triangle MPO\sim \triangle SPR$ and:
 %
 \begin{eqnarray*}
@@ -336,7 +336,7 @@ $\triangle MPO\sim \triangle SPR$ and:
 \frac{\overline{PM}}{1}&=&\frac{\sqrt{31}/3}{2}\\
 \overline{PM}&=&\frac{\sqrt{31}}{6}\,.
 \end{eqnarray*}
-By construction $\overline{NT}\|\overline{RS}$ so 
+By construction $\overline{NT}\parallel \overline{RS}$ so 
 $\triangle NPT\sim \triangle SPR$ and:
 \begin{eqnarray*}
 \frac{\overline{PN}}{\overline{PT}}&=&\frac{\overline{PS}}{\overline{PR}}\\
@@ -353,12 +353,13 @@ $\triangle LPR$ is a right triangle because $\overline{PL}$ is a tangent so $\an
 \overline{RL}=\sqrt{2^2+\left(\frac{\sqrt{31}}{9}\right)^2} = \frac{\sqrt{355}}{9}\,.
 \]
 By construction
-$\overline{RC}=\overline{RH}=3/2$ and $\overline{CD} \|\overline{LK}$. By similar triangles:
+$\overline{RC}=\overline{RH}=3/2$ and $\overline{CD} \parallel \overline{LK}$. By similar triangles:
 %
 \begin{eqnarray*}
 \frac{\overline{RD}}{\overline{RC}}&=&\frac{\overline{RL}}{\overline{RK}}\\
 \frac{\overline{RD}}{3/2}&=&\frac{\sqrt{355}/9}{\sqrt{113}/6}\\
-\overline{RD}&=&\sqrt{\frac{355}{113}}\,.            
+\overline{RD}&=&\sqrt{\frac{355}{113}}\\
+\overline{RD}^2&=&\frac{355}{113}\approx 3.14159292035\approx \pi\,.
 \end{eqnarray*}
 In Fig.~\ref{f.square-rama1b} the line segments are labeled with their lengths.
 \end{proof}
@@ -441,7 +442,7 @@ In Fig.~\ref{f.square-rama1b} the line segments are labeled with their lengths.
 \textbf{Construction  (Fig.~\ref{f.square-ramanujan-2a}):}
 \begin{enumerate}
 
-\item Construct a unit circle centered at $O$ with diameter $\overline{AB}$, and let $C$ be the intersection of the perpendicular to $\overline{AB}$ at $O$ with the circle.
+\item Construct a unit circle centered at $O$ with diameter $\overline{AB}$ and let $C$ be the intersection of the perpendicular to $\overline{AB}$ at $O$ with the circle.
 
 \item Trisect the line segment $\overline{AO}$ such that $\overline{AT}=1/3$ and $\overline{TO}=2/3$ (Thm.~\ref{thm.trisect-constructible}).
 
@@ -529,10 +530,14 @@ In Fig.~\ref{f.square-rama1b} the line segments are labeled with their lengths.
 \newpage
 
 \begin{theorem}\label{thm.ramanujan2}
-$3\sqrt{\overline{SO}}=\left(9^2+\displaystyle\frac{19^2}{22}\right)^{1/4}\approx \pi$.
+$\quad 3\sqrt{\overline{SO}}=\left(9^2+\displaystyle\frac{19^2}{22}\right)^{1/4}\approx \pi$.
 \end{theorem}
 \begin{proof}
-$\triangle COB$ is a right triangle and by Pythagoras's Theorem $\overline{CB}=\sqrt{2}$ and $\overline{NB}=\sqrt{2}-2/3$. $\triangle COB$ is isoceles so $\angle NBA =\angle MBA=45^\circ$. By the Law of Cosines\index{Law of cosines}:
+$\triangle COB$ is a right triangle so by Pythagoras's Theorem $\overline{CB}=\sqrt{2}$ and:
+\[
+\overline{NB}=\sqrt{2}-2/3\,.
+\]
+$\triangle COB$ is isoceles so $\angle NBA =\angle MBA=45^\circ$. By the Law of Cosines\index{Law of cosines}:
 \begin{eqnarray*}
 \overline{AN}^2&=&\overline{BA}^2 + \overline{BN}^2-2\cdot\overline{BA}\cdot\overline{BN}\cdot\cos \angle NBA\\
 &=&2^2+\left(\sqrt{2}-\frac{2}{3}\right)^2-2\cdot 2 \cdot \left(\sqrt{2}-\frac{2}{3}\right)\cdot \frac{\sqrt{2}}{2}
@@ -548,23 +553,26 @@ Again by the Law of Cosines\index{Law of cosines}:
 =\frac{19}{9}\\
 \overline{AM}&=&\sqrt{\frac{19}{9}}\,.
 \end{eqnarray*}
-By construction $\overline{QP}\| \overline{MN}$ so
+By construction $\overline{QP}\parallel  \overline{MN}$ so
 $\triangle MAN\sim \triangle QAP$, and by construction $\overline{AP}=\overline{AM}$:
 \begin{eqnarray*}
 \frac{\overline{AQ}}{\overline{AM}}&=&\frac{\overline{AP}}{\overline{AN}}=\frac{\overline{AM}}{\overline{AN}}\\
 \overline{AQ}&=&\frac{\overline{AM}^2}{\overline{AN}}=\frac{19/9}{\sqrt{22/9}}=\frac{19}{3\sqrt{22}}\,.
 \end{eqnarray*}
-By construction $\overline{TR}\| \overline{OQ}$ so
-$\triangle RAT\sim \triangle QAO$ giving:
+By construction $\overline{TR}\parallel  \overline{OQ}$ so
+$\triangle RAT\sim \triangle QAO$ and:
 \begin{eqnarray*}
 \frac{\overline{AR}}{\overline{AQ}}&=&\frac{\overline{AT}}{\overline{AO}}\\
 \overline{AR}&=&\overline{AQ}\cdot\frac{\overline{AT}}{\overline{AO}}=\frac{19}{3\sqrt{22}}\cdot\frac{1/3}{1}=\frac{19}{9\sqrt{22}}\,.
 \end{eqnarray*}
+
+\newpage
+
 By construction $\overline{AS}=\overline{AR}$ and $\triangle OAS$ is a right triangle because $\overline{AS}$ is a tangent. By Pythagoras's Theorem:
 \begin{eqnarray*}
 \overline{SO}&=&\sqrt{1^2+\left(\frac{19}{9\sqrt{22}}\right)^2}\\
 3\sqrt{\overline{SO}}&=&3\left(1^2+\frac{19^2}{9^2\cdot 22}\right)^{1/4}=
-\left(9^2+\frac{19^2}{22}\right)^{1/4}\approx \pi\,.
+\left(9^2+\frac{19^2}{22}\right)^{1/4}\approx 3.14159265258\approx\pi\,.
 \end{eqnarray*}
 \enlargethispage{\baselineskip}
 In Fig.~\ref{f.square-ramanujan-2b} the line segments are labeled with their lengths.
@@ -650,7 +658,9 @@ In Fig.~\ref{f.square-ramanujan-2b} the line segments are labeled with their len
 
 The quadratrix is described in Sect.~\ref{s.q}.
 
-Let $t=\overline{DE}$ be the distance that the horizontal straightedge has moved down the $y$-axis, and let $\theta$ be the corresponding angle between the rotating straightedge and the $x$-axis. Let $P$ the position of the joint of the two straightedges. The locus of $P$ is the quadratrix curve. Let $F$ be the projection of $P$ onto the $x$-axis and let $G$ be the position of the joint when both straightedges reach the $x$-axis, that is, $G$ is the intersection of the quadratrix curve and the $x$-axis  (Fig.~\ref{f.square-quad}).
+Let $t=\overline{DE}$ be the distance that the horizontal straightedge has moved down the $y$-axis, and let $\theta$ be the corresponding angle between the rotating straightedge and the $x$-axis. Let $P$ the position of the joint of the two straightedges. The locus of $P$ is the quadratrix curve.
+
+Let $F$ be the projection of $P$ onto the $x$-axis and let $G$ be the position of the joint when both straightedges reach the $x$-axis, that is, $G$ is the intersection of the quadratrix curve and the $x$-axis  (Fig.~\ref{f.square-quad}).
 \begin{figure}[ht]
 \begin{center}
 \begin{tikzpicture}[scale=.7,domain=.01:1.57,samples=100]
@@ -672,10 +682,8 @@ Let $t=\overline{DE}$ be the distance that the horizontal straightedge has moved
 \end{figure}
 
 \begin{theorem}
-$\overline{AG}=2/\pi$.
+$\quad\overline{AG}=2/\pi$.
 \end{theorem}
-
-\enlargethispage{\baselineskip}
 
 \begin{proof}
 Let $y=\overline{PF}=\overline{EA}=1-t$. Since on a quadratrix $\theta$ decreases at the same rate that $t$ increases:

@@ -18,7 +18,7 @@ This chapter shows that constructions with origami are more powerful than constr
 \index{Trisection of an angle!origami@using origami}
 
 \noindent\textbf{Construction:}
-Given an acute angle $\angle PQR$, construct $p$, the perpendicular to $\overline{QR}$ at $Q$. Construct $q$, a perpendicular to $p$ that intersects $\overline{PQ}$ at point $A$, and construct $r$, the perpendicular to $p$ at $B$ that is halfway between $Q$ and $A$. Using Axiom~6, construct the fold $l$ that places $A$ at $A'$ on $\overline{PQ}$ and $Q$ at $Q'$ on $r$. Let $B'$ be the reflection of $B$ around $l$. Construct lines through $\overline{QB'}$ and $QQ'$ (Fig.~\ref{f.abe1}).
+Given an acute angle $\angle PQR$, construct $p$, the perpendicular to $\overline{QR}$ at $Q$. Construct $q$, a perpendicular to $p$ that intersects $\overline{PQ}$ at point $A$, and construct $r$, the perpendicular to $p$ at $B$ that is halfway between $Q$ and $A$. Using Axiom~6 construct the fold $l$ that places $A$ at $A'$ on $\overline{PQ}$ and $Q$ at $Q'$ on $r$. Let $B'$ be the reflection of $B$ around $l$. Construct lines through $\overline{QB'}$ and $QQ'$ (Fig.~\ref{f.abe1}).
 \begin{figure}[ht]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
@@ -80,11 +80,11 @@ Given an acute angle $\angle PQR$, construct $p$, the perpendicular to $\overlin
 \caption{Abe's trisection of an angle}\label{f.abe1}
 \end{figure}
 
-\begin{theorem} $\angle PQB'=\angle B'QQ'=\angle Q'QR=\frac{1}{3}\angle PQR$.
+\begin{theorem} $\angle PQB'=\angle B'QQ'=\angle Q'QR=\angle PQR/3$.
 \end{theorem}
 
 \begin{proof}[1]
-$A', B', Q'$ are reflections around the line $l$ of the points $A,B,Q$ on the line $\overline{DQ}$, so they are on the reflected line $\overline{DQ'}$. By construction, $\overline{AB}=\overline{BQ}$, $\angle ABQ'=\angle QBQ'=90^\circ$ and $\overline{BQ'}$ is a common side, so $\triangle ABQ'\cong \triangle QBQ'$ by side-angle-side. Therefore, $\angle AQ'B=\angle QQ'B=\alpha$ and $\overline{AQ'}=\overline{QQ'}$, so $\triangle AQ'Q$ is isoceles (Fig.~\ref{f.abe2}).
+$A', B', Q'$ are reflections around the line $l$ of the points $A,B,Q$ on the line $\overline{DQ}$, so they are on the reflected line $\overline{DQ'}$. By construction $\overline{AB}=\overline{BQ}$, $\angle ABQ'=\angle QBQ'=90^\circ$ and $\overline{BQ'}$ is a common side, so $\triangle ABQ'\cong \triangle QBQ'$ by side-angle-side. Therefore, $\angle AQQ'=\angle QAQ'=\alpha$ so $\triangle AQ'Q$ is isoceles (Fig.~\ref{f.abe2}).
 
 \begin{figure}[ht]
 \begin{center}
@@ -164,7 +164,7 @@ $A', B', Q'$ are reflections around the line $l$ of the points $A,B,Q$ on the li
 \caption{Proofs of Abe's trisection ($U,V$ are used in Proof 2)}\label{f.abe2}
 \end{figure}
 
-By reflection, $\triangle AQ'Q\cong \triangle A'QQ'$, so $\triangle A'QQ'$ is also an isoceles triangle.
+By reflection $\triangle AQ'Q\cong \triangle A'QQ'$, so $\triangle A'QQ'$ is also an isoceles triangle.
 $\overline{QB'}$, the reflection of $\overline{Q'B}$, is the perpendicular bisector of an isoceles triangle, so $\angle A'QB'=\angle Q'QB'=\angle QQ'B=\alpha$.
 By alternating interior angles, $\angle Q'QR=\angle QQ'B=\alpha$.
 Together we have:
@@ -186,13 +186,13 @@ As in the first proof $A', B', Q'$ are all reflections around $l$, so they are o
 \index{Trisection of an angle!origami@using origami}
 
 \noindent\textbf{Construction:}
-Given an acute angle $\angle PQR$, let $M$ be the midpoint of $\overline{PQ}$. Construct $p$ the perpendicular to $\overline{QR}$ through $M$ and construct $q$ perpendicular to $p$ through $M$. $q\|\overline{QR}$. Using Axiom 6 construct the fold $l$ that places $P$ at $P'$ on $p$ and $Q$ at $Q'$ on $q$. If more than one fold is possible choose the one that intersects $\overline{PM}$. Construct $\overline{PP'}$ and $\overline{QQ'}$  (Fig.~\ref{f.martin}).
+Given an acute angle $\angle PQR$, let $M$ be the midpoint of $\overline{PQ}$. Construct $p$ the perpendicular to $\overline{QR}$ through $M$ and construct $q$ perpendicular to $p$ through $M$ so $q\parallel\overline{QR}$. Using Axiom 6 construct the fold $l$ that places $P$ at $P'$ on $p$ and $Q$ at $Q'$ on $q$. If more than one fold is possible choose the one that intersects $\overline{PM}$. Construct $\overline{PP'}$ and $\overline{QQ'}$  (Fig.~\ref{f.martin}).
 
 \begin{theorem}
-$\angle Q'QR=\frac{1}{3}\angle PQR$.
+$\angle Q'QR=\angle PQR/3$.
 \end{theorem}
 \begin{proof}
-Denote the intersection of $\overline{QQ'}$ with $p$ by $U$ and its intersection with $l$ by $V$. Denote the intersection of $\overline{PQ}$ and $\overline{P'Q'}$ with $l$ by $W$. It is not immediate that $\overline{PQ}$ and $\overline{P'Q'}$ intersect $l$ at the same point. But $\triangle PP'W \sim \triangle QQ'W$ so the altitudes bisect both vertical angles $\angle PWP', \angle QWQ'$ and they must be on the same line.
+Denote the intersection of $\overline{QQ'}$ with $p$ by $U$ and its intersection with $l$ by $V$. Denote the intersection of $\overline{PQ}$ and $\overline{P'Q'}$ with $l$ by $W$. It is not immediate that $\overline{PQ}$ and $\overline{P'Q'}$ intersect $l$ at the same point. But $\triangle PWP' \sim \triangle QWQ'$ so the altitudes bisect both vertical angles $\angle PWP', \angle QWQ'$ and they must be on the same line.
 
 $\triangle QMU\cong \triangle PMP'$ by angle-side-angle since  $\angle P'PM=\angle UQM=\beta$ by alternate interior angles, $\overline{QM}=\overline{MP}=a$ because $M$ is the midpoint of $\overline{PQ}$ and $\angle QMU=\angle PMP'=\gamma$ are vertical angles. Therefore, $\overline{P'M}=\overline{MU}=b$.
 
@@ -230,7 +230,7 @@ $\triangle P'MQ'\cong \triangle UMQ'$ by side-angle-side, since $\overline{P'M}=
 % This is the given line p
 \coordinate (pQR) at (M |- Q);
 \draw [name path=p] (pQR) --
-   node[left, very near end,yshift=28pt] {$p$}
+   node[left, very near end,yshift=20pt] {$p$}
    ($(pQR)!2!(M)$);
 \draw (pQR) rectangle +(9pt,9pt);
 
@@ -298,31 +298,29 @@ $\triangle P'MQ'\cong \triangle UMQ'$ by side-angle-side, since $\overline{P'M}=
 % Label angles
 \node [xshift=5pt,yshift=20pt]        at (M) {$\gamma$};
 \node [xshift=-5pt,yshift=-20pt]      at (M) {$\gamma$};
-\node [xshift=18pt,yshift=15pt]       at (Q) {$\beta$};
-\node [xshift=-18pt,yshift=-15pt]     at (P) {$\beta$};
+\node [xshift=15pt,yshift=13pt]       at (Q) {$\beta$};
+\node [xshift=-10pt,yshift=-10pt]     at (P) {$\beta$};
 \node [left,xshift=-30pt,yshift=7pt]  at (QP) {$\alpha$};
 \node [left,xshift=-30pt,yshift=-7pt] at (QP) {$\alpha$};
-\node [right,xshift=34pt,yshift=7pt]  at (Q) {$\alpha$};
+\node [right,xshift=25pt,yshift=5pt]  at (Q) {$\alpha$};
 \end{tikzpicture}
 \end{center}
 \caption{Martin's trisection of an angle}\label{f.martin}
 \end{figure}
 
+\vspace{-3ex}
+
 \section{Messer's Doubling of a Cube}\label{s.messer}
 \index{Doubling a cube!origami@using origami}
 \index{Origami!doubling a cube}
-Given a cube of volume $V$ its sides are of length $\sqrt[3]{V}$. The lengths of the sides of a cube with twice its volume are $\sqrt[3]{2 V}=\sqrt[3]{2}\sqrt[3]{V}$, so if we can construct $\sqrt[3]{2}$ we can multiply by the given length $\sqrt[3]{V}$ to double the cube.
+A cube of volume $V$ has sides of length $\sqrt[3]{V}$. A cube with twice the volume has sides of length $\sqrt[3]{2 V}=\sqrt[3]{2}\sqrt[3]{V}$, so if we can construct $\sqrt[3]{2}$ we can multiply by the given length $\sqrt[3]{V}$ to double the cube.
 
 \medspace
 
 \noindent\textbf{Construction:}
-Divide the side of a unit square into thirds as follows: Fold the square in half to locate the points $I=(0,1/2)$ and $J=(1,1/2)$. Next, construct the lines $\overline{AC}$ and $\overline{BJ}$ (Fig.~\ref{f.messer1}).
+Divide the side of a unit square into thirds as follows: Fold the square in half to locate the points $I=(0,1/2)$ and $J=(1,1/2)$. Next, construct the lines $\overline{AC}$ and $\overline{BJ}$ (Fig.~\ref{f.messer1}). The point of intersection $K=(2/3,1/3)$ can be obtained by solving the two equations $y=1-x$ and $y=x/2$.
 
-The point of intersection $K=(2/3,1/3)$ can be obtained by solving the equations:
-\begin{eqnarray*}
-y&=&1-x\\
-y&=&\frac{1}{2}x\,.
-\end{eqnarray*}
+Construct $\overline{EF}$, the perpendicular to $\overline{AB}$ through $K$, and construct the reflection $\overline{GH}$ of $\overline{BC}$ around $\overline{EF}$. The side of the square has now been divided into thirds.
 
 \begin{figure}[t]
 \begin{center}
@@ -352,7 +350,7 @@ y&=&\frac{1}{2}x\,.
 \draw [very thick,dotted,name path=ac] (A) -- 
    node[near start,above,xshift=24pt] {$y=1-x$} (C);
 \draw [very thick,dotted,name path=be2] (B) -- 
-   node[near start,above,xshift=-12pt,yshift=-2pt] {$y=\frac{1}{2}x$} (N);
+   node[near start,above,xshift=-12pt] {$y=x/2$} (N);
 
 \path [name intersections = {of = ac and be2, by = {I}}];
 \node[below,xshift=-6pt,yshift=-8pt] at (I) {$K=$};
@@ -373,21 +371,18 @@ y&=&\frac{1}{2}x\,.
 \end{center}
 \caption{Dividing a length into thirds}\label{f.messer1}
 \end{figure}
-Construct $\overline{EF}$, the perpendicular to $\overline{AB}$ through $K$ and construct the reflection $\overline{GH}$ of $\overline{BC}$ around $\overline{EF}$. The side of the square has now been divided into thirds.
 
-Using Axiom~6 place $C$ at $C'$ on $\overline{AB}$ and $F$ at $F'$ on $\overline{GH}$.  Denote by $L$ the point intersection of the fold with $\overline{BC}$ and denote by $b$ the length of $\overline{BL}$. The length of $\overline{LC}$ is $(a+1)-b$  (Fig.~\ref{f.messer3}).
+Using Axiom~6 place $C$ at $C'$ on $\overline{AB}$ and $F$ at $F'$ on $\overline{GH}$.  Denote by $L$ the point intersection of the fold with $\overline{BC}$ and denote by $b$ the length of $\overline{BL}$. Rename the length of the side of the square to $a+1$ where $a=\overline{AC'}$. The length of $\overline{LC}$ is $(a+1)-b$  (Fig.~\ref{f.messer3}).
 
 \begin{theorem}
 $\overline{AC'}=\sqrt[3]{2}$.
 \end{theorem}
 
 \begin{proof}
-Denote the length of the side of the square by $a+1$. When the fold is performed the line segment $\overline{LC}$ is reflected onto the line segment $\overline{LC'}$ and $\overline{CF}$ is folded onto the line segment $\overline{C'F'}$. Therefore:
+When the fold is performed the line segment $\overline{LC}$ is reflected onto the line segment $\overline{LC'}$ and $\overline{CF}$ is folded onto the line segment $\overline{C'F'}$. Therefore:
 \begin{align}
 \overline{GC'}=a-\frac{a+1}{3}=\frac{2a-1}{3}\,.\label{eq.one-third}
 \end{align}
-
-
 Since $\angle FCL$ is a right angle, so is $\angle F'C'L$.
 
 \begin{figure}[t]
@@ -468,8 +463,6 @@ Since $\angle FCL$ is a right angle, so is $\angle F'C'L$.
 \caption{Construction of $\sqrt[3]{2}$}\label{f.messer3}
 \end{figure}
 
-\newpage
-
 $\triangle C'BL$ is a right triangle so by Pythagoras's Theorem:
 \begin{subeqnarray}
 1^2 + b^2 &=& ((a+1)-b)^2\\
@@ -501,7 +494,7 @@ Simplify the equation to obtain $a^3=2$ and $a=\sqrt[3]{2}$.
 \index{Doubling a cube!origami@using origami}
 \index{Origami!doubling a cube}
 
-Since the Beloch fold (Axiom~6) can solve cubic equations, it is reasonable to conjecture that it can be used to double a cube. Here we give a direct construction that uses the fold.
+Since the Beloch fold (Axiom~6) can solve cubic equations it is reasonable to conjecture that it can be used to double a cube. Here we give a direct construction that uses the fold.
 
 \medskip
 
@@ -555,7 +548,6 @@ Let $A=(-1,0)$, $B=(0,-2)$. Let $p$ be the line $x=1$ and let $q$ be the line $y
 
 \draw[rotate=-130] (X) rectangle +(10pt,10pt);
 \draw[rotate=-130] (Y) rectangle +(10pt,10pt);
-
 \end{tikzpicture}
 \end{center}
 \caption{Beloch's doubling of the cube}\label{f.beloch-doubling}
@@ -565,7 +557,9 @@ Let $A=(-1,0)$, $B=(0,-2)$. Let $p$ be the line $x=1$ and let $q$ be the line $y
 $\overline{OY}=\sqrt[3]{2}$.
 \end{theorem}
 \begin{proof}
-The fold is the perpendicular bisector of both $\overline{AA'}$ and $\overline{BB'}$ so $\overline{AA'}\|\overline{BB'}$. By alternate interior angles $\angle YAO =\angle BXO=\alpha$. The labeling of the other angles in the figure follows from the properties of right triangles.
+The fold is the perpendicular bisector of both $\overline{AA'}$ and $\overline{BB'}$ so $\overline{AA'}\parallel\overline{BB'}$. By alternate interior angles $\angle YAO =\angle BXO=\alpha$. The labeling of the other angles in the figure follows from the properties of right triangles.
+
+\newpage
 
 $\triangle AOY\sim \triangle YOX \sim \triangle XOB$ and $\overline{OA}=1$, $\overline{OB}=2$ are given so:
 \[
@@ -591,7 +585,7 @@ A nonagon (a regular polygon with nine sides) is constructed by deriving the cub
 \[
 \cos 3\theta=4\cos^3 \theta -3\cos\theta\,.
 \]
-Let $x=\cos 40^{\circ}$. Then for the nonagon the equation is $4x^3-3x+(1/2)=0$ since $\cos 3\cdot 40^\circ=\cos 120^\circ=-(1/2)$. Figure~\ref{f.nonagon2} shows the paths for the equation according to Lill's method.
+Let $x=\cos 40^{\circ}$. Then for the nonagon the equation is $4x^3-3x+(1/2)=0$ since $\cos 3\cdot 40^\circ=\cos 120^\circ=-(1/2)$. Figure~\ref{f.nonagon2} shows the paths for the equation constructed according to Lill's method.
 
 \begin{figure}[h]
 \begin{center}
@@ -652,7 +646,7 @@ Let $x=\cos 40^{\circ}$. Then for the nonagon the equation is $4x^3-3x+(1/2)=0$ 
 
 The second path starts from $P$ at an angle of approximately $-37.45^\circ$. Turns of $90^\circ$ at $R$ and then $-90^\circ$ at $S$ cause the path to intersect the first path at its endpoint $Q$. Therefore, $x=-\tan (-37.45^\circ)\approx 0.766$ is a root of $4x^3-3x+(1/2)$.
 
-The root can be obtained using the Beloch fold. Construct the line $a_2'$ parallel to $a_2$ at the same distance from $a_2$ as $a_2$ is from $P$. Although the length of $a_2$ is zero, it still has a direction (upwards) so the parallel line is constructed. Similarly, construct the line $a_1'$ parallel to $a_1$ at the same distance from $a_1$ as $a_1$ is from $Q$. The Beloch fold $\overline{RS}$ simultaneously places $P$ at $P'$ on $a_2'$ and $Q$ at $Q'$ on $a_1'$. This constructs the angle $\angle SPQ=37.45^\circ$ (Fig.~\ref{f.nonagon3}).
+The root can be obtained using the Beloch fold. Construct the line $a_2'$ parallel to $a_2$ at the same distance from $a_2$ as $a_2$ is from $P$. Although the length of $a_2$ is zero, it still has a direction (upwards) so the parallel line can be constructed. Similarly, construct the line $a_1'$ parallel to $a_1$ at the same distance from $a_1$ as $a_1$ is from $Q$. The Beloch fold $\overline{RS}$ simultaneously places $P$ at $P'$ on $a_2'$ and $Q$ at $Q'$ on $a_1'$. This constructs the angle $\angle SPR=-37.45^\circ$ (Fig.~\ref{f.nonagon3}).
 
 \begin{figure}[h]
 \begin{center}
@@ -701,7 +695,7 @@ The root can be obtained using the Beloch fold. Construct the line $a_2'$ parall
 \draw[thick,name path=para-2] 
   (8,1) -- node[right,yshift=8pt] {$a_2'$} (8,-7);
 \draw[thick,name path=para-1] 
-  (-1,.5) -- node[right,xshift=46mm] {$a_1'$} (9,.5);
+  (-1,.5) -- node[right,xshift=44mm] {$a_1'$} (9,.5);
 
 % Draw second segments of the folds
 \path[name path=p-two] (A) -- +(-37.45:11cm);
@@ -722,7 +716,7 @@ The root can be obtained using the Beloch fold. Construct the line $a_2'$ parall
 \caption{The Beloch fold for solving the equation of the nonagon}\label{f.nonagon3}
 \end{figure}
 
-By Lill's method $\tan 37.45^\circ\approx 0.766$ and therefore $\cos \theta \approx 0.766$ is a root of the equation for the central angle $\theta$. We finish the construction of the nonagon by constructing $\cos^{-1} 0.766\approx 40^\circ$.
+By Lill's method $-\tan (-37.45^\circ)\approx 0.766$ and therefore $\cos \theta \approx 0.766$ is a root of the equation for the central angle $\theta$. We finish the construction of the nonagon by constructing $\cos^{-1} 0.766\approx 40^\circ$.
 
 The right triangle $\triangle ABC$ with $\angle CAB\approx 37.45^\circ$ and $\overline{AB}=1$ has opposite side $\overline{BC}\approx 0.766$ by definition of tangent (Fig.~\ref{f.nonagon5-eq}).
 Fold $\overline{CB}$ onto the $\overline{AB}$ so that the reflection of $C$ is $D$ and $\overline{DB}=0.766$. Extend $\overline{DB}$ and construct $E$ so that $\overline{DE}=1$.
@@ -746,8 +740,7 @@ Fold $\overline{DE}$ to reflect $E$ at $F$ on the extension of $\overline{BC}$ (
 \coordinate (D) at (0.234*4,0);
 \node[below left] at (D)  {$D$};
 \coordinate (E) at ($(D)+(4,0)$);
-\draw (D) -- %node[fill=white] {$0.766$} 
-  (B);
+\draw (D) -- (B);
 \draw (B) -- (E);
 \node[above right] at (E) {$E$};
 \draw[very thick,dotted,->,bend right=50] ($(C)+(-.2,0)$) to ($(A)+(.94,.4)$);
@@ -772,7 +765,7 @@ Fold $\overline{DE}$ to reflect $E$ at $F$ on the extension of $\overline{BC}$ (
 \coordinate (E) at ($(D)+(4,0)$);
 \draw (D) -- node[fill=white] {$0.766$} (B);
 \draw (B) -- (E);
-\node[right] at (E) {$E$};
+\node[above right,xshift=4pt] at (E) {$E$};
 \coordinate (F) at ($(B)+(0,4)$);
 \draw[very thick,dotted,->,bend right=50] ($(E)+(.1,.2)$) to ($(F)+(.2,0)$);
 \draw (B) -- (F);
@@ -795,7 +788,7 @@ Fold $\overline{DE}$ to reflect $E$ at $F$ on the extension of $\overline{BC}$ (
 
 \subsection*{What Is the Surprise?}
 
-We saw in Chaps.~\ref{c.trisect}, \ref{c.square} that tools such as the neusis can perform constructions that cannot be done with a straightedge and compass. It is surprising that trisecting an angle and doubling a cube can be constructed using only paper folding. Roger C. Alperin\index{Alperin, Roger C.} has developed a hierarchy of four methods of construction each more powerful than the previous one.
+We saw in Chaps.~\ref{c.trisect} and~\ref{c.square} that tools such as the neusis can perform constructions that cannot be done with a straightedge and compass. It is surprising that trisecting an angle and doubling a cube can be constructed using only paper folding. Roger C. Alperin\index{Alperin, Roger C.} has developed a hierarchy of four methods of construction each more powerful than the previous one.
 
 \subsection*{Sources}
 

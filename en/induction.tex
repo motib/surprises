@@ -8,7 +8,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The axiom of mathematical induction is used extensively as a method of proof in mathematics. This chapter presents inductive proofs of results that may not be known to the reader. We begin with a short review of mathematical induction (Sect.~\ref{s.induction-axiom}). Section~\ref{s.induction-fibonacci} proves results about the familiar Fibonacci numbers, while Sect.~\ref{s.induction-fermat} proves results about Fermat numbers. Section~\ref{s.induction-mccarthy} presents the $91$-function discovered by John McCarthy; the proof is by induction on an unusual sequence, integers in an inverse ordering. The proof of the formula for the Josephus problem (Sect.~\ref{s.josephus}) is also unusual because of the double induction on two different parts of an expression.
+The axiom of mathematical induction is used extensively as a method of proof in mathematics. This chapter presents inductive proofs of results that may not be known to the reader. We begin with a short review of mathematical induction (Sect.~\ref{s.induction-axiom}). Section~\ref{s.induction-fibonacci} proves results about the familiar Fibonacci numbers while Sect.~\ref{s.induction-fermat} proves results about Fermat numbers. Section~\ref{s.induction-mccarthy} presents the $91$-function discovered by John McCarthy; the proof is by induction on an unusual sequence: integers in an inverse ordering. The proof of the formula for the Josephus problem (Sect.~\ref{s.josephus}) is also unusual because of the double induction on two different parts of an expression.
 
 \section{The Axiom of Mathematical Induction}\label{s.induction-axiom}
 \index{Mathematical induction}
@@ -31,12 +31,12 @@ If you have enough patience, checking this formula for any specific value of $n$
 Let $P(n)$ be a property (such as an equation, a formula, or a theorem), where $n$ is a positive integer. Suppose that you can:
 \begin{itemize}
 \item \emph{Base case}: Prove that $P(1)$ is true.
-\item \emph{Inductive step}: For arbitrary $m$, prove that $P(m+1)$ is true, provided that you assume that $P(m)$ is true.
+\item \emph{Inductive step}: For arbitrary $m$, prove that $P(m+1)$ is true provided that you assume that $P(m)$ is true.
 \end{itemize}
 Then $P(n)$ is true for all $n\geq 1$.
 The assumption that $P(m)$ is true for arbitrary $m$ is called the \emph{inductive hypothesis}.
 \end{axiom}
-Here is a simple example of a proof by mathematical induction:
+Here is a simple example of a proof by mathematical induction.
 \begin{theorem}\label{t.sum}
 For $n\geq 1$:
 \[
@@ -59,8 +59,7 @@ The inductive step is to prove the equation for $m+1$:
 %&=&\frac{m(m+1) + 2(m+1)}{2}\label{l.sum3}\\
 =\frac{(m+1)(m+2)}{2}\,.\label{l.sum4}
 \end{eqnarray*}
-
-By the principle of mathematical induction for any $n\geq 1$:
+By the principle of mathematical induction, for any $n\geq 1$:
 \[
 \sum_{i=1}^n i = \frac{n(n+1)}{2}\,.
 \]
@@ -105,8 +104,10 @@ f_{4(n+1)} &=& f_{4n+4}\\
 &=& ((f_{4n+1}+f_{4n})+f_{4n+1})+(f_{4n+1}+f_{4n})\\
 &=& 3f_{4n+1}+2f_{4n}\,.
 \end{eqnarray*}
-$3f_{4n+1}$ is divisible by $3$, and by the inductive hypothesis, $f_{4n}$ is divisible by $3$. Therefore, $f_{4(n+1)}$ is divisible by $3$.
+$3f_{4n+1}$ is divisible by $3$ and, by the inductive hypothesis, $f_{4n}$ is divisible by $3$. Therefore, $f_{4(n+1)}$ is divisible by $3$.
 \end{proof}
+
+\newpage
 
 \begin{theorem}\label{thm.seven-fourths}
 $f_n < \left(\displaystyle\frac{7}{4}\right)^n$.
@@ -229,15 +230,15 @@ Fermat numbers become extremely large as $n$ increases. It is known that Fermat 
 For $n\geq 2$, the last digit of $F_n$ is $7$.
 \end{theorem}
 \begin{proof}
-The base case is: $F_2=2^{2^2}+1=17$.
-The inductive hypothesis is $F_n=10k_n+7$ for some $k\geq 1$. The inductive step is:
+The base case is $F_2=2^{2^2}+1=17$.
+The inductive hypothesis is $F_n=10k_n+7$ for some $k_n\geq 1$. The inductive step is:
 \begin{eqnarray*}
 F_{n+1}&=&2^{2^{n+1}}+1=2^{2^{n}\cdot 2^1}+1=\left(2^{2^{n}}\right)^2+1\\
-&=&\left(\left(2^{2^{n}}+1\right)-1\right)^2+1\\
+&=&\left(\left(2^{2^{n}}+1\right)-1\right)^2+1=(F_n-1)^2+1\\
 &=&(10k_n+7-1)^2+1=(10k_n+6)^2+1\\
 &=&100k_n^2+120k_n+36+1\\
 &=&10(10k_n^2+12k_n+3)+6+1\\
-&=&10k_{n+1}+7,\quad \textrm{for some} \;\;k\geq 1\,.
+&=&10k_{n+1}+7,\quad \textrm{for some} \;\;k_{n+1}\geq 1\,.
 \end{eqnarray*}
 \end{proof}
 
@@ -252,10 +253,10 @@ F_1=\prod_{k=0}^{0} F_k + 2=F_0+2=3+2=5\,.
 \]
 The inductive step is:
 \begin{eqnarray*}
-\prod_{k=0}^{n}F_k&=&(\prod_{k=0}^{n-1}F_k) F_n \\
+\prod_{k=0}^{n}F_k&=&\left(\prod_{k=0}^{n-1}F_k\right) F_n \\
 &=& (F_n-2)F_n\\
-&=& (2^{2^n}+1-2)(2^{2^n}+1)\\
-&=& 2^{2^{n+1}}-1= (2^{2^{n+1}}+1)-2\\
+&=& \left(2^{2^n}+1-2\right)\left(2^{2^n}+1\right)\\
+&=& \left(2^{2^{n}}\right)^2-1= \left(2^{2^{n+1}}+1\right)-2\\
 &=&F_{n+1}-2\\
 F_{n+1}&=&\prod_{k=0}^{n}F_k + 2\,.
 \end{eqnarray*}
@@ -272,7 +273,7 @@ Consider the following recursive function defined on the intergers:\index{McCart
 \[
 f(x) = \textrm{if}\;\; x > 100 \;\;\textrm{then}\;\; x - 10 \;\;\textrm{else}\;\; f(f(x+11))\,.
 \]
-For numbers greater than $100$, the result of applying the function is:
+For numbers greater than $100$ the result of applying the function is trivial:
 \[
 f(101) = 91, \;\; f(102) = 92,\;\; f(103) = 93,\;\; f(104) = 94,\;\ldots\;.
 \]
@@ -318,9 +319,7 @@ f(100) =  91 = g(100)\,,
 \]
 since we showed that $f(100)=91$ and by definition $g(100)=91$.
 
-The inductive assumption is $f(y) = g(y)$ for $y\prec x$.
-
-The inductive step is:
+The inductive assumption is $f(y) = g(y)$ for $y\prec x$ and the inductive step is:
 \begin{subeqnarray}
 f(x) &=& f(f(x+11))\slabel{m91-1}\\
 &=& f(x+11-10)= f(x+1)\slabel{m91-3}\\
@@ -336,9 +335,7 @@ $x< 90$. The base case is:
 $f(89) = f(f(100)) = f(91) = 91 = g(89)$
 by definition of $g$ since $89<100$.
 
-The inductive assumption is $f(y) = g(y)$ for $y\prec x$.
-
-The inductive step is:
+The inductive assumption is $f(y) = g(y)$ for $y\prec x$ and the inductive step is:
 \begin{subeqnarray}
 f(x) &=& f(f(x+11))\slabel{m91a}\\
 &=& f(g(x+11))\slabel{m91b}\\
@@ -347,7 +344,7 @@ f(x) &=& f(f(x+11))\slabel{m91a}\\
 &=& g(x)\,.
 \end{subeqnarray}
 Equation~\ref{m91a} holds by definition of $f$ and $x<90\leq 100$.
-The equality of Eq.~\ref{m91a} and Eq~\ref{m91b} follows from the inductive hypothesis $x < 90$, so $x+11< 101$ which implies that $x+11\in S$ and $x+11 \prec x$. The equality of Eq.~\ref{m91b} and Eq~\ref{m91c} follows by definition of $g$ and $x+11 < 101$. Finally, we have already shown that $f(91)=91$ and $g(x)=91$ for $x<90$ by definition.
+The equality of Eq.~\ref{m91a} and Eq~\ref{m91b} follows from the inductive hypothesis $x < 90$, so $x+11< 101$, which implies that $x+11\in S$ and $x+11 \prec x$. The equality of Eq.~\ref{m91b} and Eq~\ref{m91c} follows by definition of $g$ and $x+11 < 101$. Finally, we have already shown that $f(91)=91$ and $g(x)=91$ for $x<90$ by definition.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -355,10 +352,10 @@ The equality of Eq.~\ref{m91a} and Eq~\ref{m91b} follows from the inductive hypo
 \section{The Josephus Problem}\label{s.josephus}
 \index{Josephus problem}
 
-Josephus was the commander of the city of Yodfat during the Jewish rebellion against the Romans. The overwhelming strength of the Roman army eventually crushed the city's resistance and Josephus took refuge in a cave with some of his men. They preferred to commit suicide rather than being killed or captured by the Romans. According the account by Josephus, he arranged to save himself and became an observer with the Romans, later writing a history of the rebellion. We present the problem as an abstract  mathematical one.
+Josephus was the commander of the city of Yodfat during the Jewish rebellion against the Romans. The overwhelming strength of the Roman army eventually crushed the city's resistance and Josephus took refuge in a cave with some of his men. They preferred to commit suicide rather than being killed or captured by the Romans. According the account by Josephus, he arranged to save himself, became an observer with the Romans and later wrote a history of the rebellion. We present the problem as an abstract  mathematical one.
 
 \begin{definition}[Josephus problem]
-Consider the numbers $1,\ldots,n\!+\!1$ arranged in a circle. Delete every $q$'th number going around the circle $q, 2q, 3q, \ldots$ (where the computation is performed modulo $n\!+\!1$) until only one number $m$ remains. $J(n+1,q)=m$ is the \emph{Josephus number}.
+Consider the numbers $1,\ldots,n\!+\!1$ arranged in a circle. Delete every $q$'th number going around the circle $q, 2q, 3q, \ldots$ (where the computation is performed modulo $n\!+\!1$) until only one number $m$ remains. $J(n+1,q)=m$ is the \emph{Josephus number} for $n+1$ and $q$.
 \end{definition}
 
 \begin{example}
@@ -373,6 +370,9 @@ Let $n+1=41$ and let $q=3$. Arrange the numbers in a circle:
 &\leftarrow
 \end{array}
 \]
+
+\newpage
+
 The first round of deletions leads to:
 \[
 \begin{array}{rrrrrrrrrrrrrrrrrrrrrrr}
@@ -455,7 +455,7 @@ J(n+1,q)=(J(n,q)+q) \pmod {n+1}\,.
 \end{proof}
 
 \begin{theorem}\label{lem.jo}
-For $n\geq 1$ there exist numbers $a\geq 0, 0\leq t < 2^a$ such that $n=2^a+t$.
+For $n\geq 1$ there exist numbers $a\geq 0, 0\leq t < 2^a$, such that $n=2^a+t$.
 \end{theorem}
 \begin{proof}
 This can be proved from repeated application of the division algorithm with divisors $2^0, 2^1, 2^2, 2^4,\ldots$, but it is easy to see from the binary representation of $n$. For some $a$ and $b_{a-1},b_{a-2},\ldots,b_{1},b_{0}$, where for all $i$, $b_i=0$ or $b_i=1$, $n$ can be expressed as:
@@ -491,7 +491,7 @@ There are now $2^a$ numbers left:
 1&\quad3&\quad\ldots&\quad 2^{a+1}\!-\!1\,.
 \end{array}
 \]
-By the inductive hypothesis $J(2^{a+1},2)=J(2^a,2)=1$, so by induction $J(n,2)=1$, whenever $n=2^a+0$.
+By the inductive hypothesis $J(2^{a+1},2)=J(2^a,2)=1$ so by induction $J(n,2)=1$ whenever $n=2^a+0$.
 
 \textit{Second induction:}
 
@@ -522,8 +522,8 @@ There is a closed form for $J(n,3)$ but it is quite complicated.
 
 \subsection*{What Is the Surprise?}
 
-Induction is perhaps the most important proof technique in modern mathematics. While Fibonacci numbers are extremely well-known and Fermat numbers are also easy to understand, I was surprised to find so many formulas that I never knew, such as Thms.~\ref{thm.fib-div3} and \ref{thm.seven-fourths}, that can be proved by induction. McCarthy's $91$-function was discovered in the context of computer science although it is a purely mathematical result. What is surprising is not the function itself, but the strange induction used to prove it where $98\prec 97$. The surprise of the Josephus problem is the bidirectional inductive proof.
+Induction is perhaps the most important proof technique in modern mathematics. While Fibonacci numbers are extremely well-known and Fermat numbers are also easy to understand, I was surprised to find so many formulas that I never knew (such as Thms.~\ref{thm.fib-div3} and \ref{thm.seven-fourths}) that can be proved by induction. McCarthy's $91$-function was discovered in the context of computer science although it is a purely mathematical result. What is surprising is not the function itself, but the strange induction used to prove it where $98\prec 97$. The surprise of the Josephus problem is the bidirectional inductive proof.
 
 \subsection*{Sources}
 
-For a comprehensive presentation of induction see \cite{gunderson}. The proof of McCarthy's $91$-function taken from \cite{manna} and attributed to Rod M. Burstall.\index{Burstall, Rod M.} The presentation of the Josephus problem is based on \cite[Chapter~17]{gunderson}, which also discusses the historical background. That chapter contains other interesting problems with inductive proofs, such as the muddy children, the counterfeit coin and the pennies in a box. Additional material on the Josephus problem can be found in \cite{schumer,wiki:josephus}.
+For a comprehensive presentation of induction see \cite{gunderson}. The proof of McCarthy's $91$-function is from \cite{manna} where it is attributed to Rod M. Burstall.\index{Burstall, Rod M.} The presentation of the Josephus problem is based on \cite[Chapter~17]{gunderson}, which also discusses the historical background. That chapter contains other interesting problems with inductive proofs, such as the muddy children, the counterfeit coin and the pennies in a box. Additional material on the Josephus problem can be found in \cite{schumer,wiki:josephus}.

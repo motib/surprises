@@ -8,7 +8,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-This appendix presents theorems in geometry and trigonometry that may not be familiar to the reader or theorems whose proofs may be unfamiliar. Section~\ref{a.triangles} presents three formulas for computing the area of a triangle. Section~\ref{a.trig-identities} proves trigonometric identities. Although the formulas and identities are mostly familiar, students frequently learn these identities by heart or look them up without ever seeing a proof. The other sections present interesting theorems that, if not surprising, are at least unfamiliar. Section~\ref{a.bisector} contains the proofs of the angle bisector theorems, Sect.~\ref{a.ptolemy} the proof of Ptolemy's theorem that relates the sides and diagonals in a quadrilateral circumscribed by a circle, Sect.~\ref{a.ceva} the proof Ceva's theorem relating the three line segments of a triangle, and Sect.~\ref{a.menelaus} the proof of Menelaus's theorem on the segments of a transversal in a triangle.
+This appendix presents theorems in geometry and trigonometry that may not be familiar to the reader, as well as theorems that may be familiar but whose proofs are not. Section~\ref{a.triangles} presents three formulas for computing the area of a triangle. Section~\ref{a.trig-identities} proves trigonometric identities. Although the formulas and identities are mostly familiar, students frequently learn these identities by heart or look them up without ever seeing a proof. The following sections contain proofs of advanced theorems in geometry: Sect.~\ref{a.bisector}---the angle bisector theorems, Sect.~\ref{a.ptolemy}---Ptolemy's theorem that relates the sides and diagonals in a quadrilateral circumscribed by a circle, Sect.~\ref{a.ceva}---Ceva's theorem relating the three line segments of a triangle, and Sect.~\ref{a.menelaus}---Menelaus's theorem on the segments of a transversal in a triangle.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -25,30 +25,67 @@ The standard formula for computing the area of a triangle from the base and the 
 \begin{align}
 \triangle ABC=\frac{1}{2}bh\,,\label{eq.area-from-base}
 \end{align}
-where $b$, the base, is one of the sides of the triangle, and $h$, the height, is the altitude to $b$ from the opposite vertex (Fig.~\ref{f.area-base-height}).
+where $b$, the base, is one of the sides of the triangle, and $h$, the height, is the length of the altitude to $b$ from the opposite vertex (Fig.~\ref{f.area-base-height-1}).
 \end{theorem}
 
+\begin{proof}
+Figure~\ref{f.area-base-height-2} shows that by ``cutting'' the triangle at half the height, we can ``move'' the shaded triangles to form a rectangle of the same area as the triangle. The rectangle's base is $b$ and its height is $h/2$.
+\end{proof}
+
 \begin{figure}[t]
-\begin{center}
+\subfigures
+\leftfigure[c]{
 \begin{tikzpicture}[scale=.7]
 \coordinate (A) at (0,0);
-\coordinate (C) at (8,0);
-\path[name path=ab] (A) -- +(50:5);
-\path[name path=cb] (C) -- +(150:7);
+\coordinate (C) at (7,0);
+\path[name path=ab] (A) -- +(60:5.5);
+\path[name path=cb] (C) -- +(140:7);
 \path[name intersections={of=ab and cb,by={B}}];
 \draw (A) -- node[below] {$b$} (C) -- node[above] {$a$} (B) -- node[above,xshift=-2pt] {$c$}  cycle;
 \node[left] at (A) {$A$};
 \node[above right,xshift=4pt] at (A) {$\theta$};
 \node[above] at (B) {$B$};
 \node[right] at (C) {$C$};
-\draw (B) -- node[right] {$h$} (B|-A) coordinate (H);
+\draw (B) -- node[right,yshift=-4pt] {$h=c\sin\theta$} 
+  (B|-A) coordinate (H);
 \draw[rotate=90] (H) rectangle +(8pt,8pt);
 \end{tikzpicture}
-\end{center}
-\caption{Computation of the area of a triangle from the base and the height}\label{f.area-base-height}
+}
+\hfill
+\rightfigure[c]{
+\begin{tikzpicture}[scale=.7]
+\coordinate (A) at (0,0);
+\coordinate (C) at (7,0);
+\path[name path=ab] (A) -- +(60:5.5);
+\path[name path=cb] (C) -- +(140:7);
+\path[name intersections={of=ab and cb,by={B}}];
+\node[left] at (A) {$A$};
+\node[above] at (B) {$B$};
+\node[right] at (C) {$C$};
+\path (B) -- node[right,near end] {$h/2$} (B|-A) coordinate (H);
+\draw[rotate=90] (H) rectangle +(8pt,8pt);
+\coordinate (K) at ($(H)!.5!(B)$);
+\draw (A) -- node[below] {$b$} (C);
+\draw (H) -- (K);
+\coordinate (KA) at (K -| A);
+\coordinate (KAB) at ($(A)!.5!(B)$);
+\fill[color=white!50!red] (A) -- (KA) -- (KAB) -- cycle;
+\fill[color=white!50!red] (B) -- (KAB) -- (K) -- cycle;
+\coordinate (KC) at (K -| C);
+\coordinate (KBC) at ($(B)!.5!(C)$);
+\fill[color=white!50!blue] (C) -- (KC) -- (KBC) -- cycle;
+\fill[color=white!50!blue] (B) -- (KBC) -- (K) -- cycle;
+\draw[very thick,dashed] (A) -- (K -| A) -- (K -| C) -- (C);
+\draw[very thick,dashed] (A) -- (B) -- (K);
+\draw[very thick,dashed] (B) -- (C);
+\path (K) -- node[inner sep=1pt, fill=white,right,
+                 xshift=2pt,yshift=-3pt] {$h/2$} (B);
+\end{tikzpicture}
+}
+\leftcaption{Computation of the area of a triangle from the base and the height}\label{f.area-base-height-1}
+\rightcaption{Computation of the area of a triangle from the base and the height}\label{f.area-base-height-2}
 \end{figure}
 
-\newpage
 
 \begin{theorem} The area of the triangle $\triangle ABC$ is given by:
 \begin{align}\label{eq.area-from-sine}
@@ -62,7 +99,7 @@ $h=c\sin \theta$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-Heron's formula computes the area of a triangle from its three sides.\index{Triangle!Heron's formula}
+\index{Triangle!Heron's formula}
 \begin{theorem}[Heron] The area of the triangle $\triangle ABC$ is given by:\label{thm.heron} 
 \[
 \triangle ABC = \sqrt{s(s-a)(s-b)(s-c)}\,,
@@ -71,14 +108,12 @@ where $s$, the \emph{semi-perimeter} of the triangle, is equal to  $\frac{1}{2}(
 \end{theorem}
 
 \begin{proof}
-A radius of a circle and a tangent that intersects the radius are perdendicular. Furthermore, the lengths of the line segments of two tangents from the same point to the circle are equal. Therefore (Fig.~\ref{f.inscribed}):
+A radius of a circle and a tangent that intersects the radius are perdendicular. Furthermore, the lengths of the line segments of two tangents from the same point to the circle are equal. Therefore (Fig.~\ref{f.inscribed}):\footnote{This shows that the \emph{incenter}\index{Triangle!incenter},\index{Triangle!inscribed circle} the center of the inscribed circle, is the common intersection of the three angle bisectors.}
 \[
 \triangle AOB'\cong \triangle AOC',\quad
 \triangle BOA'\cong\triangle BOC',\quad
 \triangle COA'\cong \triangle COB'\,.
 \]
-This also shows that the \emph{incenter}\index{Triangle!incenter},\index{Triangle!inscribed circle} the center of the inscribed circle, is the common intersection of the three angle bisectors.
-
 \begin{figure}[ht]
 \begin{center}
 \begin{tikzpicture}[scale=1.8]
@@ -153,8 +188,7 @@ This also shows that the \emph{incenter}\index{Triangle!incenter},\index{Triangl
 \end{center}
 \caption{Triangle with an inscribed circle}\label{f.inscribed}
 \end{figure}
-
-The area $\triangle ABC$ is the sum of the six triangles listed above. Since the height of all six triangles is $r$, the radius of the inscribed circle, we obtain:
+The area $\triangle ABC$ is the sum of the six triangles listed above. Since the height of six triangles is $r$, the radius of the inscribed circle, we obtain:
 \begin{subeqnarray}
 \triangle ABC&=&\triangle AOB'\!+\!\triangle AOC'\!+\!\triangle BOA'\!+\!\triangle BOC'\!+\!\triangle COA'\!+\!\triangle COB'\\
 \triangle ABC&=&\frac{1}{2}r(u+u+v+v+w+w)\\
@@ -187,6 +221,7 @@ By Eq.~\ref{eq.area-heron}:
 Heron's formula follows from $u=s-a, v=s-b, w=s-c$.
 \end{proof}
 \index{Triangle!computing the area|)}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Trigonometric Identities}\label{a.trig-identities}
@@ -205,7 +240,7 @@ Heron's formula follows from $u=s-a, v=s-b, w=s-c$.
 \cos(\alpha-\beta) &=& \cos\alpha\cos\beta + \sin\alpha\sin\beta\,.
 \end{eqnarray*}
 \end{theorem}
-We will prove the first formula, as the other formulas can be obtained using the values of sine and cosine for $-\alpha$ and $90^\circ-\alpha$.
+We will prove the first formula; the other formulas can be obtained using the values of sine and cosine for $-\alpha$ and $90^\circ-\alpha$.
 
 Given a right triangle $\triangle ABC$ with acute angle $\alpha$ and a right triangle $\triangle ACD$ with acute angle $\beta$, we can join them to obtain geometric figures with an angle $\alpha+\beta$ (Fig.~\ref{f.sin-sum1}). The left diagram is the one most often used in proofs of the identities. Here we give two proofs based on the center and right diagrams.
 \begin{figure}[h]
@@ -306,12 +341,12 @@ Equating the two formulas for $\triangle ABD$ and canceling $\frac{1}{2}bc$, we 
 \caption{Computation of the area of a triangle in two ways}\label{f.sin-sum2}
 \end{figure}
 
+\enlargethispage{\baselineskip}
+
+The second proof uses the following theorem:
 \begin{theorem}
 In a circle of \emph{diameter} $1$ the length of a chord that subtends an inscribed angle is equal to the sine of the angle (Fig.~\ref{f.chord-angle}).
 \end{theorem}
-
-
-
 
 \begin{figure}[b]
 \begin{center}
@@ -341,16 +376,16 @@ In a circle of \emph{diameter} $1$ the length of a chord that subtends an inscri
 \end{figure}
 
 \begin{proof}
-Let $\overline{AB}$ be a diameter and let $\angle CAB=\alpha$. Let $D$ be any other point on the circle one of whose sides is the chord $\overline{BC}$. Since equal chords subtend equal inscribed angles $\angle BDC=\alpha$. In the right triangle $\triangle ABC$:
+Let $\overline{AB}$ be a diameter and let $\angle BAC=\alpha$. Let $D$ be any other point on the circle one of whose sides is the chord $\overline{BC}$. Since equal chords subtend equal inscribed angles $\angle BDC=\alpha$. In the right triangle $\triangle ABC$:
 \[
 \sin \alpha = \frac{\overline{BC}}{\overline{AB}}=\frac{\overline{BC}}{1}=\overline{BC}\,.
 \]
 \end{proof}
 
 \begin{proof}[2]
-This proof is based on the right diagram in Fig.~\ref{f.sin-sum1}, reproduced in Fig.~\ref{f.trig-quad-circle}, where the quadrilateral $\overline{ABCD}$ has been inscribed in a circle.\index{Quadrilateral!inscribed in a circle}
+This proof is based on the right diagram in Fig.~\ref{f.sin-sum1} reproduced in Fig.~\ref{f.trig-quad-circle}, where the quadrilateral $\overline{ABCD}$ has been inscribed in a circle.\index{Quadrilateral!inscribed in a circle}
 By Thm.~\ref{thm.quad-circum} a quadrilateral can be circumscribed\index{Circumscribed circle} by a circle if and only if the sum of each pair of opposite angles is $180^\circ$.
-$\angle ADC+\angle ABC=180^\circ$ since the two angles are right angles. From Thm.~\ref{thm.interior-angles-of-a-polygon} the sum of the interior angles of a quadrilateral is $360^\circ$, so $\angle DAB+\angle DCB=180^\circ$. 
+$\angle ADC+\angle ABC=180^\circ$ since both angles are right angles. From Thm.~\ref{thm.interior-angles-of-a-polygon} the sum of the interior angles of a quadrilateral is $360^\circ$, so $\angle DAB+\angle DCB=180^\circ$. 
 \begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
@@ -384,7 +419,8 @@ $\angle ADC+\angle ABC=180^\circ$ since the two angles are right angles. From Th
 \end{center}
 \caption{A quadrilateral circumscribed by a circle}\label{f.trig-quad-circle}
 \end{figure}
-Assuming that the diameter of the circle is $1$ (otherwise, multiply everything by the length of the diameter), the sides of the quadrilateral are:
+
+Let the diameter of the circle be $1$ (otherwise, multiply everything by the length of the diameter). Then the sides of the quadrilateral are:
 \[
 \overline{BC}=\sin\alpha,\quad \overline{CD}=\sin\beta,\quad \overline{AB}=\sin\gamma,\quad \overline{DA}=\sin\delta\,,
 \]
@@ -393,8 +429,7 @@ and their diagonals are:
 \overline{BD}=\sin(\alpha + \beta),\quad \overline{CA}=\sin (\alpha+\gamma)\,.
 \]
 
-By Ptolemy's Theorem\index{Ptolemy's theorem} (Thm.~\ref{thm.ptolemy}) the product of the diagonals of a quadrilateral circumscribed by a circle is equal to the sum of the products of opposite sides of the quadrilateral. Using that $\angle ADC$ and $\angle ABC$ are right angles we have:
-%
+By Ptolemy's Theorem\index{Ptolemy's theorem} (Thm.~\ref{thm.ptolemy}) the product of the diagonals of a quadrilateral circumscribed by a circle is equal to the sum of the products of opposite sides of the quadrilateral. Since $\angle ADC$ and $\angle ABC$ are right angles we have:
 \[
 \renewcommand{\arraystretch}{1.3}
 \begin{array}{lcl}
@@ -433,8 +468,7 @@ The proof uses the formulas in Thm.~\ref{thm.sum-of-trig} and the formula $\sin^
 \subsection{The Sine and Cosine of a Half-Angle}\label{s.sine-cosine-half}
 \index{Trigonometric identities!sine and cosine of a half-angle}
 \begin{theorem}\label{thm.sine-cosine-half}
-If $\alpha$ is an angle in a \emph{triangle} then:\footnote{The general formula is more complex,  because the square roots can be either positive or negative corresponding to the quadrant where $\alpha/2$ is located. For a triangle $0\!<\!\alpha\!<\!180^\circ$, so $0\!<\!\alpha/2\!<\!90^\circ$ is in the first quadrant and both the sine and the cosine are positive.}
-%
+If $\alpha$ is an angle in a \emph{triangle} then:\footnote{The general formula is more complex  because the square roots can be either positive or negative depending on the quadrant in which $\alpha/2$ is located. For a triangle $0\!<\!\alpha\!<\!180^\circ$, so $0\!<\!\alpha/2\!<\!90^\circ$ is in the first quadrant and both the sine and the cosine are positive.}
 \begin{eqnarray*}
 \cos \left(\frac{\alpha}{2}\right)&=&\sqrt{\frac{1+\cos\alpha}{2}}\\
 \sin\left(\frac{\alpha}{2}\right)&=&\sqrt{\frac{1-\cos\alpha}{2}}\,.
@@ -443,7 +477,6 @@ If $\alpha$ is an angle in a \emph{triangle} then:\footnote{The general formula 
 
 \begin{proof}
 The proof uses the formulas Thm.~\ref{thm.sum-of-trig} and the formula $\sin^2\alpha+\cos^2\alpha=1$:
-%
 \begin{eqnarray*}
 \cos \alpha&=&\cos 2\left(\frac{\alpha}{2}\right)=\cos \left(\frac{\alpha}{2}\right)\cos\left(\frac{\alpha}{2}\right)-\sin \left(\frac{\alpha}{2}\right)\sin\left(\frac{\alpha}{2}\right)\\
 &=&2\cos^2 \left(\frac{\alpha}{2}\right)-1\\
@@ -486,21 +519,22 @@ c^2&=&a^2+b^2-2ab\cos \gamma\,.
 \end{eqnarray*}
 \end{proof}
 
-\begin{figure}[t]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.65]
   \coordinate[label = left:$A$] (A) at (0,0);
   \coordinate[label = right:$B$] (B) at (6,0);
   \draw (A) -- (40:5) coordinate (C) node[above] {$C$};
-  \draw (A) -- node[below] {$c$} (B) -- node[right] {$a$} (C) -- node[left,yshift=4pt,xshift=-2pt] {$b$} cycle;
+  \draw (A) -- (B) -- node[right] {$a$} (C) -- node[left,yshift=4pt,xshift=-2pt] {$b$} cycle;
 \node[below,xshift=-4pt,yshift=-6pt] at (C) {$\gamma$};
 \node[above right,xshift=8pt] at (A) {$\alpha$};
 \node[above left,xshift=-8pt] at (B) {$\beta$};
 \coordinate (D) at (A-|C);
 \draw (C) -- (D);  
 \draw (D) rectangle +(10pt,10pt);
-\draw[<->] (0,-.5) -- node[fill=white] {$c-x$} ($(D)+(0,-.5)$);
-\draw[<->] ($(D)+(0,-.5)$) -- node[fill=white] {$x$} (6,-0.5);
+\draw[<->] (0,-.5) -- node[fill=white] {$c$} (6,-0.5);
+\draw[<->] (0,-1) -- node[fill=white] {$c-x$} ($(D)+(0,-1)$);
+\draw[<->] ($(D)+(0,-1)$) -- node[fill=white] {$x$} (6,-1);
 \end{tikzpicture}
 \caption{Proof 1 of the Law of Cosines}\label{f.law-cosines2}
 \end{center}
@@ -524,7 +558,7 @@ b^2&=&a^2+c(c-2x)\\
 \end{eqnarray*}
 \end{proof}
 
-\begin{figure}[t]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
 \coordinate (origin) at (0,0);
@@ -556,6 +590,10 @@ b^2&=&a^2+c(c-2x)\\
 \node[above right,xshift=8pt,yshift=6pt] at (B) {$\beta$};
 \draw ($(B)+(-.8,0)$) arc (180:104:.8);
 \draw[->] ($(B)+(.4,.5)$) -- +(190:1.12);
+
+\node[above left,xshift=-8pt,yshift=6pt] at (A) {$\beta$};
+\draw ($(A)+(.8,0)$) arc (0:76:.8);
+\draw[->] ($(A)+(-.4,.5)$) -- +(-10:1.12);
 \end{tikzpicture}
 \end{center}
 \caption{Proof 2 of the Law of Cosines}\label{f.law-cosines3}
@@ -637,7 +675,7 @@ If $\alpha+\beta+\gamma=180^\circ$ then:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\begin{figure}[h]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.7]
 \coordinate (o1) at (0,0);
@@ -679,8 +717,6 @@ If $\alpha+\beta+\gamma=180^\circ$ then:
 \end{center}
 \end{figure}
 
-\vspace*{-9ex}
-
 \subsection{The Limit of $\sin\alpha/\alpha$}\label{s.sin-over-x}
 \index{Trigonometric identities!limit@limit of $\sin \alpha/\alpha$}
 
@@ -691,7 +727,7 @@ If $\alpha+\beta+\gamma=180^\circ$ then:
 \end{theorem}
 
 \begin{proof}
-By examining  regular polygons inscribed within a circle (Fig.~\ref{fig.regular-polygons}), we see that the more sides in the polygon, the closer its perimeter is to the circumference of the circle. The circumference of the circle divided by the number of sides is the length of an arc with the same endpoints as the corresponding side, since in a regular polygon all sides have the same length. Since the ratio of the circumference of the circle to the perimeter of an inscribed polygon approaches $1$ as the number of sides increases, so does the ratio of the length of an arc to the corresponding chord. This is demonstrated by the following numerical examples:
+By examining  regular polygons inscribed within a circle (Fig.~\ref{fig.regular-polygons}), we see that the more sides that a polygon has, the closer its perimeter is to the circumference of the circle. The circumference of the circle divided by the number of sides is the length of an arc with the same endpoints as the corresponding side, since in a regular polygon all sides have the same length. Since the ratio of the circumference of the circle to the perimeter of an inscribed polygon approaches $1$ as the number of sides increases, so does the ratio of the length of an arc to the corresponding chord. This is demonstrated by the following numerical examples:
 
 \enlargethispage{\baselineskip}
 \vspace{-1ex}
@@ -777,8 +813,6 @@ But we have seen that this ratio converges to $1$ as the subtended angle $2\alph
 \section{The Angle Bisector Theorems}\label{a.bisector}
 \index{Triangle!angle bisector theorem}
 
-\enlargethispage{\baselineskip}
-
 \begin{theorem}\label{thm.angle-bisector}
 In $\triangle ABC$ let the angle bisector of $\angle BAC$ intersect $\overline{BC}$ at $D$ (Fig.~\ref{f.angle-bisector}). Then:
 \[
@@ -786,7 +820,7 @@ In $\triangle ABC$ let the angle bisector of $\angle BAC$ intersect $\overline{B
 \]
 \end{theorem}
 
-\begin{figure}[t]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
 % Draw base and path two lines at known angles
@@ -830,9 +864,9 @@ In $\triangle ABC$ let $\overline{AE}$ be the bisector of the angle supplementar
 \]
 \end{theorem}
 
-\begin{figure}[b]
+\begin{figure}[t]
 \begin{center}
-\begin{tikzpicture}[scale=1.175]
+\begin{tikzpicture}[scale=1]
 % Draw base and path two lines at known angles
 \draw (0,0) coordinate (b) node[below] {$B$} -- (6,0) coordinate (c) node[right] {$C$};
 \path[name path=ba] (b) -- +(70:2.5);
@@ -842,8 +876,8 @@ In $\triangle ABC$ let $\overline{AE}$ be the bisector of the angle supplementar
 \node[above] at (a) {$A$};
 \draw (a) -- (c) -- (b) -- (a);
 \path[name path=bc] (b) -- (c);
-\node[left,xshift=-14pt,yshift=-2pt] at (a) {$\alpha$};
-\node[below,xshift=-18pt,yshift=-8pt] at (a) {$\alpha$};
+\node[left,xshift=-10pt,yshift=-2pt] at (a) {$\alpha$};
+\node[below,xshift=-12pt,yshift=-8pt] at (a) {$\alpha$};
 \path[name path=ext-bisector] (a) -- +(-155:4.7);
 \draw[name path=ext-bc] (c) -- ($(c)!1.6!(b)$);
 \path[name intersections={of=ext-bc and ext-bisector,by=e}];
@@ -858,7 +892,7 @@ In $\triangle ABC$ let $\overline{AE}$ be the bisector of the angle supplementar
 
 \newpage
 
-\begin{proof}
+\begin{proof} Since $\overline{AC}$ is a straight line $\angle EAC=180^\circ-\alpha$.
 \begin{eqnarray*}
 \triangle ABE&=&\frac{1}{2}\overline{BE}h=\frac{1}{2}\overline{AE}\,\overline{AB}\sin \alpha\\
 \triangle ACE&=&\frac{1}{2}\overline{CE}h=\frac{1}{2}\overline{AE}\,\overline{AC}\sin (180^\circ-\alpha)=\frac{1}{2}\overline{AE}\,\overline{AC}\sin \alpha\\
@@ -882,7 +916,7 @@ Before giving the proof of Ptolemy's theorem we prove theorems on quadrilaterals
 A quadrilateral can be circumscribed by a circle if and only if the opposite angles are supplementary (sum to $180^\circ$).
 \end{theorem}\index{Circumscribed circle}
 
-Geometry textbooks give the simple proof of the forward direction, but it is hard to find a proof of the converse, so both proofs are given here.
+Geometry textbooks give the simple proof of the forward direction, but it is hard to find a proof of the converse so both proofs are given here.
 
 \begin{proof}[Forward direction]
 An inscribed angle is equal to half the arc that subtends it so $\angle DAB$ is half of the arc $\widehat{DCB}$ and $\angle DCB$ is half of the arc $\widehat{DAB}$ (Fig.~\ref{f.trap-1}). The two arcs form the entire circumference of the circle so their sum is $360^\circ$. Therefore, $\angle DAB + \angle DCB = \frac{1}{2} \cdot 360^\circ =  180^\circ$, and similarly $\angle ADC + \angle ABC = 180^\circ$.
@@ -934,12 +968,14 @@ An inscribed angle is equal to half the arc that subtends it so $\angle DAB$ is 
 \rightcaption{The fourth vertex must be on the circumference}\label{f.trap-2}
 \end{figure}
 
+\newpage
+
 \begin{proof}[Converse direction]
 Any triangle can be circumscribed by a circle. Circumscribe $\triangle DAB$ by a circle and suppose that $C'$ is a point such that $\angle DAB + \angle DC'B = 180^\circ$, but $C'$ is \emph{not} on the circumference of the circle. Without loss of generality, let $C'$ be within the circle (Fig.~\ref{f.trap-2}).
 
 Construct a ray that extends $\overline{DC'}$ and let $C$ be its intersection with the circle. $\overline{ABCD}$ is circumscribed by a circle so:\index{Circumscribed circle}
 \begin{eqnarray*}
-\angle DAB + \angle DCB &=& \angle DAB + \angle DC'B = 180^\circ\\
+\angle DAB + \angle DCB &=&  180^\circ = \angle DAB + \angle DC'B\\
 \angle DCB &=& \angle DC'B\,,
 \end{eqnarray*}
 which is impossible if $C$ is on the circle and $C'$ is inside the circle.
@@ -1052,13 +1088,13 @@ ef &=& (ac+bd)\,.
 
 \index{Ceva's theorem}
 \begin{theorem}[Ceva]
-Given line segments from the vertices of a triangle to the opposite edges that intersect in a point, the lengths of the segments satisfy (Fig.~\ref{f.ceva1}):
+Given line segments from the vertices of a triangle to the opposite edges that intersect in a point, the lengths of the segments satisfy (Fig.~\ref{f.ceva1}):\label{thm.ceva}
 \[
 \frac{\overline{AM}}{\overline{MB}}\cdot\frac{\overline{BQ}}{\overline{QS}}\cdot\frac{\overline{SP}}{\overline{PA}} = 1\,.
 \]
 \end{theorem}
 
-\begin{figure}[t]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}
 \path[name path=pq] (-4,0) -- (4,0);
@@ -1148,7 +1184,7 @@ By subtracting the areas of the indicated triangles, we get the proportion betwe
 \caption{Triangles in Ceva's theorem}\label{f.ceva2}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}
 \path[name path=pq] (-4,0) -- (4,0);
@@ -1175,7 +1211,7 @@ By subtracting the areas of the indicated triangles, we get the proportion betwe
 \caption{Subtracting areas in Ceva's theorem}\label{f.ceva3}
 \end{figure}
 
-This might look strange at first, so we explain it using a simpler notation:
+This might look strange at first so we explain it using a simpler notation:
 \begin{eqnarray*}
  \frac{c}{d} &=&\frac{a}{b}\\
  \frac{e}{f} &=&\frac{a}{b}\\
@@ -1197,10 +1233,10 @@ so:
 since the order of the vertices in a triangle makes no difference.
 \end{proof}
 
-\begin{figure}[t]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.6]
-\clip (-.5,-.4) rectangle +(11,6.5);
+\clip (-.8,-.4) rectangle +(11.2,6.5);
 \coordinate (D) at (0,0) node[left] {$D$};
 \draw (D) -- ++(60:6) coordinate (C) node[left] {$C$};
 \coordinate (A) at (60:3);
@@ -1233,25 +1269,25 @@ since the order of the vertices in a triangle makes no difference.
 \section{Menelaus's Theorem}\label{a.menelaus}
 
 \begin{theorem}[Menelaus]\label{thm.menelaus}\index{Menelaus's theorem}
-Given a triangle $\triangle ABC$ and a \emph{transversal line} $\overline{DBQ}$ that intersects all three of the edges of the triangle, or their extensions (Fig.~\ref{f.menelaus}). Then:\footnote{Depending on the configuration of the triangle and the transversal line, the result of the multiplication can be either plus or minus one.}
+Let $\triangle ABC$ be a triangle and $\overline{DBQ}$ a \emph{transversal line}  that intersects all three of the edges of the triangle or their extensions (Fig.~\ref{f.menelaus}). Then:\footnote{Depending on the configuration of the triangle and the transversal line, the result of the multiplication can be either plus or minus one.}
 \begin{align}
 \displaystyle\frac{\overline{AB}}{\overline{BP}}\cdot
 \displaystyle\frac{\overline{PQ}}{\overline{QC}}\cdot
-\displaystyle\frac{\overline{CD}}{\overline{DA}}=1\,.\label{eq.menelaus}
+\displaystyle\frac{\overline{CD}}{\overline{AD}}=1\,.\label{eq.menelaus}
 \end{align}
 \end{theorem}
 
 \begin{proof}
-Draw a line through $C$ parallel to $\overline{AB}$ and extend $\overline{DQ}$ until it intersects the parallel at $K$. From $\triangle ADB \sim \triangle ACK$ it follows that:
+Draw a line through $C$ parallel to $\overline{AB}$ and extend $\overline{DQ}$ until it intersects the parallel at $K$. From $\triangle ADB \sim \triangle CDK$ it follows that:
 \begin{equation*}
-\displaystyle\frac{\overline{CD}}{\overline{DA}}=\displaystyle\frac{\overline{CK}}{\overline{AB}}\,.
+\displaystyle\frac{\overline{CD}}{\overline{AD}}=\displaystyle\frac{\overline{CK}}{\overline{AB}}\,.
 \end{equation*}
 From $\triangle  BQP\sim \triangle KQC$ it follows that:
 \begin{equation*}
 \displaystyle\frac{\overline{QC}}{\overline{PQ}}=\displaystyle\frac{\overline{CK}}{\overline{BP}}\,.
 \end{equation*}
 Eliminating $\overline{CK}$ gives
-$\overline{AB}\cdot\overline{CD}\cdot\overline{PQ}=\overline{QC}\cdot\overline{BP}\cdot\overline{DA}$ which can be re-arranged to obtain Thm.~\ref{eq.menelaus}.
+$\overline{AB}\cdot\overline{CD}\cdot\overline{PQ}=\overline{QC}\cdot\overline{BP}\cdot\overline{AD}$ which can be re-arranged to obtain Thm.~\ref{eq.menelaus}.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

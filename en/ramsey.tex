@@ -8,11 +8,9 @@ We present simple cases of four problems: Schur triples, Pythagorean triples, va
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Ramsey theory is a branch of combinatorics that asks questions of the form: How large must a set be so that if it is divided into subsets, at least one subset has a certain property?
-Results in Ramsey theory are difficult to prove and there remain many open problems. In this chapter we present simple cases of four problems to give a flavor of this fascinating subject: Schur triples (Sect.~\ref{s.schur}), triples of integers such that $a+b=c$, Pythagorean triples (Sect.~\ref{s.pyth}), triples of integers such that $a^2+b^2=c^2$, van der Waarden's problem (Sect.~\ref{s.van}) which concerns sequences of numbers, and Ramsey's theorem (Sect.~\ref{s.ramsey}) on coloring graphs.
+Results in Ramsey theory are difficult to prove and there remain many open problems. In this chapter we present simple cases of four problems to give a taste of this fascinating subject: Schur triples (Sect.~\ref{s.schur})---triples of integers such that $a+b=c$, Pythagorean triples (Sect.~\ref{s.pyth})---triples of integers such that $a^2+b^2=c^2$, van der Waarden's problem (Sect.~\ref{s.van}) which concerns sequences of numbers, and Ramsey's theorem (Sect.~\ref{s.ramsey}) on coloring graphs. Section~\ref{s.bounds} shows how the probabilistic method in combinatorics can be used to develop a lower bound for Ramsey numbers.
 
-Section~\ref{s.bounds} gives a taste of the probabilistic method in combinatorics by using the method to develop a lower bound for Ramsey numbers.
-
-The Pythagorean triples problem was recently solved with the aid of computers, using a relatively new method call SAT solving. For readers familiar with propositional logic, Sect.~\ref{s.sat} gives an overview of how this is done.
+The Pythagorean triples problem was recently solved with the aid of computers, using a relatively new method call SAT solving. For readers familiar with propositional logic Sect.~\ref{s.sat} gives an overview of how this is done.
 
 Section~\ref{s.plimpton} describes Pythagorean triples as known to the Babylonians four thousand years ago.
 
@@ -25,8 +23,11 @@ Terminology: \emph{monochromatic} means \emph{of the same color}.
 \index{Schur triples}
 
 \begin{definition}
-Given \emph{any} decomposition of the set of positive integers \[S(n)=\{1,\ldots,n\}\]
-into two disjoint subsets $S_1,S_2$, do there exist $a,b,c\in S_i$, $a\!<\!b\!<\!c$, such that $a+b=c$, for at least one $S_1,S_2$? If so, the set $\{a,b,c\}$ is called a \emph{Schur triple}.
+Given \emph{any} decomposition of the set of positive integers:
+\[
+S(n)=\{1,\ldots,n\}
+\]
+into two disjoint subsets $S_1,S_2$, do there exist $\{a,b,c\}\subseteq S_1$ or $\{a,b,c\}\subseteq S_2$ (or both) such that $a\!<\!b\!<\!c$ and $a+b=c$? If so, the set $\{a,b,c\}$ is called a \emph{Schur triple}.
 \end{definition}
 
 \begin{example} For $n=8$, in the decomposition:
@@ -94,17 +95,21 @@ S_1&S_2\\\svhline
 
 If follows that there is no decomposition that does not include a Schur triple.
 \end{proof}
-
-The theorem by Issai Schur\index{Schur, Issai} generalizes this example to dividing a set into $k$ subsets. For every $k$ there is a smallest $n$ such that in any decomposition of $S(n)$ into $k$ subsets, one of the subsets must contain a Schur triple.
+ Issai Schur proved the following theorem:
+\begin{theorem}[Schur]
+For every $k\geq 2$ there is a smallest $n$ such that in any disjoint decomposition of $S(n)$ into $k$ subsets, at least one of the subsets must contain a Schur triple.
+\end{theorem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Pythagorean Triples}\label{s.pyth}
 
 \begin{definition}
-Given \emph{any} decomposition of the set of positive integers
-\[S(n)=\{1,\ldots,n\}\]
-into two disjoint subsets $S_1,S_2$, do there exist $a,b,c\in S_i$, $a\!<\!b\!<\!c$, such that $a^2+b^2=c^2$, for at least one of $S_1,S_2$? If so, $\{a,b,c\}$ is called a \emph{Pythagorean triple}.\index{Pythagorean triples}
+Given \emph{any} decomposition of the set of positive integers:
+\[
+S(n)=\{1,\ldots,n\}
+\]
+into two disjoint subsets $S_1,S_2$, do there exist $\{a,b,c\}\subseteq S_1$ or $\{a,b,c\}\subseteq S_2$ (or both) such that $a\!<\!b\!<\!c$ and $a^2+b^2=c^2$? If so, $\{a,b,c\}$ is called a \emph{Pythagorean triple}.\index{Pythagorean triples}
 \end{definition}
 
 \begin{example}
@@ -118,13 +123,13 @@ there are no Pythagorean triples in $S_1$ but $\{6,8,10\}$ in $S_2$ is a Pythago
 Marijn J.H. Heule\index{Heule, Marijn J.H.} and Oliver Kullmann\index{Kullman, Oliver} proved the following theorems. Their method of proof is discussed in Sect.~\ref{s.sat}.
 
 \begin{theorem}
-For all $n\leq 7824$, there is \emph{some} decomposition of $S(n)$ into two disjoint subsets, such that both subsets \emph{do not contain} a Pythagorean triple.
+For all $n\leq 7824$, there is \emph{some} decomposition of $S(n)$ into two disjoint subsets such that both subsets \emph{do not contain} a Pythagorean triple.
 \end{theorem}
 
 \begin{theorem}
-For all $n\geq 7825$, in \emph{all} decompositions of $S(n)$ into two disjoint subsets, at least one subset \emph{contains} a Pythagorean triple.
+For all $n\geq 7825$, in \emph{all} decompositions of $S(n)$ into two disjoint subsets at least one subset \emph{contains} a Pythagorean triple.
 \end{theorem}
-It is impossible to check all $2^{7825}$ decompositions of $S(7825)$. If we could check one decomposition every microsecond, $2^{7825}$ microseconds is approximately $10^{600}$ years, while the estimated age of the universe is only about $10^{10}$ years.
+It is impossible to check all $2^{7825}$ decompositions of $S(7825)$. If we could check one decomposition every microsecond, $2^{7825}\; \textrm{microseconds}\approx 10^{600}\; \textrm{years}$, while the estimated age of the universe is only about $10^{10}$ years.
 
 
 
@@ -132,7 +137,7 @@ It is impossible to check all $2^{7825}$ decompositions of $S(7825)$. If we coul
 
 \section{Van der Waerden's problem}\label{s.van}
 
-Consider the sequences of colored dots in Fig.~\ref{f.vdw1}. In the top sequence there are red dots at positions $(1,2,3)$ and blue dots at positions $(4,5,6)$. In each case, the positions form an arithmetic progression. Similarly, in the middle sequence the red dots at positions $(1,3,5)$ form an arithmetic progression. However, in the bottom sequence there is no set of three monochromatic dots whose positions form an arithmetic progression. 
+Consider the sequences of eight colored dots in Fig.~\ref{f.vdw1}. In the top sequence there are red dots at positions $(1,2,3)$ and blue dots at positions $(4,5,6)$. In each case, the positions form an arithmetic progression. Similarly, in the middle sequence the red dots at positions $(1,3,5)$ form an arithmetic progression. However, in the bottom sequence there is no set of three monochromatic dots whose positions form an arithmetic progression. 
 Triples of red dots are at positions $(1,2,5)$, $(1,2,6)$, $(2,5,6)$, none of which form arithmetic progressions, and similarly for the blue dots.
 
 \begin{figure}[htb]
@@ -155,7 +160,7 @@ Triples of red dots are at positions $(1,2,5)$, $(1,2,6)$, $(2,5,6)$, none of wh
 \caption{van der Waerden's problem for eight colored dots}\label{f.vdw1}
 \end{figure}
 
-With nine dots any coloring must contain a sequence of three monochromatic dots that form an arithmetic progression. Let us add an additional dot at the end of the bottom sequence in Fig.~\ref{f.vdw1} to obtain the sequences in Fig.~\ref{f.vdw2}. In the top sequence there are red dots at positions $(1,5,9)$, an arithmetic progression, and in the bottom sequence there are blue dots at positions $(7,8,9)$, also an arithmetic progression.
+With nine dots \emph{any} coloring \emph{must} contain a sequence of three monochromatic dots that form an arithmetic progression. For example, let us add a red dot or a blue dot at the end of the bottom sequence in Fig.~\ref{f.vdw1} to obtain the sequences in Fig.~\ref{f.vdw2}. In the top sequence there are red dots at positions $(1,5,9)$, an arithmetic progression, and in the bottom sequence there are blue dots at positions $(7,8,9)$, also an arithmetic progression.
 \begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}
@@ -174,7 +179,7 @@ With nine dots any coloring must contain a sequence of three monochromatic dots 
 \end{figure}
 
 
-Bartel L. van der Waerden\index{van der Waerden, Bartel L.} posed the following\index{van der Waerden's problem} problem: For any positive integer $k$, what is the smallest number $n$ such that \emph{any} sequence of $n$ colored dots contains a sequence of $k$ monochromatic dots that form an arithmetic progression? For $k=3$, $n=9$, as demonstrated above for one decomposition. The next result is more difficult to show: for $k=4$, $n=35$.
+Bartel L. van der Waerden\index{van der Waerden, Bartel L.} posed the following\index{van der Waerden's problem} problem: For any positive integer $k$, what is the smallest number $n$ such that \emph{any} sequence of $n$ colored dots \emph{must} contain a sequence of $k$ monochromatic dots that form an arithmetic progression? For $k=3$, $n=9$, as demonstrated above for one decomposition. The next result is more difficult to show: for $k=4$, $n=35$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -227,15 +232,17 @@ Color the edges of $K_5$, the complete graph on $5$ vertices, with two colors as
 
 
 \begin{definition}
-$R(k)$, the \emph{Ramsey number} for $k$, is the smallest number $n$ such that in \emph{any} coloring of $K_{n}$, the complete graph on $n$ vertices, with two colors there is a monochromatic complete subgraph $K_k$.
+$\quad R(k)$, the \emph{Ramsey number} for $k$, is the smallest number $n$ such that in \emph{any} coloring of $K_{n}$, the complete graph on $n$ vertices, with two colors there is a monochromatic complete subgraph $K_k$.
 \end{definition}
 \index{Ramsey's theorem}
 \begin{theorem}[Ramsey]
-$R(3)=6$.\label{thm.ramsey}
+$\quad R(3)=6$.\label{thm.ramsey}
 \end{theorem}
 
 \begin{proof}\index{Ramsey's theorem!proof that $R(3)=6$}
-Figure~\ref{f.ramsey5} shows that $R(3)>5$. To show that $R(3)\leq 6$, consider any vertex $v$ in $K_6$. $v$ is connected to five other vertices, and when the edges are colored with two colors there must be at least three monochromatic edges incident with $v$. In Fig.~\ref{f.ramsey4a}, $\overline{AB}, \overline{AC}, \overline{AE}$ are colored red. Since the graph is complete all the vertices are connected, so if any one of the edges $\overline{BC}$, $\overline{BE}$, $\overline{CE}$ is colored red, say $\overline{BE}$, a red triangle $\triangle ABE$ is formed. Otherwise, all three edges of these edges are colored blue and they form a blue triangle (Fig.~\ref{f.ramsey4b}).
+Figure~\ref{f.ramsey5} shows that $R(3)>5$. To show that $R(3)\leq 6$, consider any vertex $v$ in $K_6$. $v$ is connected to five other vertices, and when the edges are colored with two colors there must be at least three monochromatic edges incident with $v$. 
+
+In Fig.~\ref{f.ramsey4a}, $\overline{AB}, \overline{AC}, \overline{AE}$ are colored red. Since the graph is complete all the vertices are connected, so if any one of the edges $\overline{BC}$, $\overline{BE}$, $\overline{CE}$ is colored red, say $\overline{BE}$, a red triangle $\triangle ABE$ is formed. Otherwise, all three edges of these edges are colored blue and they form a blue triangle (Fig.~\ref{f.ramsey4b}).
 \end{proof}
 
 The theorem can be generalized to any number of colors, as well as to colorings where the sizes of the subgraphs are not the same. $R(r,b,g)$ is the smallest complete graph such that  in any coloring with three colors there must be complete subgraphs with $r$ red edges, $b$ blue edges and $g$ green edges.
@@ -279,11 +286,13 @@ The only known non-trivial Ramsey numbers are $R(3)=6$ and $R(4)=18$. In 1947 Pa
 
 To show that there exists an element of a set $S$ that has property $A$, prove that the probability of a \emph{random} element of $S$ having property $A$ is greater than zero. It is important to understand that the method is \emph{non-constructive}: it just proves that such an element exists but does not construct one. Although from Thm.~\ref{thm.ramsey} we know that $R(3)=6$, let us use the probabilistic method to obtain a lower bound for $R(3)$.\index{Ramsey's theorem!lower bound for}
 
+\newpage
+
 \begin{theorem}[Erd\H{o}s]
-$R(3) > 4$.
+$\quad R(3) > 4$.
 \end{theorem}
 \begin{proof}
-Given a \emph{random} coloring of $K_n$ by the two colors red and blue, consider an arbitrary subgraph $K_3$, that is, an arbitrary triangle with $\binom{3}{2}=3$ sides. The probability that all sides are colored red is $2^{-3}$, as is the probability that all sides are colored blue. Therefore, the probability that the triangle is monochromatic is $2\cdot 2^{-3}=2^{-2}=1/4$. The number of triangles in $K_n$ is $\binom{n}{3}$, so $P(n,3)$, the probability that $\emph{some}$ triangle contained in a random coloring of $K_n$ is monochromatic, is:
+Given a \emph{random} coloring of $K_n$ by the two colors red and blue, consider an arbitrary subgraph $K_3$, that is, an arbitrary triangle with $\binom{3}{2}=3$ sides. The probability that all sides are colored red is $2^{-3}$, as is the probability that all sides are colored blue, so the probability that the triangle is monochromatic is $2^{-3}+2^{-3}=2^{-2}=1/4$. The number of triangles in $K_n$ is $\binom{n}{3}$, so $P(n,3)$, the probability that $\emph{some}$ triangle contained in a random coloring of $K_n$ is monochromatic, is:
 \[
 P(n,3)=\binom{n}{3}\cdot \frac{1}{4}\,.
 \]
@@ -313,7 +322,7 @@ P(n,k)=\binom{n}{k}\cdot 2\cdot 2^{-\binom{k}{2}}\,.
 \]
 For $k=4$:
 \begin{eqnarray*}
-\overline{P}(n,4)&=&1-\binom{n}{4}\cdot 2^{-5}=\left(32-\binom{n}{4}\right)/32\\
+\overline{P}(n,4)&=&1-\binom{n}{4}\cdot 2^{-5}=\left.\left(32-\binom{n}{4}\right)\right/32\\
 \overline{P}(6,4)&=&(32-15)/32=17/32\\
 \overline{P}(7,4)&=&(32-35)/32=-3/32\,.
 \end{eqnarray*}
@@ -324,15 +333,14 @@ If follows that $R(4)>6$ which is much less than the known value $R(4)=18$.
 
 \section{SAT Solving}\label{s.sat}
 
-SAT solving is a method for solving problems that works by encoding a problem as a formula in propositional logic and then using a computer program to check the truth value of the formula. Advances in algorithms and implementations have made SAT solving a viable approach for problem solving. We give an overview of SAT solving and explain how it can be used to solve the mathematical problems described in this chapter. An elementary knowledge of propositional logic is assumed.\index{Propositional logic}
+SAT solving is a method for solving problems that works by encoding a problem as a formula in propositional logic and then using a computer program to check the truth value of the formula. Advances in algorithms and implementations have made SAT solving a viable approach for problem solving. We give an overview of SAT solving and explain how it can be used to solve the mathematical problems described in this chapter. The reader is assumed to have an elementary knowledge of propositional logic as summarized in Def.~\ref{def.sat}.\index{Propositional logic}
 
 \subsection{Propositional Logic and the SAT Problem}
 
-\begin{definition}\mbox{}\\
-\vspace{-2ex}
+\begin{definition}\label{def.sat}\mbox{}\\
 \begin{itemize}
 \item A \emph{formula} is composed of \emph{atomic formulas} or \emph{atoms} connected by the propositional operators $\vee$ (disjunction, ``or''), $\wedge$ (conjunction, ``and''), $\neg$ (negation, ``not'').
-\item A formula is given an \emph{interpretation} by an assignment of $T$ or $F$ to each atom. Evaluating a formula in an interpretation results in its \emph{truth value} $T$ or $F$. (The reader is assumed to know how to evaluate a formula.)
+\item A formula is given an \emph{interpretation} by an assignment of $T$ or $F$ to each atom. Evaluating a formula in an interpretation results in its \emph{truth value} $T$ or $F$. 
 \item A formula is \emph{satisfiable} if and only if there is an interpretation that makes its truth value $T$. Otherwise, the formula is \emph{unsatisfiable}.
 \item A formula is in \emph{conjunctive normal form (CNF)} if and only if it is composed of a conjunction of subformulas each of which is a disjunction of \emph{literals} (atoms or negations of atoms).
 \end{itemize}
@@ -346,13 +354,11 @@ The following formula is in CNF:
 
 The \emph{SAT problem} is to decide if a given formula in CNF is satisfiable or not. A \emph{SAT solver}\index{SAT solver} is a computer program that can solve the SAT problem. Most SAT solvers are based on the DPLL algorithm which goes back to the 1960's, but recent developments have made very significant improvements to the algorithm. Highly optimized implementations of these algorithms have made SAT solvers an important tool for solving problems in many fields including mathematics.
 
-\newpage
+\subsection{Schur triples}\index{Schur triples}
 
-\section{Solving Schur triples}\index{Schur triples}
+Let us encode the Schur triples problem $S(8)$ as a formula in CNF. The formula will be satisfiable if and only if there is a decomposition of a set $S$ into disjoint subsets $S_1,S_2$ such that neither $S_1$ nor $S_2$ contains a Schur triple. There is an atom $p_i$ for each of the numbers $1\leq i \leq 8$. The intended meaning of an interpretation for the formula is that it assigns $T$ to $p_i$ if $i$ is in the first subset $S_1$ and it assigns $F$ to $p_i$ if $i$ is in the second subset $S_2$. To show that in all decompositions neither subset contains a Schur triple, the interpretation must ensure that for each possible Schur triple at least one atom is assigned $T$ and one atom is assigned $F$. 
 
-Let us encode the Schur triples problem $S(8)$ as a formula in CNF. The formula will be satisfiable if and only if there is a decomposition of a set $S$, so that neither $S_1$ nor $S_2$ contains a Schur triple. There is an atom $p_i$ for each of the numbers $1\leq i \leq 8$. The intended meaning of an interpretation for the formula is that it assigns $T$ to $p_i$ if $i$ is in the first subset $S_1$ and $F$ if $i$ is in the second subset $S_2$. To show that in all decompositions neither subset contains a Schur triple, the interpretation must ensure that for each possible Schur triple at least one atom is assigned $T$ and one atom is assigned $F$. 
-
-For example, $(2,4,6)$ is a Schur triple, so at least one of the three integers must be in $S_1$ and at least one of them must be in $S_2$. Therefore, $p_2 \vee p_4 \vee p_6$ must be true and also $\neg p_2 \vee \neg p_4 \vee \neg p_6$ must be true. There are $12$ possible Schur triples, so the CNF formula is:
+For example, $\{2,4,6\}$ is a Schur triple so at least one of the three integers must be in $S_1$ and at least one of them must be in $S_2$. Therefore, $p_2 \vee p_4 \vee p_6$ must be true and also $\neg p_2 \vee \neg p_4 \vee \neg p_6$ must be true. There are $12$ possible Schur triples so the CNF formula is:
 \begin{align}
 \begin{array}{l}
 (p_1 \vee p_2 \vee p_3) \;\wedge\; (\neg p_1 \vee \neg p_2 \vee \neg p_3) \;\wedge \\
@@ -369,7 +375,7 @@ For example, $(2,4,6)$ is a Schur triple, so at least one of the three integers 
 (p_3 \vee p_5 \vee p_8) \;\wedge\; (\neg p_3 \vee \neg p_5 \vee \neg p_8)\,.
 \end{array}\label{eq.schur2}
 \end{align}
-When a SAT solver is given this formula, it answers that the formula is satisfiable under either of the interpretations:
+When a SAT solver is given this formula it answers that the formula is satisfiable under either of the interpretations:
 \[
 \begin{array}{c@{\hspace{8pt}}c@{\hspace{8pt}}c@{\hspace{8pt}}c@{\hspace{8pt}}c@{\hspace{8pt}}c@{\hspace{8pt}}c@{\hspace{8pt}}c}
 p_1&p_2&p_3&p_4&p_5&p_6&p_7&p_8\\\svhline
@@ -377,12 +383,11 @@ F&F&T&F&T&T&T&F\\
 T&T&F&T&F&F&F&T
 \end{array}
 \]
-One interpretation corresponds to the decomposition in Eq.~\ref{eq:schur1}: 
-$S_1=\{1,2,4,8\}$, $S_2=\{3,5,6,7\}$ while the other corresponds to the symmetrical decomposition $S_1=\{3,5,6,7\}$, $S_2=\{1,2,4,8\}$.
+One interpretation corresponds to the decomposition in Eq.~\ref{eq:schur1}: $S_1=\{1,2,4,8\}$, $S_2=\{3,5,6,7\}$, while the other corresponds to the symmetrical decomposition $S_1=\{3,5,6,7\}$, $S_2=\{1,2,4,8\}$.
 
 \newpage
 
-For $S(9)$ four pairs of subformulas must be added for the additional possible Schur triples:
+For $S(9)$, four pairs of subformulas are added for the additional possible triples:
 \[
 \begin{array}{l}
 (p_1 \vee p_8 \vee p_9) \;\wedge\; (\neg p_1 \vee \neg p_8 \vee \neg p_9) \;\wedge \\
@@ -393,21 +398,21 @@ For $S(9)$ four pairs of subformulas must be added for the additional possible S
 \]
 When the SAT solver is given this formula, it answers that the formula is unsatisfiable, meaning that \emph{no} decomposition has \emph{no} Schur triple. Removing the double negative, this states that in \emph{every} decomposition of $S(9)$ there exists a Schur triple.
 
-\subsection{Solving Pythagorean Triples}\index{Pythagorean triples}
+\subsection{Pythagorean Triples}\index{Pythagorean triples}
 
-Heule\index{Heule, Marijn J.J.} and Kullmann\index{Kullman, Oliver} solved the Pythagorean triple problem using a highly optimized SAT solver. There was a significant difference in efficiency between finding a decomposition that does not have Pythagorean triples (you just need one decomposition), and showing all that decompositions have a Pythagorean triple (you have to check all of them). To show that for all $S(n)$, $1\leq n\leq 7824$, there is a decomposition with no triple took only one minute of computing time, whereas to show that every decomposition of $S(7825)$ has a triple took about two days of computing time for a computer with $800$ \emph{cores} (processors) working in parallel, altogether $40,000$ hours of computing time!
+Heule\index{Heule, Marijn J.H.} and Kullmann\index{Kullman, Oliver} solved the Pythagorean triple problem using a highly optimized SAT solver. There was a significant difference in efficiency between finding a decomposition that does not have Pythagorean triples (you just need one decomposition), and showing all that decompositions have a Pythagorean triple (you have to check all of them). To show that for all $S(n)$, $1\leq n\leq 7824$, there is a decomposition with no triple took only one minute of computing time, whereas to show that every decomposition of $S(7825)$ has a triple took about two days of computing time for a computer with $800$ \emph{cores} (processors) working in parallel, altogether $40,000$ hours of computing time.
 
-The use of computers in mathematics naturally raises the question: Can we trust a proof generated by a computer? Of course, even ``ordinary'' mathematical proofs can be incorrect (see Sect.~\ref{s.kempe}), but our experience with frequent computer bugs, as well as the opaqueness of large computer programs, makes us more sensitive to potential errors in computer-generated proofs.
+The use of computers in mathematics naturally raises the question: Can we trust a proof generated by a computer? Of course, even ``ordinary'' mathematical proofs can be incorrect (Sect.~\ref{s.kempe}), but our experience with frequent computer bugs, as well as the opaqueness of large computer programs, makes us more sensitive to potential errors in computer-generated proofs.
 
 One approach to increasing confidence in the correctness of a computer-generated proof is to use two or more programs, written independently by two or more researchers. If the multiple programs are written in different programming languages and for different computers and operating systems, this lessens the possibility of a bug in the computer hardware and software.
 
-Heule and Kullmann's SAT solver wrote out a log of the steps in the proof so that it could be examined for correctness. The log was so massive, $200$ terabytes, that it was impossible to examine directly. To put this into perspective, $200$ terabytes is $200,\!000$ gigabytes while your computer might have an internal memory of $16$ gigabytes and a solid-state disk of $128$ gigabytes. Instead, they wrote a small program to verify the correctness of the data in the log. To ensure that this program was correct, they wrote a formal proof using the Coq proof assistant that supports and checks the work of mathematicians without totally automating the proof process.
+Heule and Kullmann's SAT solver wrote out a log of the steps in the proof so that it could be examined for correctness. The log was so massive, $200$ terabytes, that it was impossible to examine directly. To put this into perspective, $200$ terabytes is $200,\!000$ gigabytes while your computer might have an internal memory of $16$ gigabytes and a solid-state disk of $128$ gigabytes. Instead, they wrote a small program to verify the correctness of the data in the log. To ensure that \emph{this} program was correct, they wrote a formal proof using the Coq proof assistant that supports and checks the work of mathematicians without totally automating the proof process.
 
 \subsection{An Overview of the DPLL Algorithm}\index{SAT solver!DPLL algorithm}
 
-The first algorithm that one learns for SAT solving is \emph{truth tables}. Given a formula $A$ in propositional logic with $n$ different atoms, there are $2^n$ interpretations since each atom can be independently assigned $T$ or $F$. For each interpretation, it is straightforward to compute the truth value of $A$ using the definition of the propositional operators. However, to check $2^n$ interpretations is very inefficient for even moderately large $n$.
+The first algorithm that one learns for SAT solving is \emph{truth tables}. Given a formula $A$ in propositional logic with $n$ different atoms, there are $2^n$ interpretations since each atom can be independently assigned $T$ or $F$. For each interpretation it is straightforward to compute the truth value of $A$ using the definition of the propositional operators. However, to check $2^n$ interpretations is very inefficient for even moderately large $n$.
 
-The DPLL algorithm works by incrementally assigning $T$ or $F$ to an atom and then attempting to evaluate the formula. For example, given $A=p \wedge q \wedge \neg\, r$, if $p$ is assigned $F$, then $A$ evaluates to $F$, regardless of the assignments to $q$ and $r$, and there is no need to perform further evaluations. Similarly, $A=p\vee q \vee \neg\, r$ evaluates to $T$ if $p$ is assigned $T$, regardless of the assignments to $q$ and $r$.
+The DPLL algorithm works by incrementally assigning $T$ or $F$ to an atom and then attempting to evaluate the formula. For example, given $A=p \wedge q \wedge \neg\, r$, if $p$ is assigned $F$ then $A$ evaluates to $F$, regardless of the assignments to $q$ and $r$, and there is no need to perform further evaluations. Similarly, $A=p\vee q \vee \neg\, r$ evaluates to $T$ if $p$ is assigned $T$, regardless of the assignments to $q$ and $r$.
 
 The efficiency of DPLL comes from \emph{unit propagation}.\index{SAT solver!unit propagation} Consider part of the formula for Schur triples:
 \begin{align}
@@ -419,18 +424,16 @@ The efficiency of DPLL comes from \emph{unit propagation}.\index{SAT solver!unit
 (p_3 \vee p_5 \vee p_8) \wedge (\neg p_3 \vee \neg p_5 \vee \neg p_8)\,.
 \end{array}
 \end{align}
-Suppose that we have assigned $F$ to $p_1,p_2$. The first subformula reduces to the unit formula consisting of the single atom $p_3$. If the formula is to be satisfiable, we \emph{must} assign $T$ to $p_3$ and all the subformulas:
+Suppose that we have assigned $F$ to $p_1,p_2$. The first subformula reduces to the unit formula consisting of the single atom $p_3$. If the formula is to be satisfied, we \emph{must} assign $T$ to $p_3$ and all the subformulas:
 \[
 (p_1 \vee p_2 \vee p_3),\;(p_1 \vee p_3 \vee p_4),\;
 (p_3 \vee p_4 \vee p_7),\;(p_3 \vee p_5 \vee p_8)\,,
 \]
 immediately evaluate to $T$.
 
-Since $\neg p_3$ evaluates to $F$, each subformula can be satisfiable only if some other atom in a subformula containing $\neg p_3$ is assigned $T$. In $\neg p_3 \vee \neg p_5 \vee \neg p_8$, either $p_5$ or $p_8$ must be assigned $F$ so that either $\neg p_5$ or $\neg p_8$ evaluates to $T$.
+Since $\neg p_3$ evaluates to $F$, each subformula containing $\neg p_3$ can be satisfied only if some other literal in the subformula is assigned $T$. In $\neg p_3 \vee \neg p_5 \vee \neg p_8$, either $p_5$ or $p_8$ must be assigned $F$ so that either $\neg p_5$ or $\neg p_8$ evaluates to $T$.
 
-The result of this analysis shows that once $p_1,p_2$ have been assigned $F$, the formula in Eq.~\ref{eq.schur3} is satisfiable if and only if $(\neg p_4 \vee \neg p_7) \:\wedge\: (\neg p_5 \vee \neg p_8)$ is satisfiable.
-
-By performing the propagation of $p_3$ on all the subformulas of Eq.~\ref{eq.schur2}, the formula is reduced to:
+This analysis shows that once $p_1,p_2$ have been assigned $F$, the formula in Eq.~\ref{eq.schur3} is satisfiable if and only if $(\neg p_4 \vee \neg p_7) \:\wedge\: (\neg p_5 \vee \neg p_8)$ is satisfiable. By performing the propagation of $p_3$ on all the subformulas of Eq.~\ref{eq.schur2}, the formula is reduced to:
 \[
 \begin{array}{l}
 (p_4\vee p_5)\;\wedge\;(p_4\vee p_6)\;\wedge\;(p_5\vee p_6)\;\wedge\;(p_5\vee p_7)\;\wedge\;\\
@@ -441,22 +444,18 @@ By performing the propagation of $p_3$ on all the subformulas of Eq.~\ref{eq.sch
 \]
 One more assignment of $F$ to $p_4$ results in a satisfying interpretation which we have found after only three arbitrary assignments.
 
-Advanced algorithms for SAT are based on using information that can be obtained from the current partially-evaluated formula to limit the number of arbitrary assignments that must be made.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Pythagorean Triples in Babylonian Mathematics}\label{s.plimpton}
 
 This section is a digression from Ramsey theory; it is included to give a taste of the rich theory of Pythagorean triples and to demonstrate the depth of mathematical knowledge in the ancient world. Pythagorean triples\index{Pythagorean triples} were known in Babylonian mathematics\index{Babylonian mathematics} since at least 1800 BCE.
 \begin{definition}
-A \emph{primitive Pythagorean triple}\index{Pythagorean triples!primitive} is a set of three positive integers $\{a,b,c\}$ such that $a^2+b^2=c^2$, and $a,b,c$ have no common factor greater than $1$.
+A \emph{primitive Pythagorean triple}\index{Pythagorean triples!primitive} is a set of three positive integers $\{a,b,c\}$ such that $a^2+b^2=c^2$ and $a,b,c$ have no common factor greater than $1$.
 \end{definition}
 \begin{example}
-$\{3,4,5\}$ is a primitive Pythagorean triple. $\{6,8,10\}$ is Pythagorean triple that is not primitive since $2$ as a common factor.
+$\{3,4,5\}$ is a primitive Pythagorean triple but $\{6,8,10\}$ is a Pythagorean triple that is not primitive since $2$ is a common factor.
 \end{example}
-A cuneiform tablet called \emph{Plimpton $322$}\index{Plimpton 322} is one of the earliest examples of Babylonian mathematics. It lists fifteen primitive Pythagorean triples by giving $a$ and $c$. Table~\ref{t.babylonian} displays several of these triples, together with the computed values of $b$ and other values that will be discussed below.
-
-Historians of mathematics have proposed several explanations for how these triples were found. One explanation is that \emph{Euclid's formula}\index{Euclid's formula} was used to obtain the triples from a pair of generating numbers.
+A cuneiform tablet called \emph{Plimpton $322$}\index{Plimpton 322} is one of the earliest examples of Babylonian mathematics. It lists fifteen primitive Pythagorean triples by giving $a$ and $c$. Table~\ref{t.babylonian} displays four of these triples, together with the computed values of $b$ and other values that will be discussed below. Historians of mathematics have proposed several explanations for how these triples were found. One explanation is that \emph{Euclid's formula}\index{Euclid's formula} was used to obtain the triples from a pair of generating numbers.
 \begin{theorem}[Euclid]
 $\{a,b,c\}$ is primitive Pythagorean triple if and only if there exist two positive integers $u,v$, called \emph{generating numbers}, such that:\label{thm.euclid-function}
 \begin{enumerate}
@@ -470,7 +469,7 @@ a=u^2-v^2,\quad b=2uv,\quad c=u^2+v^2\,.
 \end{enumerate}
 \end{theorem}
 
-\begin{table}[t]
+\begin{table}[b]
 \caption{Babylonian triples from the Plimpton $322$ tablet}\label{t.babylonian}
 \[
 \begin{array}{r@{$\quad\quad$}r@{$\quad\quad$}r@{$\quad\quad$}r@{$\quad\quad$}r@{$\quad\quad$}r@{$\quad\quad$}r@{$\quad\quad$}r@{$\quad\quad$}r}
@@ -499,31 +498,31 @@ The proof of the other direction is more complicated and is omitted.
 \end{proof}
 If it is true that the Babylonians used Euclid's formula, the question remains: How did they discover the generating numbers $u,v$?
 
-Table~\ref{t.babylonian} displays $a_{\textit{factors}}$ and $b_{\textit{factors}}$, the factorizations of $a$ and $b$, respectively, showing that they have no common factors. The reader is invited to check that the $c$ has no common factor with  $a,b$ so the triples are primitive. $u,v$  and $u_{\textit{factors}}, v_{\textit{factors}}$ are also displayed. Not only do they not have any common factors as required by Thm.~\ref{thm.euclid-function}, but the only factors greater than $1$ in $u$ and $v$ are powers of $2,3,5$.
+Each row of Table~\ref{t.babylonian} displays $a_{\textit{factors}}$ and $b_{\textit{factors}}$, the factorizations of $a$ and $b$, respectively, showing that they have no common factors. The reader is invited to check that $c$ has no common factor with $a,b$ so the triples are primitive. The generating numbers $u,v$  and $u_{\textit{factors}}, v_{\textit{factors}}$ are also displayed. Not only do they not have any common factors as required by Thm.~\ref{thm.euclid-function}, but the only factors greater than $1$ in $u$ and $v$ are powers of $2,3,5$.
 \begin{definition}
 A \emph{Babylonian triple} is a primitive Pythagorean triple such that the only prime factors of $u,v$ are $2,3,5$.
 \end{definition}
-The reason that the Babylonians restricted themselves to these factors is that they used the \emph{sexagesimal}\index{Sexagesimal number system} or base $60$ number system whose prime factors are $2,3$ and $5$: $60=2\cdot 2\cdot 3\cdot 5$.
+The reason that the Babylonians restricted themselves to these factors is that they used the \emph{sexagesimal}\index{Sexagesimal number system} or base $60=2\cdot 2\cdot 3\cdot 5$ number system whose prime factors are $2,3$ and $5$.
 
 For readers who are not familiar with non-decimal number systems,  here is a brief overview of the concept. The ``number'' $12345$ is a shorthand for the number:
 \[
 (1\times 10^4) + (2\times 10^3) + (3\times 10^2) + (4\times 10^1) + (5\times 10^0)\,.
 \]
-This number system is called the \emph{decimal} or base $10$ number system. There are ten digits $0,1,2,\ldots,8,9$ for the coefficients of the powers, and the powers are represented by the places of coefficients with increasing powers from right to left. 
+This number system is called the \emph{decimal} or base $10$ number system. There are ten digits $0,1,2,\ldots,8,9$ for the coefficients of the powers, and the powers are represented by the places of coefficients with powers increasing from right to left. 
 
 The number could also be represented in the binary or base $2$ number system by:
 \[
 12345=8192 + 4096 + 32+16+8+1=
-2^{13} + 2^{12} + 2^{5} + 2^{4} + 2^{3} + 2^0=11000000111001\,,
+2^{13} + 2^{12} + 2^{5} + 2^{4} + 2^{3} + 2^0=11000000111001\,.
 \]
-where in $2^{13} + 2^{12} + 2^{5} + 2^{4} + 2^{3} + 2^0$, powers of $2$ whose coefficient is $0$ are omitted. The coefficients of the remaining powers are $1$ and can also be omitted. $11000000111001$ is the number in binary notation which uses two digits $0,1$ for the coefficients and the powers of two are indicated by the places of the coefficients.
+Binary notation uses two digits $0,1$ for the coefficients and the powers of two are indicated by the places of the coefficients.
 
 Another popular number system is the \emph{hexadecimal} or base $16$ number system which is used in computing. For this number system we need $16$ ``digits'' and the convention is to use $0,1,2,\ldots,8,9,A,B,C,D,E,F$.
 
 The base $60$ number system is not as unfamiliar as it may seem, because we represent time, geographical coordinates and angles in that system. We are comfortable carrying out computations such as ($1$ hour $40$ minutes) plus ($1$ hour $30$ minutes) equals ($3$ hours $10$ minutes).
 
 Table~\ref{t.sexagesimal} shows the values of $a,c$ that appear in the tablet in base $60$ notation where $\langle d\rangle$ represents the $d$'th ``digit'' for $0\leq d<60$.
-\begin{table}[ht]
+\begin{table}[t]
 \caption{Babylonian triples in base $60$}\label{t.sexagesimal}
 \[
 \begin{array}{r@{$\quad\quad$}r}
@@ -539,17 +538,16 @@ a&c\\
 \end{array}
 \]
 \end{table}
-
- The reader can check that these values are the same as the decimal values given in Table~\ref{t.babylonian}, for example:
+The reader can check that these values are the same as the decimal values given in Table~\ref{t.babylonian}, for example:
 \[
 \renewcommand{\arraystretch}{1.3}
 \begin{array}{lclclcr}
-(3\times 60^2) &+& (31\times 60^1) &\;+\;& (49\times 60^0) &=& 12709\\
-(5\times 60^2) &\;+\;& (9\times 60^1) &\;+\;& (1\times 60^0) &=&18541\,.
+(3\times 60^2) &+& (31\times 60^1) &\;+\;& (49\times 60^0) &=&   12709\\
+(5\times 60^2) &\;+\;& (9\times 60^1) &\;+\;& (1\times 60^0) &=& 18541
 \end{array}
 \]
 
-The Babylonians did not have $60$ distinct symbols for the digits. Instead, they used a hybrid system where the coefficients were represented with two symbols, one for ones and one for tens, and the places of the coefficients indicated the powers of $60$. Using  $\heartsuit$ for tens and $\diamondsuit$ for ones, the decimal number $(38\times 60)+(16\times 60^0)=2296$ would be represented as:
+The Babylonians did not have $60$ distinct symbols for the digits. Instead, they used a hybrid system where the coefficients were represented with two symbols: one for the tens coefficient and the other for the ones coefficient, and the places of the coefficients indicated the powers of $60$. Using  $\heartsuit$ for the tens coefficient and $\diamondsuit$ for the ones coefficient, the decimal number $(38\times 60)+(16\times 60^0)=2296$ would be represented as:
 \[
 \heartsuit\heartsuit\heartsuit \; \stackrel{\displaystyle\diamondsuit\diamondsuit\diamondsuit\diamondsuit}{\diamondsuit\diamondsuit\diamondsuit\diamondsuit}
 \quad
@@ -562,11 +560,11 @@ The Babylonians did not have $60$ distinct symbols for the digits. Instead, they
 
 Frank P. Ramsey's theorem \index{Ramsey, Frank P.} appeared to be a minor result in combinatorics. Surprisingly, the theorem was the foundation of an entirely new and challenging field of mathematics with many open problems. The nature of Ramsey theory is also surprising: if a set is large enough there exist regularities in its subsets.
 
-I was introduced to Ramsey theory by the article by Marijn J. H. Heule\index{Heule, Marijn J. H.} and Oliver Kullmann\index{Kullman, Oliver}  on Pythagorean triples whose proof bears some similarity to the proof of the four-color theorem: the use of massive computing resources that is only successful after theoretical advances. Hence the title of their article: \textit{The Science of Brute Force}.
+I was introduced to Ramsey theory by the article by Marijn J. H. Heule\index{Heule, Marijn J.H.} and Oliver Kullmann\index{Kullman, Oliver}  on Pythagorean triples whose proof bears some similarity to the proof of the four-color theorem: the use of massive computing resources that is only successful after theoretical advances. Hence the title of their article: \textit{The Science of Brute Force}.
 
 Problems in combinatorics ask for specific numerical values, for example, $R(n)$ must be a specific positive integer. It is surprising that probabilistic methods have proved so fruitful in obtaining results in this field.
 
-We tend to think that humans are smarter today then they used to be thousands of years ago. It can be a surprise to find out that four thousand years ago Babylonian mathematics was sufficiently advanced to discover that $(12709, 13500, 18541)$ is a Pythagorean triple.
+We tend to think that humans are smarter today then they used to be thousands of years ago. It can be a surprise to find out that four thousand years ago Babylonian mathematics was sufficiently advanced to discover that $\{12709, 13500, 18541\}$ is a Pythagorean triple.
 
 \subsection*{Sources}
 

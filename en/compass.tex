@@ -54,8 +54,7 @@ There will be lines in the figures in this chapter, but they are used only to un
 \rightcaption{Construction of  an equilateral triangle with only a compass}\label{f.compass-equi-only}
 \end{figure}
 
-
-A construction by a straightedge and compass is a sequence of three operations:
+A construction using a straightedge and compass is a sequence of three operations:
 \begin{itemize}
 \item Find the point of intersection of two lines.
 \item Find the point(s) of intersection of a line and a circle.
@@ -80,7 +79,7 @@ The third operation can be done with only a compass. We need to show that the fi
 A point $C'$ is a \emph{reflection} of the point $C$ around a line segment $\overline{AB}$ if and only if $\overline{AB}$ (or the line containing $\overline{AB}$) is the perpendicular bisector of the line segment $\overline{CC'}$.
 \end{definition}
 
-\begin{theorem}
+\begin{theorem}\label{thm.compass-reflection}
 Given a line $\overline{AB}$ and a point $C$ not on $\overline{AB}$, it is possible to build $C'$, the reflection of $C$ around $\overline{AB}$.
 \end{theorem}
 
@@ -124,13 +123,12 @@ $\triangle ABC \cong \triangle ABC'$ by side-side-side since $\overline{AC}, \ov
 
 \section{Construction of a Circle With a Given Radius}\label{s.circle}
 
-\begin{theorem}
+\begin{theorem}\label{thm.compass-radius}
 Given points $A,B,C$ it is possible to construct $c(A,\overline{BC})$, the circle centered at $A$ with radius $\overline{BC}$.
 \end{theorem}
 
 \begin{proof}
-Construct $c(A,B)$ and $c(B,A)$ and let $X,Y$ be their points of intersection (Fig.~\ref{f.compass-circle1}). $A$ is the reflection of $B$ around $\overline{XY}$ since $\triangle YAX\cong \triangle YBX$ by side-side-side.
-Construct $C'$, the reflection of $C$ around $\overline{XY}$, and $c(A,\overline{AC'})$ (Fig.~\ref{f.compass-circle3}).
+Construct $c(A,B)$ and $c(B,A)$ and let $X,Y$ be their points of intersection (Fig.~\ref{f.compass-circle1}). $A$ is the reflection of $B$ around $\overline{XY}$ since $\triangle YAX\cong \triangle YBX$ by side-side-side. By Thm.~\ref{thm.compass-reflection} construct $C'$, the reflection of $C$ around $\overline{XY}$ and then construct $c(A,\overline{AC'})$ (Fig.~\ref{f.compass-circle3}).
 
 \begin{figure}[b]
 \begin{center}
@@ -150,23 +148,24 @@ Construct $C'$, the reflection of $C$ around $\overline{XY}$, and $c(A,\overline
 \path [name intersections={of=ab and ba,by={Y,X}}];
 \node[above right,xshift=4pt] at (X) {$X$};
 \node[above left,xshift=-4pt] at (Y) {$Y$};
-\draw[thick,dashed] ($(X)!2.3!(Y)$) -- ($(Y)!2!(X)$);
+\draw[dashed] ($(X)!2!(Y)$) -- ($(Y)!2!(X)$);
 \coordinate (Cp) at (1.5,3);
 \vertex{Cp};
-\node[above,xshift=2pt,yshift=2pt] at (Cp) {$C'$};
+\node[above,yshift=2pt] at (Cp) {$C'$};
 \draw (A) -- (B);
 \draw (C) -- (Cp);
+\draw (Y) -- (A) -- (X) -- (B) -- cycle;
 \end{tikzpicture}
 \end{center}
 \caption{Construction of  a circle with a given radius (1)}\label{f.compass-circle1}
 \end{figure}
 
-$\overline{XY}$ is the perpendicular bisector of $\overline{CC'}$ and $\overline{AB}$. Denote the intersection of $\overline{XY}$ and $\overline{AB}$ by $D$ and the intersection of $\overline{XY}$ and $\overline{CC'}$ by $E$. Then $\overline{C'E}=\overline{EC}$, $\overline{AD}=\overline{DB}$ and $\angle DEC=\angle DEC'$ are right angles. Therefore, $\triangle DEC\cong\triangle DEC'$ by side-angle-side so $\overline{DC}=\overline{DC'}$ and $\angle ADC'=\angle BDC$ (they are complementary to $\angle EDC'$, $\angle EDC$). It follows that $\triangle ADC'\cong\triangle BDC$ by side-angle-side so $\overline{AC'}=\overline{BC}$.
+$\overline{XY}$ is the perpendicular bisector of $\overline{CC'}$ and $\overline{AB}$. Denote the intersection of $\overline{XY}$ and $\overline{AB}$ by $D$ and the intersection of $\overline{XY}$ and $\overline{CC'}$ by $E$. Then $\overline{C'E}=\overline{EC}$, $\overline{AD}=\overline{DB}$ and $\angle DEC=\angle DEC'$ is a right angle, so $\triangle DEC\cong\triangle DEC'$ by side-angle-side. Therefore, $\overline{DC}=\overline{DC'}$ and $\angle ADC'=\angle BDC$ (they are complementary to $\angle EDC'=\angle EDC$). It follows that $\triangle ADC'\cong\triangle BDC$ by side-angle-side so $\overline{AC'}=\overline{BC}$.
 \end{proof}
 
 \begin{figure}[ht]
 \begin{center}
-\begin{tikzpicture}[scale=.4]
+\begin{tikzpicture}[scale=.6]
 \coordinate (A) at (0,1.5);
 \coordinate (B) at (0,-1.5);
 \coordinate (C) at (1.5,-3);
@@ -180,8 +179,8 @@ $\overline{XY}$ is the perpendicular bisector of $\overline{CC'}$ and $\overline
 \path [name intersections={of=ab and ba,by={Y,X}}];
 \node[above right,xshift=4pt] at (X) {$X$};
 \node[above left,xshift=-4pt] at (Y) {$Y$};
-\node[draw,circle through=(C)] at (Y) {};
-\draw ($(X)!2.3!(Y)$) -- ($(Y)!2!(X)$);
+%\node[draw,circle through=(C)] at (Y) {};
+\draw[dashed] ($(X)!1.8!(Y)$) -- ($(Y)!1.8!(X)$);
 \path[name path=xy] (X) -- (Y);
 \node[draw,thick,circle through=(Cp)] at (A) {};
 \draw (A) -- (Cp);
@@ -194,10 +193,11 @@ $\overline{XY}$ is the perpendicular bisector of $\overline{CC'}$ and $\overline
 \node[below right,xshift=-3pt] at  (E) {$E$};
 \draw (D) -- (Cp);
 \draw (D) -- (C);
-\draw (D) rectangle +(12pt,12pt);
-\draw (E) rectangle +(12pt,12pt);
+\draw (D) rectangle +(9pt,9pt);
+\draw (E) rectangle +(9pt,9pt);
 \vertex{Y};
 \vertex{A};
+\vertex{X};
 \end{tikzpicture}
 \end{center}
 \caption{Construction of  a circle with a given radius (2)}\label{f.compass-circle3}
@@ -208,7 +208,7 @@ $\overline{XY}$ is the perpendicular bisector of $\overline{CC'}$ and $\overline
 \section{Addition and Subtraction of Line Segments}\label{s.add-subtract}
 
 \begin{theorem}\label{thm.add-subtract-mm}
-Given a line segment $\overline{PQ}$ of length $a$ and a line segment $\overline{RS}$ of length $b$, it is possible to construct line segments $\overline{QT}, \overline{QU}$ such that $\overline{PTQU}$ is a line segment, where the length of $\overline{PT}$ is $a-b$ and the length of $\overline{PU}$ is $a+b$ (Fig.~\ref{f.compass-add1}).
+Given a line segment $\overline{PQ}$ of length $a$ and a line segment $\overline{RS}$ of length $b$, it is possible to construct line segments $\overline{QT}, \overline{QU}$ such that $\overline{PTQU}$ is a line segment, the length of $\overline{PT}$ is $a-b$ and the length of $\overline{PU}$ is $a+b$ (Fig.~\ref{f.compass-add1}).
 \end{theorem}
 \begin{figure}[ht]
 \begin{center}
@@ -275,7 +275,7 @@ Let $H$ be any point on $c(Q,b)$. Construct $H'$ its reflection around $\overlin
 \caption{Construction of  an isoceles trapezoid (1)}\label{f.compass-isoceles-trap1}
 \end{figure}
 
-Construct the circles $c(H,b)$, $c(Q,h)$. Let $K$ be the point of intersection of the circles and construct $K'$ the reflection of $K$ around $\overline{PQ}$ (Fig.~\ref{f.compass-isoceles-trap2}).
+Construct the circles $c(H,b)$, $c(Q,h)$. Let $K$ be a point of intersection of the circles and construct $K'$ the reflection of $K$ around $\overline{PQ}$ (Fig.~\ref{f.compass-isoceles-trap2}).
 \begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.5]
@@ -285,7 +285,7 @@ Construct the circles $c(H,b)$, $c(Q,h)$. Let $K$ be the point of intersection o
 \draw ($(Q)!1.3!(P)$) -- ($(P)!2.3!(Q)$);
 \vertex{Q};
 \vertex{P};
-\node[above right,xshift=6pt] at (Q) {$Q$};
+\node[above right,xshift=7pt] at (Q) {$Q$};
 \node[above] at (P) {$P$};
 \node[draw,circle through=(B),name path=qb] at (Q) {};
 \draw (Q) -- node[left,xshift=-1pt,yshift=2pt] {$b$} (B);
@@ -298,7 +298,7 @@ Construct the circles $c(H,b)$, $c(Q,h)$. Let $K$ be the point of intersection o
 \draw (H) -- node[below left,yshift=-3pt] {$h$} (Hp);
 \vertex{H};
 \coordinate (Qp) at (H|-Q);
-\draw (Qp) rectangle +(12pt,12pt);
+\draw (Qp) rectangle +(10pt,10pt);
 \node[above left] at (Qp) {$Q'$};
 \draw[name path=circleqh] (Q) let
   \p1 = ($ (H) - (Hp) $),
@@ -320,16 +320,18 @@ in
   coordinate (Kp) at (\x1,-\y1);
 \node[below left] at (Kp) {$K'$};
 \draw (K) -- (Kp);
-\draw (Q) rectangle +(12pt,12pt);
+\draw (Q) rectangle +(10pt,10pt);
+\draw[dashed] (K) -- node[right,yshift=1pt] {$b$} (H) -- (Q);
+\draw[dashed] (Kp) -- (Hp) -- (Q);
 \end{tikzpicture}
 \end{center}
 \caption{Construction of  an isoceles trapezoid (2)}\label{f.compass-isoceles-trap2}
 \end{figure}
 
-$\overline{PQ}$ is the perpendicular bisector of $\overline{HH'}$ and $\overline{KK'}$ so $\overline{HH'}\|\overline{KK'}$. $\overline{KH}=b$ since it is the radius of the circle centered on $H$, and $K',H'$ are reflections of $K,H$. Therefore, $\overline{K'H'}=\overline{KH}=b$ because both $\triangle QQ'H\cong \triangle QQ'H'$ and $\triangle KQH\cong \triangle K'QH'$ by side-side-side. It follows that $\overline{KHH'K'}$ is an isosceles trapezoid whose bases are $\overline{HH'}=h$, $\overline{KK'}=2h$ (Fig.~\ref{f.compass-isoceles-trap3}).
-\end{proof}
+\newpage
 
-Denote the length of the diagonals $\overline{K'H}=\overline{KH'}$ by $d$.
+The line containing $\overline{PQ}$ is the perpendicular bisector of $\overline{HH'}$ and $\overline{KK'}$ so $\overline{HH'}\parallel\overline{KK'}$. $\overline{KH}=b$ since it is the radius of the circle centered on $H$, and $K',H'$ are reflections of $K,H$. $\triangle QQ'H\cong \triangle QQ'H'$ by side-side-side and $\triangle KQH\cong \triangle K'QH'$ by side-angle-side, so $\overline{K'H'}=\overline{KH}=b$. It follows that $\overline{KHH'K'}$ is an isosceles trapezoid whose bases are $\overline{HH'}=h$, $\overline{KK'}=2h$ (Fig.~\ref{f.compass-isoceles-trap3}). Denote the length of the diagonals $\overline{K'H}=\overline{KH'}$ by $d$.
+\end{proof}
 
 \begin{figure}[ht]
 \begin{center}
@@ -337,7 +339,7 @@ Denote the length of the diagonals $\overline{K'H}=\overline{KH'}$ by $d$.
 \coordinate (Q) at (0,0);
 \coordinate (P) at (-6.8,0);
 \coordinate (B) at (-3,-2);
-\draw ($(Q)!1.3!(P)$) -- ($(P)!2.3!(Q)$);
+\draw[dashed] ($(Q)!1.3!(P)$) -- ($(P)!2.3!(Q)$);
 \node[above left] at (Q) {$Q$};
 \node[above] at (P) {$P$};
 \vertex{P};
@@ -375,7 +377,6 @@ in
 \caption{Construction of  an isoceles trapezoid (3)}\label{f.compass-isoceles-trap3}
 \end{figure}
 
-\newpage
 
 \begin{theorem}
 An isoceles trapezoid can be circumscribed by a circle.
@@ -390,7 +391,7 @@ For $d,b,h$ shown in Fig.~\ref{f.compass-isoceles-trap3}, $d^2=b^2+2h^2$.
 \end{theorem}
 
 \begin{proof}
-The theorem follows from Ptolemy's theorem (Thm.~\ref{thm.ptolemy}) which says that in a quadrilateral circumscribed by a circle the products of the diagonals equals the sum of the products of the opposite sides.
+The theorem follows from Ptolemy's theorem (Thm.~\ref{thm.ptolemy}) which says that in a quadrilateral circumscribed by a circle the product of the diagonals equals the sum of the products of the opposite sides.
 \end{proof}
 
 The proof of Thm.~\ref{thm.add-subtract-mm} can now be given.
@@ -399,7 +400,6 @@ Let $X$ be the point on line $\overline{PQ}$ that extends $\overline{PQ}$ by $b$
 \[
 d^2=b^2 + 2h^2 = (x^2-h^2)+2h^2 =x^2+h^2\,.
 \]
-
 Since $\triangle QK'X$ is a right triangle $x^2 = b^2 + h^2$ (Fig.~\ref{f.compass-isoceles-trap4}).
 
 
@@ -586,9 +586,9 @@ in
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Construction of a Line Segment As a Ratio of Segments}\label{s.three}
+\section{Construction of a Line Segment as a Ratio of Segments}\label{s.three}
 
-\begin{theorem}
+\begin{theorem}\label{thm.compass-ratio}
 Given line segments of length $n,m,s$, it is possible to construct a line segment of length:
 \[
 x = \frac{n}{m}s\,.
@@ -596,8 +596,9 @@ x = \frac{n}{m}s\,.
 \end{theorem}
 
 \begin{proof}
-Construct two concentric circles $c_1 = c(Z,m)$ and $c_2 = c(Z,n)$. Choose an arbitrary point $A$ on $c_1$ and construct a chord $\overline{AB}$ of length $s$ on $c_1$ using only a compass as shown in Sect.~\ref{s.circle} (Fig.~\ref{f.compass-relative1}). We assume that $m>n$; if not, exchange the notation.
-\begin{figure}[t]
+Construct two concentric circles $c_1 = c(Z,m)$ and $c_2 = c(Z,n)$,\footnote{We assume that $m>n$; if not, exchange the notation.} and choose an arbitrary point $A$ on $c_1$. By Thm.~\ref{thm.compass-radius} construct a chord $\overline{AB}$ of length $s$ on $c_1$ (Fig.~\ref{f.compass-relative1}). If $\overline{AB}$ intersects $c_2$, by Thm.~\ref{thm.add-subtract-mm} multiply $m,n$ by a number $k$ so that the chord does not intersect the circle. Note that this does not change the value that we are trying to construct since $x=\displaystyle\frac{kn}{km}s=\displaystyle\frac{n}{m}s$.
+
+\begin{figure}[b]
 \subfigures
 \begin{center}
 \leftfigure[c]{
@@ -642,6 +643,7 @@ Construct two concentric circles $c_1 = c(Z,m)$ and $c_2 = c(Z,n)$. Choose an ar
 \vertex{A};
 \vertex{B};
 \vertex{H};
+\vertex{K};
 \end{tikzpicture}
 }
 \end{center}
@@ -649,13 +651,9 @@ Construct two concentric circles $c_1 = c(Z,m)$ and $c_2 = c(Z,n)$. Choose an ar
 \rightcaption{Construction of  $x=\frac{n}{m}s$, step 2}\label{f.compass-relative2}
 \end{figure}
 
+Choose a point $H$ on $c_2$ and denote the length of $\overline{AH}$ by $w$. Construct $K$ on $c_2$ such that the length of $\overline{BK}$ is $w$ (Fig.~\ref{f.compass-relative2}). $\triangle AHZ\cong\triangle BZK$ by side-side-side since $\overline{ZA}=\overline{ZB}=m$ are the radii of the same circle, as are $\overline{ZH}=\overline{ZK}=n$, and $\overline{AH}=\overline{BK}=w$ by construction (Fig.~\ref{f.compass-relative3}). From $\triangle AHZ\cong\triangle BZK$ it follows $\angle AZH = \angle BZK$ and then $\angle AZB = \angle HZK$. It is difficult to see this equality from the diagram, but Fig.~\ref{f.compass-relative4} should clarify the relation among the angles. 
 
-We also assume that $s$ does not intersect $c_2$; otherwise use the construction in Sect.~\ref{s.add-subtract} to multiply $m,n$ by a number $k$ so that the chord does not intersect the circle. Note that this does not change the value that we are trying to construct since $x=\displaystyle\frac{kn}{km}s=\displaystyle\frac{n}{m}s$.
-
-Choose a point $H$ on $c_2$ and denote the length of $\overline{AH}$ by $w$. Construct $K$ on $c_2$ such that the length of $\overline{BK}$ is $w$ (Fig.~\ref{f.compass-relative2}). 
-$\triangle AHZ\cong\triangle BZK$ by side-side-side since $\overline{ZA}=\overline{ZB}=m$ are the radii of the same circle, as are $\overline{ZH}=\overline{ZK}=n$, and $\overline{AH}=\overline{BK}=w$ by construction (Fig.~\ref{f.compass-relative3}). 
-
-\begin{figure}[b]
+\begin{figure}[t]
 \subfigures
 \begin{center}
 \leftfigure{
@@ -714,7 +712,7 @@ $\triangle AHZ\cong\triangle BZK$ by side-side-side since $\overline{ZA}=\overli
 \rightcaption{$\angle AZB=\angle HZK$}\label{f.compass-relative4}
 \end{figure}
 
-From $\triangle AHZ\cong\triangle BZK$ it follows $\angle AZH = \angle BZK$ and then $\angle AZB = \angle HZK$. It is difficult to see this equality from the diagram, but Fig.~\ref{f.compass-relative4} should clarify the relation among the angles. $\triangle ZAB\sim\triangle ZHK$ since both are isosceles triangles and we have shown that they have the same vertex angle. Label $\overline{HK}$ by $x$. Then:
+$\triangle ZAB\sim\triangle ZHK$ since both are isosceles triangles and we have shown that they have the same vertex angle. Label $\overline{HK}$ by $x$. Then:
 \begin{eqnarray*}
 \frac{m}{s} &=& \frac{n}{x}\\
 x&=&\frac{n}{m}s\,.
@@ -728,16 +726,16 @@ x&=&\frac{n}{m}s\,.
 \section{Construction of the Intersection of Two Lines}\label{s.two-lines}
 
 \begin{theorem}
-Given two lines containing the line segments $\overline{AB}, \overline{CD}$, it is possible to construct their intersection.
+Given two lines containing the line segments $\overline{AB}, \overline{CD}$, it is possible to construct their intersection $S$.
 \end{theorem}
 
 \begin{proof}
 Let $C',D'$ be the reflections of $C,D$ around $\overline{AB}$.
-There are two cases depending on whether $C,D$ lie on the same side of $\overline{AB}$ or on different sides.
+There are two cases depending on whether $C,D$ lie on the same side of $\overline{AB}$ or on different sides. Label $x=\overline{CS}, c=\overline{CC'}, d=\overline{DD'}, e=\overline{CD}$ as shown in Figs.~\ref{f.compass-intersection1}, \ref{f.compass-intersection2}. We compute the value of $x$ for each case.
 
 \textit{Case 1:}
 $C,D$ are on the different sides of $\overline{AB}$.
-$S$, the point of intersection of $\overline{CD}$ and $\overline{C'D'}$, lies on $\overline{AB}$, because $\triangle CZS\cong \triangle C'ZS$ by side-angle-side: $\overline{CZ}=\overline{C'Z}$, $\angle CZS=\angle C'ZS=90^\circ$ and $\overline{ZS}$ is a common side. Therefore $\overline{C'S}=\overline{CS}$ and similarly $\overline{D'S}=\overline{DS}$ (Fig.~\ref{f.compass-intersection1}). Label $x=\overline{CS}, c=\overline{CC'}, d=\overline{DD'},e=\overline{CD}$. $\triangle CSC'\sim\triangle DSD'$ are similar so $\displaystyle\frac{x}{e-x} = \displaystyle\frac{c}{d}$. Solving the equation gives $x=\displaystyle\frac{c}{c+d}e$.
+$S$ lies on $\overline{AB}$ because $\triangle CZS\cong \triangle C'ZS$ by side-angle-side: $\overline{CZ}=\overline{C'Z}$, $\angle CZS=\angle C'ZS=90^\circ$ and $\overline{ZS}$ is a common side. Therefore $\overline{C'S}=\overline{CS}$ and similarly $\overline{D'S}=\overline{DS}$. $\triangle CSC'\sim\triangle DSD'$ are similar so $\displaystyle\frac{x}{e-x} = \displaystyle\frac{c}{d}$ and solving the equation gives $x=\displaystyle\frac{c}{c+d}e$.
 
 \begin{figure}[ht]
 \begin{center}
@@ -761,9 +759,9 @@ $S$, the point of intersection of $\overline{CD}$ and $\overline{C'D'}$, lies on
 \path [name intersections={of=ab and cd,by={S}}];
 \node[above] at (S) {$S$};
 \draw (Cp) -- node[below] {$x$} (S);
-\draw (S) -- node[above,xshift=-4pt] {$e\!-\!x$} (Dp);
-\draw (C) -- node[above left] {$c$} (Cp);
-\draw (D) -- node[above right] {$d$} (Dp);
+\draw (S) -- node[above,xshift=-5pt] {$e\!-\!x$} (Dp);
+\draw (C) -- node[above left,yshift=6pt] {$c$} (Cp);
+\draw (D) -- node[above right,yshift=6pt] {$d$} (Dp);
 \path (C) -- node[right,xshift=2pt] {$x$} (S);
 \path (S) -- node[left,near end,xshift=-2pt] {$e\!-\!x$} (D);
 \node[below left] at (C|-A) {$Z$};
@@ -771,15 +769,17 @@ $S$, the point of intersection of $\overline{CD}$ and $\overline{C'D'}$, lies on
 \vertex{D};
 \vertex{Cp};
 \vertex{Dp};
+\draw ($(C)!.5!(Cp)$) rectangle +(6pt,6pt);
+\draw[rotate=90] ($(D)!.5!(Dp)$) rectangle +(6pt,6pt);
 \end{tikzpicture}
 \end{center}
 \caption{Construction of  the intersection of two lines (1)}\label{f.compass-intersection1}
 \end{figure}
 
 \textit{Case 2:}
-$C,D$ are on the same side of $\overline{AB}$ (Fig.~\ref{f.compass-intersection2}). $\triangle CSC'\sim\triangle DSD'$ gives $\displaystyle\frac{x}{x-e}=\frac{c}{d}\displaystyle$. Solving the equation gives $x=\displaystyle\frac{c}{c-d}e$.
+$C,D$ are on the same side of $\overline{AB}$. $\triangle CSC'\sim\triangle DSD'$ gives $\displaystyle\frac{x}{x-e}=\frac{c}{d}\displaystyle$ and solving the equation gives $x=\displaystyle\frac{c}{c-d}e$.
 
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.9]
 \coordinate (A) at (-4,0);
@@ -801,8 +801,8 @@ $C,D$ are on the same side of $\overline{AB}$ (Fig.~\ref{f.compass-intersection2
 \path [name intersections={of=ab and cd,by={S}}];
 \node[above] at (S) {$S$};
 \draw (Cp) -- (S);
-\draw (C) -- node[above left] {$c$} (Cp);
-\draw (D) -- node[above right] {$d$} (Dp);
+\draw (C) -- node[above left,yshift=6pt] {$c$} (Cp);
+\draw (D) -- node[above right,yshift=6pt] {$d$} (Dp);
 \path (C) -- node[above] {$e$} (D);
 \path (Cp) -- node[below] {$e$} (Dp);
 \path (D) -- node[above right,xshift=-4pt] {$x-e$} (S);
@@ -812,6 +812,8 @@ $C,D$ are on the same side of $\overline{AB}$ (Fig.~\ref{f.compass-intersection2
 \vertex{D};
 \vertex{Cp};
 \vertex{Dp};
+\draw ($(C)!.5!(Cp)$) rectangle +(6pt,6pt);
+\draw[rotate=90] ($(D)!.5!(Dp)$) rectangle +(6pt,6pt);
 \end{tikzpicture}
 \end{center}
 \caption{Construction of  the intersection of two lines (2)}\label{f.compass-intersection2}
@@ -819,7 +821,7 @@ $C,D$ are on the same side of $\overline{AB}$ (Fig.~\ref{f.compass-intersection2
 
 \medskip
 
-Construct the circles $c(C',d), c(D,e)$ and denote their intersection by $H$ (Fig.~\ref{f.compass-intersection3}). The sum of the line segments $\overline{CC'}, \overline{C'H}$ is $c + d$. We have to show that $H$ is on the extension of $\overline{CC'}$ so that $\overline{CH}$ is a line segment of length $c+d$. ($\overline{CH} = c - d$ in case $D$ is on the same side of $\overline{AB}$ as $C$.) 
+Construct the circles $c(C',d), c(D,e)$ and denote their intersection by $H$ (Fig.~\ref{f.compass-intersection3}). The sum of the line segments $\overline{CC'}, \overline{C'H}$ is $c + d$. We have to show that $H$ is on the extension of $\overline{CC'}$ so that $\overline{CH}$ is a line segment of length $c+d$. $\overline{CH} = c - d$ in case $D$ is on the same side of $\overline{AB}$ as $C$ (not shown in the diagram).
 \begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
@@ -872,9 +874,9 @@ in
 \caption{Construction of  the intersection of two lines (3)}\label{f.compass-intersection3}
 \end{figure}
 
-From the definition of $H$ as the intersection of $c(C',d), c(D,e)$, it follows that $\overline{DH}=e$, $\overline{C'H}=d$, but $\overline{C'D'} = e$, $\overline{D'D}=d$ so the quadrilateral $\overline{C'D'DH}$ is a parallelogram since the lengths of both pairs of opposite sides are equal. By construction, the line segment $\overline{DD'}$ is parallel to $\overline{CC'}$ so $\overline{C'H}$ is parallel to $\overline{DD'}$ and therefore parallel to $\overline{CC'}$. Since one of its end points is $C'$ it must be on the line containing $\overline{CC'}$.
+$H$ is the intersection of $c(C',d), c(D,e)$ so $\overline{DH}=e$, $\overline{C'H}=d$. By construction $\overline{C'D'} = e$, $\overline{D'D}=d$ so the quadrilateral $\overline{C'D'DH}$ is a parallelogram. 
 
-The lengths $c,d,e$ are given and we proved in Sect.~\ref{s.add-subtract} that a line segment of length $c+d$ can be constructed and in Sect.~\ref{s.three} that a line segment of length $x=\displaystyle\frac{c}{c+d}e$ can be constructed. $S$, the intersection of $c(C',x)$ and $c(C,x)$, is also the intersection of $\overline{AB}, \overline{CD}$ (Fig.~\ref{f.compass-intersection4}).
+By construction $\overline{DD'}\parallel\overline{CC'}$ so $\overline{C'H}\parallel \overline{DD'}$ and therefore $\overline{C'H}\parallel\overline{CC'}$. Since one of its end points is $C'$ it must be on the line containing $\overline{CC'}$. By Thm.~\ref{thm.add-subtract-mm}, from the lengths $c,d,e$ a line segment of length $c+d$ can be constructed and by Thm.~\ref{thm.compass-ratio} a line segment of length $x=\displaystyle\frac{c}{c+d}e$ can be constructed. $S$, the intersection of $c(C',x)$ and $c(C,x)$, is also the intersection of $\overline{AB}, \overline{CD}$ (Fig.~\ref{f.compass-intersection4}).
 \end{proof}
 
 \begin{figure}[t]
@@ -926,7 +928,6 @@ in
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\vspace{-4ex}
 
 \section{Construction of the Intersection of a Line and a Circle}\label{s.line-circle}
 
@@ -935,8 +936,8 @@ Given a circle $k=C(M,r)$ and a line $l$ it is possible to construct the interse
 \end{theorem}
 
 \begin{proof}
-Construct $M'$, be the reflection of $M$ around $l$, and construct the circle $k'=c(M',r)$. $X,Y$, the points of intersection of $k,k'$, are the points of intersection of $l$ and $k$.  This can be shown by congruent triangles $\triangle MYM'\cong\triangle MXM'$ (Fig.~\ref{f.compass-circle4}).
-\begin{figure}[b]
+Construct $M'$, be the reflection of $M$ around $l$ and construct the circle $k'=c(M',r)$. Since $MYM'\cong\triangle MXM'$, $X,Y$, the points of intersection of $k,k'$, are the points of intersection of $l$ and $k$ (Fig.~\ref{f.compass-circle4}).
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.5]
 \coordinate (A) at (-7,0);
@@ -970,7 +971,7 @@ Construct $M'$, be the reflection of $M$ around $l$, and construct the circle $k
 This construction cannot be done if $M$ is on the line $l$. In that case choose an arbitrary point $A$ on $l$ that is at a distance more than $r$ from $M$. Using Thm~\ref{thm.add-subtract-mm} shorten and lengthen $\overline{AM}$ by $r$. $X,Y$, the endpoints of these segments, are the intersections of $k$ and $l$ (Fig.~\ref{f.compass-circle5}).
 \end{proof}
 
-\begin{figure}[t]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.5]
 \coordinate (A) at (-7,0);
@@ -989,8 +990,8 @@ This construction cannot be done if $M$ is on the line $l$. In that case choose 
 \path [name intersections={of=c1 and ab,by={S1,S2}}];
 \node[above right] at (S1) {$X$};
 \node[above left] at (S2) {$Y$};
-\path (M) -- node[below,xshift=4pt] {\sm{\overline{AM}+r}} (S1);
-\path (A) -- node[below] {\sm{\overline{AM}-r}} (S2);
+\path (M) -- node[below,xshift=4pt] {$\overline{AM}+r$} (S1);
+\path (A) -- node[below] {$\overline{AM}-r$} (S2);
 \node at (-2.5,2.5) {$k$};
 \end{tikzpicture}
 \end{center}
@@ -998,9 +999,11 @@ This construction cannot be done if $M$ is on the line $l$. In that case choose 
 \end{figure}
 \index{Construction!compass@with only a compass|)}
 
+\newpage
+
 \subsection*{What Is the Surprise?}
 
-When one learns about constructions with a straightedge and compass it is obvious that both tools are necessary. Therefore,  it was quite a surprise to find out that a compass is sufficient. The proof is quite long so we are not going to leave the straightedge at home, but the theorem shows that we should not assume that what is must be.
+When one learns about constructions with a straightedge and compass it is obvious that both tools are necessary. Therefore,  it was quite a surprise to find out that a compass is sufficient. The proof is quite long so we are not going to leave the straightedge at home, but the theorem shows that we should not assume that there are no alternatives to well-known mathematical concepts.
 
 \subsection*{Sources}
 

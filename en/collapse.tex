@@ -61,15 +61,15 @@ A modern compass is a \emph{fixed compass}: the distance between the two legs ca
 \fill (knot) circle (.7pt);
 
 \begin{scope}[xshift=100pt,yshift=-90pt]
-\draw[dashed,thick] (0,3.5) -- (0.4,3.5) -- 
+\draw[dashed,thick,fill=white!70!gray] (0,3.5) -- (0.4,3.5) -- 
       (0.4,4) arc(30:150:0.23cm) -- cycle;
-\draw[dashed,thick] (0,3.5) -- ++(0,-.5) -- ++(.4,0) -- ++(0,.5);
+\draw[dashed,thick,fill=white!70!gray] (0,3.5) -- ++(0,-.5) -- ++(.4,0) -- ++(0,.5);
 \end{scope}
 
 \begin{scope}[xshift=70pt,yshift=-90pt]
-\draw[dashed,thick] (0,3.5) -- (0.4,3.5) -- 
+\draw[dashed,thick,fill=white!70!gray] (0,3.5) -- (0.4,3.5) -- 
       (0.4,4) arc(30:150:0.23cm) -- cycle;
-\draw[dashed,thick] (0,3.5) -- ++(0,-.5) -- ++(.4,0) -- ++(0,.5);
+\draw[dashed,thick,fill=white!70!gray] (0,3.5) -- ++(0,-.5) -- ++(.4,0) -- ++(0,.5);
 \end{scope}
 \end{tikzpicture}
 }
@@ -78,7 +78,7 @@ A modern compass is a \emph{fixed compass}: the distance between the two legs ca
 \end{figure}
 
 This chapter begins with a discussion of the relevance of studying construction with a straightedge and compass (Sect.~\ref{s.relevance}).
-Section~\ref{s.collapse} compares the two types of compasses in the most elementary construction: a perpendicular bisector. Section~\ref{s.collapse-copy} presents Euclid's method of copying a line segment using a collapsing compass. This proves that any construction that can be done using a fixed compass can be performed using a collapsing compass. Section~\ref{s.collapse-copy-incorrect} shows a proof of this theorem which seems to be correct, but does not work for all configurations of lines and points. To emphasize that one must not trust diagrams, Sect.~\ref{s.collapse-isoceles} presents a famous alleged proof that all triangles are isoceles; the proof appears to be correct but is not because it is based on an incorrect diagram.
+Section~\ref{s.collapse} compares the two types of compasses in the most elementary construction: a perpendicular bisector. Section~\ref{s.collapse-copy} presents Euclid's method of copying a line segment using a collapsing compass. This proves that any construction that can be done using a fixed compass can be performed using a collapsing compass. Section~\ref{s.collapse-copy-incorrect} shows a proof of this theorem which seems to be correct, but does not work for all configurations of lines and points. To emphasize that one must not trust diagrams, Sect.~\ref{s.collapse-isoceles} presents a famous alleged proof that all triangles are isoceles; the proof appears to be correct but it is not because the proof is based on an incorrect diagram.
 
 \section{Construction with a Straightedge and Compass}\label{s.relevance}
 
@@ -130,17 +130,26 @@ Some geometry textbooks present the construction of a perpendicular bisector\ind
 \end{tikzpicture}
 }
 \leftcaption{Construction of a perpendicular bisector with a fixed compass}\label{f.collapse-perp-bisector-fixed}
-\rightcaption{Construction of a perpendicular bisector with a collapsing compass}\label{f.collapse-perp-bisector-collapse}
+\rightcaption{Construction of a perpendicular bisector with a fixed or a collapsing compass}\label{f.collapse-perp-bisector-collapse}
 \end{figure}
 
-Figure~\ref{f.collapse-perp-bisector-collapse} shows the construction of a perpendicular bisector with a collapsing compass by constructing two circles: one centered at $A$ with radius $\overline{AB}$ and one centered at $B$ with radius $\overline {BA}$. This can be done with a collapsing compass because (obviously) $\overline{AB}=\overline{BA}$, so the compass does not have to ``remember'' the length of $\overline{AB}$ to construct a circle centered at $B$ with the same radius.
-The proof that the line constructed shown in Fig.~\ref{f.collapse-perp-bisector-fixed} is a perpendicular bisector is not at all elementary because relatively advanced concepts like congruent triangles have to be used. However, the proof that the construction of a perpendicular bisector shown in Fig.~\ref{f.collapse-perp-bisector-collapse} is correct is simple and based on the fact that $\triangle ABC$ is an equilateral triangle. In fact, that is the first proposition in Euclid's \textit{Elements}.\index{Euclid's elements@Euclid's \textit{Elements}}
+Figure~\ref{f.collapse-perp-bisector-collapse} shows the construction of a perpendicular bisector with either a fixed or a collapsing compass. Two circles are constructed: one centered at $A$ with radius $\overline{AB}$ and one centered at $B$ with radius $\overline {BA}$. This can be done with a collapsing compass because (obviously) $\overline{AB}=\overline{BA}$, so the compass does not have to ``remember'' the length of $\overline{AB}$ to construct a circle centered at $B$ with the same radius.
+The proof that the line constructed shown in Fig.~\ref{f.collapse-perp-bisector-fixed} is a perpendicular bisector is not at all elementary because relatively advanced concepts like congruent triangles have to be used. However, the proof that the construction of a perpendicular bisector shown in Fig.~\ref{f.collapse-perp-bisector-collapse} is correct is simple and based on the fact that $\triangle ABC$ is an equilateral triangle. In fact, this is the first proposition in Euclid's \textit{Elements}.\index{Euclid's elements@Euclid's \textit{Elements}}
 $\overline{AC}=\overline{AB}$ since they are radii of the same circle and, similarly, $\overline{BC}=\overline{BA}$. We have: $
 \overline{AC}=\overline{AB}=\overline{BA}=\overline{BC}$.
 
-Figure~\ref{f.collapse-equilateral-fixed} shows that for the construction with a fixed compass, the triangle will be isosceles, not necessarily an equilateral triangle as in \index{Collapsing compass!construction of an equilateral triangle} Euclid's first proposition (Fig.~\ref{f.collapse-equilateral-collapse}).
+Figure~\ref{f.collapse-equilateral-fixed} shows that for the construction with a fixed compass, the triangle will be an isosceles, not necessarily an equilateral, triangle \index{Collapsing compass!construction of an equilateral triangle} (Fig.~\ref{f.collapse-equilateral-collapse}).
 
-\begin{figure}[b]
+\section{Euclid's Construction for Copying a Line Segment}\label{s.collapse-copy}
+
+The second proposition of  Euclid's \textit{Elements}\index{Euclid's elements@Euclid's \textit{Elements}} describes how to copy a given line segment $\overline{AB}$ to a segment of the same length, one of whose end points is a given point $C$. Therefore, a fixed compass adds no additional capabilities and a collapsing compass is sufficient, although constructions are easier with a fixed compass.
+
+\begin{theorem}
+Given a line segment $\overline{AB}$ and a point $C$, a line segment $\overline{CC'}$, one of whose endpoints is $C$, can be constructed using a collapsing compass, such that $\overline{AB}=\overline{CC'}$ (Fig.~\ref{f.collapse-copying-1}).
+\end{theorem}
+
+
+\begin{figure}[t]
 \subfigures
 \leftfigure[c]{
 \begin{tikzpicture}[scale=0.5]
@@ -183,15 +192,7 @@ Figure~\ref{f.collapse-equilateral-fixed} shows that for the construction with a
 \rightcaption{Construction of an equilateral triangle with a collapsing compass}\label{f.collapse-equilateral-collapse}
 \end{figure}
 
-\section{Euclid's Construction for Copying a Line Segment}\label{s.collapse-copy}
-
-The second proposition of  Euclid's \textit{Elements}\index{Euclid's elements@Euclid's \textit{Elements}} shows how to copy a given line segment $\overline{AB}$ to a segment of the same length, one of whose end points is a given point $C$. Therefore, a fixed compass adds no additional capabilities and a collapsing compass is sufficient, although constructions are easier with a fixed compass.
-
-\begin{theorem}
-Given a line segment $\overline{AB}$ and a point $C$, a line segment $\overline{CC'}$, one of whose endpoints is $C$, can be constructed using a collapsing compass, such that $\overline{AB}=\overline{CC'}$ (Fig.~\ref{f.collapse-copying-1}).
-\end{theorem}
-
-\begin{figure}[t]
+\begin{figure}[b]
 \subfigures
 \leftfigure[c]{
 \begin{tikzpicture}[scale=0.5]
@@ -228,9 +229,9 @@ Given a line segment $\overline{AB}$ and a point $C$, a line segment $\overline{
 \end{figure}
 
 \begin{proof}
-Construct the line segment $\overline{AC}$. Construct the equilateral triangle $\triangle ACD$ whose base is $\overline{AC}$ (Fig.~\ref{f.collapse-copying-2}). By Euclid's first proposition, the triangle can be constructed using a collapsing compass. Construct the ray that is an extension of the line segment \emph{from $D$ to $A$}, and construct the ray that is an extension of the line segment \emph{from $D$ to $C$} (Fig.~\ref{f.collapse-copying-3}). Construct the circle centered at $A$ with radius $\overline{AB}$ and denote the intersection of the circle and the ray extending $\overline{DA}$ by $E$. Construct the circle centered at $D$ with radius $\overline{DE}$ and denote the intersection of the circle and the ray extending $\overline{DC}$ by $F$ (Fig.~\ref{f.collapse-copying-4}).
+Construct the line segment $\overline{AC}$. Construct the equilateral triangle $\triangle ACD$ whose base is $\overline{AC}$ (Fig.~\ref{f.collapse-copying-2}). By Euclid's first proposition, the triangle can be constructed using a collapsing compass. Construct the ray that is an extension of the line segment \emph{from $D$ to $A$}, and construct the ray that is an extension of the line segment \emph{from $D$ to $C$} (Fig.~\ref{f.collapse-copying-3}). Construct the circle centered at $A$ with radius $\overline{AB}$ and denote the intersection of the circle and the ray extending $\overline{DA}$ by $E$ (Fig.~\ref{f.collapse-copying-4}). Construct the circle centered at $D$ with radius $\overline{DE}$ and denote the intersection of the circle and the ray extending $\overline{DC}$ by $F$ (Fig.~\ref{f.collapse-copying-5}).
 
-\begin{figure}[b]
+\begin{figure}[t]
 \subfigures
 \leftfigure[c]{
 \begin{tikzpicture}[scale=0.4]
@@ -279,7 +280,7 @@ $\overline{DC}=\overline{DA}$ because $\triangle ACD$ is equilateral. $\overline
 \]
 \end{proof}
 
-\begin{figure}
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=0.4]
 \clip (-5,-4.5) rectangle (8,6);
@@ -348,8 +349,8 @@ The specification of the directions of the rays is essential. The proof here wor
 \section{A Flawed Construction for Copying a Line Segment}\label{s.collapse-copy-incorrect}
 
 \begin{proof}
-Construct three circles: one centered at $A$ with radius $\overline{AB}$, one centered at $A$ with radius $\overline{AC}$, and one centered at $C$ with radius $\overline{AC}=\overline{CA}$. Denote the intersections of the circles centered at $A$ and $C$ by $E$ and $F$, and denote an intersection of the circle centered at $C$ and the circle centered at $A$ with radius $\overline{AB}$ by $D$. If $\overline{AC}>\overline{AB}$, the construction is as shown in Fig.~\ref{f.collapse-incorrect-1}.
-\begin{figure}[t]
+Construct three circles: one centered at $A$ with radius $\overline{AB}$, one centered at $A$ with radius $\overline{AC}$, and one centered at $C$ with radius $\overline{AC}=\overline{CA}$. Denote the intersections of the circles centered at $A$ and $C$ by $E$ and $F$, respectively, and denote an intersection of the circle centered at $C$ and the circle centered at $A$ with radius $\overline{AB}$ by $D$. If $\overline{AC}>\overline{AB}$, the construction is as shown in Fig.~\ref{f.collapse-incorrect-1}.
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
 \coordinate (C) at (-2,0);
@@ -368,7 +369,7 @@ Construct three circles: one centered at $A$ with radius $\overline{AB}$, one ce
 \vertex{C};
 \end{tikzpicture}
 \end{center}
-\caption{Flawed construction for copying a line segment (1)}\label{f.collapse-incorrect-1}
+\caption{Construction for copying a line segment (1)}\label{f.collapse-incorrect-1}
 \end{figure}
 
 \begin{figure}[t]
@@ -399,7 +400,7 @@ Construct three circles: one centered at $A$ with radius $\overline{AB}$, one ce
 \draw (A) -- (D) -- (E) -- cycle;
 \end{tikzpicture}
 \end{center}
-\caption{Flawed construction for copying a line segment (2)}\label{f.collapse-incorrect-2}
+\caption{Construction for copying a line segment (2)}\label{f.collapse-incorrect-2}
 \end{figure}
 
 Construct a circle centered at $E$ with radius $\overline{ED}$. Denote the intersection of this circle with the circle centered at $A$ with radius $\overline{AC}$ by $G$. There are two intersections, so choose the one closer to $C$ (Fig.~\ref{f.collapse-incorrect-2}).
@@ -409,6 +410,8 @@ $\overline{CD}=\overline{CE}$ are radii of the same circle as are $\overline{AE}
 \]
 $\overline{EG} = \overline{ED}$ are radii of the same circle, so $\triangle EAG\cong \triangle DCE$ by side-side-side and $\angle GEA = \angle DEC$.
 
+\newpage
+
 Since:
 \[
 \angle GEC = \angle GEA \!-\!\angle CEA = \angle DEC\!-\!\angle CEA = \angle DEA\,,
@@ -417,7 +420,7 @@ Since:
 
 The proof is correct only if $\overline{AC}>\overline{AB}$.  Figure~\ref{f.collapse-incorrect-4} shows a diagram where $\overline{AC}<\overline{A}B$ and you can see that $\overline{AB}\neq\overline{GC}$.
 
-\begin{figure}[t]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
 \coordinate (C) at (-1,0);
@@ -444,7 +447,6 @@ The proof is correct only if $\overline{AC}>\overline{AB}$.  Figure~\ref{f.colla
 \caption{A diagram for which the proof doesn't work}\label{f.collapse-incorrect-4}
 \end{figure}
 
-\newpage
 
 \section{Don't Trust a Diagram}\label{s.collapse-isoceles}
 
@@ -452,11 +454,13 @@ The proof is correct only if $\overline{AC}>\overline{AB}$.  Figure~\ref{f.colla
 All triangles are isosceles.
 \end{theorem}\index{Triangle!isoceles@all are isoceles}
 
+\vspace{-2ex}
+
 \begin{proof}[Incorrect]
-Given an arbitrary triangle $\triangle ABC$, let $P$ be the intersection of the angle bisector of $\angle BAC$ and the perpendicular bisector of $\overline{BC}$. The intersections of the altitudes from $P$ to the sides $\overline{AB}$, $\overline{AC}$ are denoted by $E,F$ (Fig.~\ref{f.collapse-isoceles-1}). 
+Given an arbitrary triangle $\triangle ABC$, let $P$ be the intersection of the angle bisector of $\angle BAC$ and the perpendicular bisector of $\overline{BC}$. The intersections of the altitudes from $P$ to the sides $\overline{AB}$, $\overline{AC}$ are denoted by $E,F$, respectively (Fig.~\ref{f.collapse-isoceles-1}). 
 \begin{figure}[t]
 \begin{center}
-\begin{tikzpicture}[scale=1.1]
+\begin{tikzpicture}[scale=1]
 \coordinate (P) at (0,0);
 \node[xshift=4mm,yshift=1mm] at (P) {$P$};
 \coordinate [label=left:$B$] (B)  at (-2,-2);
@@ -499,9 +503,9 @@ $\triangle APE\cong \triangle APF$ because they are right triangles with equal a
 
 The \emph{logic} of the proof is correct, but the diagram upon which the proof is based is not correct because point $P$ is \emph{outside} the triangle (Fig.~\ref{f.collapse-isoceles-2}).
 
-\begin{figure}[t]
+\begin{figure}[b]
 \begin{center}
-\begin{tikzpicture}[scale=.7]
+\begin{tikzpicture}[scale=.5]
 \coordinate (B) at (0,0);
 \coordinate (C) at (8,0);
 \path[name path=ba] (B) -- +(70:6);
@@ -521,10 +525,10 @@ The \emph{logic} of the proof is correct, but the diagram upon which the proof i
 \draw (4,0) rectangle +(10pt,10pt);
 \node[right] at (X) {$P$};
 \end{tikzpicture}
-\end{center}
+\vspace{-2ex}
 \caption{Why the construction doesn't work}\label{f.collapse-isoceles-2}
+\end{center}
 \end{figure}
-
 
 \newpage
 
