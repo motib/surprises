@@ -1,58 +1,114 @@
 % !TeX root = surprises.tex
 
-
 \selectlanguage{hebrew}
-%\part{בניות גיאומטריות}\label{p.constructions}
-
 
 \chapter{מחוגה מתמוטטת}\label{c.collapse}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{
-\R{מחוגה קבועה ומחוגה מתמוטטת}
-}
+במחוגה מודרנית היא 
+\textbf{מחוגה קבועה}:
+ניתן לקבע את המרחק בין שתי הרגליים וכך להעתיק קטע קו או מעגל ממקום למקום (%
+\ref{fig.fixed-compass}).
+אוקלידס השתמש במחוגה 
+\textbf{מתמוטטת}
+\L{(collapsing)}
+בה לא ניתן לשמור מרחק קבוע (%
+\ref{fig.collapsing-compass}).
+שרגליה מתקפלות כאשר מרימים אותן מהנייר. לעתים קרובות מורים משתמשים מחוגה מתמוטטת המורכבת מטוש שמחובר לחוט כדי לבנות מעגל הלוח. אי-אפשר לשמור על מרחק קבוע כאשר מרימים את המחוגה מהלוח.
 
-במחוגה מודרנית ניתן לקבע את המרחק בין שתי הרגליים, וכך להעתיק קטע קו או מעגל ממקום למקום. נקרא למחוגה זו: "מחוגה קבועה". בספרי לימוד גיאומטריה ניתן למצוא בנייה של אנך אמצעי לקטע קו על ידי בניית שני מעגלים שמרכזם על הקו, 
-\textbf{ובלבד שהרדיוס גדול ממחצית המרחק בין המרכזים},
-)תרשים שמאלי(:
-\begin{center}
-\selectlanguage{english}
-\begin{tikzpicture}[scale=0.5]
-\begin{scope}
-\coordinate (A) at (0,0);
-\coordinate (B) at (4,0);
-\draw ($(A)!-.3!(B)$) -- ($(A)!1.3!(B)$);
-\fill (A) node[below] {$A$}circle[radius=3pt];
-\fill (B)  node[below] {$B$} circle[radius=3pt];
-\draw[name path=larc] (A) ++(-60:3cm) arc (-60:60:3cm);
-\draw[name path=rarc] (B) ++(-120:3cm) arc (-120:-240:3cm);
-\path [name intersections={of=larc and rarc,by={b,t}}];
-\fill (t) node[above right,xshift=-2pt,yshift=5pt] {$C$} circle[radius=3pt];
-\fill (b) node[below left,xshift=2pt,yshift=-5pt] {$D$} circle[radius=3pt];
-\draw ($ (b) ! 1.2 ! (t)$) -- ($ (t) ! 1.2 ! (b)$);
+\begin{figure}
+\centering
+\selectlanguage{hebrew}
+\subcaptionbox{%
+מחוגה קבועה. לרגל אחת סיכה שניתן להניח במרכז המעגל. עפרון מחוברת לרגל השניה משמש לשרטוט המעגל. הרגלים מחוברות בציר קשיח כך שהמרחק בין הרגליים (רדיוס המעגל) נשמר גם כאשר מרימים את המחוגה מהנייר.%
+\label{fig.fixed-compass}}
+[.45\textwidth]
+{
+\centering
+\begin{tikzpicture}
+\begin{scope}[rotate=0,transform shape,scale=3]
+\draw (2.95,3.7) rectangle (3,3.95);
+\draw (2.92,3.68) -- (2.5,2.5) -- (2.5,2.3) -- (2.99,3.68);
+\draw (3.5,2.5) -- (3.43,2.48) -- (2.975,3.68);
+\draw (3.04,3.68) -- (3.5,2.5);
+\draw (2.5,2.5) -- (2.56,2.48);
+\draw[fill=white] (2.975,3.75) circle (0.1cm);
+\draw (2.975,3.75) circle (0.04cm);
 \end{scope}
-\begin{scope}[xshift=12cm]
-\coordinate (A) at (0,0);
-\coordinate (B) at (4,0);
-\draw ($(A)!-.3!(B)$) -- ($(A)!1.3!(B)$);
-\fill (A) node[below left] {$A$}circle[radius=3pt];
-\fill (B)  node[below right] {$B$} circle[radius=3pt];
-\draw[name path=larc] (A) ++(-80:4cm) arc (-80:80:4cm);
-\draw[name path=rarc] (B) ++(-100:4cm) arc (-100:-260:4cm);
-\path [name intersections={of=larc and rarc,by={b,t}}];
-\fill (t) node[above right,xshift=-2pt,yshift=3pt] {$C$} circle[radius=3pt];
-\fill (b) node[below left,xshift=2pt,yshift=-3pt] {$D$}circle[radius=3pt];
-\draw ($ (b) ! 1.2 ! (t)$) -- ($ (t) ! 1.2 ! (b)$);
-\draw[thick,dashed] (A) -- (t) -- (B);
+\begin{scope}[xshift=10.34cm,yshift=7.28cm,rotate=21.4,scale=.6]          
+\fill[gray!50] (0,4) -- (0.4,4) -- (0.4,0) --
+               (0.3,-0.15) -- (0.2,0) -- (0.1,-0.14) --
+               (0,0) -- cycle;
+\draw[color=white] (0.2,4) -- (0.2,0);
+\fill[black] (0,3.5) -- (0.2,3.47) -- (0.4,3.5) --
+             (0.4,4) arc(30:150:0.23cm);
+\fill[brown!40] (0,0) -- (0.2,-0.8)
+    node[coordinate,pos=0.75](a){} -- 
+    (0.4,0)node[coordinate,pos=0.25](b){} -- 
+    (0.3,-0.15) -- (0.2,0) -- (0.1,-0.14) -- cycle;
+\fill[gray] (a) -- (0.2,-0.8) -- (b) -- cycle;
 \end{scope}
 \end{tikzpicture}
-\end{center}
+}
+\hspace{3em}
+\subcaptionbox{%
+מחוגה מתמוטטת. המשתמש מצמיד חוט למרכז המעגל. לקצה השני של החוט מחובר עפרון המשמש לשרטוט המעגל. כאשר מרימים את המחוגה מהנייר, האצבעות (מקווקווים) יכולים בקלות להחליק למקום אחר.%
+\label{fig.collapsing-compass}}
+[.45\textwidth]
+{
+\centering
+\begin{tikzpicture}[rotate=0,scale=1]          
+\fill[gray!50] (0,4) -- (0.4,4) -- (0.4,0) --
+               (0.3,-0.15) -- (0.2,0) -- (0.1,-0.14) --
+               (0,0) -- cycle;
+\draw[color=white] (0.2,4) -- (0.2,0);
+\fill[black] (0,3.5) -- (0.2,3.47) -- (0.4,3.5) --
+             (0.4,4) arc(30:150:0.23cm);
+\fill[brown!40] (0,0) -- (0.2,-0.8)
+    node[coordinate,pos=0.75](a){} -- 
+    (0.4,0) node[coordinate,pos=0.25](b){} -- 
+    (0.3,-0.15) -- (0.2,0) -- (0.1,-0.14) -- cycle;
+\fill[gray] (a) -- (0.2,-0.8) -- (b) -- cycle;
 
-אוקלידס השתמש במחוגה "מתמוטטת" )%
-\L{collapsing}%
-(,
-שרגליה מתקפלות כאשר מרימים אותן מהנייר. מחוגה המורכבת מגיר הקשור לחוט היא מחוגה מתמוטטת, כי אי-אפשר לשמור את הרדיוס כאשר מרימים אותה מהלוח. התרשים הימני למעלה מראה בנייה של אנך אמצעי באמצעות מחוגה מתמוטטת: האורך של
+\draw[thick] (0.395,1) arc (37:-216:7pt);
+\coordinate (knot) at (0.44,.8);
+\draw[thick] (knot) -- +(4,0);
+\fill (knot) circle (.7pt);
+
+\begin{scope}[xshift=100pt,yshift=-90pt]
+\draw[dashed,thick,fill=white!70!gray] (0,3.5) -- (0.4,3.5) -- 
+      (0.4,4) arc(30:150:0.23cm) -- cycle;
+\draw[dashed,thick,fill=white!70!gray] (0,3.5) -- ++(0,-.5) -- ++(.4,0) -- ++(0,.5);
+\end{scope}
+
+\begin{scope}[xshift=70pt,yshift=-90pt]
+\draw[dashed,thick,fill=white!70!gray] (0,3.5) -- (0.4,3.5) -- 
+      (0.4,4) arc(30:150:0.23cm) -- cycle;
+\draw[dashed,thick,fill=white!70!gray] (0,3.5) -- ++(0,-.5) -- ++(.4,0) -- ++(0,.5);
+\end{scope}
+\end{tikzpicture}
+}
+\end{figure}
+
+בתחילת הפרק דיון על הרלוונטית של למידה של בניה עם סרגל ומחוגה (סעיף%
+~\ref{s.relevance}).
+סעיף%
+~\ref{s.collapse} 
+משווה את שני סוגי המחוגה בבניה הפשוטה ביותר: אנח אמצעי. סעיף%
+~\ref{s.collapse-copy}
+מביא את השיטה של אוקלידס להעתקת קטע קו באמצעות מחוגה מתמוטטת. זה מוכיח שניתן לבצע באמצעות מחוגה מתמוטטת כל בניה שניתנת לביצוע באמצעות מחוגה קבועה. סעיף%
+~\ref{s.collapse-copy-incorrect} 
+מציג הוכחה של משפט זה שנראית נכונה אבל שלא עובדת עבור כל תצורה של קווים ונקודות. כדי להדגיש שאין לסמוך על שרטוט, סעיף%
+~\ref{s.collapse-isoceles}
+מביא "הוכחה לכאורה" מפורסמת ש-
+\textbf{כל}
+משולש הוא שווי שוקיים. ההוכחה נראית נכונה אבל היא שגויה כי היא מתבססת על שרטוט לא נכון.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{בניה עם סרגל ומחוגה}\label{s.relevance}
+
 $\overline{AB}$
 שווה כמובן לאורך של
 $\overline{BA}$,
@@ -68,50 +124,21 @@ $\overline{BC}$
 $\overline{BA}$.
 מכאן ש-%
 $\overline{AC} = \overline{AB} = \overline{BA} = \overline{BC}$.
-%
-%\vspace{-2ex}
-%
-%\begin{center}
-%\selectlanguage{english}
-%\begin{tikzpicture}[scale=0.5]
-%\begin{scope}
-%\coordinate (A) at (0,0);
-%\coordinate (B) at (4,0);
-%\draw ($(A)!-.3!(B)$) -- ($(A)!1.3!(B)$);
-%\fill (A) node[below left] {$A$}circle[radius=3pt];
-%\fill (B)  node[below right] {$B$} circle[radius=3pt];
-%\draw[name path=larc] (A) ++(-60:3cm) arc (-60:60:3cm);
-%\draw[name path=rarc] (B) ++(-120:3cm) arc (-120:-240:3cm);
-%\path [name intersections={of=larc and rarc,by={b,t}}];
-%\fill (t) node[above right,xshift=-2pt,yshift=5pt] {$C$} circle[radius=3pt];
-%\fill (b) node[below left,xshift=2pt,yshift=-5pt] {$D$} circle[radius=3pt];
-%\draw (A) -- (t);
-%\draw (B) -- (t);
-%\end{scope}
-%\begin{scope}[xshift=12cm]
-%\coordinate (A) at (0,0);
-%\coordinate (B) at (4,0);
-%\draw ($(A)!-.3!(B)$) -- ($(A)!1.3!(B)$);
-%\fill (A) node[below left] {$A$}circle[radius=3pt];
-%\fill (B)  node[below right] {$B$} circle[radius=3pt];
-%\draw[name path=larc] (A) ++(-80:4cm) arc (-80:80:4cm);
-%\draw[name path=rarc] (B) ++(-100:4cm) arc (-100:-260:4cm);
-%\path [name intersections={of=larc and rarc,by={b,t}}];
-%\fill (t) node[above right,xshift=-2pt,yshift=3pt] {$C$} circle[radius=3pt];
-%\fill (b) node[below left,xshift=2pt,yshift=-3pt] {$D$}circle[radius=3pt];
-%\draw (A) -- (t);
-%\draw (B) -- (t);
-%\end{scope}
-%\end{tikzpicture}
-%\end{center}
 
 הבניה של משולש שווה-צלעות היא המשפט הראשון בספר של אוקלידס. המשפט השני מראה שאפשר להעתיק קטע קו עם מחוגה מתמוטטת, ולכן המחוגה הקבועה לא מוסיפה יכולת חדשה. 
 
+בספרי לימוד גיאומטריה ניתן למצוא בנייה של אנך אמצעי לקטע קו על ידי בניית שני מעגלים שמרכזם על הקו, 
+\textbf{ובלבד שהרדיוס גדול ממחצית המרחק בין המרכזים},
+)תרשים שמאלי(:
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{%
-העתקת קטע קו לפי אוקלידס%
-}
+\section{Fixed Compasses and Collapsing Compasses}\label{s.collapse}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{העתקת קטע קו לפי אוקלידס}\label{s.collapse-copy}
 
 \textbf{משפט:}
 נתון קטע קו
@@ -125,7 +152,7 @@ $AB$:
 
 
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=0.6]
 \begin{scope}
 \coordinate (C) at (0,0);
@@ -188,7 +215,7 @@ $\overline{DE}$
 )תרשים ימני(.
 
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=0.6]
 \begin{scope}
 \coordinate (C) at (0,0);
@@ -243,7 +270,7 @@ $F$:
 \end{itemize}
 
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=0.4]
 \coordinate (C) at (0,0);
 \coordinate (A) at (2.5,0);
@@ -300,9 +327,7 @@ $\overline{CF}$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{%
-העתקה שגויה של קטע קו
-}\label{s.error}
+\section{העתקה שגויה של קטע קו}\label{s.collapse-copy-incorrect}
 
 \begin{itemize}
 \item
@@ -311,7 +336,7 @@ $A$
 עם רדיוס
 $\overline{AB}$:
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=0.6]
 \begin{scope}
 \coordinate (C) at (-2,0);
@@ -356,7 +381,7 @@ $\overline{AB}$
 ב-%
 $D$:
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=0.6]
 \coordinate (C) at (-2,0);
 \coordinate (A) at (2.5,0);
@@ -391,7 +416,7 @@ $\overline{AC}$
 \end{itemize}
 \begin{figure}[tb]
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=0.8]
 \clip (-8,-1) rectangle (9,5);
 \coordinate (C) at (-2,0);
@@ -417,6 +442,7 @@ $\overline{AC}$
 \draw[thick,dashed] (A) -- (D) -- (E) -- cycle;
 \end{tikzpicture}
 \end{center}
+\selectlanguage{hebrew}
 \caption{משולשים חופפים}\label{f.collapse1}
 \end{figure}
 
@@ -477,6 +503,8 @@ $\overline{AB}$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\selectlanguage{hebrew}
+
 \section{
 בניה אחרת להעתקת קטע קו
 }\label{s.copy2}
@@ -498,10 +526,10 @@ $C$
 $\overline{DC}=\overline{AB}$
 )תרשים שמאלי(.
 
-\vspace{-1ex}
+
 
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=0.8]
 \coordinate (A) at (0,0);
 \coordinate (B) at (4,0);
@@ -595,7 +623,7 @@ $C,F$
 הוא אנך לקו דרך הנקודה 
 $C$.
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=0.5]
 \coordinate (A) at (0,0);
 \coordinate (B) at (4,0);
@@ -621,16 +649,16 @@ $C$.
 
 \section{
 אין לסמוך על תרשים
-}
+}\label{s.collapse-isoceles}
 בסעיף~%
-\ref{s.error}
+\ref{s.collapse-copy-incorrect}
 ראינו שאין לסמוך על ציור. הנה הוכחה "נכונה"
 \textbf{\R{שכל}}
 משולש שווה-שוקיים!
 
 \begin{figure}[tb]
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=1.2]
 \coordinate (P) at (0,0);
 \node[xshift=4mm,yshift=1mm] at (P) {$P$};
@@ -669,6 +697,7 @@ $C$.
 \fill (P) circle(1pt);
 \end{tikzpicture}
 \end{center}
+\selectlanguage{hebrew}
 \caption{"הוכחה" שכל משולש שווה-שוקיים}\label{f.isoceles}
 \end{figure}
 
@@ -723,13 +752,13 @@ $\triangle ABC$
 הבעיה בהוכחה היא שתרשים אינו נכון כי הנקודה
 $P$
 נמצאת
-\textbf{\R{מחוץ}}
+\textbf{מחוץ}
 למשולש.
 % )איור
 %\ref{f.isoceles-wrong}(.
-%\begin{figure}[H]
+%\begin{figure}
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=.9]
 \coordinate (B)  at (0,0);
 \node[left] at (B) {$B$};
@@ -756,11 +785,14 @@ $P$
 %\caption{נקודת החיתוך בין חוצה הזווית והאנך האמצעי}\label{f.isoceles-wrong}
 %\end{figure}
 
+\selectlanguage{hebrew}
+
+
 \subsection*{מקורות}
 
 \L{Toussaint} \L{\cite{toussaint}}
 הראה שפורסמו הוכחות שגויות רבות של המשפט ודווקא אוקלידס הוא זה שנתן הוכחה נכונה! הבניה בסעיף~%
-\ref{s.error}
+\ref{s.collapse-copy-incorrect}
 לקוחה מ-%
 \L{\cite{rusty}}
 ו-%

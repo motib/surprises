@@ -1,6 +1,9 @@
 % !TeX root = surprises.tex
 
 \selectlanguage{hebrew}
+
+
+
 \chapter{איך לשמור על מוזיאון}
 \label{c.museum}
 
@@ -9,7 +12,7 @@ $1973$
 \L{Victor Klee}
 שאל כמה שומרים נחוצים כדי לראות את כל הקירות של מוזיאון על מנת לוודא שלא גונבים את הציורים. אם הקירות של המוזיאון מהווים מצולע משוכלל או אפילו מצולע קמור, אפשר להסתפק בשומר אחד:
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=.8]
 \coordinate (O) at (0,0);
 \fill (O) circle (2pt);
@@ -26,7 +29,7 @@ $1973$
 מה עם מוזיאון עם קירות בצורה של מסור:
 
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=1]
 \coordinate (O) at (0,0);
 \draw [thick] (O) -- (++110:1cm) coordinate (P);
@@ -52,7 +55,7 @@ $15$
 כל "שן" של המסור מגדירה משולש )מסומן באפור(. שומרת הניצבת במקום כלשהו בתוך אחד המשולשים יכולה לראות את כל הקירות של אותו משולש:
 
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=1]
 \coordinate (O) at (0,0);
 \draw [thick] (O) -- (++110:1cm) coordinate (P);
@@ -86,7 +89,7 @@ $15$
 שומרות מספיקות כדי לשמור על כל הקירות. אם המשולשים לא חופפים, שומרת במשולש אחד לא יכולה לראות את כל הקירות של משולש אחר )חץ ירוק(, לכן חייבים להעסיק חמש שומרות נחוצות.
 
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=1]
 \coordinate (O) at (0,0);
 \draw [thick] (O) -- (++110:1cm) coordinate (P);
@@ -121,19 +124,19 @@ $\disfrac{n}{3}$
 שומרות מספיקות ונחוצות כדי לשמור על כל מוזיאון עם
 $n$
 קירות.%
-\footnote{אם 
+\footnote{\R{אם}
 $n$
-לא מתחלק ב-%
+\R{לא מתחלק ב}-%
 $3$
-מספר השומרות הנחוצות הוא 
+\R{מספר השומרות הנחוצות הוא}
 $\left\lfloor \disfrac{n}{3}\right\rfloor$.
-למשל,
+\R{למשל,}
 $4$
-שומרות מספיקות כדי לשמור על מוזיאונים עם
+\R{שומרות מספיקות כדי לשמור על מוזיאונים עם}
 $12, 13, 14$
-קירות כי
+\R{קירות כי}
 $\left\lfloor \disfrac{14}{3}\right\rfloor =\left\lfloor \disfrac{13}{3}\right\rfloor=\left\lfloor \disfrac{12}{3}\right\rfloor=4$.
-לשם הפשטות נתעלם מסיבוך זה.}
+\R{לשם הפשטות נתעלם מסיבוך זה}.}
 \end{theorem}
 ניתן להכליל את הדוגמה כדי להראות ש-%
 $\disfrac{n}{3}$
@@ -157,7 +160,7 @@ $1$
 $2$
 קעור.
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=.8]
 \draw[thick]
   (0,0) coordinate (A) node[below left] {$1$} -- 
@@ -213,7 +216,7 @@ $n>3$
 $\overline{AB}$:
 
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=.8]
 \draw[thick]
   (0,0) coordinate (A) -- 
@@ -242,7 +245,7 @@ $\overline{AB}$:
 \end{center}
 וחלק את המצולע לאורך אלכסון זה לשני מצולעים קטנים יותר:
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=.8]
 \path
   (0,0) coordinate (A1) -- 
@@ -309,7 +312,7 @@ $\overline{AB}$:
 \end{center}
 לפי הנחת האינדוקציה, ניתן לצבוע כל אחד מהמצולעים הללו בשלושה צבעים:
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=.8]
 \path
   (0,0) coordinate (A1) -- 
@@ -385,7 +388,7 @@ $A,B$
 \textbf{ירוק}
 במצולע התחתון:
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=.8]
 \path
   (0,0) coordinate (A1) -- 
@@ -455,7 +458,7 @@ $n$
 קודקודים. המצולע יהיה צבוע בשלושה צבעים.
 \qed
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=.8]
 \draw[thick]
   (0,0) coordinate (A) -- 
@@ -506,14 +509,14 @@ $\disfrac{n}{3}$
 \ref{thm.tri}
 שניתן לתלת כל מצולע.
 
-\begin{theorem}\mbox{}\\
+\begin{theorem}\label{thm.interior-angles-of-a-polygon}\mbox{}\\
 סכום הזוויות הפנימיות של מצולע עם
 $n$
 צלעות הוא
 $180^\circ(n-2)$.
 \end{theorem}
 
-\newpage
+
 
 \textbf{הוכחה:}
 תחילה נוכיח עבור מצולעים קמורים. נסמן את 
@@ -521,7 +524,7 @@ $180^\circ(n-2)$.
 ב-%
 $\theta_i$:
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=.6]
 \coordinate (O) at (0,0);
 %\fill (O) circle (2pt);
@@ -560,14 +563,14 @@ $\theta_i$
 נסמן את הזוית הפנימית של אותו קודקוד ב-%
 $\phi_i$.
 נחשב:
-\erh{2pt}\begin{equationarray*}{rcl}
+\begin{eqnarray*}
 \displaystyle\sum_1^n \theta_i &=&\displaystyle\sum_1^n (180^\circ-\phi_i)= 360^\circ\\
 %n\cdot 180^\circ-\displaystyle\sum_1^n \phi_i &=& 360^\circ\\
 \displaystyle\sum_1^n \phi_i &=& n\cdot 180^\circ-360^\circ =180^\circ(n-2)\,.
-\end{equationarray*}
+\end{eqnarray*}
 נבדוק מה קורה אם נוסיף קודקוד קעור:
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}
 \draw[thick] (0,0) -- (3,0) coordinate (A) node[above left,yshift=8pt] {$\alpha$} -- ++(60:2) coordinate (B) node[above,yshift=8pt] {$\beta$} -- ++(-60:2) coordinate (C) node[above right,yshift=8pt] {$\gamma$}  -- ++(3,0);
 
@@ -579,28 +582,28 @@ $\phi_i$.
 \end{tikzpicture}
 \end{center}
 קיים משולש המורכב משתי הצלעות שנוגעות בקודקוד הקעור והצלע המסומן בקו מקווקוו. נסכם את הזוויות של המשולש:
-\erh{2pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 (180^\circ - \alpha) + (360^\circ - \beta) + (180^\circ - \gamma) &=& 180^\circ\\
 \alpha + \beta + \gamma &=& 3\cdot 180^\circ\,.
-\end{equationarray*}
+\end{eqnarray*}
 סכום הזוויות הפנימיות גדל ב-%
 $\alpha+\beta+\gamma$
 ומספר הקודקודים גדל בשלוש:
-\erh{2pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 \displaystyle\sum_1^n \phi_i + (\alpha + \beta + \gamma) &=& 180^\circ(n-2)+3\cdot 180^\circ\\
 &=& 180^\circ((n+3)-2)\,.
-\end{equationarray*}
+\end{eqnarray*}
 \qed
 
-\newpage
+
 
 \begin{theorem}\label{thm.convex}\mbox{}\\
 חייב להיות לפחות שלושה קודקודים קמורים במצולע.
 \end{theorem}
 
-\vspace{-3ex}
+
 
 \textbf{הוכחה:}
 נסמן ב-%
@@ -612,13 +615,13 @@ $180^\circ+\epsilon_i$, $\epsilon_i>0$.
 הוא בוודאי פחות או שווה לסכום
 \textbf{כל}
 הזוויות הפנימיות:
-\erh{6pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 k\cdot 180^\circ +\displaystyle\sum_{i=1}^{k}\epsilon_i &\leq& 180^\circ(n-2)\\
 k\cdot 180^\circ  &<& 180^\circ(n-2)\\
 %(k+2)\cdot 180^\circ &<& n\cdot 180^\circ\\
 k&<&n-2\,.
-\end{equationarray*}
+\end{eqnarray*}
 מכאן שיש לא רק קודקוד אחד, אבל לפחות שלושה קודקודים שאינם קעורים.
 \qed
 
@@ -643,7 +646,7 @@ $\overline{BD}$
 הוא צלע.
 
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=1.6]
 \clip (-2,-.2) rectangle (3.8,2.2);
 \draw[thick]
@@ -673,7 +676,7 @@ $C$,
 $\overline{CF}$
 הוא אלכסון המחלק את המצולע לשני מצולעים קטנים יותר. לפי הנחת האינדוקציה ניתן לתלת אותם ולהדביק אותם אחד לשני.
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=1.6]
 \clip (-2,-.2) rectangle (3.8,2.2);
 \draw[thick]
@@ -691,6 +694,9 @@ $\overline{CF}$
   \fill (\point) circle(.7pt) node[\pos] {$\point$};
 \end{tikzpicture}
 \end{center}
+
+\selectlanguage{hebrew}
+
 
 \subsection*{מקורות}
 

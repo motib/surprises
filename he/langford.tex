@@ -1,6 +1,8 @@
 % !TeX root = surprises.tex
 
 \selectlanguage{hebrew}
+
+
 \chapter{הבעיה של 
 \L{Langford}}
 \label{c.langford}
@@ -9,7 +11,7 @@
 \L{C. Dudley Langford}
 שם לב שבנו סידר קוביות צבעוניות לפי הסדר:
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}
 \draw[rounded corners,fill=green] (0,0)  
   rectangle +(1.6cm,.8cm);
@@ -28,8 +30,8 @@
 
 קוביה אחת נמצאת בין שתי הקוביות האדומות, שתי קוביות בין הקוביות הכחולות, ושלוש קוביות בין הקוביות הירוקות. ניתן לנסח את הבעיה כך:
 נתון שק%
-\footnote{
-שק הוא  קבוצה בה איבר יכול להופיע מספר פעמים.} של מספרים
+\footnote{\R{
+שק הוא  קבוצה בה איבר יכול להופיע מספר פעמים}.} של מספרים
 $\{1,1,2,2,3,3\}$,
 האם אפשר לסדר אותם בסדרה כך שלכל
 $1\leq i \leq 3$,
@@ -55,6 +57,8 @@ $312132$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\selectlanguage{hebrew}
+
 
 \section{
 הבעיה של
@@ -78,7 +82,6 @@ $3$:
 
 %\begin{table}
 \[
-\erh{2pt}
 \begin{array}{|c||c|c|c|c|c|c|}
 \hline
 &1&2&3&4&5&6\\\hline\hline
@@ -107,9 +110,8 @@ $3$,
 %)טבלה~%
 %\ref{t.lang3:2}(.
 
-%\begin{table}[H]
+%\begin{table}
 \[
-\erh{2pt}
 \begin{array}{|c||c|c|c|c|c|c|}
 \hline
 &1&2&3&4&5&6\\\hline\hline
@@ -134,7 +136,7 @@ $8$
 היא היחידה המכילה את המספר
 $3$
 כך שחובה לבחור אותה, והסדרה המתקבלת היא
-\L{3\textvisiblespace \textvisiblespace \textvisiblespace 3\textvisiblespace}. 
+$3\sqcup  \sqcup  \sqcup  3\sqcup $. 
 אי אפשר להשתמש בכל שורה שיש לה מספרים בעמודות
 $1$
 ו-
@@ -147,7 +149,7 @@ $7$
 היא השורה האפשרית היחידה עבור
 $2$
 כך שחובה לבחור בה והתוצאה היא
-\L{3\textvisiblespace 2\textvisiblespace 3{}2}.
+$3\sqcup  2\sqcup  3{}2$.
 נעדכן את רשימת השורות ונקבל:
 $\not 1,2,\not 3,\not 4,\not 5, \not 6, 7, 8$.
 
@@ -163,9 +165,9 @@ $L(4)$.
 הפתרון הוא
 $41312432$.
 
+\selectlanguage{hebrew}
 \begin{table}
 \[
-\erh{-2pt}
 \begin{array}{|c||c|c|c|c|c|c|c|c|}
 \hline
 &1&2&3&4&5&6&7&8\\\hline\hline
@@ -189,10 +191,11 @@ $41312432$.
 18&&&4&&&&&4\\\hline
 \end{array}
 \]
-\caption{הבעיה של
-\L{Langford}
-$L(4)$}\label{t.lang4}
+\selectlanguage{hebrew}
+\caption{הבעיה של Langford $L(4)$}\label{t.lang4}
 \end{table}
+
+\selectlanguage{hebrew}
 
 
 \section{
@@ -224,12 +227,12 @@ $i_k+k+1$.
 לכן,
 $S_n$,
 סכום המקומות של כל המספרים, הוא:
-\erh{8pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 S_n&=&\sum_{k=1}^{n}i_k+\sum_{k=1}^{n}(i_k+k+1)\\
 & =& 2\sum_{k=1}^{n}i_k+\sum_{k=1}^{n}(k+1)\\
 &=& 2\sum_{k=1}^{n}i_k+\frac{n(n+3)}{2}\,.
-\end{equationarray*}
+\end{eqnarray*}
 אבל
 $S_n$
 הוא פשוט
@@ -240,12 +243,12 @@ S_n=\sum_{k=1}^{2n}k = \frac{2n(2n+1)}{2}\,.
 \]
 נשווה את שני הביטויים עבור
 $S_n$:
-\erh{8pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 2\sum_{k=1}^{n}i_k+\frac{n(n+3)}{2} &=& \frac{2n(2n+1)}{2}\\
 \sum_{k=1}^{n}i_k &=& \frac{1}{2}\left(\frac{2n(2n+1)}{2} - \frac{n(n+3)}{2}\right) \\
 &=& \frac{3n^2-n}{4}\,.
-\end{equationarray*}
+\end{eqnarray*}
 
 הצד השמאלי חייב להיות מספר שלם כי הוא סכום של מספרים שלמים. לכן, הצד הימני חייב גם הוא להיות מספר שלם, כלומר,
 $3n^2-n=n(3n-1)$
@@ -297,7 +300,7 @@ $n=4i+3=4(i+1)-1=4k-1$.
 \end{itemize}
 \qed
 
-\newpage
+
 
 \textbf{הוכחה
 \L{2}}
@@ -307,7 +310,6 @@ $n=4i+3=4(i+1)-1=4k-1$.
 $n=4$
 ונבדוק תחילה את מקומות המופעים של המספרים הזוגיים:
 \[
-\erh{-2pt}
 \begin{array}{|c|c|c|c|c|c|c|c|}
 \hline
 1&2&3&4&5&6&7&8\\
@@ -353,7 +355,6 @@ i+(i+k+1)=2i+2m+1=2(i+m)+1
 נבדוק עכשיו את מקומות המופעים של המספרים האי-זוגיים:
 
 \[
-\erh{-2pt}
 \begin{array}{|c|c|c|c|c|c|c|c|}
 \hline
 1&2&3&4&5&6&7&8\\
@@ -410,9 +411,7 @@ $+1$(
 ומקום אחר אי-זוגי )מסומן 
 $-1$(,
 וסכום הזוגיות הוא אפס.
-
 \[
-\erh{-2pt}
 \begin{array}{|c|c|c|c|c|c|c|c|}
 \hline
 1&2&3&4&5&6&7&8\\
@@ -437,7 +436,6 @@ $-1$(,
 וסכום הזוגיות היא
 $\pm 2$.
 \[
-\erh{-2pt}
 \begin{array}{|c|c|c|c|c|c|c|c|}
 \hline
 1&2&3&4&5&6&7&8\\
@@ -536,7 +534,9 @@ $4(k+1)-0$
 
 \end{itemize}
 
-\vspace{-2ex}
+
+\selectlanguage{hebrew}
+
 
 \subsection*{מקורות}
 פרק זה מבוסס על

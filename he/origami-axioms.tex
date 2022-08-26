@@ -1,14 +1,15 @@
 % !TeX root = surprises.tex
 
-\selectlanguage{hebrew}
-
-%\part{המתמטיקה של אוריגמי}\label{p.origami}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\chapter{הקדמה}\label{c.origami-introduction}
+\selectlanguage{hebrew}
+
 \chapter{האקסיומות של אוריגמי}\label{c.origami-axioms}
+
+\selectlanguage{hebrew}
+
 
 \section{הגדרות}
 
@@ -27,7 +28,7 @@ $l$
 הוא האנך האמצעי של קטע הקו
 $\overline{pp'}$:
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}
 \coordinate (P1) at (2,2);
 \coordinate (P1P) at (6,4);
@@ -48,6 +49,9 @@ $\overline{pp'}$:
 \end{tikzpicture}
 \end{center}
 
+\selectlanguage{hebrew}
+
+
 \section{אקסיומה 1}\label{s.ax1}
 
 
@@ -60,7 +64,7 @@ $l$
 \ref{f.axiom1}(.
 \begin{figure}[tb]
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=.9]
 \draw[step=10mm,white!50!black,thin] (-1,-1) grid (8,6);
 \draw[thick] (-1,0) -- (8,0);
@@ -78,6 +82,7 @@ $l$
 \draw[very thick,dotted,->,bend left=30] (2,5) to (4,1);
 \end{tikzpicture}
 \end{center}
+\selectlanguage{hebrew}
 \caption{אקסיומה 1}\label{f.axiom1}
 \end{figure}
 
@@ -96,15 +101,17 @@ y - y_1 = \disfrac{y_2-y_1}{x_2-x_1}(x-x_1)\,.
 $p_1=(2,2), p_2=(6,4)$,
 המשוואה של 
 $l$  היא:
-\erh{8pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 y-2&=&\disfrac{4-2}{6-2}(x-2)\\
 y&=&\disfrac{1}{2}x+1\,.
-\end{equationarray*}
+\end{eqnarray*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newpage
+\selectlanguage{hebrew}
+
+
 
 \section{אקסיומה 2}\label{s.ax2}
 
@@ -122,9 +129,9 @@ $p_2$:
 %)איור~%
 %\ref{f.axiom2}(.
 
-%\begin{figure}[H]
+%\begin{figure}
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=.9]
 \draw[step=10mm,white!50!black,thin] (-1,-1) grid (8,6);
 \draw[thick] (-1,0) -- (8,0);
@@ -161,11 +168,11 @@ $p_1$
 $p_2$.
 $l$
 עובר דרך נקודת האמצע בין שתי הנוקדות:
-\begin{equationarray}{c}
+\begin{equation}
 y - \disfrac{y_1+y_2}{2} = -\disfrac{x_2-x_1}{y_2-y_1}\left(x-\disfrac{x_1+x_2}{2}\right)\,.\label{eq.midpoint1}
-\end{equationarray}
+\end{equation}
 
-\vspace{-3ex}
+
 
 \textbf{דוגמה:}
 נתונות הנקודות
@@ -173,14 +180,18 @@ $p_1=(2,2), p_2=(6,4)$.
 המשוואה של 
 $l$
 היא:
-\erh{4pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 y-\left(\disfrac{2+4}{2}\right)&=&-\disfrac{6-2}{4-2}\left(x-\left(\disfrac{2+6}{2}\right)\right)\\
 y&=&-2x+11\,.
-\end{equationarray*}
+\end{eqnarray*}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\selectlanguage{hebrew}
+
+
 \section{אקסיומה 3}\label{s.ax3}
 
 
@@ -200,7 +211,7 @@ $l_2$.
 
 %\begin{figure}[tb]
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=.9]
 \draw[step=10mm,white!50!black,thin] (-1,-1) grid (8,7);
 \draw[thick] (-1,0) -- (8,0);
@@ -266,14 +277,14 @@ $l_2$
 $y=m_2x+b_2$.
 $p_i=(x_i,y_i)$,
 נקודת החיתוך שלהם, היא:
-\erh{8pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 m_1x_i+b_2&=&m_2x_i+b_2\\
 x_i &=& \disfrac{b_2-b_1}{m_1-m_2}\\
 y_i &=&m_1x_i+b_1\,.
-\end{equationarray*}
+\end{eqnarray*}
 
-\vspace{-4ex}
+
 
 \textbf{דוגמה:}
 נתון הקו
@@ -285,11 +296,11 @@ $l_2$
 שהמשוואה שלו הוא
 $y\!=\!-x+8$.
 נקודת החיתוך שלהם היא:
-\erh{8pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 x_i&=&\disfrac{8-(-2)}{2-(-1)}=\disfrac{10}{3}\approx 3.33\\
 y_i &=& 2\cdot\disfrac{10}{3}-2=\disfrac{14}{3}\approx 4.67\,.
-\end{equationarray*}
+\end{eqnarray*}
 
 \textbf{פיתוח משוואת השיפוע של חוצה הזווית:}
 שני קווים יוצרים שני זוגות של זוויות קודקודיות. הקיפולים הם חוצי הזווית שלהן.
@@ -316,7 +327,7 @@ $\theta_2$,
 $x$:
 
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=.7]
 \draw[thick] (-1,0) -- (8,0);
 \draw[thick] (0,-1) -- (0,6);
@@ -342,15 +353,12 @@ $m_b$,
 \[
 m_b=\tan\theta_b=\tan\disfrac{\theta_1+\theta_2}{2}\,.
 \]
-פיתוח המשוואה מחייב שימוש בשוויונות הטריגונומטריות:%
-%\footnote{%
-%פיתוח המשוואות הללו נתון בסעיף%
-%~\ref{s.tangent}.}
-\erh{16pt}
-\begin{equationarray*}{rcl}
+פיתוח המשוואה מחייב שימוש בשוויונות הטריגונומטריות:
+
+\begin{eqnarray*}
 \tan(\phi_1+\phi_2)&=& \disfrac{\tan\phi_1+\tan\phi_2}{1-\tan\phi_1\tan\phi_2}\\
 \tan \disfrac{\phi}{2}&=& \disfrac{-1\pm\sqrt{1+\tan^2\phi}}{\tan \phi}\,.
-\end{equationarray*}
+\end{eqnarray*}
 תחילה נמצא את
 $m_s$,
 השיפוע של
@@ -361,14 +369,14 @@ m_s=\tan(\theta_1+\theta_2)= \disfrac{m_1+m_2}{1-m_1m_2}\,.
 אחר כך נמצא את 
 $m_b$,
 השיפוע של חוצה הזווית:
-\erh{16pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 m_b&=& \tan\disfrac{\theta_1+\theta_2}{2}\\
 &=&\disfrac{-1\pm\sqrt{1+\tan^2(\theta_1+\theta_2)}}{\tan (\theta_1+\theta_2)}\\
 &=&\disfrac{-1\pm\sqrt{1+m_s^2}}{m_s}\,.
-\end{equationarray*}
+\end{eqnarray*}
 
-\vspace{-4ex}
+
 
 \textbf{דוגמה:}
 נתונים הקווים
@@ -376,13 +384,13 @@ $y=2x-2$
 ו-%
 $y=-x+8$,
 השיפוע של חוצה הזווית הוא:
-\erh{16pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 m_s&=&\disfrac{2+(-1)}{1-(2 \cdot -1)}=\disfrac{1}{3}\\
 m_b&=&\disfrac{-1\pm\sqrt{1+(1/3)^2}}{1/3}=-3\pm \sqrt{10}\approx -6.16,\; 0.162\,.
-\end{equationarray*}
+\end{eqnarray*}
 
-\vspace{-5ex}
+
 
 \textbf{פיתוח משוואת הקיפול:}
 נפתח את המשוואה של
@@ -396,27 +404,29 @@ $l_{f_1}$
 עם ציר ה-%
 $y$
 היא:
-\erh{12pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 \disfrac{14}{3} &=& (-3+\sqrt{10}) \cdot \disfrac{10}{3} + b\\ b&=&\disfrac{44-10\sqrt{10}}{3}\\
 y&=& (-3+\sqrt{10})x + \disfrac{44-10\sqrt{10}}{3}\approx 0.162x+4.13\,.
-\end{equationarray*}
+\end{eqnarray*}
 
-\vspace{-5ex}
+\selectlanguage{hebrew}
+
+
 
 \section{הוכחת הזהיות הטריגונומטריות}\label{s.tangent}
 
-\vspace{-5ex}
 
-\erh{16pt}
-\begin{equationarray*}{rcl}
+
+
+\begin{eqnarray*}
 \tan (\phi_1+\phi_2) &=& \disfrac{\sin(\phi_1+\phi_2)}{\cos(\phi_1+\phi_2)}\\
 &=&\disfrac{\sin\phi_1\cos\phi_2+\cos\phi_1\sin\phi_2}{\cos\phi_1\cos\phi_2-\sin\phi_1\sin\phi_2}\\
 &=&\disfrac{\sin\phi_1+\cos\phi_1\tan\phi_2}{\cos\phi_1-\sin\phi_1\tan\phi_2}\\
 &=&\disfrac{\tan\phi_1+\tan\phi_2}{1-\tan\phi_1\tan\phi_2}\,.
-\end{equationarray*}
+\end{eqnarray*}
 
-\vspace{-3ex}
+
 נשמתש משוואה זו עם
 $\phi=(\phi/2)+(\phi/2)$:
 \[
@@ -434,7 +444,9 @@ $\tan(\phi/2)$:
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
+
+\selectlanguage{hebrew}
+
 
 \section{אקסיומה 4}\label{s.ax4}
 
@@ -455,7 +467,7 @@ $p_1$.
 
 %\begin{figure}[tb]
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=.9]
 \draw[step=10mm,white!50!black,thin] (-1,-1) grid (8,7);
 \draw[thick] (-1,0) -- (8,0);
@@ -491,14 +503,14 @@ $-\disfrac{1}{m_1}$.
 הקו עובר דרך
 $p_1$
 ונוכל לחשב את המשוואה שלו:
-\erh{12pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 y_1&=&-\disfrac{1}{m} x_1 + b\\
 b&=& \disfrac{(my_1+x_1)}{m}\\
 y&=&-\disfrac{1}{m} x +\disfrac{(my_1+x_1)}{m}\,.
-\end{equationarray*}
+\end{eqnarray*}
 
-\vspace{-3ex}
+
 
 \textbf{דוגמה:}
 נתונה הנקודה
@@ -516,7 +528,9 @@ y=-\disfrac{1}{2}x + \disfrac{2\cdot 6 + 2}{2}=-\disfrac{1}{2}x + 7\,.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newpage
+\selectlanguage{hebrew}
+
+
 
 \section{אקסיומה 5}\label{s.ax5}
 
@@ -539,7 +553,7 @@ $p_2$.
 
 %\begin{figure}[tb]
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=.9]
 \draw[step=10mm,white!50!black,thin] (-1,-1) grid (9,9);
 \draw[thick] (-1,0) -- (9,0);
@@ -617,25 +631,25 @@ $\overline{p_1p_2}$
 (x-x_2)^2 + (y-y_2)^2 = r^2\,.
 \]
 
-\vspace{-4ex}
+
 
 נציב את המשוואה של הקו לתוך המשוואה של המעגל:
-\erh{1pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 (x-x_2)^2+((m_1x+b_1)-y_2)^2&=&r^2\\
 (x-x_2)^2+(m_1x+(b_1-y_2))^2&=&r^2\,,
-\end{equationarray*}
+\end{eqnarray*}
 
-\vspace{-4ex}
+
 
 ונקבל משוואה ריבועית עבור קואורדינטות ה-%
 $x$
 של נקודות החיתוך האפשריות:
-\begin{equationarray}{c}
+\begin{equation}
 x^2(1+m_1^2) \,+\, 2(-x_2+m_1(b-y_2))x \,+\, (x_2^2 + (b_1-y_2)^2-r^2)=0\,.\label{eq.intersections}
-\end{equationarray}
+\end{equation}
 
-\vspace{-4ex}
+
 
 
 למשוואה ריבועית יש לכל היותר שני פתרונות
@@ -647,7 +661,7 @@ $y=m_1x+b_1$.
 נקודות השיקוף הן
 $p_1'=(x_1',y_1'), p_1''=(x_1'',y_1'')$.
 
-\newpage
+
 
 \textbf{דוגמה:}
 נתונות הנקודות
@@ -665,13 +679,13 @@ $y=-\disfrac{1}{2}x +3$.
 $x$
 של נקודות החיתוך )או השתמשו במשוואה
 ~\ref{eq.intersections}(.
-\erh{12pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 (x-4)^2 + \left(\left(-\disfrac{1}{2}x+3\right)-4\right)^2&=&20\\
 \disfrac{5}{4}x^2-7x-3 &=&0\\
 5x^2 -28x -12&=&0\\
 (5x+2)(x-6)&=&0\,.
-\end{equationarray*}
+\end{eqnarray*}
 שתי נקודות חיתוך הן:
 \[
 p_1'=\left(-\disfrac{2}{5},\disfrac{16}{5}\right) = (-0.4,3.2)\,,\quad p_1''=(6,0)\,.
@@ -685,9 +699,9 @@ $\overline{p_1p_1''}$.
 ~\ref{eq.midpoint1},
 שנעתיק כאן עבור
 $p_1'$:
-\begin{equationarray}{c}
+\begin{equation}
 y - \disfrac{y_1+y_1'}{2} = -\disfrac{x_1'-x_1}{y_1'-y_1}\left(x-\disfrac{x_1+x_1'}{2}\right)\,.\label{eq.midpoint2}
-\end{equationarray}
+\end{equation}
 
 \textbf{דוגמה:}
 נתונות הנקודות
@@ -696,13 +710,13 @@ $p_1'=\left(-\disfrac{2}{5},\disfrac{16}{5}\right)$,
 משוואת הקיפול של
 $l_{f_1}$
 היא:
-\erh{12pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 y-\disfrac{8+(16/5)}{2}&=&-\disfrac{(-2/5)-2}{(16/5)-8}\left(x-\disfrac{2+\left(-2/5\right)}{2}\right)\\
 y&=&-\disfrac{1}{2}x+6\,.
-\end{equationarray*}
+\end{eqnarray*}
 
-\vspace{-3ex}
+
 
 נתונות הנקודות עבור
 $p_1=(2,8)$,
@@ -710,13 +724,16 @@ $p_1''=(6,0)$,
 משוואת הקיפול של
 $l_{f_2}$ 
 היא:
-\erh{12pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 y-\disfrac{8+0}{2}&=&-\disfrac{6-2}{0-8}\left(x-\disfrac{2+6}{2}\right)\\
 y&=&\disfrac{1}{2}x+2\,.
-\end{equationarray*}
+\end{eqnarray*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\selectlanguage{hebrew}
+
 
 
 \section{אקסיומה 6}\label{s.ax6}
@@ -745,7 +762,7 @@ $l_2$.
 
 %\begin{figure}[tb]
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=.7]
 \draw[step=10mm,white!50!black,thin] (-7,-7) grid (7,5);
 \draw[thick] (-7,0) -- (7,0);
@@ -833,6 +850,9 @@ $y$
 הוא ציר הסמטריה. נביא גם דוגמה עם פרבולה שציר הסמטריה שלה הוא ציר ה-%
 $x$.
 
+\selectlanguage{hebrew}
+
+
 \subsection{פיתוח הנקודה של הקיפול}
 
 התיאור שלהלן מתייחס לאיור~%
@@ -845,14 +865,7 @@ $y=d$.
 $p=f-d$,
 האורך 
 )$\pm$(
-של קטע הקו בין המוקד למדריך.
-%\footnote{%
-%הסימון
-%$p$
-%עלול לבלבל כי הנקודות מסומנות ב-%
-%$p_i$
-%אבל הסימון מקובל.}
-אם הקודקוד 
+של קטע הקו בין המוקד למדריך. אם הקודקוד 
 \L{(vertex)}
 נמצא על ציר ה-%
 $x$,
@@ -868,65 +881,73 @@ $h$
 $y=\disfrac{x^2}{2p}+h$.
 \begin{figure}[tb]
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=.8]
-\draw (-6,0) -- node[very near start,below,xshift=-32pt] {$x$-\R{ציר}}(6,0);
-\draw (0,-3) -- node[very near start,right,yshift=-20pt] {$y$-\R{ציר}}(0,4.5);
-\draw[very thick] (-6,-2) -- node[near start,below] {\R{מדריך} $\quad y=-2$} (6,-2);
+\draw (-6,0) -- node[very near start,below,xshift=-32pt] {$x$-axis}(6,0);
+\draw (0,-3) -- node[very near start,right,yshift=-20pt] {$y$-axis}(0,4.5);
+\draw[very thick] (-6,-2) -- node[near start,below] {directrix $\quad y=-2$} (6,-2);
+
+%\draw (-6,0) -- node[very near start,below,xshift=-32pt] {$x$-\R{ציר}}(6,0);
+%\draw (0,-3) -- node[very near start,right,yshift=-20pt] {$y$-\R{ציר}}(0,4.5);
+%\draw[very thick] (-6,-2) -- node[near start,below] {\R{מדריך} $\quad y=-2$} (6,-2);
+
 \draw[domain=-5:5,samples=50,very thick,dotted] plot (\x,{\x*\x/8+1});
 \coordinate (F) at (0,4);
-\fill (F) circle (2pt) node[left,xshift=-2pt,yshift=0pt] {$(0,f)=(0,4)$} node[above left,xshift=-2pt,yshift=4pt] {\R{מוקד}};
+\fill (F) circle (2pt) node[left,xshift=-2pt,yshift=0pt] {$(0,f)=(0,4)$} node[above left,xshift=-2pt,yshift=4pt] {focus};
+%\fill (F) circle (2pt) node[left,xshift=-2pt,yshift=0pt] {$(0,f)=(0,4)$} node[above left,xshift=-2pt,yshift=4pt] {\R{מוקד}};
 \fill (0,-2) circle (2pt);
-\fill (0,1) circle (2pt) node[below left] {\R{קודקוד}} node[below left,yshift=-10pt] {$(0,1)$};
+\fill (0,1) circle (2pt) node[below left] {vertex} node[below left,yshift=-10pt] {$(0,1)$};
+%\fill (0,1) circle (2pt) node[below left] {\R{קודקוד}} node[below left,yshift=-10pt] {$(0,1)$};
 \draw[<->] (2,-1.9) -- node[fill=white] {$p=6$} +(0,5.8);
 \draw[<->] (1,.1) -- node[fill=white] {$h=1$} +(0,.8);
 \end{tikzpicture}
 \end{center}
+\selectlanguage{hebrew}
 \caption{הגדרת הפרבולה: מוקד, מדריך, קודקוד}\label{f.parabola}
 \end{figure}
 נגדיר
 $a=2ph$
 כך שמשוואת הפרבולה היא:
-\newpage
 
-\erh{2pt}
-\begin{equationarray*}{rcl}
+
+
+\begin{eqnarray*}
 y&=&\disfrac{x^2}{2p}+\disfrac{a}{2p}\\
 x^2-2py+a&=&0\,.
-\end{equationarray*}
+\end{eqnarray*}
 עבור הפרבולה באיור~%
 \ref{f.parabola}
 המשוואה היא:
-\erh{2pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 x^2-2\cdot 6\,y + 2\cdot 6 \cdot 1&=&0\\
 x^2-12y +12&=&0\,.
-\end{equationarray*}
+\end{eqnarray*}
 
-\vspace{-4ex}
+
 נציב את המשוואה של קו 
 \textbf{שרירותי}
 $y=mx+b$
 במשוואה עבור הפרבולה ונקבל משוואה עבור נקודות החיתוך של הקו והפרבולה:
-\erh{2pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 x^2-2p(mx+b)+a&=&0\\
 x^2+(-2mp)x+(-2pb+a)&=&0\,.
-\end{equationarray*}
+\end{eqnarray*}
 
-\vspace{-4ex}
+
 
 הקו יהיה משיק לפרבולה אם ורק אם למשוואה ריבועית זו קיים 
 \textbf{בדיוק}
 פתרון אחד אם ורק אם הדיסקרימננטה 
 )\L{discriminant}(
 היא אפס:
-\begin{equationarray}{rcl}
+\begin{eqnarray}
 (-2mp)^2\:-\:4\cdot 1\cdot (-2pb+a)&=&0\\
 m^2p^2+2pb-a&=&0\,.\label{eq.disc}
-\end{equationarray}
+\end{eqnarray}
 
-\vspace{-4ex}
+
 
 משוואה זו עם המשתנה 
 $m$ 
@@ -935,15 +956,15 @@ $m$,
 קיים
 $b$
 שגורם למשיק לזוז למעלה או למטה.%
-\footnote{%
-פרט כמובן עבור קו המקביל לציר הסמטריה.%
-}
+\footnote{\R{פרט כמובן עבור קו המקביל לציר הסמטריה}.}
 כדי למצוא את המשיקים המשותפים לשתי הפרבולות, יש לפתור את המשוואות של שתי הפרבולות, משוואות עם שני משתנים
 $m$
 ו-%
 $b$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\selectlanguage{hebrew}
 
 
 \subsection{דוגמאות לאקסיומה 6}
@@ -988,13 +1009,13 @@ x^2-2\cdot (-2)y+12=0\,.
 m^2-b-3=0\,.
 \]
 הפתרונות של שתי המשוואות:
-\erh{0pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 m^2+b-3&=&0\\
 m^2-b-3&=&0\,,
-\end{equationarray*}
+\end{eqnarray*}
 
-\vspace{-4ex}
+
 הם
 $m=\pm\sqrt{3}\approx \pm 1.73$
 ו-%
@@ -1005,7 +1026,7 @@ y=\sqrt{3}x\,,\quad y=-\sqrt{3}x\,.
 \]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\vspace{-4ex}
+
 
 \textbf{פרבולה 1:}
 ללא שינוי, המשוואה היא:
@@ -1032,11 +1053,11 @@ x^2-2\cdot (-4)y +32=0\,.
 2m^2-b-4=0\,.
 \]
 הפתרונות של שתי המשוואות:
-\erh{0pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 m^2+b-3&=&0\\
 2m^2-b-4&=&0\,,
-\end{equationarray*}
+\end{eqnarray*}
 הם
 $m=\pm\sqrt{\disfrac{7}{3}}\approx \pm 1.53$
 ו-%
@@ -1046,7 +1067,7 @@ $b=\disfrac{2}{3}$.
 y=\sqrt{\disfrac{7}{3}}x+\disfrac{2}{3}\,,\quad y=-\sqrt{\disfrac{7}{3}}x+\disfrac{2}{3}\,.
 \]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\vspace{-2ex}
+
 
 \textbf{פרבולה 1:}
 ללא שינוי, המשוואה היא:
@@ -1080,32 +1101,32 @@ $y$,
 ונצטרך לפתח את משוואות מחדש.
 
 נציב את המשוואה של הקו:
-\erh{1pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 (mx+b)^2-4x+12&=&0\\
 m^2x^2+(2mb-4)x+(b^2+12)&=&0\,
-\end{equationarray*}
+\end{eqnarray*}
 נשווה את הדיסקרימננטה לאפס ונפשט:
-\erh{1pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 (2mb-4)^2\:-\:4m^2(b^2+12)&=&0\\
 -3m^2-mb+1&=&0\,.
-\end{equationarray*}
+\end{eqnarray*}
 אם ננסה לפתור את שתי המשוואות:
-\erh{1pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 m^2+b-3&=&0\\
 -3m^2-mb+1&=&0\,,
-\end{equationarray*}
+\end{eqnarray*}
 נקבל משוואה 
 \textbf{ממעלה שלוש}
 במשתנה
 $m$:
-\begin{equationarray}{c}
+\begin{equation}
 m^3-3m^2-3m+1=0\,.\label{eq.cubic}
-\end{equationarray}
+\end{equation}
 
-\vspace{-3ex}
+
 
 למשוואה ממעלה שלוש יש לפחות פתרון ממשי אחד ולכל היותר שלושה פתרונות ממשיים, לכן יכול להיות אחד, שניים או שלשה משיקים משותפים. הנוסחה למציאת פתרונות למשוואה ממעלה שלוש די מסובכת, לכן השתמשתי במחשבון באינטרנט וקיבלתי שלושה פתרונות:
 \[
@@ -1124,13 +1145,13 @@ $1$
 או
 $-1$
 הוא פתרון:
-\erh{1pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 1^3-3\cdot 1^2-3\cdot 1+1&=&-4\\
 (-1)^3-3\cdot (-1)^2-3\cdot(-1)+1&=&0\,.
-\end{equationarray*}
+\end{eqnarray*}
 
-\vspace{-5ex}
+
 נחלק את המשוואה%
 ~\ref{eq.cubic}
 ב-%
@@ -1142,6 +1163,8 @@ $2\pm\sqrt{3}\approx 3.73, 0.27$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\selectlanguage{hebrew}
+
 
 \subsection{פיתוח המשוואות של השיקופים}
 
@@ -1163,14 +1186,14 @@ $y=m_px+b_p$
 $l_t$
 ועובר דרך
 $p_1$:
-\erh{10pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 y&=&-\disfrac{1}{m_t}x+b_p\\
 y_1&=&-\disfrac{1}{m_t}x_1+b_p\\
 y&=&\disfrac{-x}{m_t}+\left(y_1+\disfrac{x_1}{m_t}\right)\,.
-\end{equationarray*}
+\end{eqnarray*}
 
-\vspace{-2ex}
+
 
 כעת נמצא את נקודת החיתוך 
 $p_t=(x_t,y_t)$
@@ -1179,17 +1202,17 @@ $l_t$
 ו-%
 $l_p$:
 
-\vspace{-3ex}
 
-\erh{12pt}
-\begin{equationarray*}{rcl}
+
+
+\begin{eqnarray*}
 m_tx_t+b_t&=&\disfrac{-x_t}{m_t}+\left(y_1+\disfrac{x_1}{m_t}\right)\\
 %x_t&=&\disfrac{\left(y_1+\disfrac{x_1}{m_t}-b_t\right)}{\left(m_t+\disfrac{1}{m_t}\right)}\\
 x_t&=& \disfrac{m_t(y_1-b_t)+x_1}{m_t^2+1}\\
 y_t&=&m_tx_t+b_t\,.
-\end{equationarray*}
+\end{eqnarray*}
 
-\vspace{-3ex}
+
 
 ניתן למצוא את השיקוף
 $p_1'$
@@ -1200,15 +1223,15 @@ $p_1$
 לבין
 $p_1'$:
 
-\vspace{-3ex}
 
-\erh{4pt}
-\begin{equationarray*}{rcl}
+
+
+\begin{eqnarray*}
 x_t&=&\disfrac{x_1+x_1'}{2}\,,\quad y_t=\disfrac{y_1+y_1'}{2}\\
 x_1'&=&2x_t-x_1\,,\quad y_1'=2y_t-y_1\,.
-\end{equationarray*}
+\end{eqnarray*}
 
-\vspace{-4ex}
+
 
 \textbf{דוגמה:}
 נתון
@@ -1217,14 +1240,17 @@ $p_1=(0,4)$
 $l_1$
 עם המשוואה
 $y=\sqrt{3}x$:
-\erh{8pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 %x_t&=&\disfrac{\left(4+\disfrac{0}{\sqrt{3}}-0\right)}{\left(\sqrt{3}+\disfrac{1}{\sqrt{3}}\right)}=\sqrt{3}\\
 x_t&=&\disfrac{\sqrt{3}(4-0)+0}{(\sqrt{3})^2+1}=\sqrt{3}\\
 y_t&=&\sqrt{3}\sqrt{3}+0=3\\
 x_1'&=&2x_t-x_1=2\sqrt{3}-0=2\sqrt{3}\approx 3.46\\
 y_1'&=&2y_t-y_1=2\cdot 3 - 4 = 2\,.
-\end{equationarray*}
+\end{eqnarray*}
+
+\selectlanguage{hebrew}
+
 
 \subsection{משיקים לפרבולה}\label{s.parabola}
 
@@ -1256,14 +1282,18 @@ $p_1$.
 
 %\begin{figure}[bt]
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=.9]
-\draw (-6,0) -- node[very near start,below,xshift=-32pt] {$x$-\R{ציר}} (6,0);
-\draw (0,-3) -- node[very near start,right,yshift=-20pt] {$y$-\R{ציר}} (0,4.5);
-\draw[ultra thick] (-6,-2) -- node[near end,below] {\R{מדריך} $d: \quad y=-f$} (6,-2);
+\draw (-6,0) -- node[very near start,below,xshift=-32pt] {$x$-axis} (6,0);
+\draw (0,-3) -- node[very near start,right,yshift=-20pt] {$y$-axis} (0,4.5);
+\draw[ultra thick] (-6,-2) -- node[near end,below] {directrix $d: \quad y=-f$} (6,-2);
+%\draw (-6,0) -- node[very near start,below,xshift=-32pt] {$x$-\R{ציר}} (6,0);
+%\draw (0,-3) -- node[very near start,right,yshift=-20pt] {$y$-\R{ציר}} (0,4.5);
+%\draw[ultra thick] (-6,-2) -- node[near end,below] {\R{מדריך} $d: \quad y=-f$} (6,-2);
 \draw[domain=-6:6,samples=50,very thick,dotted] plot (\x,{\x*\x/8});
 \coordinate (F) at (0,2);
-\fill (F) circle (3pt) node[above left,xshift=-2pt,yshift=15pt] {$(0,f)$} node[above left,xshift=-2pt,yshift=30pt] {\R{מוקד}} node[above right] {$p$};
+\fill (F) circle (3pt) node[above left,xshift=-2pt,yshift=15pt] {$(0,f)$} node[above left,xshift=-2pt,yshift=30pt] {focus} node[above right] {$p$};
+%\fill (F) circle (3pt) node[above left,xshift=-2pt,yshift=15pt] {$(0,f)$} node[above left,xshift=-2pt,yshift=30pt] {\R{מוקד}} node[above right] {$p$};
 \fill (0,0) circle (1.5pt) node[below right] {$p_2$};
 \fill (0,-2) circle (1.5pt);
 \fill (2,-2) circle (1.5pt);
@@ -1332,7 +1362,7 @@ $m\perp \overline{pp'}$.
 
 %\begin{figure}[bt]
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=.9]
 \draw[ultra thick] (-6,-2) -- node[near end, below] {$l$} (6,-2);
 \draw[domain=-5.5:5.5,samples=50,very thick,dotted] plot (\x,{\x*\x/8});
@@ -1430,9 +1460,9 @@ $m$
 
 %\bigskip\bigskip
 
-%\begin{figure}[H]
+%\begin{figure}
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=.5]
 \draw (-7,0) -- (7,0);
 \draw (0,-1) -- (0,7);
@@ -1450,7 +1480,7 @@ $m$
 %\bigskip\bigskip
 %
 %\begin{center}
-%\selectlanguage{english}
+%
 %\begin{tikzpicture}[scale=.5]
 \begin{scope}[xshift=15cm]
 \draw (-7,0) -- (7,0);
@@ -1471,9 +1501,9 @@ $m$
 %\end{figure}
 %
 %\bigskip\bigskip
-%\begin{figure}[H]
+%\begin{figure}
 %\begin{center}
-%\selectlanguage{english}
+%
 %\begin{tikzpicture}[scale=.5]
 \begin{scope}[yshift=-9cm]
 \draw (-7,0) -- (7,0);
@@ -1494,7 +1524,7 @@ $m$
 %\bigskip\bigskip
 %
 %\begin{center}
-%\selectlanguage{english}
+%
 %\begin{tikzpicture}[scale=.8]
 \begin{scope}[xshift=15cm]
 \draw (-4,0) -- (7,0);
@@ -1521,7 +1551,9 @@ $m$
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
+
+\selectlanguage{hebrew}
+
 
 \section{אקסיומה 7}\label{s.ax7}
 
@@ -1544,7 +1576,7 @@ $l_1$.
 
 %\begin{figure}[tb]
 \begin{center}
-\selectlanguage{english}
+
 \begin{tikzpicture}[scale=.9]
 \draw[step=10mm,white!50!black,thin] (-1,-1) grid (9,8);
 \draw[thick] (-1,0) -- (9,0);
@@ -1608,12 +1640,12 @@ $l_p$
 עובר דרך
 $p_1$.
 נחשב:
-\erh{1pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 y&=&m_2x+b_p\\
 y_1&=&m_2x_1+b_p\\
 y&=&m_2x+(y_1-m_2x_1)\,.
-\end{equationarray*}
+\end{eqnarray*}
 $p_1'=(x_1',y_1')$,
 השיקוף של
 $p_1$
@@ -1623,12 +1655,12 @@ $l$,
 $l_1$
 ו-%
 $l_p$:
-\erh{12pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 m_1x_1'+b_1&=&m_2x_1'+(y_1-m_2x_1)\\
 x_1'&=&\disfrac{y_1-m_2x_1-b_1}{m_1-m_2}\\
 y_1'&=&m_1x_i'+b_1\,.
-\end{equationarray*}
+\end{eqnarray*}
 $p_m=(x_m,y_m)$,
 נקודת האמצע של
 $l_p$,
@@ -1645,11 +1677,11 @@ $\overline{p_1p_1'}$,
 $p_m$,
 נקודת האמצע של
 $\overline{p_1p_1'}$:
-\erh{8pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 y_m&=&-\disfrac{1}{m_2}x_m+b_m\\
 b_m&=&y_m+\disfrac{x_m}{m_2}\,.
-\end{equationarray*}
+\end{eqnarray*}
 המשוואה של הקיפול
 $l$
 היא:
@@ -1667,23 +1699,26 @@ $y=3x-3$,
 $l_2$
 שהמשוואה שלו היא
 $y=-x+11$.
-\erh{20pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 x_1'&=&\disfrac{3-(-1)\cdot 5-(-3)}{3-(-1)}=\disfrac{11}{4}\\
 y_1' &=&3\cdot\disfrac{11}{4} + (-3)=\disfrac{21}{4}\\
 	p_m&=&\left(\disfrac{5+\disfrac{11}{4}}{2},\disfrac{3+\disfrac{21}{4}}{2}\right)=\left(\disfrac{31}{8},\disfrac{33}{8}\right)\,.
-\end{equationarray*}
+\end{eqnarray*}
 משוואת הקיפול היא:
 \[
 y=-\disfrac{1}{-1}\cdot x+\left(\disfrac{33}{8}+\disfrac{\disfrac{31}{8}}{-1}\right)=x+\disfrac{1}{4}\,.
 \]
 
+
+\selectlanguage{hebrew}
+
+
 \subsection*{מקורות}
 
 
 תיאור האקסיומות של אוריגמי ניתן למצוא ב-%
-\L{\cite{hh}, \cite{hwa}}.
-\L{\cite{lang}} 
+\L{\cite{wiki:hh-axioms}}, \L{\cite{lang}} 
 מביא קשת נרחב של בניות עם אוריגמי.
 הגדרות פורמליות מופיעות בפרק~
 $10$

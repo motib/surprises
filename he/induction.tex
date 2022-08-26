@@ -1,20 +1,25 @@
 % !TeX root = surprises.tex
 
 \selectlanguage{hebrew}
+
+
 \chapter{הוכחות מעניינות באינדוקציה}
 \label{c.induction}
 
 פרק זה מביא הוכחות באינדוקציה למספר משפטים בעיקר מתורת המספרים שאולי אינם מוכרים לרבים מהקוראים. 
 
+\selectlanguage{hebrew}
+
+
 \section{מספרי \L{Fibonacci}}
 
 מספרי פיבונצ'י מוגדרים ברקורסיה:
-\erh{-1pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 f_1 &=& 1\\
 f_2 &=& 1\\
 f_n &=& f_{n-1} + f_{n-2}, \;\;  n \geq 3 \;\; \textrm{\R{עבור}}\,.
-\end{equationarray*}
+\end{eqnarray*}
 שנים עשר מספרי פיבונצ'י הראשונים הם:
 $
 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144
@@ -36,17 +41,17 @@ $f_{4n}$
 מתחלק ב-%
 $3$.
 הצעד האינדוקטיבי הוא:
-\erh{1pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 f_{4(n+1)} &=& f_{4n+4}\\
 &=& f_{4n+3}+f_{4n+2}\\
 &=& (f_{4n+2}+f_{4n+1})+f_{4n+2}\\
 &=& ((f_{4n+1}+f_{4n})+f_{4n+1})+f_{4n+2}\\
 &=& ((f_{4n+1}+f_{4n})+f_{4n+1})+(f_{4n+1}+f_{4n})\\
 &=& 3f_{4n+1}+2f_{4n}\,.
-\end{equationarray*}
+\end{eqnarray*}
 
-\vspace{-4ex}
+
 
 $3f_{4n+1}$
 מתחלק ב-%
@@ -59,7 +64,7 @@ $f_{4(n+1)}$
 $3$.\qed
 
 
-%\newpage
+%
 
 \begin{theorem}\mbox{}\\\mbox{}\\
 $f_n < \left(\disfrac{7}{4}\right)^n$.
@@ -70,21 +75,21 @@ $f_1=1<\left(\disfrac{7}{4}\right)^1$
 ו-%
 $f_2=1<\left(\disfrac{7}{4}\right)^2=\disfrac{49}{16}$.
 
-\newpage
+
 
 הצעד האינדוקטיבי:
 
-\vspace{-6ex}
 
-\erh{12pt}
-\begin{equationarray*}{rcl}
+
+
+\begin{eqnarray*}
 f_{n+1}&=&f_n+f_{n-1}\\
 &<&\left(\frac{7}{4}\right)^n + f_{n-1}\\
 %&<&\left(\frac{7}{4}\right)^n + \left(\frac{7}{4}\right)^{n-1}\\
 &=&\left(\frac{7}{4}\right)^{n-1}\cdot\left(\frac{7}{4}+1\right)\\
 &<&\left(\frac{7}{4}\right)^{n-1}\cdot\left(\frac{7}{4}\right)^2\\
 &=&\left(\frac{7}{4}\right)^{n+1},
-\end{equationarray*}
+\end{eqnarray*}
 בגלל ש-%
 \[
 \left(\frac{7}{4}+1\right) = \frac{11}{4} = \frac{44}{16}<\frac{49}{16}=\left(\frac{7}{4}\right)^2.
@@ -98,21 +103,21 @@ f_n = \frac{\phi^n - \bar{\phi}^n}{\sqrt{5}}, \;\;\;\;\;
 \end{displaymath}
 \end{theorem}
 
-\vspace{-5ex}
+
 
 \textbf{הוכחה:}
 נוכיח קודם ש-%
 $\phi^2=\phi+1$:
-\erh{12pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 \phi^2 &=& \left(\frac{1+\sqrt{5}}{2}\right)^2\\
 &=& \frac{1}{4} + \frac{2\sqrt{5}}{4} + \frac{5}{4}\\
 &=& \frac{2}{4} + \frac{2\sqrt{5}}{4} + \frac{4}{4}\\
 &=& \frac{1+2\sqrt{5}}{2} + 1\\
 &=&\phi + 1\,.
-\end{equationarray*}
+\end{eqnarray*}
 
-\vspace{-5ex}
+
 
 באופן דומה אפשר להוכיח ש:
 $\bar{\phi}^2=\bar{\phi}+1$.
@@ -122,19 +127,19 @@ $\bar{\phi}^2=\bar{\phi}+1$.
 \frac{\phi^1 - \bar{\phi}^1}{\sqrt{5}}=\frac{(1+\sqrt{5})/2-(1-\sqrt{5})/2}{\sqrt{5}}=\frac{2\sqrt{5}}{2\sqrt{5}}=1\,.
 \]
 
-\newpage
+
 
 
 הצעד האינדוקטיבי:
-\erh{6pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 \phi^n - \bar{\phi}^n &=& \phi^2\,\phi^{n-2} - \bar{\phi}^2\,\bar{\phi}^{n-2}\\
 &=&(\phi+1)\,\phi^{n-2} - (\bar{\phi}+1)\,\bar{\phi}^{n-2}\\
 &=&(\phi^{n-1} - \bar{\phi}^{n-1}) + (\phi^{n-2} - \bar{\phi}^{n-2})\\
 &=&\sqrt{5}f_{n-1} + \sqrt{5}f_{n-2}\,,
-\end{equationarray*}
+\end{eqnarray*}
 
-\vspace{-4ex}
+
 לכן:
 \[
 \frac{\phi^n - \bar{\phi}^n}{\sqrt{5}} = f_{n-1} + f_{n-2} = f_n\,.
@@ -145,7 +150,7 @@ f_n = {n \choose 0} + {n-1 \choose 1} + {n-2 \choose 2} + \cdots.
 \]
 \end{theorem}
 
-\vspace{-4ex}
+
 
 כדי להוכיח את המשפט, נוכיח תחילה משפט עזר:
 \begin{theorem}[\L{Pascal}]
@@ -153,17 +158,17 @@ f_n = {n \choose 0} + {n-1 \choose 1} + {n-2 \choose 2} + \cdots.
 {n \choose k} + {n \choose k+1} = {n+1 \choose k+1}.
 \]
 \end{theorem}
-\vspace{-6ex}
+
 \textbf{הוכחה:}
-\erh{12pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 {n \choose k} + {n \choose k+1} &=& \frac{n!}{k!(n-k)!} + \frac{n!}{(k+1)!(n-(k+1))!}\\
 &=& \frac{(k+1)n!}{(k+1)!(n-k)!} + \frac{n! (n-k)}{(k+1)!(n-k)!}\\
 %&=&\frac{n![(k+1)+(n-k)]}{(k+1)!(n-k)!}\\
 &=&\frac{n!(n+1)}{(k+1)!(n-k)!}\\
 &=&\frac{(n+1)!}{(k+1)!((n+1)-(k+1))!}\\
 &=&{n+1 \choose k+1}\,.
-\end{equationarray*}
+\end{eqnarray*}
 
 עכשיו אפשר להוכיח את משפט~%
 \ref{eq.fibo:combinations}.
@@ -172,19 +177,21 @@ f_n = {n \choose 0} + {n-1 \choose 1} + {n-2 \choose 2} + \cdots.
 f_1 = 1 = {1 \choose 0} = \frac{1!}{0!(1-0)!}\,.
 \]
 הצעד האינדוקטיבי:
-\erh{12pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 f_{n-1} + f_{n-2} &=& {n-1 \choose 0} + {n-2 \choose 1} + {n-3 \choose 2} + {n-4 \choose 3} + \cdots\\
 &&\hspace{54pt}{n-2 \choose 0} + {n-3 \choose 1} + {n-4 \choose 2} + \cdots\\
 &=&{n-1 \choose 0} + {n-1 \choose 1} + {n-2 \choose 2} + {n-3 \choose 3} + \cdots\\
 &=&{n \choose 0}\hspace{20pt} + {n-1 \choose 1} + {n-2 \choose 2} + {n-3 \choose 3} + \cdots.
-\end{equationarray*}
+\end{eqnarray*}
 השוויון האחרון משתמש בעובדה ש:
 \[
 {k \choose 0} = \frac{k!}{0!(k-0)!} = 1\,.
 \]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\selectlanguage{hebrew}
 
 
 \section{מספרי \L{Fermat}}
@@ -198,9 +205,9 @@ $n\geq 0$.
 
 חמשת מספרי  פרמה הראשונים הם:
 \begin{center}
-\selectlanguage{english}
+
 %\renewcommand{\arraystretch}{1}
-\erh{2pt}
+
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
 $n$ & $0$ & $1$ & $2$ & $3$ & $4$ \\\hline
@@ -237,8 +244,8 @@ $F_n=10k_n+7$
 עבור
 $k\geq 1$.
 אזי:
-\erh{4pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 F_{n+1}&=&2^{2^{n+1}}+1=\left(2^{2^{n}}\right)^2+1\\
 &=&\left(\left(2^{2^{n}}+1\right)-1\right)^2+1\\
 &=&\left(2^{2^{n}}+1\right)^2
@@ -248,9 +255,9 @@ F_{n+1}&=&2^{2^{n+1}}+1=\left(2^{2^{n}}\right)^2+1\\
 &=&100k_n^2+120k_n+37\\
 &=&10(10k_n^2+12k_n+3)+7\\
 &=&10k_{n+1}+7\,.
-\end{equationarray*}
+\end{eqnarray*}
 
-\vspace{-4ex}
+
 
 \begin{theorem}\label{thm.fermat}
 עבור כל
@@ -262,8 +269,8 @@ $n\geq 1$, $\displaystyle F_n = \prod_{k=0}^{n-1} F_k + 2$.
 5=F_1=\prod_{k=0}^{0} F_k + 2=F_0+2=3+2\,.
 \]
 הצעד האינדוקטיבי:
-\erh{6pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 \displaystyle\prod_{k=0}^{n}F_k&=&\left(\displaystyle\prod_{k=0}^{n-1}F_k\right) F_n \\
 &=& (F_n-2)F_n\\
 &=& F_n^2-2F_n\\
@@ -271,11 +278,13 @@ $n\geq 1$, $\displaystyle F_n = \prod_{k=0}^{n-1} F_k + 2$.
 &=& 2^{2^{n+1}}-1= (2^{2^{n+1}}+1)-2\\
 &=&F_{n+1}-2\\
 F_{n+1}&=&\displaystyle\prod_{k=0}^{n}F_k + 2\,.
-\end{equationarray*}
+\end{eqnarray*}
 
-%\newpage
+%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\selectlanguage{hebrew}
+
 
 \section{פונקציה $91$ של
 \L{McCarthy}}
@@ -305,12 +314,12 @@ f(101) = 91, \;\; f(102) = 92,\;\; f(103) = 93,\;\; f(104) = 94\,.
 \]
 נחשב את ערך הפונקציה עבור קומץ מספרים פחות או שווים  ל-%
 $100$:
-\begin{equationarray*}{rcl}
+\begin{eqnarray*}
 f(100) &=& f(f(100+11)) = f(f(111)) = f(101) = 91\\
 f(99) &=& f(f(99+11)) = f(f(110)) = f(100) = 91\\
 f(91) &=& f(f(91+11)) = f(f(102)) = f(92) = f(f(103)) = f(93) = \cdots = 91\\
 f(89) &=& f(f(89+11)) = f(f(100)) = f(f(111)) = f(101) = 91\,.
-\end{equationarray*}
+\end{eqnarray*}
 
 \begin{theorem}\mbox{}\\
 הפונקציה
@@ -320,8 +329,6 @@ $f(x)$
 g(x) = \textrm{if}\;\; x > 100 \;\;\textrm{then}\;\; x - 10 \;\;\textrm{else}\;\; 91\,.
 \]
 \end{theorem}
-
-\vspace{-5ex}
 
 \textbf{הוכחה:}
 ההוכחה באינדוקציה מעל קבוצת המספרים:
@@ -368,14 +375,14 @@ $y\prec x$.
 
 \noindent{}%
 הצעד האינדוקטיבי:
-\erh{2pt}
-\begin{equationarray}{rcl}
+
+\begin{eqnarray}
 f(x) &=& f(f(x+11))\label{m91-1}\\
 &=& f(x+11-10)= f(x+1)\label{m91-3}\\
 &=& g(x+1)\label{m91-4}\\
 &=& 91\label{m91-5}\\
 &=& g(x)\label{m91-6}\,.
-\end{equationarray}
+\end{eqnarray}
 
 משוואה%
 ~\ref{m91-1}
@@ -426,16 +433,16 @@ $f(y) = g(y)$
 $y\prec x$.
 
 הצעד האינדוקטיבי:
-\erh{4pt}
-\begin{equationarray}{rcl}
+
+\begin{eqnarray}
 f(x) &=& f(f(x+11))\label{m91a}\\
 &=& f(g(x+11))\label{m91b}\\
 &=& f(91)\label{m91c}\\
 &=& 91\label{m91d}\\
 &=& g(x)\,.
-\end{equationarray}
+\end{eqnarray}
 
-\vspace{-4ex}
+
 
 משוואה%
 ~\ref{m91a}
@@ -466,8 +473,9 @@ $g(x)=91$
 עבור
 $x<90$.
 
-
+\selectlanguage{hebrew}
 \subsection*{מקורות}
+
 לדיון נרחב על הוכחה באינדוקציה ראו
 \L{\cite{ben-ari:induction}}.
 הספר הארוך של

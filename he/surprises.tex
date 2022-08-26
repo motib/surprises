@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper,leqno,oneside]{book}
+\documentclass[12pt,a4paper,leqno,oneside]{book}
 
 \usepackage{surprises}
 
@@ -6,41 +6,37 @@
 
 \begin{document}
 
+\selectlanguage{hebrew}
+
 \tikzsetfigurename{front}
 \include{front}
-
-%%%%%%%%%%%%%%%%%%%%% Elementary geometric constructs
 
 \tikzsetfigurename{collapse}
 \include{collapse}
 
-\tikzsetfigurename{trisect-an-angle}
-\include{trisect-an-angle}
+\tikzsetfigurename{trisect}
+\include{trisect}
 
-\tikzsetfigurename{square-a-circle}
-\include{square-a-circle}
+\tikzsetfigurename{square}
+\include{square}
 
-%%%%%%%%%%%%%%%%%%%  Coloring
-
-\tikzsetfigurename{five-color}
-\include{five-color}
+\tikzsetfigurename{five}
+\include{five}
 
 \tikzsetfigurename{museum}
 \include{museum}
 
-\tikzsetfigurename{langford}
-\include{langford}
-
-%%%%%%%%%%%%%%%%% Number theory
+\tikzsetfigurename{induction}
+\include{induction}
 
 \tikzsetfigurename{quadratic}
 \include{quadratic}
 
+\tikzsetfigurename{ramsey}
+\include{ramsey}
 
-\tikzsetfigurename{induction}
-\include{induction}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%% Origami
+\tikzsetfigurename{langford}
+\include{langford}
 
 \tikzsetfigurename{origami-axioms}
 \include{origami-axioms}
@@ -51,21 +47,22 @@
 \tikzsetfigurename{origami-constructions}
 \include{origami-constructions}
 
-%%%%%%%%%%%%%%%%%%% Advanced geometric constructs
+\tikzsetfigurename{compass}
+\include{compass}
 
-\tikzsetfigurename{compass-only}
-\include{compass-only}
+\tikzsetfigurename{straightedge}
+\include{straightedge}
 
-\tikzsetfigurename{straightedge-only}
-\include{straightedge-only}
-
-\tikzsetfigurename{congruent-triangles}
-\include{congruent-triangles}
+\tikzsetfigurename{congruent}
+\include{congruent}
 
 \tikzsetfigurename{heptadecagon}
 \include{heptadecagon}
 
-%%%%%%%%%%%%%%%% References ********************
+%\appendix
+
+\tikzsetfigurename{trig}
+\include{trig}
 
 \include{references}
 

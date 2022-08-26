@@ -2,10 +2,15 @@
 
 \selectlanguage{hebrew}
 
+
+
 \chapter{פתרון משוואות ריבועיות}\label{c.quadratic}
 
 פרק זה מציג את השיטה לפתרון משוואות ריבועיות של 
 \L{Po-Shen Loh}.
+
+\selectlanguage{hebrew}
+
 
 \section{השיטות המסורתיות לפתרון משוואות ריבועיות}\label{s.traditional}
 
@@ -23,12 +28,12 @@ $x^2+bx+c=0$
 x_1, x_2 = \frac{-b\pm\sqrt{b^2-4c}}{2}\,.
 \]
 שיטה נוספת היא לפרק את הפולינום הריבועי. לעתים קל לפרק את הפולינום:
-\erh{0pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 x^2-4x+3& =& (x-r_1)(x-r_2)=0\\
 & =& (x-1)(x-3)=0\\
 x_1,x_2&=&1, 3\,.
-\end{equationarray*}
+\end{eqnarray*}
 קשה הרבה יותר לפרק את הפולינום:
 \[
 x^2-2x-24= (x-r_1)(x-r_2)=0\,.
@@ -43,6 +48,7 @@ $r_1,r_2$
 $-24$,
 אבל עדיין יש לבדוק שמונה אפשרויות.
 
+\selectlanguage{hebrew}
 
 
 \section{חישוב השורשים}\label{s.computing}
@@ -126,7 +132,7 @@ $-s$
 $r_1,r_2=2,6$,
 כאשר
 $m_{12}=4, s=2$:
-\selectlanguage{english}
+
 \begin{center}
 \begin{tikzpicture}
 \draw[->] (0,0) -- (10,0);
@@ -141,7 +147,7 @@ $m_{12}=4, s=2$:
 \draw[->,yshift=30mm] (60mm,0mm) -- node[above] {$m_{12}-r_2$} +(-20mm,0);
 \end{tikzpicture}
 \end{center}
-\selectlanguage{hebrew}
+
 אם נבחר ערכים אחרים
 $r_1,r_2=3,5$
 עבורם
@@ -149,7 +155,7 @@ $r_1+r_2=8$, $m_{12}=4$
 נשאר ללא שינוי, אבל
 $s=1$
 משתנה:
-\selectlanguage{english}
+
 \begin{center}
 \begin{tikzpicture}
 \draw[->] (0,0) -- (10,0);
@@ -164,7 +170,7 @@ $s=1$
 \draw[->,yshift=30mm] (50mm,0mm) -- node[above right] {$m_{12}-r_2$} +(-10mm,0);
 \end{tikzpicture}
 \end{center}
-\selectlanguage{hebrew}
+
 
 לכאורה ההפרש
 $s$
@@ -186,6 +192,8 @@ $r_1,r_2$.
 c=\left(-\frac{b}{2} +s\right)\left(-\frac{b}{2} -s\right)\,.
 \]
 
+\selectlanguage{hebrew}
+
 
 \section{דוגמאות}\label{s.examples}
 
@@ -193,60 +201,62 @@ c=\left(-\frac{b}{2} +s\right)\left(-\frac{b}{2} -s\right)\,.
 $x^2-2x-24$,
 כאשר
 $b=-2,c=-24$:
-\erh{4pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 c&=&\left(-\frac{b}{2} +s\right)\left(-\frac{b}{2} -s\right)\\
 -24&=&(1 +s)(1 -s)\\
 s^2&=&25\\
 s&=&5\\
 r_1&=&1+5=6\\
 r_2&=&1-5=-4\,.
-\end{equationarray*}
+\end{eqnarray*}
 נבדוק:
 \[
 (x-6)(x-(-4))=x^2-6x-(-4)x+(6\cdot -4)= x^2-2x-24\,.
 \]
 כדוגמה נוספת נמצא את השורשים של
 $x^2-83x-2310$:
-\erh{12pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 c&=&\left(-\frac{b}{2} +s\right)\left(-\frac{b}{2} -s\right)\\
 -2310&=&\left(\frac{83}{2}+s\right)\left(\frac{83}{2} -s\right)\\
 s^2&=&\frac{6889}{4}+2310=\frac{16129}{4}\\
 s&=&\frac{127}{2}\\
 r_1&=&\frac{83}{2}-\frac{127}{2}=-22\\
 r_2&=&\frac{83}{2}+\frac{127}{2}=105\,.
-\end{equationarray*}
+\end{eqnarray*}
 נבדוק:
 \[
 (x+22)(x-105)=x^2+22x-105x+(22\cdot -105)= x^2-83x-2310\,.
 \]
 נשווה את החישוב עם החישוב המשתמש בנוסחה:
-\erh{8pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 \frac{-b\pm\sqrt{b^2-4c}}{2}&=&\frac{-(-83)\pm\sqrt{(-83)^2-4\cdot (-2310)}}{2}\\
 &=& \frac{83\pm\sqrt{6889+9240}}{2} = \frac{83\pm\sqrt{16129}}{2}\\
 &=& \frac{83\pm 127}{2}\\
 r_1&=&\frac{83-127}{2}=-22\\
 r_2&=&\frac{83+127}{2}=105\,.
-\end{equationarray*}
+\end{eqnarray*}
 למרות שהחישוב בשיטה של
 \L{Loh}
 דומה לחישוב עם הנוסחה, יש לה יתרון כי ניתן לקבל את החישוב מיידית מהממוצע ומהמכפלה של השורשים. בסעיף הבא נראה שקל לקבל את הנוסחה המסורתית משיטה זו.
+\selectlanguage{hebrew}
+
 
 \section{הנוסחה המסורתית}\label{s.general}
 
 עם מקדמים שרירותיים הנוסחאות לפי השיטה של
 \L{Loh}
 הן:
-\erh{12pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 c=r_1,r_2&=&\left(\frac{-b}{2}+s\right)  \left(\frac{-b}{2}-s\right)\\
 &=&\left(\frac{b^2}{4}-s^2\right)\\
 s&=&\sqrt{\left(\frac{b^2}{4}\right)-c}\\
 r_1,r_2&=&\frac{-b}{2}\pm\sqrt{\left(\frac{b^2}{4}\right)-c}\\
 r_1,r_2&=&\frac{-b\pm\sqrt{b^2-4c}}{2}\,,
-\end{equationarray*}
+\end{eqnarray*}
 הנוסחה המסורתית לקבלת השורשים של פולינום עם מקדם אחד עבור
 $x^2$.
 
@@ -255,25 +265,29 @@ $a\neq 1$,
 חלקו את המקדמים ב-%
 $a$,
 הציבו במשוואה ופשטו:
-\erh{12pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 %ax^2+bx+c&=&0\\
 x^2+\frac{b}{a}x+\frac{c}{a}&=&0\\
 r_1,r_2&=&\frac{-(b/a)\pm\sqrt{(b/a)^2-4(c/a)}}{2}\\
 %&=&\frac{-(b/a)\pm\sqrt{(b/a)^2-4(ac/a^2)}}{2}\\
 &=&\frac{-b\pm\sqrt{b^2-4ac}}{2a}\,.
-\end{equationarray*}
+\end{eqnarray*}
+
+
+\selectlanguage{hebrew}
+
 
 \section{פולינומים עם שורשים דמיוניים}\label{s.irreducible}
 
 נבדוק את שיטה עבור
 $x^2-2x+76$:
-\erh{4pt}
-\begin{equationarray*}{rcl}
+
+\begin{eqnarray*}
 s^2&=&\frac{b^2}{4}-c=\frac{4}{4}-76=-75\\
 s&=&\sqrt{-75}=\sqrt{-1\cdot 25\cdot 3}=i\,5\sqrt{3}\\
 r_1,r_2&=&1\pm i\,5\sqrt{3}\,.
-\end{equationarray*}
+\end{eqnarray*}
 נבדוק:
 \[
 \renewcommand*{\arraystretch}{1}
@@ -284,6 +298,10 @@ x^2 \,-\, (1+i\,5\sqrt{3})x\,-\,(1-i\,5\sqrt{3})x\,+\,(1^2-(i\,5\sqrt{3})^2)&=\\
 x^2-2x+76\,.
 \end{array}
 \]
+
+\selectlanguage{hebrew}
+
+
 
 \subsection*{מקורות}
 
