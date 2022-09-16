@@ -1,4 +1,0 @@
-p. 203 line -3:
-Let $D$ be any other point on the circle that forms a triangle $\triangle BDC$.
-
-p. 218 line -3: Thm -> Eq.
