@@ -1,7 +1,7 @@
-﻿*.pdf
+﻿he/*
+*.pdf
 springer/*
-other/*
-save/*
+published/*
 en/tikz/*
 *.bat
 *.zip
@@ -19,3 +19,5 @@ en/tikz/*
 *.thm
 *.idx
 *.py
+*.txt
+
