@@ -1,0 +1,113 @@
+% !TeX root = surprises.tex
+
+\usepackage{mathpazo}
+\usepackage{verbatim}
+\usepackage{url}         % Format links
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+
+\setcounter{tocdepth}{1} % TOC for chapters and sections
+
+% TikZ
+\usepackage{tikz}
+\usetikzlibrary{positioning,through,calc,%
+  intersections,arrows.meta,%
+  external,shapes.geometric}
+\tikzset{>=stealth}
+\newcommand*{\vertex}[1]
+  {\fill[shift only] (#1) circle (1.5pt)}
+
+% Store TikZ images in external directory
+\tikzexternalize[prefix=tikz/]
+
+% Formating commands
+
+% QED symbol at end of proofs
+%\newcommand*{\qed}{\hfill\rule{1ex}{2ex}}
+\newcommand\qed{\hfill\hbox{\rlap{$\sqcap$}$\sqcup$}}
+% Display style for fractions
+\newcommand*{\disfrac}[2]{\displaystyle\frac{#1}{#2}}
+% Display style for binomial
+\newcommand*{\dischoose}[2]{\displaystyle{#1 \choose #2}}
+% Extra row height for array and eqnarray
+\newcommand*{\erh}[1]{\setlength{\extrarowheight}{#1}}
+% Very small size of math symbols 
+\newcommand*{\sm}[1]{$\scriptstyle #1$}
+% Symbol for use in proof of constructibility of heptadecagon
+\newcommand*{\occ}[2]{%
+  \stackrel{\textstyle r^{#1}}{\!\!\!\scriptscriptstyle #2}}
+
+% Polyglossia Hebrew (main) and English (other)
+\usepackage{polyglossia}  
+\setmainlanguage{hebrew}
+\setotherlanguage{english}
+
+% Fonts: David for Hebrew, Palatino/Courier for English
+\newfontfamily{\hebrewfont}{David}[Script=Hebrew]
+\newfontfamily{\englishfont}{Palatino Linotype}
+\newfontfamily{\englishfonttt}{Courier New}
+
+% Abbreviations for backwards compatibility with babel
+\renewcommand*{\L}[1]{\textenglish{#1}}
+\newcommand*{\R}[1]{\texthebrew{#1}}
+
+% Use fancyhdr to make all page numbers uniform
+\pagestyle{fancy}
+\fancyhead{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[C]{$\thepage$}
+
+% Modify page layout
+\setlength{\textheight}{230mm}
+\setlength{\topmargin}{-4mm}
+\setlength{\textwidth}{147mm}
+\setlength{\oddsidemargin}{5mm}
+\parindent=0pt
+\renewcommand{\baselinestretch}{1.1}
+\setlength{\parskip}{0.4\baselineskip plus 1pt minus 1pt}
+
+% Environments for theorems and definitions
+\newtheorem{theorem}{משפט}[chapter]
+\newtheorem{definition}[theorem]{הגדרה}
+\newtheorem{axiom}[theorem]{אקסיומה}
+\newtheorem{example}[theorem]{דוגמה}
+\newenvironment{proof}{\textbf{הוכחה}}{\qed}
+
+% Use english equation numbers in hebrew document
+\renewcommand{\theequation}{\L{\arabic{equation}}}
+
+% Subfigures
+\DeclareCaptionSubType*{figure}
+\captionsetup[subfigure]{labelformat=simple}
+\renewcommand\thesubfigure{איור~\textenglish{\arabic{figure}}(\alph{subfigure})}
+\renewcommand\thefigure{\textenglish{\arabic{figure}}}
+
+% Box advanced material
+\newenvironment{advanced}
+{
+\begin{center}
+\begin{tabular}
+  {|@{\hspace*{1em}}p{0.9\textwidth}@{\hspace*{1em}}|}
+  \hline\smallskip
+}
+{ 
+\\\\\hline
+\end{tabular} 
+\end{center}
+}
+
+% Reduce space around c column in eqn
+\newenvironment{eqn}
+  {\addtolength{\arraycolsep}{-3pt}\begin{eqnarray*}}
+  {\end{eqnarray*}}
+
+% Reduce space around c column in eqnarray with labels
+\newenvironment{eqnlabels}
+  {\addtolength{\arraycolsep}{-3pt}
+   \begin{eqnarray}}
+  {\end{eqnarray}}
+
+% Use english equation numbers in hebrew document
+\renewcommand{\theequation}%
+{\L{\arabic{chapter}.\arabic{equation}}}

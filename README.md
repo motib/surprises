@@ -8,6 +8,10 @@ Published by Springer-Nature under the Open Access Program.
 You can download the book from
 [SpringerLink](https://link.springer.com/book/10.1007/978-3-031-13566-8).
 
+The directory `en` contains the LaTeX / TikZ source of the published book.
+
+The directory `he` contains an unfinished draft of a Hebrew translation.
+
 ### Contents
 
 **The collapsing compass** Euclid proved that any construction that can be done using a fixed compass can performed with a collapsing compass.
@@ -38,4 +42,4 @@ You can download the book from
 
 **Construction of a regular heptadecagon** Gauss proved using only algebraic methods that a regular heptadecagon (17-sided polygon) can be constructed with a straightedge and compass.
 
-Appendix with proofs of trigonometric identities and lesser-known theorems of geometry.
+**Appendix** with proofs of trigonometric identities and lesser-known theorems of geometry.
