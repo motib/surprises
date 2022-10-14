@@ -1,11 +1,8 @@
-﻿
+﻿*.pdf
 springer/*
 published/*
 en/tikz/*
 he/tikz/*
-suprises-en*.pdf
-en/*.pdf
-he/*.pdf
 *.bat
 *.zip
 *~
