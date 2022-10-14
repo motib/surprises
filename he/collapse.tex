@@ -18,14 +18,8 @@
 שרגליה מתקפלות כאשר מרימים אותן מהנייר. לעתים קרובות מורים משתמשים מחוגה מתמוטטת המורכבת מטוש שמחובר לחוט כדי לבנות מעגל הלוח. אי-אפשר לשמור על מרחק קבוע כאשר מרימים את המחוגה מהלוח.
 
 \begin{figure}
-\centering
-\selectlanguage{hebrew}
-\subcaptionbox{%
-מחוגה קבועה. לרגל אחת סיכה שניתן להניח במרכז המעגל. עפרון מחוברת לרגל השניה משמש לשרטוט המעגל. הרגלים מחוברות בציר קשיח כך שהמרחק בין הרגליים (רדיוס המעגל) נשמר גם כאשר מרימים את המחוגה מהנייר.%
-\label{fig.fixed-compass}}
-[.45\textwidth]
-{
-\centering
+\begin{center}
+\begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}
 \begin{scope}[rotate=0,transform shape,scale=3]
 \draw (2.95,3.7) rectangle (3,3.95);
@@ -50,14 +44,12 @@
 \fill[gray] (a) -- (0.2,-0.8) -- (b) -- cycle;
 \end{scope}
 \end{tikzpicture}
-}
+\selectlanguage{hebrew}
+\caption{מחוגה קבועה. לרגל אחת סיכה שניתן להניח במרכז המעגל. עפרון מחוברת לרגל השניה משמש לשרטוט המעגל. הרגלים מחוברות בציר קשיח כך שהמרחק בין הרגליים (רדיוס המעגל) נשמר גם כאשר מרימים את המחוגה מהנייר.}
+\label{fig.fixed-compass}
+\end{subfigure}
 \hspace{3em}
-\subcaptionbox{%
-מחוגה מתמוטטת. המשתמש מצמיד חוט למרכז המעגל. לקצה השני של החוט מחובר עפרון המשמש לשרטוט המעגל. כאשר מרימים את המחוגה מהנייר, האצבעות (מקווקווים) יכולים בקלות להחליק למקום אחר.%
-\label{fig.collapsing-compass}}
-[.45\textwidth]
-{
-\centering
+\begin{subfigure}[b]{.4\textwidth}
 \begin{tikzpicture}[rotate=0,scale=1]          
 \fill[gray!50] (0,4) -- (0.4,4) -- (0.4,0) --
                (0.3,-0.15) -- (0.2,0) -- (0.1,-0.14) --
@@ -88,7 +80,12 @@
 \draw[dashed,thick,fill=white!70!gray] (0,3.5) -- ++(0,-.5) -- ++(.4,0) -- ++(0,.5);
 \end{scope}
 \end{tikzpicture}
-}
+\selectlanguage{hebrew}
+\caption{%
+מחוגה מתמוטטת. המשתמש מצמיד חוט למרכז המעגל. לקצה השני של החוט מחובר עפרון המשמש לשרטוט המעגל. כאשר מרימים את המחוגה מהנייר, האצבעות (מקווקווים) יכולים בקלות להחליק למקום אחר.%
+}\label{fig.collapsing-compass}
+\end{subfigure}
+\end{center}
 \end{figure}
 
 בתחילת הפרק דיון על הרלוונטית של למידה של בניה עם סרגל ומחוגה (סעיף%
@@ -153,37 +150,124 @@ $C$
 $AB$.
 \end{theorem}
 
-\begin{figure}
+\begin{figure}[t]
 \begin{center}
-\begin{tikzpicture}[scale=0.6]
-\begin{scope}
+\begin{subfigure}{.4\textwidth}
+\begin{tikzpicture}[scale=0.5]
+\coordinate (A) at (0,0);
+\coordinate (B) at (4,0);
+\vertex{A};
+\vertex{B};
+\draw (A) node[below left] {$A$} -- (B) node[below right] {$B$};
+\draw[name path=larc] (A) ++(-60:3cm) arc (-60:60:3cm);
+\draw[name path=rarc] (B) ++(-120:3cm) arc (-120:-240:3cm);
+\path [name intersections={of=larc and rarc,by={b,t}}];
+\node[above right,xshift=-2pt,yshift=5pt] at (t) {$C$};
+\node[below left,xshift=2pt,yshift=-5pt] at (b) {$D$};
+\draw ($ (b) ! 1.2 ! (t)$) -- ($ (t) ! 1.2 ! (b)$);
+\end{tikzpicture}
+\caption{Construction of a perpendicular bisector with a fixed compass}\label{f.collapse-perp-bisector-fixed}
+\end{subfigure}
+\hfill
+\begin{subfigure}{.4\textwidth}
+\begin{tikzpicture}[scale=0.5]
+\coordinate (A) at (0,0);
+\coordinate (B) at (4,0);
+\vertex{A};
+\vertex{B};
+\draw (A) node[below left] {$A$} -- (B) node[below right] {$B$};
+\draw[name path=larc] (A) ++(-80:4cm) arc (-80:80:4cm);
+\draw[name path=rarc] (B) ++(-100:4cm) arc (-100:-260:4cm);
+\path [name intersections={of=larc and rarc,by={b,t}}];
+\node[above right,xshift=-2pt,yshift=3pt] at (t) {$C$};
+\node[below left,xshift=2pt,yshift=-3pt] at (b) {$D$};
+\draw ($ (b) ! 1.2 ! (t)$) -- ($ (t) ! 1.2 ! (b)$);
+\end{tikzpicture}
+\caption{Construction of a perpendicular bisector with a fixed or a collapsing compass}\label{f.collapse-perp-bisector-collapse}
+\end{subfigure}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[t]
+\begin{center}
+\begin{subfigure}{.4\textwidth}
+\begin{tikzpicture}[scale=0.5]
+\coordinate (A) at (0,0);
+\coordinate (B) at (4,0);
+\vertex{A};
+\vertex{B};
+\draw (A) node[below left] {$A$} -- (B) node[below right] {$B$};
+\draw[name path=larc] (A) ++(-60:3cm) arc (-60:60:3cm);
+\draw[name path=rarc] (B) ++(-120:3cm) arc (-120:-240:3cm);
+\path [name intersections={of=larc and rarc,by={b,t}}];
+\vertex{t};
+\vertex{b};
+\node[above right,xshift=-2pt,yshift=5pt] at (t) {$C$};
+\node[below left,xshift=2pt,yshift=-5pt] at (b) {$D$};
+\draw (A) -- (t);
+\draw (B) -- (t);
+\end{tikzpicture}
+\caption{Construction of an isoceles triangle with a fixed compass}\label{f.collapse-equilateral-fixed}
+\end{subfigure}
+\hspace{3em}
+\begin{subfigure}{.4\textwidth}
+\begin{tikzpicture}[scale=0.5]
+\coordinate (A) at (0,0);
+\coordinate (B) at (4,0);
+\draw (A) node[below left] {$A$} -- (B) node[below right] {$B$};
+\vertex{A};
+\vertex{B};
+\draw[name path=larc] (A) ++(-80:4cm) arc (-80:80:4cm);
+\draw[name path=rarc] (B) ++(-100:4cm) arc (-100:-260:4cm);
+\path [name intersections={of=larc and rarc,by={b,t}}];
+\vertex{t};
+\vertex{b};
+\node[above right,xshift=-2pt,yshift=3pt] at (t) {$C$};
+\node[below left,xshift=2pt,yshift=-3pt] at (b) {$D$};
+\draw (A) -- (t);
+\draw (B) -- (t);
+\end{tikzpicture}
+\caption{Construction of an equilateral triangle with a collapsing compass}\label{f.collapse-equilateral-collapse}
+\end{subfigure}
+\end{center}
+\end{figure}
+
+\begin{figure}[b]
+\begin{center}
+\begin{subfigure}{.4\textwidth}
+\begin{tikzpicture}[scale=0.5]
 \coordinate (C) at (0,0);
-\coordinate (A) at (2.5,0);
-\coordinate (B) at (5.5,2);
-\draw (A) node[below,xshift=-2pt,yshift=-2pt] {$A$} -- (B) node[right] {$B$};
-\fill (A) circle[radius=3pt];
-\fill (B) circle[radius=3pt];
-\fill (C) node[below,xshift=2pt,yshift=-2pt] {$C$} circle[radius=3pt];
-\end{scope}
-\begin{scope}[xshift=12cm]
+\coordinate (A) at (3,0);
+\draw (A) node[below,xshift=-2pt,yshift=-2pt] {$A$} -- +(40:4) coordinate (B) node[right] {$B$};
+\vertex{A};
+\vertex{B};
+\vertex{C};
+\node[below,xshift=2pt,yshift=-2pt] at (C) {$C$};
+\draw[thick,dashed] (C) -- +(160:4) coordinate (D) node[below] {$C'$};
+\vertex{D};
+\end{tikzpicture}
+\caption{Copy the line segment $\overline{AB}$. The orientation of $\overline{CC'}$ is not important.}\label{f.collapse-copying-1}
+\end{subfigure}
+\hspace{3ex}
+\begin{subfigure}{.4\textwidth}
+\begin{tikzpicture}[scale=0.5]
 \coordinate (C) at (0,0);
-\coordinate (A) at (2.5,0);
-\coordinate (B) at (5.5,2);
-\draw (A) node[below,xshift=-2pt,yshift=-2pt] {$A$} -- (B) node[right] {$B$};
-\fill (A) circle[radius=3pt];
-\fill (B) circle[radius=3pt];
-\fill (C) node[below,xshift=2pt,yshift=-2pt] {$C$} circle[radius=3pt];
+\coordinate (A) at (3,0);
+\draw (A) node[below,xshift=-2pt,yshift=-2pt] {$A$} -- +(40:4) coordinate (B) node[right] {$B$};
+\vertex{B};
+\node[below,xshift=2pt,yshift=-2pt] at (C) {$C$};
 \draw (A) -- (C);
 \path[name path=larc] (C) ++(-70:2.5cm) arc (-70:70:2.5cm);
 \path[name path=rarc] (A) ++(-110:2.5cm) arc (-110:-250:2.5cm);
 \path [name intersections={of=larc and rarc,by={d,D}}];
-\fill (D) node[above] {$D$} circle[radius=3pt];
+\node[above] at (D) {$D$};
 \draw (A) -- (D);
 \draw (C) -- (D);
-\end{scope}
 \end{tikzpicture}
+\caption{Copying a line segment with a collapsing compass}\label{f.collapse-copying-2}
+\end{subfigure}
 \end{center}
-\caption{בנייה של אוקלידס}\label{f.euclid}
 \end{figure}
 
 \begin{proof}
@@ -218,10 +302,10 @@ $E$,
 $\overline{DE}$
 )תרשים ימני(.
 
+\begin{figure}
 \begin{center}
-
+\begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}[scale=0.6]
-\begin{scope}
 \coordinate (C) at (0,0);
 \coordinate (A) at (2.5,0);
 \coordinate (B) at (5.5,2);
@@ -238,8 +322,12 @@ $\overline{DE}$
 \draw (C) -- (D);
 \draw[name path=ray2] (D) -- ($ (D) ! 2.7 ! (C) $);
 \draw[name path=ray1] (D) -- ($ (D) ! 2.7 ! (A) $);
-\end{scope}
-\begin{scope}[xshift=12cm]
+\end{tikzpicture}
+\caption{}\label{}
+\end{subfigure}
+\hspace{3ex}
+\begin{subfigure}{.4\textwidth}
+\begin{tikzpicture}
 \coordinate (C) at (0,0);
 \coordinate (A) at (2.5,0);
 \coordinate (B) at (5.5,2);
@@ -259,9 +347,11 @@ $\overline{DE}$
 \node[draw,circle through=(B),name path=c1] at (A) {};
 \path [name intersections={of=c1 and ray1,by={E,e}}];
 \fill (E) node[right,xshift=2pt,yshift=-2pt] {$E$} circle[radius=3pt];
-\end{scope}
 \end{tikzpicture}
+\caption{}\label{}
+\end{subfigure}
 \end{center}
+\end{figure}
 \item
 בנו מעגל שמרכזו 
 $D$
@@ -273,8 +363,8 @@ $\overline{DC}$
 $F$:
 \end{itemize}
 
+\begin{figure}
 \begin{center}
-
 \begin{tikzpicture}[scale=0.4]
 \coordinate (C) at (0,0);
 \coordinate (A) at (2.5,0);
@@ -302,6 +392,8 @@ $F$:
 \path (C) -- node[left] {$x$} (F);
 \end{tikzpicture}
 \end{center}
+\caption{}\label{}
+\end{figure}
 
 \textbf{טענה:}
 אורכו של קטע הקו
@@ -339,30 +431,67 @@ $\overline{CF}$
 $A$
 עם רדיוס
 $\overline{AB}$:
+\begin{figure}
 \begin{center}
-
-\begin{tikzpicture}[scale=0.6]
-\begin{scope}
-\coordinate (C) at (-2,0);
-\coordinate (A) at (2.5,0);
-\coordinate (B) at (4.5,1.5);
-\draw (A) node[below,xshift=-2pt,yshift=-2pt] {$A$} -- (B) node[right] {$B$};
-\fill (A) circle[radius=3pt];
-\fill (B) circle[radius=3pt];
-\fill (C) node[below,xshift=2pt,yshift=-2pt] {$C$} circle[radius=3pt];
-\end{scope}
-\begin{scope}[xshift=12cm]
-\coordinate (C) at (-2,0);
-\coordinate (A) at (2.5,0);
-\coordinate (B) at (4.5,1.5);
-\draw (A) node[below,xshift=-2pt,yshift=-2pt] {$A$} -- (B) node[right] {$B$};
-\fill (A) circle[radius=3pt];
-\fill (B) circle[radius=3pt];
-\fill (C) node[below,xshift=2pt,yshift=-2pt] {$C$} circle[radius=3pt];
+\begin{tikzpicture}[scale=0.4]
+\clip (-12,-6) rectangle (11,10);
+\coordinate (C) at (-4,0);
+\coordinate (A) at (3,0);
+\draw (A) node[below,xshift=-2pt,yshift=-2pt] {$A$} -- +(40:4) coordinate (B) node[right] {$B$};
+\node[below,xshift=2pt,yshift=-2pt] at (C) {$C$};
+\draw (A) -- (C);
+\path[name path=larc] (C) ++(-70:7cm) arc (-70:70:7cm);
+\path[name path=rarc] (A) ++(-110:7cm) arc (-110:-250:7cm);
+\path [name intersections={of=larc and rarc,by={d,D}}];
+\node[above] at (D) {$D$};
+\draw (A) -- (D);
+\draw (C) -- (D);
+\draw[name path=ray2] (D) -- ($ (D) ! 2 ! (C) $);
+\draw[name path=ray1] (D) -- ($ (D) ! 2 ! (A) $);
 \node[draw,circle through=(B),name path=c1] at (A) {};
-\end{scope}
+\path [name intersections={of=c1 and ray1,by={e,E}}];
+\node[right,xshift=2pt,yshift=-2pt] at (E) {$E$};
+\node[draw,circle through=(E),name path=c2] at (D) {};
+\path [name intersections={of=c2 and ray2,by={F,f}}];
+\node[left,xshift=-2pt,yshift=-2pt] at (F) {$F$};
+\path (A) -- node[right] {$a$} (E);
+\path (C) -- node[left] {$a$} (F);
+\draw[white,fill=white] (-12,8) rectangle +(23,2);
 \end{tikzpicture}
 \end{center}
+\caption{Construction for $\overline{AC}>\overline{AB}$}\label{f.collapse-copying-6}
+\end{figure}
+%\begin{figure}
+%\begin{center}
+%\begin{subfigure}{.4\textwidth}
+%\begin{tikzpicture}[scale=0.6]
+%\begin{scope}
+%\coordinate (C) at (-2,0);
+%\coordinate (A) at (2.5,0);
+%\coordinate (B) at (4.5,1.5);
+%\draw (A) node[below,xshift=-2pt,yshift=-2pt] {$A$} -- (B) node[right] {$B$};
+%\fill (A) circle[radius=3pt];
+%\fill (B) circle[radius=3pt];
+%\fill (C) node[below,xshift=2pt,yshift=-2pt] {$C$} circle[radius=3pt];
+%\end{tikzpicture}
+%\caption{}\label{}
+%\end{subfigure}
+%\hspace{3ex}
+%\begin{subfigure}{.4\textwidth}
+%\begin{tikzpicture}
+%\coordinate (C) at (-2,0);
+%\coordinate (A) at (2.5,0);
+%\coordinate (B) at (4.5,1.5);
+%\draw (A) node[below,xshift=-2pt,yshift=-2pt] {$A$} -- (B) node[right] {$B$};
+%\fill (A) circle[radius=3pt];
+%\fill (B) circle[radius=3pt];
+%\fill (C) node[below,xshift=2pt,yshift=-2pt] {$C$} circle[radius=3pt];
+%\node[draw,circle through=(B),name path=c1] at (A) {};
+%\end{tikzpicture}
+%\caption{}\label{}
+%\end{subfigure}
+%\end{center}
+%\end{figure}
 %\vspace*{-8ex}
 \item
 בנו מעגל שמרכזו
@@ -384,8 +513,8 @@ $A$
 $\overline{AB}$
 ב-%
 $D$:
+\begin{figure}
 \begin{center}
-
 \begin{tikzpicture}[scale=0.6]
 \coordinate (C) at (-2,0);
 \coordinate (A) at (2.5,0);
@@ -404,6 +533,8 @@ $D$:
 \fill (F) node[below,yshift=-2pt] {$F$} circle[radius=3pt];
 \end{tikzpicture}
 \end{center}
+\caption{}\label{}
+\end{figure}
 \item
 בנו מעגל שמרכזו 
 $E$
@@ -418,37 +549,70 @@ $\overline{AC}$
 )איור~%
 \ref{f.collapse1}(.
 \end{itemize}
-\begin{figure}[tb]
-\begin{center}
 
-\begin{tikzpicture}[scale=0.8]
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
 \clip (-8,-1) rectangle (9,5);
 \coordinate (C) at (-2,0);
 \coordinate (A) at (2.5,0);
 \coordinate (B) at (4.5,1.5);
 \draw[thick] (A) node[below right] {$A$} -- (B) node[right] {$B$};
-\fill (A) circle[radius=3pt];
-\fill (B) circle[radius=3pt];
-\fill (C) node[below left] {$C$} circle[radius=3pt];
+\vertex{A};
+\vertex{C};
+\node[below left] at (C) {$C$};
 \node[draw,circle through=(B),name path=c1] at (A) {};
 \node[draw,circle through=(C),name path=c2] at (A) {};
 \node[draw,circle through=(A),name path=c3] at (C) {};
 \path [name intersections={of=c1 and c3,by={D,f}}];
 \path [name intersections={of=c2 and c3,by={E,F}}];
-\fill (D) node[below right,xshift=4pt] {$D$} circle[radius=3pt];
-\fill (E) node[above,yshift=2pt] {$E$} circle[radius=3pt];
-\fill (F) node[below,yshift=-2pt] {$F$} circle[radius=3pt];
 \node[draw,circle through=(D),name path=c4] at (E) {};
 \path [name intersections={of=c2 and c4,by={g,G}}];
-\fill (G) node[below left,xshift=-4pt] {$G$} circle[radius=3pt];
-\draw[thick] (C) -- (G);
-\draw[thick,dashed] (G) -- (E) -- (C);
-\draw[thick,dashed] (A) -- (D) -- (E) -- cycle;
+\node[left] at (G) {$G$};
+\node[below right,yshift=2pt,xshift=2pt] at (D) {$D$};
+\node[above] at (E) {$E$};
+\vertex{E};
+\vertex{F};
+\draw (C) -- (G);
+\draw (A) -- (G) -- (E) -- (C) -- (D);
+\draw (A) -- (D) -- (E) -- cycle;
 \end{tikzpicture}
 \end{center}
-\selectlanguage{hebrew}
-\caption{משולשים חופפים}\label{f.collapse1}
+\caption{Construction for copying a line segment (2)}\label{f.collapse-incorrect-2}
 \end{figure}
+
+
+%\begin{figure}[tb]
+%\begin{center}
+
+%\begin{tikzpicture}[scale=0.8]
+%\clip (-8,-1) rectangle (9,5);
+%\coordinate (C) at (-2,0);
+%\coordinate (A) at (2.5,0);
+%\coordinate (B) at (4.5,1.5);
+%\draw[thick] (A) node[below right] {$A$} -- (B) node[right] {$B$};
+%\fill (A) circle[radius=3pt];
+%\fill (B) circle[radius=3pt];
+%\fill (C) node[below left] {$C$} circle[radius=3pt];
+%\node[draw,circle through=(B),name path=c1] at (A) {};
+%\node[draw,circle through=(C),name path=c2] at (A) {};
+%\node[draw,circle through=(A),name path=c3] at (C) {};
+%\path [name intersections={of=c1 and c3,by={D,f}}];
+%\path [name intersections={of=c2 and c3,by={E,F}}];
+%\fill (D) node[below right,xshift=4pt] {$D$} circle[radius=3pt];
+%\fill (E) node[above,yshift=2pt] {$E$} circle[radius=3pt];
+%\fill (F) node[below,yshift=-2pt] {$F$} circle[radius=3pt];
+%\node[draw,circle through=(D),name path=c4] at (E) {};
+%\path [name intersections={of=c2 and c4,by={g,G}}];
+%\fill (G) node[below left,xshift=-4pt] {$G$} circle[radius=3pt];
+%\draw[thick] (C) -- (G);
+%\draw[thick,dashed] (G) -- (E) -- (C);
+%\draw[thick,dashed] (A) -- (D) -- (E) -- cycle;
+%\end{tikzpicture}
+%\end{center}
+%\selectlanguage{hebrew}
+%\caption{משולשים חופפים}\label{f.collapse1}
+%\end{figure}
 
 \textbf{טענה:}
 ארכו של 
@@ -505,6 +669,33 @@ $C$
 ביחס לקטע הקו
 $\overline{AB}$.
 
+\begin{figure}[htb]
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\coordinate (C) at (-1,0);
+\coordinate (A) at (2,0);
+\coordinate (B) at (6,1.5);
+\draw[thick] (A) node[below right] {$A$} -- (B) node[right] {$B$};
+\node[left,xshift=-2pt] at (C) {$C$};
+\node[draw,circle through=(B),name path=c1] at (A) {};
+\node[draw,circle through=(C),name path=c2] at (A) {};
+\node[draw,circle through=(A),name path=c3] at (C) {};
+\path [name intersections={of=c1 and c3,by={D,f}}];
+\path [name intersections={of=c2 and c3,by={E,F}}];
+\node[above left,xshift=4pt] at (D) {$D$};
+\node[above,yshift=2pt] at (E) {$E$};
+\node[below,yshift=-2pt] at (F) {$F$};
+\vertex{A};
+\vertex{C};
+\node[draw,circle through=(D),name path=c4] at (E) {};
+\path [name intersections={of=c2 and c4,by={g,G}}];
+\node[right,xshift=2pt,yshift=2pt] at (G) {$G$};
+\draw[thick] (G) -- (C);
+\end{tikzpicture}
+\end{center}
+\caption{A diagram for which the proof doesn't work}\label{f.collapse-incorrect-4}
+\end{figure}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{
@@ -516,9 +707,8 @@ $\overline{AB}$.
 \textbf{\R{שכל}}
 משולש שווה-שוקיים!
 
-\begin{figure}[tb]
+\begin{figure}[htb]
 \begin{center}
-
 \begin{tikzpicture}[scale=1.2]
 \coordinate (P) at (0,0);
 \node[xshift=4mm,yshift=1mm] at (P) {$P$};
@@ -613,9 +803,8 @@ $P$
 \textbf{מחוץ}
 למשולש כפי שניתן לראות מהציור המדוייק באיור%
 ~\ref{f.isoceles-wrong}.
-\begin{figure}
+\begin{figure}[htb]
 \begin{center}
-
 \begin{tikzpicture}[scale=.9]
 \coordinate (B)  at (0,0);
 \node[left] at (B) {$B$};

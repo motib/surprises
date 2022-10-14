@@ -101,59 +101,122 @@ $1$
 בנו
 $\overline{BH}$.
 \end{itemize}
-\begin{figure}[bt]
-\begin{center}
 
-\begin{tikzpicture}[scale=.5]
+\begin{figure}[htb]
+\begin{center}
+\begin{tikzpicture}[scale=.55]
 % Scale at 4
 
 % Coordinates of circle
 \coordinate (O) at (0,0);
 \coordinate (A) at (0,-4);
 \coordinate (B) at (0,4);
-\fill (O) circle(2pt) node[above right] {$O$};
-\fill (A) circle(2pt) node[below right] {$A$};
-\fill (B) circle(2pt) node[above right] {$B$};
-\draw (A) rectangle +(12pt,12pt);
+\node[above right] at (O) {$O$};
+\vertex{O};
+\node[below right] at (A) {$A$};
+\node[above right] at (B) {$B$};
+\draw (A) rectangle +(14pt,14pt);
 
 % Draw circle and diameter
-\node [thick,draw,circle through=(A),name path=circle] at (O) {};
-\draw [thick] (A) -- (B);
+\node [draw,circle through=(A),name path=circle] at (O) {};
+\draw (A) --  node[right] {$1$} (O) -- node[right] {$1$} (B);
 
 % Draw tangent at A
-\draw[thick,name path=tangent] ($(A)+(-4.5,0)$) -- ($(A)+(10.5,0)$);
+\draw[name path=tangent] ($(A)+(-4.5,0)$) -- ($(A)+(10.5,0)$);
 
 % Draw arc centered at A which intersects circle at C
-\draw[thick,name path=Aarc] (O)
+\draw[name path=Aarc] (O)
    arc [start angle=90,end angle=220,radius=4];
 \path[name intersections={of=circle and Aarc,by=C}];
-\fill (C) circle(2pt) node[left,xshift=-4pt] {$C$};
+\node[left,xshift=-4pt] at (C) {$C$};
 
 % Draw arc centered at C which intersects the first arc at D
-\draw[thick,name path=Carc] ($(C)+(260:4)$)
-   arc [start angle=260,end angle=280,radius=4];
+\draw[name path=Carc] ($(C)+(200:4)$)
+   arc [start angle=200,end angle=310,radius=4];
 \path[name intersections={of=Carc and Aarc,by=D}];
-\fill (D) circle(2pt) node[below left] {$D$};
+\node[below left] at (D) {$D$};
 
 % Draw O--D which intersects the tangent at E
-\draw[thick,name path=OD] (O) -- (D);
+\draw[name path=OD] (O) -- (D);
 \path[name intersections={of=tangent and OD,by=E}];
-\fill (E) circle(2pt) node[above left] {$E$};
+\node[above left] at (E) {$E$};
 
 % Find point H at length 3 from E
 \coordinate (F) at ($(E)+(4,0)$);
-\fill (F) circle(2pt) node[above right,xshift=4pt] {$F$};
+\vertex{F};
+\node[above right,xshift=6pt] at (F) {$F$};
 \coordinate (G) at ($(F)+(4,0)$);
-\fill (G) circle(2pt) node[above] {$G$};
+\vertex{G};
+\node[above] at (G) {$G$};
 \coordinate (H) at ($(G)+(4,0)$);
-\fill (H) circle(2pt) node[above] {$H$};
+\node[above,xshift=2pt] at (H) {$H$};
 
 % Draw BH of length approximately pi
-\draw[thick] (B) -- (H);
+\draw (B) -- (H);
+
+\draw[<->] ($(E)+(0,-.8)$) -- node[fill=white] {$1$} ($(F)+(0,-.8)$);
+\draw[<->] ($(F)+(0,-.8)$) -- node[fill=white] {$1$} ($(G)+(0,-.8)$);
+\draw[<->] ($(G)+(0,-.8)$) -- node[fill=white] {$1$} ($(H)+(0,-.8)$);
+
 \end{tikzpicture}
 \end{center}
-\caption{הבניה של \L{Kochansky}}\label{f.kochansky}
+\caption{Kocha\'{n}ski's approximation to $\pi$}\label{f.square-kochansky}
 \end{figure}
+
+
+%\begin{figure}[bt]
+%\begin{center}
+%
+%\begin{tikzpicture}[scale=.5]
+%% Scale at 4
+%
+%% Coordinates of circle
+%\coordinate (O) at (0,0);
+%\coordinate (A) at (0,-4);
+%\coordinate (B) at (0,4);
+%\fill (O) circle(2pt) node[above right] {$O$};
+%\fill (A) circle(2pt) node[below right] {$A$};
+%\fill (B) circle(2pt) node[above right] {$B$};
+%\draw (A) rectangle +(12pt,12pt);
+%
+%% Draw circle and diameter
+%\node [thick,draw,circle through=(A),name path=circle] at (O) {};
+%\draw [thick] (A) -- (B);
+%
+%% Draw tangent at A
+%\draw[thick,name path=tangent] ($(A)+(-4.5,0)$) -- ($(A)+(10.5,0)$);
+%
+%% Draw arc centered at A which intersects circle at C
+%\draw[thick,name path=Aarc] (O)
+%   arc [start angle=90,end angle=220,radius=4];
+%\path[name intersections={of=circle and Aarc,by=C}];
+%\fill (C) circle(2pt) node[left,xshift=-4pt] {$C$};
+%
+%% Draw arc centered at C which intersects the first arc at D
+%\draw[thick,name path=Carc] ($(C)+(260:4)$)
+%   arc [start angle=260,end angle=280,radius=4];
+%\path[name intersections={of=Carc and Aarc,by=D}];
+%\fill (D) circle(2pt) node[below left] {$D$};
+%
+%% Draw O--D which intersects the tangent at E
+%\draw[thick,name path=OD] (O) -- (D);
+%\path[name intersections={of=tangent and OD,by=E}];
+%\fill (E) circle(2pt) node[above left] {$E$};
+%
+%% Find point H at length 3 from E
+%\coordinate (F) at ($(E)+(4,0)$);
+%\fill (F) circle(2pt) node[above right,xshift=4pt] {$F$};
+%\coordinate (G) at ($(F)+(4,0)$);
+%\fill (G) circle(2pt) node[above] {$G$};
+%\coordinate (H) at ($(G)+(4,0)$);
+%\fill (H) circle(2pt) node[above] {$H$};
+%
+%% Draw BH of length approximately pi
+%\draw[thick] (B) -- (H);
+%\end{tikzpicture}
+%\end{center}
+%\caption{הבניה של \L{Kochansky}}\label{f.kochansky}
+%\end{figure}
 
 \begin{theorem}
 $\overline{BH}=\sqrt{\disfrac{40}{3}-2\sqrt{3}}\approx \pi$.

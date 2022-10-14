@@ -439,8 +439,8 @@ $\theta=60^\circ$:
 \textbf{ניאוסיס}
 שהוא מקל עם שני סימנים בלבד. נניח שהמרחק בין שני הסימנים הוא
 $1$:
+\begin{figure}[htb]
 \begin{center}
-
 \begin{tikzpicture}[scale=3.5]
 \draw (-1,1.05) rectangle +(3.2,.1);
 \draw[thick] (1.89,1.05) -- +(0,.1);
@@ -448,6 +448,8 @@ $1$:
 \draw[<->] (.73,1.25) -- node[fill=white] {$1$} (1.89,1.25);
 \end{tikzpicture}
 \end{center}
+\caption{ניאוסיס}\label{f.neusis}
+\end{figure}
 תהי 
 $\alpha$
 זווית שרירותית
@@ -685,22 +687,58 @@ $\overline{AB}$.
 \textbf{עקומת הקוודרטריקס}
 או פשוט
 \textbf{קוודרטריקס}.
-\begin{figure}[bt]
-\begin{center}
 
-\begin{tikzpicture}[scale=.8,domain=.03:1.555,samples=100]
-\draw (.1,.2) node[below left,xshift=-8pt] {$A$} -- (7.8,.2) node[below right] {$B$} -- (8,7.8) node[above right] {$C$} -- (.1,7.8) node[above left,xshift=-8pt] {$D$} -- cycle;
-%\draw (.1,7.8) -- (.1,.2) -- (8,.1) -- (8,7.8);
-\draw[rounded corners,rotate=60] (0,-.2) rectangle (8.2,.2);
-\draw[rounded corners] (-.1,4.8) rectangle (8.2,5.2);
-\fill (2.9,5) circle [radius=3pt];
-\fill (.1,.2) circle [radius=3pt];
+\begin{figure}
+\begin{center}
+\begin{subfigure}{.4\textwidth}
+\begin{tikzpicture}[scale=.6,domain=.03:1.555,samples=100]
+\draw (.1,.2)
+  node[below left,xshift=-8pt] {$A$} -- 
+  (7.8,.2) 
+  node[below right] {$B$} -- 
+  (8,7.8) 
+  node[above right] {$C$} -- 
+  (.1,7.8) node[above left,xshift=-8pt] {$D$} -- 
+  cycle;
+\draw[thick,dashed,name path=arm] (.1,.2) -- node[right,very near end] {$l_2$} (59.6:7.9);
+\draw[thick,dashed,name path=horiz] (.1,5) -- node[above,near end] {$l_1$} +(7.8,0);
+\path[name intersections={of=arm and horiz,by={A}}];
+\node[above left,xshift=-2pt] at (A) {$P$};
+\vertex{A};
 \draw[thick] plot (4.6*.637*\x,{12.2*.637*\x*cot(\x r)});
 \end{tikzpicture}
+\caption{A quadratrix curve}\label{f.trisect-quad-curve}
+\end{subfigure}
+\hspace{3em}
+\begin{subfigure}{.4\textwidth}
+\begin{tikzpicture}[scale=.6,domain=.03:1.555,samples=100]
+\draw (.1,.2) node[below left,xshift=-8pt] {$A$} -- (7.8,.2) node[below right] {$B$} -- (8,7.8) node[above right] {$C$} -- (.1,7.8) node[above left,xshift=-8pt] {$D$} -- cycle;
+\draw[rounded corners,rotate=60] (0,-.2) rectangle (8.2,.2);
+\draw[rounded corners] (-.1,4.8) rectangle (8.2,5.2);
+\fill (2.9,5) circle [radius=2.5pt];
+\draw[thick] plot (4.6*.637*\x,{12.2*.637*\x*cot(\x r)});
+\end{tikzpicture}
+\caption{A quadratrix compass}\label{f.trisect-quad-compass}
+\end{subfigure}
 \end{center}
-\selectlanguage{hebrew}
-\caption{קוודרטריקס}\label{f.quad}
 \end{figure}
+
+%\begin{figure}[bt]
+%\begin{center}
+%
+%\begin{tikzpicture}[scale=.8,domain=.03:1.555,samples=100]
+%\draw (.1,.2) node[below left,xshift=-8pt] {$A$} -- (7.8,.2) node[below right] {$B$} -- (8,7.8) node[above right] {$C$} -- (.1,7.8) node[above left,xshift=-8pt] {$D$} -- cycle;
+%%\draw (.1,7.8) -- (.1,.2) -- (8,.1) -- (8,7.8);
+%\draw[rounded corners,rotate=60] (0,-.2) rectangle (8.2,.2);
+%\draw[rounded corners] (-.1,4.8) rectangle (8.2,5.2);
+%\fill (2.9,5) circle [radius=3pt];
+%\fill (.1,.2) circle [radius=3pt];
+%\draw[thick] plot (4.6*.637*\x,{12.2*.637*\x*cot(\x r)});
+%\end{tikzpicture}
+%\end{center}
+%\selectlanguage{hebrew}
+%\caption{קוודרטריקס}\label{f.quad}
+%\end{figure}
 
 כאשר מזיזים את הסרגל האופקי במהירות אחידה, החיבור מאלץ את הסרגל השני להסתובב במהירות זוותית קבועה. למעשה זו ההגדרה של הקוודרטריקס.
 כאשר קואורדינטת ה-%

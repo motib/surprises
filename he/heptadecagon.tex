@@ -17,6 +17,31 @@ $17$
 $17$
 צלעות.
 נציג גם בניה של המצולע ובנוסף בניות של משולש משוכלל ומחומש משוכלל.
+
+The only regular polygons that the Greeks knew how to construct with a straightedge and compass were the triangle, the square, the pentagon and the regular polygon with $15$ sides. Given a regular polygon with $n$ sides, a polygon with $2n$ sides can be constructed by circumscribing the polygon with a circle and bisecting the central angle (Fig.~\ref{f.hept-double}). No further progress was made until 1796 when Carl Friedrich Gauss\index{Gauss, Carl Friedrich} awoke one morning, just before his 19th birthday, and by ``concentrated thought'' figured out how to construct a regular \emph{heptadecagon},\index{Heptadecagon} a regular polygon with $17$ sides. This achievement inspired him to become a mathematician.
+
+Section~\ref{s.hept-regular} discusses the relation between the side of a polygon inscribed in a circle and the central angle that it subtends. Section~\ref{s.fundamental} states without proof the Fundamental Theorem of Algebra. Section~\ref{s.roots} presents the \emph{roots of unity}, the roots of the polynomial $x^n-1$, which are central to Gauss's proof. Sections~\ref{s.gauss} and~\ref{s.derivation} present Gauss's proof which is based on symmetries of roots of polynomials. Gauss derived a \emph{formula} proving that the heptadecagon is constructible, but a geometric construction was not given for almost a century. Section~\ref{s.construction} gives an elegant construction by James J. Callagy\index{Callagy, James J.}. Section~\ref{s.hept-pentagon} shows how constructions of a regular pentagon can be derived using both geometry and trigonometry.
+
+Some of the material is more straightforward if presented using complex numbers. This material is set off in boxes that can be skipped.
+\begin{figure}[b]
+\begin{center}
+\begin{tikzpicture}[scale=.4]
+\coordinate (O) at (0,0);
+\vertex{O};
+\foreach \x/\name/\n/\po in {0/a/A/right,1/b/B/above,2/c/C/left,3/d/D/below left,4/e/E/below right} {
+  \coordinate (\name) at ($(O)+(\x*72+18:3cm)$);
+}
+\draw (a) -- (b) -- (c) -- (d) -- (e) -- (a);
+\node[draw,circle through=(a)] at (O) {};
+\draw (d) -- (O) -- (e);
+\draw [very thick,dotted] (O) -- (-90:3) -- (e) -- (-90:3) -- (d);
+\end{tikzpicture}
+\end{center}
+\caption{Constructing a regular polynomial with $10$ sides from a regular pentagon}\label{f.hept-double}
+\end{figure}
+
+
+
 \section{בניה של מצולעים משוכללים}
 
 \subsection{היסטוריה}
@@ -106,8 +131,8 @@ $\cos \theta=\disfrac{\overline{OB}}{\overline{OC}}=\overline{OB}$.
 $\overline{AC}$
 הוא צלע של המצולע.
 
+\begin{figure}
 \begin{center}
-
 \begin{tikzpicture}[scale=1.5]
 \coordinate (O) at (0,0) node[left] {$O$} node[above right,xshift=32pt] {$\theta$};
 \coordinate (A) at (4,0);
@@ -123,27 +148,18 @@ $\overline{AC}$
 \draw[thick] (A) -- (C);
 \path (O) -- node[below] {$\cos \theta$} (B); 
 \end{tikzpicture}
+\caption{הקוסינוס של הזווית המרכזית של מצולע משוכלל}
+\label{}
 \end{center}
+\end{figure}
+
 הזווית המרכזית של מצולע משוכלל עם 
 $17$
 צלעות היא
 $\disfrac{2\pi}{17}$
 רדיאנים או
 $\disfrac{360^\circ}{17}\approx 21.12^\circ$. 
-\begin{center}
 
-\begin{tikzpicture}[scale=1]
-\coordinate (O) at (0,0);
-\foreach \x/\name in {0/a,1/b,2/c,3/d,4/e,5/f,6/g,7/h,8/i,9/j,10/k,11/l,12/m,13/n,14/o,15/p,16/q} {
-  \coordinate (\name) at ($(O)+(\x*21.12:3cm)$);
-  \draw (O) -- (\name);
-  \fill (\name) circle (1pt);
-}
-\draw (a) -- (b) -- (c) -- (d) -- (e) -- (f) -- (g) -- (h) -- (i) -- (j) -- (k) -- (l) -- (m) -- (n) -- (o) -- (p) -- (q) -- cycle;
-\node[above right,xshift=39pt] at (O) {$2\pi/17=21.12^\circ$};
-\draw (O) circle (3cm);
-\end{tikzpicture}
-\end{center}
 \L{Gauss}
 הראה ש:
 
@@ -448,7 +464,7 @@ b_3&=& r^{10}+ r^{11} + r^{7} + r^6\,.
 $b_0+b_2=a_0, b_1+b_3=a_1$
 )איורים~%
 \ref{f.b0b2}, \ref{f.b1b3}(.
-\begin{figure}
+%\begin{figure}
 
 \begin{eqn}
 b_0b_2&=&(r + r^{13} + r^{16} +r^4)\;\times\\
@@ -459,10 +475,10 @@ b_0b_2&=&(r + r^{13} + r^{16} +r^4)\;\times\\
 && r^{13}+r^{2}+r^{12}+r^6\\
 &=&-1\,.
 \end{eqn}
-\selectlanguage{hebrew}
-\caption{החישוב של $b_0b_2$}\label{f.b0b2}
-\end{figure}
-\begin{figure}
+%\selectlanguage{hebrew}
+%\caption{החישוב של $b_0b_2$}\label{f.b0b2}
+%\end{figure}
+%\begin{figure}
 
 \begin{eqn}
 b_1b_3&=&(r^3 + r^{5} + r^{14} +r^{12})\times\\
@@ -473,9 +489,9 @@ b_1b_3&=&(r^3 + r^{5} + r^{14} +r^{12})\times\\
 && r^{5}+r^{6}+r^{2}+r^1\\
 &=&-1\,.
 \end{eqn}
-\selectlanguage{hebrew}
-\caption{החישוב של $b_1b_3$}\label{f.b1b3}
-\end{figure}
+%\selectlanguage{hebrew}
+%\caption{החישוב של $b_1b_3$}\label{f.b1b3}
+%\end{figure}
 
 נסכם את החישובים:
 
@@ -505,8 +521,8 @@ $a_0,a_1$,
 $b_0,b_1$
 )איור~%
 \ref{fig.b0}, \ref{fig.b1}(.
-\begin{figure}[tb]
 
+\begin{figure}[htb]
 \begin{eqn}
 b_0&=&\disfrac{a_0+\sqrt{a_0^2+4}}{2}\\
 &=&\disfrac{
@@ -520,13 +536,7 @@ b_0&=&\disfrac{a_0+\sqrt{a_0^2+4}}{2}\\
 &=&\disfrac{
      (-1+\sqrt{17}) + 
      \sqrt{34-2\sqrt{17}}
-   }{4}\,,
-\end{eqn}%
-\caption{\R{החישוב של} $b_0$}\label{fig.b0}
-\end{figure}
-\begin{figure}
-
-\begin{eqn}
+   }{4}\\
 b_1&=&\disfrac{a_1+\sqrt{a_1^2+4}}{2}\\
 &=&\disfrac{
      \disfrac{(-1-\sqrt{17})}{2} + 
@@ -542,7 +552,7 @@ b_1&=&\disfrac{a_1+\sqrt{a_1^2+4}}{2}\\
    }{4}\,.
 \end{eqn}
 \selectlanguage{hebrew}
-\caption{החישוב של $b_1$}\label{fig.b1}
+\caption{החישוב של $b_0,b_1$}\label{fig.b1}
 \end{figure}
 לבסוף יהי
 $c_0,c_4$ 
@@ -569,8 +579,34 @@ $c_0=r^1+r^{16}$
 )איור~
 \ref{fig.c0}(.
 
-\begin{figure}
+\begin{figure}[htb]
+\begin{center}
 
+\begin{tikzpicture}[scale=1.5]
+\coordinate (O) at (0,0) node[left] {$O$} node[above right,xshift=32pt] {$\theta$} node[below right,xshift=32pt] {$\theta$};
+\coordinate (A) at (4,0);
+\node[right] at (A) {$1$};
+\draw (O) -- (A);
+\coordinate (C) at (21.12:4cm);
+\coordinate (D) at (-21.12:4cm);
+\draw (D) arc(-21.12:21.12:4);
+\draw (D) -- (O) -- (C);
+\node[right] at (C) {$r^1$};
+\node[right] at (D) {$r^{16}$};
+\draw (C) -- (C |- A) coordinate (B);
+\draw (D) -- (D |- A);
+%\node[below left] at (B) {$B$};
+\draw[rotate=90] (B) rectangle +(5pt,5pt);
+\draw (D) -- node[left,xshift=-6pt] {$-\sin\theta$} (A) -- node[left,xshift=-6pt] {$\sin \theta$} (C);
+\path (O) -- node[fill=white] {$\cos \theta$} (B);
+\end{tikzpicture}
+\caption{בניית צלע מהזווית המרכזית שהוא כולא}\label{fig.two-cosine}
+\end{center}
+\end{figure}
+
+
+
+\begin{figure}
 \begin{eqn}
 c_0&=&\disfrac{b_0+\sqrt{b_0^2-4b_1}}{2}\\
 &=&\disfrac{
@@ -643,31 +679,6 @@ $r_1,r_{16}$
 שוות עם סימנים הפוכים ולכן הסכום שלהם אפס. קואורדינטות ה-%
 $x$
 נספרות פעמיים:
-%\begin{figure}
-\begin{center}
-
-\begin{tikzpicture}[scale=1.5]
-\coordinate (O) at (0,0) node[left] {$O$} node[above right,xshift=32pt] {$\theta$} node[below right,xshift=32pt] {$\theta$};
-\coordinate (A) at (4,0);
-\node[right] at (A) {$1$};
-\draw (O) -- (A);
-\coordinate (C) at (21.12:4cm);
-\coordinate (D) at (-21.12:4cm);
-\draw (D) arc(-21.12:21.12:4);
-\draw (D) -- (O) -- (C);
-\node[right] at (C) {$r^1$};
-\node[right] at (D) {$r^{16}$};
-\draw (C) -- (C |- A) coordinate (B);
-\draw (D) -- (D |- A);
-%\node[below left] at (B) {$B$};
-\draw[rotate=90] (B) rectangle +(5pt,5pt);
-\draw (D) -- node[left,xshift=-6pt] {$-\sin\theta$} (A) -- node[left,xshift=-6pt] {$\sin \theta$} (C);
-\path (O) -- node[below] {$\cos \theta$} (B);
-\end{tikzpicture}
-%\caption{בניית צלע מהזווית המרכזית שהוא כולא}\label{fig.two-cosine}
-\end{center}
-%\end{figure}
-
 
 הוכחנו שניתן לבנות קטע קו באורך הקוסינוס של הזווית המרכזית של מצולע משוכלל עם 
 $17$
@@ -805,8 +816,9 @@ $-4\sqrt{34-2\sqrt{17}}$
 $O$,
 עם קוטרים ניצבים
 $\overline{PQ},\overline{RS}$.
-\begin{center}
 
+\begin{figure}[htb]
+\begin{center}
 \begin{tikzpicture}[scale=1.5]
 \clip (-5,-1.8) rectangle (5,1.8);
 
@@ -845,7 +857,9 @@ $\overline{PQ},\overline{RS}$.
 }
 } ($(B)+(0,-16pt)$);
 \end{tikzpicture}
+\caption{בניית \L{heptadecagon} (1)}\label{}
 \end{center}
+\end{figure}
 בנו נקודה
 $A$
 כך ש-%
@@ -891,8 +905,9 @@ $D$
 $\overline{OP}$
 כך ש-%
 $\overline{CD}=\overline{CA}$:
-\begin{center}
 
+\begin{figure}[htb]
+\begin{center}
 \begin{tikzpicture}[scale=1.5]
 \clip (-5,-1.5) rectangle (5,1.5);
 \coordinate (O) at (0,0);
@@ -929,7 +944,9 @@ $\overline{CD}=\overline{CA}$:
 }
 \draw (O) rectangle(+6pt,+6pt);
 \end{tikzpicture}
+\caption{בניית \L{heptadecagon} (2)}\label{}
 \end{center}
+\end{figure}
 
 \begin{eqn}
 \overline{CD}=\overline{CA}&=&\sqrt{\overline{OA}^2+\overline{OC}^2}\\
@@ -974,9 +991,8 @@ $\overline{OG}=\overline{OF}$.
 $\overline{MO}=1-\overline{MQ}=1-\overline{MF}$:
 
 
-
+\begin{figure}[htb]
 \begin{center}
-
 \begin{tikzpicture}[scale=1.5]
 \clip (-5,-1.5) rectangle (5,1.5);
 \coordinate (O) at (0,0);
@@ -998,7 +1014,7 @@ $\overline{MO}=1-\overline{MQ}=1-\overline{MF}$:
 \path[name intersections={of=circ and yaxis,by={F1,F}}];
 \draw (M) -- node[below] {$f$} (F);
 
-\draw[name path=OEarc,thick,dashed] (E) arc(0:-180:1.025cm);
+\draw[name path=OEarc,thick] (E) arc(0:-180:1.025cm);
 \path[name path=OFcircle] (O)
   let
     \p1 = ($(O)-(F)$)
@@ -1029,8 +1045,9 @@ $\overline{MO}=1-\overline{MQ}=1-\overline{MF}$:
 \draw[rotate=30] (G) rectangle +(+6pt,+6pt);
 
 \end{tikzpicture}
+\caption{בניית \L{heptadecagon} (3)}\label{}
 \end{center}
-
+\end{figure}
 
 
 
@@ -1140,31 +1157,32 @@ $B$
 מגדיר את
 $\overline{AB}$,
 הצלע של המחומש החסום על ידי המעגל.
-\begin{center}
 
-\begin{tikzpicture}[scale=1.3]
-\coordinate (O) at (0,0);
-\fill (O) circle(1pt) node[above left,xshift=1pt,yshift=4pt] {$O$};
-\coordinate (a) at (3,0);
-\fill (a) circle(1pt) node[right] {$A$};
-\coordinate (b) at (72:3cm);
-\fill (b) circle(1pt) node[above] {$B$};
-\draw (O) -- (a) -- (b) -- cycle;
-\node[above right,xshift=16pt] at (O) {$36^\circ$};
-\draw[very thick,name path=P1] (O) -- (36:3cm) coordinate (ten) node[above right] {$C$};
-\path[name path=P2] (a) -- (b);
-\path[name intersections={of=P1 and P2, by={right}}];
-\coordinate (cos) at (ten|-a);
-\draw[rotate=126] (right) rectangle +(8pt,8pt);
-\draw[rotate=90] (cos) rectangle +(8pt,8pt);
-\draw[very thick] (ten) -- (cos) node[below] {$D$};
-\fill (right) circle (1pt);
-\fill (ten) circle (1pt);
-\fill (cos) circle(1pt);
-\path (O) -- node[below] {$\cos 36^\circ$} (cos);
-\draw (a) arc (0:90:3cm);
-\end{tikzpicture}
-\end{center}
+%\begin{center}
+%
+%\begin{tikzpicture}[scale=1.3]
+%\coordinate (O) at (0,0);
+%\fill (O) circle(1pt) node[above left,xshift=1pt,yshift=4pt] {$O$};
+%\coordinate (a) at (3,0);
+%\fill (a) circle(1pt) node[right] {$A$};
+%\coordinate (b) at (72:3cm);
+%\fill (b) circle(1pt) node[above] {$B$};
+%\draw (O) -- (a) -- (b) -- cycle;
+%\node[above right,xshift=16pt] at (O) {$36^\circ$};
+%\draw[very thick,name path=P1] (O) -- (36:3cm) coordinate (ten) node[above right] {$C$};
+%\path[name path=P2] (a) -- (b);
+%\path[name intersections={of=P1 and P2, by={right}}];
+%\coordinate (cos) at (ten|-a);
+%\draw[rotate=126] (right) rectangle +(8pt,8pt);
+%\draw[rotate=90] (cos) rectangle +(8pt,8pt);
+%\draw[very thick] (ten) -- (cos) node[below] {$D$};
+%\fill (right) circle (1pt);
+%\fill (ten) circle (1pt);
+%\fill (cos) circle(1pt);
+%\path (O) -- node[below] {$\cos 36^\circ$} (cos);
+%\draw (a) arc (0:90:3cm);
+%\end{tikzpicture}
+%\end{center}
 
 
 
@@ -1181,13 +1199,15 @@ $\overline{AC}=\overline{AD}$.
 $1$
 ואורכי האלכסונים ב-%
 $x$.
-\begin{center}
 
-\begin{tikzpicture}[scale=.9]
+\begin{figure}[htb]
+\begin{center}
+\begin{tikzpicture}[scale=.8]
 \coordinate (O) at (0,0);
+\vertex{O};
+\node[above left,xshift=1pt,yshift=4pt] at (O) {$O$};
 \foreach \x/\name/\n/\po in {0/a/A/right,1/b/B/above,2/c/C/left,3/d/D/below left,4/e/E/below right} {
   \coordinate (\name) at ($(O)+(\x*72+18:3cm)$);
-  \fill (\name) circle (1.5pt);
   \node[\po] at (\name) {$\n$};
 }
 \draw (a) -- node[above] {$1$} (b) -- node[above] {$1$} (c) -- node[left] {$1$} (d) -- node[below] {$1$} (e) -- node[right] {$1$} (a);
@@ -1195,13 +1215,40 @@ $x$.
 \draw[thick,name path=ad] (a) -- node[above] {$x$} (d);
 \draw[thick,name path=cd] (c) -- node[above] {$x$} (e);
 \path[name intersections={of=ad and cd,by={f}}];
-\fill (f) circle (1.5pt) node[above] {$\psi$} node[below] {$\psi$} node[right,xshift=6pt] {$F$};
+\node[above] at (f) {$\psi$};
+\vertex{f};
+\node[below] at (f) {$\psi$};
+\node[right,xshift=6pt] at (f) {$F$};
 \node[below right,xshift=14pt] at (c) {$\theta$};
 \node[below left,xshift=-14pt] at (a) {$\theta$};
 \node[above right,xshift=16pt] at (d) {$\phi$};
 \node[above left,xshift=-16pt] at (e) {$\phi$};
 \end{tikzpicture}
 \end{center}
+\caption{בניית מחומש משוכלל (1)}\label{f.hept-pentagon2}
+\end{figure}
+%
+%\begin{center}
+%
+%\begin{tikzpicture}[scale=.9]
+%\coordinate (O) at (0,0);
+%\foreach \x/\name/\n/\po in {0/a/A/right,1/b/B/above,2/c/C/left,3/d/D/below left,4/e/E/below right} {
+%  \coordinate (\name) at ($(O)+(\x*72+18:3cm)$);
+%  \fill (\name) circle (1.5pt);
+%  \node[\po] at (\name) {$\n$};
+%}
+%\draw (a) -- node[above] {$1$} (b) -- node[above] {$1$} (c) -- node[left] {$1$} (d) -- node[below] {$1$} (e) -- node[right] {$1$} (a);
+%\draw[thick] (a) -- node[above] {$x$} (c);
+%\draw[thick,name path=ad] (a) -- node[above] {$x$} (d);
+%\draw[thick,name path=cd] (c) -- node[above] {$x$} (e);
+%\path[name intersections={of=ad and cd,by={f}}];
+%\fill (f) circle (1.5pt) node[above] {$\psi$} node[below] {$\psi$} node[right,xshift=6pt] {$F$};
+%\node[below right,xshift=14pt] at (c) {$\theta$};
+%\node[below left,xshift=-14pt] at (a) {$\theta$};
+%\node[above right,xshift=16pt] at (d) {$\phi$};
+%\node[above left,xshift=-16pt] at (e) {$\phi$};
+%\end{tikzpicture}
+%\end{center}
 $\triangle ACE\cong \triangle CAD$
 לפי צלע-צלע-צלע כך ש-%
 $\angle ACE\!=\!\angle CAD\!=\!\theta$. $\triangle AED\cong\triangle CDE$
@@ -1224,16 +1271,20 @@ $\overline{DC}$
 $F$
 נקודת החיתוך שלו עם
 $\overline{AC}$.
-\begin{center}
 
-\begin{tikzpicture}[scale=.9]
+
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=.8]
 \coordinate (O) at (0,0);
+\vertex{O};
+\node[above left,xshift=1pt,yshift=4pt] at (O) {$O$};
+
 \foreach \x/\name/\n/\po in {0/a/A/right,1/b/B/above,2/c/C/left,3/d/D/below left,4/e/E/below right} {
   \coordinate (\name) at ($(O)+(\x*72+18:3cm)$);
-  \fill (\name) circle (1.5pt);
   \node[\po] at (\name) {$\n$};
 }
-\draw (a) -- node[above] {$1$} (b) --  node[above] {$1$} (c) -- node[left] {$1$} (d) -- node[below] {$1$} (e);
+\draw (a) -- node[above] {$1$} (b) -- node[above] {$1$} (c) -- node[left] {$1$} (d) -- node[below] {$1$} (e);
 \draw[very thick] (e)-- node[right] {$1$} (a);
 \draw[very thick] (a) -- (c);
 \draw[very thick] (c) -- node[below] {$x$} (e);
@@ -1241,7 +1292,7 @@ $\overline{AC}$.
 \path[name path=ef] (e) -- +(108:5);
 \path[name path=ac] (a) -- (c);
 \path[name intersections={of=ac and ef,by={f}}];
-\fill (f) circle(1.5pt);
+\vertex{f};
 \node[above] at (f) {$F$};
 \draw[very thick] (e) -- node[right] {$1$} (f);
 \path (a) -- node[above,xshift=-4pt] {$x-1$} (f);
@@ -1252,6 +1303,76 @@ $\overline{AC}$.
 \node[above,yshift=12pt] at (e) {$\alpha$};
 \end{tikzpicture}
 \end{center}
+\caption{Construction of a regular pentagon (2)}\label{f.hept-pentagon3}
+\end{figure}
+
+\subsection*{What Is the Surprise?}
+
+It is surprising that two millennia passed from the work of the Greeks on construction to the discovery by Gauss of the constructibility of the regular heptadecagon. It is also surprising that the problem was solved not by using geometry but by inventing new algebraic methods that had a far-reaching influence in mathematics.
+
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=.8]
+\coordinate (O) at (0,0);
+\vertex{O};
+\node[above left,xshift=1pt,yshift=4pt] at (O) {$O$};
+
+\foreach \x/\name/\n/\po in {0/a/A/right,1/b/B/above,2/c/C/left,3/d/D/below left,4/e/E/below right} {
+  \coordinate (\name) at ($(O)+(\x*72+18:3cm)$);
+  \node[\po] at (\name) {$\n$};
+}
+\draw (a) -- node[above] {$1$} (b) -- node[above] {$1$} (c) -- node[left] {$1$} (d) -- node[below] {$1$} (e);
+\draw[very thick] (e)-- node[right] {$1$} (a);
+\draw[very thick] (a) -- (c);
+\draw[very thick] (c) -- node[below] {$x$} (e);
+
+\path[name path=ef] (e) -- +(108:5);
+\path[name path=ac] (a) -- (c);
+\path[name intersections={of=ac and ef,by={f}}];
+\vertex{f};
+\node[above] at (f) {$F$};
+\draw[very thick] (e) -- node[right] {$1$} (f);
+\path (a) -- node[above,xshift=-4pt] {$x-1$} (f);
+\node[below left] at (a) {$\alpha$};
+\node[below right,xshift=2pt] at (f) {$\alpha$};
+\path (c) -- node[above] {$1$} (f);
+\draw ($(e)+(72:.5)$) arc(72:144:.5cm);
+\node[above,yshift=12pt] at (e) {$\alpha$};
+\end{tikzpicture}
+\end{center}
+\caption{בניית מחומש משוכלל (2)}\label{f.hept-pentagon3}
+\end{figure}
+
+
+%
+%\begin{center}
+%
+%\begin{tikzpicture}[scale=.9]
+%\coordinate (O) at (0,0);
+%\foreach \x/\name/\n/\po in {0/a/A/right,1/b/B/above,2/c/C/left,3/d/D/below left,4/e/E/below right} {
+%  \coordinate (\name) at ($(O)+(\x*72+18:3cm)$);
+%  \fill (\name) circle (1.5pt);
+%  \node[\po] at (\name) {$\n$};
+%}
+%\draw (a) -- node[above] {$1$} (b) --  node[above] {$1$} (c) -- node[left] {$1$} (d) -- node[below] {$1$} (e);
+%\draw[very thick] (e)-- node[right] {$1$} (a);
+%\draw[very thick] (a) -- (c);
+%\draw[very thick] (c) -- node[below] {$x$} (e);
+%
+%\path[name path=ef] (e) -- +(108:5);
+%\path[name path=ac] (a) -- (c);
+%\path[name intersections={of=ac and ef,by={f}}];
+%\fill (f) circle(1.5pt);
+%\node[above] at (f) {$F$};
+%\draw[very thick] (e) -- node[right] {$1$} (f);
+%\path (a) -- node[above,xshift=-4pt] {$x-1$} (f);
+%\node[below left] at (a) {$\alpha$};
+%\node[below right,xshift=2pt] at (f) {$\alpha$};
+%\path (c) -- node[above] {$1$} (f);
+%\draw ($(e)+(72:.5)$) arc(72:144:.5cm);
+%\node[above,yshift=12pt] at (e) {$\alpha$};
+%\end{tikzpicture}
+%\end{center}
 $\triangle ACE$ 
 הוא משולש שווה-שוקיים עם זוויות בסיס
 $\alpha$. $\triangle AEF$
@@ -1271,8 +1392,10 @@ x^2-x-1=0\,,
 \disfrac{1+\sqrt{5}}{2}\,,
 \]
 ניתן לבנות.
-\selectlanguage{hebrew}
 
+\subsection*{What Is the Surprise?}
+
+It is surprising that two millennia passed from the work of the Greeks on construction to the discovery by Gauss of the constructibility of the regular heptadecagon. It is also surprising that the problem was solved not by using geometry but by inventing new algebraic methods that had a far-reaching influence in mathematics.
 
 \subsection*{מקורות}
 

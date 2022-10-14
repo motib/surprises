@@ -45,8 +45,9 @@ $O$.
 אם נצליח לבנות את הנקודות
 $X,Y$
 המסומנות באיור שלהלן, נוכל לטעון שהצלחנו לבנות את נקודות החיתוך של מעגל נתון עם קו נתון ושל שני מעגלים נתונים. בהמשך, המעגל הנתון יצוייר בקו רגיל והמעגלים שמשמשים רק להדגמת הבניה יצויירו מקווקווים.
+\begin{figure}[htb]
 \begin{center}
-
+\begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}[scale=.9]
 \fill (0,0) node[above right] {$O$} circle[radius=1.5pt];
 \draw[thick,dashed,name path=circle] (0,0) circle[radius=2cm];
@@ -56,7 +57,14 @@ $X,Y$
 \path [name intersections={of=circle and line,by={X,Y}}];
 \fill (X) node[above right,xshift=-2pt,yshift=4pt] {$X$} circle[radius=1.5pt];
 \fill (Y) node[above left] {$Y$} circle[radius=1.5pt];
-\begin{scope}[xshift=6cm]
+\end{tikzpicture}
+\caption{$X$, $Y$
+הם נקודות החיתוך של קו ומעגל}
+\label{}
+\end{subfigure}
+\hspace{3em}
+\begin{subfigure}{.4\textwidth}
+\begin{tikzpicture}[scale=.9]
 \fill (0,0) node[above right] {$O_1$} circle[radius=1.5pt];
 \fill (3,0) node[above right] {$O_2$} circle[radius=1.5pt];
 \draw[thick,dashed,name path=circle1] (0,0) circle[radius=2cm];
@@ -68,9 +76,14 @@ $X,Y$
 \path [name intersections={of=circle1 and circle2,by={X,Y}}];
 \fill (X) node[above,yshift=4pt] {$X$} circle[radius=1.5pt];
 \fill (Y) node[below,yshift=-4pt] {$Y$} circle[radius=1.5pt];
-\end{scope}
 \end{tikzpicture}
+\caption{$X$, $Y$
+הם נקודות החיתוך של שני מעגלים}
+\label{}
+\end{subfigure}
 \end{center}
+\end{figure}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 תחילה נביא חמש בניות עזר נחוצות )סעיפים
 \ref{s.parallel}--\ref{s.root}%
@@ -132,9 +145,9 @@ $\overline{AO}$
 $Q$
 את החיתוך של הקרן עם
 $\overline{SB}$.
-\begin{center}
 
-\vspace*{-4pt}
+\begin{figure}[htb]
+\begin{center}
 \begin{tikzpicture}
 \draw[name path=pq] (-4,0) -- (4,0);
 \draw (-2,-2) node[below left] {$A$} coordinate (A) -- (2,-2) node[below right] {$B$} coordinate (B);
@@ -154,8 +167,9 @@ $\overline{SB}$.
 \fill (0,-2) coordinate (M) node[below right] {$M$} circle[radius=1.5pt];
 \draw (S) -- (M);
 \end{tikzpicture}
-\vspace*{-4pt}
+\caption{בניית קו מקביל לקו מכוון}\label{}
 \end{center}
+\end{figure}
 
 \textbf{%
 טענה:
@@ -212,150 +226,150 @@ $\angle ABS = \angle PQS$.
 כאשר המשוואה האחרונה מתקבלת ממשפט
 \ref{thm.ceva}.\qed
 
-\textbf{הוכחה של משפט \L{Ceva}:}
-\begin{center}
-
-\vspace*{-4pt}
-\begin{tikzpicture}
-\path[name path=pq] (-4,0) -- (4,0);
-\draw (-2,-2) node[below left] {$A$} coordinate (A) -- (2,-2) node[below right] {$B$} coordinate (B);
-\coordinate (M) at (0,-2);
-\draw[name path=as] (A) -- ++(50:4cm) node[above] {$S$} coordinate (S);
-\draw[name path=sb] (S) -- (B);
-\path [name intersections={of=pq and as,by={P}}];
-\path [name intersections={of=pq and sb,by={Q}}];
-\path[name path=pb] (P) -- (B);
-\path[name path=qa] (Q) -- (A);
-\path [name intersections={of=pb and qa,by={O}}];
-\draw[fill=gray!40] (B) -- (O) -- (Q);
-\draw[fill=gray!70] (S) -- (O) -- (Q);
-\draw (B) -- (O) -- (A);
-\draw (S) -- (O) -- (A);
-\draw (A) -- (B) -- (S) -- cycle;
-\draw (S) -- (O);
-\draw (B) -- (O);
-\fill (A) circle[radius=1.5pt];
-\fill (B) circle[radius=1.5pt];
-\fill (S) circle[radius=1.5pt];
-\fill (Q) node[above right] {$Q$} circle[radius=1.5pt];
-\fill (O) node[above left] {$O$} circle[radius=1.5pt];
-\path[name path=al1] (O) -- ($(Q)!(O)!(B)$);
-\draw[rotate=-155] ($(Q)!(O)!(B)$) rectangle +(7pt,7pt);
-\path [name intersections={of=al1 and sb,by={A1}}];
-\draw[thick,dashed] (O) -- (A1);
-\begin{scope}[xshift=6cm]
-\path[name path=pq] (-4,0) -- (4,0);
-\draw (-2,-2) node[below left] {$A$} coordinate (A) -- (2,-2) node[below right] {$B$} coordinate (B);
-\coordinate (M) at (0,-2);
-\draw[name path=as] (A) -- ++(50:4cm) node[above] {$S$} coordinate (S);
-\draw[name path=sb] (S) -- (B);
-\path [name intersections={of=pq and as,by={P}}];
-\path [name intersections={of=pq and sb,by={Q}}];
-\draw[name path=pb] (P) -- (B);
-\draw[name path=qa] (Q) -- (A);
-\path [name intersections={of=pb and qa,by={O}}];
-\draw (B) -- (O) -- (Q);
-\draw (A) -- (Q) -- (B);
-\draw[fill=gray!40] (B) -- (Q) -- (A);
-\draw[fill=gray!70] (S) -- (Q) -- (A);
-\draw (A) -- (B) -- (S) -- cycle;
-\draw (S) -- (O);
-\draw (B) -- (O);
-\fill (A) circle[radius=1.5pt];
-\fill (B) circle[radius=1.5pt];
-\fill (S) circle[radius=1.5pt];
-\fill (Q) node[above right] {$Q$} circle[radius=1.5pt];
-\fill (O) node[above left] {$O$} circle[radius=1.5pt];
-\path[name path=al2] (A) -- ($(Q)!(A)!(B)$);
-\draw[rotate=-155] ($(Q)!(A)!(B)$) rectangle +(7pt,7pt);
-\path [name intersections={of=al2 and sb,by={A2}}];
-\draw[thick,dashed] (A) -- (A2);
-\end{scope}
-\end{tikzpicture}
-\vspace*{-6pt}
-\end{center}
-אם הגבהים של שני משולשים שווים, יחס השטחים שווה ליחס הבסיסים.
+%\textbf{הוכחה של משפט \L{Ceva}:}
+%\begin{center}
+%
+%\vspace*{-4pt}
+%\begin{tikzpicture}
+%\path[name path=pq] (-4,0) -- (4,0);
+%\draw (-2,-2) node[below left] {$A$} coordinate (A) -- (2,-2) node[below right] {$B$} coordinate (B);
+%\coordinate (M) at (0,-2);
+%\draw[name path=as] (A) -- ++(50:4cm) node[above] {$S$} coordinate (S);
+%\draw[name path=sb] (S) -- (B);
+%\path [name intersections={of=pq and as,by={P}}];
+%\path [name intersections={of=pq and sb,by={Q}}];
+%\path[name path=pb] (P) -- (B);
+%\path[name path=qa] (Q) -- (A);
+%\path [name intersections={of=pb and qa,by={O}}];
+%\draw[fill=gray!40] (B) -- (O) -- (Q);
+%\draw[fill=gray!70] (S) -- (O) -- (Q);
+%\draw (B) -- (O) -- (A);
+%\draw (S) -- (O) -- (A);
+%\draw (A) -- (B) -- (S) -- cycle;
+%\draw (S) -- (O);
+%\draw (B) -- (O);
+%\fill (A) circle[radius=1.5pt];
+%\fill (B) circle[radius=1.5pt];
+%\fill (S) circle[radius=1.5pt];
+%\fill (Q) node[above right] {$Q$} circle[radius=1.5pt];
+%\fill (O) node[above left] {$O$} circle[radius=1.5pt];
+%\path[name path=al1] (O) -- ($(Q)!(O)!(B)$);
+%\draw[rotate=-155] ($(Q)!(O)!(B)$) rectangle +(7pt,7pt);
+%\path [name intersections={of=al1 and sb,by={A1}}];
+%\draw[thick,dashed] (O) -- (A1);
+%\begin{scope}[xshift=6cm]
+%\path[name path=pq] (-4,0) -- (4,0);
+%\draw (-2,-2) node[below left] {$A$} coordinate (A) -- (2,-2) node[below right] {$B$} coordinate (B);
+%\coordinate (M) at (0,-2);
+%\draw[name path=as] (A) -- ++(50:4cm) node[above] {$S$} coordinate (S);
+%\draw[name path=sb] (S) -- (B);
+%\path [name intersections={of=pq and as,by={P}}];
+%\path [name intersections={of=pq and sb,by={Q}}];
+%\draw[name path=pb] (P) -- (B);
+%\draw[name path=qa] (Q) -- (A);
+%\path [name intersections={of=pb and qa,by={O}}];
+%\draw (B) -- (O) -- (Q);
+%\draw (A) -- (Q) -- (B);
+%\draw[fill=gray!40] (B) -- (Q) -- (A);
+%\draw[fill=gray!70] (S) -- (Q) -- (A);
+%\draw (A) -- (B) -- (S) -- cycle;
+%\draw (S) -- (O);
+%\draw (B) -- (O);
+%\fill (A) circle[radius=1.5pt];
+%\fill (B) circle[radius=1.5pt];
+%\fill (S) circle[radius=1.5pt];
+%\fill (Q) node[above right] {$Q$} circle[radius=1.5pt];
+%\fill (O) node[above left] {$O$} circle[radius=1.5pt];
+%\path[name path=al2] (A) -- ($(Q)!(A)!(B)$);
+%\draw[rotate=-155] ($(Q)!(A)!(B)$) rectangle +(7pt,7pt);
+%\path [name intersections={of=al2 and sb,by={A2}}];
+%\draw[thick,dashed] (A) -- (A2);
+%\end{scope}
+%\end{tikzpicture}
+%\vspace*{-6pt}
+%\end{center}
+%אם הגבהים של שני משולשים שווים, יחס השטחים שווה ליחס הבסיסים.
+%%\[
+%%A_1 = \frac{1}{2}hb_1,\quad A_2 = \frac{1}{2}hb_2, \quad \frac{A_1}{A_2}=\frac{b_1}{b_2}\,.
+%%\]
+%הגבהים של המשולשים 
+%$\triangle BQO, \triangle SQO$
+%שווים, כמו גם
+%$\triangle BQA, \triangle SQA$.
+%לכן:%
+%\footnote{%
+%\R{נשתמש בשם המשולש כקיצור לשטחו}.}
+%\begin{eqnlabels}
+%\frac{\triangle BQO}{\triangle SQO} &=& \frac{\overline{BQ}}{\overline{QS}}\label{eq.ratio-of-areas1}\\
+%\frac{\triangle BQA}{\triangle SQA} &=& \frac{\overline{BQ}}{\overline{QS}}\,.\label{eq.ratio-of-areas2}
+%\end{eqnlabels}
+%על ידי חיסור נקבל יחס בין המשולשים המסומנים באפור:
+%\begin{center}
+%
+%\vspace*{-4pt}
+%\begin{tikzpicture}
+%\path[name path=pq] (-4,0) -- (4,0);
+%\draw (-2,-2) node[below left] {$A$} coordinate (A) -- (2,-2) node[below right] {$B$} coordinate (B);
+%\coordinate (M) at (0,-2);
+%\draw[name path=as] (A) -- ++(50:4cm) node[above] {$S$} coordinate (S);
+%\draw[name path=sb] (S) -- (B);
+%\path [name intersections={of=pq and as,by={P}}];
+%\path [name intersections={of=pq and sb,by={Q}}];
+%\path[name path=pb] (P) -- (B);
+%\draw[thick,name path=qa] (Q) -- (A);
+%\path [name intersections={of=pb and qa,by={O}}];
+%\draw[fill=gray!50] (B) -- (O) -- (A);
+%\draw[fill=gray!70] (S) -- (O) -- (A);
+%\draw (B) -- (O) -- (A);
+%\draw (S) -- (O) -- (A);
+%\draw (A) -- (B) -- (S) -- cycle;
+%\draw (S) -- (O);
+%\draw (B) -- (O);
+%\fill (A) circle[radius=1.5pt];
+%\fill (B) circle[radius=1.5pt];
+%\fill (S) circle[radius=1.5pt];
+%\fill (Q) node[above right] {$Q$} circle[radius=1.5pt];
+%\fill (O) node[right,xshift=2pt] {$O$} circle[radius=1.5pt];
+%\end{tikzpicture}
+%\end{center}
 %\[
-%A_1 = \frac{1}{2}hb_1,\quad A_2 = \frac{1}{2}hb_2, \quad \frac{A_1}{A_2}=\frac{b_1}{b_2}\,.
+%\frac{\triangle BQA - \triangle BQO}{\triangle SQA-\triangle SQO} = \frac{\triangle BOA}{\triangle SOA} = \frac{\overline{BQ}}{\overline{QS}}\,.\label{eq.diff-of-areas}
 %\]
-הגבהים של המשולשים 
-$\triangle BQO, \triangle SQO$
-שווים, כמו גם
-$\triangle BQA, \triangle SQA$.
-לכן:%
-\footnote{%
-\R{נשתמש בשם המשולש כקיצור לשטחו}.}
-\begin{eqnlabels}
-\frac{\triangle BQO}{\triangle SQO} &=& \frac{\overline{BQ}}{\overline{QS}}\label{eq.ratio-of-areas1}\\
-\frac{\triangle BQA}{\triangle SQA} &=& \frac{\overline{BQ}}{\overline{QS}}\,.\label{eq.ratio-of-areas2}
-\end{eqnlabels}
-על ידי חיסור נקבל יחס בין המשולשים המסומנים באפור:
-\begin{center}
-
-\vspace*{-4pt}
-\begin{tikzpicture}
-\path[name path=pq] (-4,0) -- (4,0);
-\draw (-2,-2) node[below left] {$A$} coordinate (A) -- (2,-2) node[below right] {$B$} coordinate (B);
-\coordinate (M) at (0,-2);
-\draw[name path=as] (A) -- ++(50:4cm) node[above] {$S$} coordinate (S);
-\draw[name path=sb] (S) -- (B);
-\path [name intersections={of=pq and as,by={P}}];
-\path [name intersections={of=pq and sb,by={Q}}];
-\path[name path=pb] (P) -- (B);
-\draw[thick,name path=qa] (Q) -- (A);
-\path [name intersections={of=pb and qa,by={O}}];
-\draw[fill=gray!50] (B) -- (O) -- (A);
-\draw[fill=gray!70] (S) -- (O) -- (A);
-\draw (B) -- (O) -- (A);
-\draw (S) -- (O) -- (A);
-\draw (A) -- (B) -- (S) -- cycle;
-\draw (S) -- (O);
-\draw (B) -- (O);
-\fill (A) circle[radius=1.5pt];
-\fill (B) circle[radius=1.5pt];
-\fill (S) circle[radius=1.5pt];
-\fill (Q) node[above right] {$Q$} circle[radius=1.5pt];
-\fill (O) node[right,xshift=2pt] {$O$} circle[radius=1.5pt];
-\end{tikzpicture}
-\end{center}
-\[
-\frac{\triangle BQA - \triangle BQO}{\triangle SQA-\triangle SQO} = \frac{\triangle BOA}{\triangle SOA} = \frac{\overline{BQ}}{\overline{QS}}\,.\label{eq.diff-of-areas}
-\]
-נסביר את החישוב תוך שימוש בסימונים פשוטים יותר:
-\[
-a=\overline{BQ},\, b=\overline{QS},\,
-c=\triangle{BQA},\, d=\triangle{SQA},\,
-e=\triangle{BQO},\,f=\triangle{SQO}\,.
-\]
-מהמשוואות
-\ref{eq.ratio-of-areas1}, \ref{eq.ratio-of-areas2}:
-
-\begin{eqnlabels}
- \disfrac{c}{d} &=&\disfrac{a}{b}\\
- \disfrac{e}{f} &=&\disfrac{a}{b}\,.
-\end{eqnlabels}
-מחישוב פשוט:
-
-\begin{eqn}
-c-e &=& \disfrac{ad}{b} - \disfrac{af}{b}= \disfrac{a}{b}(d-f)\\
-\disfrac{c-e}{d-f} &=& \disfrac{a}{b}
-\end{eqn}
-מתקבלת המשוואה
-\ref{eq.diff-of-areas}.
-
-באופן דומה ניתן להוכיח:
-\[
-\frac{AM}{MB} = \frac{\triangle AOS}{\triangle BOS}\;,\quad\quad \frac{SP}{PA} =\frac{\triangle SOB}{\triangle AOB}\;,
-\]
-
-ומכאן:
-\[
-\frac{AM}{MB}\cdot\frac{BQ}{QS}\cdot\frac{SP}{PA} = \frac{\triangle AOS}{\triangle BOS}\frac{\triangle BOA}{\triangle SOA}\frac{\triangle SOB}{\triangle AOB}=1\,,
-\]
-
-כי סדר הקודקודים  לא משנה
-$\triangle AOS\!=\!\triangle SOA, \triangle BOA\!=\!\triangle AOB, \triangle SOB\!=\!\triangle BOS$.
-\qed
+%נסביר את החישוב תוך שימוש בסימונים פשוטים יותר:
+%\[
+%a=\overline{BQ},\, b=\overline{QS},\,
+%c=\triangle{BQA},\, d=\triangle{SQA},\,
+%e=\triangle{BQO},\,f=\triangle{SQO}\,.
+%\]
+%מהמשוואות
+%\ref{eq.ratio-of-areas1}, \ref{eq.ratio-of-areas2}:
+%
+%\begin{eqnlabels}
+% \disfrac{c}{d} &=&\disfrac{a}{b}\\
+% \disfrac{e}{f} &=&\disfrac{a}{b}\,.
+%\end{eqnlabels}
+%מחישוב פשוט:
+%
+%\begin{eqn}
+%c-e &=& \disfrac{ad}{b} - \disfrac{af}{b}= \disfrac{a}{b}(d-f)\\
+%\disfrac{c-e}{d-f} &=& \disfrac{a}{b}
+%\end{eqn}
+%מתקבלת המשוואה
+%\ref{eq.diff-of-areas}.
+%
+%באופן דומה ניתן להוכיח:
+%\[
+%\frac{AM}{MB} = \frac{\triangle AOS}{\triangle BOS}\;,\quad\quad \frac{SP}{PA} =\frac{\triangle SOB}{\triangle AOB}\;,
+%\]
+%
+%ומכאן:
+%\[
+%\frac{AM}{MB}\cdot\frac{BQ}{QS}\cdot\frac{SP}{PA} = \frac{\triangle AOS}{\triangle BOS}\frac{\triangle BOA}{\triangle SOA}\frac{\triangle SOB}{\triangle AOB}=1\,,
+%\]
+%
+%כי סדר הקודקודים  לא משנה
+%$\triangle AOS\!=\!\triangle SOA, \triangle BOA\!=\!\triangle AOB, \triangle SOB\!=\!\triangle BOS$.
+%\qed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \medskip
@@ -377,8 +391,10 @@ $l$
 $\overline{MO}$
 שחותך את המעגל הקבוע ב-%
 $U,V$.
-\begin{center}
 
+\begin{figure}[htb]
+\begin{center}
+\begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}[scale=.8]
 \coordinate (O) at (0,0);
 \fill (O) node[below right] {$O$} circle[radius=1.5pt];
@@ -393,30 +409,9 @@ $U,V$.
 %\node at (-1.6,1.6) {$c$};
 \fill (-4,1) node[above left] {$P$} circle[radius=1.5pt];
 \end{tikzpicture}
-\vspace*{-8pt}
-\end{center}
-קו זה הוא
-\textbf{%
-קו מכוון%
-}
-כי 
-$O$,
-מרכז המעגל, חוצה את הקוטר
-$\overline{UV}$.
-בחרו נקודה שנייה 
-$A$
-על 
-$l$.
-לפי הבניה של המקרה הראשון, ניתן לבנות קו המקביל ל-%
-$\overline{UV}$
-דרך 
-$A$.
-יש לבחור את
-$A$
-כך שהקו המקביל חותך את המעגל בשתי נקודות שנסמן
-$X,Y$.
-\begin{center}
-
+\caption{בניית קו מכוון}\label{}
+\end{subfigure}
+\begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}[scale=.9]
 \coordinate (O) at (0,0);
 \fill (O) node[below right] {$O$} circle[radius=1.5pt];
@@ -437,8 +432,31 @@ $X,Y$.
 \draw (A) -- (Y);
 \fill (-4,1) node[above left] {$P$} circle[radius=1.5pt];
 \end{tikzpicture}
-\vspace*{-6pt}
+\caption{בניית קו מקביל לקו מכוון}\label{}
+\end{subfigure}
 \end{center}
+\end{figure}
+קו זה הוא
+\textbf{%
+קו מכוון%
+}
+כי 
+$O$,
+מרכז המעגל, חוצה את הקוטר
+$\overline{UV}$.
+בחרו נקודה שנייה 
+$A$
+על 
+$l$.
+לפי הבניה של המקרה הראשון, ניתן לבנות קו המקביל ל-%
+$\overline{UV}$
+דרך 
+$A$.
+יש לבחור את
+$A$
+כך שהקו המקביל חותך את המעגל בשתי נקודות שנסמן
+$X,Y$.
+
 בנו קוטר
 $\overline{XX'}$
 וקוטר
@@ -451,8 +469,9 @@ $Y'$
 $B$
 את נקודת החיתוך שלה עם 
 $l$.
-\begin{center}
 
+\begin{figure}[htb]
+\begin{center}
 \begin{tikzpicture}[scale=.9]
 \coordinate (O) at (0,0);
 \fill (O) node[below right] {$O$} circle[radius=1.5pt];
@@ -490,8 +509,13 @@ $l$.
 \fill (Z) node[above left] {$Z$} circle[radius=1.5pt];
 \fill (Zp) node[below right] {$Z'$} circle[radius=1.5pt];
 \end{tikzpicture}
-\vspace*{-10pt}
+\caption{הוכחה ש-%
+$l'$
+מקביל ל-%
+$l$}\label{}
 \end{center}
+\end{figure}
+
 \textbf{%
 טענה:%
 }
@@ -575,8 +599,9 @@ $\overline{AP}$.
 $ABQP$
 הוא מקבילית ו-%
 $\overline{PQ}=\overline{AB}$.
-\begin{center}
 
+\begin{figure}[htb]
+\begin{center}
 \begin{tikzpicture}[scale=.7]
 \coordinate (A) at (0,0);
 \coordinate (B) at (3,0);
@@ -591,7 +616,9 @@ $\overline{PQ}=\overline{AB}$.
 \draw (A) -- (P);
 \draw ($(B)!-.3!(Q)$) -- node[above,near end,xshift=24pt,yshift=-24pt] {$n$} ($(B)!1.4!(Q)$);
 \end{tikzpicture}
+\caption{בניית העתק של קו מקביל לקו קיים}\label{}
 \end{center}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -628,34 +655,66 @@ $\overline{U'V}$
 $P$
 לפי משפט~%
 \ref{thm.parallel-line}.\qed
-\begin{center}
 
-\begin{tikzpicture}[scale=.8]
+\begin{figure}[htb]
+\begin{center}
+\begin{tikzpicture}[scale=.7]
 \coordinate (O) at (0,0);
 \coordinate (P) at (3.5,.6);
-%\node at (-1.6,1.6) {$c$};
 \draw[name path=circle] (O) circle[radius=2cm];
-\draw[name path=l] (-4,-3) -- node[above,near end,xshift=45pt] {$l$} ++(9.5,0);
-\draw[name path=lp] (-3,-1) -- node[above,near end,xshift=45pt] {$l'$} ++(7.5,0);
-\fill (O) node[above left] {$O$} circle[radius=1.5pt];
-\fill (P) node[right] {$P$} circle[radius=1.5pt];
+\draw[name path=l] (-4,-3) -- node[above,near end,xshift=45pt] {$l$} ++(9,0);
+\draw[name path=lp] (-3,-1) -- node[above,near end,xshift=40pt] {$l'$} ++(8,0);
+\node[above left] at (O) {$O$};
+\node[right] at (P) {$P$};
 \path[name intersections={of=circle and lp,by={U,V}}];
-\fill (U) node[below left] {$U$} circle[radius=1.5pt];
-\fill (V) node[below right] {$V$} circle[radius=1.5pt];
+\node[below left] at (U) {$U$};
+\node[below right] at (V) {$V$};
 \path[name path=d] (U) -- ($(U)!2.3!(O)$);
 \path[name intersections={of=circle and d,by={Up}}];
 \draw (U) -- (Up);
-\fill (Up) node[above right] {$U'$} circle[radius=1.5pt];
+\node[above right] at (Up) {$U'$};
 \draw (Up) -- (V);
 \path[name path=p] (P) -- ++(0,-4);
-\draw[name intersections={of=p and l,by={X}}];
-\fill (X) circle[radius=1.5pt];
-\draw[thick,dashed] (P) -- (X);
-\draw ($(U)!.9!(V)$) -- ++(0,.3) -| (V);
+\path[name intersections={of=p and l,by={X}}];
+\draw (X) rectangle +(9pt,9pt);
+\draw[rotate=90] (V) rectangle +(9pt,9pt);
+\vertex{O};
+\vertex{P};
+\draw (P) -- ++(0,1);
+\draw (P) -- (X);
 \end{tikzpicture}
-\vspace*{-8pt}
 \end{center}
-
+\caption{בניית ניצב}\label{f.se-perp}
+\end{figure}
+
+%\begin{center}
+%
+%\begin{tikzpicture}[scale=.8]
+%\coordinate (O) at (0,0);
+%\coordinate (P) at (3.5,.6);
+%%\node at (-1.6,1.6) {$c$};
+%\draw[name path=circle] (O) circle[radius=2cm];
+%\draw[name path=l] (-4,-3) -- node[above,near end,xshift=45pt] {$l$} ++(9.5,0);
+%\draw[name path=lp] (-3,-1) -- node[above,near end,xshift=45pt] {$l'$} ++(7.5,0);
+%\fill (O) node[above left] {$O$} circle[radius=1.5pt];
+%\fill (P) node[right] {$P$} circle[radius=1.5pt];
+%\path[name intersections={of=circle and lp,by={U,V}}];
+%\fill (U) node[below left] {$U$} circle[radius=1.5pt];
+%\fill (V) node[below right] {$V$} circle[radius=1.5pt];
+%\path[name path=d] (U) -- ($(U)!2.3!(O)$);
+%\path[name intersections={of=circle and d,by={Up}}];
+%\draw (U) -- (Up);
+%\fill (Up) node[above right] {$U'$} circle[radius=1.5pt];
+%\draw (Up) -- (V);
+%\path[name path=p] (P) -- ++(0,-4);
+%\draw[name intersections={of=p and l,by={X}}];
+%\fill (X) circle[radius=1.5pt];
+%\draw[thick,dashed] (P) -- (X);
+%\draw ($(U)!.9!(V)$) -- ++(0,.3) -| (V);
+%\end{tikzpicture}
+%\vspace*{-8pt}
+%\end{center}
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{העתקת קטע קו נתון בכיוון נתון}\label{s.direction}
@@ -672,30 +731,32 @@ $\overline{AS}=\overline{PQ}$
 בכיוון 
 $\theta$.
 \end{theorem}
-\begin{center}
 
-\vspace*{-8pt}
-\begin{tikzpicture}[scale=.8]
-\coordinate (A) at (0,0);
-\coordinate (P) at (1,-1.5);
-\coordinate (Q) at (2.5,-1.5);
-\draw (P) -- node[below] {$a$} (Q);
-\fill (P) node[left] {$P$} circle[radius=1.5pt];
-\fill (Q) node[right] {$Q$} circle[radius=1.5pt];
+%\begin{center}
+%
+%\vspace*{-8pt}
+%\begin{tikzpicture}[scale=.8]
+%\coordinate (A) at (0,0);
+%\coordinate (P) at (1,-1.5);
+%\coordinate (Q) at (2.5,-1.5);
+%\draw (P) -- node[below] {$a$} (Q);
+%\fill (P) node[left] {$P$} circle[radius=1.5pt];
+%\fill (Q) node[right] {$Q$} circle[radius=1.5pt];
 %\coordinate (A1) at (-4,1);
 %\draw[thick,dashed] (A1) -- ++(60:3cm) coordinate (H1);
 %\draw[thick,dashed] (A1) -- ++(0:3cm);
 %\fill (A1) node[left] {$A'$} circle[radius=1.5pt];
 %\fill (H1) node[left] {$H'$} circle[radius=1.5pt];
-\draw (A) -- node[left] {$a$} ++(60:1.5cm) coordinate (S);
-\fill (S) node[above right] {$S$} circle[radius=1.5pt];
-\draw[thick,dashed] (A) -- ++(3,0);
-\fill (A) node[left] {$A$} circle[radius=1.5pt];
+%\draw (A) -- node[left] {$a$} ++(60:1.5cm) coordinate (S);
+%\fill (S) node[above right] {$S$} circle[radius=1.5pt];
+%\draw[thick,dashed] (A) -- ++(3,0);
+%\fill (A) node[left] {$A$} circle[radius=1.5pt];
 %\node[above right,xshift=4pt] at (A1) {$\theta$};
-\node[above right,xshift=4pt] at (A) {$\theta$};
-\end{tikzpicture}
+%\node[above right,xshift=4pt] at (A) {$\theta$};
+%\end{tikzpicture}
 %\vspace*{-12pt}
-\end{center}
+%\end{center}
+
 המשמעות של "בכיוון 
 $\theta$"
 היא שהזווית בין 
@@ -745,33 +806,67 @@ $\overline{AK}$
 $\overline{AK}\|\overline{PQ}$
 ו-%
 $\overline{AK}=\overline{PQ}=a$.
-\begin{center}
 
-\vspace*{-4pt}
-\begin{tikzpicture}[scale=.8]
+\begin{figure}[htb]
+\begin{center}
+\begin{tikzpicture}[scale=.7]
 \coordinate (A) at (0,0);
-\coordinate (P) at (1,-1.5);
-\coordinate (Q) at (2.5,-1.5);
-\draw (P) -- node[below] {$a$} (Q);
-\fill (P) node[left] {$P$} circle[radius=1.5pt];
-\fill (Q) node[right] {$Q$} circle[radius=1.5pt];
+\coordinate (P) at (3cm,2);
+\coordinate (Q) at (4.5cm,2);
+\draw (P) -- (Q);
+\node[left] at (P) {$P$};
+\node[right] at (Q) {$Q$};
 \coordinate (A1) at (-3,1);
 \draw (A1) -- ++(60:3cm) coordinate (H1);
-\draw[thick,dashed] (A1) -- ++(0:1.5cm);
-\fill (A1) node[left] {$A'$} circle[radius=1.5pt];
-\fill (H1) node[left] {$H'$} circle[radius=1.5pt];
-\draw (A) -- ++(60:3cm) coordinate (H);
-\fill (H) node[left] {$H$} circle[radius=1.5pt];
-\draw (A) -- ++(1.5,0) coordinate (K);
-\fill (K) node[below right] {$K$} circle[radius=1.5pt];
-%\draw[dashed] (A) -- ($(A)!2!(K)$);
-\draw (A) -- node[below] {$a$} (K);
-\fill (A) node[left] {$A$} circle[radius=1.5pt];
+\draw (A1) -- ++(0:2cm);
+\node[left] at (A1) {$A'$};
+\node[left] at (H1) {$H'$};
+\draw (A) -- ++(60:1.5cm) coordinate (S);
+\node[left] at (S) {$S$};
+\draw (A) -- ++(1.5,0);
+\node[left] at (A) {$A$};
 \node[above right,xshift=4pt] at (A1) {$\theta$};
 \node[above right,xshift=4pt] at (A) {$\theta$};
+\draw (A) -- ++(60:3cm) coordinate (H);
+\node[left] at (H) {$H$};
+\draw (A) -- ++(1.5,0) coordinate (K);
+\node[right] at (K) {$K$};
+\vertex{P};
+\vertex{Q};
+\vertex{A};
+\vertex{S};
 \end{tikzpicture}
-\vspace*{-8pt}
 \end{center}
+\caption{העתקת קו בכיוון נתון}\label{f.se-copy1}
+\end{figure}
+
+%\begin{center}
+%
+%\vspace*{-4pt}
+%\begin{tikzpicture}[scale=.8]
+%\coordinate (A) at (0,0);
+%\coordinate (P) at (1,-1.5);
+%\coordinate (Q) at (2.5,-1.5);
+%\draw (P) -- node[below] {$a$} (Q);
+%\fill (P) node[left] {$P$} circle[radius=1.5pt];
+%\fill (Q) node[right] {$Q$} circle[radius=1.5pt];
+%\coordinate (A1) at (-3,1);
+%\draw (A1) -- ++(60:3cm) coordinate (H1);
+%\draw[thick,dashed] (A1) -- ++(0:1.5cm);
+%\fill (A1) node[left] {$A'$} circle[radius=1.5pt];
+%\fill (H1) node[left] {$H'$} circle[radius=1.5pt];
+%\draw (A) -- ++(60:3cm) coordinate (H);
+%\fill (H) node[left] {$H$} circle[radius=1.5pt];
+%\draw (A) -- ++(1.5,0) coordinate (K);
+%\fill (K) node[below right] {$K$} circle[radius=1.5pt];
+%\draw[dashed] (A) -- ($(A)!2!(K)$);
+%\draw (A) -- node[below] {$a$} (K);
+%\fill (A) node[left] {$A$} circle[radius=1.5pt];
+%\node[above right,xshift=4pt] at (A1) {$\theta$};
+%\node[above right,xshift=4pt] at (A) {$\theta$};
+%\end{tikzpicture}
+%\vspace*{-8pt}
+%\end{center}
 כעת יש למצוא נקודה
 $S$
 על
@@ -813,47 +908,93 @@ $\triangle SAK$
 $\overline{AS}=\overline{AK}=\overline{PQ}$.
 \qed
 
+\begin{figure}[htb]
 \begin{center}
-
-\begin{tikzpicture}[scale=.8]
+\begin{tikzpicture}[scale=.7]
 \coordinate (A) at (0,0);
-\coordinate (P) at (1,-1.5);
-\coordinate (Q) at (2.5,-1.5);
+\coordinate (P) at (3cm,2);
+\coordinate (Q) at (4.5cm,2);
 \draw (P) -- (Q);
-\fill (P) node[left] {$P$} circle[radius=1.5pt];
-\fill (Q) node[right] {$Q$} circle[radius=1.5pt];
+\node[left] at (P) {$P$};
+\node[right] at (Q) {$Q$};
 \coordinate (A1) at (-3,1);
 \draw (A1) -- ++(60:3cm) coordinate (H1);
-\fill (A1) node[left] {$A'$} circle[radius=1.5pt];
-\fill (H1) node[left] {$H'$} circle[radius=1.5pt];
+\node[left] at (A1) {$A'$};
+\node[left] at (H1) {$H'$};
+\node[left] at (A) {$A$};
 \draw (A) -- ++(60:3cm) coordinate (H);
-\fill (A) node[left] {$A$} circle[radius=1.5pt];
-\fill (H) node[left] {$H$} circle[radius=1.5pt];
-\coordinate (O) at (6,1);
-%\node at (4.8,3.4) {$c$};
-\draw[name path=circle] (O) circle[radius=2.5cm];
-\fill (O) node[above left] {$O$} circle[radius=1.5pt];
+\node[left] at (H) {$H$};
 \draw (A) -- ++(1.5,0) coordinate (K);
-\fill (K) node[below right] {$K$} circle[radius=1.5pt];
+\node[right] at (K) {$K$};
 \draw (A) -- (K);
+\path (A) -- ++(60:1.5cm) coordinate (S);
+\node[right] at (S) {$S$};
+\draw (K) -- ($(K)!1.8!(S)$);
+\node[above right,xshift=4pt] at (A) {$\theta$};
+\node[above right,xshift=4pt] at (A1) {$\theta$};
+\draw (A1) -- ++(1.5,0);
+\vertex{P};
+\vertex{Q};
+\begin{scope}[xshift=3cm]
+\coordinate (O) at (6,1);
+\draw[name path=circle] (O) circle[radius=2.5cm];
+\node[above left] at (O) {$O$};
 \path[name path=u] (O) -- ++(60:2.5cm);
 \path[name path=v] (O) -- ++(2.5,0);
 \path[name intersections={of=circle and u,by={U}}];
 \path[name intersections={of=circle and v,by={V}}];
-\fill (U) node[above right] {$U$} circle[radius=1.5pt];
-\fill (V) node[right] {$V$} circle[radius=1.5pt];
+\node[above right] at (U) {$U$};
+\node[right] at (V) {$V$};
 \draw (O) -- (U) -- (V) -- cycle;
-\path (A) -- ++(60:1.5cm) coordinate (S);
-\fill (S) node[right] {$S$} circle[radius=1.5pt];
-\draw (K) -- ($(K)!1.8!(S)$);
-\draw (A) -- (S);
-\node[above right,xshift=4pt] at (A) {$\theta$};
 \node[above right,xshift=4pt] at (O) {$\theta$};
-\node[above right,xshift=4pt] at (A1) {$\theta$};
-\draw[thick,dashed] (A1) -- ++(1.5,0);
+\vertex{O};
+\end{scope}
 \end{tikzpicture}
-%\vspace*{-4pt}
 \end{center}
+\caption{שימוש במעגל הקבוע כדי להעתיק קטע קו}\label{f.se-copy3}
+\end{figure}
+
+
+%\begin{center}
+%\begin{tikzpicture}[scale=.8]
+%\coordinate (A) at (0,0);
+%\coordinate (P) at (1,-1.5);
+%\coordinate (Q) at (2.5,-1.5);
+%\draw (P) -- (Q);
+%\fill (P) node[left] {$P$} circle[radius=1.5pt];
+%\fill (Q) node[right] {$Q$} circle[radius=1.5pt];
+%\coordinate (A1) at (-3,1);
+%\draw (A1) -- ++(60:3cm) coordinate (H1);
+%\fill (A1) node[left] {$A'$} circle[radius=1.5pt];
+%\fill (H1) node[left] {$H'$} circle[radius=1.5pt];
+%\draw (A) -- ++(60:3cm) coordinate (H);
+%\fill (A) node[left] {$A$} circle[radius=1.5pt];
+%\fill (H) node[left] {$H$} circle[radius=1.5pt];
+%\coordinate (O) at (6,1);
+%%\node at (4.8,3.4) {$c$};
+%\draw[name path=circle] (O) circle[radius=2.5cm];
+%\fill (O) node[above left] {$O$} circle[radius=1.5pt];
+%\draw (A) -- ++(1.5,0) coordinate (K);
+%\fill (K) node[below right] {$K$} circle[radius=1.5pt];
+%\draw (A) -- (K);
+%\path[name path=u] (O) -- ++(60:2.5cm);
+%\path[name path=v] (O) -- ++(2.5,0);
+%\path[name intersections={of=circle and u,by={U}}];
+%\path[name intersections={of=circle and v,by={V}}];
+%\fill (U) node[above right] {$U$} circle[radius=1.5pt];
+%\fill (V) node[right] {$V$} circle[radius=1.5pt];
+%\draw (O) -- (U) -- (V) -- cycle;
+%\path (A) -- ++(60:1.5cm) coordinate (S);
+%\fill (S) node[right] {$S$} circle[radius=1.5pt];
+%\draw (K) -- ($(K)!1.8!(S)$);
+%\draw (A) -- (S);
+%\node[above right,xshift=4pt] at (A) {$\theta$};
+%\node[above right,xshift=4pt] at (O) {$\theta$};
+%\node[above right,xshift=4pt] at (A1) {$\theta$};
+%\draw[thick,dashed] (A1) -- ++(1.5,0);
+%\end{tikzpicture}
+%%\vspace*{-4pt}
+%\end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -867,21 +1008,21 @@ $x=\disfrac{n}{m}s$.
 \end{theorem}
 
 קטעי הקו הנתונים נמצאים במקומות שרירותיים במישור:
-\begin{center}
-
-\begin{tikzpicture}[scale=.9]
-\draw (0,0) -- node[above] {$s$} ++(30:1.5cm);
-\draw (2,1.2) -- node[above] {$m$} ++(-10:2.5cm);
-\draw (-2,1.5) -- node[above] {$n$} ++(5:2cm);
-\fill (0,0) circle[radius=1.5pt];
-\fill (2,1.2) circle[radius=1.5pt];
-\fill (-2,1.5) circle[radius=1.5pt];
-\fill (0,0) ++(30:1.5cm) circle[radius=1.5pt];
-\fill (2,1.2) ++(-10:2.5cm) circle[radius=1.5pt];
-\fill (-2,1.5) ++(5:2cm) circle[radius=1.5pt];
-\end{tikzpicture}
-\vspace*{-8pt}
-\end{center}
+%\begin{center}
+%
+%\begin{tikzpicture}[scale=.9]
+%\draw (0,0) -- node[above] {$s$} ++(30:1.5cm);
+%\draw (2,1.2) -- node[above] {$m$} ++(-10:2.5cm);
+%\draw (-2,1.5) -- node[above] {$n$} ++(5:2cm);
+%\fill (0,0) circle[radius=1.5pt];
+%\fill (2,1.2) circle[radius=1.5pt];
+%\fill (-2,1.5) circle[radius=1.5pt];
+%\fill (0,0) ++(30:1.5cm) circle[radius=1.5pt];
+%\fill (2,1.2) ++(-10:2.5cm) circle[radius=1.5pt];
+%\fill (-2,1.5) ++(5:2cm) circle[radius=1.5pt];
+%\end{tikzpicture}
+%\vspace*{-8pt}
+%\end{center}
 בחרו נקודה 
 $A$
 במישור ובנו שני קטעי קו 
@@ -908,38 +1049,64 @@ $\triangle MAS\sim \triangle NAX$
 \frac{m}{n}=\frac{s}{x}, \quad\quad x=\disfrac{n}{m}s\,.
 \]
 \qed
-\begin{center}
 
-\vspace*{-10pt}
-\begin{tikzpicture}
+\begin{figure}[htb]
+\begin{center}
+\begin{tikzpicture}[scale=.8]
 \coordinate (A) at (0,0);
 \draw[name path=ac] (A) node[left] {$A$} -- ++(7,0) node[right] {$C$};
 \draw (A) -- ++(40:5cm) node[right] {$B$};
-\fill (A) circle[radius=1.5pt];
-\fill (A) ++(40:5cm) circle[radius=1.5pt];
-\fill (A) ++(7,0) circle[radius=1.5pt];
 \path (A) -- node[above,xshift=-2pt] {$m$} ++(40:3cm) coordinate (M) node[above left] {$M$};
 \path (A) -- ++(40:4cm) coordinate (N) node[above left] {$N$};
-\fill (M) circle[radius=1.5pt];
-\fill (N) circle[radius=1.5pt];
 \path[name path=ms] (M) -- ++(-50:3.5cm);
 \path[name path=nx] (N) -- ++(-50:4cm);
 \path[name intersections={of=ac and ms,by={S}}];
 \path[name intersections={of=ac and nx,by={X}}];
-\fill (S) circle[radius=1.5pt] node[below] {$S$};
-\fill (X) circle[radius=1.5pt] node[below] {$X$};
+\node[below] at (S) {$S$};
+\node[below] at (X) {$X$};
 \path (A) -- node[below] {$s$} (S);
 \draw (S) -- (M);
 \draw (X) -- (N);
-\draw[<->] ($(A)+(0,-16pt)$) -- node[fill=white] {$x$} ($(X)+(0,-16pt)$);
-\draw[<->] ($(A)+(-14pt,-2pt)$) -- node[fill=white] {$n$} +(40:4cm);
+\draw[<->] ($(A)+(0,-.8)$) -- node[fill=white] {$x$} ($(X)+(0,-.8)$);
+\draw[<->] ($(A)+(-.6,.8)$) -- node[fill=white] {$n$} ++(40:3.9cm);
+\end{tikzpicture}
+\end{center}
+\caption{בניית יחס אורכים באמצעות משולשים דומים}\label{f.se-three2}
+\end{figure}
+
+
+%\begin{center}
+%
+%\vspace*{-10pt}
+%\begin{tikzpicture}
+%\coordinate (A) at (0,0);
+%\draw[name path=ac] (A) node[left] {$A$} -- ++(7,0) node[right] {$C$};
+%\draw (A) -- ++(40:5cm) node[right] {$B$};
+%\fill (A) circle[radius=1.5pt];
+%\fill (A) ++(40:5cm) circle[radius=1.5pt];
+%\fill (A) ++(7,0) circle[radius=1.5pt];
+%\path (A) -- node[above,xshift=-2pt] {$m$} ++(40:3cm) coordinate (M) node[above left] {$M$};
+%\path (A) -- ++(40:4cm) coordinate (N) node[above left] {$N$};
+%\fill (M) circle[radius=1.5pt];
+%\fill (N) circle[radius=1.5pt];
+%\path[name path=ms] (M) -- ++(-50:3.5cm);
+%\path[name path=nx] (N) -- ++(-50:4cm);
+%\path[name intersections={of=ac and ms,by={S}}];
+%\path[name intersections={of=ac and nx,by={X}}];
+%\fill (S) circle[radius=1.5pt] node[below] {$S$};
+%\fill (X) circle[radius=1.5pt] node[below] {$X$};
+%\path (A) -- node[below] {$s$} (S);
+%\draw (S) -- (M);
+%\draw (X) -- (N);
+%\draw[<->] ($(A)+(0,-16pt)$) -- node[fill=white] {$x$} ($(X)+(0,-16pt)$);
+%\draw[<->] ($(A)+(-14pt,-2pt)$) -- node[fill=white] {$n$} +(40:4cm);
 %\draw[<->] ($(A)+(0,32pt)$) -- node[fill=white] {$n$} +(40:4cm);
 %\draw[thick,dotted] (A) -- ($(A)+(0,32pt)$);
 %\draw[thick,dotted] (N) -- ($(N)+(0,32pt)$);
 %\node at (7,2.5) {$AN=n$};
 %\node at (7,2) {$AX=x$};
-\end{tikzpicture}
-\end{center}
+%\end{tikzpicture}
+%\end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1003,32 +1170,62 @@ $\overline{HK}$
 $h+k=d$
 אפשר להסיק ש-%
 $\overline{AK}=k$:
-\begin{center}
 
-\vspace*{-4pt}
-\begin{tikzpicture}[scale=.8]
+\begin{figure}[htb]
+\begin{center}
+\begin{tikzpicture}[scale=.7]
 \coordinate (O) at (0,0);
 \coordinate (H) at (-3,0);
 \coordinate (K) at (3,0);
 \node at (-2.4,2.4) {$c$};
 \draw (H) -- (K);
 \draw[name path=circle] (O) circle[radius=3cm];
-\fill (O) node[below] {$O$} circle[radius=1.5pt];
-\fill (H) node[left] {$H$} circle[radius=1.5pt];
-\fill (K) node[right] {$K$} circle[radius=1.5pt];
+\node[below] at (O) {$O$};
+\node[left] at (H) {$H$};
+\node[right] at (K) {$K$};
 \path[name path=as] (1,0) coordinate (A) -- ++(0,3.2);
-\fill (A) node[below] {$A$} circle[radius=1.5pt];
+\node[below] at (A) {$A$};
 \path[name intersections={of=circle and as,by={S}}];
-\fill (S) node[above] {$S$} circle[radius=1.5pt];
-\draw (A) -- node[right,yshift=-6pt] {$\sqrt{hk}$} node[right,near end,yshift=-6pt] {$s=$} (S);
-\path (H) -- node[below] {$h$} (A);
-\path (A) -- node[below] {$k$} (K);
-\draw[thick,dashed] (O) -- node[left,xshift=-4pt] {$\disfrac{d}{2}$} (S);
-\node at (.5,-1.5) {$\disfrac{d}{2}-k$};
-\draw[thick,->] (.5, -1.2) -- ++(0,1);
-\draw (.8,0) -- ++(0,.2) -- ++(.2,0);
+\node[above] at (S) {$S$};
+\draw (A) -- node[right] {$s$} (S);
+\path (H) -- node[above] {$h$} (A);
+\path (A) -- node[above] {$k$} (K);
+\draw (O) -- node[left,xshift=-2pt] {$\displaystyle\frac{d}{2}$} (S);
+\node at (.5,-1.5) {$\displaystyle\frac{d}{2}-k$};
+\draw[->] (.5, -1.2) -- ++(0,1);
+\draw[rotate=90] (A) rectangle +(8pt,8pt);
+\vertex{O};
 \end{tikzpicture}
 \end{center}
+\caption{בניית שורש ריבועי}\label{f.se-sqrt}
+\end{figure}
+
+%\begin{center}
+%
+%\vspace*{-4pt}
+%\begin{tikzpicture}[scale=.8]
+%\coordinate (O) at (0,0);
+%\coordinate (H) at (-3,0);
+%\coordinate (K) at (3,0);
+%\node at (-2.4,2.4) {$c$};
+%\draw (H) -- (K);
+%\draw[name path=circle] (O) circle[radius=3cm];
+%\fill (O) node[below] {$O$} circle[radius=1.5pt];
+%\fill (H) node[left] {$H$} circle[radius=1.5pt];
+%\fill (K) node[right] {$K$} circle[radius=1.5pt];
+%\path[name path=as] (1,0) coordinate (A) -- ++(0,3.2);
+%\fill (A) node[below] {$A$} circle[radius=1.5pt];
+%\path[name intersections={of=circle and as,by={S}}];
+%\fill (S) node[above] {$S$} circle[radius=1.5pt];
+%\draw (A) -- node[right,yshift=-6pt] {$\sqrt{hk}$} node[right,near end,yshift=-6pt] {$s=$} (S);
+%\path (H) -- node[below] {$h$} (A);
+%\path (A) -- node[below] {$k$} (K);
+%\draw[thick,dashed] (O) -- node[left,xshift=-4pt] {$\disfrac{d}{2}$} (S);
+%\node at (.5,-1.5) {$\disfrac{d}{2}-k$};
+%\draw[thick,->] (.5, -1.2) -- ++(0,1);
+%\draw (.8,0) -- ++(0,.2) -- ++(.2,0);
+%\end{tikzpicture}
+%\end{center}
 לפי משפט~%
 \ref{thm.perpendicular}
 ניתן לבנות דרך
@@ -1072,18 +1269,38 @@ $l$
 עם
 $c$.
 \end{theorem}
-\begin{center}
 
+\begin{figure}[t]
+\begin{center}
 \begin{tikzpicture}[scale=.7]
 \coordinate (O) at (0,0);
-\node at (2.6,-2) {$c$};
-\draw[thick,dashed] (O) circle[radius=3cm];
-\fill (O) node[below right] {$O$} circle[radius=1.5pt];
-\draw (O) -- node[right] {$r$} ++(-110:3cm) coordinate (R);
-\fill (R) circle[radius=1.5pt] node[above right,xshift=2pt] {$R$};
-\draw (O) +(170:4cm) -- node[below, near end,xshift=40pt,yshift=8pt] {$l$} ++(30:4.5cm);
+\node[below right] at (O) {$O$};
+\vertex{O};
+\draw[thick,dashed,name path=circle] (O) circle[radius=3cm];
+\draw (O) -- node[above] {$r$} ++(-130:3cm) coordinate (R);
+\draw[name path=l] (O) ++(170:4cm) --
+  node[below, near end,xshift=30pt,yshift=10pt] {$l$} ++(20:8cm);
+\path[name intersections={of=circle and l,by={Y,X}}];
+\node[above left] at (X) {$X$};
+\node[above right] at (Y) {$Y$};
 \end{tikzpicture}
 \end{center}
+\caption{בניית נקודות החיתוך של קו ומעגל (1)}\label{f.se-line-circle1}
+\end{figure}
+
+
+%\begin{center}
+%
+%\begin{tikzpicture}[scale=.7]
+%\coordinate (O) at (0,0);
+%\node at (2.6,-2) {$c$};
+%\draw[thick,dashed] (O) circle[radius=3cm];
+%\fill (O) node[below right] {$O$} circle[radius=1.5pt];
+%\draw (O) -- node[right] {$r$} ++(-110:3cm) coordinate (R);
+%\fill (R) circle[radius=1.5pt] node[above right,xshift=2pt] {$R$};
+%\draw (O) +(170:4cm) -- node[below, near end,xshift=40pt,yshift=8pt] {$l$} ++(30:4.5cm);
+%\end{tikzpicture}
+%\end{center}
 לפי משפט~%
 \ref{thm.perpendicular}
 ניתן לבנות אנך ממרכז המעגל
@@ -1106,28 +1323,62 @@ $2s$
 את אורך המיתר. שימו לב שבאיור
 $s,X,Y$
 הם רק הגדרות וטרם בנינו את נקודות החיתוך.
-\begin{center}
 
+\begin{figure}[htb]
+\begin{center}
 \begin{tikzpicture}[scale=.7]
 \coordinate (O) at (0,0);
-\node at (2.6,-2) {$c$};
 \draw[thick,dashed,name path=circle] (O) circle[radius=3cm];
-\fill (O) node[below right] {$O$} circle[radius=1.5pt];
-\draw (O) -- node[right] {$r$} ++(-110:3cm) coordinate (R);
-\fill (R) node[above right,xshift=2pt] {$R$} circle[radius=1.5pt];
-\draw[name path=l] (O) ++(170:4cm) -- node[below, near end,xshift=40pt,yshift=12pt] {$l$} ++(20:8cm);
+\node[below right] at (O) {$O$};
+\vertex{O};
+\path (O) --  ++(-130:3cm) coordinate (R);
+\node[below left,yshift=2pt,xshift=2pt] at (R) {$R$};
+\draw[name path=l] (O) ++(170:4cm) --
+  node[below, near end,xshift=30pt,yshift=10pt] {$l$} ++(20:8cm);
 \path[name intersections={of=circle and l,by={Y,X}}];
-\fill (X) node[above left] {$X$} circle[radius=1.5pt];
-\fill (Y) node[above right,yshift=2pt] {$Y$} circle[radius=1.5pt];
+\node[above left] at (X) {$X$};
+\node[above right] at (Y) {$Y$};
 \draw (O) -- node[below] {$r$} (X);
 \path (X) -- ($(X)!.5!(Y)$) coordinate (M);
-\fill (M) node[above] {$M$} circle[radius=1.5pt];
+\node[above] at (M) {$M$};
 \draw (O) -- node[right] {$t$} (M);
 \path (X) -- node[above] {$s$} (M);
 \path (M) -- node[above] {$s$} (Y);
 \draw (O) ++(170:4cm) -- ++(20:3.1cm) -- ++(-70:10pt) -- ++(20:10pt);
+\draw (O) -- node[below] {$t$} +(50:2) coordinate (RTT);
+\draw (O) -- node[below] {$t$} +(-130:2) coordinate (RT);
+\vertex{RT};
+\draw (RT) -- node[right,yshift=-2pt] {$r-t$} ($(RT)+(-130:1cm)$);
+\vertex{RTT};
+\draw[<->] ($(RT)+(.5cm,-1.6cm)$) -- node[fill=white] {$r+t$}+(50:5);
 \end{tikzpicture}
 \end{center}
+\caption{בניית נקודות החיתוך של קו ומעגל (2)}\label{f.se-line-circle2}
+\end{figure}
+
+
+%\begin{center}
+%
+%\begin{tikzpicture}[scale=.7]
+%\coordinate (O) at (0,0);
+%\node at (2.6,-2) {$c$};
+%\draw[thick,dashed,name path=circle] (O) circle[radius=3cm];
+%\fill (O) node[below right] {$O$} circle[radius=1.5pt];
+%\draw (O) -- node[right] {$r$} ++(-110:3cm) coordinate (R);
+%\fill (R) node[above right,xshift=2pt] {$R$} circle[radius=1.5pt];
+%\draw[name path=l] (O) ++(170:4cm) -- node[below, near end,xshift=40pt,yshift=12pt] {$l$} ++(20:8cm);
+%\path[name intersections={of=circle and l,by={Y,X}}];
+%\fill (X) node[above left] {$X$} circle[radius=1.5pt];
+%\fill (Y) node[above right,yshift=2pt] {$Y$} circle[radius=1.5pt];
+%\draw (O) -- node[below] {$r$} (X);
+%\path (X) -- ($(X)!.5!(Y)$) coordinate (M);
+%\fill (M) node[above] {$M$} circle[radius=1.5pt];
+%\draw (O) -- node[right] {$t$} (M);
+%\path (X) -- node[above] {$s$} (M);
+%\path (M) -- node[above] {$s$} (Y);
+%\draw (O) ++(170:4cm) -- ++(20:3.1cm) -- ++(-70:10pt) -- ++(20:10pt);
+%\end{tikzpicture}
+%\end{center}
 $\triangle OMX$
 הוא מעגל ישר-זווית ולכן
 $s^2=r^2-t^2=(r+t)(r-t)$.
@@ -1183,27 +1434,53 @@ $X,Y$.
 $\overline{O_1O_2}$
 המחבר את שני המרכזים. סמנו את אורכו ב-%
 $t$.
-\begin{center}
 
-\begin{tikzpicture}[scale=1.2]
+\begin{figure}[htb]
+\begin{center}
+\begin{tikzpicture}[scale=.9]
 \coordinate (O1) at (0,0);
 \coordinate (O2) at (2.5,0);
-\fill (O1) node[below left] {$O_1$} circle[radius=1.5pt];
-\fill (O2) node[below right] {$O_2$} circle[radius=1.5pt];
+\node[below left] at (O1) {$O_1$};
+\node[below right] at (O2) {$O_2$};
+\vertex{O1};
+\vertex{O2};
 \draw[thick,dashed,name path=circle1] (O1) circle[radius=2cm];
 \draw[thick,dashed,name path=circle2] (O2) circle[radius=1.6cm];
 \path [name intersections={of=circle1 and circle2,by={X,Y}}];
+\node[above,yshift=4pt] at (X) {$X$};
+\node[below,yshift=-4pt] at (Y) {$Y$};
 \draw (O1) -- node[above] {$r_1$} ++(160:2cm);
 \draw (O2) -- node[above] {$r_2$} ++(30:1.6cm);
-\fill (O1) ++(160:2cm) circle[radius=1.5pt];
-\fill (O2) ++(30:1.6cm) circle[radius=1.5pt];
 \draw (O1) -- (O2);
 \node at (-1.7,1.6) {$c_1$};
 \node at (3.8,1.4) {$c_2$};
-\draw[<->] (0,-1) -- node[fill=white] {$t$} (2.5,-1);
-%\node at (6,0) {$t=O_1O_2$};
+\draw[<->] (0,-.6) -- node[fill=white] {$t$} +(2.5,0);
 \end{tikzpicture}
 \end{center}
+\caption{בניית החיתוך של שני מעגלים (1)}\label{f.se-circle-circle1}
+\end{figure}
+
+%\begin{center}
+%
+%\begin{tikzpicture}[scale=1.2]
+%\coordinate (O1) at (0,0);
+%\coordinate (O2) at (2.5,0);
+%\fill (O1) node[below left] {$O_1$} circle[radius=1.5pt];
+%\fill (O2) node[below right] {$O_2$} circle[radius=1.5pt];
+%\draw[thick,dashed,name path=circle1] (O1) circle[radius=2cm];
+%\draw[thick,dashed,name path=circle2] (O2) circle[radius=1.6cm];
+%\path [name intersections={of=circle1 and circle2,by={X,Y}}];
+%\draw (O1) -- node[above] {$r_1$} ++(160:2cm);
+%\draw (O2) -- node[above] {$r_2$} ++(30:1.6cm);
+%\fill (O1) ++(160:2cm) circle[radius=1.5pt];
+%\fill (O2) ++(30:1.6cm) circle[radius=1.5pt];
+%\draw (O1) -- (O2);
+%\node at (-1.7,1.6) {$c_1$};
+%\node at (3.8,1.4) {$c_2$};
+%\draw[<->] (0,-1) -- node[fill=white] {$t$} (2.5,-1);
+%%\node at (6,0) {$t=O_1O_2$};
+%\end{tikzpicture}
+%\end{center}
 סמנו ב-%
 $A$
 את נקודת החיתוך של
@@ -1241,34 +1518,66 @@ $A$
 בשני הכיוונים לאורך האנך.
 $X,Y$,
 הקצות של קטעי הקו, הם נקודות החיתוך של שני המעגלים.
-\begin{center}
 
-\begin{tikzpicture}[scale=1.2]
+\begin{figure}[htb]
+\begin{center}
+\begin{tikzpicture}[scale=.9]
 \coordinate (O1) at (0,0);
 \coordinate (O2) at (2.5,0);
-\fill (O1) node[below left] {$O_1$} circle[radius=1.5pt];
-\fill (O2) node[below right] {$O_2$} circle[radius=1.5pt];
+\vertex{O1};
+\vertex{O2};
+\node[below left] at (O1) {$O_1$};
+\node[below right] at (O2) {$O_2$};
 \draw[thick,dashed,name path=circle1] (O1) circle[radius=2cm];
 \draw[thick,dashed,name path=circle2] (O2) circle[radius=1.6cm];
 \path [name intersections={of=circle1 and circle2,by={X,Y}}];
-\fill (X) node[above,yshift=4pt] {$X$} circle[radius=1.5pt];
-\fill (Y) node[below,yshift=-4pt] {$Y$} circle[radius=1.5pt];
-\draw[thick,dashed] (O1) -- node[above,xshift=-4pt] {$r_1$} (X);
-\draw[thick,dashed] (O2) -- node[above,xshift=4pt] {$r_2$} (X);
+\node[above,yshift=4pt] at (X) {$X$};
+\node[below,yshift=-4pt] at (Y) {$Y$};
+\draw (O1) -- node[above,xshift=-4pt] {$r_1$} (X);
+\draw (O2) -- node[above,xshift=4pt] {$r_2$} (X);
 \draw[name path=oo] (O1) -- (O2);
 \node at (-1.7,1.6) {$c_1$};
 \node at (3.8,1.4) {$c_2$};
 \draw[name path=xy] (X) -- (Y);
 \path[name intersections={of=xy and oo,by={A}}];
-\fill (A) node[below left] {$A$} circle[radius=1.5pt];
+\node[below left] at (A) {$A$};
+\draw (A) rectangle +(6pt,6pt);
 \path (O1) -- node[below,xshift=-2pt] {$q$} (A);
 \path (X) -- node[left,yshift=-2pt] {$x$} (A);
-\draw[<->] (0,-1) -- node[fill=white] {$t$} (2.5,-1);
-\node at (6,.5) {$t=\overline{O_1O_2}$};
-\node at (6,0) {$q=\overline{O_1A}$};
-\node at (6,-.5) {$x=\overline{XA}$};
+\draw[<->] (0,-.6) -- node[fill=white] {$t$} +(2.5,0);
 \end{tikzpicture}
 \end{center}
+\caption{בניית החיתוך של שני מעגלים (2)}\label{f.se-circle-circle2}
+\end{figure}
+
+%\begin{center}
+%
+%\begin{tikzpicture}[scale=1.2]
+%\coordinate (O1) at (0,0);
+%\coordinate (O2) at (2.5,0);
+%\fill (O1) node[below left] {$O_1$} circle[radius=1.5pt];
+%\fill (O2) node[below right] {$O_2$} circle[radius=1.5pt];
+%\draw[thick,dashed,name path=circle1] (O1) circle[radius=2cm];
+%\draw[thick,dashed,name path=circle2] (O2) circle[radius=1.6cm];
+%\path [name intersections={of=circle1 and circle2,by={X,Y}}];
+%\fill (X) node[above,yshift=4pt] {$X$} circle[radius=1.5pt];
+%\fill (Y) node[below,yshift=-4pt] {$Y$} circle[radius=1.5pt];
+%\draw[thick,dashed] (O1) -- node[above,xshift=-4pt] {$r_1$} (X);
+%\draw[thick,dashed] (O2) -- node[above,xshift=4pt] {$r_2$} (X);
+%\draw[name path=oo] (O1) -- (O2);
+%\node at (-1.7,1.6) {$c_1$};
+%\node at (3.8,1.4) {$c_2$};
+%\draw[name path=xy] (X) -- (Y);
+%\path[name intersections={of=xy and oo,by={A}}];
+%\fill (A) node[below left] {$A$} circle[radius=1.5pt];
+%\path (O1) -- node[below,xshift=-2pt] {$q$} (A);
+%\path (X) -- node[left,yshift=-2pt] {$x$} (A);
+%\draw[<->] (0,-1) -- node[fill=white] {$t$} (2.5,-1);
+%\node at (6,.5) {$t=\overline{O_1O_2}$};
+%\node at (6,0) {$q=\overline{O_1A}$};
+%\node at (6,-.5) {$x=\overline{XA}$};
+%\end{tikzpicture}
+%\end{center}
 \textbf{בניית האורך
 $q$:}
 בנו

@@ -11,8 +11,10 @@
 $1973$
 \L{Victor Klee}
 שאל כמה שומרים נחוצים כדי לראות את כל הקירות של מוזיאון על מנת לוודא שלא גונבים את הציורים. אם הקירות של המוזיאון מהווים מצולע משוכלל או אפילו מצולע קמור, אפשר להסתפק בשומר אחד:
-\begin{center}
 
+
+\begin{figure}[htb]
+\begin{center}
 \begin{tikzpicture}[scale=.8]
 \coordinate (O) at (0,0);
 \fill (O) circle (2pt);
@@ -24,12 +26,14 @@ $1973$
 }
 \draw (a) -- (b) -- (c) -- (d) --(e) -- cycle;
 \end{tikzpicture}
+\caption{}\label{}
 \end{center}
+\end{figure}
 
 מה עם מוזיאון עם קירות בצורה של מסור:
 
+\begin{figure}[htb]
 \begin{center}
-
 \begin{tikzpicture}[scale=1]
 \coordinate (O) at (0,0);
 \draw [thick] (O) -- (++110:1cm) coordinate (P);
@@ -44,9 +48,10 @@ $1973$
   ++(+70:1cm) -- ++(0:1.5cm) --
   ++(-70:1cm) coordinate(E) node[below] {$5$} --
   ++(+70:2cm) -- (P);
-
 \end{tikzpicture}
+\caption{}\label{}
 \end{center}
+\end{figure}
 
 וודא על ידי ספירה שיש 
 $15$
@@ -54,8 +59,8 @@ $15$
 
 כל "שן" של המסור מגדירה משולש )מסומן באפור(. שומרת הניצבת במקום כלשהו בתוך אחד המשולשים יכולה לראות את כל הקירות של אותו משולש:
 
+\begin{figure}[hbt]
 \begin{center}
-
 \begin{tikzpicture}[scale=1]
 \coordinate (O) at (0,0);
 \draw [thick] (O) -- (++110:1cm) coordinate (P);
@@ -83,13 +88,14 @@ $15$
 %\draw[->,very thick,blue] ($(O)+(.5,.5)$) -- ++(7.5,.42);
 %\draw[->,very thick,blue] ($(O)+(.5,.5)$) -- ++(3,-.5);
 \end{tikzpicture}
+\caption{}\label{}
 \end{center}
+\end{figure}
 
 אם השומרת ניצבת בקירבת הקיר העליון היא יכולה לראות את כל הקירות האופקיים )חצים כחולים(. ברור שחמש
 שומרות מספיקות כדי לשמור על כל הקירות. אם המשולשים לא חופפים, שומרת במשולש אחד לא יכולה לראות את כל הקירות של משולש אחר )חץ ירוק(, לכן חייבים להעסיק חמש שומרות נחוצות.
-
+\begin{figure}[htb]
 \begin{center}
-
 \begin{tikzpicture}[scale=1]
 \coordinate (O) at (0,0);
 \draw [thick] (O) -- (++110:1cm) coordinate (P);
@@ -118,7 +124,10 @@ $15$
 \draw (6,0) circle(4pt);
 \draw (4.95,-.28) circle(4pt);
 \end{tikzpicture}
+\caption{}\label{}
 \end{center}
+\end{figure}
+
 \begin{theorem}\label{thm.guarded} \mbox{}\\
 $\disfrac{n}{3}$
 שומרות מספיקות ונחוצות כדי לשמור על כל מוזיאון עם
@@ -161,8 +170,8 @@ $1$
 קמור וקודקוד
 $2$
 קעור.
+\begin{figure}[htb]
 \begin{center}
-
 \begin{tikzpicture}[scale=.8]
 \draw[thick]
   (0,0) coordinate (A) node[below left] {$1$} -- 
@@ -183,6 +192,9 @@ $2$
   \fill (\point) circle(1.25pt);
 \end{tikzpicture}
 \end{center}
+\caption{}\label{}
+\end{figure}
+
 \textbf{הגדרה:}
 ניתן
 \textbf{לתלת}
@@ -217,8 +229,11 @@ $n>3$
 קודקודים. חייבים לצייר לפחות אלכסון אחד כדי לתלת את המצולע. בחר אלכסון שרירותי
 $\overline{AB}$:
 
-\begin{center}
+וחלק את המצולע לאורך אלכסון זה לשני מצולעים קטנים יותר:
 
+\begin{figure}
+\begin{center}
+\begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}[scale=.8]
 \draw[thick]
   (0,0) coordinate (A) -- 
@@ -244,10 +259,10 @@ $\overline{AB}$:
 \draw[thick,dashed]
   (B) -- (D) -- (K) -- (F) -- (I) -- (K) -- (A) -- (D) -- (F) -- (H);
 \end{tikzpicture}
-\end{center}
-וחלק את המצולע לאורך אלכסון זה לשני מצולעים קטנים יותר:
-\begin{center}
-
+\caption{}\label{}
+\end{subfigure}
+\hspace{3em}
+\begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}[scale=.8]
 \path
   (0,0) coordinate (A1) -- 
@@ -311,17 +326,23 @@ $\overline{AB}$:
 
 \end{scope}
 \end{tikzpicture}
+\caption{}\label{}
+\end{subfigure}
 \end{center}
-לפי הנחת האינדוקציה, ניתן לצבוע כל אחד מהמצולעים הללו בשלושה צבעים:
-\begin{center}
+\end{figure}
 
-\begin{tikzpicture}[scale=.8]
+לפי הנחת האינדוקציה, ניתן לצבוע כל אחד מהמצולעים הללו בשלושה צבעים:
+
+\begin{figure}[htb]
+\begin{center}
+\begin{subfigure}{.4\textwidth}
+\begin{tikzpicture}[scale=.6]
 \path
   (0,0) coordinate (A1) -- 
   ++(3,0) coordinate (B1) --
   ++(2,2) coordinate (C1) --
   ++(-1.5,-.5) coordinate (D1);
-\draw[thick]
+\draw
   (D1) --
   ++(3,3) coordinate (E1) -- 
   ++(-4,-1) coordinate (F1) --
@@ -343,12 +364,11 @@ $\overline{AB}$:
 \node[below,yshift=-4pt] at (D1) {$B$};
 
 \foreach \point/\color in {D1/red,E1/blue,F1/green,G1/red,H1/blue,I1/red,J1/green,K1/blue}
-  \fill[color=\color] (\point) circle(5pt);
-
+  \fill[color=\color] (\point) circle(3pt);
 
 \begin{scope}[yshift=-1.8cm]
 
-\draw[thick]
+\draw
   (0,0) coordinate (A2) -- 
   ++(3,0) coordinate (B2) --
   ++(2,2) coordinate (C2) --
@@ -362,7 +382,7 @@ $\overline{AB}$:
   ++(.5,-1.5) coordinate (I2) --
   ++(-2,-.5) coordinate (J2) --
   ++(3,-.2) coordinate (K2);
-\draw[thick]
+\draw
   (K2) --
   ++(-4,-.3) coordinate (L2) --
   (A2);
@@ -374,30 +394,21 @@ $\overline{AB}$:
 \node[above,yshift=4pt] at (D2) {$B$};
 
 \foreach \point/\color in {A2/red,B2/blue,C2/red,D2/green,K2/blue,L2/green}
-  \fill[color=\color] (\point) circle(5pt);
-
+  \fill[color=\color] (\point) circle(3pt);
 
 \end{scope}
 \end{tikzpicture}
-\end{center}
-השיוך של צבעים לקודקודים הוא שרירותי, כך שאם הקודקודים 
-$A,B$
-מקבלים צבעים שונים בשני המצולעים, ניתן לשנות את הצבעים באחד מהם כך שהצבעים של 
-$A,B$
-זהים בשני המצולעים. נחליף את הצבעים
-\textbf{אדום}
-ו-%
-\textbf{ירוק}
-במצולע התחתון:
-\begin{center}
-
-\begin{tikzpicture}[scale=.8]
+\caption{Three-color the two smaller polygons}\label{f.museum.three-3}
+\end{subfigure}
+\hspace{3em}
+\begin{subfigure}{.4\textwidth}
+\begin{tikzpicture}[scale=.6]
 \path
   (0,0) coordinate (A1) -- 
   ++(3,0) coordinate (B1) --
   ++(2,2) coordinate (C1) --
   ++(-1.5,-.5) coordinate (D1);
-\draw[thick]
+\draw
   (D1) --
   ++(3,3) coordinate (E1) -- 
   ++(-4,-1) coordinate (F1) --
@@ -417,8 +428,9 @@ $A,B$
 \draw[thick,dashed]
   (D1) -- (F1) -- (I1) -- (K1) -- (F1) -- (H1);
 \draw[thick] (D1) -- (K1);
+
 \foreach \point/\color in {D1/red,E1/blue,F1/green,G1/red,H1/blue,I1/red,J1/green,K1/blue}
-  \fill[color=\color] (\point) circle(5pt);
+  \fill[color=\color] (\point) circle(3pt);
 
 \begin{scope}[yshift=-1.8cm]
 
@@ -436,30 +448,178 @@ $A,B$
   ++(.5,-1.5) coordinate (I2) --
   ++(-2,-.5) coordinate (J2) --
   ++(3,-.2) coordinate (K2);
-\draw[thick]
+\draw
   (K2) --
   ++(-4,-.3) coordinate (L2) --
   (A2);
   
-
 \draw[thick,dashed]
   (K2) -- (A2) -- (D2) -- (B2) -- (D2);
 \draw[thick] (D2) -- (K2);
 \node[above,yshift=4pt] at (K2) {$A$};
 \node[above,yshift=4pt] at (D2) {$B$};
 
-
 \foreach \point/\color in {A2/green,B2/blue,C2/green,D2/red,K2/blue,L2/red}
-  \fill[color=\color] (\point) circle(5pt);
+  \fill[color=\color] (\point) circle(3pt);
 
 \end{scope}
 \end{tikzpicture}
+\caption{Exchange the colors of one polygon to match the other}\label{f.museum.three-4}
+\end{subfigure}
 \end{center}
+\end{figure}
+
+
+%\begin{center}
+%
+%\begin{tikzpicture}[scale=.8]
+%\path
+%  (0,0) coordinate (A1) -- 
+%  ++(3,0) coordinate (B1) --
+%  ++(2,2) coordinate (C1) --
+%  ++(-1.5,-.5) coordinate (D1);
+%\draw[thick]
+%  (D1) --
+%  ++(3,3) coordinate (E1) -- 
+%  ++(-4,-1) coordinate (F1) --
+%  ++(-2,1) coordinate (G1) --
+%  ++(-1,-1) coordinate (H1) --
+%  ++(.5,-1.5) coordinate (I1) --
+%  ++(-2,-.5) coordinate (J1) --
+%  ++(3,-.2) coordinate (K1);
+%\path
+%  (K1) -- 
+%  ++(-4,-.3) coordinate (L1) --
+%  (A1);
+%  
+%\draw[thick,dashed]
+%  (D1) -- (F1) -- (I1) -- (K1) -- (F1) -- (H1);
+%\draw[thick] (D1) -- (K1);
+%
+%\node[below,yshift=-4pt] at (K1) {$A$};
+%\node[below,yshift=-4pt] at (D1) {$B$};
+%
+%\foreach \point/\color in {D1/red,E1/blue,F1/green,G1/red,H1/blue,I1/red,J1/green,K1/blue}
+%  \fill[color=\color] (\point) circle(5pt);
+%
+%
+%\begin{scope}[yshift=-1.8cm]
+%
+%\draw[thick]
+%  (0,0) coordinate (A2) -- 
+%  ++(3,0) coordinate (B2) --
+%  ++(2,2) coordinate (C2) --
+%  ++(-1.5,-.5) coordinate (D2);
+%\path
+%  (D2) --
+%  ++(3,3) coordinate (E2) --
+%  ++(-4,-1) coordinate (F2) --
+%  ++(-2,1) coordinate (G2) --
+%  ++(-1,-1) coordinate (H2) --
+%  ++(.5,-1.5) coordinate (I2) --
+%  ++(-2,-.5) coordinate (J2) --
+%  ++(3,-.2) coordinate (K2);
+%\draw[thick]
+%  (K2) --
+%  ++(-4,-.3) coordinate (L2) --
+%  (A2);
+%  
+%\draw[thick,dashed]
+%  (K2) -- (A2) -- (D2) -- (B2) -- (D2);
+%\draw[thick] (D2) -- (K2);
+%\node[above,yshift=4pt] at (K2) {$A$};
+%\node[above,yshift=4pt] at (D2) {$B$};
+%
+%\foreach \point/\color in {A2/red,B2/blue,C2/red,D2/green,K2/blue,L2/green}
+%  \fill[color=\color] (\point) circle(5pt);
+%
+%
+%\end{scope}
+%\end{tikzpicture}
+%\end{center}
+השיוך של צבעים לקודקודים הוא שרירותי, כך שאם הקודקודים 
+$A,B$
+מקבלים צבעים שונים בשני המצולעים, ניתן לשנות את הצבעים באחד מהם כך שהצבעים של 
+$A,B$
+זהים בשני המצולעים. נחליף את הצבעים
+\textbf{אדום}
+ו-%
+\textbf{ירוק}
+במצולע התחתון:
+
+%\begin{center}
+%
+%\begin{tikzpicture}[scale=.8]
+%\path
+%  (0,0) coordinate (A1) -- 
+%  ++(3,0) coordinate (B1) --
+%  ++(2,2) coordinate (C1) --
+%  ++(-1.5,-.5) coordinate (D1);
+%\draw[thick]
+%  (D1) --
+%  ++(3,3) coordinate (E1) -- 
+%  ++(-4,-1) coordinate (F1) --
+%  ++(-2,1) coordinate (G1) --
+%  ++(-1,-1) coordinate (H1) --
+%  ++(.5,-1.5) coordinate (I1) --
+%  ++(-2,-.5) coordinate (J1) --
+%  ++(3,-.2) coordinate (K1);
+%\path
+%  (K1) -- 
+%  ++(-4,-.3) coordinate (L1) --
+%  (A1);
+%  
+%\node[below,yshift=-4pt] at (K1) {$A$};
+%\node[below,yshift=-4pt] at (D1) {$B$};
+%
+%\draw[thick,dashed]
+%  (D1) -- (F1) -- (I1) -- (K1) -- (F1) -- (H1);
+%\draw[thick] (D1) -- (K1);
+%\foreach \point/\color in {D1/red,E1/blue,F1/green,G1/red,H1/blue,I1/red,J1/green,K1/blue}
+%  \fill[color=\color] (\point) circle(5pt);
+%
+%\begin{scope}[yshift=-1.8cm]
+%
+%\draw[thick]
+%  (0,0) coordinate (A2) -- 
+%  ++(3,0) coordinate (B2) --
+%  ++(2,2) coordinate (C2) --
+%  ++(-1.5,-.5) coordinate (D2);
+%\path
+%  (D2) --
+%  ++(3,3) coordinate (E2) --
+%  ++(-4,-1) coordinate (F2) --
+%  ++(-2,1) coordinate (G2) --
+%  ++(-1,-1) coordinate (H2) --
+%  ++(.5,-1.5) coordinate (I2) --
+%  ++(-2,-.5) coordinate (J2) --
+%  ++(3,-.2) coordinate (K2);
+%\draw[thick]
+%  (K2) --
+%  ++(-4,-.3) coordinate (L2) --
+%  (A2);
+%  
+%
+%\draw[thick,dashed]
+%  (K2) -- (A2) -- (D2) -- (B2) -- (D2);
+%\draw[thick] (D2) -- (K2);
+%\node[above,yshift=4pt] at (K2) {$A$};
+%\node[above,yshift=4pt] at (D2) {$B$};
+%
+%
+%\foreach \point/\color in {A2/green,B2/blue,C2/green,D2/red,K2/blue,L2/red}
+%  \fill[color=\color] (\point) circle(5pt);
+%
+%\end{scope}
+%\end{tikzpicture}
+%\end{center}
+
 כעת ניתן להדביק את שני המצולעים ביחד כדי לשחזר את המצולע המקורי עם
 $n$
 קודקודים. המצולע יהיה צבוע בשלושה צבעים.
 \qed
 
+\begin{figure}
 \begin{center}
 \begin{tikzpicture}[scale=.8]
 \draw[thick]
@@ -488,6 +648,8 @@ $n$
   \fill[color=\color] (\point) circle(5pt);
 \end{tikzpicture}
 \end{center}
+\caption{}\label{}
+\end{figure}
 
 
 \section{מצביעת מצולעים לשמירה על מוזיאונים}
@@ -536,6 +698,8 @@ $180^\circ(n-2)$.
 \textbf{הזוויות החיצוניות}
 ב-%
 $\theta_i$:
+
+\begin{figure}
 \begin{center}
 
 \begin{tikzpicture}[scale=.6]
@@ -567,6 +731,9 @@ $\theta_i$:
 
 \end{tikzpicture}
 \end{center}
+\caption{}\label{}
+\end{figure}
+
 אם נסכם את הזוויות החיצוניות נקבל 
 $\displaystyle\sum_{i=1}^n \theta_i = 360^\circ$.
 ניתן לראות את הסיכום באיור על ידי "סיבוב" הקווים המקווקווים מאחד לשני לפי הסדר 
@@ -582,6 +749,8 @@ $\phi_i$.
 \displaystyle\sum_1^n \phi_i &=& n\cdot 180^\circ-360^\circ =180^\circ(n-2)\,.
 \end{eqn}
 נבדוק מה קורה אם נוסיף קודקוד קעור:
+
+\begin{figure}
 \begin{center}
 
 \begin{tikzpicture}
@@ -594,6 +763,9 @@ $\phi_i$.
 \draw[thick,dashed] (A) -- (C);
 \end{tikzpicture}
 \end{center}
+\caption{}\label{}
+\end{figure}
+
 קיים משולש המורכב משתי הצלעות שנוגעות בקודקוד הקעור והצלע המסומן בקו מקווקוו. נסכם את הזוויות של המשולש:
 
 \begin{eqn}
@@ -658,25 +830,74 @@ $\triangle BCD$
 $\overline{BD}$
 הוא צלע.
 
+\begin{figure}[htb]
 \begin{center}
-
-\begin{tikzpicture}[scale=1.6]
-\clip (-2,-.2) rectangle (3.8,2.2);
-\draw[thick]
+\begin{subfigure}{.4\textwidth}
+\begin{tikzpicture}[scale=1.4]
+\clip (-.5,-.4) rectangle (3.8,2.2);
+\draw
   (0,0) coordinate (A) -- 
   ++(1.5,0) coordinate (B) --
   ++(2,2) coordinate (C) --
   ++(-1.8,-.5) coordinate (D) --
   ++(-1,.5) coordinate (E) --
-%  ++(1.3,-1) coordinate (F) --
   (A);
 \draw[thick,dashed] (B) -- (D);
-%\draw[very thick,dotted] (C) -- (F);
-%\node [draw,circle through=(F)] at (C) {};
 \foreach \point/\pos in {A/below,B/below,C/right,D/above,E/left}
-  \fill (\point) circle(.7pt) node[\pos] {$\point$};
+  \node[\pos] at (\point) {$\point$};
+\vertex{B};
+\vertex{D};
 \end{tikzpicture}
+\caption{Triangulation where a diagonal is contained within the polygon}\label{f.contained}
+\end{subfigure}
+\hspace{3em}
+\begin{subfigure}{.4\textwidth}
+\begin{tikzpicture}[scale=1.4]
+\clip (-.2,-.4) rectangle (3.8,2.2);
+\draw
+  (0,0) coordinate (A) -- 
+  ++(1.5,0) coordinate (B) --
+  ++(2,2) coordinate (C) --
+  ++(-1.8,-.5) coordinate (D) --
+  ++(-1,.5) coordinate (E) --
+  ++(1.3,-1) coordinate (F) --
+  (A);
+\draw[thick,dashed] (B) -- (D);
+\draw[very thick,dotted] (C) -- (F);
+\node [draw,circle through=(F)] at (C) {};
+\node[below] at (A) {$A$};
+\node[below] at (B) {$B$};
+\node[right] at (C) {$C$};
+\node[above,yshift=2pt,xshift=-3pt] at (D) {$D$};
+\node[left]  at (E) {$E$};
+\node[below,yshift=-1pt,xshift=-2pt] at (F) {$F$};
+\vertex{C};
+\vertex{F};
+\end{tikzpicture}
+\caption{Triangulation where a diagonal is not contained within the polygon}\label{f.museum.concave-vertices}
+\end{subfigure}
 \end{center}
+\end{figure}
+%
+%\begin{center}
+%
+%\begin{tikzpicture}[scale=1.6]
+%\clip (-2,-.2) rectangle (3.8,2.2);
+%\draw[thick]
+%  (0,0) coordinate (A) -- 
+%  ++(1.5,0) coordinate (B) --
+%  ++(2,2) coordinate (C) --
+%  ++(-1.8,-.5) coordinate (D) --
+%  ++(-1,.5) coordinate (E) --
+%%  ++(1.3,-1) coordinate (F) --
+%  (A);
+%\draw[thick,dashed] (B) -- (D);
+%%\draw[very thick,dotted] (C) -- (F);
+%%\node [draw,circle through=(F)] at (C) {};
+%\foreach \point/\pos in {A/below,B/below,C/right,D/above,E/left}
+%  \fill (\point) circle(.7pt) node[\pos] {$\point$};
+%\end{tikzpicture}
+%\end{center}
 
 
 לפי הנחת האינדוקציה, ניתן לתלת את המצולע ואז להדביק אותו למשולש
@@ -688,28 +909,25 @@ $C$,
 ולכן
 $\overline{CF}$
 הוא אלכסון המחלק את המצולע לשני מצולעים קטנים יותר. לפי הנחת האינדוקציה ניתן לתלת אותם ולהדביק אותם אחד לשני.
-\begin{center}
-
-\begin{tikzpicture}[scale=1.6]
-\clip (-2,-.2) rectangle (3.8,2.2);
-\draw[thick]
-  (0,0) coordinate (A) -- 
-  ++(1.5,0) coordinate (B) --
-  ++(2,2) coordinate (C) --
-  ++(-1.8,-.5) coordinate (D) --
-  ++(-1,.5) coordinate (E) --
-  ++(1.3,-1) coordinate (F) --
-  (A);
-%\draw[thick,dashed] (B) -- (D);
-\draw[very thick,dashed] (C) -- (F);
-\node [draw,circle through=(F)] at (C) {};
-\foreach \point/\pos in {A/below,B/below,C/right,D/above,E/left,F/below}
-  \fill (\point) circle(.7pt) node[\pos] {$\point$};
-\end{tikzpicture}
-\end{center}
-
-\selectlanguage{hebrew}
-
+%\begin{center}
+%
+%\begin{tikzpicture}[scale=1.6]
+%\clip (-2,-.2) rectangle (3.8,2.2);
+%\draw[thick]
+%  (0,0) coordinate (A) -- 
+%  ++(1.5,0) coordinate (B) --
+%  ++(2,2) coordinate (C) --
+%  ++(-1.8,-.5) coordinate (D) --
+%  ++(-1,.5) coordinate (E) --
+%  ++(1.3,-1) coordinate (F) --
+%  (A);
+%%\draw[thick,dashed] (B) -- (D);
+%\draw[very thick,dashed] (C) -- (F);
+%\node [draw,circle through=(F)] at (C) {};
+%\foreach \point/\pos in {A/below,B/below,C/right,D/above,E/left,F/below}
+%  \fill (\point) circle(.7pt) node[\pos] {$\point$};
+%\end{tikzpicture}
+%\end{center}
 
 \subsection*{מקורות}
 

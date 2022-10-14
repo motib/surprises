@@ -10,7 +10,7 @@ You can download the book from
 
 The directory `en` contains the LaTeX / TikZ source of the published book.
 
-The directory `he` contains an unfinished draft of a Hebrew translation.
+The directory `he` contains an unfinished draft of a Hebrew translation. The XeTeX compiler is used.
 
 ### Contents
 

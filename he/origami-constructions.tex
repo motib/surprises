@@ -64,11 +64,9 @@ $\overline{QB'}$
 ו-%
 $\overline{QQ'}$.
 
-
+\begin{figure}
 \begin{center}
-
 \begin{tikzpicture}[scale=.8]
-
 % Place points P, Q, R
 \coordinate (P) at (60:10cm); %(5,8.67);
 \coordinate (Q) at (0,0);
@@ -125,8 +123,9 @@ $\overline{QQ'}$.
   ($(Q)+(2pt,-4pt)$) to ($(QP)+(0pt,-4pt)$);
 
 \end{tikzpicture}
+\caption{}\label{}
 \end{center}
-
+\end{figure}
 טיעון:
 $\angle PQB'=\angle B'QQ'=\angle Q'QR=\disfrac{1}{3}\angle PQR$.
 
@@ -295,81 +294,77 @@ $\overline{A'B'}=\overline{AB}=\overline{BQ}=\overline{B'Q'}=a$.
 $\triangle A'B'Q\cong\triangle Q'B'Q$
 ו-%
 $\angle A'QB'=\angle Q'QB'=\alpha$.
-\begin{figure}[tb]
-\begin{center}
-
-\begin{tikzpicture}[scale=.8]
-
-% Place points P, Q, R
-\coordinate (P) at (60:10cm); %(5,8.67);
-\coordinate (Q) at (0,0);
-\coordinate (R) at (10,0);
-\fill (P) circle (2pt) node[below right] {$P$};
-\fill (Q) circle (2pt) node[left] {$Q$};
-\fill (R) circle (2pt) node[right] {$R$};
-
-% Draw PQR
-\draw [very thick] (P)  -- (Q) -- (R);
-
-% Draw perpendicular to QR
-\draw [thick] (Q) -- node[left,very near end] {$p$} +(0,11);
-
-% Draw parallel to QR and parallel halfway
-\coordinate (A) at (0,5);
-\coordinate (B) at (0,2.5);
-\draw [thick] (A) -- node[above,very near end] {$q$} +(10,0);
-\draw [thick] (B) -- node[above,very near end] {$r$} +(10,0);
-\fill (A) circle (2pt) node[left] {$A$};
-\fill (B) circle (2pt) node[left] {$B$};
-\path (Q) -- node[left] {$a$} (B) -- node[left] {$a$} (A);
-\draw (A) rectangle +(8pt,8pt);
-\draw (B) rectangle +(8pt,8pt);
-
-% Tangent line y = -2.75x + 10.69
-
-% Draw fold
-\coordinate (D) at (0,10.69);
-\coordinate (fold-x) at (3.89,0);
-\coordinate (AP) at (3.65,6.33);
-\coordinate (QP) at (6.87,2.5);
-\coordinate (BP) at (5.26,4.42);
-\fill (D) circle (2pt) node[left] {$D$};
-\fill (AP) circle (2pt) node[above,yshift=6pt] {$A'$};
-\fill (QP) circle (2pt) node[above,yshift=6pt] {$Q'$};
-\fill (BP) circle (2pt) node[above,xshift=2pt,yshift=2pt] {$B'$};
-\draw [very thick,dashed,name path=fold] (D) -- node[left,near start] {$l$} (fold-x);
-
-% Draw line of reflections
-\draw [very thick, dotted] (D) -- (QP);
-
-% Draw trisecting lines
-\draw [very thick,dotted,name path=Qr] (Q) -- ($(Q)!1.3!(QP)$);
-\draw [very thick,dotted,name path=Qq] (Q) -- ($(Q)!1.3!(BP)$);
-
-% Draw indications of right angles
-\draw[rotate=-140] (BP) rectangle +(8pt,8pt);
-\path [name intersections = {of = fold and Qr, by = {U}}];
-\fill (U) circle (2pt) node[above left,xshift=-2pt,yshift=-2pt] {$U$};
-\draw[rotate=20] (U) rectangle +(8pt,8pt);
-\path [name intersections = {of = fold and Qq, by = {V}}];
-\fill (V) circle (2pt) node[above left,xshift=-2pt,yshift=-2pt] {$V$};
-
-\path (Q) -- node[below,near end] {$b$} (U);
-\path (U) -- node[below] {$b$} (QP);
-
-\node[left,xshift=-40pt,yshift=-6pt] at (QP) {$\alpha$};
-\node[right,xshift=40pt,yshift=6pt] at (Q) {$\alpha$};
-\node[right,xshift=40pt,yshift=28pt] at (Q) {$\alpha$};
-\node[right,xshift=30pt,yshift=42pt] at (Q) {$\alpha$};
-\end{tikzpicture}
-\end{center}
-\selectlanguage{hebrew}
-\caption{הוכחה שנייה}\label{f.second-proof}
-\end{figure}
-
-
-\selectlanguage{hebrew}
-
+%\begin{figure}[tb]
+%\begin{center}
+%
+%\begin{tikzpicture}[scale=.8]
+%
+%% Place points P, Q, R
+%\coordinate (P) at (60:10cm); %(5,8.67);
+%\coordinate (Q) at (0,0);
+%\coordinate (R) at (10,0);
+%\fill (P) circle (2pt) node[below right] {$P$};
+%\fill (Q) circle (2pt) node[left] {$Q$};
+%\fill (R) circle (2pt) node[right] {$R$};
+%
+%% Draw PQR
+%\draw [very thick] (P)  -- (Q) -- (R);
+%
+%% Draw perpendicular to QR
+%\draw [thick] (Q) -- node[left,very near end] {$p$} +(0,11);
+%
+%% Draw parallel to QR and parallel halfway
+%\coordinate (A) at (0,5);
+%\coordinate (B) at (0,2.5);
+%\draw [thick] (A) -- node[above,very near end] {$q$} +(10,0);
+%\draw [thick] (B) -- node[above,very near end] {$r$} +(10,0);
+%\fill (A) circle (2pt) node[left] {$A$};
+%\fill (B) circle (2pt) node[left] {$B$};
+%\path (Q) -- node[left] {$a$} (B) -- node[left] {$a$} (A);
+%\draw (A) rectangle +(8pt,8pt);
+%\draw (B) rectangle +(8pt,8pt);
+%
+%% Tangent line y = -2.75x + 10.69
+%
+%% Draw fold
+%\coordinate (D) at (0,10.69);
+%\coordinate (fold-x) at (3.89,0);
+%\coordinate (AP) at (3.65,6.33);
+%\coordinate (QP) at (6.87,2.5);
+%\coordinate (BP) at (5.26,4.42);
+%\fill (D) circle (2pt) node[left] {$D$};
+%\fill (AP) circle (2pt) node[above,yshift=6pt] {$A'$};
+%\fill (QP) circle (2pt) node[above,yshift=6pt] {$Q'$};
+%\fill (BP) circle (2pt) node[above,xshift=2pt,yshift=2pt] {$B'$};
+%\draw [very thick,dashed,name path=fold] (D) -- node[left,near start] {$l$} (fold-x);
+%
+%% Draw line of reflections
+%\draw [very thick, dotted] (D) -- (QP);
+%
+%% Draw trisecting lines
+%\draw [very thick,dotted,name path=Qr] (Q) -- ($(Q)!1.3!(QP)$);
+%\draw [very thick,dotted,name path=Qq] (Q) -- ($(Q)!1.3!(BP)$);
+%
+%% Draw indications of right angles
+%\draw[rotate=-140] (BP) rectangle +(8pt,8pt);
+%\path [name intersections = {of = fold and Qr, by = {U}}];
+%\fill (U) circle (2pt) node[above left,xshift=-2pt,yshift=-2pt] {$U$};
+%\draw[rotate=20] (U) rectangle +(8pt,8pt);
+%\path [name intersections = {of = fold and Qq, by = {V}}];
+%\fill (V) circle (2pt) node[above left,xshift=-2pt,yshift=-2pt] {$V$};
+%
+%\path (Q) -- node[below,near end] {$b$} (U);
+%\path (U) -- node[below] {$b$} (QP);
+%
+%\node[left,xshift=-40pt,yshift=-6pt] at (QP) {$\alpha$};
+%\node[right,xshift=40pt,yshift=6pt] at (Q) {$\alpha$};
+%\node[right,xshift=40pt,yshift=28pt] at (Q) {$\alpha$};
+%\node[right,xshift=30pt,yshift=42pt] at (Q) {$\alpha$};
+%\end{tikzpicture}
+%\end{center}
+%\selectlanguage{hebrew}
+%\caption{הוכחה שנייה}\label{f.second-proof}
+%\end{figure}
 
 \section{הבניה של
 \L{Martin}
@@ -1108,20 +1103,19 @@ $n$
 $360^\circ/n$.
 עבור מתושע הזווית המרכזית היא
 $360^\circ/9=40^\circ$:
-\begin{center}
-
-\begin{tikzpicture}[scale=.7]
-\coordinate (O) at (0,0);
-\fill (O) circle (1.5pt);
-\foreach \x/\name in {0/a,40/b,80/c,120/d,160/e,200/f,240/g,280/h,320/i} {
-  \coordinate (\name) at ($(O)+(\x:3cm)$);
-  \draw (O) -- (\name);
-  \fill (\name) circle (1.5pt);
-}
-\draw (a) -- (b) -- (c) -- (d) -- (e) -- (f) -- (g) -- (h) -- (i) -- cycle;
-\node[above right,xshift=12pt] at (O) {$40^\circ$};
-\end{tikzpicture}
-\end{center}
+%\begin{center}
+%\begin{tikzpicture}[scale=.7]
+%\coordinate (O) at (0,0);
+%\fill (O) circle (1.5pt);
+%\foreach \x/\name in {0/a,40/b,80/c,120/d,160/e,200/f,240/g,280/h,320/i} {
+%  \coordinate (\name) at ($(O)+(\x:3cm)$);
+%  \draw (O) -- (\name);
+%  \fill (\name) circle (1.5pt);
+%}
+%\draw (a) -- (b) -- (c) -- (d) -- (e) -- (f) -- (g) -- (h) -- (i) -- cycle;
+%\node[above right,xshift=12pt] at (O) {$40^\circ$};
+%\end{tikzpicture}
+%\end{center}
 
 הזווית
 $40^\circ$
@@ -1158,8 +1152,8 @@ $\cos 120^\circ=-\frac{1}{2}$.
 
 נבנה מסלולים עבור המשוואה לפי השיטה של 
 \L{Lill}:
+\begin{figure}
 \begin{center}
-
 \begin{tikzpicture}[scale=1.1]
 % Draw help lines and axes
 \draw[step=10mm,white!60!black] (-1,-4) grid (9,1);
@@ -1212,7 +1206,9 @@ $\cos 120^\circ=-\frac{1}{2}$.
 \draw[thick,rotate=52.5463] (R) rectangle +(8pt,8pt);
 \draw[thick,rotate=-127.4537] (S) rectangle +(8pt,8pt);
 \end{tikzpicture}
+\caption{}\label{}
 \end{center}
+\end{figure}
 המסלול השני מתחיל מ-%
 $P$
 בזווית 
@@ -1368,20 +1364,81 @@ $37.4537^\circ$,
 \[
 \tan 37.4537^\circ = \disfrac{0.766044}{1}\,.
 \]
-\begin{center}
 
-\begin{tikzpicture}[scale=.8]
-\draw (0,0) coordinate (A) -- node[below] {$1$} (4,0) coordinate (B);
-\draw (B) -- node[right] {$0.766044$} 
-  ($(B)+(0,0.766044*4)$) coordinate (C);
+\begin{figure}[ht]
+\begin{center}
+\begin{subfigure}{.4\textwidth}
+\begin{tikzpicture}[scale=1]
+\draw (0,0) coordinate (A) -- (4,0) coordinate (B);
+\draw (B) -- node[right] {$0.766$} 
+  ($(B)+(0,0.766*4)$) coordinate (C);
 \draw (A) -- (C);
 \draw[rotate=90] (B) rectangle +(8pt,8pt);
-\fill (A) circle (1pt) node[above left] {$A$}
-  node[above right,xshift=14pt] {$37.4537^\circ$};
-\fill (B) circle (1pt) node[above right] {$B$};
-\fill (C) circle (1pt) node[right] {$C$};
+\node[above left] at (A) {$A$};
+\node[above right] at (B) {$B$};
+\node[right] at (C) {$C$};
+\coordinate (D) at (0.234*4,0);
+\node[below left] at (D)  {$D$};
+\coordinate (E) at ($(D)+(4,0)$);
+\draw (D) -- (B);
+\draw (B) -- (E);
+\node[above right] at (E) {$E$};
+\draw[very thick,dotted,->,bend right=50] ($(C)+(-.2,0)$) to ($(A)+(.94,.4)$);
+\draw[<->] ($(D)+(0,-1.2)$) -- node[fill=white] {$1$} ($(E)+(0,-1.2)$);
+\draw[<->] ($(A)+(0,-.8)$) -- node[fill=white] {$1$} ($(B)+(0,-.8)$);
+\node[above right,xshift=14pt] at (A) {$37.45^\circ$};
+\vertex{D};
+\vertex{E};
 \end{tikzpicture}
+\caption{The tangent that is the solution of the equation for the nonagon}\label{f.nonagon5-eq}
+\end{subfigure}
+\hspace{3em}
+\begin{subfigure}{.4\textwidth}
+\begin{tikzpicture}[scale=1]
+\coordinate (B) at (4,0);
+\draw (B) -- ($(B)+(0,0.766*4)$) coordinate (C);
+\draw[rotate=90] (B) rectangle +(8pt,8pt);
+\node[above right] at (B) {$B$};
+\node[right] at (C) {$C$};
+\coordinate (D) at (0.234*4,0);
+\node[above left] at (D) {$D$};
+\node[above right,xshift=8pt,yshift=4pt] at (D) {$40^\circ$};
+\coordinate (E) at ($(D)+(4,0)$);
+\draw (D) -- node[fill=white] {$0.766$} (B);
+\draw (B) -- (E);
+\node[above right,xshift=4pt] at (E) {$E$};
+\coordinate (F) at ($(B)+(0,4)$);
+\draw[very thick,dotted,->,bend right=50] ($(E)+(.1,.2)$) to ($(F)+(.2,0)$);
+\draw (B) -- (F);
+\node[left] at (F) {$F$};
+\draw (D) -- node[fill=white] {$1$} (F);
+\draw[<->] ($(D)+(0,-.8)$) -- node[fill=white] {$1$} ($(E)+(0,-.8)$);
+\vertex{C};
+\vertex{E};
+\coordinate (A) at (0,0) node [above left] {$A$};
+\draw (A) -- (D);
+\vertex{A};
+\vertex{D};
+\end{tikzpicture}
+\caption{The cosine of the central angle of the nonagon}\label{f.nonagon5-central}
+\end{subfigure}
 \end{center}
+\end{figure}
+
+
+%\begin{center}
+%\begin{tikzpicture}[scale=.8]
+%\draw (0,0) coordinate (A) -- node[below] {$1$} (4,0) coordinate (B);
+%\draw (B) -- node[right] {$0.766044$} 
+%  ($(B)+(0,0.766044*4)$) coordinate (C);
+%\draw (A) -- (C);
+%\draw[rotate=90] (B) rectangle +(8pt,8pt);
+%\fill (A) circle (1pt) node[above left] {$A$}
+%  node[above right,xshift=14pt] {$37.4537^\circ$};
+%\fill (B) circle (1pt) node[above right] {$B$};
+%\fill (C) circle (1pt) node[right] {$C$};
+%\end{tikzpicture}
+%\end{center}
 נקפל את הצלע
 $\overline{CB}$
 מעל 
@@ -1400,28 +1457,29 @@ $D$,
 $B$
 ב-% 
 $E$:
-\begin{center}
 
-\begin{tikzpicture}[scale=.8]
-\coordinate (A) at (0,0);
-\coordinate (B) at (4,0);
-\draw (B) -- node[right] {$0.766044$} 
-  ($(B)+(0,0.766044*4)$) coordinate (C);
-\draw (A) -- (C);
-\draw[rotate=90] (B) rectangle +(8pt,8pt);
-\fill (A) circle (1pt) node[above left] {$A$};
-\fill (B) circle (1pt) node[above right] {$B$};
-\fill (C) circle (1pt) node[right] {$C$};
-\coordinate (D) at (0.233956*4,0);
-\fill (D) circle (1pt) node[below left] {$D$};
-\coordinate (E) at ($(D)+(4,0)$);
-\draw (D) -- node[fill=white] {$0.766044$} (B);
-\draw (B) -- (E);
-\fill (E) circle(1pt) node[above right] {$E$};
-\draw[very thick,dotted,->,bend right=50] ($(C)+(-.2,0)$) to ($(A)+(.94,.2)$);
-\draw[<->] ($(D)+(0,-.6)$) -- node[fill=white] {$1$} ($(E)+(0,-.6)$);
-\end{tikzpicture}
-\end{center}
+%\begin{center}
+%
+%\begin{tikzpicture}[scale=.8]
+%\coordinate (A) at (0,0);
+%\coordinate (B) at (4,0);
+%\draw (B) -- node[right] {$0.766044$} 
+%  ($(B)+(0,0.766044*4)$) coordinate (C);
+%\draw (A) -- (C);
+%\draw[rotate=90] (B) rectangle +(8pt,8pt);
+%\fill (A) circle (1pt) node[above left] {$A$};
+%\fill (B) circle (1pt) node[above right] {$B$};
+%\fill (C) circle (1pt) node[right] {$C$};
+%\coordinate (D) at (0.233956*4,0);
+%\fill (D) circle (1pt) node[below left] {$D$};
+%\coordinate (E) at ($(D)+(4,0)$);
+%\draw (D) -- node[fill=white] {$0.766044$} (B);
+%\draw (B) -- (E);
+%\fill (E) circle(1pt) node[above right] {$E$};
+%\draw[very thick,dotted,->,bend right=50] ($(C)+(-.2,0)$) to ($(A)+(.94,.2)$);
+%\draw[<->] ($(D)+(0,-.6)$) -- node[fill=white] {$1$} ($(E)+(0,-.6)$);
+%\end{tikzpicture}
+%\end{center}
 
 נקפל את 
 $\overline{DE}$
@@ -1431,29 +1489,29 @@ $\overline{CB}$
 $E$
 מונחת על הקו בנקודה
 $F$:
-\begin{center}
-
-\begin{tikzpicture}[scale=.8]
-\coordinate (B) at (4,0);
-\draw (B) -- ($(B)+(0,0.766044*4)$) coordinate (C);
-\draw[rotate=90] (B) rectangle +(8pt,8pt);
-\fill (B) circle (1pt) node[above right] {$B$};
-\fill (C) circle (1pt) node[right] {$C$};
-\coordinate (D) at (0.233956*4,0);
-\fill (D) circle (1pt) node[above left] {$D$}
-  node[above right,xshift=10pt,yshift=4pt] {$40^\circ$};
-\coordinate (E) at ($(D)+(4,0)$);
-\draw (D) -- node[fill=white] {$0.766044$} (B);
-\draw (B) -- (E);
-\fill (E) circle(1pt) node[right] {$E$};
-\coordinate (F) at ($(B)+(0,4)$);
-\draw[very thick,dotted,->,bend right=50] ($(E)+(.1,.2)$) to ($(F)+(.2,0)$);
-\draw (B) -- ($(B)+(0,5)$);
-\fill (F) circle (1pt) node[left] {$F$};
-\draw (D) -- node[fill=white] {$1$} (F);
-\draw[<->] ($(D)+(0,-.6)$) -- node[fill=white] {$1$} ($(E)+(0,-.6)$);
-\end{tikzpicture}
-\end{center}
+%\begin{center}
+%
+%\begin{tikzpicture}[scale=.8]
+%\coordinate (B) at (4,0);
+%\draw (B) -- ($(B)+(0,0.766044*4)$) coordinate (C);
+%\draw[rotate=90] (B) rectangle +(8pt,8pt);
+%\fill (B) circle (1pt) node[above right] {$B$};
+%\fill (C) circle (1pt) node[right] {$C$};
+%\coordinate (D) at (0.233956*4,0);
+%\fill (D) circle (1pt) node[above left] {$D$}
+%  node[above right,xshift=10pt,yshift=4pt] {$40^\circ$};
+%\coordinate (E) at ($(D)+(4,0)$);
+%\draw (D) -- node[fill=white] {$0.766044$} (B);
+%\draw (B) -- (E);
+%\fill (E) circle(1pt) node[right] {$E$};
+%\coordinate (F) at ($(B)+(0,4)$);
+%\draw[very thick,dotted,->,bend right=50] ($(E)+(.1,.2)$) to ($(F)+(.2,0)$);
+%\draw (B) -- ($(B)+(0,5)$);
+%\fill (F) circle (1pt) node[left] {$F$};
+%\draw (D) -- node[fill=white] {$1$} (F);
+%\draw[<->] ($(D)+(0,-.6)$) -- node[fill=white] {$1$} ($(E)+(0,-.6)$);
+%\end{tikzpicture}
+%\end{center}
 נקבל:
 \[
 \angle BDF=\cos^{-1} \disfrac{0.766044}{1}=40^\circ\,.
