@@ -6,30 +6,52 @@
 
 \chapter{האקסיומות של אוריגמי}\label{c.origami-axioms}
 
-Origami, the art of paper folding, was developed several centuries ago in Japan and now has a worldwide following. In the late twentieth century the mathematical theory of origami was developed. Its foundation is a set of seven axioms, the 
-\emph{Huzita–Hatori axioms}, named after Humiaki Huzita\index{Huzita, Humiaki} who formalized the first six axioms and Koshiro Hatori\index{Hatori, Koshiro} who found the seventh. Jacques Justin published all seven axioms several years before Huzita and Hatori, and Margherita P. Beloch\index{Beloch, Margherita P.} formulated the sixth axiom in 1936. Nevertheless, the axioms as known as the Huzita-Hatori axioms.
+אוריגמי, האומנות של קיפולי נייר, פותחה לפני מאות שנים ביפן והיום יש לו קהילה בינלאומית. לקראת סוף המאה העשרים, פוחתה התיאוריה המתמטית של אוריגמי שבסיסה היא שבע אקסיומות, אקסיומות
+\L{Huzita–Hatori},
+על שם
+\L{Humiaki Huzita}
+שמצא את ששת האקסיומות הראשונות ו-%
+\L{Koshiro Hatori}
+שמצא את השביעית.
+\L{Jacques Justin}
+פירסם את כל שבעת האקסיומות לפני
+\L{Huzita}
+ו-%
+\L{Hatori},
+ו-%
+\L{Margherita P. Beloch}
+הציגה את האקסיומה השישית ב-%
+$1936$.
+למרות זאת האקסיומות ידועות כאקסיומות
+\L{Huzita-Hatori}.
 
-In a sequence of three chapters we will explore the mathematics of origami. This chapter presents the axioms, Chap.~\ref{c.origami-cube} connects origami with the roots of polynomials and Chap.~\ref{c.origami-constructions} shows that constructions with origami can solve problems that are impossible using a straightedge and compass.
+בסדרה של שלושה פרקים נסייר במתמטיקה של אוריגמי. פרק זה מציג את האקסיומות, פרק%
+~\ref{c.origami-cube}
+קושר את אוריגמי עם השורשים של פולינומים ופרק%
+~\ref{c.origami-constructions} 
+מראה שבניות שאינן אפשריות עם סרגל ומחוגה ניתנות לבנייה עם אוריגמי.
  
-This chapter contains a section for each of the seven axioms. Following a statement of an axiom and a diagram of the \emph{fold} it specifies, the equations of the fold and the points of intersection are developed using analytic geometry. A fold can also be defined as a \emph{geometric locus}\index{Geometric locus}, the set of all points satisfying some property. The term fold comes from the origami operation of folding a piece of paper, but here it is used to refer the geometric line that would be created by folding the paper.
+פרק זה מכיל סעיף עבור כל אחת מהאקסיומות. לאחר ניסוח האקסיומה ותרשים של 
+\textbf{קיפול}
+שהיא מתארת, נפתח את משוואות הקיפול ונקודות החיתוך עם גיאומטריה אנליטית. ניתן להגדיר קיפול גם 
+\textbf{כמקום גיאומטרי},
+קבוצת כל הנקודות המקיימות תכונה מסויימת. המונח קיפול בא מהפעולה של קיפול דף נייר באוריגמי, אבל כאן הוא משמש לקו הגיאומטרי שנוצר על ידי קיפול הדף.
 
-Folds result in \emph{reflections}\index{Origami!reflection}. Given a point $p$, its reflection around a fold $l$ results in a point $p'$ such that $l$ is the perpendicular bisector of the line segment $\overline{pp'}$ (Fig.~\ref{f.origami-def}).
-
-פעולות
-\textbf{הקיפול}
-מניח נקודות על נקודות או קווים, או קווים על קווים, כך שתנאים מסויימים מתקיימים. המונח קיפול בא מהפעולה באוריגמי של קיפול דף נייר, אבל כאן נשתמש בו עבור הקו הגיאומטרי שנוצר על ידי קיפול הדף. לפי ההגדרה, כתוצאה מקיפול נוצרים 
-\textbf{שיקופים}.
-נתונה נקודה 
+התוצאה של פעולת הקיפול היא
+\textbf{שיקוף}.
+נתון נקודה
 $p$,
-השיקוף שלה סביב הקיפול 
-$l$,
-הוא נקודה
-$p'$,
+השיקוף שלה סביב הקיפול
+$l$
+היא הנקודה 
+$p'$
 כך ש-%
 $l$
 הוא האנך האמצעי של קטע הקו
-$\overline{pp'}$:
-\begin{figure}
+$\overline{pp'}$
+(איור%
+~\ref{f.origami-def}).
+\begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}
 \coordinate (P1) at (2,2);
@@ -48,22 +70,25 @@ $\overline{pp'}$:
 \fill (P1P) circle(2pt) node[above left] {$p'$};
 \fill (mid) circle(2pt);% node[below,xshift=-2pt,yshift=-8pt] {$p_i$};
 \draw[very thick,dotted,->,bend right=50] (2,1.8) to (6,3.8);
-\end{tikzpicture}
-\caption{}\label{}
+\end{tikzpicture}|
+\selectlanguage{hebrew}
+\caption{הקפל הוא האנך האמצעי של הקו שמחבר בין נקודה לשיקוף שלה}
+\label{f.origami-def}
 \end{center}
 \end{figure}
 
 \section{אקסיומה 1}\label{s.ax1}
 
 
-\textbf{אקסיומה:} 
+\begin{axiom}
 נתונות שתי נקודות שונות
 $p_1=(x_1,y_1)$, $p_2=(x_2,y_2)$,
 קיים קיפול יחיד
 $l$
-העובר דרך שתיהן )איור~%
-\ref{f.axiom1}(.
-\begin{figure}[tb]
+העובר דרך שתיהן (איור%
+~\ref{f.axiom1}).
+\end{axiom}
+\begin{figure}[htb]
 \begin{center}
 
 \begin{tikzpicture}[scale=.9]
@@ -94,10 +119,10 @@ $p_1,p_2$,
 $y$
 מתקבלת מ-%
 $p_1$:
-\[
+\begin{equation}
 y - y_1 = \disfrac{y_2-y_1}{x_2-x_1}(x-x_1)\,.
-\]
-\textbf{דוגמה:}
+\end{equation}
+\begin{example}
 נתונות הנקודות
 $p_1=(2,2), p_2=(6,4)$,
 המשוואה של 
@@ -107,17 +132,14 @@ $l$  היא:
 y-2&=&\disfrac{4-2}{6-2}(x-2)\\
 y&=&\disfrac{1}{2}x+1\,.
 \end{eqn}
+\end{example}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\selectlanguage{hebrew}
-
-
 
 \section{אקסיומה 2}\label{s.ax2}
 
 
-\textbf{אקסיומה:}
+\begin{axiom}
 נתונות שתי נקודות שונות
 $p_1=(x_1,y_1)$, $p_2=(x_2,y_2)$,
 קיים קיפול יחיד 
@@ -125,14 +147,13 @@ $l$
 המניח את
 $p_1$
 על
-$p_2$:
+$p_2$
+(איור~%
+\ref{f.axiom2}).
+\end{axiom}
 
-)איור~%
-\ref{f.axiom2}(.
-
-\begin{figure}
+\begin{figure}[htb]
 \begin{center}
-
 \begin{tikzpicture}[scale=.9]
 \draw[step=10mm,white!50!black,thin] (-1,-1) grid (8,6);
 \draw[thick] (-1,0) -- (8,0);
@@ -155,8 +176,8 @@ $p_2$:
 
 \draw[very thick,dotted,->,bend right=50] (2,1.8) to (6,3.8);
 \end{tikzpicture}
-\end{center}
 \caption{אקסיומה 2}\label{f.axiom2}
+\end{center}
 \end{figure}
 
 
@@ -172,31 +193,24 @@ $l$
 \begin{equation}
 y - \disfrac{y_1+y_2}{2} = -\disfrac{x_2-x_1}{y_2-y_1}\left(x-\disfrac{x_1+x_2}{2}\right)\,.\label{eq.midpoint1}
 \end{equation}
-
-
-
-\textbf{דוגמה:}
+\begin{example}
 נתונות הנקודות
 $p_1=(2,2), p_2=(6,4)$.
 המשוואה של 
 $l$
 היא:
-
 \begin{eqn}
 y-\left(\disfrac{2+4}{2}\right)&=&-\disfrac{6-2}{4-2}\left(x-\left(\disfrac{2+6}{2}\right)\right)\\
 y&=&-2x+11\,.
 \end{eqn}
-
+\end{example}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\selectlanguage{hebrew}
-
 
 \section{אקסיומה 3}\label{s.ax3}
 
 
-\textbf{אקסיומה:}
+\begin{axiom}
 נתונים שני קווים
 $l_1$
 ו-%
@@ -206,11 +220,11 @@ $l$
 המניח את
 $l_1$ 
 על
-$l_2$.
-)איור~%
-\ref{f.axiom3}(.
-
-\begin{figure}[tb]
+$l_2$
+(איור~%
+\ref{f.axiom3}).
+\end{axiom}
+\begin{figure}[htb]
 \begin{center}
 
 \begin{tikzpicture}[scale=.9]
@@ -284,10 +298,7 @@ m_1x_i+b_2&=&m_2x_i+b_2\\
 x_i &=& \disfrac{b_2-b_1}{m_1-m_2}\\
 y_i &=&m_1x_i+b_1\,.
 \end{eqn}
-
-
-
-\textbf{דוגמה:}
+\begin{example}
 נתון הקו
 $l_1$
 שהמשוואה שלו הוא
@@ -297,11 +308,11 @@ $l_2$
 שהמשוואה שלו הוא
 $y\!=\!-x+8$.
 נקודת החיתוך שלהם היא:
-
 \begin{eqn}
 x_i&=&\disfrac{8-(-2)}{2-(-1)}=\disfrac{10}{3}\approx 3.33\\
 y_i &=& 2\cdot\disfrac{10}{3}-2=\disfrac{14}{3}\approx 4.67\,.
 \end{eqn}
+\end{example}
 
 \textbf{פיתוח משוואת השיפוע של חוצה הזווית:}
 שני קווים יוצרים שני זוגות של זוויות קודקודיות. הקיפולים הם חוצי הזווית שלהן.
@@ -376,22 +387,17 @@ m_b&=& \tan\disfrac{\theta_1+\theta_2}{2}\\
 &=&\disfrac{-1\pm\sqrt{1+\tan^2(\theta_1+\theta_2)}}{\tan (\theta_1+\theta_2)}\\
 &=&\disfrac{-1\pm\sqrt{1+m_s^2}}{m_s}\,.
 \end{eqn}
-
-
-
-\textbf{דוגמה:}
+\begin{example}
 נתונים הקווים
 $y=2x-2$
 ו-%
 $y=-x+8$,
 השיפוע של חוצה הזווית הוא:
-
 \begin{eqn}
 m_s&=&\disfrac{2+(-1)}{1-(2 \cdot -1)}=\disfrac{1}{3}\\
 m_b&=&\disfrac{-1\pm\sqrt{1+(1/3)^2}}{1/3}=-3\pm \sqrt{10}\approx -6.16,\; 0.162\,.
 \end{eqn}
-
-
+\end{example}
 
 \textbf{פיתוח משוואת הקיפול:}
 נפתח את המשוואה של
@@ -415,8 +421,7 @@ y&=& (-3+\sqrt{10})x + \disfrac{44-10\sqrt{10}}{3}\approx 0.162x+4.13\,.
 
 \section{אקסיומה 4}\label{s.ax4}
 
-
-\textbf{אקסיומה:}
+\begin{axiom}
 נתונים נקודה
 $p_1=(x_1,x_2)$
 וקו
@@ -426,11 +431,11 @@ $l$
 הניצב ל-%
 $l_1$
 שעובר דרך
-$p_1$.
-)איור~%
-\ref{f.axiom4}(.
-
-\begin{figure}[tb]
+$p_1$
+(איור~%
+\ref{f.axiom4}).
+\end{axiom}
+\begin{figure}[htb]
 \begin{center}
 
 \begin{tikzpicture}[scale=.9]
@@ -468,16 +473,12 @@ $-\disfrac{1}{m_1}$.
 הקו עובר דרך
 $p_1$
 ונוכל לחשב את המשוואה שלו:
-
 \begin{eqn}
 y_1&=&-\disfrac{1}{m} x_1 + b\\
 b&=& \disfrac{(my_1+x_1)}{m}\\
 y&=&-\disfrac{1}{m} x +\disfrac{(my_1+x_1)}{m}\,.
 \end{eqn}
-
-
-
-\textbf{דוגמה:}
+\begin{example}
 נתונה הנקודה
 $p_1=(2,6)$
 ונתון הקו
@@ -490,17 +491,13 @@ $l$
 \[
 y=-\disfrac{1}{2}x + \disfrac{2\cdot 6 + 2}{2}=-\disfrac{1}{2}x + 7\,.
 \]
+\end{example}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\selectlanguage{hebrew}
-
-
-
 \section{אקסיומה 5}\label{s.ax5}
 
-
-\textbf{אקסיומה:} 
+\begin{axiom}
 נתונות נקודות
 $p_1=(x_1,y_1)$, $p_2=(x_2,y_2)$
 ונתון קן
@@ -512,11 +509,12 @@ $p_1$
 מעל
 $l_1$
 והעובר דרך
-$p_2$.
-)איור~%
-\ref{f.axiom5}(.
+$p_2$
+(איור~%
+\ref{f.axiom5}).
+\end{axiom}
 
-\begin{figure}[tb]
+\begin{figure}[htb]
 \begin{center}
 
 \begin{tikzpicture}[scale=.9]
@@ -595,28 +593,17 @@ $\overline{p_1p_2}$
 \[
 (x-x_2)^2 + (y-y_2)^2 = r^2\,.
 \]
-
-
-
 נציב את המשוואה של הקו לתוך המשוואה של המעגל:
-
 \begin{eqn}
 (x-x_2)^2+((m_1x+b_1)-y_2)^2&=&r^2\\
 (x-x_2)^2+(m_1x+(b_1-y_2))^2&=&r^2\,,
 \end{eqn}
-
-
-
 ונקבל משוואה ריבועית עבור קואורדינטות ה-%
 $x$
 של נקודות החיתוך האפשריות:
 \begin{equation}
 x^2(1+m_1^2) \,+\, 2(-x_2+m_1(b-y_2))x \,+\, (x_2^2 + (b_1-y_2)^2-r^2)=0\,.\label{eq.intersections}
 \end{equation}
-
-
-
-
 למשוואה ריבועית יש לכל היותר שני פתרונות
 $x_1',x_1''$,
 ונחשב את 
@@ -625,10 +612,7 @@ $y_1',y_1''$
 $y=m_1x+b_1$.
 נקודות השיקוף הן
 $p_1'=(x_1',y_1'), p_1''=(x_1'',y_1'')$.
-
-
-
-\textbf{דוגמה:}
+\begin{example}
 נתונות הנקודות
 $p_1=(2,8)$,
 $p_2=4,4)$,
@@ -642,9 +626,8 @@ $y=-\disfrac{1}{2}x +3$.
 \]
 נציב את המשוואה של הקו לתוך המשוואה של המעגל ונפשט כדי לקבל משוואה ריבועית עבור קואורדינטות ה-%
 $x$
-של נקודות החיתוך )או השתמשו במשוואה
-~\ref{eq.intersections}(.
-
+של נקודות החיתוך (או השתמשו במשוואה
+~\ref{eq.intersections}).
 \begin{eqn}
 (x-4)^2 + \left(\left(-\disfrac{1}{2}x+3\right)-4\right)^2&=&20\\
 \disfrac{5}{4}x^2-7x-3 &=&0\\
@@ -655,6 +638,8 @@ $x$
 \[
 p_1'=\left(-\disfrac{2}{5},\disfrac{16}{5}\right) = (-0.4,3.2)\,,\quad p_1''=(6,0)\,.
 \]
+\end{example}
+
 \textbf{פיתוח המשוואות של הקיפולים:}
 הקיפולים יהיו האנכים האמצעיים של
 $\overline{p_1p_1'}$
@@ -664,11 +649,10 @@ $\overline{p_1p_1''}$.
 ~\ref{eq.midpoint1},
 שנעתיק כאן עבור
 $p_1'$:
-\begin{equation}
+\[
 y - \disfrac{y_1+y_1'}{2} = -\disfrac{x_1'-x_1}{y_1'-y_1}\left(x-\disfrac{x_1+x_1'}{2}\right)\,.\label{eq.midpoint2}
-\end{equation}
-
-\textbf{דוגמה:}
+\]
+\begin{example}
 נתונות הנקודות
 $p_1=(2,8)$,
 $p_1'=\left(-\disfrac{2}{5},\disfrac{16}{5}\right)$,
@@ -680,30 +664,25 @@ $l_{f_1}$
 y-\disfrac{8+(16/5)}{2}&=&-\disfrac{(-2/5)-2}{(16/5)-8}\left(x-\disfrac{2+\left(-2/5\right)}{2}\right)\\
 y&=&-\disfrac{1}{2}x+6\,.
 \end{eqn}
-
-
-
+\end{example}
+\begin{example}
 נתונות הנקודות עבור
 $p_1=(2,8)$,
 $p_1''=(6,0)$,
 משוואת הקיפול של
 $l_{f_2}$ 
 היא:
-
 \begin{eqn}
 y-\disfrac{8+0}{2}&=&-\disfrac{6-2}{0-8}\left(x-\disfrac{2+6}{2}\right)\\
 y&=&\disfrac{1}{2}x+2\,.
 \end{eqn}
+\end{example}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\selectlanguage{hebrew}
-
-
-
 \section{אקסיומה 6}\label{s.ax6}
 
-\textbf{אקסיומה:}                         
+\begin{axiom}
 נתונות שתי נקודות
 $p_1$
 ו-%
@@ -721,11 +700,12 @@ $l_1$
 ו-%
 $p_2$
 על ל-%
-$l_2$.
-)איור~%
-\ref{f.axiom6}(.
+$l_2$
+(איור~%
+\ref{f.axiom6}).
+\end{axiom}
 
-\begin{figure}[tb]
+\begin{figure}[htb]
 \begin{center}
 
 \begin{tikzpicture}[scale=.7]
@@ -821,11 +801,11 @@ $x$.
 \ref{f.two-para-2}
 מראה את ארבעת האפשרויות של משיקים לפרבולה.
 
-\begin{figure}
+\begin{figure}[htb]
 \begin{center}
 \begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}[scale=.5]
-\draw (-7,0) -- (7,0);
+\draw (-6,0) -- (7,0);
 \draw (0,-1) -- (0,7);
 \coordinate (P1) at (0,6);
 \fill (P1) circle (2pt) node[above left] {$p_1$};
@@ -841,7 +821,7 @@ $x$.
 \hspace{3em}
 \begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}[scale=.5]
-\draw (-7,0) -- (7,0);
+\draw (-6,0) -- (7,0);
 \draw (0,-1) -- (0,7);
 \coordinate (P1) at (-2,6);
 \fill (P1) circle (2pt) node[above left] {$p_1$};
@@ -858,7 +838,7 @@ $x$.
 \end{center}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[htb]
 \begin{center}
 \begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}[scale=.5]
@@ -926,9 +906,12 @@ $y$,
 $(0,h)$,
 יש להוסיף 
 $h$
-למשוואת הפרבולה:
-$y=\disfrac{x^2}{2p}+h$.
-\begin{figure}[tb]
+למשוואת הפרבולה (איור%
+~\ref{f.parabola}):
+\[
+y=\disfrac{x^2}{2p}+h\,.
+\]
+\begin{figure}[htb]
 \begin{center}
 
 \begin{tikzpicture}[scale=.8]
@@ -957,13 +940,11 @@ $y=\disfrac{x^2}{2p}+h$.
 נגדיר
 $a=2ph$
 כך שמשוואת הפרבולה היא:
-
-
-
-\begin{eqn}
+\begin{eqnlabels}
 y&=&\disfrac{x^2}{2p}+\disfrac{a}{2p}\\
 x^2-2py+a&=&0\,.
-\end{eqn}
+\end{eqnlabels}
+
 עבור הפרבולה באיור~%
 \ref{f.parabola}
 המשוואה היא:
@@ -972,8 +953,6 @@ x^2-2py+a&=&0\,.
 x^2-2\cdot 6\,y + 2\cdot 6 \cdot 1&=&0\\
 x^2-12y +12&=&0\,.
 \end{eqn}
-
-
 נציב את המשוואה של קו 
 \textbf{שרירותי}
 $y=mx+b$
@@ -983,9 +962,6 @@ $y=mx+b$
 x^2-2p(mx+b)+a&=&0\\
 x^2+(-2mp)x+(-2pb+a)&=&0\,.
 \end{eqn}
-
-
-
 הקו יהיה משיק לפרבולה אם ורק אם למשוואה ריבועית זו קיים 
 \textbf{בדיוק}
 פתרון אחד אם ורק אם הדיסקרימננטה 
@@ -1013,10 +989,7 @@ $b$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\selectlanguage{hebrew}
-
-
-\subsection{דוגמאות לאקסיומה 6}
+\begin{example}
 
 \textbf{פרבולה 1:}
 מוקד
@@ -1058,13 +1031,10 @@ x^2-2\cdot (-2)y+12=0\,.
 m^2-b-3=0\,.
 \]
 הפתרונות של שתי המשוואות:
-
 \begin{eqn}
 m^2+b-3&=&0\\
 m^2-b-3&=&0\,,
 \end{eqn}
-
-
 הם
 $m=\pm\sqrt{3}\approx \pm 1.73$
 ו-%
@@ -1073,9 +1043,11 @@ $b=0$.
 \[
 y=\sqrt{3}x\,,\quad y=-\sqrt{3}x\,.
 \]
+\end{example}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
+\begin{example}
 
 \textbf{פרבולה 1:}
 ללא שינוי, המשוואה היא:
@@ -1102,7 +1074,6 @@ x^2-2\cdot (-4)y +32=0\,.
 2m^2-b-4=0\,.
 \]
 הפתרונות של שתי המשוואות:
-
 \begin{eqn}
 m^2+b-3&=&0\\
 2m^2-b-4&=&0\,,
@@ -1115,8 +1086,11 @@ $b=\disfrac{2}{3}$.
 \[
 y=\sqrt{\disfrac{7}{3}}x+\disfrac{2}{3}\,,\quad y=-\sqrt{\disfrac{7}{3}}x+\disfrac{2}{3}\,.
 \]
+\end{example}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{example}
 
 \textbf{פרבולה 1:}
 ללא שינוי, המשוואה היא:
@@ -1174,9 +1148,6 @@ $m$:
 \begin{equation}
 m^3-3m^2-3m+1=0\,.\label{eq.cubic}
 \end{equation}
-
-
-
 למשוואה ממעלה שלוש יש לפחות פתרון ממשי אחד ולכל היותר שלושה פתרונות ממשיים, לכן יכול להיות אחד, שניים או שלשה משיקים משותפים. הנוסחה למציאת פתרונות למשוואה ממעלה שלוש די מסובכת, לכן השתמשתי במחשבון באינטרנט וקיבלתי שלושה פתרונות:
 \[
 m=3.73\,, \;m=-1\,, \; m=0.27\,.
@@ -1194,13 +1165,10 @@ $1$
 או
 $-1$
 הוא פתרון:
-
 \begin{eqn}
 1^3-3\cdot 1^2-3\cdot 1+1&=&-4\\
 (-1)^3-3\cdot (-1)^2-3\cdot(-1)+1&=&0\,.
 \end{eqn}
-
-
 נחלק את המשוואה%
 ~\ref{eq.cubic}
 ב-%
@@ -1210,10 +1178,9 @@ $m^2-4m+1$
 ששורשיה הם
 $2\pm\sqrt{3}\approx 3.73, 0.27$.
 
+\end{example}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\selectlanguage{hebrew}
-
 
 \subsection{פיתוח המשוואות של השיקופים}
 
@@ -1241,28 +1208,18 @@ y&=&-\disfrac{1}{m_t}x+b_p\\
 y_1&=&-\disfrac{1}{m_t}x_1+b_p\\
 y&=&\disfrac{-x}{m_t}+\left(y_1+\disfrac{x_1}{m_t}\right)\,.
 \end{eqn}
-
-
-
 כעת נמצא את נקודת החיתוך 
 $p_t=(x_t,y_t)$
 של
 $l_t$
 ו-%
 $l_p$:
-
-
-
-
 \begin{eqn}
 m_tx_t+b_t&=&\disfrac{-x_t}{m_t}+\left(y_1+\disfrac{x_1}{m_t}\right)\\
 %x_t&=&\disfrac{\left(y_1+\disfrac{x_1}{m_t}-b_t\right)}{\left(m_t+\disfrac{1}{m_t}\right)}\\
 x_t&=& \disfrac{m_t(y_1-b_t)+x_1}{m_t^2+1}\\
 y_t&=&m_tx_t+b_t\,.
 \end{eqn}
-
-
-
 ניתן למצוא את השיקוף
 $p_1'$
 כי נקודת החיתוך
@@ -1271,25 +1228,17 @@ $p_t$
 $p_1$
 לבין
 $p_1'$:
-
-
-
-
 \begin{eqn}
 x_t&=&\disfrac{x_1+x_1'}{2}\,,\quad y_t=\disfrac{y_1+y_1'}{2}\\
 x_1'&=&2x_t-x_1\,,\quad y_1'=2y_t-y_1\,.
 \end{eqn}
-
-
-
-\textbf{דוגמה:}
+\begin{example}
 נתון
 $p_1=(0,4)$
 ו-%
 $l_1$
 עם המשוואה
 $y=\sqrt{3}x$:
-
 \begin{eqn}
 %x_t&=&\disfrac{\left(4+\disfrac{0}{\sqrt{3}}-0\right)}{\left(\sqrt{3}+\disfrac{1}{\sqrt{3}}\right)}=\sqrt{3}\\
 x_t&=&\disfrac{\sqrt{3}(4-0)+0}{(\sqrt{3})^2+1}=\sqrt{3}\\
@@ -1297,9 +1246,9 @@ y_t&=&\sqrt{3}\sqrt{3}+0=3\\
 x_1'&=&2x_t-x_1=2\sqrt{3}-0=2\sqrt{3}\approx 3.46\\
 y_1'&=&2y_t-y_1=2\cdot 3 - 4 = 2\,.
 \end{eqn}
+\end{example}
 
-\selectlanguage{hebrew}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{משיקים לפרבולה}\label{s.parabola}
 
@@ -1328,7 +1277,7 @@ $l_1$
 דרך 
 $p_1$.
 
-\begin{figure}[bt]
+\begin{figure}[htb]
 \begin{center}
 
 \begin{tikzpicture}[scale=.9]
@@ -1362,7 +1311,7 @@ $p_1$.
 \draw (F) -- node[near end,above] {$a_4$} (F2) -- node[left] {$a_4$} (3,-2);
 \draw (F) -- node[above] {$a_5$} (F3) -- node[left] {$a_5$} (5,-2);
 \draw (F) -- node[above] {$a_1$} (F4) -- node[left] {$a_1$} (FP);
-\draw[thick,dashed] ($(F4)!-.4!(-2.5,0)$) -- node[very near end,right,xshift=2pt] {$l_1$} ($(F4)!1.8!(-2.5,0)$);
+\draw[very thick,dashed] ($(F4)!-.4!(-2.5,0)$) -- node[very near end,right,xshift=2pt] {$l_1$} ($(F4)!1.8!(-2.5,0)$);
 \draw (0,-2) rectangle +(8pt,8pt);
 \draw (2,-2) rectangle +(8pt,8pt);
 \draw (3,-2) rectangle +(8pt,8pt);
@@ -1377,7 +1326,7 @@ $p_1$.
 הקיפולים הם משיקים לפרבולה.
 \end{theorem}
 
-\textbf{הוכחה:}%
+\begin{proof}%
 \footnote{אני מודה לאוריה בן-לולו שהראתה לי הוכחה זו.}
 באיור~%
 \ref{f.tangent-proof}
@@ -1407,7 +1356,7 @@ $\overline{ps}=\overline{p's}=a$
 ו-%
 $m\perp \overline{pp'}$.
 
-\begin{figure}[bt]
+\begin{figure}[htb]
 \begin{center}
 
 \begin{tikzpicture}[scale=.9]
@@ -1440,7 +1389,6 @@ $m\perp \overline{pp'}$.
 \end{center}
 \caption{ההוכחה שקיפול הוא משיק}\label{f.tangent-proof}
 \end{figure}
-
 תהי
 $r$
 נקודת החיתוך של הניצב ל-%
@@ -1496,12 +1444,13 @@ $\triangle qp''p'$
 הוכחנו שלקיפול
 $m$
 נקודת חיתוך אחת עם בפרבולה, ולכן הקיפול הוא משיק.
-\qed
+\end{proof}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{אקסיומה 7}\label{s.ax7}
 
-\textbf{אקסיומה:}
+\begin{axiom}
 נתונה נקודה 
 $p_1=(x_1,y_1)$,
 ונתונים קווים
@@ -1514,11 +1463,12 @@ $l_2$
 שהמניח את
 $p_1$
 על ל-%
-$l_1$.
-)איור~%
-\ref{f.axiom7}(.
+$l_1$
+(איור~%
+\ref{f.axiom7}).
+\end{axiom}
 
-\begin{figure}[tb]
+\begin{figure}[htb]
 \begin{center}
 
 \begin{tikzpicture}[scale=.9]
@@ -1584,7 +1534,6 @@ $l_p$
 עובר דרך
 $p_1$.
 נחשב:
-
 \begin{eqn}
 y&=&m_2x+b_p\\
 y_1&=&m_2x_1+b_p\\
@@ -1621,7 +1570,6 @@ $\overline{p_1p_1'}$,
 $p_m$,
 נקודת האמצע של
 $\overline{p_1p_1'}$:
-
 \begin{eqn}
 y_m&=&-\disfrac{1}{m_2}x_m+b_m\\
 b_m&=&y_m+\disfrac{x_m}{m_2}\,.
@@ -1632,7 +1580,7 @@ $l$
 \[
 y=-\disfrac{1}{m_2}x+\left(y_m+\disfrac{x_m}{m_2}\right)\,.
 \]
-\textbf{דוגמה:}
+\begin{example}
 נתונה הנקודה
 $p_1=(5,3)$,
 נתון הקו 
@@ -1653,19 +1601,29 @@ y_1' &=&3\cdot\disfrac{11}{4} + (-3)=\disfrac{21}{4}\\
 \[
 y=-\disfrac{1}{-1}\cdot x+\left(\disfrac{33}{8}+\disfrac{\disfrac{31}{8}}{-1}\right)=x+\disfrac{1}{4}\,.
 \]
+\end{example}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\selectlanguage{hebrew}
+\subsection*{מה ההפתעה?}
 
+אוריגמי, האומנות של קיפולי נייר, קיים מאות שנים, ולכן מפתיע שרק במאה העשרים פותחה הפורמליזציה שלו. מפתיע עוד יותר שקיים אקסיומתיזציה של קיפולי נייר. המתמטיקה של אורגמי היא דרך מצויינת ללמוד גיאומטריה אנליטית, תכונות של פרבולות והמושג מקום גיאומטרי.
 
 \subsection*{מקורות}
 
+ניתן למוצא את האקסיומות של אוריגמי ב-%
+\cite{wiki:hh-axioms}.
+\L{Lang}
+\cite{lang}
+מביא דוגמאות של יצירות אוריגמי.
+\cite[Chap.~10]{martin}
+מציג את התיאוריה המפורטת של אורגמי, כולל הוכחה שלפרבולה יכולה להיות אפס, אחד, שניים או שלושה משיקים. אוריה בן-לולו הראתה לי את ההוכחה של משפט%
+~\ref{thm.parabola-tangents}.
+מצאתי שתוכנה גיאומטרית כגון 
+\L{Geogebra}
+עוזרת להבין את הקשר בין הגיאומטריה והאלגברה של האקסיומות.
 
-תיאור האקסיומות של אוריגמי ניתן למצוא ב-%
-\L{\cite{wiki:hh-axioms}}, \L{\cite{lang}} 
-מביא קשת נרחב של בניות עם אוריגמי.
-הגדרות פורמליות מופיעות בפרק~
-$10$
+הצגה ברורה של משוואות קוביות ניתן למצוא בפרקים
+$1,2$
 של
-\L{\cite{martin}}.
-
+\cite{jorg}.

@@ -113,6 +113,7 @@ $n\geq 1$:
 \sum_{i=1}^n i = \frac{n(n+1)}{2}\,.
 \]
 \end{proof}
+
 הנחת האינדוקציה יכולה לבלבל כי נראה שאנחנו מניחים את מה שרוצים להוכיח. אין כאן הסקת מסקנות מעגלית כי ההנחה היא עבור תכונה של משהו 
 \textbf{קטן}
 ומשתמשים בהנחה להוכיח תכונה עבור משהו
@@ -150,10 +151,10 @@ $.
 כל מספר פיבונצ'י רביעי מתחלק ב-%
 $3$.
 \end{theorem}
-\textbf{דוגמאות:}
+\begin{example}
 $f_4=3=3\cdot 1,\; f_8=21=3\cdot 7,\; f_{12}=144=3\cdot 48$.
-
-\textbf{הוכחה:}
+\end{example}
+\begin{proof}
 טענת הבסיס מתקבלת באופן מיידי כי
 $f_4=3$
 מתחלק ב-%
@@ -183,15 +184,13 @@ $f_{4n}$,
 ולכן
 $f_{4(n+1)}$
 מתחלק ב-%
-$3$.\qed
+$3$.
+\end{proof}
 
-
-%
-
-\begin{theorem}\mbox{}\label{thm.seven-fourths}\\
+\begin{theorem}\label{thm.seven-fourths}
 $f_n < \left(\disfrac{7}{4}\right)^n$.
 \end{theorem}
-\textbf{הוכחה:}
+\begin{proof}
 טענות הבסיס:
 $f_1=1<\left(\disfrac{7}{4}\right)^1$
 ו-%
@@ -210,18 +209,15 @@ f_{n+1}&=&f_n+f_{n-1}\\
 \[
 \left(\frac{7}{4}+1\right) = \frac{11}{4} = \frac{44}{16}<\frac{49}{16}=\left(\frac{7}{4}\right)^2.
 \]
-\qed
+\end{proof}
 
-\begin{theorem}[\L{Binet}]
+\begin{theorem}[נוסחת \L{Binet}]
 \begin{displaymath}
 f_n = \frac{\phi^n - \bar{\phi}^n}{\sqrt{5}}, \;\;\;\;\;
 \phi = \frac{1+\sqrt{5}}{2},\;\;\bar{\phi} = \frac{1-\sqrt{5}}{2}\,.
 \end{displaymath}
 \end{theorem}
-
-
-
-\textbf{הוכחה:}
+\begin{proof}
 נוכיח קודם ש-%
 $\phi^2=\phi+1$:
 
@@ -232,9 +228,6 @@ $\phi^2=\phi+1$:
 &=& \frac{1+2\sqrt{5}}{2} + 1\\
 &=&\phi + 1\,.
 \end{eqn}
-
-
-
 באופן דומה אפשר להוכיח ש:
 $\bar{\phi}^2=\bar{\phi}+1$.
 
@@ -242,10 +235,6 @@ $\bar{\phi}^2=\bar{\phi}+1$.
 \[
 \frac{\phi^1 - \bar{\phi}^1}{\sqrt{5}}=\frac{(1+\sqrt{5})/2-(1-\sqrt{5})/2}{\sqrt{5}}=\frac{2\sqrt{5}}{2\sqrt{5}}=1\,.
 \]
-
-
-
-
 הצעד האינדוקטיבי:
 
 \begin{eqn}
@@ -254,29 +243,22 @@ $\bar{\phi}^2=\bar{\phi}+1$.
 &=&(\phi^{n-1} - \bar{\phi}^{n-1}) + (\phi^{n-2} - \bar{\phi}^{n-2})\\
 &=&\sqrt{5}f_{n-1} + \sqrt{5}f_{n-2}\,,
 \end{eqn}
-
-
 לכן:
 \[
 \frac{\phi^n - \bar{\phi}^n}{\sqrt{5}} = f_{n-1} + f_{n-2} = f_n\,.
 \]
+\end{proof}
 \begin{theorem}\label{eq.fibo:combinations}
 \[
 f_n = {n \choose 0} + {n-1 \choose 1} + {n-2 \choose 2} + \cdots.
 \]
 \end{theorem}
-
-
-
-כדי להוכיח את המשפט, נוכיח תחילה משפט עזר:
-\begin{theorem}[\L{Pascal}]
+כדי להוכיח את המשפט, נוכיח את הנוסחה של 
+\L{Pascal]}:
 \[
 {n \choose k} + {n \choose k+1} = {n+1 \choose k+1}.
 \]
-\end{theorem}
-
-\textbf{הוכחה:}
-
+\begin{proof}
 \begin{eqn}
 {n \choose k} + {n \choose k+1} &=& \frac{n!}{k!(n-k)!} + \frac{n!}{(k+1)!(n-(k+1))!}\\
 &=& \frac{(k+1)n!}{(k+1)!(n-k)!} + \frac{n! (n-k)}{(k+1)!(n-k)!}\\
@@ -285,7 +267,6 @@ f_n = {n \choose 0} + {n-1 \choose 1} + {n-2 \choose 2} + \cdots.
 &=&\frac{(n+1)!}{(k+1)!((n+1)-(k+1))!}\\
 &=&{n+1 \choose k+1}\,.
 \end{eqn}
-
 עכשיו אפשר להוכיח את משפט~%
 \ref{eq.fibo:combinations}.
 טענת הבסיס:
@@ -293,7 +274,6 @@ f_n = {n \choose 0} + {n-1 \choose 1} + {n-2 \choose 2} + \cdots.
 f_1 = 1 = {1 \choose 0} = \frac{1!}{0!(1-0)!}\,.
 \]
 הצעד האינדוקטיבי:
-
 \begin{eqn}
 f_{n-1} + f_{n-2} &=& {n-1 \choose 0} + {n-2 \choose 1} + {n-3 \choose 2} + {n-4 \choose 3} + \cdots\\
 &&\hspace{54pt}{n-2 \choose 0} + {n-3 \choose 1} + {n-4 \choose 2} + \cdots\\
@@ -304,26 +284,20 @@ f_{n-1} + f_{n-2} &=& {n-1 \choose 0} + {n-2 \choose 1} + {n-3 \choose 2} + {n-4
 \[
 {k \choose 0} = \frac{k!}{0!(k-0)!} = 1\,.
 \]
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\selectlanguage{hebrew}
-
-
 \section{מספרי \L{Fermat}}\label{s.induction-fermat}
 
-
-\textbf{הגדרה:}
+\begin{definition}
 מספר פרמה הוא מספר שערכו
 $2^{2^{n}}+1$
 עבור 
 $n\geq 0$.
-
+\end{definition}
 חמשת מספרי  פרמה הראשונים הם:
 \begin{center}
-
-%\renewcommand{\arraystretch}{1}
-
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
 $n$ & $0$ & $1$ & $2$ & $3$ & $4$ \\\hline
@@ -351,7 +325,7 @@ $F_n$
 היא
 $7$.
 \end{theorem}
-\textbf{הוכחה:}
+\begin{proof}
 טענת הבסיס:
 $F_2=2^{2^2}+1=17$.
 
@@ -360,7 +334,6 @@ $F_n=10k_n+7$
 עבור
 $k\geq 1$.
 אזי:
-
 \begin{eqn}
 F_{n+1}&=&2^{2^{n+1}}+1=\left(2^{2^{n}}\right)^2+1\\
 &=&\left(\left(2^{2^{n}}+1\right)-1\right)^2+1\\
@@ -372,20 +345,17 @@ F_{n+1}&=&2^{2^{n+1}}+1=\left(2^{2^{n}}\right)^2+1\\
 &=&10(10k_n^2+12k_n+3)+7\\
 &=&10k_{n+1}+7\,.
 \end{eqn}
-
-
-
+\end{proof}
 \begin{theorem}\label{thm.fermat}
 עבור כל
 $n\geq 1$, $\displaystyle F_n = \prod_{k=0}^{n-1} F_k + 2$.
 \end{theorem}
-\textbf{הוכחה:}
+\begin{proof}
 טענת הבסיס:
 \[
 5=F_1=\prod_{k=0}^{0} F_k + 2=F_0+2=3+2\,.
 \]
 הצעד האינדוקטיבי:
-
 \begin{eqn}
 \displaystyle\prod_{k=0}^{n}F_k&=&\left(\displaystyle\prod_{k=0}^{n-1}F_k\right) F_n \\
 &=& (F_n-2)F_n\\
@@ -395,12 +365,9 @@ $n\geq 1$, $\displaystyle F_n = \prod_{k=0}^{n-1} F_k + 2$.
 &=&F_{n+1}-2\\
 F_{n+1}&=&\displaystyle\prod_{k=0}^{n}F_k + 2\,.
 \end{eqn}
-
-%
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\selectlanguage{hebrew}
-
 
 \section{פונקציה $91$ של
 \L{McCarthy}}\label{s.induction-mccarthy}
@@ -437,7 +404,7 @@ f(91) &=& f(f(91+11)) = f(f(102)) = f(92) = f(f(103)) = f(93) = \cdots = 91\\
 f(89) &=& f(f(89+11)) = f(f(100)) = f(f(111)) = f(101) = 91\,.
 \end{eqn}
 
-\begin{theorem}\mbox{}\\
+\begin{theorem}
 הפונקציה
 $f(x)$
 שקולה ל:
@@ -445,8 +412,7 @@ $f(x)$
 g(x) = \textrm{if}\;\; x > 100 \;\;\textrm{then}\;\; x - 10 \;\;\textrm{else}\;\; 91\,.
 \]
 \end{theorem}
-
-\textbf{הוכחה:}
+\begin{proof}
 ההוכחה באינדוקציה מעל קבוצת המספרים:
 \[
 S=\{x\,|\,x\leq 101\}
@@ -587,12 +553,11 @@ $f(91)=91$
 $g(x)=91$
 עבור
 $x<90$.
-
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{בעיית \L{Josephus}}\label{s.josephus}
-\index{Josephus problem}
 
 יוסף בן מתתיהו 
 \L{(Titus Flavius Josephus)}
@@ -625,6 +590,7 @@ $n+1=41$
 ו-%
 $q=3$.
 סדרו את המספרים במעגל:
+\begin{scriptsize}
 \[
 \begin{array}{rrrrrrrrrrrrrrrrrrrrrrr}
 \rightarrow&1&2&3&4&5&6&7&8&9&10&
@@ -635,7 +601,9 @@ $q=3$.
 &\leftarrow
 \end{array}
 \]
+\end{scriptsize}
 תוצאת הסבב הראשון של המחיקות היא:
+\begin{scriptsize}
 \[
 \begin{array}{rrrrrrrrrrrrrrrrrrrrrrr}
 \rightarrow&1&2&\not\! 3&4&5&\not\! 6&7&8&\not\! 9&10&
@@ -646,10 +614,11 @@ $q=3$.
 &\leftarrow
 \end{array}
 \]
+\end{scriptsize}
 לאחר השמטת המספרים המחוקים נקבל:
 \[
 \begin{array}{rrrrrrrrrrrrrrrrrrrrrrrrrrrr}
-1&2&4&5&7&8&10&11&13&14&16&17&19&20&
+1&2&4&5&7&8&10&11&13&14&16&17&19&20\\
 22&23&25&26&28&29&31&32&34&35&37&38&40&41
 \end{array}
 \]
@@ -657,7 +626,7 @@ $q=3$.
 $39$):
 \[
 \begin{array}{rrrrrrrrrrrrrrrrrrrrrrrrrrrr}
-\not\!\! 1&2&4&\not\!\! 5&7&8&\not\!\! 10&11&13&\not\!\! 14&16&17&\not\!\! 19&20&
+\not\!\! 1&2&4&\not\!\! 5&7&8&\not\!\! 10&11&13&\not\!\! 14&16&17&\not\!\! 19&20\\
 22&\not\!\! 23&25&26&\not\!\! 28&29&31&\not\!\! 32&34&35&\not\!\! 37&38&40&\not\!\! 41
 \end{array}
 \]
@@ -707,13 +676,15 @@ $q+1$.
 מיפוי של
 $1,\ldots,n$
 אל סדרה זו נותן:
+\begin{small}
 \[
 \begin{array}{cccccccccc}
-1&\quad 2&\ldots& n-q&\quad n+1-q&\quad n+2-q&\ldots&n-1&\quad n& \!\!\!\!\!\!\pmod {n\!+\!1}\\
-\downarrow&\quad \downarrow&&\downarrow&\quad \downarrow&\quad \downarrow&&\downarrow&\quad \downarrow\\
-q+1&\quad q+2&\ldots&n&\quad n+1&\quad 1&\ldots&q-2&\quad q-1& \!\!\!\pmod {n\!+\!1}\,.
+1&\;\; 2&\ldots& n-q&\;\; n+1-q&\;\; n+2-q&\ldots&n-1&\;\; n& \!\!\!\!\!\!\!\!\pmod {n\!+\!1}\\
+\downarrow&\;\; \downarrow&&\downarrow&\;\; \downarrow&\;\; \downarrow&&\downarrow&\;\; \downarrow\\
+q+1&\;\; q+2&\ldots&n&\;\; n+1&\;\; 1&\ldots&q-2&\;\; q-1& \!\!\!\!\!\pmod {n\!+\!1}\,.
 \end{array}
 \]
+\end{small}
 זיכרו שכל החישובים הם מודולו
 $n+1$:
 \[
@@ -765,6 +736,7 @@ n&=&2^a+(b_{a-1}2^{a-1}+\cdots+b_{0}2^{0})\\
 n&=&2^a+t,\quad \textrm{כאשר}\; t\leq 2^a-1\,.
 \end{eqn}
 \end{proof}
+
 כעת נוכיח שקיים ביטוי סגור פשוט עבור
 $J(n,2)$. 
 \begin{theorem}\label{thm.jo2}
@@ -910,9 +882,11 @@ $91$
 \L{Rod M. Burstall}.
 ההצגה של בעיית 
 \L{Josephus}
-מבוססת על
+מבוססת על פרק~
+$17$
+של
 \L{\cite{gunderson}}
-שגם מביא את הרקע ההיסטורי, שם נמצאות בעיות מעניינות אחרות כגון הילדים המרוחים בבוץ, המטבע המזוייפת, ואגורות בקופסה. חומר נוסף על בעיית
+שגם מביא את הרקע ההיסטורי ובעיות מעניינות אחרות כגון הילדים המרוחים בבוץ, המטבע המזוייפת, ואגורות בקופסה. חומר נוסף על בעיית
 \L{Josephus}
 ניתן למצוא ב-%
 \L{\cite{schumer,wiki:josephus}}.

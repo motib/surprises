@@ -203,7 +203,7 @@ $\overline{DF}$.
   ($(E)+(0,-3.4)$);
 \end{tikzpicture}
 \end{center}
-\caption{קירוב שני ($2$)}\label{f.trisect-first-approx-2}
+\caption{קירוב ראשון ($2$)}\label{f.trisect-first-approx-2}
 \end{figure}
 נחשב את האורך
 $2a=\overline{CD}$
@@ -523,6 +523,12 @@ $\overline{BC}$
 \end{center}
 \caption{חלוקת זווית לשלושה חלקים באמצעות ניאוסיס}\label{f.trisection}
 \end{figure}
+
+\begin{theorem}
+$beta=\alpha/3$.
+\end{theorem}
+
+\begin{proof}
 $\overline{BA}=\overline{BC}$
 כי שניהם רדיוסים ו-%
 $\overline{CB}=\overline{CD}$
@@ -539,6 +545,7 @@ $\triangle ABC$, $\triangle BCD$
 $\beta$
 היא שליש מהזווית
 $\alpha$.
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -707,7 +714,8 @@ $\overline{AB}$.
 \vertex{A};
 \draw[thick] plot (4.6*.637*\x,{12.2*.637*\x*cot(\x r)});
 \end{tikzpicture}
-\caption{A quadratrix curve}\label{f.trisect-quad-curve}
+\selectlanguage{hebrew}
+\caption{עקומת קוודראטריס}\label{f.trisect-quad-curve}
 \end{subfigure}
 \hspace{3em}
 \begin{subfigure}{.4\textwidth}
@@ -718,7 +726,8 @@ $\overline{AB}$.
 \fill (2.9,5) circle [radius=2.5pt];
 \draw[thick] plot (4.6*.637*\x,{12.2*.637*\x*cot(\x r)});
 \end{tikzpicture}
-\caption{A quadratrix compass}\label{f.trisect-quad-compass}
+\selectlanguage{hebrew}
+\caption{מחוגה קוודראטריקס}\label{f.trisect-quad-compass}
 \end{subfigure}
 \end{center}
 \end{figure}
@@ -763,6 +772,13 @@ $P_1$
 היא נקודת החיתוך בין הקו המגדיר את הזווית 
 $\alpha$
 לבין עקומת הקוודרטריקס.
+
+\begin{theorem}
+$\theta=\alpha/3$.
+\end{theorem}
+
+\begin{proof}
+
 קואורדינטת ה-%
 $y$
 שלה היא
@@ -786,6 +802,8 @@ $\overline{DC}$
 \frac{\theta}{\alpha} &=& \frac{t/3}{t}\\
 \theta &=& \alpha/3\,.
 \end{eqn}
+\end{proof}
+
 \begin{figure}[bth]
 \begin{center}
 \begin{tikzpicture}[scale=.8,domain=.03:1.562,samples=100]
@@ -906,6 +924,7 @@ $\surd$.
 \draw[<->] (0,-1.5) -- node[fill=white] {$a+b$} (7,-1.5);
 \end{tikzpicture}
 \end{center}
+\selectlanguage{hebrew}
 \caption{בניית חיבור וחיסור}\label{f.trisect-add-subtract}
 \end{figure}
 
@@ -974,6 +993,7 @@ $\overline{OD}=(a/b)$.
 \draw[<->] (0,-.8) -- node[fill=white] {$ab$} +(6,0);
 \path (o) -- node[below] {$a$} (d);
 \end{tikzpicture}
+\selectlanguage{hebrew}
 \caption{בניית כפל}\label{f.trisect-multiplication}
 \end{subfigure}
 \hspace{3em}
@@ -998,6 +1018,7 @@ $\overline{OD}=(a/b)$.
 \draw[<->] (0,-.8) -- node[fill=white] {$a$} +(6,0);
 \path (o) -- node[below] {$a/b$} (d);
 \end{tikzpicture}
+\selectlanguage{hebrew}
 \caption{בניית חילוק}\label{f.trisect-division}
 \end{subfigure}
 \end{center}

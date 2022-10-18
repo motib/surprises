@@ -74,28 +74,28 @@ $\{a,b,c\}$
 \textbf{שלשת \L{Schur}}.
 \end{definition}
 
-\textbf{דוגמה}
+\begin{example}
 עבור
 $n=8$,
 בחלוקה:
-\[
+\begin{equation}
 S_1 = \{1,2,3,4\},\; S_2 = \{5,6,7,8\}\,,
 \label{eq.schur0}
-\]
+\end{equation}
 הקבוצה
 $S_1$
 מכילה את שלשת ה-%
 \L{Schur}
 $\{1,2,3\}$.
 אולם החלוקה:
-\[
+\begin{equation}
 S'_1 = \{1,2,4,8\},\; S'_2 = \{3,5,6,7\}\,,
 \label{eq:schur1}
-\]
+\end{equation}
 לא מכילה שלשת
 \L{Schur}
 כפי שניתן לראות על ידי בדיקת כל השלשות בכל תת-קבוצה.
-
+\end{example}
 \begin{theorem}
 \textbf{בכל}
 חלוקה של
@@ -210,6 +210,7 @@ S_1&S_2\\\hline
 מכאן שאין חלוקה שלא כוללת שלשת
 \L{Schur}.
 \end{proof}
+
 \L{Issai Schur}
 הוכיח את המשפט:
 \begin{theorem}[\L{Schur}]
@@ -249,7 +250,7 @@ $\{a,b,c\}$
 \textbf{שלשות \L{Pythagorean}}.\index{Pythagorean triples}
 \end{definition}
 
-\textbf{דוגמה}
+\begin{example}
 עבור
 $n=10$
 בחלוקה למספרים זוגיים ואי-זוגיים:
@@ -269,7 +270,7 @@ $S_2$
 \L{Pythagorean}
 כי
 $6^2+8^2=10^2$.
-
+\end{example}
 
 \L{Marijn J.H. Heule}\index{Heule, Marijn J.H.}
 ו-%
@@ -610,7 +611,7 @@ $R(3)=6$,
 $R(3)$.\index{Ramsey's theorem!lower bound for}
 
 \begin{theorem}[\L{Erd\H{o}s}]
-$\quad R(3) > 4$.
+$R(3) > 4$.
 \end{theorem}
 \begin{proof}
 נתונה צביעה 
@@ -863,7 +864,7 @@ $12$
 אפשריות ולכן נוחסת ה-%
 \L{CNF}
 היא:
-\[
+\begin{equation}
 \begin{array}{l}
 (p_1 \vee p_2 \vee p_3) \;\wedge\; (\neg p_1 \vee \neg p_2 \vee \neg p_3) \;\wedge \\
 (p_1 \vee p_3 \vee p_4) \;\wedge\; (\neg p_1 \vee \neg p_3 \vee \neg p_4) \;\wedge \\
@@ -878,7 +879,7 @@ $12$
 (p_3 \vee p_4 \vee p_7) \;\wedge\; (\neg p_3 \vee \neg p_4 \vee \neg p_7) \;\wedge \\
 (p_3 \vee p_5 \vee p_8) \;\wedge\; (\neg p_3 \vee \neg p_5 \vee \neg p_8)\,.
 \end{array}\label{eq.schur2}
-\]
+\end{equation}
 כאשר מפעילים 
 \L{SAT solver}
 על נוסחה זו, הוא עונה שהנוסחה ספיקה בשני הפירושים הללו:
@@ -1029,11 +1030,11 @@ $r$.
 
 היעילות של
 \L{DPLL}
-נובעת מ-%
-\L{הפצת יחידות (unit propagation)}.\index{SAT solver!unit propagation}
+נובעת מהפצת יחידות 
+\L{(unit propagation)}.
 נעיין בחלק מהנוסחה לשלשות
 \L{Schur}:
-\[
+\begin{equation}
 \begin{array}{l}\label{eq.schur3}
 (p_1 \vee p_2 \vee p_3) \wedge (\neg p_1 \vee \neg p_2 \vee \neg p_3) \:\wedge \\
 (p_1 \vee p_3 \vee p_4) \wedge (\neg p_1 \vee \neg p_3 \vee \neg p_4) \:\wedge \\
@@ -1041,7 +1042,7 @@ $r$.
 (p_3 \vee p_4 \vee p_7) \wedge (\neg p_3 \vee \neg p_4 \vee \neg p_7) \:\wedge \\
 (p_3 \vee p_5 \vee p_8) \wedge (\neg p_3 \vee \neg p_5 \vee \neg p_8)\,.
 \end{array}
-\]
+\end{equation}
 נניח שהצבנו
 $F$
 ל-%
@@ -1203,8 +1204,9 @@ a=u^2-v^2,\quad b=2uv,\quad c=u^2+v^2\,.
 \end{theorem}
 
 \begin{table}[tb]
-\caption{שלשות \L{Babylonian} מלוח \L{Plimption} $322$}
+\caption{שלשות בבליות מלוח $322$ \L{Plimption}}
 \label{t.babylonian}
+\begin{small}
 \[
 \begin{array}{r@{$\quad\quad$}r@{$\quad\quad$}r@{$\quad\quad$}r@{$\quad\quad$}r@{$\quad\quad$}r@{$\quad\quad$}r@{$\quad\quad$}r@{$\quad\quad$}r}
 \hline
@@ -1218,6 +1220,7 @@ a&a_f &b&b_f &c&u&u_f &v&v_f\\
 \noalign{\smallskip}\hline
 \end{array}
 \]
+\end{small}
 \end{table}
 
 \begin{proof}
@@ -1268,7 +1271,7 @@ $v$
 הם חזקות של 
 $2,3,5$.
 \begin{definition}
-\textbf{שלשה \L{Babylonian}}
+\textbf{שלשה בבלית \L{(Babylonian triple)}}
 היא שלשה 
 \L{Pythagorean}
 פרימיטיבי כך שהגורמים הראשונים היחידים של
@@ -1297,10 +1300,11 @@ $0,1,2,\ldots,8,9$
 ניתן להציג את אותו מספר בבסיס 
 \textbf{בינארי}, בסיס 
 $2$:
-\[
-12345=8192 + 4096 + 32+16+8+1=
-2^{13} + 2^{12} + 2^{5} + 2^{4} + 2^{3} + 2^0=11000000111001\,.
-\]
+\begin{eqn}
+12345&=&8192 + 4096 + 32+16+8+1\\
+&=&2^{13} + 2^{12} + 2^{5} + 2^{4} + 2^{3} + 2^0\\
+&=&11000000111001\,.
+\end{eqn}
 בסיס נפוץ מדעי המחשב הוא בסיס
 \L{hexadecimal},
 בסיס
@@ -1330,9 +1334,10 @@ $d$
 עבור
 $0\leq d<60$.
 \begin{table}[t]
-\caption{שלשות \L{Babylonian}
+\caption{שלשות בבליות
 בבסיס
 $60$}\label{t.sexagesimal}
+\vspace{-3ex}
 \[
 \begin{array}{r@{$\quad\quad$}r}
 \hline
@@ -1346,6 +1351,7 @@ a&c\\
 \noalign{\smallskip}\hline
 \end{array}
 \]
+\vspace{-3ex}
 \end{table}
 הקורא מוזמן לבדוק שהערכים הללו זהים לערכים בבסיס עשרוני המופיעים בטבלה%
 ~\ref{t.babylonian},
@@ -1353,8 +1359,8 @@ a&c\\
 \[
 \renewcommand{\arraystretch}{1.3}
 \begin{array}{lclclcr}
-(3\times 60^2) &+& (31\times 60^1) &\;+\;& (49\times 60^0) &=&   12709\\
-(5\times 60^2) &\;+\;& (9\times 60^1) &\;+\;& (1\times 60^0) &=& 18541
+(3\times 60^2) &+& (31\times 60^1) &+& (49\times 60^0) &=&   12709\\
+(5\times 60^2) &+& (9\times 60^1) &+& (1\times 60^0) &=& 18541
 \end{array}
 \]
 לבבלים לא היו
@@ -1398,8 +1404,8 @@ $(38\times 60)+(16\times 60^0)=2296$
 $R(n)$
 הוא מספר שלם. מפתיע ששיטות הסתברויתיות כל כך פוריות במציאת תוצאות בתחום.
 
-יש לנו נטייה לחשוב שבני אדם היום חכמים יותר ממה היינו לפני אלפי שנים. די מפתיע לגלות שלפני ארבעת שאלפים שנים התמתמטיקה של הבבלים היתה מתקדמת מספיק כדי לגלות ש-%
-$\{12709, 13500, 18541\}$
+יש לנו נטייה לחשוב שבני אדם היום חכמים יותר ממה היינו לפני אלפי שנים. די מפתיע לגלות שלפני ארבעת שאלפים שנים התמתמטיקה של הבבלים היתה מתקדמת מספיק כדי לגלות ש:
+\[\{12709, 13500, 18541\}\]
 היא שלשת
 \L{Pythagorean}.
 

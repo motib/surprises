@@ -2,16 +2,12 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\selectlanguage{hebrew}
-
-
 \chapter{בניות גיאומטריות באוריגמי}\label{c.origami-constructions}
 
-\selectlanguage{hebrew}
-
+This chapter shows that constructions with origami are more powerful than constructions with a straightedge  and compass. We give two constructions for trisecting an angle, one by Hisashi Abe\index{Abe, Hisashi} (Sect.~\ref{s.abe-trisection}) and the other by  George E. Martin\index{Martin, George E.} (Sect.~\ref{s.martin-trisection}), two constructions for doubling a cube, one by Peter Messer\index{Messer, Peter} (Sect.~\ref{s.messer}) and the other by Marghareta P. Beloch\index{Beloch, Margherita P.} (Sect.~\ref{s.cube2}), and the construction of a nonagon, a regular polynomial with nine sides (Sect.~\ref{s.nonagon}).
 
 \section{הבניה של 
-\L{Abe}
+\L{Abe}\label{s.abe-trisection}
 לחלוקת זווית לשלושה חלקים%
 }\label{s.trisection-abe}
 
@@ -62,7 +58,9 @@ $l$.
 בנו את הקווים
 $\overline{QB'}$
 ו-%
-$\overline{QQ'}$.
+$\overline{QQ'}$
+(איור%
+~\ref{f.abe1}).
 
 \begin{figure}
 \begin{center}
@@ -123,17 +121,20 @@ $\overline{QQ'}$.
   ($(Q)+(2pt,-4pt)$) to ($(QP)+(0pt,-4pt)$);
 
 \end{tikzpicture}
-\caption{}\label{}
+\selectlanguage{hebrew}
+\caption{הבנייה של
+\L{Abe}
+לחלוקת זווית לשלושה חלקים}
+\label{f.abe1}
 \end{center}
 \end{figure}
-טיעון:
+
+\begin{theorem}
 $\angle PQB'=\angle B'QQ'=\angle Q'QR=\disfrac{1}{3}\angle PQR$.
+\end{theorem}
+נביא שתי הוכחות.
 
-%
-
-\textbf{הוכחה ראשונה}
-
-
+\begin{proof}
 הנקודות
 $A', B', Q'$
 הן שיקופים סביב אותו קו 
@@ -156,8 +157,8 @@ $\angle AQ'B=\angle QQ'B=\alpha$
 $\overline{Q'B}$
 הוא האנך האמצעי של המשולש שווי-שוקיים
 $\triangle AQ'Q$
-)איור~
-\ref{f.first-proof}(.
+(איור~
+\ref{f.first-proof}).
 
 \begin{figure}[tb]
 \begin{center}
@@ -227,7 +228,12 @@ $\triangle AQ'Q$
 \end{tikzpicture}
 \end{center}
 \selectlanguage{hebrew}
-\caption{הוכחה ראשונה}\label{f.first-proof}
+\caption{ההוכחה של
+\L{Abe}
+(משתמשים ב-%
+$U,V$
+בהוכחה השנייה)}
+\label{f.first-proof}
 \end{figure}
 $\triangle A'QQ'$
 הוא השיקוף של
@@ -249,12 +255,9 @@ $\angle Q'QR=\angle QQ'B=\alpha$.
 \[
 \angle A'QB'=\angle Q'QB'=\angle Q'QR=\alpha\,.
 \]
+\end{proof}
 
-\textbf{הוכחה שנייה}
-
-
-ראו איור~%
-\ref{f.second-proof}.
+\begin{proof}
 הקו
 $l$
 הוא קיפול ולכן הוא האנך האמצעי של
@@ -268,7 +271,9 @@ $\overline{QQ'}$,
 וסמנו ב-%
 $V$
 את נקודת החיתוך שלו עם
-$\overline{QB'}$.
+$\overline{QB'}$
+(איור%
+~\ref{f.first-proof}).
 $\triangle VUQ\cong \triangle VUQ'$
 לפי צלע-זווית-צלע כי
 $\overline{VU}$
@@ -365,11 +370,12 @@ $\angle A'QB'=\angle Q'QB'=\alpha$.
 %\selectlanguage{hebrew}
 %\caption{הוכחה שנייה}\label{f.second-proof}
 %\end{figure}
+\end{proof}
 
 \section{הבניה של
 \L{Martin}
 לחלוקת זווית לשלושה חלקים%
-}\label{s.trisection-martin}
+}\label{s.martin-trisection}
 \begin{figure}
 \begin{center}
 
@@ -475,8 +481,7 @@ $\angle A'QB'=\angle Q'QB'=\alpha$.
 \caption{בניה של Martin}\label{f.martin}
 \end{figure}
 
-ראו איור~%
-\ref{f.martin}.
+\textbf{בנייה}
 נתונה זווית חדה
 $\angle PQR$
 תהי
@@ -517,7 +522,15 @@ $\overline{PM}$.
 בנו את קטעי הקו
 $\overline{PP'}$
 ו-%
-$\overline{QQ'}$.
+$\overline{QQ'}$
+(איור~%
+\ref{f.martin}).
+
+\begin{theorem}
+$\angle Q'QR = \angle PQR/3$.
+\end{theorem}
+
+\begin{proof}
 סמנו ב-%
 $U$
 את נקודת החיתוך של
@@ -592,20 +605,15 @@ $\overline{VW}$
 \angle WQV&=&\beta=\angle WQ'V=2\alpha\\
 \angle PQR &=& \beta + \alpha = 3\alpha\,,
 \end{eqn}
-%ולכן
-%$\angle Q'QR$
-%היא שליש מ-%
-%$\angle PQR$.
-
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\selectlanguage{hebrew}
 
 \section{%
 הבניה של 
 \L{Messer}
 להכפלת קוביה}%
-\label{s.cube-messer}
+\label{s.messer}
 
 לקוביה בנפח 
 $V$
@@ -621,15 +629,23 @@ $\sqrt[3]{2}$,
 $\sqrt[3]{V}$
 כדי להכפיל את נפח הקוביה.
 
+\textbf{בנייה:}
 קחו דף נייר שהוא ריבוע וקפלו לחצי כדי למצוא את הנקודת
 $I=(0,1/2)$,
 $Q=(1,1/2)$
-)איור~%
-\ref{f.lang}(.
+(איור~%
+\ref{f.lang}).
 בנו את קטעי הקו
 $\overline{AC}$
 ו-%
 $\overline{BQ}$.
+אפשר לחשב את הקואורדינטות של נקודה החיתוך 
+$K=(2/3,1/3)$
+על ידי פתרון המשוואות 
+$y=1-x$
+ו-%
+$y=x/2$.
+
 \begin{figure}
 \begin{center}
 
@@ -683,14 +699,7 @@ $\overline{BQ}$.
 \caption{בניית קטע קו באורך
  $1/3$}\label{f.lang}
 \end{figure}
-אפשר לחשב את הקואורדינטות של נקודה החיתוך 
-$K=(2/3,1/3)$
-על ידי פתרון המשוואות של הקטעים הללו:
 
-\begin{eqn}
-y&=&1-x\\
-y&=&\disfrac{1}{2}x\,.
-\end{eqn}
 בנו את הקו
 $\overline{EF}$
 ניצב ל-%
@@ -707,8 +716,8 @@ $\overline{EF}$.
 $a+1$
 ונוכיח ש-%
 $a=\sqrt[3]{2}$
-)איור~%
-\ref{f.doubling}(
+(איור~%
+\ref{f.doubling})
 
 נשמתש באקסיומה $6$ כדי להניח את 
 $C$
@@ -735,7 +744,11 @@ $\overline{QC}$
 הוא
 $(a+1)-b$.
 
+\begin{theorem}
+$\overline{AC'}=\sqrt[3]{2}$.
+\end{theorem}
 
+\begin{proof}
 לאחר ביצוע הקיפול, קטע הקו
 $\overline{QC,}$
 הוא שיקוף של קטע הקו
@@ -750,7 +763,7 @@ $\overline{AB}$
 $\overline{GC'}$
 הוא:
 \begin{equation}
-a-\disfrac{a+1}{3}=\disfrac{2a-1}{3}\,.\label{eq.one-third}
+\overline{GC'}=a-\disfrac{a+1}{3}=\disfrac{2a-1}{3}\,.\label{eq.one-third}
 \end{equation}
 לבסוף,
 $\angle FCQ$
@@ -838,23 +851,18 @@ $\angle F'C'Q$
 \end{tikzpicture}
 \end{center}
 \selectlanguage{hebrew}
-\caption{הכלפת קוביה}\label{f.doubling}
+\caption{בניית
+$\sqrt[3]{2}$}
+\label{f.doubling}
 \end{figure}
-
-
-
 $\triangle C'BQ$
 הוא משולש ישר-זווית ולפי משפט פיתגורס:
-
-\begin{eqn}
+\begin{eqnlabels}
 1^2 + b^2 &=& ((a+1)-b)^2\\
 %&=& a^2+2a+1 - 2(a+1)b + b^2\\
 %a^2+2a - 2(a+1)b&=&0\\
-b&=&\disfrac{a^2+2a}{2(a+1)}\,.
-\end{eqn}
-
-
-
+b&=&\disfrac{a^2+2a}{2(a+1)}\label{eq.value-of-b}\,.
+\end{eqnlabels}
 $\angle GC'F' + \angle F'C'Q + \angle QC'B = 180^\circ$
 כי הם מרכיבים את הקו
 $\overline{GB}$.
@@ -877,8 +885,9 @@ $\angle C'F'G=\alpha'$.
 \disfrac{b}{(a+1)-b}=\disfrac{\disfrac{2a-1}{3}}{\disfrac{a+1}{3}}\,.
 \]
 נציב עבור
-$b$:
-
+$b$
+במשוואה%
+~\ref{eq.value-of-b}:
 \begin{eqn}
 \disfrac{\disfrac{a^2+2a}{2(a+1)}}{(a+1)-\disfrac{a^2+2a}{2(a+1)}}&=&\disfrac{2a-1}{a+1}\\
 %\disfrac{a^2+2a}{(a+1)\cdot 2(a+1)-(a^2+2a)}&=&\disfrac{2a-1}{a+1}\\
@@ -890,17 +899,16 @@ $b$:
 $a^3=2$
 ו-%
 $a=\sqrt[3]{2}$.
+\end{proof}
 
-\selectlanguage{hebrew}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{הבניה של
 \L{Beloch}
 להכפלת קוביה%
-}\label{s.cube-beloch}
+}\label{s.cube2}
 
-הבניה מוצגת באיור~%
-\ref{f.beloch-cube1}.
+\textbf{הבנייה:}
 נסמן את הנקודה
 $(-1,0)$
 ב-%
@@ -938,7 +946,13 @@ $y$,
 ונסמן ב-%
 $X$
 את נקודת החיתוך של הקיפול עם ציר ה-%
-$x$.
+$x$
+(איור%
+~\ref{f.beloch-cube1}).
+
+\begin{theorem}
+$\overline{OY}=\sqrt[3]{2}$.
+\end{theorem}
 
 \begin{figure}[tbh]
 \begin{center}
@@ -1002,8 +1016,8 @@ $x$.
 \selectlanguage{hebrew}
 \caption{הכפלת קוביה לפי Beloch}\label{f.beloch-cube1}
 \end{figure}
-%\textbf{הוכחה}
-%
+
+\begin{proof}
 הקיפול הוא האנך האמצעי של
 $\overline{AA'}$
 ו-%
@@ -1027,131 +1041,35 @@ $\overline{OA}=1$, $\overline{OB}=2$,
 \overline{OY}^3&=&2\\
 \overline{OY}&=&\sqrt[3]{2}\,.
 \end{eqn}
-
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\selectlanguage{hebrew}
-
 \section{בניית מתושע}\label{s.nonagon}
 
-%לפי משפט
-%\L{Gauss-Wantzel}
-ניתן לבנות באמצעות סרגל ומחוגה מצולע משוכלל שמספר צלעותיו הוא:
-\[
-n=2^k\cdot F_1 \cdot \:\cdots\: \cdot F_m\,,
-\]
-כאשר ה-%
-$F_i$
-)אם הם קיימים( הם מספרי 
-\L{Fermat}
-ראשוניים שונים 
-$F_m=2^{2^m}+1$.
-חמישה מספרי 
-\L{Fermat}
-ראשוניים ידועים:
-$F_0=3, F_1=5, F_2=17, F_3=257, F_4=65537$.%
-בגיל
-$19$ \L{Gauss}
-בנה מצולע משוכלל עם 
-$17$
-צלעות )ראו פרק~%
-\ref{c.heptadecagon}(,
-והישג זה שיכנע אותו להיות מתמטיקאי. מצולע משוכלל עם 
-$257$
-צלעות נבנה על ידי
-\L{Magnus Georg Paucker}
-ב-%
-$1822$
-ועל ידי
-\L{Friedrich Julius Richelot}
-ב-%
-$1832$.
-\L{Johann Gustav Hermes}
-טען בשנת 
-$1894$
-שהוא בנה מצולע משוכלל עם 
-$65537$.
-צלעות. כתב היד שלו שמור באוניברסיטת
-\L{G\"{o}ttigen}.
-
-לכן לא ניתן לבנות
-\textbf{מתושע},
-מצולע משוכלל עם תשע צלעות.
-
-באמצעות קיפולי אוריגמי ניתן לבנות מצולעים משוכללים עם:
-\[
-n=2^i\cdot 3^j \cdot p_1 \cdot \: \cdots\: \cdot p_m,
-\]
-צלעות כאשר ה-%
-$p_i$
-)אם הם קיימים( הם מספרים ראשוניים שונים מהצורה
-$2^k\cdot 3^l+1$.
-כאן נבנה מתושע תוך שימוש בשיטה של
+ניתן לבנות מתושע (מצולע משוכלל עם תשע צלעות) על ידי פיתוח משוואה קובית עבור הזווית המרכזית ופתרון המשוואה באמצעות השיטה של
 \L{Lill}
 והקיפול של
 \L{Beloch}.
-
-\selectlanguage{hebrew}
-
-
-\subsection{המשוואה ממעלה שלוש עבור מתושע}
-
-ניתן לבנות מצולע משוכלל עם 
-$n$
-צלעות על ידי בניית הזווית המרכזית
-$360^\circ/n$.
-עבור מתושע הזווית המרכזית היא
-$360^\circ/9=40^\circ$:
-%\begin{center}
-%\begin{tikzpicture}[scale=.7]
-%\coordinate (O) at (0,0);
-%\fill (O) circle (1.5pt);
-%\foreach \x/\name in {0/a,40/b,80/c,120/d,160/e,200/f,240/g,280/h,320/i} {
-%  \coordinate (\name) at ($(O)+(\x:3cm)$);
-%  \draw (O) -- (\name);
-%  \fill (\name) circle (1.5pt);
-%}
-%\draw (a) -- (b) -- (c) -- (d) -- (e) -- (f) -- (g) -- (h) -- (i) -- cycle;
-%\node[above right,xshift=12pt] at (O) {$40^\circ$};
-%\end{tikzpicture}
-%\end{center}
-
-הזווית
-$40^\circ$
-היא שליש מ-%
-$120^\circ$
-שניתנת לבניה על ידי הצמדת זווית של 
-$30^\circ$ 
-לזווית של
-$90^\circ$,
-שתיהן זוויות שקל לבנות אותן. 
-ראינו שניתן לחלק זווית לשלושה חלקים שווים באוריגמי, ולכן ניתן לבנות 
-$40^\circ$
-באוריגמי. כאן נביא בניה המבוססת על מציאת שורש של פולינום ממעלה שלוש.
-
-על ידי שימוש בזהויות טריגונומטריות נקבל משוואה המקשרת את הקוסינוס של זווית לקוסינוס של שליש מהזווית:
-
-\begin{eqn}
-\cos 3\theta &=& \cos (2\theta +\theta)\\
-&=& \cos 2\theta\cos\theta - \sin 2\theta\sin\theta\\
-&=& (\cos^2\theta -\sin^2\theta)\cos\theta - (2\sin\theta\cos\theta)\sin\theta\\
-&=&\cos\theta (\cos^2\theta - (1-\cos^2\theta)) -(2(1-\cos^2\theta))\\
-&=&4\cos^3\theta -3\cos\theta\,.
-\end{eqn}
+הזווית המרכזית היא
+$\theta=360^\circ/9=40^\circ$.
+לפי משפט%
+~\ref{thm.triple-angle}:
+\[
+\cos 3\theta=4\cos^3 \theta -3\cos\theta\,.
+\]
 אם נתון 
 $a=\cos 3\theta$
 ונצליח לפתור את המשוואה ממעלה שלוש
 $4x^3-3x-a=0$,
-נקבל בניה של קטע קו באורך הקוסינוס של הזווית המרכזית של המצולע. בהמשך נראה איך ניתן לבנות את המצולע עצמו.
-
-עבור מתושע המשוואה היא
+נקבל בניה של קטע קו באורך הקוסינוס של הזווית המרכזית של המצולע. בהמשך נראה איך ניתן לבנות את המצולע עצמו. עבור מתושע המשוואה היא
 $4x^3-3x+\frac{1}{2}=0$
 כי
 $\cos 120^\circ=-\frac{1}{2}$.
-
-נבנה מסלולים עבור המשוואה לפי השיטה של 
-\L{Lill}:
+איור%
+~\ref{f.nonagon2}
+מראה את המסלולים עבור המשוואה לפי השיטה של 
+\L{Lill}.
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}[scale=1.1]
@@ -1206,7 +1124,11 @@ $\cos 120^\circ=-\frac{1}{2}$.
 \draw[thick,rotate=52.5463] (R) rectangle +(8pt,8pt);
 \draw[thick,rotate=-127.4537] (S) rectangle +(8pt,8pt);
 \end{tikzpicture}
-\caption{}\label{}
+\selectlanguage{hebrew}
+\caption{השיטה של
+\L{Lill}
+לבניית מתושע}
+\label{f.nonagon2}
 \end{center}
 \end{figure}
 המסלול השני מתחיל מ-%
@@ -1218,25 +1140,17 @@ $x=-\tan (-37.4537)^\circ=0.766044$
 הוא שורש של
 $4x^3-3x+\frac{1}{2}$.
 
-
-\selectlanguage{hebrew}
-
-
-\subsection{פתרון המשוואה על ידי הקיפול של
-\L{Beloch}}
-
 ניתן למצוא את השורש באמצעות הקיפול של 
 \L{Beloch}
 )איור~%
 \ref{f.nonagon-beloch}(.
 נמתח קו מקביל ל-%
-$a_2$\footnote{%
-\R{בגלל ש}-%
-$a_2=0$
-\R{הקו נמתח מקביל לקו שהיינו מציירים אם }
+$a_2$.
+בגלל ש-%
+$a_2=0$ 
+הקו נמתח מקביל לקו שהיינו מציירים אם
 $a_2$
-\R{היה שונה מאפס}.}
-באותו מרחק 
+היה שונה מאפס. באותו מרחק 
 $4$
 מ-%
 $a_2$
@@ -1270,7 +1184,9 @@ $Q'$
 על הקו המקביל ל-%
 $a_1$.
 הקיפול בונה את הזווית
-$\angle SPR=-37.4537^\circ$.
+$\angle SPR=-37.4537^\circ$
+(איור%
+~\ref{f.nonagon-beloch}).
 \begin{figure}
 \begin{center}
 
@@ -1346,11 +1262,6 @@ $\angle SPR=-37.4537^\circ$.
 \caption{בנית מתושע באמצעות הקיפול של Beloch}\label{f.nonagon-beloch}
 \end{figure}
 
-\selectlanguage{hebrew}
-
-
-\subsection{בניית הזווית המרכזית של המתושע}
-
 $\cos\theta=0.766044$
 הוא שורש של המשוואה. כדי לבנות את הזווית המרכזית אנו צריכים לבנות  את
 $\cos^{-1} 0.766044=40^\circ$.
@@ -1364,6 +1275,48 @@ $37.4537^\circ$,
 \[
 \tan 37.4537^\circ = \disfrac{0.766044}{1}\,.
 \]
+
+למשולש ישר-זווית
+$\triangle ABC$
+עם 
+$\angle CAB\approx 37.45^\circ$
+ו-%
+$\overline{AB}=1$
+הצלע הנגדי הוא
+$\overline{BC}\approx 0.766$
+לפי ההגדרה של טנגנס (איור%
+~\ref{f.nonagon5-eq}).
+קפל 
+$\overline{CB}$
+על
+$\overline{AB}$
+כך שהשיקוף של
+$C$
+הוא
+$D$
+ו-%
+$\overline{DB}=0.766$.
+המשך את
+$\overline{DB}$
+ובנה
+$E$
+כך ש-%
+$\overline{DE}=1$.
+קפל
+$\overline{DE}$
+כדי לשקף את
+$E$ 
+ב-%
+$F$
+על ההמשך אל
+$\overline{BC}$
+(איור%
+~\ref{f.nonagon5-central}).
+אזי:
+\[
+\angle BDF=\cos^{-1} \frac{0.766}{1}\approx 40^\circ\,.
+\]
+
 
 \begin{figure}[ht]
 \begin{center}
@@ -1517,8 +1470,15 @@ $F$:
 \angle BDF=\cos^{-1} \disfrac{0.766044}{1}=40^\circ\,.
 \]
 
-\selectlanguage{hebrew}
+\subsection*{מה ההפתעה?}
 
+ראינו בפרקים%
+~\ref{c.trisect}
+ו-%
+~\ref{c.square}
+שכלים כגון הניאוסיס יכולים לבצע בניות שלא ניתן לבצע עם סרגל ומחוגה. לכן, מפתיע שניתן לחלק זווית לשלושה חלקים ולהכפיל קוביה רק על ידי קיפול נייר.
+\L{Roger C. Alperin}
+פיתוח היררארכיה של שיטות בנייה שכל אחת חזקה יותר מהקודמת.
 
 \subsection*{מקודות}
 

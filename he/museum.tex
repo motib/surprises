@@ -1,16 +1,13 @@
 % !TeX root = surprises.tex
 
-\selectlanguage{hebrew}
-
-
-
 \chapter{איך לשמור על מוזיאון}
 \label{c.museum}
 
 ב-%
 $1973$
 \L{Victor Klee}
-שאל כמה שומרים נחוצים כדי לראות את כל הקירות של מוזיאון על מנת לוודא שלא גונבים את הציורים. אם הקירות של המוזיאון מהווים מצולע משוכלל או אפילו מצולע קמור, אפשר להסתפק בשומר אחד:
+שאל כמה שומרים נחוצים כדי לראות את כל הקירות של מוזיאון על מנת לוודא שלא גונבים את הציורים. אם הקירות של המוזיאון מהווים מצולע משוכלל או אפילו מצולע קמור, אפשר להסתפק בשומר אחד (איור%
+~\ref{f.museum.convex}).
 
 
 \begin{figure}[htb]
@@ -26,12 +23,13 @@ $1973$
 }
 \draw (a) -- (b) -- (c) -- (d) --(e) -- cycle;
 \end{tikzpicture}
-\caption{}\label{}
+\selectlanguage{hebrew}
+\caption{מוזיאון שקירותיו מרכיבים מצולע קמור}\label{f.museum.convex}
 \end{center}
 \end{figure}
 
-מה עם מוזיאון עם קירות בצורה של מסור:
-
+מה עם מוזיאון עם קירות בצורה של מסור (איור%
+~\ref{f.museum.nonconvex}).
 \begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}[scale=1]
@@ -49,7 +47,8 @@ $1973$
   ++(-70:1cm) coordinate(E) node[below] {$5$} --
   ++(+70:2cm) -- (P);
 \end{tikzpicture}
-\caption{}\label{}
+\selectlanguage{hebrew}
+\caption{מוזיאון שקירותיו אינה מרכיבכים מצולע קמור}\label{f.museum.nonconvex}
 \end{center}
 \end{figure}
 
@@ -57,9 +56,10 @@ $1973$
 $15$
 קירות.
 
-כל "שן" של המסור מגדירה משולש )מסומן באפור(. שומרת הניצבת במקום כלשהו בתוך אחד המשולשים יכולה לראות את כל הקירות של אותו משולש:
+כל "שן" של המסור מגדירה משולש )מסומן באפור(. שומרת הניצבת במקום כלשהו בתוך אחד המשולשים יכולה לראות את כל הקירות של אותו משולש (איור%
+~\ref{f.visibility-tooth}).
 
-\begin{figure}[hbt]
+\begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}[scale=1]
 \coordinate (O) at (0,0);
@@ -88,11 +88,14 @@ $15$
 %\draw[->,very thick,blue] ($(O)+(.5,.5)$) -- ++(7.5,.42);
 %\draw[->,very thick,blue] ($(O)+(.5,.5)$) -- ++(3,-.5);
 \end{tikzpicture}
-\caption{}\label{}
+\selectlanguage{hebrew}
+\caption{ראות בתוך כל "שן"}\label{f.visibility-tooth}
 \end{center}
 \end{figure}
 
-אם השומרת ניצבת בקירבת הקיר העליון היא יכולה לראות את כל הקירות האופקיים )חצים כחולים(. ברור שחמש
+אם השומרת ניצבת בקירבת הקיר העליון היא יכולה לראות את כל הקירות האופקיים (חצים כחולים באיור%
+~\ref{f.museum.shaded}).
+ברור שחמש
 שומרות מספיקות כדי לשמור על כל הקירות. אם המשולשים לא חופפים, שומרת במשולש אחד לא יכולה לראות את כל הקירות של משולש אחר )חץ ירוק(, לכן חייבים להעסיק חמש שומרות נחוצות.
 \begin{figure}[htb]
 \begin{center}
@@ -124,38 +127,50 @@ $15$
 \draw (6,0) circle(4pt);
 \draw (4.95,-.28) circle(4pt);
 \end{tikzpicture}
-\caption{}\label{}
+\selectlanguage{hebrew}
+\caption{ראות של הקירות של המוזיאון}\label{f.museum.shaded}
 \end{center}
 \end{figure}
 
-\begin{theorem}\label{thm.guarded} \mbox{}\\
-$\disfrac{n}{3}$
-שומרות מספיקות ונחוצות כדי לשמור על כל מוזיאון עם
-$n$
-קירות.%
-\footnote{\R{אם}
-$n$
-\R{לא מתחלק ב}-%
-$3$
-\R{מספר השומרות הנחוצות הוא}
-$\left\lfloor \disfrac{n}{3}\right\rfloor$.
-\R{למשל,}
-$4$
-\R{שומרות מספיקות כדי לשמור על מוזיאונים עם}
-$12, 13, 14$
-\R{קירות כי}
-$\left\lfloor \disfrac{14}{3}\right\rfloor =\left\lfloor \disfrac{13}{3}\right\rfloor=\left\lfloor \disfrac{12}{3}\right\rfloor=4$.
-\R{לשם הפשטות נתעלם מסיבוך זה}.}
-\end{theorem}
-ניתן להכליל את הדוגמה כדי להראות ש-%
+ניתן להכליל את הדוגמה באיור%
+~\ref{f.museum.nonconvex}
+ולהראות ש-%
 $\disfrac{n}{3}$
 שומרות נחוצות. שאר הפרק מוקדש להוכחה ש-%
 $\disfrac{n}{3}$
 מספיקות עבור כל מוזיאון.
 
-\section{צביעת מצולעים מתולתים}
+סעיף%
+~\ref{s.museum-triangulating}
+מוכיח שניתן לצבוע כל מצולע מתולת בשלושה צבעים. נשתמש במשפט הזה בסעיף%
+~\ref{s.museum-guard}
+כי להוכיח ש-%
+$n/3$
+מספיקים. סעיף%
+~\ref{s.museum-triangulated}
+משלים את ההוכחה ומראה שניתן לתלת כל מצולע.
 
-\textbf{הגדרה:}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{צביעת מצולעים מתולתים}\label{s.museum-triangulating}
+
+\begin{definition}
+\textbf{אלכסון \L{(diagonal)}}
+של מצולע הוא צלע המחבר שני קודקודים והוא אינו אחד מהצלעות (החיצוניים) של המצולע.
+\end{definition}
+\begin{definition}
+ניתן
+\textbf{לתלת}
+\L{(triangulate)}
+מצולע אם ניתן לצייר אלכסונים כך שהשטח הפנימי של המצולע מכוסה על ידי משולשים.
+\end{definition}
+\begin{theorem}\label{thm.tri}
+ניתן לתלת כל מצולע.
+\end{theorem}
+אנו דוחים את ההוכחה של משפט%
+~\ref{thm.tri}
+לשלב מאוחר יותר.
+\begin{definition}
 קודקוד במצולע הוא 
 \textbf{קמור}
 אם הזווית הפנימית פחות מ-%
@@ -165,11 +180,14 @@ $180^\circ$.
 אם הזווית הפנימית גדולה מ-%
 $180^\circ$.
 
-במצולע באיור להלן, קודקוד 
+במצולע באיור%
+~\ref{f.museum.arbitrary}
+קודקוד 
 $1$
 קמור וקודקוד
 $2$
 קעור.
+\end{definition}
 \begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
@@ -192,26 +210,14 @@ $2$
   \fill (\point) circle(1.25pt);
 \end{tikzpicture}
 \end{center}
-\caption{}\label{}
+\selectlanguage{hebrew}
+\caption{מצולע אם קודקוד קמור
+($1$)
+וקודקוד קעור
+($2$)}\label{f.museum.arbitrary}
 \end{figure}
 
-\textbf{הגדרה:}
-ניתן
-\textbf{לתלת}
-\L{(triangulate)}
-מצולע אם ניתן לצייר 
-\textbf{אלכסונים},
-קטעי קו שאינם נחתכים המחברים קודקודים והנמצאים בתוך המצולע לכל אורכם, כך שהשטח הפנימי של המצולע מכוסה על ידי משולשים זרים אחד מהשני.
-
-
-
-\begin{theorem}\label{thm.tri}\mbox{}\\
-ניתן לתלת כל מצולע.
-\end{theorem}
-אנו דוחים את ההוכחה של משפט~%
-\ref{thm.tri}
-לשלב מאוחר יותר.
-\textbf{הגדרה:}
+\begin{definition}
 ניתן
 \textbf{לצבוע מצולע בשלושה צבעים}
 אם קיים מיפוי
@@ -219,17 +225,19 @@ $2$
 c: V \mapsto \{\textrm{\R{אדום, כחול, ירוק}}\}
 \]
 כך ששני הקודקודים של צלע מקבלים צבעים שונים.
-\begin{theorem}\mbox{}\\
+\end{definition}
+\begin{theorem}
 ניתן לצבוע מצולע מתולת בשלושה צבעים.
 \label{thm.colored}
 \end{theorem}
-\textbf{הוכחה:}
+\begin{proof}
 באינדוקציה על מספר הקודקודים. ברור שניתן לצבוע משולש בשלושה צבעים. ניתן מצולע עם 
 $n>3$
 קודקודים. חייבים לצייר לפחות אלכסון אחד כדי לתלת את המצולע. בחר אלכסון שרירותי
 $\overline{AB}$:
 
-וחלק את המצולע לאורך אלכסון זה לשני מצולעים קטנים יותר:
+וחלק את המצולע לאורך אלכסון זה לשני מצולעים קטנים יותר (איור%
+~\ref{f.museum.three-1}).
 
 \begin{figure}
 \begin{center}
@@ -259,7 +267,8 @@ $\overline{AB}$:
 \draw[thick,dashed]
   (B) -- (D) -- (K) -- (F) -- (I) -- (K) -- (A) -- (D) -- (F) -- (H);
 \end{tikzpicture}
-\caption{}\label{}
+\selectlanguage{hebrew}
+\caption{אלכסון שרירותי במצולע}\label{f.museum.three-1}
 \end{subfigure}
 \hspace{3em}
 \begin{subfigure}{.4\textwidth}
@@ -326,12 +335,14 @@ $\overline{AB}$:
 
 \end{scope}
 \end{tikzpicture}
-\caption{}\label{}
+\selectlanguage{hebrew}
+\caption{חלק את המצולע}\label{f.museum.three-2}
 \end{subfigure}
 \end{center}
 \end{figure}
 
-לפי הנחת האינדוקציה, ניתן לצבוע כל אחד מהמצולעים הללו בשלושה צבעים:
+לפי הנחת האינדוקציה, ניתן לצבוע כל אחד מהמצולעים הללו בשלושה צבעים (איור%
+~\ref{f.museum.three-2}).
 
 \begin{figure}[htb]
 \begin{center}
@@ -366,7 +377,7 @@ $\overline{AB}$:
 \foreach \point/\color in {D1/red,E1/blue,F1/green,G1/red,H1/blue,I1/red,J1/green,K1/blue}
   \fill[color=\color] (\point) circle(3pt);
 
-\begin{scope}[yshift=-1.8cm]
+\begin{scope}[yshift=-2.5cm]
 
 \draw
   (0,0) coordinate (A2) -- 
@@ -398,7 +409,8 @@ $\overline{AB}$:
 
 \end{scope}
 \end{tikzpicture}
-\caption{Three-color the two smaller polygons}\label{f.museum.three-3}
+\selectlanguage{hebrew}
+\caption{צבע את שני המצולעים הקטנים עם שלושה צבעים}\label{f.museum.three-3}
 \end{subfigure}
 \hspace{3em}
 \begin{subfigure}{.4\textwidth}
@@ -432,7 +444,7 @@ $\overline{AB}$:
 \foreach \point/\color in {D1/red,E1/blue,F1/green,G1/red,H1/blue,I1/red,J1/green,K1/blue}
   \fill[color=\color] (\point) circle(3pt);
 
-\begin{scope}[yshift=-1.8cm]
+\begin{scope}[yshift=-2.5cm]
 
 \draw[thick]
   (0,0) coordinate (A2) -- 
@@ -464,7 +476,8 @@ $\overline{AB}$:
 
 \end{scope}
 \end{tikzpicture}
-\caption{Exchange the colors of one polygon to match the other}\label{f.museum.three-4}
+\selectlanguage{hebrew}
+\caption{החלף את הצבעים של מצולע אחד כדי להתאים לשני}\label{f.museum.three-4}
 \end{subfigure}
 \end{center}
 \end{figure}
@@ -545,7 +558,8 @@ $A,B$
 \textbf{אדום}
 ו-%
 \textbf{ירוק}
-במצולע התחתון:
+במצולע התחתון (איור%
+~\ref{f.museum.three-3}).
 
 %\begin{center}
 %
@@ -616,8 +630,11 @@ $A,B$
 
 כעת ניתן להדביק את שני המצולעים ביחד כדי לשחזר את המצולע המקורי עם
 $n$
-קודקודים. המצולע יהיה צבוע בשלושה צבעים.
-\qed
+קודקודים (איור%
+~\ref{f.museum.three-4}).
+ המצולע יהיה צבוע בשלושה צבעים (איור%
+~\ref{f.museum.three-5}). 
+\end{proof}
 
 \begin{figure}
 \begin{center}
@@ -648,11 +665,13 @@ $n$
   \fill[color=\color] (\point) circle(5pt);
 \end{tikzpicture}
 \end{center}
-\caption{}\label{}
+\selectlanguage{hebrew}
+\caption{הדבק את שני המצולעים הקטנים בחזרה}\label{f.museum.three-5}
 \end{figure}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{מצביעת מצולעים לשמירה על מוזיאונים}
+\section{מצביעת מצולעים לשמירה על מוזיאונים}\label{s.museum-guard}
 
 \begin{theorem}
 $n/3$
@@ -661,8 +680,8 @@ $n$
 קירות.
 \end{theorem}
 
-\textbf{הוכחה של משפט
-\ref{thm.guarded}:}
+
+\begin{proof}
 לפי משפט
 \ref{thm.tri}
 ניתן לתלת את המצולע ולפי משפט
@@ -676,30 +695,57 @@ $\disfrac{n}{3}$
 אם נציב שומרת בקודקוד אדום, היא יכולה לראות את הקירות של אותו משולש. כל המשולשים של תילות המצולע כוללים את כל הצלעות של המצולע, ולכן
 $\disfrac{n}{3}$
 שומרות מספיקות כדי לראות את כל הקירות של המוזיאון.
-\qed
+\end{proof}
 
-כעת נוכיח את משפט
-\ref{thm.tri}
-שניתן לתלת כל מצולע.
+אם
+$n$
+לא מתחלק ב-%
+$3$
+מספר השומרים הדרושים הוא
+$\lfloor n/3\rfloor$, 
+המספר השלם הגדול ביותר פחות או שווה ל-%
+$n/3$.
+למשל, 
+$4$
+שומרים מספיקים למוזיאון עם 
+$12, 13, 14$
+קירות כי
+$\lfloor 12/3\rfloor =\lfloor 13/3\rfloor=\lfloor 14/3\rfloor=4$. 
+למען הפשטות נתעלם מסיבוך זה.
 
-\section{ניתן לתלת כל מצולע}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{theorem}\label{thm.interior-angles-of-a-polygon}\mbox{}\\
+\section{ניתן לתלת כל מצולע}\label{s.museum-triangulated}
+
+\begin{theorem}\label{thm.interior-angles-of-a-polygon}
 סכום הזוויות הפנימיות של מצולע עם
 $n$
 צלעות הוא
 $180^\circ(n-2)$.
 \end{theorem}
 
-
-
-\textbf{הוכחה:}
+\begin{proof}
 תחילה נוכיח עבור מצולעים קמורים. נסמן את 
 \textbf{הזוויות החיצוניות}
 ב-%
-$\theta_i$:
-
-\begin{figure}
+$\theta_i$
+(איור%
+~\ref{f.museum.exterior}).
+אם נסכם את הזוויות החיצוניות נקבל 
+$\displaystyle\sum_{i=1}^n \theta_i = 360^\circ$.
+ניתן לראות את הסיכום באיור על ידי "סיבוב" הקווים המקווקווים מאחד לשני לפי הסדר 
+$\theta_1,\ldots,\theta_5$.
+עבור כל זוית חיצונית
+$\theta_i$
+נסמן את הזוית הפנימית של אותו קודקוד ב-%
+$\phi_i$.
+נחשב:
+\begin{eqn}
+\displaystyle\sum_1^n \theta_i &=&\displaystyle\sum_1^n (180^\circ-\phi_i)= 360^\circ\\
+%n\cdot 180^\circ-\displaystyle\sum_1^n \phi_i &=& 360^\circ\\
+\displaystyle\sum_1^n \phi_i &=& n\cdot 180^\circ-360^\circ =180^\circ(n-2)\,.
+\end{eqn}
+\begin{figure}[htb]
 \begin{center}
 
 \begin{tikzpicture}[scale=.6]
@@ -731,41 +777,13 @@ $\theta_i$:
 
 \end{tikzpicture}
 \end{center}
-\caption{}\label{}
+\selectlanguage{hebrew}
+\caption{הזוויות החיצוניות של מצולע קמור}\label{f.museum.exterior}
 \end{figure}
 
-אם נסכם את הזוויות החיצוניות נקבל 
-$\displaystyle\sum_{i=1}^n \theta_i = 360^\circ$.
-ניתן לראות את הסיכום באיור על ידי "סיבוב" הקווים המקווקווים מאחד לשני לפי הסדר 
-$\theta_1,\ldots,\theta_5$.
-עבור כל זוית חיצונית
-$\theta_i$
-נסמן את הזוית הפנימית של אותו קודקוד ב-%
-$\phi_i$.
-נחשב:
-\begin{eqn}
-\displaystyle\sum_1^n \theta_i &=&\displaystyle\sum_1^n (180^\circ-\phi_i)= 360^\circ\\
-%n\cdot 180^\circ-\displaystyle\sum_1^n \phi_i &=& 360^\circ\\
-\displaystyle\sum_1^n \phi_i &=& n\cdot 180^\circ-360^\circ =180^\circ(n-2)\,.
-\end{eqn}
-נבדוק מה קורה אם נוסיף קודקוד קעור:
-
-\begin{figure}
-\begin{center}
-
-\begin{tikzpicture}
-\draw[thick] (0,0) -- (3,0) coordinate (A) node[above left,yshift=8pt] {$\alpha$} -- ++(60:2) coordinate (B) node[above,yshift=8pt] {$\beta$} -- ++(-60:2) coordinate (C) node[above right,yshift=8pt] {$\gamma$}  -- ++(3,0);
-
-\draw ($(A)+(-.4,0)$) arc(180:60:.4);
-\draw ($(B)+(-60:.3)$) arc(-60:240:.3);
-\draw ($(C)+(.4,0)$) arc(0:120:.4);
-
-\draw[thick,dashed] (A) -- (C);
-\end{tikzpicture}
-\end{center}
-\caption{}\label{}
-\end{figure}
-
+נבדוק מה קורה אם נוסיף קודקוד קעור
+(איור%
+~\ref{f.museum.concave})
 קיים משולש המורכב משתי הצלעות שנוגעות בקודקוד הקעור והצלע המסומן בקו מקווקוו. נסכם את הזוויות של המשולש:
 
 \begin{eqn}
@@ -780,17 +798,29 @@ $\alpha+\beta+\gamma$
 \displaystyle\sum_1^n \phi_i + (\alpha + \beta + \gamma) &=& 180^\circ(n-2)+3\cdot 180^\circ\\
 &=& 180^\circ((n+3)-2)\,.
 \end{eqn}
-\qed
+\end{proof}
 
+\begin{figure}
+\begin{center}
 
+\begin{tikzpicture}
+\draw[thick] (0,0) -- (3,0) coordinate (A) node[above left,yshift=8pt] {$\alpha$} -- ++(60:2) coordinate (B) node[above,yshift=8pt] {$\beta$} -- ++(-60:2) coordinate (C) node[above right,yshift=8pt] {$\gamma$}  -- ++(3,0);
 
-\begin{theorem}\label{thm.convex}\mbox{}\\
+\draw ($(A)+(-.4,0)$) arc(180:60:.4);
+\draw ($(B)+(-60:.3)$) arc(-60:240:.3);
+\draw ($(C)+(.4,0)$) arc(0:120:.4);
+
+\draw[thick,dashed] (A) -- (C);
+\end{tikzpicture}
+\end{center}
+\selectlanguage{hebrew}
+\caption{קודקוד קעור}\label{f.museum.concave}
+\end{figure}
+
+\begin{theorem}\label{thm.convex}
 חייב להיות לפחות שלושה קודקודים קמורים במצולע.
 \end{theorem}
-
-
-
-\textbf{הוכחה:}
+\begin{proof}
 נסמן ב-%
 $k$
 את מספר הקודקודים הקעורים, כאשר הזווית הפנימית של כל אחד הוא
@@ -808,27 +838,34 @@ k\cdot 180^\circ  &<& 180^\circ(n-2)\\
 k&<&n-2\,.
 \end{eqn}
 מכאן שיש לא רק קודקוד אחד, אבל לפחות שלושה קודקודים שאינם קעורים.
-\qed
+\end{proof}
 
-\textbf{הוכחה של משפט
-\ref{thm.tri}:}
+\begin{proof}
+הוכחה של משפט%
+~\ref{thm.tri}:
+
 באינדוקציה על מספר הקודקודים. עבור
 $n=3$
 אין מה להוכיח. נניח ש-%
 $n>3$.
-לפי משפט 
-\ref{thm.convex},
+לפי משפט%
+~\ref{thm.convex},
 חייב להיות קודקוד קמור
 $C$.
 סמנו את הקודקודים השכנים שלו
 $B,D$.
 אם
 $\overline{BD}$
-נמצא כולו בתוך המצולע אז הוא אלכסון וניתן לחלק את המצולע למשולש 
+נמצא כולו בתוך המצולע (איור%
+~\ref{f.contained}),
+אזי הוא אלכסון וניתן לחלק את המצולע למשולש 
 $\triangle BCD$
 ולמצולע קטן יותר כאשר
 $\overline{BD}$
-הוא צלע.
+הוא צלע. לפי הנחת האינדוקציה, ניתן לתלת את המצולע ואז להדביק אותו למשולש
+$\triangle BCD$
+ולקבל תילות של המצולע המקורי.
+
 
 \begin{figure}[htb]
 \begin{center}
@@ -848,7 +885,8 @@ $\overline{BD}$
 \vertex{B};
 \vertex{D};
 \end{tikzpicture}
-\caption{Triangulation where a diagonal is contained within the polygon}\label{f.contained}
+\selectlanguage{hebrew}
+\caption{תילות כאשר האלכסון נמצא בתוך המצולע}\label{f.contained}
 \end{subfigure}
 \hspace{3em}
 \begin{subfigure}{.4\textwidth}
@@ -874,7 +912,8 @@ $\overline{BD}$
 \vertex{C};
 \vertex{F};
 \end{tikzpicture}
-\caption{Triangulation where a diagonal is not contained within the polygon}\label{f.museum.concave-vertices}
+\selectlanguage{hebrew}
+\caption{תילות כאשר האלכסון לא נמצא בתוך המצולע}\label{f.museum.concave-vertices}
 \end{subfigure}
 \end{center}
 \end{figure}
@@ -898,17 +937,16 @@ $\overline{BD}$
 %  \fill (\point) circle(.7pt) node[\pos] {$\point$};
 %\end{tikzpicture}
 %\end{center}
-
-
-לפי הנחת האינדוקציה, ניתן לתלת את המצולע ואז להדביק אותו למשולש
-$\triangle BCD$
-ולקבל תילות של המצולע המקורי. אחרת, חייב להיות קודקוד קעור
+אחרת, חייב להיות קודקוד קעור
 $F$
 הקרוב ביותר ל-%
-$C$,
+$C$
+(אויר%
+~\ref{f.museum.concave-vertices}),
 ולכן
 $\overline{CF}$
 הוא אלכסון המחלק את המצולע לשני מצולעים קטנים יותר. לפי הנחת האינדוקציה ניתן לתלת אותם ולהדביק אותם אחד לשני.
+\end{proof}
 %\begin{center}
 %
 %\begin{tikzpicture}[scale=1.6]
@@ -928,6 +966,11 @@ $\overline{CF}$
 %  \fill (\point) circle(.7pt) node[\pos] {$\point$};
 %\end{tikzpicture}
 %\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{מה ההפתעה?}
+משפט המוזיאון מפתיע כי ההוכחה של מה שנראה כמשפט בגיאומטריה משתמשת בצורה אלגנטית במתמטיקה של צביעת גרפים.
 
 \subsection*{מקורות}
 

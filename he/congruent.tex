@@ -16,9 +16,18 @@ $(20,21,27)$
 היקף
 $70$
 ושטח 
-$210$.
+$210$
+(איור%
+~\ref{f.congruent-first-example}).
 פרק זה מראה שנתון משולש עם אורכי צלעות רציונליים, ניתן לבנות משולש לא-חופף עם אורכי צלעות רציונליים, ועם אותו היקף ושטח.
-בסוף הפרק הבאתי הוכחה אלגנטית לנוסחה של הרון לשטח של משולש.
+בסוף הפרק הבאתי הוכחה אלגנטית לנוסחה של הרון לשטח של משולש. את השיטה נדגים על דוגמה ונראה שלמשולש עם הצלעות 
+$(3,4,5)$
+ולמשולש עם הצלעות
+$(\frac{156}{35},\frac{101}{21},\frac{41}{15})$
+אותו היקף
+$12$
+ואותו שטח
+$6$.
 
 \begin{figure}[htb]
 \begin{center}
@@ -205,8 +214,8 @@ $2\pi$,
 \tan\gamma/2&=& -\tan (\alpha/2 + \beta/2)\\
 \tan\gamma/2&=& \frac{\tan\alpha/2 + \tan\beta/2}{\tan\alpha/2 \, \tan\beta/2-1}\,.\label{eq.tangent1}
 \end{eqnlabels}
-השתמשנו בזהות טריגונומטרית שהוכחה בסעיף~
-\ref{s.tangent}.
+השתמשנו בנוסחה לטנגנס של החיבור של שתי זוויות (משפט%
+~\ref{thm.tangent-sum}).
 
 נפשט את הסימון על ידי הגדרת נעלמים עבור הטנגנסים:
 \[
@@ -587,18 +596,20 @@ $(3,4,5)$!
 \[
 A= \sqrt{6 \left(6-\frac{156}{35}\right) \left(6-\frac{101}{21}\right) \left(6-\frac{41}{15}\right)}=\sqrt{36} = 6\,.
 \]
-Is $\left(\frac{156}{35}, \frac{101}{21}, \frac{41}{15}\right)\cong(3,4,5)$? To simplify the computation let us use the decimal approximations $(4.48,4.81,2.73)$. Then:
+האם
+$\left(\frac{156}{35}, \frac{101}{21}, \frac{41}{15}\right)\cong(3,4,5)$?
+כדי לפשט את החישוב נשתמש בקירובים העשירונים
+$(4.48,4.81,2.73)$.
+אזי:
 \[
 \sqrt{4.48^2+2.73^2}=5.25\neq 4.81\,,
 \]
-so this is not a right triangle and not congruent to $(3,4,5)$.
+ולכן לא מדובר במשולש ישר-זווית והמשלוש לא חופף ל-%
+$(3,4,5)$.
 
-The Law of Cosines can be used to compute the angles of the triangle as shown in Fig.~\ref{f.not-a-right-triangle}.
-
-
-
-
-\begin{figure}[t]
+נחשב את זווית המשולש באמצעות חוק הקוסינוסים (איור%
+~\ref{f.not-a-right-triangle}).
+\begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}[scale=1.2]
 \coordinate (A1) at (0,0);
@@ -611,12 +622,16 @@ The Law of Cosines can be used to compute the angles of the triangle as shown in
   node[left] {$2.73$} (C1) -- node[right,xshift=2pt] {$4.81$} cycle;
 \end{tikzpicture}
 \end{center}
+\selectlanguage{hebrew}
 \caption{משולש עם שטח והיקף שווה למשולש $(3,4,5)$}\label{f.not-a-right-triangle}
 \end{figure}
 
-\subsection*{What Is the Surprise?}
+\subsection*{מה ההפתעה?}
 
-Are triangles with the same area and perimeter congruent? My first impression was to say ``yes'' because it is not easy to find counterexamples. What is surprising is that given an arbitrary triangle with rational sides, it is possible to construct a non-congruent triangle with rational sides which has the same area and perimeter, although the result can be strange as with the triangles $(3,4,5)$ and $\left(\frac{156}{35}, \frac{101}{21}, \frac{41}{15}\right)$.
+האם משלושים עם אותו שטח ואותו היקף חופפים? הרושם הראשון שלי היה "כן" כי לא קל למצוא דוגמאות נגדיות. מה שמפתיע הוא שנתון משולש שרירותי עם צלעות רציונליות, ניתן לבנות משולש לא-חופף עם אותו שטח והיקף למרות שהתוצאה יכולה להיות מוזרה כגון המשולשים
+$(3,4,5)$
+ו-%
+$\left(\frac{156}{35}, \frac{101}{21}, \frac{41}{15}\right)$.
 
 
 \subsection*{מקורות}
@@ -626,8 +641,3 @@ Are triangles with the same area and perimeter congruent? My first impression wa
 ברבש
 \L{\cite{marita}}
 מראה שאם נתון משולש שווה-צלעות, קיימים משולשים לא חופפים עם אותו היקף ואותו שטח, אולם ההוכחה שלה לא כוללת בנייה. 
-המשוואה~%
-\ref{eq.elliptic}
-היא
-\textbf{עקומה אליפטית}
-נושא שנחקר לעומק על ידי מתמטיקאים.

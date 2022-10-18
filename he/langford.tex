@@ -1,16 +1,14 @@
 % !TeX root = surprises.tex
 
-\selectlanguage{hebrew}
-
-
 \chapter{הבעיה של 
 \L{Langford}}
 \label{c.langford}
 
 המתמטיקאי
 \L{C. Dudley Langford}
-שם לב שבנו סידר קוביות צבעוניות לפי הסדר:
-\begin{figure}
+שם לב שבנו סידר קוביות צבעוניות לפי הסדר באיור%
+~\ref{f.langford}.
+\begin{figure}[h]
 \begin{center}
 \begin{tikzpicture}
 \draw[rounded corners,fill=green] (0,0)  
@@ -27,13 +25,15 @@
   rectangle +(1.6cm,.8cm);
 \end{tikzpicture}
 \end{center}
-\caption{}\label{}
+\caption{סידור הקוביות לבעייה של \L{Langford}}\label{f.langford}
 \end{figure}
 
 קוביה אחת נמצאת בין שתי הקוביות האדומות, שתי קוביות בין הקוביות הכחולות, ושלוש קוביות בין הקוביות הירוקות. ניתן לנסח את הבעיה כך:
 נתון שק%
 \footnote{\R{
-שק הוא  קבוצה בה איבר יכול להופיע מספר פעמים}.} של מספרים
+שק
+\L{(bag)}
+הוא  קבוצה בה איבר יכול להופיע מספר פעמים}.} של מספרים
 $\{1,1,2,2,3,3\}$,
 האם אפשר לסדר אותם בסדרה כך שלכל
 $1\leq i \leq 3$,
@@ -41,31 +41,42 @@ $i$
 מספרים נמצאים בין שני המופעים של
 $i$?
 
-\textbf{
-הבעיה של
-\L{Langford} $L(n)$}:
+\begin{definition}[הבעיה של
+\L{Langford} $L(n)$]
 נתון שק של מספרים
 $\{1,1,2,2,3,3,\ldots,n,n\}$,
 האם ניתן לסדר אותם כך שלכל
 $1\leq i \leq n$, $i$
 מספרים נמצאים בין שני המופעים של
 $i$?
-
-
-מהאיור לעיל אנו רואים שעבור 
+\end{definition}
+מאיור%
+~\ref{f.langford}
+אנו רואים שעבור 
 $n=3$
 הפתרון הוא
 $312132$.
 
+סעיף%
+~\ref{s.langford-covering} 
+נהסח מחדש את הבעייה של
+\L{Langford}
+במתמטיקה בצורה שמקילה על הפתרון. סעיף%
+~\ref{s.langford-theorem}
+מאפיין את הערכים 
+$n$
+עבורם ניתן למצוא פתרון ומביא שתי הוכחות של המשפט. ההוכחה הראשונה פשוטה יחסית ומשתמשת בשיטה של ספירה כפולה: לספור אותו הערך בשתי דרכים שונות ולהשוות את הנוסחאות שמתקבלת. ההוכחה השנייה היא אינדוקציה יפה אבל "הפנקסנות" בהוכחה מחייבת תשומת לב רבה לפרטים. בסעיף%
+~\ref{s.langford-four}
+אנו מחשבים את הפתרון עבור
+$L(4)$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\selectlanguage{hebrew}
-
 
 \section{
 הבעיה של
 \L{Langford}
 כבעיית כיסוי}
+\label{s.langford-covering}
 
 ניתן להציג את הבעיה של
 \L{Langford}
@@ -197,14 +208,13 @@ $41312432$.
 \caption{הבעיה של Langford $L(4)$}\label{t.lang4}
 \end{table}
 
-\selectlanguage{hebrew}
-
-
 \section{
 עבור איזה ערכים של
 $n$
 ניתן לפתור את הבעיה}
-\begin{theorem}\mbox{}\\
+\label{s.langford-theorem}
+
+\begin{theorem}
 ניתן למצוא פתרון ל-%
 $L(n)$
 אם ורק אם
@@ -218,7 +228,7 @@ $n=4k-2$
 $n=4k-3$
 אין פתרון לבעיה.
 
-\textbf{הוכחה 1}
+\begin{proof}
 
 אם המופע הראשון של המספר
 $k$
@@ -300,14 +310,9 @@ $4$
 רק עבור
 $n=4i+3=4(i+1)-1=4k-1$.
 \end{itemize}
-\qed
+\end{proof}
 
-
-
-\textbf{הוכחה
-\L{2}}
-
-
+\begin{proof}
 נעיין בפתרון עבור
 $n=4$
 ונבדוק תחילה את מקומות המופעים של המספרים הזוגיים:
@@ -535,15 +540,18 @@ $4(k+1)-0$
 הוא זוגי ולכן עדיין יש מספר זוגי של אי-זוגיים )כנראה שיש פתרון(.
 
 \end{itemize}
-
+\end{proof}
 
 %%%%%%%%%%%% Solution for L(4) %%%%%%%%%%%%%%%%%%
 
 \section{פתרון עבור
 $L(4)$}\label{s.langford-four}
 
-Here is the array for $L(4)$. Try to find the solution yourself.
+הנה הטבלה עבור
+$L(4)$.
+אל תמשיך לקרוא לפני שתנסה בעצמך למצוא פתרון.
 \begin{center}
+\selectlanguage{english}
 \addtolength{\tabcolsep}{4pt}
 \begin{tabular}{|c||c|c|c|c|c|c|c|c|}
 \hline
@@ -568,88 +576,154 @@ Here is the array for $L(4)$. Try to find the solution yourself.
 18&&&4&&&&&4\\\hline
 \end{tabular}
 \end{center}
-By symmetry row 18 may be eliminated.
-
-\smallskip
+בחישוב להלן הספרות מסמנות מקומות בהם מוצבים בלוקים צבועים וה-X מסמן מקומות שטרם נקבע מה הבלוק ששמים שם.
+ 
+לפי סמטריה ניתן להתעלם משורה
+\L{18}.
 
 %$1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17$
-\noindent Choose row 16 and the sequence is 4\textvisiblespace\textvisiblespace\textvisiblespace\textvisiblespace 4 \textvisiblespace\textvisiblespace.
-Any row with an element in position $1$ or position $6$ can no longer be part of the solution.
+
+\noindent 
+בחר שורה
+\L{16}
+והסדרה היא
+\L{4XXXX4XX}.
+כל שורה עם מספר במקום
+$1$
+או במקום
+$6$
+כבר לא יכול להיות חלק מהפתרון.
 
 $\not\! 1,2,3,\not\! 4,5,\not\! 6,\not\! 7,8,\not\! 9,10,11,\not\!\! 12,\not\!\! 13,14,15,16,\not\!\! 17$
 
-\noindent Choose row 14 and the sequence is 4\textvisiblespace 3\textvisiblespace\textvisiblespace 4{}3\textvisiblespace.
+\noindent
+בחר שורה
+\L{14}
+והסדרה היא
+\L{4X3XX43X}.
 
 $\not\! 1,2,\not\! 3,\not\! 4,\not\! 5,\not\! 6,\not\! 7,8,\not\! 9,\not\!\! 10,11,\not\!\! 12,\not\!\! 13,14, \not\!\! 15,16,\not\!\! 17$
 
-\noindent Choose row 8. The sequence is 4{}2{}3\textvisiblespace 2{}4{}3\textvisiblespace.
+\noindent
+בחר שורה
+\L{8}
+והסדרה היא
+\L{423X243X}.
 
 $\not\! 1,\not\! 2,\not\! 3,\not\! 4,\not\! 5,\not\! 6,\not\! 7,8,\not\! 9,\not\!\! 10,\not\!\! 11,\not\!\! 12,\not\!\! 13,14, \not\!\! 15,16,\not\!\! 17$
 
-\noindent All of the choices for 1's have been eliminated so we must backtrack.
+\noindent
+לא נשארו מקומות עבור הספרה $1$ ולכן עלינו לחזור אחורה.
 
 \smallskip
 
-\noindent Instead of row 8 choose row 11 and the sequence is 4\textvisiblespace 3\textvisiblespace 2{}4{}3{}2.
+\noindent 
+במקום שורה $8$ בחר שורה $11$ והסדרה היא
+\L{4X3X2432}.
 
 
 $\not\! 1,2,\not\! 3,\not\! 4,\not\! 5,\not\! 6,\not\! 7,\not\! 8,\not\! 9,\not\!\! 10,11,\not\!\! 12,\not\!\! 13,14, \not\!\! 15,16,\not\!\! 17$
 
-\noindent Choose row 2 and we have a solution 4{}1{}3{}1{}2{}4{}3{}2.
+\noindent
+בחר שורה
+\L{2}
+ומצאנו פתרון
+\L{41312432}.
 
 \smallskip
 
-\noindent Continue backtracking to see if there is another solution.
+\noindent
+נחזור אחורה ונחפש פתרון אחר.
 
 \smallskip
 
-\noindent Instead of row 14 choose row 15 and the sequence is 4\textvisiblespace \textvisiblespace 3\textvisiblespace 4\textvisiblespace 3.
+\noindent
+במקום שורה
+\L{14}
+בחר שורה
+\L{15}
+והסדרה היא
+\L{4XX3X4X3}.
 
 $\not\! 1,\not\! 2,3,\not\! 4,5,\not\! 6,\not\! 7,8,\not\! 9,\not\!\! 10,\not\!\! 11,\not\!\! 12,\not\!\! 13,\not\!\! 14,15,16,\not\!\! 17$
 
-\newpage
-
-\noindent Row 8 must be chosen and the sequence is 4{}2\textvisiblespace 3{}2{}4\textvisiblespace 3.
+\noindent 
+חייבים לבחור בשורה
+\L{16}
+והסדרה היא
+\L{42X324X3}.
 
 $\not\! 1,\not\! 2,\not\! 3,\not\! 4,\not\! 5,\not\! 6,\not\! 7,8,\not\! 9,\not\!\! 10,\not\!\! 11,\not\!\! 12,\not\!\! 13,\not\!\! 14,15,16,\not\!\! 17$
 
-\noindent All of the choices for 1's have been eliminated so again we backtrack.
+\noindent
+לא נשארו מקומות עבור הספרה $1$ ולכן עלינו לחזור אחורה.
 
 \smallskip
 
-\noindent Instead of row 16 choose row 17 and the sequence is \textvisiblespace 4\textvisiblespace \textvisiblespace \textvisiblespace\textvisiblespace 4\textvisiblespace.
+\noindent
+במקום שורה
+\L{16}
+בחר שורה
+\L{17}
+והסדרה היא
+\L{X4XXXX4X}.
 
 $1,\not\! 2,3,4,\not\! 5,6,7,\not\! 8,9,\not\!\! 10,11,12,\not\!\! 13,\not\!\! 14,15,\not\!\! 16,17$
 
-\noindent Choose row 15 and the sequence is \textvisiblespace 4\textvisiblespace 3\textvisiblespace\textvisiblespace 4{}3.
+\noindent 
+בחר שורה
+\L{15}
+והסדרה היא
+\L{X4X3XX43}.
 
 $1,\not\! 2,3,\not\! 4,\not\! 5,\not\! 6,\not\! 7,\not\! 8,9,\not\!\! 10,\not\!\! 11,\not\!\! 12,\not\!\! 13,\not\!\! 14,15,\not\!\! 16,17$
 
-\noindent Row 9 must be chosen and the sequence is \textvisiblespace 4{}2{}3\textvisiblespace 2{}4{}3.
+\noindent 
+חייבים לבחור שורה
+\L{9}
+והסדרה היא
+\L{X423X243}.
 
 $1,\not\! 2,\not\! 3,\not\! 4,\not\! 5,\not\! 6,\not\! 7,\not\! 8,9,\not\!\! 10,\not\!\! 11,\not\!\! 12,\not\!\! 13,\not\!\! 14,15,\not\!\! 16,17$
 
-\noindent All of the choices for 1's have been eliminated. We can backtrack one last time. 
+\noindent
+לא נשארו מקומות עבור הספרה $1$ ולכן עלינו לחזור אחורה פעם אחת אחרונה.
 %$1,\not\! 2,3,4,\not\! 5,6,7,\not\! 8,9,\not\! 10,11,12,\not\! 13,\not\! 14,15,\not\! 16,17$
 
 \smallskip
 
-\noindent Instead of row 15 choose row 12 and the sequence is 3{}4\textvisiblespace \textvisiblespace 3\textvisiblespace 4.
+\noindent
+במקום שורה
+\L{15}
+בחר שורה
+\L{12}
+והסדרה היא
+\L{34XX3X4}.
 
 $\not\! 1,\not\! 2,\not\! 3,\not\! 4,\not\! 5,\not\! 6,\not\! 7,\not\! 8,9,\not\!\! 10,\not\!\! 11,12,\not\!\! 13,\not\!\! 14,\not\!\! 15,\not\!\! 16,17$
 
-\noindent Again, all of the choices for 1's have been eliminated.
+\noindent
+שוב, לא נשארו מקומות עבור הספרה $1$.
 
 \medskip
 
-\noindent Therefore the only solution is $41312432$.
+\noindent 
+לכן הפתרון היחיד הוא
+\L{41312432}.
 
-\subsection*{What Is the Surprise?}
+\subsection*{מה ההפתעה?}
 
-The source of the inspiration for a mathematical theorem can be surprising. Langford noticed a pattern in his son's colored blocks which led to the interesting Thm.~\ref{thm.langford}. Students should also be introduced to the fact that a theorem  can have many completely different proofs.
+מקור ההשראה למשפט מתמטי יכול להיות מפתיע.
+\L{Langford}
+שם לב לתבנית בבלוקים הצבעוניים של בנו וזה הביא אותו למפשט%
+~\ref{thm.langford}.
+רצוי שסטודנטים ייחפו להוכחות שונות למשפט אחד.
 
 \subsection*{מקורות}
 פרק זה מבוסס על
 \L{\cite{miller}}.
-\L{Davies}
-מראה איך למצוא פתרון כאשר הזוגיות היא אפס.
+\cite{davies}
+מראה איך למצוא פתרון עבור
+$n=4k$
+ו-%
+$n=4k+3$.

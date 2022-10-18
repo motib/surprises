@@ -1,7 +1,5 @@
 % !TeX root = surprises.tex
 
-\selectlanguage{hebrew}
-
 \chapter{מחוגה מתמוטטת}\label{c.collapse}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -17,7 +15,7 @@
 \ref{fig.collapsing-compass}).
 שרגליה מתקפלות כאשר מרימים אותן מהנייר. לעתים קרובות מורים משתמשים מחוגה מתמוטטת המורכבת מטוש שמחובר לחוט כדי לבנות מעגל הלוח. אי-אפשר לשמור על מרחק קבוע כאשר מרימים את המחוגה מהלוח.
 
-\begin{figure}
+\begin{figure}[htb]
 \begin{center}
 \begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}
@@ -106,6 +104,28 @@
 
 \section{בניה עם סרגל ומחוגה}\label{s.relevance}
 
+עד לאחרונה בנייה עם סרגל ומחוגה היתה המושג הבסיסי שנלמד בגיאומטריה אוקלידית, אולם חשיבותה ירדה בסילבוסים מודרניים. מובן שלנושא אין כמעט חשיבות מעשיות. כפי שאנו מראים בסעיפים%
+~\ref{s.neusis}, \ref{s.neusis-doubling}, \ref{s.q}, \ref{s.square-quad},
+היוונים ידעו לבנות בניות שאינן אפשריות עם סרגל ומחוגה באמצעות כליםי שהם רק מעט מתקדמים יותר. היום מחשבים מסוגלים לבצע בניות בדיוק רב כלל שנרצה באמצעות חישובים נומריים.
+
+למרות זאת, אני מאמין שיש יתרונות ללמוד בניות עם סרגל ומחוגה:
+\begin{itemize}
+\item
+מעניין יותר ומאתגר יותר ללמוד גיאומטריה דרך בניות לעומת קריאה של משפטים והוכחות.
+\item
+התקדמויות מכריעות במתמטיקה הושגו במסגרת נסיונות למצוא בניות. פרק%
+~\ref{c.heptadecagon}
+מביא בנייה של 
+\L{Gauss}
+שהיתה נקודת מוצא של אלגברה אבסטרקטית מודרנית, במיוחד התיאוריה שפותחה על יד 
+\L{\'{E}variste Galois}.
+\item
+העובדה שיש בניות שאינן אפשריות קשה לעיכול ולכן מאוד מעניין.
+\item
+מעציב אבל אנשים רבים בעולם מבזבזים שנים של חייהם בניסיון לבצע בניות שאינן אפשריות. חשוב שתלמידים יכירו שהמאמצים הללו חסרי תוחלת.
+\end{itemize}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{מחוגה קבועה ומחוגה מתמוטטת}\label{s.collapse}
@@ -141,16 +161,14 @@ $\overline{AC} = \overline{AB} = \overline{BA} = \overline{BC}$.
 נתון קטע קו
 $AB$
 ונקודה
-$C$
-(איור%
-~\ref{f.euclid},
-משמאל), ניתן לבנות עם מחוגה מתמוטטת בנקודה
+$C$,
+ניתן לבנות עם מחוגה מתמוטטת בנקודה
 $C$
 קטע קו שאורכו שווה לאורכו של 
 $AB$.
 \end{theorem}
 
-\begin{figure}[t]
+\begin{figure}[htb]
 \begin{center}
 \begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}[scale=0.5]
@@ -166,7 +184,8 @@ $AB$.
 \node[below left,xshift=2pt,yshift=-5pt] at (b) {$D$};
 \draw ($ (b) ! 1.2 ! (t)$) -- ($ (t) ! 1.2 ! (b)$);
 \end{tikzpicture}
-\caption{Construction of a perpendicular bisector with a fixed compass}\label{f.collapse-perp-bisector-fixed}
+\selectlanguage{hebrew}
+\caption{בניית חוצה אנכי עם מחוגה קבועי}\label{f.collapse-perp-bisector-fixed}
 \end{subfigure}
 \hfill
 \begin{subfigure}{.4\textwidth}
@@ -183,13 +202,14 @@ $AB$.
 \node[below left,xshift=2pt,yshift=-3pt] at (b) {$D$};
 \draw ($ (b) ! 1.2 ! (t)$) -- ($ (t) ! 1.2 ! (b)$);
 \end{tikzpicture}
-\caption{Construction of a perpendicular bisector with a fixed or a collapsing compass}\label{f.collapse-perp-bisector-collapse}
+\selectlanguage{hebrew}
+\caption{בניית חוצה אנכי עם מוחגה מתמוטטת}\label{f.collapse-perp-bisector-collapse}
 \end{subfigure}
 \end{center}
 \end{figure}
 
 
-\begin{figure}[t]
+\begin{figure}[htb]
 \begin{center}
 \begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}[scale=0.5]
@@ -208,7 +228,8 @@ $AB$.
 \draw (A) -- (t);
 \draw (B) -- (t);
 \end{tikzpicture}
-\caption{Construction of an isoceles triangle with a fixed compass}\label{f.collapse-equilateral-fixed}
+\selectlanguage{hebrew}
+\caption{בניית משולש שווה-שוקיים עם מחוגה קבועה}\label{f.collapse-equilateral-fixed}
 \end{subfigure}
 \hspace{3em}
 \begin{subfigure}{.4\textwidth}
@@ -228,12 +249,13 @@ $AB$.
 \draw (A) -- (t);
 \draw (B) -- (t);
 \end{tikzpicture}
-\caption{Construction of an equilateral triangle with a collapsing compass}\label{f.collapse-equilateral-collapse}
+\selectlanguage{hebrew}
+\caption{בניית משולש שווה-צלעות עם מחוגה מתמוטטת}\label{f.collapse-equilateral-collapse}
 \end{subfigure}
 \end{center}
 \end{figure}
 
-\begin{figure}[b]
+\begin{figure}[htb]
 \begin{center}
 \begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}[scale=0.5]
@@ -247,7 +269,8 @@ $AB$.
 \draw[thick,dashed] (C) -- +(160:4) coordinate (D) node[below] {$C'$};
 \vertex{D};
 \end{tikzpicture}
-\caption{Copy the line segment $\overline{AB}$. The orientation of $\overline{CC'}$ is not important.}\label{f.collapse-copying-1}
+\selectlanguage{hebrew}
+\caption{העתקת קטע קו$\overline{AB}$; אין חשיבות לכיוון של $\overline{CC'}$}\label{f.collapse-copying-1}
 \end{subfigure}
 \hspace{3ex}
 \begin{subfigure}{.4\textwidth}
@@ -265,12 +288,14 @@ $AB$.
 \draw (A) -- (D);
 \draw (C) -- (D);
 \end{tikzpicture}
-\caption{Copying a line segment with a collapsing compass}\label{f.collapse-copying-2}
+\selectlanguage{hebrew}
+\caption{העתקת קו עם מחוגה מתמוטטת}\label{f.collapse-copying-2}
 \end{subfigure}
 \end{center}
 \end{figure}
 
 \begin{proof}
+
 \textbf{בניה:}
 \begin{itemize}
 \item
@@ -302,7 +327,7 @@ $E$,
 $\overline{DE}$
 )תרשים ימני(.
 
-\begin{figure}
+\begin{figure}[htb]
 \begin{center}
 \begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}[scale=0.6]
@@ -323,7 +348,9 @@ $\overline{DE}$
 \draw[name path=ray2] (D) -- ($ (D) ! 2.7 ! (C) $);
 \draw[name path=ray1] (D) -- ($ (D) ! 2.7 ! (A) $);
 \end{tikzpicture}
-\caption{}\label{}
+\selectlanguage{hebrew}
+\caption{בניית קרניים מ-%
+$D$}\label{}
 \end{subfigure}
 \hspace{3ex}
 \begin{subfigure}{.4\textwidth}
@@ -348,7 +375,9 @@ $\overline{DE}$
 \path [name intersections={of=c1 and ray1,by={E,e}}];
 \fill (E) node[right,xshift=2pt,yshift=-2pt] {$E$} circle[radius=3pt];
 \end{tikzpicture}
-\caption{}\label{}
+\selectlanguage{hebrew}
+\caption{בניית מעגל עם רדיוס 
+$\overline{AB}$}\label{}
 \end{subfigure}
 \end{center}
 \end{figure}
@@ -363,7 +392,7 @@ $\overline{DC}$
 $F$:
 \end{itemize}
 
-\begin{figure}
+\begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}[scale=0.4]
 \coordinate (C) at (0,0);
@@ -391,8 +420,9 @@ $F$:
 \path (A) -- node[right] {$x$} (E);
 \path (C) -- node[left] {$x$} (F);
 \end{tikzpicture}
+\selectlanguage{hebrew}
+\caption{בניית $overline{CF}=\overline{AB}$}\label{}
 \end{center}
-\caption{}\label{}
 \end{figure}
 
 \textbf{טענה:}
@@ -400,7 +430,6 @@ $F$:
 $\overline{CF}$
 שווה לאורכו של קטע הקו
 $\overline{AB}$.
-
 
 \textbf{הוכחה:}
 $\overline{DC}=\overline{DA}$
@@ -431,7 +460,7 @@ $\overline{CF}$
 $A$
 עם רדיוס
 $\overline{AB}$:
-\begin{figure}
+\begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}[scale=0.4]
 \clip (-12,-6) rectangle (11,10);
@@ -459,9 +488,10 @@ $\overline{AB}$:
 \draw[white,fill=white] (-12,8) rectangle +(23,2);
 \end{tikzpicture}
 \end{center}
-\caption{Construction for $\overline{AC}>\overline{AB}$}\label{f.collapse-copying-6}
+\selectlanguage{hebrew}
+\caption{בנייה עבור $\overline{AC}>\overline{AB}$}\label{f.collapse-copying-6}
 \end{figure}
-%\begin{figure}
+%\begin{figure}[htb]
 %\begin{center}
 %\begin{subfigure}{.4\textwidth}
 %\begin{tikzpicture}[scale=0.6]
@@ -513,7 +543,7 @@ $A$
 $\overline{AB}$
 ב-%
 $D$:
-\begin{figure}
+\begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}[scale=0.6]
 \coordinate (C) at (-2,0);
@@ -532,8 +562,9 @@ $D$:
 \fill (E) node[above,yshift=2pt] {$E$} circle[radius=3pt];
 \fill (F) node[below,yshift=-2pt] {$F$} circle[radius=3pt];
 \end{tikzpicture}
+\selectlanguage{hebrew}
 \end{center}
-\caption{}\label{}
+\caption{בניית עבור העתקת קו (1)}\label{}
 \end{figure}
 \item
 בנו מעגל שמרכזו 
@@ -550,7 +581,7 @@ $\overline{AC}$
 \ref{f.collapse1}(.
 \end{itemize}
 
-\begin{figure}[t]
+\begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
 \clip (-8,-1) rectangle (9,5);
@@ -578,11 +609,12 @@ $\overline{AC}$
 \draw (A) -- (D) -- (E) -- cycle;
 \end{tikzpicture}
 \end{center}
-\caption{Construction for copying a line segment (2)}\label{f.collapse-incorrect-2}
+\selectlanguage{hebrew}
+\caption{בניית עבור העתקת קו (2)}\label{f.collapse-incorrect-2}
 \end{figure}
 
 
-%\begin{figure}[tb]
+%\begin{figure}[htb][tb]
 %\begin{center}
 
 %\begin{tikzpicture}[scale=0.8]
@@ -620,7 +652,7 @@ $\overline{CG}$
 שווה לאורכו של
 $\overline{AB}$.
 
-\textbf{הוכחה:}
+\begin{proof}
 נניח ש-%
 $\triangle ADE\cong \triangle CGE$.
 אם כן, 
@@ -656,7 +688,7 @@ $\angle GEC=\angle DEA$
 ו-%
 $\triangle ADE\cong \triangle CGE$
 לפי צ.ז.צ.
-\qed
+\end{proof}
 
 אין שום שגיאה בהוכחה! השגיאה נובעת ממקור אחר: השווין
 $\overline{AB}=\overline{GC}$
@@ -692,8 +724,9 @@ $\overline{AB}$.
 \node[right,xshift=2pt,yshift=2pt] at (G) {$G$};
 \draw[thick] (G) -- (C);
 \end{tikzpicture}
+\selectlanguage{hebrew}
+\caption{תרשים עבורו ההוכחה לא עובדת}\label{f.collapse-incorrect-4}
 \end{center}
-\caption{A diagram for which the proof doesn't work}\label{f.collapse-incorrect-4}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -746,9 +779,9 @@ $\overline{AB}$.
 \fill (F) circle(1pt);
 \fill (P) circle(1pt);
 \end{tikzpicture}
-\end{center}
 \selectlanguage{hebrew}
-\caption{"הוכחה" שכל משולש שווה-שוקיים}\label{f.isoceles}
+\caption{הוכחה שגוייה שכל משולש שווה-שוקיים}\label{f.isoceles}
+\end{center}
 \end{figure}
 
 נתון משולש שרירותי 
@@ -827,19 +860,34 @@ $P$
 \node[below,yshift=-12pt,xshift=2pt] at (A) {$\alpha$};
 \node[below,yshift=-12pt,xshift=15pt] at (A) {$\alpha$};
 \end{tikzpicture}
+\selectlanguage{hebrew}
+\caption{הסיבה שהבנייה לא עובדת}\label{f.isoceles-wrong}
 \end{center}
-\caption{נקודת החיתוך בין חוצה הזווית והאנך האמצעי}\label{f.isoceles-wrong}
 \end{figure}
 
-\selectlanguage{hebrew}
+\subsection*{מה ההפתעה?}
 
+כתלמיד היה לי ברור מאליו שלמחוגה ציר חיכוך ששומר את המרחק בין הוד והעפרון. הכאשר המורה השתשמשה במחוגה המורכבת מחוט וגיר, לא העליתי על דעתי שהיא שונה מהמחוגה שלי. המאמר של
+\L{Gotfried Toussaint}
+היה הפתעה גמורה, כמו גן ההצגה שלו שההוכחות שבאו לאחר 
+\L{Euclid}
+היו שגויות כי הן היו לתולויות בהנחות חסרות בסיס. אני ממליץ לקורא לעיין במאמר כדי להעמיק את הבנתם על הוכחות במתמטיקה.
 
 \subsection*{מקורות}
 
-\L{Toussaint} \L{\cite{toussaint}}
-הראה שפורסמו הוכחות שגויות רבות של המשפט ודווקא אוקלידס הוא זה שנתן הוכחה נכונה! הבניה בסעיף~%
-\ref{s.collapse-copy-incorrect}
-לקוחה מ-%
-\L{\cite{rusty}}
-ו-%
-\L{\cite{toussaint}}.
+הפרק מבוסס על
+\cite{toussaint}.
+ההוכחה השגויה בסעיף%
+~\ref{s.collapse-copy-incorrect}
+היא מ-%
+\cite{rusty}.
+תרגום שלם לאנגלית של ספר
+\L{Elements}
+של 
+\L{Euclid}
+ביחד עם פרשנות מפורטת נמצא ב-%
+\cite{euclid}
+שנכתב על ידי
+\L{Thomas L. Heath}
+שהיה אחד המומחים הבולטים למתמטיקה יוונית.
+
