@@ -3,9 +3,14 @@ springer/*
 published/*
 en/tikz/*
 he/tikz/*
+<<<<<<< HEAD
 suprises-en*.pdf
 en/*.pdf
 he/*.pdf
+=======
+*.pdf
+!suprises-he*.pdf
+>>>>>>> 8c085a4cae519c22808dca205387fe91b2b3b350
 *.bat
 *.zip
 *~
