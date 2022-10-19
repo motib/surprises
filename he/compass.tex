@@ -16,18 +16,37 @@ $1672$
 \L{Georg Mohr}.
 המשפט נקרא היום משפט
 \L{Mohr-Mascheroni}.
+לאחר שנסביר בסעיף%
+~\ref{s.compass-what}
+מה המשמעות של בניית ללא מחוגה, נביא את ההוכחה בשלבים, תחילה עם ארבע בניות עזרה: שיקוף של נקודה (סעיף%
+~\ref{s.reflection}),
+בניית מעגל עם רדיוס נתון (סעיף%
+
+~\ref{s.circle}),
+חיבור וחיסור של קטעי קו (סעיף%
+~\ref{s.add-subtract})
+ובניית קטע קו כיחס בין קטעים אחרים (סעיף%
+~\ref{s.three}).
+סעיף%
+~\ref{s.two-lines}
+מראה איך למצוא את החיתוך בין שני קווים וסעיף%
+~\ref{s.line-circle}
+מראה איך למצוא את החיתוך בין קו ומעגל.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{מהי בנייה רק עם מחוגה}
+\section{מהי בנייה רק עם מחוגה}\label{s.compass-what}
 
-מה המשמעות של בניה גיאומטרית באמצעות  מחוגה בלבד ללא סרגל? האיור הימני שלהלן מראה את הבניה הרגילה של משולש שווה צלעות עם סרגל ומחוגה. איך אפשר לבנות משולש ללא קטעי הקווים
+מה המשמעות של בניה גיאומטרית באמצעות  מחוגה בלבד ללא סרגל? איור%
+~\ref{f.compass-equi}
+מראה את הבניה הרגילה של משולש שווה צלעות עם סרגל ומחוגה. איך אפשר לבנות משולש ללא קטעי הקווים
 $\overline{AB},\overline{AC},\overline{BC}$?
 למעשה, אין כל צורך
 \textbf{לראות}
 את הקווים. קו מוגדר על ידי שתי נקודות, ומספיק שבנו את הנקודות 
 $A,B,C$
- כדי לקבל בניה שקולה לבניה עם סרגל )איור שמאלי(.
+ כדי לקבל בניה שקולה לבניה עם סרגל (איור%
+~\ref{f.compass-equi-only}).
 
 \begin{figure}[htb]
 \begin{center}
@@ -43,7 +62,7 @@ $A,B,C$
 \path [name intersections={of=larc and rarc,by={t}}];
 \fill (t) node[above right,xshift=-2pt,yshift=3pt] {$C$} circle[radius=2pt];
 \end{tikzpicture}
-\caption{בניית משולש שווה צלעות עם סרגל ומחוגה}\label{}
+\caption{בניית משולש שווה צלעות עם סרגל ומחוגה}\label{f.compass-equi}
 \end{subfigure}
 \hspace{3em}
 \begin{subfigure}{.4\textwidth}
@@ -60,7 +79,7 @@ $A,B,C$
 \draw (A) -- (t);
 \draw (B) -- (t);
 \end{tikzpicture}
-\caption{בניית משולש שווה צלעות רק עם מחוגה}\label{}
+\caption{בניית משולש שווה צלעות רק עם מחוגה}\label{f.compass-equi-only}
 \end{subfigure}
 \end{center}
 \end{figure}
@@ -98,19 +117,11 @@ $O$
 $\overline{AB}$.
 \end{itemize}
 
-תחילה נביא בניות עזר נחוצות )סעיף
-\ref{s.auxiliary}%
-(,
-ואחר כך נראה את הבניות למציאת נקודות החיתוך של שני קווים )סעיף
-\ref{s.two-lines}%
-( ושל קו ומעגל )סעיף
-\ref{s.line-circle}%
-(.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{שיקוף נקודה}\label{s.auxiliary}
+\section{שיקוף נקודה}\label{s.reflection}
 
-\begin{definition}\mbox{}\\
+\begin{definition}
 הנקודה
 $C'$
 היא
@@ -126,10 +137,7 @@ $\overline{AB}$
 )או הקו המכיל אותו( הוא האנך האמצעי של
 $\overline{CC'}$.
 \end{definition}
-
-
-
-\begin{theorem}\mbox{}\label{thm.reflection}\\
+\begin{theorem}\label{thm.reflection}
 נתון קטע קו
 $\overline{AB}$
 ונקודה 
@@ -144,7 +152,7 @@ $C$
 $\overline{AB}$.
 \end{theorem}
 
-\textbf{הוכחה:}
+\begin{proof}
 בנו מעגל שמרכזו
 $A$
 העובר דרך
@@ -158,9 +166,9 @@ $C$
 והנקודה
 $C'$
 שהיא השיקוף של
-$C$.
-
-
+$C$
+(איור%
+~\ref{f.compass-reflection}).
 \begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}[scale=.75]
@@ -182,7 +190,7 @@ $C$.
 \draw[thick] (A) -- (Cp);
 \draw[thick] (B) -- (Cp);
 \end{tikzpicture}
-\caption{בניית שיקוף}\label{}
+\caption{בניית שיקוף}\label{f.compass-reflection}
 \end{center}
 \end{figure}
 
@@ -209,13 +217,14 @@ $C'$
 היא השיקוף של
 $C$
 מסביב ל-%
-$\overline{AB}$.\qed
+$\overline{AB}$.
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{בניית מעגל עם רדיוס נתון}
+\section{בניית מעגל עם רדיוס נתון}\label{s.circle}
 
-\begin{theorem}\label{thm.radius}\mbox{}\\
+\begin{theorem}\label{thm.radius}
 נתונות הנקודות
 $A,B,C$.
 ניתן לבנות את המעגל
@@ -232,7 +241,9 @@ $c(A,\overline{BC})$.
 בנו את המעגלים 
 $c(A,B)$, $c(B,A)$
 וסמנו את נקודות החיתוך
-$X,Y$.
+$X,Y$
+(איור%
+~\ref{f.compass-circle1}).
 \begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}[scale=.5]
@@ -285,15 +296,16 @@ $X,Y$.
 %\caption{}\label{}
 %\end{center}
 %\end{figure}
-
+לפי משפט%
+~\ref{thm.reflection}
 בנו את
 $C'$,
 השיקוף של
 $C$
 מסביב לקו
 $\overline{XY}$
-)משפט 
-\ref{thm.reflection}(.
+(איור%
+~\ref{f.compass-circle3}).
 
 \begin{figure}[htb]
 \begin{center}
@@ -398,7 +410,7 @@ $c(A,C')$
 %\end{tikzpicture}
 %\end{center}
 
-\textbf{הוכחה:}
+\begin{proof}
 הנקודה
 $A$
 היא השיקוף של 
@@ -432,13 +444,14 @@ $\angle EDC', \angle EDC$.
 $\triangle ADC'\cong\triangle BDC$
 לפי צלע-זווית-צלע,
 כך ש-%
-$\overline{AC'}=\overline{BC}$.\qed
+$\overline{AC'}=\overline{BC}$.
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{חיבור וחיסור קטעי קו}
+\section{חיבור וחיסור קטעי קו}\label{s.add-subtract}
 
-\begin{theorem}\label{thm.plus-minus}\mbox{}\\
+\begin{theorem}\label{thm.add-subtract-mm}
 נתון קטע קו
 $\overline{PQ}$
 באורך
@@ -458,7 +471,9 @@ $a-b$
 והאורך של
 $\overline{PT}$
 הוא
-$a+b$.
+$a+b$
+(איור%
+~\ref{f.compass-add1}).
 \end{theorem}
 
 \begin{figure}[htb]
@@ -512,8 +527,10 @@ $a+b$.
 %\end{tikzpicture}
 %\end{center}
 
-
-\subsubsection*{בניית טרפז שווה-שוקיים}
+\begin{theorem}
+ניתן לבנות טרפז שווה-שוקיים.
+\end{theorem}
+\begin{proof}
 בחרו
 $H$,
 נקודה כלשהי על
@@ -525,7 +542,9 @@ $\overline{PQ}$.
 סמנו ב-%
 $h$
 האורך של
-$\overline{HH'}$.
+$\overline{HH'}$
+(איור%
+~\ref{f.compass-isoceles-trap1}).
 
 \begin{figure}[htb]
 \begin{center}
@@ -547,7 +566,7 @@ $\overline{HH'}$.
 \fill[above right] (Hp) node[right,xshift=2pt] {$H'$} circle[radius=2pt];
 \draw[thick] (H) -- node[below left,yshift=-2pt] {$h$} (Hp);
 \end{tikzpicture}
-\caption{בניית טרפז שווה-שוקיים (1)}\label{}
+\caption{בניית טרפז שווה-שוקיים (1)}\label{f.compass-isoceles-trap1}
 \end{center}
 \end{figure}
 בנו את המעגלים
@@ -559,7 +578,9 @@ $K'$
 היא השיקוף של
 $K$
 מסביב ל-%
-$\overline{PQ}$.
+$\overline{PQ}$
+(איור%
+~\ref{f.compass-isoceles-trap2}).
 
 \begin{figure}[htb]
 \begin{center}
@@ -631,11 +652,14 @@ $K,H$,
 ולכן 
 $KHH'K'$
 הוא טרפז שווה-שוקיים עם בסיסים
-$\overline{KK'} = 2h$, $\overline{HH'}=h$.
+$\overline{KK'} = 2h$, $\overline{HH'}=h$
+(איור%
+~\ref{f.compass-isoceles-trap3}).
 סמנו ב-%
 $d$
 את אורך האלכסונים
 $\overline{K'H}=\overline{KH'}$.
+\end{proof}
 
 
 \begin{figure}[htb]
@@ -723,24 +747,50 @@ in
 %\draw (Kp) -- node[left] {$d$} (H);
 %\end{tikzpicture}\label{p.ptolemy}
 %\end{center}
+\begin{theorem}
+ניתן לחסום טרפז שווה-שוקיים במעגל.
+\end{theorem}
+\begin{proof}
+מייד ממשפט%
+~\ref{thm.quad-circum}
+ומשפט%
+~\ref{thm.isoceles-trapezoid}.
+\end{proof}
 
+\begin{theorem}
+עבור 
+$d,b,h$
+כפי שמופיע באיור%
+~\ref{f.compass-isoceles-trap3}, $d^2=b^2+2h^2$.
+\end{theorem}
+\begin{proof}
+המשפט הוא מסקנה ממשפט
+\L{Ptolemy}
+(משפט%
+~\ref{thm.ptolemy})
+שאומר שבמרובע שחסום על ידי מעגל, המכפלה של האלכסונים שווה לחיבור של המכפלות שלל הצלעות הנגדיים.
+\end{proof}
 
-
-עבור הטרפז בעמוד~%
-\L{\pageref{p.ptolemy}}
-אורך האלכסונים הוא
+עבור הטרפז אורך האלכסונים הוא
 $d$,
 אורך השוקיים הוא
 $b$,
 ואורכי הבסיסים הם
 $h$
 ו-%
-$2h$.
+$2h$
+(משפט%
+
+~\ref{thm.ptolemy}).
 ממשפט תלמי:
 $d\cdot d = b\cdot b + h\cdot 2h$
 או
 $d^2=b^2+2h^2$.
 
+כעת ניתן להוכיח את משפט%
+~\ref{thm.add-subtract-mm}.
+
+\begin{proof}
 תהי
 $X$
 נקודה על הקו
@@ -796,7 +846,7 @@ in
 \vertex{Q};
 \end{tikzpicture}
 \end{center}
-\caption{שימוש במשפט \L{Ptolemy}}\label{f.compass-isoceles-trap4}
+\caption{בניית טרפז שווה-שוקיים (4)}\label{f.compass-isoceles-trap4}
 \end{figure}
 %
 %\begin{center}
@@ -858,9 +908,7 @@ d^2 &=& b^2 + 2h^2\\
 &=&(x^2-h^2)+2h^2\\
 &=&x^2+h^2\,.
 \end{eqn}
-
-
-אל תחפשו משולשישר-זווית עם הצלעות הללו באיור. אנחנו טוענים 
+אל תחפשו משולש ישר-זווית עם הצלעות הללו באיור. אנחנו טוענים 
 שניתן לבנות משולש עם צלעות
 $x,h,d$.
 
@@ -1140,47 +1188,50 @@ in
 %\end{tikzpicture}
 %\end{center}
 
-הוכחנו את משפט~%
-\ref{thm.plus-minus}:
+הוכחנו את משפט%
+~\ref{thm.add-subtract-mm}:
 $\overline{PX}=a+b, \overline{PX'}=a-b$,
 כי
-$\overline{QX}=\sqrt{x^2-h^2}=b$.\qed
+$\overline{QX}=\sqrt{x^2-h^2}=b$.
+\end{proof}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{בניית קטע קו כיחס בין קטעי קו אחרים}
-\label{s.relative}
+\label{s.three}
 
-\begin{theorem}\label{thm.ratio}\mbox{}\\
+\begin{theorem}\label{thm.ratio}
 נתונים שלושה קטעי קו באורכים 
 $n,m,s$,
 ניתן לבנות קטע קו שאורכו
 $x = \disfrac{n}{m}s$.%
 \end{theorem}
+
+\begin{proof}
 בנו שני מעגלים עם מרכז משותף:
 $c_1 = c(Z,m), c_2 = c(Z,n)$.
 נניח ש-%
 $m>n$,
 אחרת נחליף את הסימונים של
 $m,n$.
-
 בחרו נקודה
 $A$
 כלשהי על המעגל 
 $c_1$
-ובנו )לפי משפט~%
-\ref{thm.radius}(
+ובנו (לפי משפט~%
+\ref{thm.radius})
 מיתר
 $\overline{AB}$
 ב-%
 $c_1$
 שאורכו
-$s$.
+$s$
+(\ref{f.compass-relative1}).
 נניח שהמיתר אינו חותך את
 $c_2$.
 אם לא, נשתמש בבניה של סעיף
-\ref{thm.plus-minus}
+~\ref{thm.add-subtract-mm}
 כדי להכפיל את
 $m,n$
 במספר שלם
@@ -1299,7 +1350,8 @@ $c_2$
 כך שאורך הקטע
 $\overline{BK}$
 גם הוא
-$w$.
+$w$
+(\ref{f.compass-relative2}).
 
 %\begin{center}
 %\begin{tikzpicture}[scale=.4]
@@ -1353,7 +1405,8 @@ $\overline{ZH}=\overline{ZK}=n$
 $c_2$,
 ו-%
 $\overline{AH}=\overline{BK}=w$
-לפי הבניה.
+לפי הבניה
+(\ref{f.compass-relative3}).
 
 \begin{figure}[htb]
 \begin{center}
@@ -1448,7 +1501,8 @@ $\alpha = \angle AZH = \angle BZK$
 ו-%
 $\beta = \angle BZH$,
 וקל לראות ש-%
-$\angle AZB = \angle HZK = \alpha - \beta$.
+$\angle AZB = \angle HZK = \alpha - \beta$
+(\ref{f.compass-relative4}).
 
 %\begin{center}
 %
@@ -1516,19 +1570,20 @@ $x$,
 \begin{eqn}
 \frac{m}{s} &=& \frac{n}{x}\\
 x&=&\frac{n}{m}s\,.
-\end{eqn}\qed
+\end{eqn}
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{מציאת נקודת החיתוך של שני קווים}
 \label{s.two-lines}
 
-\begin{theorem}\mbox{}\\
+\begin{theorem}
 נתונים שני קווים המכילים את קטעי הקו
 $\overline{AB},\overline{CD}$.
 ניתן לבנות את נקודת החיתוך שלהם.
 \end{theorem}
-\textbf{הוכחה:}
+\begin{proof}
 בנו את
 $C'$,
 השיקוף של
@@ -1545,7 +1600,8 @@ $\overline{AB}$.
 $C,D$ 
 נמצאים בשני הצדדים של
 $\overline{AB}$
-או באותו צד.
+או באותו צד כפי שניתן לראות באיורים%
+~\ref{f.compass-intersection1}, \ref{f.compass-intersection2}.
 
 \textbf{מקרה $1$:}
 נקודת החיתוך
@@ -1695,9 +1751,12 @@ $x=\disfrac{c}{c-d}e$.
 בנו את המעגלים
 $c(C',d)$
 ,
-$c(D,e)$,
+$c(D,e)$
 וסמנו את נקודת החיתוך שלהם ב-%
-$H$.
+$H$
+(איור%
+~\ref{f.compass-intersection3}).
+
 סכום האורכים של
 $\overline{CC'},\overline{C'H}$
 הוא
@@ -1787,7 +1846,7 @@ $\overline{C'H}$,
 שמקביל ל-%
 $\overline{DD'}$
 במקבילית, מקביל גם ל-%
-$\overline{CC'}$:
+$\overline{CC'}$.
 
 \begin{figure}[htb]
 \begin{center}
@@ -1886,7 +1945,7 @@ $\overline{CC'}$.
 האורכים
 $c,d,e$
 נתונים ולפי משפט
-\ref{thm.plus-minus}
+~\ref{thm.add-subtract-mm}
 ניתן לבנות קטע באורך
 $c+d$,
 ולפי משפט
@@ -1897,7 +1956,10 @@ $S$
 היא נקודת החיתוך של המעגלים
 $c(C,x)$
 ו-%
-$c(C',x)$.
+$c(C',x)$
+(איור%
+~\ref{f.compass-intersection4}).
+\end{proof}
 
 \section{מציאת נקודת החיתוך של קו עם מעגל}\label{s.line-circle}
 
@@ -1925,7 +1987,9 @@ $k,k'$
 הן נקודות החיתוך של הקו 
 $\overline{AB}$
 והמעגל
-$k$.
+$k$
+(איור%
+~\ref{f.compass-circle4}).
 
 \begin{figure}[htb]
 \begin{center}
@@ -1968,11 +2032,13 @@ $\overline{AM}$
 באורך 
 $r$
 לפי משפט~%
-\ref{thm.plus-minus}.
+~\ref{thm.add-subtract-mm}.
 נקודות הקצה של הקטעים הללו הן נקודות החיתוך של
 $k$
 עם
-$\overline{AB}$.
+$\overline{AB}$
+(איור%
+~\ref{f.compass-circle5}).
 
 \begin{figure}[htb]
 \begin{center}
@@ -2024,10 +2090,9 @@ $\overline{AB}$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection*{What Is the Surprise?}
+\subsection*{מהי ההפתעה?}
 
-When one learns about constructions with a straightedge and compass it is obvious that both tools are necessary. Therefore,  it was quite a surprise to find out that a compass is sufficient. The proof is quite long so we are not going to leave the straightedge at home, but the theorem shows that we should not assume that there are no alternatives to well-known mathematical concepts.
-
+כאשר לומדים על בניות עם סרגל ומחוגה, ברור מאליו ששני הכלים נחוצים, ולכן מפתיע מאוד לגלות שמחוגה בלבד מספיקה. ההוכחה די ארוכה כך שלא נשאיר את הסרגל בבית, אבל המשפט מראה שאין להניח שאין חלופות למושגים מתמטיים ידועים.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2038,7 +2103,6 @@ $33$
 ב-%
 \L{\cite{dorrie1}}
 ועל העיבוד שלה על ידי
-\L{Michael Woltermann} \L{\cite{dorrie2}}.%
-ברצוני להודות לו על הרשות להתשמש בעבודתו.
+\L{Michael Woltermann} \L{\cite{dorrie2}}.
 הוכחה נוספת ניתן למוצא ב-%
 \L{\cite{mm}}.

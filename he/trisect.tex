@@ -72,7 +72,7 @@ $\phi$
 (איור%
 ~\ref{f.trisect-first-approx-1}).
 
-\begin{figure}[ht]
+\begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}[scale=.7]
 \coordinate (O) at (0,0)
@@ -157,7 +157,7 @@ $\overline{DF}$.
 \[
 \overline{OE}=\frac{1}{2} + \frac{1}{2}\left(\cos \frac{\theta}{2}-\frac{1}{2}\right)\,.
 \]
-\begin{figure}[ht]
+\begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}[scale=1]
 \coordinate (O) at (0,0)
@@ -306,7 +306,7 @@ $\overline{AE}=\overline{ET}=\overline{CD}$.
 $\angle TOE=\angle EOA=\phi$
 (איור~\ref{f.trisect-second-approx}).
 
-\begin{figure}[ht]
+\begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}[scale=.75]
 \coordinate (O) at (0,0)
@@ -438,7 +438,9 @@ $\theta=60^\circ$:
 השימוש במילה "סרגל" מטעה, כי הכוונה היא למקל ישר ללא כל סימן, שהפעולה היחידה שניתן לעשות איתו היא למתוח קו ישר בין שתי נקודות. לסרגל המוכר יש סימנים המאפשרים למדוד אורכים. כדי לחלק זווית לשלושה חלקים, נשתמש ב-%
 \textbf{ניאוסיס}
 שהוא מקל עם שני סימנים בלבד. נניח שהמרחק בין שני הסימנים הוא
-$1$:
+$1$
+(איור%
+~\ref{f.neusis}).
 \begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}[scale=3.5]
@@ -458,10 +460,7 @@ $\angle ABE$
 $B$
 עם רדיוס
 $1$.
-ניתן לבנות את המעגל על ידי קביעת המרחק שבין רגלי החוגה למרחק שבין הסימנים על הניאוסיס (סעיף%
-~\ref{f.neusis}). 
-
-בנו קרן כהמשכו של 
+ניתן לבנות את המעגל על ידי קביעת המרחק שבין רגלי החוגה למרחק שבין הסימנים על הניאוסיס. בנו קרן כהמשכו של 
 $\overline{EB}$
 מחוץ למעגל. הניחו את הניאוסיס על הנקודה
 $A$
@@ -473,7 +472,7 @@ $C$.
 $\overline{CD}$
 יהיה
 $1$.
-\begin{figure}
+\begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}[scale=2.5]
 \coordinate (origin) at (0,0) node[below] {$B$} ;
@@ -495,14 +494,15 @@ $1$.
 \end{scope}
 \end{tikzpicture}
 \end{center}
-\caption{מיקום הניאוסיס יחסית למעגל היחידה}\label{f.neusis}
+\selectlanguage{hebrew}
+\caption{חלוקת זווית לשלושה חלקים באמצעות ניאוסיס (1)}\label{f.trisect-neusis-1}
 \end{figure}
 ציירו את הקו
 $\overline{AD}$.
 ציירו את הקו 
 $\overline{BC}$
 וסמנו את הזוויות וקטעי הקו לפי איור%
-~\ref{f.trisection}.
+~\ref{f.trisect-neusis-1}.
 \begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}[scale=2.5]
@@ -520,8 +520,9 @@ $\overline{BC}$
 \fill (-1,0) circle [radius=.5pt];
 \path (c) -- node[fill=white] {$1$} (d);
 \end{tikzpicture}
+\selectlanguage{hebrew}
+\caption{חלוקת זווית לשלושה חלקים באמצעות ניאוסיס (2)}\label{f.trisect-neusis-2}
 \end{center}
-\caption{חלוקת זווית לשלושה חלקים באמצעות ניאוסיס}\label{f.trisection}
 \end{figure}
 
 \begin{theorem}
@@ -532,7 +533,10 @@ $beta=\alpha/3$.
 $\overline{BA}=\overline{BC}$
 כי שניהם רדיוסים ו-%
 $\overline{CB}=\overline{CD}$
-לפי הבניה באמצעות הניאוסיס. לכן 
+לפי הבניה באמצעות הניאוסיס
+(איור%
+~\ref{f.trisect-neusis-2}).
+לכן 
 $\triangle ABC$, $\triangle BCD$
 הם משולשים שווי-שוקיים. מחישוב פשוט:
 \begin{eqn}
@@ -593,7 +597,7 @@ $\overline{BP}=y$
 (איור%
 ~\ref{f.double-neusis}).
 
-\begin{figure}[b]
+\begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}[scale=.7]
 \clip (-.5,-.4) rectangle +(11,6.5);
@@ -675,7 +679,7 @@ x&=&\sqrt[3]{2}\,.
 }\label{s.q}
 
 איור
-\ref{f.quad}
+\ref{f.trisect-quad-compass}
 מראה
 \textbf{מחוגת קוודרטריקס}
 המורכב משני סרגלים )ללא סימנים( המחוברים במפרק המאלץ אותם לנוע ביחד. סרגל אחד נע במקביל לציר ה-%
@@ -695,7 +699,7 @@ $\overline{AB}$.
 או פשוט
 \textbf{קוודרטריקס}.
 
-\begin{figure}
+\begin{figure}[htb]
 \begin{center}
 \begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}[scale=.6,domain=.03:1.555,samples=100]
@@ -764,7 +768,7 @@ $90^\circ$
 $0^\circ$.
 
 איור~%
-\ref{f.quad-trisection}
+\ref{f.trisect-quad-trisect}
 מראה איך לחלוק את הזווית 
 $\alpha$
 לשלושה חלקים באמצעות קוודרטריקס.
@@ -804,7 +808,7 @@ $\overline{DC}$
 \end{eqn}
 \end{proof}
 
-\begin{figure}[bth]
+\begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}[scale=.8,domain=.03:1.562,samples=100]
 \draw (.1,7.8) coordinate (start) node[above left] {$D$} node[below right,xshift=32pt] {$\theta$} -- (.1,.2) node[below left] {$A$} -- (8,.1) node[below right] {$B$} -- (8,7.8) node[above right] {$C$} -- cycle;
@@ -834,7 +838,7 @@ $\overline{DC}$
 \end{tikzpicture}
 \end{center}
 \selectlanguage{hebrew}
-\caption{חלוקת זווית לשלושה באמצעות קוודרטריקס}\label{f.quad-trisection}
+\caption{חלוקת זווית לשלושה באמצעות קוודרטריקס}\label{f.trisect-quad-trisect}
 \end{figure}
 
 \section{מספרים בני-מניה}\label{s.trisect-constructible}
@@ -895,7 +899,7 @@ $\surd$.
 \end{theorem}
 
 \begin{proof}
-\begin{figure}[b]
+\begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
 \coordinate (P) at (0,0);
@@ -970,7 +974,7 @@ $(1/b)=(\overline{OD}/a)$
 ולכן
 $\overline{OD}=(a/b)$.
 
-\begin{figure}[t]
+\begin{figure}[htb]
 \begin{center}
 \begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}[scale=.8]
@@ -1046,7 +1050,7 @@ $h^2=a$
 ו-%
 $h=\sqrt{a}$.
 
-\begin{figure}[b]
+\begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}[scale=1]
 \draw[name path=horz] (0,0) coordinate (a) -- (6,0);
@@ -1113,7 +1117,7 @@ $P=(0,\sqrt{2}),Q=(0,-\sqrt{2})$.
 \end{enumerate}
 \end{proof}
 
-\begin{figure}[t]
+\begin{figure}[htb]
 \begin{center}
 \begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}[scale=.66]
@@ -1159,7 +1163,7 @@ $P=(0,\sqrt{2}),Q=(0,-\sqrt{2})$.
 \end{center}
 \end{figure}
 
-\begin{figure}[b]
+\begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}[scale=.66]
 \coordinate (O) at (0,0);

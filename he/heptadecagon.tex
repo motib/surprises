@@ -7,23 +7,58 @@ $17$
 צלעות}
 \label{c.heptadecagon}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-פרק זה מציג את החישוב של 
-\L{Gauss}
-שהראה שניתן לבנות  באמצעות סרגל ומחוגה
+היוונים ידעו לבנות רק ארבעה מצולעים משוכללים: המשולש, הריבוע, המחומש והמצולע המשוכלל עם 
+$15$
+צלעות. בנוסף, נתון מצולע משוכלל עם
+$n$
+צלעות, ניתן לבנות מצולע משוכלל עם
+$2n$
+על ידי בניית מעגל חסום והחוצה של הזווית המרכזית (איור%
+~\ref{f.hept-double}).
+לא היתה שום התקדמות עד
+$1796$
+כאשר
+\L{Carl Friedrich Gauss}
+התעורר בוקר אחד, מעט לפני יום הולדתו ה-%
+$19$,
+ועל ידי "חשיבה מרוכזת" מצא דרך לבנות 
 \L{\textbf{heptadecagon}},
-מצולע משוכלל עם 
+מצולע משוכלל עם
 $17$
-צלעות.
-נציג גם בניה של המצולע ובנוסף בניות של משולש משוכלל ומחומש משוכלל.
+צלעות. הישג זה שיכנע אותו להיות מתמטיקאי.
 
-The only regular polygons that the Greeks knew how to construct with a straightedge and compass were the triangle, the square, the pentagon and the regular polygon with $15$ sides. Given a regular polygon with $n$ sides, a polygon with $2n$ sides can be constructed by circumscribing the polygon with a circle and bisecting the central angle (Fig.~\ref{f.hept-double}). No further progress was made until 1796 when Carl Friedrich Gauss\index{Gauss, Carl Friedrich} awoke one morning, just before his 19th birthday, and by ``concentrated thought'' figured out how to construct a regular \emph{heptadecagon},\index{Heptadecagon} a regular polygon with $17$ sides. This achievement inspired him to become a mathematician.
+סעיף%
+~\ref{s.hept-regular}
+דן בקשר בין צלע של פולינום החסום על ידי מעגל לבין הזווית המרכזית שעליה הוא נשען. סעיף%
+~\ref{s.fundamental}
+מביא ללא הוכחה את המשפט הבסיסי של אלגברה. סעיף%
+~\ref{s.roots}
+מציג את שורשי היחידה, השורשים של הפולינום
+$x^n-1$
+שהם עומדים במרכז ההוכחה של
+\L{Gauss}.
+סעיפים%
+~\ref{s.gauss}
+ו-%
+~\ref{s.derivation}
+מביאים את הוכחה של
+\L{Gauss}
+שמבוססת על סמטריות של פולינומים.
+\L{Gauss}
+פיתח נוסחה שה-%
+\L{heptadecagon}
+בוא בן-בנייה, אבל בנייה גיאומטריה לא פורסמה במשך כמעט מאה שנה. סעיף%
+~\ref{s.construction}
+מביא בנייה אלגנטית של
+\L{James J. Callagy}.
+סעיף%
+~\ref{s.hept-pentagon}
+מראה איך ניתן לפתח בניות של מחומש משוכלל גם באמצעות גיאומטריה וגם באמצעות טריגונומטריה.
 
-Section~\ref{s.hept-regular} discusses the relation between the side of a polygon inscribed in a circle and the central angle that it subtends. Section~\ref{s.fundamental} states without proof the Fundamental Theorem of Algebra. Section~\ref{s.roots} presents the \emph{roots of unity}, the roots of the polynomial $x^n-1$, which are central to Gauss's proof. Sections~\ref{s.gauss} and~\ref{s.derivation} present Gauss's proof which is based on symmetries of roots of polynomials. Gauss derived a \emph{formula} proving that the heptadecagon is constructible, but a geometric construction was not given for almost a century. Section~\ref{s.construction} gives an elegant construction by James J. Callagy\index{Callagy, James J.}. Section~\ref{s.hept-pentagon} shows how constructions of a regular pentagon can be derived using both geometry and trigonometry.
-
-Some of the material is more straightforward if presented using complex numbers. This material is set off in boxes that can be skipped.
-\begin{figure}[b]
+ההוכחה ישירה יותר אם מציגים אותה עם מספרים מרוכבים. חומר זה מופרד במסגרות וניתן לדלג עליו.
+\begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}[scale=.4]
 \coordinate (O) at (0,0);
@@ -37,14 +72,11 @@ Some of the material is more straightforward if presented using complex numbers.
 \draw [very thick,dotted] (O) -- (-90:3) -- (e) -- (-90:3) -- (d);
 \end{tikzpicture}
 \end{center}
-\caption{Constructing a regular polynomial with $10$ sides from a regular pentagon}\label{f.hept-double}
+\caption{בניית מצולע משוכלל עם $10$ צלעות ממחומש משוכלל}\label{f.hept-double}
 \end{figure}
 
+\section{בניה של מצולעים משוכללים}\label{s.hept-regular}
 
-
-\section{בניה של מצולעים משוכללים}
-
-\subsection{היסטוריה}
 היוונים ידעו לבנות מצולעים משוכללים מסויימים  עם סרגל ומחוגה: משולש, ריבוע, מחומש ומצולע משוכלל עם $15$ צלעות.
 כמובן, בהינתן מצולע משוכלל עם
 $n$
@@ -111,8 +143,6 @@ $1$,
 האורכים שניתנים לבנייה הם אלה שניתן לקבל מאורכים קיימים תוך שימוש בפעולות 
 $\{+,-,\times,/,\surd\}$.
 
-
-\subsection{הקוסינוס של הזווית המרכזית}
 כדי לבנות מצולע משוכלל מספיק לבנות קטע קו באורך 
 $\cos \theta$,
 כאשר
@@ -129,9 +159,10 @@ $\overline{OC}=1$
 $\cos \theta=\disfrac{\overline{OB}}{\overline{OC}}=\overline{OB}$.
 המיתר 
 $\overline{AC}$
-הוא צלע של המצולע.
+הוא צלע של המצולע (איור%
+~\ref{f.hept-central1}).
 
-\begin{figure}
+\begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}[scale=1.5]
 \coordinate (O) at (0,0) node[left] {$O$} node[above right,xshift=32pt] {$\theta$};
@@ -149,7 +180,7 @@ $\overline{AC}$
 \path (O) -- node[below] {$\cos \theta$} (B); 
 \end{tikzpicture}
 \caption{הקוסינוס של הזווית המרכזית של מצולע משוכלל}
-\label{}
+\label{f.hept-central1}
 \end{center}
 \end{figure}
 
@@ -182,19 +213,44 @@ $\{+,-,\times,/,\surd\}$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{המשפט הבסיסי של אלגברה}
+\section{המשפט הבסיסי של אלגברה}\label{s.fundamental}
 
-נשתמש במשפט שלהלן ללא הוכחה:
-\begin{theorem}[\R{המשפט הבסיסי של אלגברה}]\label{thm.fundamental}\mbox{}\\
+נשתמש במשפט שלהלן ללא הוכחה.
+
+\begin{theorem}\label{thm.fundamental}
 לכל פולינום ממעלה 
 $n$
-)עם מקדמים מרוכבים(
-יש בדיוק
+בדיוק 
 $n$
-שורשים
-)מרוכבים(.
+שורשים.
 \end{theorem}
+הבאתי ניסוח פשוט של המשפט כי כל מה שאנחנו חייבים לדעת הוא
+\L{קיימים}
+$n$
+שורשים.
 
+\smallskip
+
+\begin{advanced}
+\textbf{המשפט הבסיסי של אלגברה (\L{The Fundamental Theorem of Algebra})}
+טוען שלכל פולינום לא-קבוע ממעלה 
+$n$
+במשתנה אחד עם מקדמים מרוכבים יש בדיוק 
+$n$
+שורשים מרוכבים. אם קיימים מספר שורשים בעלי אותו ערך, עלינו לספור את כולן: ל-%
+$x^2-4x+4=(x-2)(x-2)$
+שני שורשים שערכם
+$2$.
+לפולינום 
+$x^2+1$
+עם מקדמים שלמים יש שני שורשים מרוכבים
+$\pm\sqrt{-1}$.
+באופן משונה, למרות שנושא המשפט קשור למבנים אלגבריים סופיים (פולינומים ממעלה
+$n$
+עם
+$n$
+שורשים), כדי להוכיח את המשפט חייבים להשתמש בשיטות מאנליזה, בדרך כלל, אנליזה של מספרים מרוכבים.
+\end{advanced}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -230,9 +286,19 @@ $r$
 1, r, r^2, \ldots, r^{n-2}, r^{n-1}\,.
 \]
 
+\begin{advanced}
+יהי
+$r=\cos \left(\frac{2\pi}{n}\right) + i\sin  \left(\frac{2\pi}{n}\right)$.
+לפי הנוסחה של
+\L{de Moivre}:
+\[
+\left[\cos \left(\frac{2\pi}{n}\right) + i\sin  \left(\frac{2\pi}{n}\right)\right]^{n}=
+\cos \left(\frac{2 n\pi}{n}\right) + i\sin  \left(\frac{2 n\pi}{n}\right)= 1\,.
+\]
+\vspace{-2ex}
+\end{advanced}
 
-
-\begin{theorem}\label{thm.roots-of-unity}\mbox{}\\
+\begin{theorem}\label{thm.roots-of-unity}
 יהי
 $n$
 ראשוני ו-%
@@ -246,7 +312,8 @@ $\{1,r,r^2,\ldots,r^{n-2},r^{n-1}\}$
 שורשי היחידה מסדר
 $n$.
 \end{theorem}
-\textbf{הוכחה:}
+
+\begin{proof}
 נניח ש-%
 $r^i=r^j$
 עבור מספרים כלשהם
@@ -281,10 +348,10 @@ $n=ml$,
 כך ש-%
 $n$
 אינו ראשוני.
-\qed
+\end{proof}
 
 נשתמש במשפט שלהלן ללא הוכחה:
-\begin{theorem}\mbox{}\\
+\begin{theorem}
 יהיו
 $\{a_1,a_2,\ldots,a_{n-1},a_n\}$
 השורשים של פולינום
@@ -292,13 +359,10 @@ $f(x)$
 מסדר
 $n$.
 אזי:
-\[
+\begin{equation}\label{eq.viete}
 f(x) =(x-a_1) (x-a_2)\cdots (x-a_{n-1})(x-a_n)\,.
-\]
+\end{equation}
 \end{theorem}
-
-
-
 מהנוסחה של
 \L{Viet\'{e}}
 )עמוד~%
@@ -326,9 +390,9 @@ r+r^2+\cdots + r^{n-2}+r^{n-1}=-1\,.
 עבור מצולע משוכלל עם 
 $17$
 צלעות המשוואה היא:
-\[
-r+r^2+r^3+r^4+r^5+r^6+r^7+r^8+r^9+r^{10}+r^{11}+r^{12}+r^{13}+r^{14} + r^{15}+r^{16}=-1\,,
-\]
+\begin{eqnlabels}\label{eq.minus-one}
+&&\nonumber{}r+r^2+r^3+r^4+r^5+r^6+r^7+r^8+\\
+&&\qquad r^9+r^{10}+r^{11}+r^{12}+r^{13}+r^{14} + r^{15}+r^{16}=-1\,.\end{eqnlabels}
 
 \section{ההוכחה של 
 \L{Gauss}
@@ -343,17 +407,19 @@ $r^3$
 $k<17$, $r^{17m+k}=(r^{17})^m\cdot r^k=1^m\cdot r^k=r^k$,
 ולכן רשמנו את החזקות כשאריות לאחר חלוקה ב-%
 $17$.
-
-\begin{eqnlabels}
-r^1, \;r^{1\cdot 3 =3},\; r^{3\cdot 3=9},\; r^{9\cdot 3=27=10},\; r^{10\cdot 3=30=13},\; r^{13\cdot 3=39=5},\; r^{5\cdot 3=15},\; r^{15\cdot 3=45=11},\\
-r^{11\cdot 3 =33=16}, \;r^{16\cdot 3=48=14},\; r^{14\cdot 3=42=8},\; r^{8\cdot 3=24=7},\;r^{7\cdot 3=21=4},\; r^{4\cdot 3=12},\; r^{12\cdot 3=36=2},\; r^{2\cdot 3=6}\,.
-\end{eqnlabels}
-
-
-
+\[
+\begin{array}{l}
+r^1, \;r^{1\cdot 3 =3},\; r^{3\cdot 3=9},\; r^{9\cdot 3=27=10},\; r^{10\cdot 3=30=13},\; r^{13\cdot 3=39=5},\; r^{5\cdot 3=15},\\ r^{15\cdot 3=45=11},
+r^{11\cdot 3 =33=16}, \;r^{16\cdot 3=48=14},\; r^{14\cdot 3=42=8},\; r^{8\cdot 3=24=7},\\r^{7\cdot 3=21=4},\; r^{4\cdot 3=12},\; r^{12\cdot 3=36=2},\; r^{2\cdot 3=6}\,.
+\end{array}
+\]
 חשוב שתבדקו שהרשימה כוללת את כל 
 $16$
-השורשים בדיוק פעם אחת.
+השורשים בדיוק פעם אחת:
+\begin{equation}\label{eq.roots}
+r^1, r^3, r^9, r^{10}, r^{13}, r^5, r^{15}, r^{11}, r^{16}, r^{14}, r^8, r^7, r^4, r^{12}, r^2, r^6\,.
+\end{equation}
+
 
 המטרה של
 \L{Gauss}
@@ -462,8 +528,7 @@ b_3&=& r^{10}+ r^{11} + r^{7} + r^6\,.
 \end{eqn}
 בדקו ש-%
 $b_0+b_2=a_0, b_1+b_3=a_1$
-)איורים~%
-\ref{f.b0b2}, \ref{f.b1b3}(.
+וחשבו את המכפלות המתאימות:
 %\begin{figure}
 
 \begin{eqn}
@@ -519,8 +584,8 @@ x^2-a_1x-1 =0\,.
 $a_0,a_1$,
 מתקבלים השורשים
 $b_0,b_1$
-)איור~%
-\ref{fig.b0}, \ref{fig.b1}(.
+(איור~%
+\ref{fig.b0b1}).
 
 \begin{figure}[htb]
 \begin{eqn}
@@ -552,15 +617,13 @@ b_1&=&\disfrac{a_1+\sqrt{a_1^2+4}}{2}\\
    }{4}\,.
 \end{eqn}
 \selectlanguage{hebrew}
-\caption{החישוב של $b_0,b_1$}\label{fig.b1}
+\caption{החישוב של $b_0,b_1$}\label{fig.b0b1}
 \end{figure}
 לבסוף יהי
 $c_0,c_4$ 
 הסכום של כל שורש שמיני החל מ-%
 $r^1,r^{13}$,
-בהתאמה:%
-\footnote{\R{יש סכומים נוספים אבל שני אלה יספיקו}.}
-
+בהתאמה:
 \begin{eqn}
 c_0&=&r^1+r^{16}\\
 c_4&=&r^{13}+r^4\\
@@ -570,14 +633,16 @@ c_0c_4&=&(r^1+r^{16})\cdot(r^{13}+r^4)\\
 \end{eqn}
 
 $c_0,c_4$
-הם השורשים של:
-\[
-y^2-b_0y+b_1=0\,.
-\]
-נראה שמספיק לחשב את השורש
+הם השורשים של
+$y^2-b_0y+b_1=0$.
+בגלל ש
+$\cos(360^\circ/17) = c_0/2$
+(איור%
+~\ref{f.hept-cosine})
+מספיק לחשב את השורש
 $c_0=r^1+r^{16}$
-)איור~
-\ref{fig.c0}(.
+(איור%
+~\ref{fig.c0}).
 
 \begin{figure}[htb]
 \begin{center}
@@ -600,7 +665,7 @@ $c_0=r^1+r^{16}$
 \draw (D) -- node[left,xshift=-6pt] {$-\sin\theta$} (A) -- node[left,xshift=-6pt] {$\sin \theta$} (C);
 \path (O) -- node[fill=white] {$\cos \theta$} (B);
 \end{tikzpicture}
-\caption{בניית צלע מהזווית המרכזית שהוא כולא}\label{fig.two-cosine}
+\caption{בניית צלע מהזווית המרכזית שהוא כולא}\label{f.hept-cosine}
 \end{center}
 \end{figure}
 
@@ -666,68 +731,30 @@ c_0&=&\disfrac{b_0+\sqrt{b_0^2-4b_1}}{2}\\
 \caption{החישוב של $c_0$}\label{fig.c0}
 \end{figure}
 
-\clearpage
-
-סיימנו כי:
-\[
-c_0=r_1+r_{16}=2\cos\left(\frac{2\pi}{17}\right)\,.
-\]
-קואורדינטות ה-%
-$y$
-של
-$r_1,r_{16}$
-שוות עם סימנים הפוכים ולכן הסכום שלהם אפס. קואורדינטות ה-%
-$x$
-נספרות פעמיים:
-
-הוכחנו שניתן לבנות קטע קו באורך הקוסינוס של הזווית המרכזית של מצולע משוכלל עם 
-$17$
-צלעות, כי הוא מורכב רק ממספרים רציונליים והפעולות 
+הקוסינוס של הזווית המרכזית של ה-%
+\L{heptadecagon}
+הוא בן-בנייה עם סרגל ומחוגה כי הוא מורכב רק ממספרים רציונליים והפעולות
 $\{+,-,\times,/,\surd\}$:
-
-\begin{eqn}
-\cos\left(\disfrac{2\pi}{17}\right) &=& 
--\disfrac{1}{16}+\disfrac{1}{16}\sqrt{17} + 
-     \disfrac{1}{16}\sqrt{34-2\sqrt{17}}
-    + \\
-    &&
-     \disfrac{1}{16}\sqrt{
+\begin{eqnlabels}
+\nonumber{}&&\cos\left(\frac{360^\circ}{17}\right) = 
+\frac{c_0}{2}=\\
+\nonumber{}&&\qquad{}-\frac{1}{16}+\frac{1}{16}\sqrt{17} + 
+     \frac{1}{16}\sqrt{34-2\sqrt{17}}\; +\\
+&& \qquad\frac{1}{16}\sqrt{
      68+12\sqrt{17} + 
      2(-1+\sqrt{17})\sqrt{34-2\sqrt{17}}
    -16
      \sqrt{34+2\sqrt{17}}
-   }
-\end{eqn}
+   }\,.\label{eq.not-gauss}
+\end{eqnlabels}
 
-נסכם את הייצוג של השורשים של
-$x^{17}-1$
-כמספרים מרוכבים.%
-\footnote{%
-מספרים מרוכבים עומדים במרכז החקר של השורשים של פולינומים. קוראים שלא מכירים את הנושא יכולים לדלג על סעיף זה.}
-
-השורש
-$r$
-של
-$x^n-1$
-הוא
-\[
-\cos \left(\disfrac{2\pi}{n}\right) + i\sin  \left(\disfrac{2\pi}{n}\right)\,,
-\]
-כי לפי נוסחאת
-\L{de Moivre}:
-\[
-\left[\cos \left(\disfrac{2\pi}{n}\right) + i\sin  \left(\disfrac{2\pi}{n}\right)\right]^{n}=
-\cos \left(\disfrac{2\cdot n\pi}{n}\right) + i\sin  \left(\disfrac{2\cdot n\pi}{n}\right)= 1\,,
-\]
-הקשר בין 
-$c_0$
-לבין הקוסינוס של הזווית המרכזית של המצולע מתקבל בקלות:
+\begin{advanced}
 \begin{eqn}
-c_0&=&r_1+r_{16}\\
-&=&\left[\cos\left(\disfrac{2\pi}{17}\right)+i\sin\left(\disfrac{2\pi}{17}\right)\right]+\left[\cos\left(\disfrac{2\cdot 16\pi}{17}\right)+i\sin\left(\disfrac{2\cdot 16\pi}{17}\right)\right]\\
-&=&\left[\cos\left(\disfrac{2\pi}{17}\right)+\cos\left(\disfrac{-2\pi}{17}\right)\right]+i\left[\sin\left(\disfrac{2\pi}{17}\right)+\sin\left(\disfrac{-2\pi}{17}\right)\right]\\
-&=&2\cos\left(\disfrac{2\pi}{17}\right)+i\cdot 0=2\cos\left(\disfrac{2\pi}{17}\right)\,.
+r_1+r_{16}&=&\cos\left(\frac{2\pi}{17}\right)+i\sin\left(\frac{2\pi}{17}\right)+\cos\left(\frac{2\cdot 16\pi}{17}\right)+i\sin\left(\frac{2\cdot 16\pi}{17}\right)\\
+&=&\cos\left(\frac{2\pi}{17}\right)+i\sin\left(\frac{2\pi}{17}\right)+\cos\left(\frac{-2\pi}{17}\right)+i\sin\left(\frac{-2\pi}{17}\right)\\
+&=&2\cos\left(\frac{2\pi}{17}\right)\,.
 \end{eqn}
+\end{advanced}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -815,7 +842,9 @@ $-4\sqrt{34-2\sqrt{17}}$
 בנו מעגל יחידה שמרכזו
 $O$,
 עם קוטרים ניצבים
-$\overline{PQ},\overline{RS}$.
+$\overline{PQ},\overline{RS}$
+איור%
+~\ref{f.hept-construction1}).
 
 \begin{figure}[htb]
 \begin{center}
@@ -857,7 +886,7 @@ $\overline{PQ},\overline{RS}$.
 }
 } ($(B)+(0,-16pt)$);
 \end{tikzpicture}
-\caption{בניית \L{heptadecagon} (1)}\label{}
+\caption{בניית \L{heptadecagon} (1)}\label{f.hept-construction1}
 \end{center}
 \end{figure}
 בנו נקודה
@@ -904,7 +933,10 @@ $D$
 על
 $\overline{OP}$
 כך ש-%
-$\overline{CD}=\overline{CA}$:
+$\overline{CD}=\overline{CA}$
+איור%
+~\ref{f.hept-construction2}).
+
 
 \begin{figure}[htb]
 \begin{center}
@@ -944,7 +976,8 @@ $\overline{CD}=\overline{CA}$:
 }
 \draw (O) rectangle(+6pt,+6pt);
 \end{tikzpicture}
-\caption{בניית \L{heptadecagon} (2)}\label{}
+\caption{בניית \L{heptadecagon} (2)}\label{f.hept-construction2}
+
 \end{center}
 \end{figure}
 
@@ -986,7 +1019,10 @@ $\overline{MF}=\overline{MQ}$:
 בנו מעגל שקוטרו 
 $\overline{OE}$.
 בנו מיתר
-$\overline{OG}=\overline{OF}$.
+$\overline{OG}=\overline{OF}$
+(איור%
+~\ref{f.hept-construction3}).
+
 שימו לב ש-%
 $\overline{MO}=1-\overline{MQ}=1-\overline{MF}$:
 
@@ -1045,7 +1081,9 @@ $\overline{MO}=1-\overline{MQ}=1-\overline{MF}$:
 \draw[rotate=30] (G) rectangle +(+6pt,+6pt);
 
 \end{tikzpicture}
-\caption{בניית \L{heptadecagon} (3)}\label{}
+\caption{בניית \L{heptadecagon} (3)}
+\label{f.hept-construction3}).
+
 \end{center}
 \end{figure}
 
@@ -1100,9 +1138,17 @@ $\cos \left(\disfrac{2\pi}{17}\right)$
 כפי שמופיע באיור~%
 \ref{fig.c0}.
 
-\section{בניית מחומש משוכלל}\label{a.pentagon}
+\section{בניית מחומש משוכלל}\label{s.hept-pentagon}
 
-\textbf{בניה בטריגונומטריה:}
+\begin{advanced}
+The complex fifth roots of unity are:
+\[
+1+i\cdot 0,\quad\frac{\sqrt{5}-1}{4}\pm i \frac{\sqrt{10+2\sqrt{5}}}{4},\quad\frac{-\sqrt{5}-1}{4}\pm i \frac{\sqrt{10-2\sqrt{5}}}{4}\,.
+\]
+\vspace{-3ex}
+\end{advanced}
+
+\subsection{בטריגונומטריה}
 הזווית המרכזית היא
 $360^\circ/5=72^\circ$.
 נחשב
@@ -1183,15 +1229,13 @@ $\overline{AB}$,
 %\draw (a) arc (0:90:3cm);
 %\end{tikzpicture}
 %\end{center}
-
-
-
-
-\textbf{בניה בגיאומטריה:}
-
+\subsection{גיאומטריה}
 יהי
-$ABCDE$
-מחומש משוכלל. כל הצלעות וכל הזוויות הפנימיות שוות. גם כל האלכסונים שווים. למשל,
+$\overline{ABCDE}$
+מחומש משוכלל
+(איור%
+~\ref{f.hept-pentagon2}).
+כל הצלעות וכל הזוויות הפנימיות שוות. גם כל האלכסונים שווים. למשל,
 $\triangle ABC\cong \triangle AED$
 לפי צלע-זווית-צלע, כך ש-%
 $\overline{AC}=\overline{AD}$.
@@ -1270,47 +1314,12 @@ $\overline{DC}$
 ותהי
 $F$
 נקודת החיתוך שלו עם
-$\overline{AC}$.
+$\overline{AC}$
+)איור%
+~\ref{f.hept-pentagon3}).
 
 
-\begin{figure}[t]
-\begin{center}
-\begin{tikzpicture}[scale=.8]
-\coordinate (O) at (0,0);
-\vertex{O};
-\node[above left,xshift=1pt,yshift=4pt] at (O) {$O$};
-
-\foreach \x/\name/\n/\po in {0/a/A/right,1/b/B/above,2/c/C/left,3/d/D/below left,4/e/E/below right} {
-  \coordinate (\name) at ($(O)+(\x*72+18:3cm)$);
-  \node[\po] at (\name) {$\n$};
-}
-\draw (a) -- node[above] {$1$} (b) -- node[above] {$1$} (c) -- node[left] {$1$} (d) -- node[below] {$1$} (e);
-\draw[very thick] (e)-- node[right] {$1$} (a);
-\draw[very thick] (a) -- (c);
-\draw[very thick] (c) -- node[below] {$x$} (e);
-
-\path[name path=ef] (e) -- +(108:5);
-\path[name path=ac] (a) -- (c);
-\path[name intersections={of=ac and ef,by={f}}];
-\vertex{f};
-\node[above] at (f) {$F$};
-\draw[very thick] (e) -- node[right] {$1$} (f);
-\path (a) -- node[above,xshift=-4pt] {$x-1$} (f);
-\node[below left] at (a) {$\alpha$};
-\node[below right,xshift=2pt] at (f) {$\alpha$};
-\path (c) -- node[above] {$1$} (f);
-\draw ($(e)+(72:.5)$) arc(72:144:.5cm);
-\node[above,yshift=12pt] at (e) {$\alpha$};
-\end{tikzpicture}
-\end{center}
-\caption{Construction of a regular pentagon (2)}\label{f.hept-pentagon3}
-\end{figure}
-
-\subsection*{What Is the Surprise?}
-
-It is surprising that two millennia passed from the work of the Greeks on construction to the discovery by Gauss of the constructibility of the regular heptadecagon. It is also surprising that the problem was solved not by using geometry but by inventing new algebraic methods that had a far-reaching influence in mathematics.
-
-\begin{figure}[t]
+\begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
 \coordinate (O) at (0,0);
@@ -1343,8 +1352,41 @@ It is surprising that two millennia passed from the work of the Greeks on constr
 \caption{בניית מחומש משוכלל (2)}\label{f.hept-pentagon3}
 \end{figure}
 
-
+%\begin{figure}[htb]
+%\begin{center}
+%\begin{tikzpicture}[scale=.8]
+%\coordinate (O) at (0,0);
+%\vertex{O};
+%\node[above left,xshift=1pt,yshift=4pt] at (O) {$O$};
 %
+%\foreach \x/\name/\n/\po in {0/a/A/right,1/b/B/above,2/c/C/left,3/d/D/below left,4/e/E/below right} {
+%  \coordinate (\name) at ($(O)+(\x*72+18:3cm)$);
+%  \node[\po] at (\name) {$\n$};
+%}
+%\draw (a) -- node[above] {$1$} (b) -- node[above] {$1$} (c) -- node[left] {$1$} (d) -- node[below] {$1$} (e);
+%\draw[very thick] (e)-- node[right] {$1$} (a);
+%\draw[very thick] (a) -- (c);
+%\draw[very thick] (c) -- node[below] {$x$} (e);
+%
+%\path[name path=ef] (e) -- +(108:5);
+%\path[name path=ac] (a) -- (c);
+%\path[name intersections={of=ac and ef,by={f}}];
+%\vertex{f};
+%\node[above] at (f) {$F$};
+%\draw[very thick] (e) -- node[right] {$1$} (f);
+%\path (a) -- node[above,xshift=-4pt] {$x-1$} (f);
+%\node[below left] at (a) {$\alpha$};
+%\node[below right,xshift=2pt] at (f) {$\alpha$};
+%\path (c) -- node[above] {$1$} (f);
+%\draw ($(e)+(72:.5)$) arc(72:144:.5cm);
+%\node[above,yshift=12pt] at (e) {$\alpha$};
+%\end{tikzpicture}
+%\end{center}
+%\caption{בניית מחומש משוכלל (2)}\label{f.hept-pentagon3}
+%\end{figure}
+%
+%
+%%
 %\begin{center}
 %
 %\begin{tikzpicture}[scale=.9]
@@ -1393,9 +1435,13 @@ x^2-x-1=0\,,
 \]
 ניתן לבנות.
 
-\subsection*{What Is the Surprise?}
+\subsection*{מה ההפתעה?}
 
-It is surprising that two millennia passed from the work of the Greeks on construction to the discovery by Gauss of the constructibility of the regular heptadecagon. It is also surprising that the problem was solved not by using geometry but by inventing new algebraic methods that had a far-reaching influence in mathematics.
+מפתיע שעברו מעל אלפיים שנים מתקופת היוונים עד הגילוי של 
+\L{Gauss}
+שה-%
+\L{heptadecagon}
+בן-בנייה. מפתיע גם שפתרון הבעייה הגיע לא דרך גיאומטריה אלא על ידי פיתוח שיטות אלגבריות חדשות שהיו להן השפעה מרחיקת לכת במתמטיקה.
 
 \subsection*{מקורות}
 
