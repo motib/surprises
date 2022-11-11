@@ -4,7 +4,26 @@
 
 \chapter{בניות גיאומטריות באוריגמי}\label{c.origami-constructions}
 
-This chapter shows that constructions with origami are more powerful than constructions with a straightedge  and compass. We give two constructions for trisecting an angle, one by Hisashi Abe\index{Abe, Hisashi} (Sect.~\ref{s.abe-trisection}) and the other by  George E. Martin\index{Martin, George E.} (Sect.~\ref{s.martin-trisection}), two constructions for doubling a cube, one by Peter Messer\index{Messer, Peter} (Sect.~\ref{s.messer}) and the other by Marghareta P. Beloch\index{Beloch, Margherita P.} (Sect.~\ref{s.cube2}), and the construction of a nonagon, a regular polynomial with nine sides (Sect.~\ref{s.nonagon}).
+בפרק זה נראה שבניות עם אוריגמי חזקים יותר מבניות עם סרגל ומחוגה. נביא שתי בניות לחלוקת זווית לשלושה חלקים, הראשונה של 
+\L{Hisashi Abe}
+(סעיף%
+~\ref{s.abe-trisection})
+והשנייה של
+\L{George E. Martin}
+(סעיף%
+~\ref{s.martin-trisection}),
+שתי בניות להכפלת קוביה, הראשונה של
+\L{Peter Messer}
+(סעיף%
+~\ref{s.messer})
+והשנייה של
+\L{Marghareta P. Beloch}
+(סעיף%
+~\ref{s.cube2}).
+הבנייה האחרונה היא של מתושע
+\L{nonagon},
+מצולע משוכלל עם תשעה צלעות (סעיף%
+~\ref{s.nonagon}).
 
 \section{הבנייה של 
 \L{Abe}\label{s.abe-trisection}
@@ -13,7 +32,7 @@ This chapter shows that constructions with origami are more powerful than constr
 
 נתונה זווית חדה
 $\angle PQR$,
-בנו את הקו
+נבנה את הקו
 $p$
 ניצב ל-%
 $\overline{QR}$
@@ -27,7 +46,7 @@ $p$
 $A$
 כך שהוא חותך את
 $\overline{PQ}$.
-בנו את הקו
+נבנה את הקו
 $r$,
 האנך האמצעי של
 $\overline{AQ}$
@@ -35,7 +54,7 @@ $\overline{AQ}$
 $B$.
 לפי אקסיומה 
 $6$
-בנו קיפול
+נבנה קיפול
 $l$
 המניח את 
 $A$
@@ -49,20 +68,20 @@ $Q$
 $r$
 בנקודה
 $Q'$.
-סמנו ב-%
+תהי
 $B'$
-את השיקוף של 
+השיקוף של 
 $B$
 מסביב ל-%
 $l$.
-בנו את הקווים
+נבנה את הקווים
 $\overline{QB'}$
 ו-%
 $\overline{QQ'}$
 (איור%
 ~\ref{f.abe1}).
 
-\begin{figure}
+\begin{figure}[tb]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
 % Place points P, Q, R
@@ -130,11 +149,9 @@ $\overline{QQ'}$
 \end{figure}
 
 \begin{theorem}
-$\angle PQB'=\angle B'QQ'=\angle Q'QR=\disfrac{1}{3}\angle PQR$.
+$\angle PQB'=\angle B'QQ'=\angle Q'QR=\angle PQR/3$.
 \end{theorem}
-נביא שתי הוכחות.
-
-\begin{proof}
+\begin{proof}(1)
 הנקודות
 $A', B', Q'$
 הן שיקופים סביב אותו קו 
@@ -143,52 +160,50 @@ $l$
 $A,B,Q$
 הנמצאות על קו אחד
 $\overline{DQ}$,
-ולכן גם הן נמצאות על קטע קו אחד
+ולכן הן נמצאות על קטע קו אחד
 $\overline{DQ'}$.
 לפי הבנייה,
 $\overline{AB}=\overline{BQ}$,
 $\angle ABQ'=\angle QBQ'=90^\circ$,
 $\overline{BQ'}$
-הוא צלע משותף, ולכן
+הוא צלע משותף, כך ש-%
 $\triangle ABQ'\cong \triangle QBQ'$ 
 לפי צלע-זווית-צלע. מכאן ש-%
-$\angle AQ'B=\angle QQ'B=\alpha$
-כי
-$\overline{Q'B}$
-הוא האנך האמצעי של המשולש שווי-שוקיים
+$\angle AQA'=\angle QAQ'=\alpha$
+ו-%
 $\triangle AQ'Q$
-(איור~
+הוא שווה-שוקיים (איור~
 \ref{f.first-proof}).
 
 \begin{figure}[tb]
 \begin{center}
-
 \begin{tikzpicture}[scale=.8]
 
 % Place points P, Q, R
 \coordinate (P) at (60:10cm);
 \coordinate (Q) at (0,0);
 \coordinate (R) at (10,0);
-\fill (P) circle (2pt) node[below right] {$P$};
-\fill (Q) circle (2pt) node[left,xshift=-4pt] {$Q$};
-\fill (R) circle (2pt) node[right] {$R$};
+\node[below right] at (P) {$P$};
+\node[left,xshift=-4pt] at (Q) {$Q$};
+\node[right] at (R) {$R$};
 
 % Draw PQR
-\draw [very thick] (Q) -- (R);
+\draw (Q) -- (R);
 
 % Draw perpendicular to QR
-\draw [thick] (Q) -- node[left,very near end] {$p$} +(0,11);
+\draw (Q) -- node[left,very near end] {$p$} +(0,11);
 
 % Draw parallel to QR and parallel halfway
 \coordinate (A) at (0,5);
 \coordinate (B) at (0,2.5);
-\draw [thick] (A) -- node[above,very near end] {$q$} +(10,0);
-\draw [thick] (B) -- node[above,very near end] {$r$} +(10,0);
-\fill (A) circle (2pt) node[left,xshift=-4pt] {$A$};
-\fill (B) circle (2pt) node[left,xshift=-4pt] {$B$};
+\draw (A) -- node[above,very near end] {$q$} +(10,0);
+\draw[name path=Br] (B) -- node[above,very near end] {$r$} +(10,0);
+\node[left,xshift=-4pt] at (A) {$A$};
+\node[left,xshift=-4pt] at (B) {$B$};
 \path (Q) -- node[left,xshift=-4pt] {$a$} (B) -- node[left,xshift=-4pt] {$a$} (A);
 \draw (A) rectangle +(8pt,8pt);
 \draw (B) rectangle +(8pt,8pt);
+\draw (Q) rectangle +(8pt,8pt);
 
 % Tangent line y = -2.75x + 10.69
 
@@ -198,17 +213,17 @@ $\triangle AQ'Q$
 \coordinate (AP) at (3.65,6.33);
 \coordinate (QP) at (6.87,2.5);
 \coordinate (BP) at (5.26,4.42);
-\fill (D) circle (2pt) node[left] {$D$};
-\fill (AP) circle (2pt) node[above,yshift=6pt] {$A'$};
-\fill (QP) circle (2pt) node[above,xshift=2pt,yshift=6pt] {$Q'$};
-\fill (BP) circle (2pt) node[above,xshift=4pt,yshift=2pt] {$B'$};
-\draw [very thick,dashed] (D) -- node[left,near start] {$l$} (fold-x);
+\node[left] at (D) {$D$};
+\node[above,yshift=6pt] at (AP)  {$A'$};
+\node[above,xshift=2pt,yshift=6pt] at (QP) {$Q'$};
+\node[right,xshift=4pt,yshift=2pt] at (BP) {$B'$};
+\draw[name path=fold,very thick,dashed] (D) -- node[left,near start] {$l$}  ($(D)!1.03!(fold-x)$);
 	
 % Draw line of reflections
-\draw [very thick, dotted] (D) -- (AP);
+\draw (D) -- (AP);
 
 % Draw trisecting lines
-\draw [very thick,dotted] (Q) -- ($(Q)!1.3!(BP)$);
+\draw (Q) -- ($(Q)!1.3!(BP)$);
 
 \draw [very thick,loosely dash dot,red] (Q) -- (QP);
 \draw [very thick,loosely dash dot,red] (QP) -- (AP);
@@ -217,7 +232,7 @@ $\triangle AQ'Q$
 \draw [very thick,dash dot dot,blue] ($(QP)+(0,-4pt)$) -- ($(A)+(0,-4pt)$);
 \draw [very thick,dash dot dot,blue] ($(A)+(-4pt,0)$) -- ($(Q)+(-4pt,0)$);
 
-\draw [thick,dotted] (A) -- (AP);
+\draw (A) -- (AP);
 
 \node[left,xshift=-40pt,yshift=7pt] at (QP) {$\alpha$};
 \node[left,xshift=-40pt,yshift=-6pt] at (QP) {$\alpha$};
@@ -225,50 +240,55 @@ $\triangle AQ'Q$
 \node[right,xshift=40pt,yshift=28pt] at (Q) {$\alpha$};
 \node[right,xshift=30pt,yshift=42pt] at (Q) {$\alpha$};
 
+\draw (AP) -- (P);
+
+\path[name path=Qr] (Q) -- (QP);
+\path[name intersections = {of = fold and Qr, by = {U}}];
+\node[above left,xshift=-2pt,yshift=-2pt] at (U) {$U$};
+\draw[rotate=20] (U) rectangle +(8pt,8pt);
+\path[name intersections = {of = fold and Br, by = {V}}];
+\node[above left,xshift=-2pt,yshift=-2pt] at (V)  {$V$};
 \end{tikzpicture}
 \end{center}
 \selectlanguage{hebrew}
-\caption{ההוכחה של
+\caption{%
+הוכחות של הבנייה של
 \L{Abe}
-(משתמשים ב-%
+(נשתמש ב-%
 $U,V$
 בהוכחה השנייה)}
 \label{f.first-proof}
 \end{figure}
-$\triangle A'QQ'$
-הוא השיקוף של
-$\triangle AQ'Q$
-ולכן
-$\triangle A'QQ'\cong \triangle AQ'Q$.
-מכאן שגם
+בגלל השיקוף
+$\triangle AQ'Q\cong \triangle A'QQ'$,
+ולכן גם
 $\triangle A'QQ'$
 הוא משולש שווה-שוקיים.
-$\overline{QB'}$ 
-הוא השיקוף של 
-$\overline{Q'B}$
-כך ש-%
+$\overline{QB'}$,
+השיקוף של 
+$\overline{Q'B}$,
+הוא האנך האמצעי של משולש שווה-שוקיים ולכן
 $\angle A'QB'=\angle Q'QB'=\alpha$.
-
 לפי זוויות מתחלפות
 $\angle Q'QR=\angle QQ'B=\alpha$.
 ביחד:
 \[
-\angle A'QB'=\angle Q'QB'=\angle Q'QR=\alpha\,.
+\triangle PQB'=\angle A'QB'=\angle B'QQ'=\angle Q'QR=\alpha\,.
 \]
 \end{proof}
 
-\begin{proof}
+\begin{proof}(2)
 הקו
 $l$
 הוא קיפול ולכן הוא האנך האמצעי של
 $\overline{QQ'}$.
-סמנו ב-%
+נסמן ב-%
 $U$
 את נקודת החיתוך של
 $l$
 עם
 $\overline{QQ'}$,
-וסמנו ב-%
+נסמן ב-%
 $V$
 את נקודת החיתוך שלו עם
 $\overline{QB'}$
@@ -280,7 +300,7 @@ $\overline{VU}$
 הוא צלע משותף, הזוויות ב-%
 $U$
 הן זוויות ישרות, ו-%
-$\overline{QU}=\overline{Q'U}=b$.
+$\overline{QU}=\overline{Q'U}$.
 מכאן ש-%
 $\angle VQU=\angle VQ'U=\alpha$
 ו-%
@@ -291,92 +311,21 @@ $\angle Q'QR=\angle VQ'U=\alpha$
 $A', B', Q'$
 הן כולן שיקופים סביב
 $l$,
-לכן הן כולן נמצאות על קטע קו אחד
+ולכן הן כולן נמצאות על קטע קו אחד
 $\overline{DQ'}$,
 ו-%
 $\overline{A'B'}=\overline{AB}=\overline{BQ}=\overline{B'Q'}=a$.
 מכאן ש-%
 $\triangle A'B'Q\cong\triangle Q'B'Q$
-ו-%
+לפי צלע-זווית-צלע ו-%
 $\angle A'QB'=\angle Q'QB'=\alpha$.
-%\begin{figure}[tb]
-%\begin{center}
-%
-%\begin{tikzpicture}[scale=.8]
-%
-%% Place points P, Q, R
-%\coordinate (P) at (60:10cm); %(5,8.67);
-%\coordinate (Q) at (0,0);
-%\coordinate (R) at (10,0);
-%\fill (P) circle (2pt) node[below right] {$P$};
-%\fill (Q) circle (2pt) node[left] {$Q$};
-%\fill (R) circle (2pt) node[right] {$R$};
-%
-%% Draw PQR
-%\draw [very thick] (P)  -- (Q) -- (R);
-%
-%% Draw perpendicular to QR
-%\draw [thick] (Q) -- node[left,very near end] {$p$} +(0,11);
-%
-%% Draw parallel to QR and parallel halfway
-%\coordinate (A) at (0,5);
-%\coordinate (B) at (0,2.5);
-%\draw [thick] (A) -- node[above,very near end] {$q$} +(10,0);
-%\draw [thick] (B) -- node[above,very near end] {$r$} +(10,0);
-%\fill (A) circle (2pt) node[left] {$A$};
-%\fill (B) circle (2pt) node[left] {$B$};
-%\path (Q) -- node[left] {$a$} (B) -- node[left] {$a$} (A);
-%\draw (A) rectangle +(8pt,8pt);
-%\draw (B) rectangle +(8pt,8pt);
-%
-%% Tangent line y = -2.75x + 10.69
-%
-%% Draw fold
-%\coordinate (D) at (0,10.69);
-%\coordinate (fold-x) at (3.89,0);
-%\coordinate (AP) at (3.65,6.33);
-%\coordinate (QP) at (6.87,2.5);
-%\coordinate (BP) at (5.26,4.42);
-%\fill (D) circle (2pt) node[left] {$D$};
-%\fill (AP) circle (2pt) node[above,yshift=6pt] {$A'$};
-%\fill (QP) circle (2pt) node[above,yshift=6pt] {$Q'$};
-%\fill (BP) circle (2pt) node[above,xshift=2pt,yshift=2pt] {$B'$};
-%\draw [very thick,dashed,name path=fold] (D) -- node[left,near start] {$l$} (fold-x);
-%
-%% Draw line of reflections
-%\draw [very thick, dotted] (D) -- (QP);
-%
-%% Draw trisecting lines
-%\draw [very thick,dotted,name path=Qr] (Q) -- ($(Q)!1.3!(QP)$);
-%\draw [very thick,dotted,name path=Qq] (Q) -- ($(Q)!1.3!(BP)$);
-%
-%% Draw indications of right angles
-%\draw[rotate=-140] (BP) rectangle +(8pt,8pt);
-%\path [name intersections = {of = fold and Qr, by = {U}}];
-%\fill (U) circle (2pt) node[above left,xshift=-2pt,yshift=-2pt] {$U$};
-%\draw[rotate=20] (U) rectangle +(8pt,8pt);
-%\path [name intersections = {of = fold and Qq, by = {V}}];
-%\fill (V) circle (2pt) node[above left,xshift=-2pt,yshift=-2pt] {$V$};
-%
-%\path (Q) -- node[below,near end] {$b$} (U);
-%\path (U) -- node[below] {$b$} (QP);
-%
-%\node[left,xshift=-40pt,yshift=-6pt] at (QP) {$\alpha$};
-%\node[right,xshift=40pt,yshift=6pt] at (Q) {$\alpha$};
-%\node[right,xshift=40pt,yshift=28pt] at (Q) {$\alpha$};
-%\node[right,xshift=30pt,yshift=42pt] at (Q) {$\alpha$};
-%\end{tikzpicture}
-%\end{center}
-%\selectlanguage{hebrew}
-%\caption{הוכחה שנייה}\label{f.second-proof}
-%\end{figure}
 \end{proof}
 
 \section{הבנייה של
 \L{Martin}
 לחלוקת זווית לשלושה חלקים%
 }\label{s.martin-trisection}
-\begin{figure}
+\begin{figure}[tb]
 \begin{center}
 
 \begin{tikzpicture}[scale=.9]
@@ -390,8 +339,8 @@ $\angle A'QB'=\angle Q'QB'=\alpha$.
 \fill (R) circle (2pt) node[right] {$R$};
 
 % Draw PQR
-\draw [very thick] (R)  -- (Q);
-\draw [very thick,name path=pq] (Q) -- (P);
+\draw (R)  -- (Q);
+\draw [name path=pq] (Q) -- (P);
 
 % M is the midpoint of PQ
 \coordinate (M) at (2.5, 4.33);
@@ -431,7 +380,7 @@ $\angle A'QB'=\angle Q'QB'=\alpha$.
 \draw [rotate=22] (Pt) rectangle +(8pt,8pt);
 
 % Draw PT
-\draw [very thick,dotted] (P) -- (PP);
+\draw (P) -- (PP);
 
 % Construct a perpendicular to t through Q
 \coordinate (perp-q) at ($(t1)!(Q)!(t2)$);
@@ -446,14 +395,14 @@ $\angle A'QB'=\angle Q'QB'=\alpha$.
 \draw [rotate=22] (V) rectangle +(8pt,8pt);
 
 % Draw Q QP
-\draw [very thick,dotted,name path=qs] (Q) -- (QP);
+\draw [name path=qs] (Q) -- (QP);
 
 % Get the intersection of QS with p denoted U
 \path [name intersections = {of = p and qs, by = {U}}];
 \fill (U) circle(2pt) node[above left] {$U$};
 
 % Draw PP QP
-\draw [very thick,dotted,name path=ts] (PP) -- (QP);
+\draw [name path=ts] (PP) -- (QP);
 
 % Get its intersection with QP denoted W
 \path [name intersections = {of = ts and pq, by = {W}}];
@@ -548,20 +497,18 @@ $\overline{PQ}$
 ו-%
 $\overline{P'Q'}$
 עם
-$l$.\footnote{%
-\R{לא ברור מאליו ש}-%
+$l$.
+לא ברור מאליו ש-%
 $\overline{PQ}$
-\R{ו}-%
+ו-%
 $\overline{P'Q'}$
-\R{חותכים את}
+חותכים את
 $l$
-\R{באותה נקודה}. 
-$\triangle PP'W\sim\triangle QQ'W$
-\R{כך שהגבהים מחלקים את הזוויות}
+באותה נקודה. אבל
+$\triangle PWP'\sim\triangle QQQ'$
+כך שהגבהים מחלקים את שתי הזוויות הקודקודיות
 $\angle PWP', \angle QWQ'$
-\R{בצורה דומה וחייבים להיות על אותו קו}.}
-
-%\textbf{הוכחה}
+והם חייבים להיות על אותו קו.
 
 $\triangle QMU\cong \triangle PMP'$
 לפי זווית-צלע-זווית:
@@ -571,9 +518,10 @@ $\overline{QM}=\overline{MP}=a$
 כי 
 $M$
 היא נקודת האמצע של
-$\overline{PQ}$,
-$\angle QMU=\angle PMP'$
-הן זוויות קודקודיות. מכאן ש-%
+$\overline{PQ}$
+ו-%
+$\angle QMU=\angle PMP'=\gamma$
+כי הן זוויות קודקודיות. מכאן ש-%
 $\overline{P'M}=\overline{MU}=b$.
 
 $\triangle P'MQ'\cong\triangle UMQ'$
@@ -589,15 +537,16 @@ $\triangle P'Q'U$
 $\angle P'Q'U$
 ולכן
 $\angle P'Q'M=\angle UQ'M=\alpha$.
-
+בנוסף,
+$\angle UQ'M=\angle Q'QR=\alpha$
+לפי זוויות מתחלפות.
 
 $\triangle QWV\cong\triangle Q'WV$
 לפי צלע-זווית-צלע:
 $\overline{QV}=\overline{VQ'}=c$
-והזוויות ב-%
+הזוויות ב-%
 $V$
-ישרות כי הקיפול הוא האנך אמצעי של
-$\overline{QQ'}$,
+ישרות ו-%
 $\overline{VW}$
 הוא צלע משותף. מכאן ש:
 
@@ -619,26 +568,24 @@ $\overline{VW}$
 $V$
 צלעות באורך
 $\sqrt[3]{V}$.
-נפח קוביה שנפחה פי שניים הוא
- $2 V$,
- כך שיש לבנות קטע קו שאורכו
-$\sqrt[3]{2 V}=\sqrt[3]{2} \sqrt[3]{V}$.
-אם נוכל לבנות קטע קו באורך
+לקוביה עם נפח פי שניים אורכי הצלעות הם
+$\sqrt[3]{2 V}=\sqrt[3]{2} \sqrt[3]{V}$,
+ולכן אם נוכל לבנות קטע קו באורך
 $\sqrt[3]{2}$,
 נוכל להכפיל באורך הנתון
 $\sqrt[3]{V}$
-כדי להכפיל את נפח הקוביה.
+כדי להכפיל את הקוביה.
 
 \textbf{בנייה:}
-קחו דף נייר שהוא ריבוע וקפלו לחצי כדי למצוא את הנקודת
+נקח דף נייר שהוא ריבוע ונקפל אותו לחצי כדי למצוא את הנקודת
 $I=(0,1/2)$,
 $Q=(1,1/2)$
 (איור~%
 \ref{f.lang}).
-בנו את קטעי הקו
+נבנה את קטעי הקו
 $\overline{AC}$
 ו-%
-$\overline{BQ}$.
+$\overline{BJ}$.
 אפשר לחשב את הקואורדינטות של נקודה החיתוך 
 $K=(2/3,1/3)$
 על ידי פתרון המשוואות 
@@ -646,20 +593,19 @@ $y=1-x$
 ו-%
 $y=x/2$.
 
-\begin{figure}
+\begin{figure}[tb]
 \begin{center}
-
-\begin{tikzpicture}[scale=.5]
+\begin{tikzpicture}[scale=.55]
 % Draw square
 \coordinate (A) at (0,12);
 \coordinate (B) at (0,0);
 \coordinate (C) at (12,0);
 \coordinate (D) at (12,12);
 
-\fill (A) circle (2pt) node[left]  {$A=(0,1)$};
-\fill (B) circle (2pt) node[left]  {$B=(0,0)$};
-\fill (C) circle (2pt) node[right] {$C=(1,0)$};
-\fill (D) circle (2pt) node[right] {$D=(1,1)$};
+\node[left]  at (A) {$A=(0,1)$};
+\node[left]  at (B) {$B=(0,0)$};
+\node[right] at (C) {$C=(1,0)$};
+\node[right] at (D) {$D=(1,1)$};
 
 \draw [thick] (A)  -- (B) -- (C) -- (D) -- cycle;
 
@@ -667,57 +613,51 @@ $y=x/2$.
 
 \coordinate (M)  at (0,6);
 \coordinate (N) at (12,6);
-\fill (M) circle (2pt) node[left] {$I=(0,1/2)$};
-\fill (N) circle (2pt) node[right] {$Q=(1,1/2)$};
+\node[left] at (M) {$I=(0,1/2)$};
+\node[right] at (N) {$J=(1,1/2)$};
 \draw [thick,dashed] (M) -- (N);
 
 
-\draw [thick,dotted,name path=ac] (A) -- 
+\draw [very thick,dotted,name path=ac] (A) -- 
    node[near start,above,xshift=24pt] {$y=1-x$} (C);
-\draw [thick,dotted,name path=be2] (B) -- 
-   node[near start,above,xshift=-12pt,yshift=-2pt] {$y=\disfrac{1}{2}x$} (N);
+\draw [very thick,dotted,name path=be2] (B) -- 
+   node[near start,above,xshift=-12pt] {$y=x/2$} (N);
 
 \path [name intersections = {of = ac and be2, by = {I}}];
-\fill (I) circle (2pt) 
-   node[below,xshift=-6pt,yshift=-8pt] {$K=$}
-   node[below,xshift=-6pt,yshift=-20pt] {$(2/3,1/3)$};
+\node[below,xshift=-6pt,yshift=-8pt] at (I) {$K=$};
+\node[below,xshift=-6pt,yshift=-20pt] at (I) {$(2/3,1/3)$};
 
 \coordinate (E)  at (0,4);
 \coordinate (F) at (12,4);
-\fill (E) circle (2pt) node[left] {$E=(0,1/3)$};
-\fill (F) circle (2pt) node[right] {$F=(1,1/3)$};
+\node[left] at (E) {$E=(0,1/3)$};
+\node[right] at (F) {$F=(1,1/3)$};
 \draw [thick,dashed] (E) -- (F);
 
 \coordinate (G)  at (0,8);
 \coordinate (H) at (12,8);
-\fill (G) circle (2pt) node[left] {$G=(0,2/3)$};
-\fill (H) circle (2pt) node[right] {$H=(1,2/3)$};
-\draw [very thick,dotted] (G) -- (H);
+\node[left] at (G) {$G=(0,2/3)$};
+\node[right] at (H) {$H=(1,2/3)$};
+\draw (G) -- (H);
 \end{tikzpicture}
 \end{center}
 \selectlanguage{hebrew}
 \caption{בניית קטע קו באורך
  $1/3$}\label{f.lang}
 \end{figure}
-
-בנו את הקו
+נבנה את הקו
 $\overline{EF}$
 ניצב ל-%
 $\overline{AB}$
-כך שהוא עובר דרך 
+דרך 
 $K$,
-ובנו את 
+ונבנה את 
 $\overline{GH}$,
 השיקוף של
 $\overline{BC}$
 סביב
 $\overline{EF}$.
-נסמן צלע של הריבוע 
-$a+1$
-ונוכיח ש-%
-$a=\sqrt[3]{2}$
-(איור~%
-\ref{f.doubling})
+חילקנו את צלע הריבוע לקטעים באורך 
+$1/3$.
 
 נשמתש באקסיומה $6$ כדי להניח את 
 $C$
@@ -731,113 +671,108 @@ $F$
 $F'$
 על
 $\overline{GH}$.
-סמנו את נקודת החיתוך של הקיפול עם
+נסמן ב-%
+$L$
+את נקודת החיתוך של הקיפול עם
 $\overline{BC}$ 
+ונסמן 
 ב-%
-$Q$,
-וסמנו את אורכו של
-$\overline{BQ}$
-ב-%
-$b$.
-האורך של קטע הקו 
-$\overline{QC}$
+$b$
+את אורכו של
+$\overline{BL}$.
+נשנה את סימון הצלע של הריבוע ל-%
+$a+1$
+כאשר
+$a=\overline{AC'}$.
+אורכו של
+$\overline{LC}$
 הוא
-$(a+1)-b$.
-
+$(a+1)-b$
+(איור~%
+\ref{f.doubling}).
 \begin{theorem}
 $\overline{AC'}=\sqrt[3]{2}$.
 \end{theorem}
 
 \begin{proof}
 לאחר ביצוע הקיפול, קטע הקו
-$\overline{QC,}$
+$\overline{LC'}$
 הוא שיקוף של קטע הקו
-$\overline{QC}$
+$\overline{LC}$
 מאותו אורך, וקטע הקו
 $\overline{C'F'}$
 הוא שיקוף של קטע הקו
-$\overline{CF}$
-באותו אורך. מסימוני האורכים על
-$\overline{AB}$
-אפשר לראות שאורכו של
-$\overline{GC'}$
-הוא:
+$\overline{CF}$.
+מכאן ש:
 \begin{equation}
 \overline{GC'}=a-\disfrac{a+1}{3}=\disfrac{2a-1}{3}\,.\label{eq.one-third}
 \end{equation}
-לבסוף,
-$\angle FCQ$
-היא זווית ישרה, לכן גם השיקוף
-$\angle F'C'Q$ 
-הוא זווית ישרה.
-
-
-\begin{figure}
+$\angle FCL$
+היא זווית ישרה, לכן גם
+$\angle F'C'L$ 
+היא זווית ישרה.
+\begin{figure}[tb]
 \begin{center}
-
-\begin{tikzpicture}[scale=.6]
+\begin{tikzpicture}[scale=.65]
 % Draw and label square
 \coordinate (A) at (0,12);
 \coordinate (B) at (0,0);
 \coordinate (C) at (12,0);
 \coordinate (D) at (12,12);
-\fill (A) circle (2pt) node[left]  {$A$};
-\fill (B) circle (2pt) node[left]  {$B$};
-\fill (C) circle (2pt) node[right] {$C$};
-\fill (D) circle (2pt) node[right] {$D$};
-\draw (B) rectangle +(12pt,12pt);
-\draw[rotate=90] (C) rectangle +(12pt,12pt);
+\node[left]  at (A) {$A$};
+\node[left]  at (B) {$B$};
+\node[right] at (C) {$C$};
+\node[right] at (D) {$D$};
+\draw (B) rectangle +(9pt,9pt);
+\draw[rotate=90] (C) rectangle +(9pt,9pt);
 \draw [thick] (A)  -- (B) -- (C) -- (D) -- cycle;
 
 % Draw line one-third from botton
 \coordinate (E)  at (0,4);
 \coordinate (F) at (12,4);
-\fill (E) circle (2pt) node[left] {$E$};
-\fill (F) circle (2pt) node[right] {$F$};
-\draw [very thick,dotted,name path=ef] (E) -- (F);
+\node[left] at (E) {$E$};
+\node[right] at (F) {$F$};
+\draw [name path=ef] (E) -- (F);
 
 % Draw line two-thirds from bottom
 \coordinate (G)  at (0,8);
 \coordinate (H) at (12,8);
-\fill (G) circle (2pt) node[left] {$G$};
-\fill (H) circle (2pt) node[right] {$H$};
-\draw[rotate=-90] (G) rectangle +(12pt,12pt);
-\draw [very thick,dotted] (G) -- (H);
+\node[left] at (G) {$G$};
+\node[right] at (H) {$H$};
+\draw[rotate=-90] (G) rectangle +(9pt,9pt);
+\draw (G) -- (H);
 
 % Draw reflections of C and F
 \coordinate (CP) at (0,5.31);
 \coordinate (FP) at (2.96,8);
-\fill (CP) circle (2pt)
-  node[left] {$C'$}
-  node[above right,yshift=8pt] {$\alpha$}
-  node[below right,xshift=-2pt,yshift=-12pt] {$\alpha'$};
-\fill (FP) circle (2pt)
-  node[above] {$F'$}
-  node[below left,xshift=-8pt] {$\alpha'$};
-\draw[rotate=-50] (CP) rectangle +(12pt,12pt);
-\draw[very thick,dotted] (CP) -- (FP);
+\node[left] at (CP) {$C'$};
+\node[above right,yshift=8pt] at (CP) {$\alpha$};
+\node[below right,xshift=-2pt,yshift=-12pt] at (CP) {$\alpha'$};
+\node[above] at (FP) {$F'$};
+\node[below left,xshift=-8pt] at (FP) {$\alpha'$};
+\draw[rotate=-50] (CP) rectangle +(9pt,9pt);
+\draw (CP) -- (FP);
 
 % Draw fold and fold arrows
 % Tangent is y = 2.26x - 10.9
 % Crosses x axis at (4.83,0)
-\coordinate (Q) at (4.83,0);
-\fill (Q) circle (2pt)
-    node[below] {$Q$}
-    node[above left,xshift=-8pt] {$\alpha$};
-\draw [very thick,dashed,name path=jd] (Q) -- node[very near end,left] {$l$} (10,12);
+\coordinate (J) at (4.83,0);
+\node[below] at (J) {$L$};
+\node[above left,xshift=-8pt] at (J) {$\alpha$};
+\draw [very thick,dashed,name path=jd] (J) -- node[very near end,left] {$l$} (10,12);
 \draw[thick,dotted,bend right=40,->] (C) to ($(CP)+(4pt,0)$);
 \draw[thick,dotted,bend right=40,->] (F) to ($(FP)+(4pt,4pt)$);
 
 % Draw hypotenuses of right triangles
-\draw[very thick,dotted] (CP) -- (Q);
-\path (Q)  -- (C);
+\draw (CP) -- (J);
+\path (J)  -- (C);
 
 % Labels on BC and hypotenuses
-\path (CP) -- node[right] {$(a+1)-b$} (Q);
-\path (Q)  -- node[below] {$(a+1)-b$} (C);
-\path (B)  -- node[below] {$b$} (Q);
-\path (C)  -- node[right] {$\disfrac{a+1}{3}$} (F);
-\path (CP) -- node[right,xshift=10pt] {$\disfrac{a+1}{3}$} (FP);
+\path (CP) -- node[right] {$(a+1)-b$} (J);
+\path (J)  -- node[below] {$(a+1)-b$} (C);
+\path (B)  -- node[below] {$b$} (J);
+\path (C)  -- node[right] {$\displaystyle\frac{a+1}{3}$} (F);
+\path (CP) -- node[right,xshift=10pt] {$\displaystyle\frac{a+1}{3}$} (FP);
 
 % Labels on AB
 \draw[<->] ($(A)+(-1,0)$)    --
@@ -845,9 +780,9 @@ $\angle F'C'Q$
 \draw[<->] ($(CP)+(-1,0)$)   --
   node[fill=white] {$1$} ($(B)+(-1,0)$);
 \draw[<->] ($(CP)+(-2.5,0)$) --
-  node[fill=white] {$a-\disfrac{a+1}{3}$} ($(G)+(-2.5,0)$);
+  node[fill=white] {$\displaystyle\frac{2a-1}{3}$} ($(G)+(-2.5,0)$);
 \draw[<->] ($(A)+(-2.5,0)$) --
-  node[fill=white] {$\disfrac{a+1}{3}$} ($(G)+(-2.5,0)$);
+  node[fill=white] {$\displaystyle\frac{a+1}{3}$} ($(G)+(-2.5,0)$);
 \end{tikzpicture}
 \end{center}
 \selectlanguage{hebrew}
@@ -855,39 +790,46 @@ $\angle F'C'Q$
 $\sqrt[3]{2}$}
 \label{f.doubling}
 \end{figure}
-$\triangle C'BQ$
+
+$\triangle C'BL$
 הוא משולש ישר-זווית ולפי משפט פיתגורס:
 \begin{eqnlabels}
 1^2 + b^2 &=& ((a+1)-b)^2\\
-%&=& a^2+2a+1 - 2(a+1)b + b^2\\
-%a^2+2a - 2(a+1)b&=&0\\
 b&=&\disfrac{a^2+2a}{2(a+1)}\label{eq.value-of-b}\,.
 \end{eqnlabels}
-$\angle GC'F' + \angle F'C'Q + \angle QC'B = 180^\circ$
-כי הם מרכיבים את הקו
+$\angle GC'F' + \angle F'C'L + \angle LC'B = 180^\circ$
+כי הם מרכיבים את הקו הישר
 $\overline{GB}$.
 נסמן
 $\alpha=\angle GC'F'$:
 \[
-\angle QC'B=180^\circ - \angle F'C'Q - \angle GC'F'= 90^\circ -\alpha\,.
+\angle LC'B=180^\circ - \angle F'C'L - \angle GC'F'= 90^\circ -\alpha\,,
 \]
-נסמן
+ונסמן
 $\alpha'=90^\circ-\alpha$.
-$\triangle C'BQ$, $\triangle F'GC'$
+המשולשים
+$\triangle C'LB$, $\triangle C'F'G$
 הם משולשים ישר-זווית, ולכן 
-$\angle C'QB=\alpha$
+$\angle C'LB=\alpha$
 ו-%
 $\angle C'F'G=\alpha'$.
-מכאן שהמשולשים דומים וממשוואה~%
+מכאן ש--%
+$\triangle C'BL\sim\triangle F'GC'$
+ו:
+\[
+\frac{\overline{BL}}{\overline{C'L}}=\frac{\overline{GC'}}{\overline{C'F'}}\,.
+\]
+ממשוואה~%
 \ref{eq.one-third}
 מתקבלת:
 \[
 \disfrac{b}{(a+1)-b}=\disfrac{\disfrac{2a-1}{3}}{\disfrac{a+1}{3}}\,.
 \]
-נציב עבור
+נשתמש בערכו של
 $b$
-במשוואה%
-~\ref{eq.value-of-b}:
+ממשוואה%
+~\ref{eq.value-of-b}
+ונקבל:
 \begin{eqn}
 \disfrac{\disfrac{a^2+2a}{2(a+1)}}{(a+1)-\disfrac{a^2+2a}{2(a+1)}}&=&\disfrac{2a-1}{a+1}\\
 %\disfrac{a^2+2a}{(a+1)\cdot 2(a+1)-(a^2+2a)}&=&\disfrac{2a-1}{a+1}\\
@@ -907,6 +849,12 @@ $a=\sqrt[3]{2}$.
 \L{Beloch}
 להכפלת קוביה%
 }\label{s.cube2}
+
+הקיפול של 
+\L{Beloch}
+(אקסיומה~
+$6$)
+מסוגל לפתור משוואות ממעלה שלוש ולכן סביר לשער שניתן להשתמש בו כדי להכפיל קוביה. הנה בנייה ישירה שמשתמשת בקיפול.
 
 \textbf{הבנייה:}
 נסמן את הנקודה
@@ -954,7 +902,7 @@ $x$
 $\overline{OY}=\sqrt[3]{2}$.
 \end{theorem}
 
-\begin{figure}[tbh]
+\begin{figure}[tb]
 \begin{center}
 
 \begin{tikzpicture}[scale=.9]
@@ -974,8 +922,8 @@ $\overline{OY}=\sqrt[3]{2}$.
   node[left,yshift=-12pt] {$(0,-2)$}
   node[above right,yshift=12pt] {$\alpha'$};
 
-\draw[thick] (0,-4.5) --  node[very near end,above left,yshift=12pt] {$y$-axis} +(0,10);
-\draw[thick] (-5,0)   -- node[very near start,above left] {$x$-axis} +(12,0);
+\draw[thick] (0,-4.5) --  node[very near end,above left,yshift=12pt] {$y$\R{ציר-}} +(0,10);
+\draw[thick] (-5,0)   -- node[very near start,above left] {$x$\R{ציר-}} +(12,0);
 %\draw[thick] (0,-4.5) --  node[very near end,above left,yshift=12pt] {$y$-\R{ציר}} +(0,10);
 %\draw[thick] (-5,0)   -- node[very near start,above left] {$x$-\R{ציר}} +(12,0);
 \draw[very thick] (2,-4.5) -- node[very near start, right,yshift=-10pt] {$p\!:x=1$} +(0,10);
@@ -1024,30 +972,32 @@ $\overline{AA'}$
 $\overline{BB'}$,
 ולכן
 $\overline{AA'}\|\overline{BB'}$.
-לפי זוויות מתחלפות
-$\angle XAY =\angle AXB=\alpha$.
-לפי משולשים ישר-זווית, מתקבלים סימוני הזוויות האחרות,
-ו-%
-$\triangle AOY\!\sim \!\triangle YOX \!\sim\! \triangle XOB$.
-ידוע אורכם של קטעי הקו
-$\overline{OA}=1$, $\overline{OB}=2$,
-ולכן:
-
+$\angle XAY =\angle AXB=\alpha$
+לפי זוויות מתחלפות. סימון הזוויות האחרות נובע מהתכונות של משולשים ישר-זווית. ניתן להסיק ש-%
+$\triangle AOY\sim \triangle YOX \sim \triangle XOB$
+ונתון
+$\overline{OA}=1$, $\overline{OB}=2$:
 \begin{eqn}
 \disfrac{\overline{OY}}{\overline{OA}}&=&\disfrac{\overline{OX}}{\overline{OY}}=\disfrac{\overline{OB}}{\overline{OX}}\\
-\disfrac{\overline{OY}}{1}&=&\disfrac{\overline{OX}}{\overline{OY}}=\disfrac{2}{\overline{OX}}\\
-\overline{OY}^2&=&\overline{OX}\\
-\overline{OY}\:\overline{OX}&=&2\\
-\overline{OY}^3&=&2\\
-\overline{OY}&=&\sqrt[3]{2}\,.
+\disfrac{\overline{OY}}{1}&=&\disfrac{\overline{OX}}{\overline{OY}}=\disfrac{2}{\overline{OX}}\,.
 \end{eqn}
+משני היחסים הראשונים נקבל
+$\overline{OY}^3=2$
+ומהשני והשלישי נקבל
+$\overline{OY}\:\overline{OX}=2$.
+נציב עבור
+$\overline{OX}$
+ונקבל
+$\overline{OY}^3=2$
+ ו-%
+$\overline{OY}=\sqrt[3]{2}$.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{בניית מתושע}\label{s.nonagon}
 
-ניתן לבנות מתושע (מצולע משוכלל עם תשע צלעות) על ידי פיתוח משוואה קובית עבור הזווית המרכזית ופתרון המשוואה באמצעות השיטה של
+ניתן לבנות מתושע (מצולע משוכלל עם תשע צלעות) על ידי פיתוח משוואה ממעלה שלוש עבור הזווית המרכזית ופתרון המשוואה באמצעות השיטה של
 \L{Lill}
 והקיפול של
 \L{Beloch}.
@@ -1058,21 +1008,19 @@ $\theta=360^\circ/9=40^\circ$.
 \[
 \cos 3\theta=4\cos^3 \theta -3\cos\theta\,.
 \]
-אם נתון 
-$a=\cos 3\theta$
-ונצליח לפתור את המשוואה ממעלה שלוש
-$4x^3-3x-a=0$,
-נקבל בנייה של קטע קו באורך הקוסינוס של הזווית המרכזית של המצולע. בהמשך נראה איך ניתן לבנות את המצולע עצמו. עבור מתושע המשוואה היא
-$4x^3-3x+\frac{1}{2}=0$
-כי
-$\cos 120^\circ=-\frac{1}{2}$.
+יהי 
+$x=\cos 40^\circ$.
+עבור המתושע
+$4x^3-3x+(1/2)=0$
+כי 
+$\cos 3\cdot 40^\circ=\cos 120^\circ=-(1/2)$.
 איור%
 ~\ref{f.nonagon2}
 מראה את המסלולים עבור המשוואה לפי השיטה של 
 \L{Lill}.
-\begin{figure}
+\begin{figure}[tb]
 \begin{center}
-\begin{tikzpicture}[scale=1.1]
+\begin{tikzpicture}[scale=.85]
 % Draw help lines and axes
 \draw[step=10mm,white!60!black] (-1,-4) grid (9,1);
 \draw[thick] (-1,0) -- (9,0);
@@ -1087,15 +1035,13 @@ $\cos 120^\circ=-\frac{1}{2}$.
 \coordinate (B) at (4,0);
 \coordinate (C) at (7,0);
 \coordinate (D) at (7,-.5);
-\foreach \x in {A,B,C,D}
-  \fill (\x) circle(2pt);
 \node[above left] at (A) {$P$};
-\node[below right,xshift=12pt] at (A) {\sm{-37.4537^\circ}};
+\node[below right,xshift=12pt] at (A) {$37.45^\circ$};
 \node[below right] at (D) {$Q$};
 
 % Draw first path
 \draw[very thick,-{Stealth[scale=1.4,inset=2pt]}] 
-  (A) -- node[below] {$a_3$} (B);
+  (A) -- node[below,xshift=6pt] {$a_3$} (B);
 \draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick]
   (B) -- ($(B)+(0,.1)$);
 \draw[name path=c,very thick,{Stealth[scale=1.4,inset=2pt]}-]
@@ -1104,69 +1050,76 @@ $\cos 120^\circ=-\frac{1}{2}$.
   (C) -- node[right,yshift=-2pt] {$a_0$} (D);
 
 % Draw extension of second segment of first path
-\draw[very thick,loosely dotted,name path=b] 
-  ($(B)+(0,-4)$) -- ($(B)+(0,1)$);
+\draw[thick,name path=b] 
+  ($(B)+(0,-4)$) -- node[right] {$a_2$} ($(B)+(0,1)$);
 
 % Draw second path
-\path[name path=one] (A) -- +(-37.4537:6cm);
+\path[name path=one] (A) -- +(-37.45:6cm);
 \path [name intersections = {of = b and one, by = {R}}];
-\fill (R) circle (2pt) node[below left] {$R$};
+\node[below left] at (R) {$R$};
 \draw[thick,dashed] (A) -- (R);
 
 \path[name path=two] (R) -- +(52.5463:6cm);
 \path [name intersections = {of = c and two, by = {S}}];
-\fill (S) circle (2pt) node[above] {$S$};
+\node[above] at (S) {$S$};
 \draw[thick,dashed] (R) -- (S);
 
 \draw[thick,dashed] (S) -- (D);
 
 % Draw right angle rectangles
-\draw[thick,rotate=52.5463] (R) rectangle +(8pt,8pt);
-\draw[thick,rotate=-127.4537] (S) rectangle +(8pt,8pt);
+\draw[thick,rotate=52.5463] (R) rectangle +(9pt,9pt);
+\draw[thick,rotate=-127.4537] (S) rectangle +(9pt,9pt);
 \end{tikzpicture}
+\end{center}
 \selectlanguage{hebrew}
 \caption{השיטה של
 \L{Lill}
 לבניית מתושע}
 \label{f.nonagon2}
-\end{center}
 \end{figure}
+
 המסלול השני מתחיל מ-%
 $P$
 בזווית 
-$-37.4537^\circ$,
+$-37.45^\circ$
+בערך. פניות של
+$90^\circ$
+ב-%
+$R$
+ואז
+$-90^\circ$
+ב-%
+$S$
+קורמים למסלול לחתוך את המסלול הראשון בנקודת הקצה שלו
+$Q$,
 ולכן
-$x=-\tan (-37.4537)^\circ=0.766044$
+$x=-\tan (-37.45)^\circ=0.766$
 הוא שורש של
-$4x^3-3x+\frac{1}{2}$.
+$4x^3-3x+(1/2)$.
 
 ניתן למצוא את השורש באמצעות הקיפול של 
-\L{Beloch}
-)איור~%
-\ref{f.nonagon-beloch}(.
-נמתח קו מקביל ל-%
-$a_2$.
-בגלל ש-%
-$a_2=0$ 
-הקו נמתח מקביל לקו שהיינו מציירים אם
+\L{Beloch}.
+נמתח קו
+$a_2'$
+מקביל ל-%
 $a_2$
-היה שונה מאפס. באותו מרחק 
-$4$
+באותו מרחק מ-%
+$a_2$
+כמו המרחק של
+$a_2$
 מ-%
-$a_2$
-כמו המרחק מ-%
-$a_2$
-ל-%
 $P$.
-באופן דומה, נמתח קו מקביל ל-%
+למרות שאורכו של
+$a_2$ 
+הוא אפס, עדיין יש לו כיוון (למעלה) ולכן ניתן לבנות קו מקביל. באופן דומה, נמתח קו
+$a_1'$
+מקביל ל-%
 $a_1$
-באותו מרחק 
-$\frac{1}{2}$
+באותו מרחק מ-%
+$a_1$
+כמו המרחק של
+$a_1$
 מ-%
-$a_1$
-כמו המרחק מ-%
-$a_1$
-ל-%
 $Q$.
 $\overline{RS}$,
 הקיפול של
@@ -1175,22 +1128,21 @@ $\overline{RS}$,
 $P$
 ב-%
 $P'$
-על הקו המקביל ל-%
-$a_2$,
+על
+$a_2'$,
 ואת
 $Q$
 ב-%
 $Q'$
-על הקו המקביל ל-%
-$a_1$.
+על
+$a_1'$.
 הקיפול בונה את הזווית
-$\angle SPR=-37.4537^\circ$
+$\angle SPR=-37.45^\circ$
 (איור%
 ~\ref{f.nonagon-beloch}).
-\begin{figure}
+\begin{figure}[tb]
 \begin{center}
-
-\begin{tikzpicture}[scale=1.1]
+\begin{tikzpicture}[scale=.85]
 % Draw help lines and axes
 \draw[step=10mm,white!60!black] (-1,-7) grid (9,1);
 \draw[thick] (-1,0) -- (9,0);
@@ -1205,10 +1157,7 @@ $\angle SPR=-37.4537^\circ$
 \coordinate (B) at (4,0);
 \coordinate (C) at (7,0);
 \coordinate (D) at (7,-.5);
-\foreach \x in {A,B,C,D}
-  \fill (\x) circle(2pt);
 \node[above right] at (A) {$P$};
-\node[below right,xshift=12pt] at (A) {\sm{-37.4537^\circ}};
 \node[below right] at (D) {$Q$};
 
 % Draw first path
@@ -1223,72 +1172,66 @@ $\angle SPR=-37.4537^\circ$
 
 % Draw extension of second segment of first path
 \draw[very thick,loosely dotted,name path=b] 
-  ($(B)+(0,-7)$) -- ($(B)+(0,1)$);
+  ($(B)+(0,-7)$) -- node[right,near end] {$a_2$} ($(B)+(0,1)$);
 
 % Draw second path
-\path[name path=one] (A) -- +(-37.4537:6cm);
+\path[name path=one] (A) -- +(-37.45:6cm);
 \path [name intersections = {of = b and one, by = {R}}];
-\fill (R) circle (2pt) node[below left] {$R$};
-%\draw[thick] (A) -- (R);
-
-\path[name path=two] (R) -- +(52.5463:6cm);
+\node[below left] at (R) {$R$};
+\path[name path=two] (R) -- +(52.55:6cm);
 \path [name intersections = {of = c and two, by = {S}}];
-\fill (S) circle (2pt) node[above] {$S$};
-\draw[thick,dashed] (R) -- (S);
+\node[above] at (S) {$S$};
+\draw[very thick,dashed] (R) -- (S);
 
 % Draw parallel lines
-\draw[very thick,loosely dotted,name path=para-2] 
-  (8,1) -- (8,-7);
-\draw[very thick,loosely dotted,name path=para-1] 
-  (-1,.5) -- (9,.5);
+\draw[thick,name path=para-2] 
+  (8,1) -- node[right,yshift=8pt] {$a_2'$} (8,-7);
+\draw[thick,name path=para-1] 
+  (-1,.5) -- node[right,xshift=44mm] {$a_1'$} (9,.5);
 
 % Draw second segments of the folds
-\path[name path=p-two] (A) -- +(-37.4537:11cm);
+\path[name path=p-two] (A) -- +(-37.45:11cm);
 \path [name intersections = {of = para-2 and p-two, by = {PP}}];
-\fill (PP) circle (2pt) node[below left] {$P'$};
-\draw[ultra thick,dotted] (A) -- (PP);
+\node[below left] at (PP) {$P'$};
+\draw[very thick,dotted] (A) -- (PP);
 
-\path[name path=p-one] (D) -- +(142.5463:2cm);
+\path[name path=p-one] (D) -- +(142.55:2cm);
 \path [name intersections = {of = para-1 and p-one, by = {QP}}];
-\fill (QP) circle (2pt) node[above] {$Q'$};
-\draw[ultra thick,dotted] (D) -- (QP);
+\node[above] at (QP) {$Q'$};
+\draw[very thick,dotted] (D) -- (QP);
 
 % Draw right angle indications
-\draw[thick,rotate=-37.4537] (R) rectangle +(8pt,8pt);
-\draw[thick,rotate=-127.4537] (S) rectangle +(8pt,8pt);
+\draw[thick,rotate=-37.45] (R) rectangle +(9pt,9pt);
+\draw[thick,rotate=-127.4537] (S) rectangle +(9pt,9pt);
 \end{tikzpicture}
 \end{center}
 \selectlanguage{hebrew}
 \caption{בנית מתושע באמצעות הקיפול של Beloch}\label{f.nonagon-beloch}
 \end{figure}
 
-$\cos\theta=0.766044$
-הוא שורש של המשוואה. כדי לבנות את הזווית המרכזית אנו צריכים לבנות  את
-$\cos^{-1} 0.766044=40^\circ$.
-נבנה קטע קו באורך
-$1$
-וקטע קו הניצב לו באורך 
-$0.766044$.
-מהשלמת הבנייה למשולש ישר-זווית מתקבלת הזווית
-$37.4537^\circ$,
-כי:
-\[
-\tan 37.4537^\circ = \disfrac{0.766044}{1}\,.
-\]
+לפי השיטה של
+\L{Lill}
+$-\tan (-37.45^\circ)\approx 0.766$
+ולכן
+$\cos \theta \approx 0.766$
+הוא השורש של המשוואה עבור הזווית המרכזית
+$\theta$.
+נסיים את בניית המתושע על ידי בניית
+$\cos^{-1} 0.766\approx 40^\circ$.
 
-למשולש ישר-זווית
+במשולש ישר-הזווית
 $\triangle ABC$
-עם 
+עם
 $\angle CAB\approx 37.45^\circ$
 ו-%
 $\overline{AB}=1$
-הצלע הנגדי הוא
+הצלע הנגדית היא
 $\overline{BC}\approx 0.766$
-לפי ההגדרה של טנגנס (איור%
-~\ref{f.nonagon5-eq}).
-קפל 
+לפי ההגדרה של טנגונס 
+(\ref{f.nonagon5-eq}).
+נקפל את
 $\overline{CB}$
-על
+מעל ל-%
 $\overline{AB}$
 כך שהשיקוף של
 $C$
@@ -1296,29 +1239,26 @@ $C$
 $D$
 ו-%
 $\overline{DB}=0.766$.
-המשך את
+נמשיך את
 $\overline{DB}$
-ובנה
+ונבנה את
 $E$
 כך ש-%
 $\overline{DE}=1$.
-קפל
+נקפל את
 $\overline{DE}$
 כדי לשקף את
-$E$ 
+$E$
 ב-%
 $F$
-על ההמשך אל
+בהמשך של
 $\overline{BC}$
-(איור%
-~\ref{f.nonagon5-central}).
+(\ref{f.nonagon5-central}).
 אזי:
 \[
 \angle BDF=\cos^{-1} \frac{0.766}{1}\approx 40^\circ\,.
 \]
-
-
-\begin{figure}[ht]
+\begin{figure}[tb]
 \begin{center}
 \begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}[scale=1]
@@ -1343,7 +1283,8 @@ $\overline{BC}$
 \vertex{D};
 \vertex{E};
 \end{tikzpicture}
-\caption{The tangent that is the solution of the equation for the nonagon}\label{f.nonagon5-eq}
+\caption{הטנגונס הוא הפתרון של המשוואה של המתושע}
+\label{f.nonagon5-eq}
 \end{subfigure}
 \hspace{3em}
 \begin{subfigure}{.4\textwidth}
@@ -1373,103 +1314,10 @@ $\overline{BC}$
 \vertex{A};
 \vertex{D};
 \end{tikzpicture}
-\caption{The cosine of the central angle of the nonagon}\label{f.nonagon5-central}
+\caption{הקוסינוס של הזווית המרכזית של המתושע}\label{f.nonagon5-central}
 \end{subfigure}
 \end{center}
 \end{figure}
-
-
-%\begin{center}
-%\begin{tikzpicture}[scale=.8]
-%\draw (0,0) coordinate (A) -- node[below] {$1$} (4,0) coordinate (B);
-%\draw (B) -- node[right] {$0.766044$} 
-%  ($(B)+(0,0.766044*4)$) coordinate (C);
-%\draw (A) -- (C);
-%\draw[rotate=90] (B) rectangle +(8pt,8pt);
-%\fill (A) circle (1pt) node[above left] {$A$}
-%  node[above right,xshift=14pt] {$37.4537^\circ$};
-%\fill (B) circle (1pt) node[above right] {$B$};
-%\fill (C) circle (1pt) node[right] {$C$};
-%\end{tikzpicture}
-%\end{center}
-נקפל את הצלע
-$\overline{CB}$
-מעל 
-$\overline{AB}$
-ונסמן את המקום עליו מונח הנקודה
-$C$
-ב-%
-$D$.
-נעתיק את קטע הקו
-$\overline{AB}$ 
-ימינה )ללא סיבוב( כך שהנקודה
-$A$
-מונחת על
-$D$,
-ונסמן את המקום עליו מונחת הנקודה 
-$B$
-ב-% 
-$E$:
-
-%\begin{center}
-%
-%\begin{tikzpicture}[scale=.8]
-%\coordinate (A) at (0,0);
-%\coordinate (B) at (4,0);
-%\draw (B) -- node[right] {$0.766044$} 
-%  ($(B)+(0,0.766044*4)$) coordinate (C);
-%\draw (A) -- (C);
-%\draw[rotate=90] (B) rectangle +(8pt,8pt);
-%\fill (A) circle (1pt) node[above left] {$A$};
-%\fill (B) circle (1pt) node[above right] {$B$};
-%\fill (C) circle (1pt) node[right] {$C$};
-%\coordinate (D) at (0.233956*4,0);
-%\fill (D) circle (1pt) node[below left] {$D$};
-%\coordinate (E) at ($(D)+(4,0)$);
-%\draw (D) -- node[fill=white] {$0.766044$} (B);
-%\draw (B) -- (E);
-%\fill (E) circle(1pt) node[above right] {$E$};
-%\draw[very thick,dotted,->,bend right=50] ($(C)+(-.2,0)$) to ($(A)+(.94,.2)$);
-%\draw[<->] ($(D)+(0,-.6)$) -- node[fill=white] {$1$} ($(E)+(0,-.6)$);
-%\end{tikzpicture}
-%\end{center}
-
-נקפל את 
-$\overline{DE}$
-מעל להמשך של 
-$\overline{CB}$
-כך שהנקודה
-$E$
-מונחת על הקו בנקודה
-$F$:
-%\begin{center}
-%
-%\begin{tikzpicture}[scale=.8]
-%\coordinate (B) at (4,0);
-%\draw (B) -- ($(B)+(0,0.766044*4)$) coordinate (C);
-%\draw[rotate=90] (B) rectangle +(8pt,8pt);
-%\fill (B) circle (1pt) node[above right] {$B$};
-%\fill (C) circle (1pt) node[right] {$C$};
-%\coordinate (D) at (0.233956*4,0);
-%\fill (D) circle (1pt) node[above left] {$D$}
-%  node[above right,xshift=10pt,yshift=4pt] {$40^\circ$};
-%\coordinate (E) at ($(D)+(4,0)$);
-%\draw (D) -- node[fill=white] {$0.766044$} (B);
-%\draw (B) -- (E);
-%\fill (E) circle(1pt) node[right] {$E$};
-%\coordinate (F) at ($(B)+(0,4)$);
-%\draw[very thick,dotted,->,bend right=50] ($(E)+(.1,.2)$) to ($(F)+(.2,0)$);
-%\draw (B) -- ($(B)+(0,5)$);
-%\fill (F) circle (1pt) node[left] {$F$};
-%\draw (D) -- node[fill=white] {$1$} (F);
-%\draw[<->] ($(D)+(0,-.6)$) -- node[fill=white] {$1$} ($(E)+(0,-.6)$);
-%\end{tikzpicture}
-%\end{center}
-נקבל:
-\[
-\angle BDF=\cos^{-1} \disfrac{0.766044}{1}=40^\circ\,.
-\]
-
 \subsection*{מה ההפתעה?}
 
 ראינו בפרקים%

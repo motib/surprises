@@ -19,8 +19,7 @@ $70$
 $210$
 (איור%
 ~\ref{f.congruent-first-example}).
-פרק זה מראה שנתון משולש עם אורכי צלעות רציונליים, ניתן לבנות משולש לא-חופף עם אורכי צלעות רציונליים, ועם אותו היקף ושטח.
-בסוף הפרק הבאתי הוכחה אלגנטית לנוסחה של הרון לשטח של משולש. את השיטה נדגים על דוגמה ונראה שלמשולש עם הצלעות 
+פרק זה מראה שנתון משולש עם אורכי צלעות רציונליים, ניתן לבנות משולש לא-חופף עם אורכי צלעות רציונליים, ועם אותו היקף ושטח. את השיטה נדגים על דוגמה ונראה שלמשולש עם הצלעות 
 $(3,4,5)$
 ולמשולש עם הצלעות
 $(\frac{156}{35},\frac{101}{21},\frac{41}{15})$
@@ -29,7 +28,7 @@ $12$
 ואותו שטח
 $6$.
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
 \begin{tikzpicture}[scale=1.3]
 \coordinate (A1) at (0,0);
@@ -50,32 +49,25 @@ $6$.
 \caption{משולשים לא חופפים עם אותו שטח ואותו הקיף}\label{f.congruent-first-example}
 \end{figure}
 
-
 \section{ממשולש לעקומה אליפטית}
 
-נתון משולש עם קודקודים
-$A,B,C$
-וצלעות
-$a,b,c$,
-חוצי הזוויות נפגשים בקודה אחת
+חוצי הזווית של משולש נחתכים בנקודה 
 $O$
-שהוא המרכז של מעגל החסום על ידי המשולש )איור~%
-\ref{f.inscribed}(.%
-\footnote{במעגל חסום וצלעות משיקים למעגל והעובדה שהם חוצי הזוויות נובעת מהתכונות של משיקים.}
-$OA',OB',OC'$
-הם הגבהים של המשולש. באיור סומנו גם זוגות של זוויות מרכזיות
-$\alpha/2,\beta/2,\gamma/2$.
-השוויון של הזוויות נובע ממשולשים ישר-זווית חופפים:
+הנקראת מרכז המעגל המוקף של המשולש
+\L{(incenter)} (איור%
+~\ref{f.inscribed}).%
+\footnote{%
+כך לפי המילון של האקדמיה ללשון העברית. מקובל לקרוא לנקודה: המרכז של המעגל החסום על ידי המשולש.%
+}%
+נוריד גבהים מ-%
+$O$
+לצלעות. לגבהים אורך
+$r$,
+הרדיוס של המעגל החסום. הגבהים וחוצי הזווית מייצרים שלושה זוגות של משולשים ישרים חופפים:
 \[
 \triangle AOB'\cong \triangle AOC',\quad \triangle BOA'\cong \triangle BOC', \quad \triangle COA'\cong \triangle COB'\,.
 \]
-החפיפת המשולשים מתקבל גם שוויון בין קטעי הקו 
-$u,v,w$
-המחברים את הצלעות עם נקודת ההשקה שלהן עם המעגל.
-
-
-
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
 \begin{tikzpicture}[baseline=-6mm,scale=2.25]
 % Draw base and path two lines at known angles
@@ -155,62 +147,56 @@ $u,v,w$
 \selectlanguage{hebrew}
 \caption{מעגל חסום המוגדר על ידי חיתוך חוצי הזווית משולש}\label{f.inscribed}
 \end{figure}
-
-
-
-השטח 
-$S_{\triangle ABC}$
+הגבהים מחלקים את הצלעות לקטעי קו.
+$u,v,w$.
+שלהן עם המעגל. השטח של
+$\triangle ABC$
 הוא סכום השטחים של 
 $\triangle AOC, \triangle BOC, \triangle AOB$:
-
 \begin{eqnlabels}
-S_{\triangle ABC} &=& \frac{1}{2}(w+v)r + \frac{1}{2}(v+u)r + \frac{1}{2}(u+w)r\label{eq.area1}\\
-S_{\triangle ABC}&=& \frac{1}{2}\cdot 2(u+v+w)r = rs\,, \label{eq.area2}
+A &=& \frac{1}{2}(w+v)r + \frac{1}{2}(v+u)r + \frac{1}{2}(u+w)r\label{eq.area1}\\
+&=& \frac{1}{2}\cdot 2(u+v+w)r\label{eq.area1a}\\
+&=& \frac{1}{2} (a+b+c)r\label{eq.area1b}\\
+&=& rs\,, \label{eq.area2}
 \end{eqnlabels}
 כאשר 
 $s$
-הוא מחצית ההיקף:
-\[
-s=\disfrac{1}{2}(a+b+c)=\disfrac{1}{2}(2u+2v+2w)=u+v+w\,.
-\]
-נבטא את 
+הוא מחצית היקף המשלוש
+$\triangle ABC$. 
+ניתן לבטא את 
 $u,v,w$
-באמצעות פונקציות טריגונומטריות של זוויות המעגל והרדיוס
-$r$:
-
-
-
-
-\begin{eqnlabels}
-\tan \frac{\alpha}{2} &=& \frac{u}{r}\label{eq.alpha}\\
-\tan \frac{\beta}{2} &=& \frac{v}{r}\label{eq.beta}\\
-\tan \frac{\gamma}{2} &=& \frac{w}{r}\label{eq.gamma}\,.
-\end{eqnlabels}
-נסכם ונקבל ביטוי של 
-$s$
-כתלות של הזוויות והרדיוס:
+באמצעות רדיוס המעגל והזוויות המרכזיות
+$\alpha/2,\beta/2,\gamma/2$:
+\begin{equation}\label{eq.uvw}
+\tan \frac{\alpha}{2}= \frac{u}{r},\quad
+\tan \frac{\beta}{2}= \frac{v}{r},\quad
+\tan \frac{\gamma}{2} = \frac{w}{r}\,.
+\end{equation}
+כעת ניתן לבטא את מחצית ההיקף באמצעות הטנגנסים:
 \[
 s = u+v+w = r\tan \frac{\alpha}{2}+r\tan \frac{\beta}{2}+r\tan \frac{\gamma}{2} = r\left(\tan \frac{\alpha}{2}+\tan \frac{\beta}{2}+\tan \frac{\gamma}{2}\right)\,,
 \]
-ולפי המשוואה~%
+ולפי משוואה~%
 \ref{eq.area2}
-$S_{\triangle ABC}=rs$:
-
-\begin{eqnlabels}
-S_{\triangle ABC} &=&r\cdot r\left(\tan \frac{\alpha}{2}+\tan \frac{\beta}{2}+\tan \frac{\gamma}{2}\right)\label{eq.area3}\\
-\frac{S_{\triangle ABC}}{r^2} &=& \tan \frac{\alpha}{2}+\tan \frac{\beta}{2}+\tan \frac{\gamma}{2} \label{eq.area4}\\
-\frac{s^2}{S_{\triangle ABC}} &=& \tan \frac{\alpha}{2}+\tan \frac{\beta}{2}+\tan \frac{\gamma}{2} \label{eq.area5}\,.
-\end{eqnlabels}
+השטח הוא:
+\begin{equation}
+A =sr=r^2\left(\tan \frac{\alpha}{2}+\tan \frac{\beta}{2}+\tan \frac{\gamma}{2}\right)\,.
+\end{equation}
+מ-%
+$r=A/s$,
+ניתן לכתוב את משוואה%
+~\ref{eq.area2}
+כ:
+\begin{equation}
+\tan \frac{\alpha}{2}+\tan \frac{\beta}{2}+\tan \frac{\gamma}{2} = \frac{A}{r^2} = \frac{A}{(A/s)^2} = \frac{s^2}{A}\,.\label{eq.area3}
+\end{equation}
 סכום הזוויות
 $\alpha,\beta,\gamma$
 הוא
-$2\pi$,
-ולכן:
-
+$360^\circ$:
 \begin{eqnlabels}
-%\gamma &=& 2\pi - (\alpha + \beta)\\
-%\gamma/2 &=& \pi - (\alpha/2 + \beta/2)\\
-\tan\gamma/2 &=& \tan(\pi - (\alpha/2 + \beta/2))\\
+\gamma/2 &=& 360^\circ - (\alpha/2 + \beta/2)\\
+\tan\gamma/2 &=& \tan(360^\circ - (\alpha/2 + \beta/2))\\
 \tan\gamma/2&=& -\tan (\alpha/2 + \beta/2)\\
 \tan\gamma/2&=& \frac{\tan\alpha/2 + \tan\beta/2}{\tan\alpha/2 \, \tan\beta/2-1}\,.\label{eq.tangent1}
 \end{eqnlabels}
@@ -218,57 +204,68 @@ $2\pi$,
 ~\ref{thm.tangent-sum}).
 
 נפשט את הסימון על ידי הגדרת נעלמים עבור הטנגנסים:
-\[
+\begin{equation}
+\label{eq.variables-for-tangents}
 x=\tan \frac{\alpha}{2},\quad
 y=\tan \frac{\beta}{2},\quad
 z=\tan \frac{\gamma}{2}\,.
-\]
-עם סימון זה משוואה~%
+\end{equation}
+לפי משוואה~%
 \ref{eq.tangent1}
-היא:
-
+ניתן לבטא את
+$z=\tan \gamma/2$
+כתלות ב-%
+$x,y$:
 \begin{equation}
 z = \frac{x+y}{xy-1}\,.\label{eq.xy1}
 \end{equation}
-ומשוואה~%
-\ref{eq.area5}
+עם סימן זה משוואה~%
+\ref{eq.area3}
 היא:
-
 \begin{equation}
-x+y+\frac{x+y}{xy-1}=\frac{s^2}{S_{\triangle ABC}}\,.\label{eq.xy2}
+x+y+\frac{x+y}{xy-1}=\frac{s^2}{A}\,.\label{eq.xy2}
 \end{equation}
-
-
-
+נתון ערכים קבועים של
+$A$
+ו-%
+$s$,
 האם קיימים פתרונות שונים למשוואה%
 ~\ref{eq.xy2}?
+
 עבור משולש ישר-הזווית
 $(3,4,5)$:
-
+\[
+\frac{s^2}{A} = \frac{\left(\frac{1}{2}(3+4+5)\right)^2}{\frac{1}{2}\cdot 3\cdot 4} = \frac{6^2}{6}=6\,.
+\]
+אם קיים פתרון אחר למשוואה%
+~\ref{eq.xy2}
+עם
+$s^2/A=6$,
+ניתן לכתוב אותו כ:
 \begin{eqnlabels}
-x+y+\frac{x+y}{xy-1}=\frac{6^2}{6}=6\\
-x^2y + xy^2 -6xy + 6 = 0\,.\label{eq.elliptic}
+x+y+\frac{x+y}{xy-1}&=&6\\
+x^2y + xy^2 -6xy + 6 &=& 0\,.\label{eq.elliptic}
 \end{eqnlabels}
+משוואה זו נקראת עקומה אליפטית
+\L{(elliptic curve)}.
 
-
-
-בסעיף הבא נחפש פתרונות נוספים למשוואה זו.
-
-\section{פתרון המשוואה לעקומה אליפטית}
+\section{פתרון המשוואה של העקומה האליפטית}
 
 העקומה באיור~%
 \ref{f.two-secants}
-היא של ציור חלקי של המשוואה
+היא גרף חלקי של משוואה
 \ref{eq.elliptic}.
-כל נקודה בעקומה ברביע הראשון היא פתרון, כי אורכי הצלעות חייבים להיות חיוביים. 
+כל נקודה על העקומה ברביע הראשון היא פתרון, כי אורכי הצלעות חייבים להיות חיוביים. הנקודות
 $A,B,D$
 מתאימות למשולש
 $(3,4,5)$
-כפי שנראה בהמשך. כדי למצוא פתרונות רציונליים נוספים, נשתמש ב-%
+כפי שנראה בסעיף%
+~\ref{s.triangle-from-elliptic}.
+כדי למצוא פתרונות רציונליים נוספים, נשתמש ב-%
 \textbf{שיטת שני סקנסים}
 \L{(\textbf{method of two secants})}.
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
 \begin{tikzpicture}[scale=1]
 \draw[very thin,step=10mm] (-4,-4) grid (4,4);
@@ -338,93 +335,21 @@ $(3,4,5)$
 \selectlanguage{hebrew}
 \caption{שיטת שני הסקנטים}\label{f.two-secants}
 \end{figure}
-
-
-%\begin{figure}[tb]
-%\begin{center}
-%
-%\begin{tikzpicture}[scale=1.5]
-%\draw[thin,step=10mm] (-4,-4) grid (4,4);
-%\draw[thick] (-4,0) -- (4,0);
-%\draw[thick] (0,-4) -- (0,4);
-%\foreach \x in {-3,...,4}
-%  \node at (\x-.2,-.2) {\sm{\x}};
-%\foreach \y in {-3,...,-1}
-%  \node at (+.2,\y-.3) {\sm{\y}};
-%\foreach \y in {1,...,4}
-%  \node at (+.2,\y-.3) {\sm{\y}};
-%
-%\draw[very thick,domain=.936:3.306,samples=200] plot (\x,{
-%(
-%  (6*\x-\x*\x)+
-%  sqrt(
-%   (\x*\x-6*\x)^2 -
-%   4*\x*6
-%  )
-%)/
-%(2*\x)
-%});
-%
-%\draw[very thick,domain=.936:3.306,samples=100] plot (\x,{
-%(
-%  (6*\x-\x*\x)-
-%  sqrt(
-%   (\x*\x-6*\x)^2 -
-%   4*\x*6
-%  )
-%)/
-%(2*\x)
-%});
-%
-%\draw[very thick,domain=-2.5:-.25,samples=100] plot (\x,{
-%(
-%  (6*\x-\x*\x)+
-%  sqrt(
-%   (\x*\x-6*\x)^2 -
-%   4*\x*6
-%  )
-%)/
-%(2*\x)
-%});
-%
-%\coordinate (A) at (2,3);
-%\coordinate (B) at (1,2);
-%\coordinate (C) at (-1.5,-0.5);
-%\coordinate (D) at (3,2);
-%\coordinate (E) at (1.5,1.2);
-%
-%\draw[very thick,dashed,red]  ($(C)!-.4!(A)$) -- ($(C)!1.2!(A)$);
-%\draw[very thick,dashed,blue] ($(C)!-.4!(D)$) -- ($(C)!1.2!(D)$);
-%
-%\fill (A) circle(1pt) node[right,xshift=	12pt,yshift=-8pt] {A=(2,3)};
-%\fill (B) circle(1pt) node[above left,xshift=2pt] {B=(1,2)};
-%\fill (C) circle(1pt) node[right,xshift=20pt,yshift=-4] {C=(-1.5,-0.5)};
-%\fill (D) circle(1pt) node[right,xshift=6pt,yshift=-6pt] {D=(3,2)};
-%\fill (E) circle(1pt) node[below,xshift=8pt,yshift=-12pt] {E=(1.5,1.2)};
-%
-%\end{tikzpicture}
-%\end{center}
-%\selectlanguage{hebrew}
-%\caption{שיטת שני הסקנטים}\label{f.two-secants}
-%\end{figure}
-
-ציירו סקנס דרך הנקודות
+נצייר סקנס דרך הנקודות
 $A=(2,3)$
 ו-%
-$B=(1,2)$.
-הוא חותך את העקומה ב-%
+$B=(1,2)$
+שחותך את העקומה ב-%
 $C=(-1.5,-0.5)$.
 נקודה זו אינה פתרון כי הקואורדינטות שליליים. אם נצייר סקנס שני מ-%
 $C$
 ל-%
 $D=(3,2)$,
 החיתוך שלו עם העקומה ב-%
-$E$
-כן מהווה פתרון נוסף.%
-\footnote{$(1.5,1.2)$
-\R{הוא קירוב. בהמשך נחשב את הקואורדינטות המדוייקות}.}
+$E\approx(1.5,1.2)$
+כן מהווה פתרון נוסף ונחשב בהמשך את הקואורדינטות.
 
-המשוואה של הקו )האדום( דרך 
+המשוואה של הקו (האדום) דרך 
 $A,B$
 היא
 $y=x+1$. 
@@ -432,44 +357,37 @@ $y=x+1$.
 $y$
 במשוואה%
 ~\ref{eq.elliptic}:
-\[
-x^2(x+1) + x(x+1)^2 -6x(x+1) +6 =0,\,
-\]
-ונפשט:
-\[
-2x^3 -3x^2 -5x +6 =0\,.
-\]
+\begin{eqn}
+x^2(x+1) + x(x+1)^2 -6x(x+1) +6 &=&0\\
+2x^3 -3x^2 -5x +6 &=&0\,.
+\end{eqn}
 מהנקודות
 $A,B$
 אנו יודעים שני שורשים
 $x=2,x=1$,
-כך שאפשר לפרק את הפולינום מדרגה שלוש כך:
+ולכן ניתן לפרק את הפולינום ממעלה שלוש כך:
 \[
 (x-2)(x-1)(ax+b)=0\,,
 \]
-כאשר רק השורש השלישי לא ידוע. נכפיל את הגורמים ונראה מיד שהמקדם של הגורם מדרגה שלוש
-$x^3$,
-חייב להיות
-$2$,
-ו-%
-$2b$,
-הקבוע, חייב להיות
-$6$.
-לכן, הגורם השלישי הוא
+כאשר רק השורש השלישי לא ידוע.
+
+נכפיל את הגורמים ונסיק ש-%
+$a=2, b=3$
+כי
+$2x^3 -3x^2 -5x +6 = ax^3+\cdots+2b$.
+הגורם השלישי הוא
 $2x+3$
-ומכאן שהשורש השלישי הוא
-$x=-\disfrac{3}{2}$.
-נחשב
-$y=x+1=-\disfrac{1}{2}$.
-הקואורדינטות של הנקודה
-$C$
-הן
-$\left(-\disfrac{3}{2},-\disfrac{1}{2}\right)$.
+שנותן אל השורש השלישי
+$x=-\frac{3}{2}$
+ו-%
+$y=x+1=-\frac{1}{2}$.
+זאת הנקודה
+$C=(-\frac{3}{2},-\frac{1}{2})$
+בגרף.
 
-המשוואה של הסקנס שני דרך
+המשוואה של הקו (הכחול) דרך
 $D,C$
-)כחול מקווקוו( היא:
-
+היא:
 \begin{equation}
 y = \frac{5}{9}x + \frac{1}{3}\,.\label{eq.second-secant}
 \end{equation}
@@ -477,16 +395,15 @@ y = \frac{5}{9}x + \frac{1}{3}\,.\label{eq.second-secant}
 $y$
 במשוואה 
 ~\ref{eq.elliptic}:
-\[
-x^2\left(\frac{5}{9}x + \frac{1}{3}\right) + x\left(\frac{5}{9}x + \frac{1}{3}\right)^2 -6x\left(\frac{5}{9}x + \frac{1}{3}\right) +6 =0\,,
-\]
-ונפשט:
-\[
-\frac{70}{81}x^3 - \frac{71}{27}x^2 - \frac{17}{9}x +6 =0\,.
-\]
-שוב יש לנו שני שורשים
-$x=3,x=-\disfrac{3}{2}$,
-וניתן לפרק את הפולינום מדרגה שלוש:
+\begin{eqn}
+x^2\left(\frac{5}{9}x + \frac{1}{3}\right) + x\left(\frac{5}{9}x + \frac{1}{3}\right)^2 -6x\left(\frac{5}{9}x + \frac{1}{3}\right) +6 &=&0\\
+\frac{70}{81}x^3 - \frac{71}{27}x^2 - \frac{17}{9}x +6 &=&0\,.
+\end{eqn}
+מ-%
+$C,D$
+אנו יודעים שני שורשים
+$x=3,x=-\frac{3}{2}$,
+כך שניתן לפרק את הפולינום מעלה שלוש:
 \[
 (x-3)\left(x+\frac{3}{2}\right)(ax+b)=0\,.
 \]
@@ -505,11 +422,10 @@ $y$
 ממשוואה~%
 \ref{eq.second-secant}
 ונקבל:
-
 \[
 y=\frac{25}{21}\approx 1.190\,.
 \]
-הערכים הללו קרובים למה שקראנו מאיור~%
+הערכים הללו קרובים למה שהערכנו מאיור~%
 \ref{f.two-secants}:
 $(1.5,1.2)$.
 
@@ -520,84 +436,56 @@ $z$
 \[
 z=\frac{x+y}{xy-1}=%
 \left(\disfrac{54}{35} + \disfrac{25}{21}\right)%
- \, / \,%
+ \, \bigg/ \,%
 \left(\disfrac{54}{35}\cdot\disfrac{25}{21}-1\right)=%
 \frac{2009}{615} = \frac{49}{15}\,.
 \]
 
-\section{פיתוח משולש מהעקומה האליפטית}
-מ-%
-$x,y,z,a,b,c$, 
-ניתן לחשב את אורכי הצלעות של המשולש
-$\triangle ABC$:
+\section{פיתוח משולש מהעקומה האליפטית}\label{s.triangle-from-elliptic}
 
+ניתן לחשב את ארוכי הצלעות של המשלוש
+$\triangle ABC$
+מ-%
+$x,y,z$
+ו-%
+$r=A/s=6/6=1$
+תוך שימוש במשוואות%
+~\ref{eq.uvw}, ~\ref{eq.variables-for-tangents}:
 \begin{eqn}
 a&=&w+v = r(z+y)=(z+y)\\
 b&=&u+w= r(x+z)=(x+z)\\
 c&=&u+v=r(x+y)=(x+y)\,,
 \end{eqn}
-כי
-$r=\disfrac{A}{s}=\disfrac{6}{6}=1$.
-
 עבור הפתרון 
-$A=(2,3)$
-של העקומה ערכו של
-$z$
-הוא:
-\[
-z=\frac{x+y}{xy-1}=\frac{2+3}{2\cdot 3-1}=1\,,
-\]
-והצלעות של המשולש הן:
-
+$A$
+של העקומה האליפטית אורכי הצלעות הם:
 \begin{eqn}
 a &=& z+y = 1+3 = 4\\
 b &=& x+z = 2+1=3\\
 c &=& x+y = 2+3=5\,.
 \end{eqn}
-
-
-
-המשולש ישר-זווית עם
-$s=A=6$.
-חישוב הצלעות המתאימים ל-%
-$B$
-ו-%
-$D$
-נותן את אותו משולש.
-עבור
-$E$:
-
+עבור הפתרון
+$E$
+של העקומה האליפטית אורכי הצלעות הם:
 \begin{eqn}
 a &=& z+y = \frac{49}{15} + \frac{25}{21} = \frac{243+125}{105}= \frac{156}{35}\\
+\\
 b &=& x+z = \frac{54}{35} + \frac{49}{15} = \frac{810+1715}{525}=\frac{101}{21}\\
-c &=& x+y = \frac{54}{35} + \frac{25}{21}  = \frac{1134+875}{735}=\frac{41}{15}\,,
+\\
+c &=& x+y = \frac{54}{35} + \frac{25}{21}  = \frac{1134+875}{735}=\frac{41}{15}\,.
 \end{eqn}
-
-נבדוק את התוצאה. מחצית ההיקף היא:
+נבדוק את התוצאה. מחצית ההיקף הוא:
 \[
 s=\frac{1}{2}\left(\frac{156}{35} + \frac{101}{21}+\frac{41}{15}\right) = \frac{1}{2}\left(\frac{468+505+287}{105}\right) = \frac{1}{2}\left(\frac{1260}{105}\right)= 6\,.
 \]
-נחשב את השטח באמצעות הנוסחה של הרון
-$S_{\triangle ABC}= \sqrt{s(s-a)(s-b)(s-c)}$:
-
-\begin{eqn}
-%A &=& \sqrt{s(s-a)(s-b)(s-c)}\\
-S_{\triangle ABC}&=& \sqrt{6 \left(6-\frac{156}{35}\right) \left(6-\frac{101}{21}\right) \left(6-\frac{41}{15}\right)}\\
-&=& \sqrt{6 \cdot \frac{54}{35}\cdot \frac{25}{21} \cdot \frac{49}{15}}\\
-&=& \sqrt{\frac{396900}{11025}}= \sqrt{36} = 6\,.
-\end{eqn}
-קשה להאמין שהיינו "מנחשים" שלמשולש:
-\[
-\left(\frac{156}{35},\, \frac{101}{21},\,\frac{41}{15}\right)
-\]
-אותו היקף ושטח כמו
-$(3,4,5)$!
-
+נחשב את השטח באמצעות הנוסחה של הרון (משפט%
+~\ref{thm.heron}):
 \[
 A= \sqrt{6 \left(6-\frac{156}{35}\right) \left(6-\frac{101}{21}\right) \left(6-\frac{41}{15}\right)}=\sqrt{36} = 6\,.
 \]
 האם
 $\left(\frac{156}{35}, \frac{101}{21}, \frac{41}{15}\right)\cong(3,4,5)$?
+
 כדי לפשט את החישוב נשתמש בקירובים העשירונים
 $(4.48,4.81,2.73)$.
 אזי:
@@ -609,22 +497,24 @@ $(3,4,5)$.
 
 נחשב את זווית המשולש באמצעות חוק הקוסינוסים (איור%
 ~\ref{f.not-a-right-triangle}).
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
-\begin{tikzpicture}[scale=1.2]
+\begin{tikzpicture}[scale=1.3]
 \coordinate (A1) at (0,0);
 \coordinate (B1) at (4.48cm,0);
 \coordinate (C1) at (79.67:2.73cm);
-\node[above right] at (A1) {$79.67^\circ$};
-\node[above left,xshift=-11pt] at (B1) {$33.94^\circ$};
-\node[below,yshift=-12pt,xshift=10pt] at (C1) {$66.39^\circ$};
-\draw (B1) -- node[below] {$4.48$} (A1) --
-  node[left] {$2.73$} (C1) -- node[right,xshift=2pt] {$4.81$} cycle;
+\node[above right] at (A1) {\sm{79.67^\circ}};
+\node[above left,xshift=-11pt] at (B1) {\sm{33.94^\circ}};
+\node[below,yshift=-12pt,xshift=10pt] at (C1) {\sm{66.39^\circ}};
+\draw (B1) -- node[below] {\sm{4.48}} (A1) --
+  node[left] {\sm{2.73}} (C1) -- node[right,xshift=2pt] {\sm{4.81}} cycle;
 \end{tikzpicture}
 \end{center}
 \selectlanguage{hebrew}
 \caption{משולש עם שטח והיקף שווה למשולש $(3,4,5)$}\label{f.not-a-right-triangle}
 \end{figure}
+
+\newpage
 
 \subsection*{מה ההפתעה?}
 
