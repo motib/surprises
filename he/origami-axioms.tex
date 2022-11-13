@@ -6,7 +6,7 @@
 
 \chapter{האקסיומות של אוריגמי}\label{c.origami-axioms}
 
-אוריגמי, האומנות של קיפולי נייר, פותחה לפני מאות שנים ביפן והיום יש לו קהילה בינלאומית. לקראת סוף המאה העשרים, פוחתה התיאוריה המתמטית של אוריגמי שבסיסה היא שבע אקסיומות, אקסיומות
+אוריגמי, האומנות של קיפולי נייר, פותח לפני מאות שנים ביפן והיום יש לו קהילה בינלאומית. לקראת סוף המאה העשרים, פוחתה התיאוריה המתמטית של אוריגמי שבסיסה שבע אקסיומות, אקסיומות
 \L{Huzita–Hatori},
 על שם
 \L{Humiaki Huzita}
@@ -22,20 +22,20 @@
 \L{Margherita P. Beloch}
 הציגה את האקסיומה השישית ב-%
 $1936$.
-למרות זאת האקסיומות ידועות כאקסיומות
+למרות זאת, האקסיומות ידועות כאקסיומות
 \L{Huzita-Hatori}.
 
-בסדרה של שלושה פרקים נסייר במתמטיקה של אוריגמי. פרק זה מציג את האקסיומות, פרק%
+בסדרה של שלושה פרקים נלמד את המתמטיקה של אוריגמי. פרק זה מציג את האקסיומות, פרק%
 ~\ref{c.origami-cube}
 קושר את אוריגמי עם השורשים של פולינומים ופרק%
 ~\ref{c.origami-constructions} 
 מראה שבניות שאינן אפשריות עם סרגל ומחוגה ניתנות לבנייה עם אוריגמי.
  
 פרק זה מכיל סעיף עבור כל אחת מהאקסיומות. לאחר ניסוח האקסיומה ותרשים של 
-\textbf{קיפול}
-שהיא מתארת, נפתח את משוואות הקיפול ונקודות החיתוך עם גיאומטריה אנליטית. ניתן להגדיר קיפול גם 
-\textbf{כמקום גיאומטרי},
-קבוצת כל הנקודות המקיימות תכונה מסויימת. המונח קיפול בא מהפעולה של קיפול דף נייר באוריגמי, אבל כאן הוא משמש לקו הגיאומטרי שנוצר על ידי קיפול הדף.
+\textbf{הקיפול}
+שהיא מתארת, נפתח את משוואות הקיפול ושל נקודות החיתוך באמצעות גיאומטריה אנליטית. ניתן להגדיר קיפול גם 
+\textbf{כמקום הגיאומטרי}
+שהוא מתאר, קבוצת כל הנקודות המקיימות תכונה מסויימת. המונח קיפול בא מהפעולה של קיפול דף נייר באוריגמי, אבל כאן הוא משמש לקו הגיאומטרי שנוצר על ידי קיפול הדף.
 
 התוצאה של פעולת הקיפול היא
 \textbf{שיקוף}.
@@ -51,9 +51,9 @@ $l$
 $\overline{pp'}$
 (איור%
 ~\ref{f.origami-def}).
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=.8]
 \coordinate (P1) at (2,2);
 \coordinate (P1P) at (6,4);
 \coordinate (mid) at (4,3);
@@ -66,15 +66,16 @@ $\overline{pp'}$
 \draw[thick] (m2) -- +(-60:4pt);
 \draw[thick] (P1) -- (P1P);
 \draw[very thick,dashed] (4.7,1.6) -- node[very near end,right,yshift=4pt] {$l$} (3.5,4);
-\fill (P1) circle(2pt) node[above left] {$p$};
-\fill (P1P) circle(2pt) node[above left] {$p'$};
-\fill (mid) circle(2pt);% node[below,xshift=-2pt,yshift=-8pt] {$p_i$};
-\draw[very thick,dotted,->,bend right=50] (2,1.8) to (6,3.8);
-\end{tikzpicture}|
+\vertex{P1};
+\vertex{P1P};
+\node[above left] at (P1) {$p$};
+\node[above left] at (P1P) {$p'$};
+\draw[very thick,dotted,->,bend right=50] (2.1,1.9) to (6.05,3.9);
+\end{tikzpicture}
+\end{center}
 \selectlanguage{hebrew}
 \caption{הקפל הוא האנך האמצעי של הקו שמחבר בין נקודה לשיקוף שלה}
 \label{f.origami-def}
-\end{center}
 \end{figure}
 
 \section{אקסיומה 1}\label{s.ax1}
@@ -88,10 +89,9 @@ $l$
 העובר דרך שתיהן (איור%
 ~\ref{f.axiom1}).
 \end{axiom}
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
-
-\begin{tikzpicture}[scale=.9]
+\begin{tikzpicture}[scale=1]
 \draw[step=10mm,white!50!black,thin] (-1,-1) grid (8,6);
 \draw[thick] (-1,0) -- (8,0);
 \draw[thick] (0,-1) -- (0,6);
@@ -102,8 +102,10 @@ $l$
 \coordinate (P1) at (2,2);
 \coordinate (P2) at (6,4);
 \draw[very thick,dashed] ($(P1)!-.75!(P2)$) -- node[very near end,below] {$l$} ($(P1)!1.5!(P2)$);
-\fill (P1) circle(2pt) node[above left] {$p_1$};
-\fill (P2) circle(2pt) node[above left] {$p_2$};
+\vertex{P1};
+\vertex{P2};
+\node[above left] at (P1) {$p_1$};
+\node[above left] at (P2) {$p_2$};
 
 \draw[very thick,dotted,->,bend left=30] (2,5) to (4,1);
 \end{tikzpicture}
@@ -114,7 +116,7 @@ $l$
 
 \textbf{פיתוח משוואת הקיפול:}
 השיפוע של הקיפול הוא המנה של הפרשי הקואורינטות של
-$p_1,p_2$,
+$p_1,p_2$
 ונקדות החיתוך עם ציר ה-%
 $y$
 מתקבלת מ-%
@@ -152,9 +154,13 @@ $p_2$
 \ref{f.axiom2}).
 \end{axiom}
 
-\begin{figure}[htb]
+הקיפול הוא המקום הגיאומטרי של כל הנקודות במרחק שווה מ-%
+$p_1$
+ו-%
+$p_2$.
+\begin{figure}[tb]
 \begin{center}
-\begin{tikzpicture}[scale=.9]
+\begin{tikzpicture}[scale=1]
 \draw[step=10mm,white!50!black,thin] (-1,-1) grid (8,6);
 \draw[thick] (-1,0) -- (8,0);
 \draw[thick] (0,-1) -- (0,6);
@@ -169,12 +175,14 @@ $p_2$
 
 \draw[rotate=30] (mid1) rectangle +(8pt,8pt);
 
-\draw[very thick,dotted] (P1) -- (P2);
+\draw (P1) -- (P2);
 \draw[very thick,dashed] ($(mid1)!-1.4!(mid2)$) -- node[very near end,left,yshift=-12pt] {$l$} ($(mid1)!1.4!(mid2)$);
-\fill (P1) circle(2pt) node[above left] {$p_1$};
-\fill (P2) circle(2pt) node[above left] {$p_2$};
+\vertex{P1};
+\vertex{P2};
+\node[above left] at (P1) {$p_1$};
+\node[above left] at (P2) {$p_2$};
 
-\draw[very thick,dotted,->,bend right=50] (2,1.8) to (6,3.8);
+\draw[very thick,dotted,->,bend right=50] (2.1,1.9) to (6,3.9);
 \end{tikzpicture}
 \caption{אקסיומה 2}\label{f.axiom2}
 \end{center}
@@ -182,9 +190,11 @@ $p_2$
 
 
 \textbf{פיתוח משוואת הקיפול:}
-השיפוע של הקיפול
+הקיפול 
 $l$
-הוא ההופכי השלילי של השיפוע של הקו המחבר את
+הוא האנך האמצעי של
+$\overline{p_1p_2}$.
+השיפוע שלו הוא ההופכי השלילי של השיפוע של הקו המחבר את
 $p_1$
 ו-%
 $p_2$.
@@ -224,10 +234,19 @@ $l_2$
 (איור~%
 \ref{f.axiom3}).
 \end{axiom}
-\begin{figure}[htb]
-\begin{center}
 
-\begin{tikzpicture}[scale=.9]
+הקיפול הוא המקום הגיאומטרי של ההנקודות במרחק שווה מ-%
+$l_1$
+ו-%
+$l_2$,
+כאשר המרחק מנקודה לקו הוא אורך קטע הקו דרך הנקודה שהוא ניצב לקו. קל להראות באמצעות משולשים חופפים שהקיפול הוא חותך הזווית הנוצרת על ידי
+$l_1$
+ו-%
+$l_2$.
+
+\begin{figure}[tb]
+\begin{center}
+\begin{tikzpicture}[scale=1]
 \draw[step=10mm,white!50!black,thin] (-1,-1) grid (8,7);
 \draw[thick] (-1,0) -- (8,0);
 \draw[thick] (0,-1) -- (0,7);
@@ -237,14 +256,14 @@ $l_2$
   \node at (-.2,\y-.3) {\sm{\y}};
 \coordinate (L1a) at (2,2);
 \coordinate (L1b) at (4,6);
-\draw[thick] (L1a) -- node[very near start,right,yshift=-4pt] {$l_1$} (L1b);
-\draw[thick,dotted,name path=l1] ($(L1a)!-.75!(L1b)$) -- ($(L1a)!1.25!(L1b)$);
+\draw (L1a) -- node[very near start,right,yshift=-4pt] {$l_1$} (L1b);
+\draw[name path=l1] ($(L1a)!-.75!(L1b)$) -- ($(L1a)!1.25!(L1b)$);
 \coordinate (L2a) at (7,1);
 \coordinate (L2b) at (4,4);
-\draw[thick] (L2a) -- (L2b);
-\draw[thick,dotted,name path=l2] ($(L2a)!-.3!(L2b)$) -- node[very near start,above,xshift=4pt,yshift=2pt] {$l_2$} ($(L2a)!2!(L2b)$);
+\draw (L2a) -- (L2b);
+\draw[name path=l2] ($(L2a)!-.3!(L2b)$) -- node[very near start,above,xshift=4pt,yshift=2pt] {$l_2$} ($(L2a)!2!(L2b)$);
 \path [name intersections = {of = l1 and l2, by = {PM}}];
-\fill (PM) circle(2pt) node[below left,xshift=-9pt,yshift=-7pt] {$p_i$};
+\node[below left,xshift=-9pt,yshift=-7pt] at (PM) {$p_i$};
 
 \node[above right,xshift=10pt,yshift=4pt] at (PM) {$\alpha$};
 \node[below right,xshift=10pt] at (PM) {$\alpha$};
@@ -266,14 +285,16 @@ $l_2$
 \caption{אקסיומה 3}\label{f.axiom3}
 \end{figure}
 
-\textbf{פיתוח משוואת הקיפול עבור קווים מקבילים:}
-אם הקווים מקבילים, 
+\textbf{פיתוח משוואת הקיפול:}
+
+\textbf{עבור קווים מקבילים:}
+יהי
 $l_1$
-הוא
+הקו
 $y=mx+b_1$
-ו-%
+ויהי
 $l_2$
-הוא
+הקו
 $y=mx+b_2$.
 הקיפול הוא הקו המקביל ל-%
 $l_1,l_2$ 
@@ -281,42 +302,45 @@ $l_1,l_2$
 \[
 y=mx+\disfrac{b_1+b_2}{2}\,.
 \]
-\textbf{פיתוח משוואת הקיפול עבור קווים נחתכים:}
-אם הקווים נחתכים,
+\textbf{עבור קווים נחתכים:}
+יהי
 $l_1$ 
-הוא
+הקו
 $y=m_1x+b_1$
-ו-%
+ויהי
 $l_2$
-הוא
+הקו
 $y=m_2x+b_2$.
 $p_i=(x_i,y_i)$,
 נקודת החיתוך שלהם, היא:
-
 \begin{eqn}
 m_1x_i+b_2&=&m_2x_i+b_2\\
 x_i &=& \disfrac{b_2-b_1}{m_1-m_2}\\
 y_i &=&m_1x_i+b_1\,.
 \end{eqn}
-\begin{example}
-נתון הקו
+\begin{example}\label{ex.axiom3}
+יהי
 $l_1$
-שהמשוואה שלו הוא
+הקו
 $y\!=\!2x-2$,
-והקו
+ויהי
 $l_2$
-שהמשוואה שלו הוא
+הקו
 $y\!=\!-x+8$.
-נקודת החיתוך שלהם היא:
+אזי
+$p_i=(x_i,y_i)$
+היא:
 \begin{eqn}
 x_i&=&\disfrac{8-(-2)}{2-(-1)}=\disfrac{10}{3}\approx 3.33\\
 y_i &=& 2\cdot\disfrac{10}{3}-2=\disfrac{14}{3}\approx 4.67\,.
 \end{eqn}
 \end{example}
 
-\textbf{פיתוח משוואת השיפוע של חוצה הזווית:}
-שני קווים יוצרים שני זוגות של זוויות קודקודיות. הקיפולים הם חוצי הזווית שלהן.
-אם הזווית של
+הקיפול הוא חוצה הזווית הנוצרת על ידי 
+$l_1$
+ו-%
+$l_2$
+בנקודה החיתוך שלהם. קיימים שני קיפולים אפשריים כי קיימות שתי זוויות קודקודיות ועלינו למצוא את השיפועים של שני חוצי הזוויות. אם הזווית של
 $l_1$
 יחסית לציר ה-%
 $x$
@@ -328,67 +352,34 @@ $l_2$
 $x$
 היא
 $\theta_2$,
-אזי קיפול הוא הקו היוצר זווית של:
-\[
-\theta_b=
-\theta_1+\disfrac{\theta_2-\theta_1}{2}=
-\disfrac{\theta_1}{2}+\disfrac{\theta_2}{2}=
-\disfrac{\theta_1+\theta_2}{2}
-\]
+אזי קיפול הוא הקו היוצר זווית של
+$\theta_b=(\theta_1+\theta_2)/2$
+
 יחסית לציר ה-%
-$x$:
+$x$.
 
-%\begin{center}
-%
-%\begin{tikzpicture}[scale=.7]
-%\draw[thick] (-1,0) -- (8,0);
-%\draw[thick] (0,-1) -- (0,6);
-%  
-%\draw[thick] (0,0) -- +(30:7)
-%  node[xshift=26pt,yshift=4pt] {$\theta_1=30^\circ$};
-%\draw[thick] (0,0) -- +(50:7)
-%  node[xshift=26pt,yshift=2pt] {$\theta_2=50^\circ$};
-%\draw[very thick,dotted] (0,0) -- +(15:7)
-%  node[xshift=30pt,yshift=0pt] {$\theta_1/2=15^\circ$};
-%\draw[very thick,dotted] (0,0) -- +(25:7)
-%  node[xshift=30pt,yshift=2pt] {$\theta_2/2=25^\circ$};
-%\draw[very thick,dashed] (0,0) -- +(40:7)
-%  node[xshift=50pt,yshift=2pt] {$\theta_1/2+\theta_2/2=40^\circ$};
-%\end{tikzpicture}
-%\end{center}
-$\tan\theta_1=m_1$
+יהי
+$m_1=\tan\theta_1$
 ו-%
-$\tan\theta_2=m_2$
-נתונים ו-%
-$m_b$,
-השיפוע של חוצה הזווית, הוא:
-\[
-m_b=\tan\theta_b=\tan\disfrac{\theta_1+\theta_2}{2}\,.
-\]
-פיתוח המשוואה מחייב שימוש בשוויונות הטריגונומטריות:
-
-\begin{eqn}
-\tan(\phi_1+\phi_2)&=& \disfrac{\tan\phi_1+\tan\phi_2}{1-\tan\phi_1\tan\phi_2}\\
-\tan \disfrac{\phi}{2}&=& \disfrac{-1\pm\sqrt{1+\tan^2\phi}}{\tan \phi}\,.
-\end{eqn}
-תחילה נמצא את
+$m_2=\tan\theta_2$.
+לפי משפט%
+~\ref{thm.tangent-sum},
 $m_s$,
 השיפוע של
-$\theta_1+\theta_2$:
+$\theta_1+\theta_2$,
+היא:
 \[
-m_s=\tan(\theta_1+\theta_2)= \disfrac{m_1+m_2}{1-m_1m_2}\,.
+m_s=\tan(\theta_1+\theta_2)= \frac{\tan\theta_1+\tan\theta_2}{1-\tan\theta_1\tan\theta_2}=\frac{m_1+m_2}{1-m_1m_2}\,.
 \]
-אחר כך נמצא את 
+לפי משפט%
+~\ref{thm.tangent-half},
 $m_b$,
-השיפוע של חוצה הזווית:
-
-\begin{eqn}
-m_b&=& \tan\disfrac{\theta_1+\theta_2}{2}\\
-&=&\disfrac{-1\pm\sqrt{1+\tan^2(\theta_1+\theta_2)}}{\tan (\theta_1+\theta_2)}\\
-&=&\disfrac{-1\pm\sqrt{1+m_s^2}}{m_s}\,.
-\end{eqn}
+השיפוע של חוצה הזווית היא:
+\[
+m_b= \tan\frac{\theta_1+\theta_2}{2}=\frac{-1\pm\sqrt{1+\tan^2(\theta_1+\theta_2)}}{\tan (\theta_1+\theta_2)}=\frac{-1\pm\sqrt{1+m_s^2}}{m_s}\,.
+\]
 \begin{example}
-נתונים הקווים
+עבור
 $y=2x-2$
 ו-%
 $y=-x+8$,
@@ -399,19 +390,13 @@ m_b&=&\disfrac{-1\pm\sqrt{1+(1/3)^2}}{1/3}=-3\pm \sqrt{10}\approx -6.16,\; 0.162
 \end{eqn}
 \end{example}
 
-\textbf{פיתוח משוואת הקיפול:}
 נפתח את המשוואה של
 $l_{f_1}$
-עם השיפוע החיובי
-$-3+ \sqrt{10}$.
-חישבנו לעיל את הקואורדינטות של נקודת החיתוך של הקווים 
-$m_i=\left(\disfrac{10}{3},\disfrac{14}{3}\right)$.
-נקודת החיתוך של 
-$l_{f_1}$
-עם ציר ה-%
-$y$
-היא:
-
+עם השיפוע החיובי. מדוגמה%
+~\ref{ex.axiom3},
+הקואורדינטות של נקודת החיתוך של הקווים 
+$m_i=(10/3),(14/3)$,
+ולכן:
 \begin{eqn}
 \disfrac{14}{3} &=& (-3+\sqrt{10}) \cdot \disfrac{10}{3} + b\\ b&=&\disfrac{44-10\sqrt{10}}{3}\\
 y&=& (-3+\sqrt{10})x + \disfrac{44-10\sqrt{10}}{3}\approx 0.162x+4.13\,.
@@ -422,7 +407,7 @@ y&=& (-3+\sqrt{10})x + \disfrac{44-10\sqrt{10}}{3}\approx 0.162x+4.13\,.
 \section{אקסיומה 4}\label{s.ax4}
 
 \begin{axiom}
-נתונים נקודה
+נתון נקודה
 $p_1=(x_1,x_2)$
 וקו
 $l_1$,
@@ -435,10 +420,9 @@ $p_1$
 (איור~%
 \ref{f.axiom4}).
 \end{axiom}
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
-
-\begin{tikzpicture}[scale=.9]
+\begin{tikzpicture}[scale=1]
 \draw[step=10mm,white!50!black,thin] (-1,-1) grid (8,7);
 \draw[thick] (-1,0) -- (8,0);
 \draw[thick] (0,-1) -- (0,7);
@@ -448,12 +432,13 @@ $p_1$
   \node at (-.2,\y-.3) {\sm{\y}};
 \coordinate (L1a) at (2,0);
 \coordinate (L1b) at (5,6);
-\draw[thick] (L1a) -- node[very near start,right,yshift=-4pt] {$l_1$} ($(L1a)!1.15!(L1b)$);
-\fill (2,6) circle (2pt) node[above right] {$p_1$};
+\draw (L1a) -- node[very near start,right,yshift=-4pt] {$l_1$} ($(L1a)!1.15!(L1b)$);
+\coordinate (P1) at (2,6);
+\vertex{P1};
+\node[above right] at (P1) {$p_1$};
 \draw[thick,dashed] (0,7) -- node[very near end,above right] {$l$} (8,3);
 \coordinate (intersection) at (4.4,4.8);
 \draw[rotate=-30] (intersection) rectangle +(8pt,8pt);
-
 \draw[very thick,dotted,->,bend left=50] (5.4,6.3) to (3.7,3);
 \end{tikzpicture}
 \end{center}
@@ -469,7 +454,7 @@ $l$
 ניצב ל-%
 $l_1$
 לכן השיפוע שלו הוא
-$-\disfrac{1}{m_1}$.
+$-(1/m_1)$.
 הקו עובר דרך
 $p_1$
 ונוכל לחשב את המשוואה שלו:
@@ -479,11 +464,11 @@ b&=& \disfrac{(my_1+x_1)}{m}\\
 y&=&-\disfrac{1}{m} x +\disfrac{(my_1+x_1)}{m}\,.
 \end{eqn}
 \begin{example}
-נתונה הנקודה
+תהי
 $p_1=(2,6)$
-ונתון הקו
+ויהי
 $l_1$
-שהמשוואה שלו הוא
+הקו
 $y=2x-4$.
 המשוואה של הקיפול
 $l$
@@ -514,10 +499,9 @@ $p_2$
 \ref{f.axiom5}).
 \end{axiom}
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
-
-\begin{tikzpicture}[scale=.9]
+\begin{tikzpicture}[scale=1]
 \draw[step=10mm,white!50!black,thin] (-1,-1) grid (9,9);
 \draw[thick] (-1,0) -- (9,0);
 \draw[thick] (0,-1) -- (0,9);
@@ -527,107 +511,108 @@ $p_2$
   \node at (-.2,\y-.3) {\sm{\y}};
 \coordinate (L1a) at (0,3);
 \coordinate (L1b) at (8,-1);
-\draw[thick] (L1a) -- node[near end,below right,xshift=8pt,yshift=-8pt] {$l_1$} (L1b);
+\draw (L1a) -- node[near end,below right,xshift=8pt,yshift=-8pt] {$l_1$} (L1b);
 \coordinate (P1) at (2,8);
-\fill (P1) circle (2pt) node[above left] {$p_1$};
 \coordinate (P2) at (4,4);
-\fill (P2) circle (2pt) node[above left,yshift=4pt] {$p_2$};
-\draw[thick,dotted,name path=L1] (8,-1) -- (-1,3.5);
-\node[very thick,dotted,draw, name path = circle] at (P2)
+\vertex{P1};
+\vertex{P2};
+\node[above left] at (P1) {$p_1$};
+\node[above left,yshift=4pt] at (P2) {$p_2$};
+
+
+\draw[name path=L1] (8,-1) -- (-1,3.5);
+\node[draw,name path = circle] at (P2)
     [circle through = (P1)] {};
 
 \path [name intersections = {of = circle and L1, by = {P1P,P1PP}}];
-\fill (P1P) circle (2pt) node[above left,xshift=-2pt,yshift=4pt] {$p_1'$};
-\fill (P1PP) circle (2pt) node[above left,yshift=6pt] {$p_1''$};
+\vertex{P1P};
+\vertex{P1PP};
+\node[above left,xshift=-2pt,yshift=4pt] at (P1P) {$p_1'$};
+\node[above left,yshift=6pt] at (P1PP) {$p_1''$};
 
 \coordinate (f1) at (0,6);
 \draw[thick,dashed] ($(f1)!-.25!(P2)$) -- node[very near end,above] {$l_{f_2}$} ($(f1)!2.25!(P2)$);
 \coordinate (f2) at (0,2);
 \draw[thick,dashed] ($(f2)!-.25!(P2)$) -- node[very near end,below,yshift=-2pt] {$l_{f_1}$} ($(f2)!2.25!(P2)$);
 
-\draw[very thick,dotted,->,bend left=50] (2.2,7.8) to (-.2,3.2);
-\draw[very thick,dotted,->,bend left=50] (2.4,7.85) to (6.1,.2);
+\draw[very thick,dotted,->,bend left=50] (2.1,7.9) to (-.3,3.2);
+\draw[very thick,dotted,->,bend left=50] (2.2,7.95) to (6.05,.1);
 \end{tikzpicture}
 \end{center}
-\caption{}\label{f.axiom5}
+\caption{אקסיומה $5$}\label{f.axiom5}
 \end{figure}
 
-עבור זוג נקודות נתון וקו נתון, יכולים להיות אפס, אחד או שני קיפולים.
-
-\textbf{פיתוח משוואות עבור השיקופים:}
-נסמן ב-%
-$l$
-את הקיפול העובר דרך
-$p_2$,
-ונסמן ב-%
+בגלל שהקיפול עובר דרך
+$p_2$
+ו-%
+$p_2$
+נמצאת על האנך האמצעי של
+$\overline{p_1p_1'}$,
+המקום הגיאומטרי של השיקוף של
+$p_1$ 
+הוא מעגל שמרכזו
+$p_2$
+עם רדיוס
+$\overline{p_1p_2}$.
+יש לאלץ את הקיפול כדי שהשיקוף
 $p_1'$
-את השיקוף של
-$p_1$
-מסביב ל-%
-$l$.
-האורך של
-$\overline{p_1p_2}$
-שווה לאורך של
-$\overline{p_2p_1}'$.
-המקום הגיאומטרי של נקודות הנמצאות במרחק
-$\overline{p_1p_2}$
-מ-%
-$p_2$
-הוא המעגל שמרכזו
-$p_2$
-והרדיוס שלו הוא
-$\overline{p_1p_2}$. 
-נקודות החיתוך של מעגל זה עם הקו
+נמצא על הקו הנתון
+$l_1$.
+
+\textbf{פיתוח משוואות הקיפולים:}
+יהי
 $l_1$
-הן המקומות האפשריים עבור
-$p_1'$.
-המשוואה של הקו
-$l_1$
-היא
-$y=m_1x + b_1$.
-המשוואה של המעגל שמרכזו
+הקו
+$y=m_1x + b_1$
+ויהי
+$p_1=(x_1,y_1)$, $p_2=(x_2,y_2)$
+הנקודות הנתונות. משוואת המעגל שמרכזו
 $p_2$
 עם רדיוס
 $\overline{p_1p_2}$
 היא:
 \[
-(x-x_2)^2 + (y-y_2)^2 = r^2\,.
+(x-x_2)^2 + (y-y_2)^2 = r^2
 \]
-נציב את המשוואה של הקו לתוך המשוואה של המעגל:
+כאשר
+\[
+r^2= (x_2-x_1)^2 + (y_2-y_1)^2\,.
+\]
+נציב את המשוואה של
+$l_1$
+בתוך המשוואה של המעגל ונקבל:
 \begin{eqn}
 (x-x_2)^2+((m_1x+b_1)-y_2)^2&=&r^2\\
-(x-x_2)^2+(m_1x+(b_1-y_2))^2&=&r^2\,,
+(x-x_2)^2+(m_1x+(b_1-y_2))^2&=&r^2\,.
 \end{eqn}
-ונקבל משוואה ריבועית עבור קואורדינטות ה-%
+מתקבלת משוואה ריבועית עבור קואורדינטות ה-%
 $x$
 של נקודות החיתוך האפשריות:
 \begin{equation}
 x^2(1+m_1^2) \,+\, 2(-x_2+m_1(b-y_2))x \,+\, (x_2^2 + (b_1-y_2)^2-r^2)=0\,.\label{eq.intersections}
 \end{equation}
-למשוואה ריבועית יש לכל היותר שני פתרונות
-$x_1',x_1''$,
-ונחשב את 
+למשוואה ריבועית יש לכל היותר שני פתרונות, ולכן עבור זוג נקודות נתונה וקו נתון קיימים אפס, אחד או שני קיפולים. מהשורשים
+$x_1',x_1''$
+ניתן לחשב
 $y_1',y_1''$
 מ-%
 $y=m_1x+b_1$.
 נקודות השיקוף הן
 $p_1'=(x_1',y_1'), p_1''=(x_1'',y_1'')$.
 \begin{example}
-נתונות הנקודות
+יהי
 $p_1=(2,8)$,
-$p_2=4,4)$,
-ונתון הקו
+$p_2=(4,4)$,
+ויהי
 $l_1$ 
-שהמשוואה שלו היא
-$y=-\disfrac{1}{2}x +3$.
-משוואת המעגל היא:
-\[
-(x-4)^2 + (y-4)^2 = r^2=(4-2)^2+(4-8)^2=20\,.
-\]
-נציב את המשוואה של הקו לתוך המשוואה של המעגל ונפשט כדי לקבל משוואה ריבועית עבור קואורדינטות ה-%
+הקו
+$y=-\frac{1}{2}x +3$.
+משוואת המעגל היא
+$(x-4)^2 + (y-4)^2 = r^2=(4-2)^2+(4-8)^2=20$.
+נציב את המשוואה של הקו לתוך המשוואה של המעגל ונקבל משוואה ריבועית עבור קואורדינטות ה-%
 $x$
 של נקודות החיתוך (או השתמשו במשוואה
-~\ref{eq.intersections}).
+~\ref{eq.intersections}):
 \begin{eqn}
 (x-4)^2 + \left(\left(-\disfrac{1}{2}x+3\right)-4\right)^2&=&20\\
 \disfrac{5}{4}x^2-7x-3 &=&0\\
@@ -636,40 +621,26 @@ $x$
 \end{eqn}
 שתי נקודות חיתוך הן:
 \[
-p_1'=\left(-\disfrac{2}{5},\disfrac{16}{5}\right) = (-0.4,3.2)\,,\quad p_1''=(6,0)\,.
+p_1'=(-2/5,16/5) = (-0.4,3.2)\,,\quad p_1''=(6,0)\,.
 \]
 \end{example}
-
-\textbf{פיתוח המשוואות של הקיפולים:}
-הקיפולים יהיו האנכים האמצעיים של
-$\overline{p_1p_1'}$
-ו-%
-$\overline{p_1p_1''}$.
-המשוואה של אנך אמצעי נתונה על ידי משוואה%
-~\ref{eq.midpoint1},
-שנעתיק כאן עבור
-$p_1'$:
-\[
-y - \disfrac{y_1+y_1'}{2} = -\disfrac{x_1'-x_1}{y_1'-y_1}\left(x-\disfrac{x_1+x_1'}{2}\right)\,.\label{eq.midpoint2}
-\]
 \begin{example}
-נתונות הנקודות
+עבור
 $p_1=(2,8)$,
-$p_1'=\left(-\disfrac{2}{5},\disfrac{16}{5}\right)$,
-משוואת הקיפול של
+$p_1'=(-2/5,16/5)$,
+המשוואתה של
 $l_{f_1}$
 היא:
-
 \begin{eqn}
 y-\disfrac{8+(16/5)}{2}&=&-\disfrac{(-2/5)-2}{(16/5)-8}\left(x-\disfrac{2+\left(-2/5\right)}{2}\right)\\
 y&=&-\disfrac{1}{2}x+6\,.
 \end{eqn}
 \end{example}
 \begin{example}
-נתונות הנקודות עבור
+עבור
 $p_1=(2,8)$,
 $p_1''=(6,0)$,
-משוואת הקיפול של
+המשוואה של
 $l_{f_2}$ 
 היא:
 \begin{eqn}
@@ -697,7 +668,7 @@ $l$
 $p_1$
 על ל-%
 $l_1$
-ו-%
+ואת
 $p_2$
 על ל-%
 $l_2$
@@ -705,10 +676,9 @@ $l_2$
 \ref{f.axiom6}).
 \end{axiom}
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
-
-\begin{tikzpicture}[scale=.7]
+\begin{tikzpicture}[scale=.8]
 \draw[step=10mm,white!50!black,thin] (-7,-7) grid (7,5);
 \draw[thick] (-7,0) -- (7,0);
 \draw[thick] (0,-7) -- (0,5);
@@ -720,19 +690,25 @@ $l_2$
   \node at (-.3,\y-.3) {\sm{\y}};
   
 \coordinate (P1) at (0,4);
-\fill (P1) circle (3pt) node[above left,xshift=-2pt] {$p_1$};
 \coordinate (P2) at (0,-6);
-\fill (P2) circle (3pt) node[above left,xshift=-2pt,yshift=2pt] {$p_2$};
-
 \coordinate (P1P) at (3.1,2);
-\fill (P1P) circle (3pt) node[above right,xshift=-2pt] {$p_1'$};
 \coordinate (P2P) at (-6.12,-2);
-\fill (P2P) circle (3pt) node[below right,xshift=2pt] {$p_2'$};
-
 \coordinate (P1PP) at (-3.1,2);
-\fill (P1PP) circle (3pt) node[above right,xshift=-2pt] {$p_1''$};
 \coordinate (P2PP) at (6.12,-2);
-\fill (P2PP) circle (3pt) node[below right,xshift=2pt] {$p_2''$};
+
+\vertex{P1};
+\vertex{P2};
+\vertex{P1P};
+\vertex{P2P};
+\vertex{P1PP};
+\vertex{P2PP};
+
+\node[above left,yshift=3pt] at (P1) {$p_1$};
+\node[above left,xshift=-2pt,yshift=2pt] at (P2) {$p_2$};
+\node[above right,xshift=-2pt] at (P1P) {$p_1'$};
+\node[below right,xshift=2pt] at (P2P) {$p_2'$};
+\node[above right,xshift=3pt] at (P1PP) {$p_1''$};
+\node[below right,xshift=2pt] at (P2PP) {$p_2''$};
 
 \draw[very thick] (-7,2) -- node[very near start,above,xshift=-34pt] {$l_1$} (7,2);
 \draw[very thick] (-7,-2) -- node[very near start,below,xshift=-34pt] {$l_2$} (7,-2);
@@ -743,24 +719,32 @@ $l_2$
 \draw[very thick,dashed] (-5,-7) -- (2.95,5);
 \draw[very thick,dashed] (-3,5) -- (4.95,-7);
 
-\draw[very thick,dotted,->,bend left=50] (.2,4.1) to (3,2.2);
-\draw[very thick,dotted,->,bend left=50] (-.3,-6.1) to (-6.1,-2.2);
+\draw[very thick,dotted,->,bend left=50] (.15,4.1) to (3.1,2.1);
+\draw[very thick,dotted,->,bend right=50] (-.15,4.05) to (-3.1,2.1);
 
-\draw[very thick,dotted,->,bend right=50] (-.2,4.1) to (-3,2.2);
-\draw[very thick,dotted,->,bend right=50] (.3,-6.1) to (6.1,-2.2);
+\draw[very thick,dotted,->,bend right=50] (.15,-6.1) to (6.1,-2.1);
+\draw[very thick,dotted,->,bend left=50] (-.15,-6.1) to (-6.1,-2.1);
+
 \end{tikzpicture}
+
 \end{center}
 \caption{אקסיומה 6}\label{f.axiom6}
 \end{figure}
 
-עבור נקודות נתונות וקווים נתונים יכולים להיות אפס, אחד, שניים או שלושה קיפולים. קיפול המניח את 
+קיפול המניח את 
 $p_i$
 על
 $l_i$
-הוא קו שמרחקו ל-%
+הוא קו
+$l_f$
+שהמרחק מ-%
 $p_i$
-שווה למרחקו ל-%
-$l_i$.
+ל-%
+$l_f$
+שווה למרחק מ-%
+$l_i$
+ל-%
+$l_f$.
 המקום הגיאומטרי של נקודות שהן במרחק שווה מנקודה
 $p_i$
 ומקו
@@ -771,8 +755,9 @@ $p_i$
 ומדריך
 \L{(directrix)}
 $l_i$.
-קיפול הוא קו המשיק לפרבולה )סעיף~%
-\ref{s.parabola}(.
+קיפול הוא כל קו המשיק לפרבולה (סעיף~%
+\ref{s.parabola}).
+
 כדי שהקיפול יניח בו-זמנית את 
 $p_1$
 על ל-%
@@ -781,22 +766,19 @@ $l_1$
 $p_2$
 על ל-%
 $l_2$,
-הוא חייב להיות משיק משותף לשתי הפרבולות.
-
-המשוואה עבור פרבולה שרירותית מסובכת ולכן נגביל את הדיון לפרבולה שציר ה-%
-$y$
-הוא ציר הסמטריה. נביא גם דוגמה עם פרבולה שציר הסמטריה שלה הוא ציר ה-%
-$x$.
-
-\ref{f.two-para-1-zero}, 
+הוא חייב להיות משיק משותף לשתי הפרבולות. מספר המשיקים המשותפים הוא אפס, אחד, שניים או שלושה (איורים%
+~\ref{f.two-para-1-zero}, 
 \ref{f.two-para-1-one},
 \ref{f.two-para-1-two}, 
-\ref{f.two-para-1-three}
-מראה את ארבעת האפשרויות של משיקים לפרבולה.
+\ref{f.two-para-1-three}).
 
-\begin{figure}[htb]
+הנוסחה של פרבולה שרירותית מסובכת מאוד ולנן נביא את הנוסחאות רק עבור פרבולות שציר הסמטריה הוא ציר ה-%
+$x$
+או ציר ה-%
+$y$.
+\begin{figure}[tb]
 \begin{center}
-\begin{subfigure}{.4\textwidth}
+\begin{subfigure}{.45\textwidth}
 \begin{tikzpicture}[scale=.5]
 \draw (-6,0) -- (7,0);
 \draw (0,-1) -- (0,7);
@@ -811,8 +793,8 @@ $x$.
 \end{tikzpicture}
 \caption{אפס משיקים}\label{f.two-para-1-zero}
 \end{subfigure}
-\hspace{3em}
-\begin{subfigure}{.4\textwidth}
+\hspace{2em}
+\begin{subfigure}{.45\textwidth}
 \begin{tikzpicture}[scale=.5]
 \draw (-6,0) -- (7,0);
 \draw (0,-1) -- (0,7);
@@ -831,9 +813,9 @@ $x$.
 \end{center}
 \end{figure}
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
-\begin{subfigure}{.4\textwidth}
+\begin{subfigure}{.45\textwidth}
 \begin{tikzpicture}[scale=.5]
 \draw (-7,0) -- (7,0);
 \draw (0,-7) -- (0,5);
@@ -851,8 +833,8 @@ $x$.
 \selectlanguage{hebrew}
 \caption{שני משיקים}\label{f.two-para-1-two}
 \end{subfigure}
-\hspace{3em}
-\begin{subfigure}{.4\textwidth}
+\hspace{2em}
+\begin{subfigure}{.45\textwidth}
 \begin{tikzpicture}[scale=.5]
 \draw (-4,0) -- (7,0);
 \draw (0,-4) -- (0,6);
@@ -879,25 +861,31 @@ $x$.
 
 \subsection{פיתוח הנקודה של הקיפול}
 
-התיאור שלהלן מתייחס לאיור~%
-\ref{f.parabola}.
-הנקודה
+תהי הנקודה
 $(0,f)$
-היא מוקד של פרבולה עם מדריך
+מוקד של פרבולה עם מדריך
 $y=d$.
 נגדיר
 $p=f-d$,
-האורך 
-)$\pm$(
-של קטע הקו בין המוקד למדריך. אם הקודקוד 
+האורך עם סימן פלוס או מינוס של קטע הקו בין המוקד למדריך.%
+\footnote{%
+השתמשנו עד כה בסימון 
+$p_i$
+עבור נקודות. השימוש כאן ב-%
+$p$
+עלול לבלבל אבל ניסוח זה מקובל בספרות. השם הפורמלי עבור 
+$p$
+הוא מחצית ה-%
+\L{latus rectum}.}
+אם הקודקוד 
 \L{(vertex)}
-נמצא על ציר ה-%
+של הפרבולה נמצא על ציר ה-%
 $x$,
 המשוואה של הפרבולה היא
 $y=\disfrac{x^2}{2p}$.
-כדי להזיז את הפרבולה על ציר ה-%
+כדי להזיז את הפרבולה למעלה או למטה על ציר ה-%
 $y$,
-כך שהקודקוד שלה היא
+כדי שהקודקוד יהיה
 $(0,h)$,
 יש להוסיף 
 $h$
@@ -906,25 +894,17 @@ $h$
 \[
 y=\disfrac{x^2}{2p}+h\,.
 \]
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
-
 \begin{tikzpicture}[scale=.8]
-\draw (-6,0) -- node[very near start,below,xshift=-32pt] {$x$-axis}(6,0);
-\draw (0,-3) -- node[very near start,right,yshift=-20pt] {$y$-axis}(0,4.5);
-\draw[very thick] (-6,-2) -- node[near start,below] {directrix $\quad y=-2$} (6,-2);
-
-%\draw (-6,0) -- node[very near start,below,xshift=-32pt] {$x$-\R{ציר}}(6,0);
-%\draw (0,-3) -- node[very near start,right,yshift=-20pt] {$y$-\R{ציר}}(0,4.5);
-%\draw[very thick] (-6,-2) -- node[near start,below] {\R{מדריך} $\quad y=-2$} (6,-2);
-
+\draw (-6,0) -- node[very near start,below,xshift=-32pt] {$x$-\R{ציר}}(6,0);
+\draw (0,-3) -- node[very near start,right,yshift=-20pt] {$y$-\R{ציר}}(0,4.5);
+\draw[very thick] (-6,-2) -- node[near start,below] {\R{מדריך} $\quad y=-2$} (6,-2);
 \draw[domain=-5:5,samples=50,very thick,dotted] plot (\x,{\x*\x/8+1});
 \coordinate (F) at (0,4);
-\fill (F) circle (2pt) node[left,xshift=-2pt,yshift=0pt] {$(0,f)=(0,4)$} node[above left,xshift=-2pt,yshift=4pt] {focus};
-%\fill (F) circle (2pt) node[left,xshift=-2pt,yshift=0pt] {$(0,f)=(0,4)$} node[above left,xshift=-2pt,yshift=4pt] {\R{מוקד}};
+\fill (F) circle (2pt) node[left,xshift=-2pt,yshift=0pt] {$(0,f)=(0,4)$} node[above left,xshift=-2pt,yshift=4pt] {\R{מוקד}};
 \fill (0,-2) circle (2pt);
-\fill (0,1) circle (2pt) node[below left] {vertex} node[below left,yshift=-10pt] {$(0,1)$};
-%\fill (0,1) circle (2pt) node[below left] {\R{קודקוד}} node[below left,yshift=-10pt] {$(0,1)$};
+\fill (0,1) circle (2pt) node[below left] {\R{קודקוד}} node[below left,yshift=-10pt] {$(0,1)$};
 \draw[<->] (2,-1.9) -- node[fill=white] {$p=6$} +(0,5.8);
 \draw[<->] (1,.1) -- node[fill=white] {$h=1$} +(0,.8);
 \end{tikzpicture}
@@ -934,25 +914,22 @@ y=\disfrac{x^2}{2p}+h\,.
 \end{figure}
 נגדיר
 $a=2ph$
-כך שמשוואת הפרבולה היא:
+כדי שמשוואת הפרבולה תהיה:
 \begin{eqnlabels}
 y&=&\disfrac{x^2}{2p}+\disfrac{a}{2p}\\
-x^2-2py+a&=&0\,.
+\label{eq.eq-parabola}x^2-2py+a&=&0\,.
 \end{eqnlabels}
-
 עבור הפרבולה באיור~%
 \ref{f.parabola}
-המשוואה היא:
+המשוואה היא
+$x^2-12y +12=0$.
 
-\begin{eqn}
-x^2-2\cdot 6\,y + 2\cdot 6 \cdot 1&=&0\\
-x^2-12y +12&=&0\,.
-\end{eqn}
 נציב את המשוואה של קו 
 \textbf{שרירותי}
 $y=mx+b$
-במשוואה עבור הפרבולה ונקבל משוואה עבור נקודות החיתוך של הקו והפרבולה:
-
+במשוואה%
+~\ref{eq.eq-parabola}
+ונקבל משוואה עבור נקודות החיתוך של הקו והפרבולה:
 \begin{eqn}
 x^2-2p(mx+b)+a&=&0\\
 x^2+(-2mp)x+(-2pb+a)&=&0\,.
@@ -960,32 +937,20 @@ x^2+(-2mp)x+(-2pb+a)&=&0\,.
 הקו יהיה משיק לפרבולה אם ורק אם למשוואה ריבועית זו קיים 
 \textbf{בדיוק}
 פתרון אחד אם ורק אם הדיסקרימננטה 
-)\L{discriminant}(
+(\L{discriminant})
 היא אפס:
 \begin{eqnlabels}
 (-2mp)^2\:-\:4\cdot 1\cdot (-2pb+a)&=&0\\
 m^2p^2+2pb-a&=&0\,.\label{eq.disc}
 \end{eqnlabels}
-
-
-
-משוואה זו עם המשתנה 
+משוואה זו עם המשתנים
 $m$ 
-היא המשוואה ריבועית עבור השיפועים של המשיקים לפרבולה. קיימים אינסוף משיקים כי עבור כל 
-$m$,
-קיים
-$b$
-שגורם למשיק לזוז למעלה או למטה.%
-\footnote{\R{פרט כמובן עבור קו המקביל לציר הסמטריה}.}
-כדי למצוא את המשיקים המשותפים לשתי הפרבולות, יש לפתור את המשוואות של שתי הפרבולות, משוואות עם שני משתנים
-$m$
-ו-%
-$b$.
+היא המשוואה עבור המשיקים לפרבולה, אבל אנחנו מחפשים משיקים משותפים של שני משיקים, ולכן יש לפתור את המשוואות עבור שתי פרבולות.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{example}
-
+\mbox{}\\
 \textbf{פרבולה 1:}
 מוקד
 $(0,4)$,
@@ -998,7 +963,7 @@ $(0,3)$.
 $p=4-2=2$, $a=2\cdot 2\cdot 3=12$.
 משוואת הפרבולה היא:
 \[
-x^2-2\cdot 2y +12=0\,.
+x^2-4y +12=0\,.
 \]
 נציב לתוך משוואה%
 ~\ref{eq.disc}
@@ -1017,11 +982,11 @@ $(0,-3)$.
 $p=-4-(-2)=-2$, $a=2\cdot -2\cdot -3=12$.
 משוואת הפרבולה היא:
 \[
-x^2-2\cdot (-2)y+12=0\,.
+x^2+4y+12=0\,.
 \]
 נציב לתוך משווארה%
 ~\ref{eq.disc}
-ופשט:
+ונפשט:
 \[
 m^2-b-3=0\,.
 \]
@@ -1043,12 +1008,10 @@ y=\sqrt{3}x\,,\quad y=-\sqrt{3}x\,.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{example}
-
+\mbox{}\\
 \textbf{פרבולה 1:}
-ללא שינוי, המשוואה היא:
-\[
-m^2+b-3=0\,.
-\]
+ללא שינוי.
+
 \textbf{פרבולה 2:}
 מוקד
 $(0,-6)$,
@@ -1060,9 +1023,9 @@ $(0,-4)$.
 $p=-6-(-2)=-4$, $a=2\cdot -4\cdot -4=32$.
 משוואת הפרבולה היא:
 \[
-x^2-2\cdot (-4)y +32=0\,.
+x^2+8y +32=0\,.
 \]
-נציב לתוך משווארה%
+נציב לתוך משוואה%
 ~\ref{eq.disc}
 ונפשט:
 \[
@@ -1086,6 +1049,9 @@ y=\sqrt{\disfrac{7}{3}}x+\disfrac{2}{3}\,,\quad y=-\sqrt{\disfrac{7}{3}}x+\disfr
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{example}
+\mbox{}\\
+עכשיו נגדיר פרבולה שציר הסמטריה שלה הוא ציר ה-%
+$x$.
 
 \textbf{פרבולה 1:}
 ללא שינוי, המשוואה היא:
@@ -1093,19 +1059,18 @@ y=\sqrt{\disfrac{7}{3}}x+\disfrac{2}{3}\,,\quad y=-\sqrt{\disfrac{7}{3}}x+\disfr
 m^2+b-3=0\,.
 \]
 \textbf{פרבולה 2:}
-פרבולה שציר הסמטריה שלה הוא ציר ה-%
-$x$.
 מוקד
 $(4,0)$,
 מדריך
 $x=2$,
 קודקוד
 $(3,0)$.
+
 $p=4-2=2$, $a=2\cdot 2\cdot 3=12$.
 משוואת הפרבולה היא:
-\[
-y^2-4x+12 = 0\,.
-\]
+\begin{equation}
+y^2-4x+12 = 0\,.\label{eq.x-symmetry-parabola}
+\end{equation}
 שימו לב שזו משוואה עם 
 $x$
 ו-%
@@ -1118,20 +1083,18 @@ $y$,
 ~\ref{eq.disc}
 ונצטרך לפתח את משוואות מחדש.
 
-נציב את המשוואה של הקו:
-
+נציב את המשוואה של הקו במשוואה%
+~\ref{eq.x-symmetry-parabola}:
 \begin{eqn}
 (mx+b)^2-4x+12&=&0\\
 m^2x^2+(2mb-4)x+(b^2+12)&=&0\,
 \end{eqn}
 נשווה את הדיסקרימננטה לאפס ונפשט:
-
 \begin{eqn}
 (2mb-4)^2\:-\:4m^2(b^2+12)&=&0\\
 -3m^2-mb+1&=&0\,.
 \end{eqn}
 אם ננסה לפתור את שתי המשוואות:
-
 \begin{eqn}
 m^2+b-3&=&0\\
 -3m^2-mb+1&=&0\,,
@@ -1146,12 +1109,6 @@ m^3-3m^2-3m+1=0\,.\label{eq.cubic}
 למשוואה ממעלה שלוש יש לפחות פתרון ממשי אחד ולכל היותר שלושה פתרונות ממשיים, לכן יכול להיות אחד, שניים או שלשה משיקים משותפים. הנוסחה למציאת פתרונות למשוואה ממעלה שלוש די מסובכת, לכן השתמשתי במחשבון באינטרנט וקיבלתי שלושה פתרונות:
 \[
 m=3.73\,, \;m=-1\,, \; m=0.27\,.
-\]
-אם נבחר
-$m=0.27$, $b=3-m^2=2.93$,
-משוואת הקיפול היא:
-\[
-y=0.27x+2.93\,.
 \]
 מהצורה של המשוואה%
 ~\ref{eq.cubic},
@@ -1172,7 +1129,6 @@ $m-(-1)=m+1$
 $m^2-4m+1$
 ששורשיה הם
 $2\pm\sqrt{3}\approx 3.73, 0.27$.
-
 \end{example}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1187,9 +1143,7 @@ $p_1=(x_1,y_1)$
 $l_t$
 שהמשוואה שלה היא
 $y=m_tx+b_t$.
-)החישוב דומה עבור כל משיק ועבור
-$p_2$.(
-נמצא את הקו
+תחילה, נמצא את הקו
 $l_p$
 עם המשוואה
 $y=m_px+b_p$
@@ -1197,7 +1151,6 @@ $y=m_px+b_p$
 $l_t$
 ועובר דרך
 $p_1$:
-
 \begin{eqn}
 y&=&-\disfrac{1}{m_t}x+b_p\\
 y_1&=&-\disfrac{1}{m_t}x_1+b_p\\
@@ -1210,115 +1163,125 @@ $l_t$
 ו-%
 $l_p$:
 \begin{eqn}
-m_tx_t+b_t&=&\disfrac{-x_t}{m_t}+\left(y_1+\disfrac{x_1}{m_t}\right)\\
-%x_t&=&\disfrac{\left(y_1+\disfrac{x_1}{m_t}-b_t\right)}{\left(m_t+\disfrac{1}{m_t}\right)}\\
-x_t&=& \disfrac{m_t(y_1-b_t)+x_1}{m_t^2+1}\\
+m_tx_t+b_t&=&\frac{-x_t}{m_t}+\left(y_1+\frac{x_1}{m_t}\right)\\
+x_t&=&\frac{\left(y_1+\displaystyle\frac{x_1}{m_t}-b_t\right)}{\left(m_t+\displaystyle\frac{1}{m_t}\right)}\\
 y_t&=&m_tx_t+b_t\,.
 \end{eqn}
-ניתן למצוא את השיקוף
-$p_1'$
-כי נקודת החיתוך
 $p_t$
-היא נקודת האמצע בין
+היא נקודה האמצע בין 
 $p_1$
-לבין
+
+ל-%
 $p_1'$:
-\begin{eqn}
-x_t&=&\disfrac{x_1+x_1'}{2}\,,\quad y_t=\disfrac{y_1+y_1'}{2}\\
-x_1'&=&2x_t-x_1\,,\quad y_1'=2y_t-y_1\,.
-\end{eqn}
+\[
+\begin{array}{rcl@{\hspace{3ex}}rcl}
+x_t&=&\displaystyle\frac{x_1+x_1'}{2}\,, &x_1'&=&2x_t-x_1\,,\\
+y_t&=&\displaystyle\frac{y_1+y_1'}{2}\,,& y_1'&=&2y_t-y_1\,.
+\end{array}
+\]
 \begin{example}
-נתון
-$p_1=(0,4)$
+יהי
+$l_t$
+הקו
+$y=\sqrt{3}x+0$
 ו-%
-$l_1$
-עם המשוואה
-$y=\sqrt{3}x$:
+$p_1=(0,4)$:
 \begin{eqn}
-%x_t&=&\disfrac{\left(4+\disfrac{0}{\sqrt{3}}-0\right)}{\left(\sqrt{3}+\disfrac{1}{\sqrt{3}}\right)}=\sqrt{3}\\
-x_t&=&\disfrac{\sqrt{3}(4-0)+0}{(\sqrt{3})^2+1}=\sqrt{3}\\
+x_t&=&\frac{\left(4+\displaystyle\frac{0}{\sqrt{3}}-0\right)}{\left(\sqrt{3}+\displaystyle\frac{1}{\sqrt{3}}\right)}=\sqrt{3}\\
 y_t&=&\sqrt{3}\sqrt{3}+0=3\\
-x_1'&=&2x_t-x_1=2\sqrt{3}-0=2\sqrt{3}\approx 3.46\\
-y_1'&=&2y_t-y_1=2\cdot 3 - 4 = 2\,.
+x_1'&=&2x_t-x_1=2\sqrt{3}\approx 3.46\\
+y_1'&=&2y_t-y_1= 2\,.
 \end{eqn}
+
 \end{example}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{משיקים לפרבולה}\label{s.parabola}
 
-באיור~%
+אנו רוצים להוכיח שהקיפולים של אקסיומה
+$6$
+הם משיקים לפרבולות. איור~%
 \ref{f.para:locus}
-בחרנו חמש נקודות
-$i=1,\ldots,5$, $p_i$
-על הפרבולה. כל נקודה
+מראה חמש נקודות
+$p_1,\ldots,p_5$,
+על הפרבולה כאשר כל נקודה
 $p_i$
 היא במרחק
 $a_i$
-גם מהמוקד וגם מהמדריך. נוריד ניצב למדריך מ-%
+גם מהמוקד וגם מהמדריך. נוריד ניצבים למדריך מ-%
 $p_i$,
 ונסמן ב-%
 $p_i'$
-את נקודת החיתוך של הניצב עם המדריך. נשתמש באקסיומה $2$ ונבנה את הקו 
+את נקודות החיתוך של הניצב עם המדריך. לפי אקסיומה $2$ קיימים קיפולים 
 $l_i$
 דרך
 $p_i$
-שמשקף את 
+שמניח את 
 $p$
-על
-$p_i'$.
-האיור מראה את הקיפול 
+המדריך. האיור מראה את הקיפול 
 $l_1$
 דרך 
-$p_1$.
+$p_1$
+ואת השיקוף
+$p_1'$.
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
-
-\begin{tikzpicture}[scale=.9]
-\draw (-6,0) -- node[very near start,below,xshift=-32pt] {$x$-axis} (6,0);
-\draw (0,-3) -- node[very near start,right,yshift=-20pt] {$y$-axis} (0,4.5);
-\draw[ultra thick] (-6,-2) -- node[near end,below] {directrix $d: \quad y=-f$} (6,-2);
-%\draw (-6,0) -- node[very near start,below,xshift=-32pt] {$x$-\R{ציר}} (6,0);
-%\draw (0,-3) -- node[very near start,right,yshift=-20pt] {$y$-\R{ציר}} (0,4.5);
-%\draw[ultra thick] (-6,-2) -- node[near end,below] {\R{מדריך} $d: \quad y=-f$} (6,-2);
+\begin{tikzpicture}[scale=.8]
+\draw (-6,0) -- node[very near start,below,xshift=-32pt] {$x$%
+\R{ציר ה-}}
+(6,0);
+\draw (0,-3.2) -- node[very near start,right,yshift=-20pt] {$y$%
+\R{ציר ה-}}
+(0,4.5);
+\draw[thick] (-6,-2) -- node[near end,below] {\R{מדריך} $\quad y=-f$} (6,-2);
 \draw[domain=-6:6,samples=50,very thick,dotted] plot (\x,{\x*\x/8});
 \coordinate (F) at (0,2);
-\fill (F) circle (3pt) node[above left,xshift=-2pt,yshift=15pt] {$(0,f)$} node[above left,xshift=-2pt,yshift=30pt] {focus} node[above right] {$p$};
-%\fill (F) circle (3pt) node[above left,xshift=-2pt,yshift=15pt] {$(0,f)$} node[above left,xshift=-2pt,yshift=30pt] {\R{מוקד}} node[above right] {$p$};
-\fill (0,0) circle (1.5pt) node[below right] {$p_2$};
-\fill (0,-2) circle (1.5pt);
-\fill (2,-2) circle (1.5pt);
-\fill (3,-2) circle (1.5pt);
-\fill (5,-2) circle (1.5pt);
+\vertex{F};
+\node[above left,xshift=-2pt,yshift=15pt] at (F) {$(0,f)$};
+\node[above left,xshift=-5pt,yshift=30pt] at (F) {\R{מוקד}}; \node[above right] at (F) {$p$};
+\coordinate (vertex) at (0,0);
+\vertex{vertex};
+\node[below right] at (vertex) {$p_2$};
 \coordinate (FP) at (-5,-2);
-\fill (FP) circle (1.5pt) node[below] {$p_1'$};
+\node[below] at (FP) {$p_1'$};
 \coordinate (F1) at (2,.5);
-\fill (F1) circle (1.5pt) node[below right] {$p_3$};
+\vertex{F1};
+\node[below right] at (F1) {$p_3$};
 \coordinate (F2) at (3,1.125);
-\fill (F2) circle (1.5pt) node[below right] {$p_4$};
+\vertex{F2};
+\node[below right] at (F2) {$p_4$};
 \coordinate (F3) at (5,3.125);
-\fill (F3) circle (1.5pt) node[below right] {$p_5$};
+\vertex{F3};
+\node[below right] at (F3) {$p_5$};
 \coordinate (F4) at (-5,3.125);
-\fill (F4) circle (1.5pt) node[above right] {$p_1$};
+\vertex{F4};
+\node[above right] at (F4) {$p_1$};
 \draw (F) -- node[left] {$a_2$} (0,0) -- node[left] {$a_2$} (0,-2);
 \draw (F) -- node[near end,left] {$a_3$} (F1) -- node[left] {$a_3$} (2,-2);
 \draw (F) -- node[near end,above] {$a_4$} (F2) -- node[left] {$a_4$} (3,-2);
 \draw (F) -- node[above] {$a_5$} (F3) -- node[left] {$a_5$} (5,-2);
 \draw (F) -- node[above] {$a_1$} (F4) -- node[left] {$a_1$} (FP);
-\draw[very thick,dashed] ($(F4)!-.4!(-2.5,0)$) -- node[very near end,right,xshift=2pt] {$l_1$} ($(F4)!1.8!(-2.5,0)$);
-\draw (0,-2) rectangle +(8pt,8pt);
-\draw (2,-2) rectangle +(8pt,8pt);
-\draw (3,-2) rectangle +(8pt,8pt);
-\draw (5,-2) rectangle +(8pt,8pt);
-\draw (-5,-2) rectangle +(8pt,8pt);
+\draw[very thick,dashed] ($(F4)!-.4!(-2.5,0)$) -- node[near end,right,xshift=2pt] {$l_1$} ($(F4)!1.8!(-2.5,0)$);
+\draw (0,-2) rectangle +(9pt,9pt);
+\draw (2,-2) rectangle +(9pt,9pt);
+\draw (3,-2) rectangle +(9pt,9pt);
+\draw (5,-2) rectangle +(9pt,9pt);
+\draw (-5,-2) rectangle +(9pt,9pt);
 \end{tikzpicture}
 \end{center}
 \caption{המשיק כמקום הגיאומטרית}\label{f.para:locus}
 \end{figure}
 
 \begin{theorem}\label{thm.parabola-tangents}
-הקיפולים הם משיקים לפרבולה.
+הקיפולים של אקסיומה
+$6$
+הם משיקים לפרבולה והמקומות הגיאומטריים של הנקודות שהן במרחק שווה מ-%
+$p_1,p_2$
+ומ-%
+$l_1,l_2$,
+בהתאמה.
 \end{theorem}
 
 \begin{proof}
@@ -1330,53 +1293,51 @@ $p$,
 $l$,
 $p'$
 היא נקודה על המדריך, ו-%
-$m$
+$l$
 הוא הקיפול המשקף את
 $p$
 על 
 $p'$.
-לפי ההגדרה, 
-$m$
-הוא האנך האמצעי של הקו
-$\overline{pp'}$.
 תהי 
 $s$
 נקודת החיתוך של 
 $\overline{pp'}$
 ו-%
-$m$.
+$l$.
 אזי 
 $\overline{ps}=\overline{p's}=a$
 ו-%
-$m\perp \overline{pp'}$.
+$l\perp \overline{pp'}$.
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
-
-\begin{tikzpicture}[scale=.9]
-\draw[ultra thick] (-6,-2) -- node[near end, below] {$l$} (6,-2);
+\begin{tikzpicture}[scale=.8]
+\draw[thick] (-6,-2) -- node[near end, below] {$d$} (6,-2);
 \draw[domain=-5.5:5.5,samples=50,very thick,dotted] plot (\x,{\x*\x/8});
 \coordinate (F) at (0,2);
-\fill (F) circle (2pt) node[above right] {$p$};
+\vertex{F};
+\node[above right] at (F) {$p$};
 \coordinate (FP) at (-3,-2);
-\fill (FP) circle (1.5pt) node[below] {$p'$};
+\node[below] at (FP) {$p'$};
 \coordinate (F4) at (-3,1.125);
-\fill (F4) circle (1.5pt) node[above right] {$r$};
+\vertex{F4};
+\node[above right] at (F4) {$r$};
 \coordinate (F5) at (-5,2.775);
-\fill (F5) circle (1.5pt) node[left,yshift=-4pt] {$q$};
+\vertex{F5};
+\node[left,yshift=-4pt] at (F5) {$q$};
 \coordinate (F5p) at (-5,-2);
-\fill (F5p) circle (1.5pt) node[below] {$p''$};
+\node[below] at (F5p) {$p''$};
 \draw (F) -- node[above] {$b$} (F4) -- node[left] {$b$} (FP);
 \draw (F) -- node[above] {$c$} (F5);
-\draw (F5) -- node[left] {$d$} (F5p);
-\draw[thick,dashed,name path=fold] ($(F4)+(140:4)$) -- (F4) -- node[below,xshift=-2pt,yshift=-2pt] {$m$} ($(F4)+(-40:5.1)$);
-\draw (FP) rectangle +(8pt,8pt);
-\draw (F5p) rectangle +(8pt,8pt);
+\draw (F5) -- node[left] {$e$} (F5p);
+\draw[thick,dashed,name path=fold] ($(F4)+(140:4)$) -- (F4) -- node[below,xshift=3pt,yshift=-4pt] {$l$} ($(F4)+(-40:5.3)$);
+\draw (FP) rectangle +(10pt,10pt);
+\draw (F5p) rectangle +(10pt,10pt);
 \draw (F5) -- (FP);
 \draw[name path=base] (F) -- (FP);
 \path [name intersections = {of = base and fold, by = {G}}];
-\fill (G) circle (1.5pt) node[below,yshift=-4pt] {$s$};
-\draw[rotate=140] (G) rectangle +(6pt,6pt);
+\node[below,yshift=-4pt] at (G) {$s$};
+\draw[rotate=140] (G) rectangle +(10pt,10pt);
 \path (FP) -- node[left] {$c$} (F5);
 \path (F) -- node[below] {$a$} (G) -- node[below] {$a$} (FP);
 \end{tikzpicture}
@@ -1386,58 +1347,51 @@ $m\perp \overline{pp'}$.
 תהי
 $r$
 נקודת החיתוך של הניצב ל-%
-$l$
+$d$
 דרך 
 $p'$
 והקיפול
-$m$.
+$l$.
 אזי
 $\triangle psr\cong \triangle p'sr$
-לפי צלע-זווית-צלע, כי
-$\overline{ps}=\overline{p's}$, 
-$\angle psr=\angle p'sr=90^\circ$
-ו-%
-$\overline{rs}$
-הוא צלע משותפת. מכאן ש-%
+לפי צלע-זווית-צלע. מכאן ש-%
 $\overline{pr}=\overline{p'r}=b$
 ולכן
 $r$
-נמצאת על הפרבולה.
-
-בחרו נקודה
+נמצאת על הפרבולה. נבחר נקודה
 $p''$
 על המדריך שהיא שונה מ-%
-$p'$.
-נניח שהקיפול
-$m$
-גם משקף את
+$p'$
+ונניח שהקיפול
+$l$
+משקף גם את
 $p$ 
 על
 $p''$.
 תהי 
 $q$
 החיתוך של הניצב ל-%
-$l$
+$d$
 דרך 
 $p''$
 והקיפול
-$m$.
-כמו בהוכחה לעיל, נוכל להוכיח ש-%
+$l$.
+$\triangle psq\cong \triangle p'sq$ 
+ןלכן
 $\overline{pq}=\overline{p'q}=c$.
 נסמן
-$\overline{qp''}=d$.
+$\overline{qp''}=e$.
 אם
 $q$
 נמצאת על הפרבולה, אזי
-$d=\overline{qp''}=\overline{qp}=c$.
+$e=\overline{qp''}=\overline{qp}=c$,
 אבל
 $c$
 הוא היתר של המשולש ישר-זווית
 $\triangle qp''p'$
-ולא ייתכן שהיתר שווה לאחת הצלעות של המשולש.
-הוכחנו שלקיפול
-$m$
-נקודת חיתוך אחת עם בפרבולה, ולכן הקיפול הוא משיק.
+ולא ייתכן שהיתר שווה לאחת הצלעות של המשולש. לכן לקיפול
+$l$
+נקודת חיתוך אחת עם בפרבולה והוא הקיפול הוא משיק.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1448,7 +1402,8 @@ $m$
 נתונה נקודה 
 $p_1=(x_1,y_1)$,
 ונתונים קווים
-$l_1$,
+$l_1$
+ו-%
 $l_2$,
 קיים קיפול
 $l$
@@ -1462,7 +1417,7 @@ $l_1$
 \ref{f.axiom7}).
 \end{axiom}
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
 
 \begin{tikzpicture}[scale=.9]
@@ -1505,44 +1460,54 @@ $l_1$
 \caption{אקסיומה 7}\label{f.axiom7}
 \end{figure}
 
-\textbf{פיתוח משוואת הקיפול:}
-המשוואות של
-$l_1$
-ו-%
+הקיפול הוא המקום הגיאומטרי של כל הנקודות על הקו הניצב ל-%
 $l_2$
-הן
-$y = m_1x + b_1$ 
-ו-% 
-$y=m_2x+b_2$.
-הקיפול
-$l$
-ניצב ל-%
-$l_2$,
-וגם ל-%
-$l_p$
-הניצב ל-%
-$l$,
-ולכן
-$l_p\|l_2$.
-$l_p$
-עובר דרך
-$p_1$.
-נחשב:
-\begin{eqn}
-y&=&m_2x+b_p\\
-y_1&=&m_2x_1+b_p\\
-y&=&m_2x+(y_1-m_2x_1)\,.
-\end{eqn}
-$p_1'=(x_1',y_1')$,
+ושנמצא במרחק שווה מ-%
+$p_1$
+ו-%
+$p_1'$,
 השיקוף של
 $p_1$
-מסביב לקיפול
-$l$,
-היא נקודת החיתוך של 
+על
+$l_1$.
+
+\textbf{פיתוח משוואת הקיפול:}
+תהי
+$p_1=(x_1,y_1)$,
+יהי
+$l_1$
+הקו
+$y = m_1x + b_1$ 
+ו-%
+$l_2$
+הקו
+$y=m_2x+b_2$.
+יהי
+$l_p$
+הקו שמכיל את
+$\overline{p_1p_1'}$.
+מ-%
+$l\perp l_2,l_p\perp l$
+נובע ש-%
+$l_p\parallel l_2$
+והמשוואה של
+$l_p$
+היא
+$y=m_2x+b_p$.
+
+$l_p$
+עובר דרך
+$p_1$
+ולכן
+$y_1=m_2x_1+b_p$
+והמשוואה שלו היא
+$y=m_2x+(y_1-m_2x_1)$.
+השיקוף 
+$p_1'=(x_1',y_1')$
+הוא נקודת החיתוך של
 $l_1$
 ו-%
 $l_p$:
-
 \begin{eqn}
 m_1x_1'+b_1&=&m_2x_1'+(y_1-m_2x_1)\\
 x_1'&=&\disfrac{y_1-m_2x_1-b_1}{m_1-m_2}\\
@@ -1551,23 +1516,25 @@ y_1'&=&m_1x_i'+b_1\,.
 $p_m=(x_m,y_m)$,
 נקודת האמצע של
 $l_p$,
-נמצאת על הקיפול
-$l$:
+היא:
 \[
 (x_m,y_m)=\left(\disfrac{x_1+x_1'}{2},\disfrac{y_1+y_1'}{2}\right)\,.
 \]
-הקיפול
-$l$
-הוא האנך האמצעי של 
-$\overline{p_1p_1'}$,
-וכדי לחשב את המשוואה שלו, תחילה נחשב את
-$p_m$,
-נקודת האמצע של
-$\overline{p_1p_1'}$:
-\begin{eqn}
-y_m&=&-\disfrac{1}{m_2}x_m+b_m\\
-b_m&=&y_m+\disfrac{x_m}{m_2}\,.
-\end{eqn}
+$l\perp l_2$
+ועבור דרך
+$p_m$
+ולכן המשוואה שלו היא:
+so its equation is:
+\[
+y_m=-\disfrac{1}{m_2}x_m+b_m\,.
+\]
+כאשר ניתן לחשב את 
+$b_m$
+מ-%
+$y=-\displaystyle\frac{1}{m_2}x+b_m$:
+\[
+b_m=y_m+\disfrac{x_m}{m_2}\,.
+\]
 המשוואה של הקיפול
 $l$
 היא:
@@ -1585,7 +1552,7 @@ $y=3x-3$,
 $l_2$
 שהמשוואה שלו היא
 $y=-x+11$.
-
+אזי:
 \begin{eqn}
 x_1'&=&\disfrac{3-(-1)\cdot 5-(-3)}{3-(-1)}=\disfrac{11}{4}\\
 y_1' &=&3\cdot\disfrac{11}{4} + (-3)=\disfrac{21}{4}\\
@@ -1609,8 +1576,10 @@ y=-\disfrac{1}{-1}\cdot x+\left(\disfrac{33}{8}+\disfrac{\disfrac{31}{8}}{-1}\ri
 \cite{wiki:hh-axioms}.
 \L{Lang}
 \cite{lang}
-מביא דוגמאות של יצירות אוריגמי.
-\cite[Chap.~10]{martin}
+מביא דוגמאות של יצירות אוריגמי. פרק%
+~$10$
+של
+\cite{martin}
 מציג את התיאוריה המפורטת של אורגמי, כולל הוכחה שלפרבולה יכולה להיות אפס, אחד, שניים או שלושה משיקים. אוריה בן-לולו הראתה לי את ההוכחה של משפט%
 ~\ref{thm.parabola-tangents}.
 מצאתי שתוכנה גיאומטרית כגון 
