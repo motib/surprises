@@ -5,8 +5,6 @@ en/tikz/*
 he/tikz/*
 en/*.pdf
 he/*.pdf
-*.pdf
-!suprises-he*.pdf
 *.bat
 *.zip
 *~

@@ -15,11 +15,11 @@
 \ref{fig.collapsing-compass}).
 שרגליה מתקפלות כאשר מרימים אותן מהנייר. לעתים קרובות מורים משתמשים מחוגה מתמוטטת המורכבת מטוש שמחובר לחוט כדי לבנות מעגל הלוח. אי-אפשר לשמור על מרחק קבוע כאשר מרימים את המחוגה מהלוח.
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
 \begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}
-\begin{scope}[rotate=0,transform shape,scale=3]
+\begin{scope}[rotate=0,transform shape,scale=2.6]
 \draw (2.95,3.7) rectangle (3,3.95);
 \draw (2.92,3.68) -- (2.5,2.5) -- (2.5,2.3) -- (2.99,3.68);
 \draw (3.5,2.5) -- (3.43,2.48) -- (2.975,3.68);
@@ -28,7 +28,7 @@
 \draw[fill=white] (2.975,3.75) circle (0.1cm);
 \draw (2.975,3.75) circle (0.04cm);
 \end{scope}
-\begin{scope}[xshift=10.34cm,yshift=7.28cm,rotate=21.4,scale=.6]          
+\begin{scope}[xshift=9cm,yshift=6.2cm,rotate=21.4,scale=.6]          
 \fill[gray!50] (0,4) -- (0.4,4) -- (0.4,0) --
                (0.3,-0.15) -- (0.2,0) -- (0.1,-0.14) --
                (0,0) -- cycle;
@@ -48,7 +48,7 @@
 \end{subfigure}
 \hspace{3em}
 \begin{subfigure}[b]{.4\textwidth}
-\begin{tikzpicture}[rotate=0,scale=1]          
+\begin{tikzpicture}[rotate=0,scale=.9]          
 \fill[gray!50] (0,4) -- (0.4,4) -- (0.4,0) --
                (0.3,-0.15) -- (0.2,0) -- (0.1,-0.14) --
                (0,0) -- cycle;
@@ -90,15 +90,13 @@
 ~\ref{s.relevance}).
 סעיף%
 ~\ref{s.collapse} 
-משווה את שני סוגי המחוגה בבנייה הפשוטה ביותר: אנח אמצעי. סעיף%
+משווה את שני סוגי המחוגה בבנייה הפשוטה ביותר: אנך אמצעי. סעיף%
 ~\ref{s.collapse-copy}
 מביא את השיטה של אוקלידס להעתקת קטע קו באמצעות מחוגה מתמוטטת. זה מוכיח שניתן לבצע באמצעות מחוגה מתמוטטת כל בנייה שניתנת לביצוע באמצעות מחוגה קבועה. סעיף%
 ~\ref{s.collapse-copy-incorrect} 
-מציג הוכחה של משפט זה שנראית נכונה אבל שלא עובדת עבור כל תצורה של קווים ונקודות. כדי להדגיש שאין לסמוך על שרטוט, סעיף%
+מציג הוכחה של משפט זה שנראית נכונה אבל היא לא נכונה עבור כל תצורה של קווים ונקודות. כדי להדגיש שאין לסמוך על שרטוט, סעיף%
 ~\ref{s.collapse-isoceles}
-מביא "הוכחה לכאורה" מפורסמת ש-
-\textbf{כל}
-משולש הוא שווי שוקיים. ההוכחה נראית נכונה אבל היא שגויה כי היא מתבססת על שרטוט לא נכון.
+מביא "הוכחה לכאורה" מפורסמת שכל משולש הוא שווי שוקיים. ההוכחה נראית נכונה אבל היא שגויה כי היא מתבססת על שרטוט לא נכון.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -117,12 +115,12 @@
 ~\ref{c.heptadecagon}
 מביא בנייה של 
 \L{Gauss}
-שהיתה נקודת מוצא של אלגברה אבסטרקטית מודרנית, במיוחד התיאוריה שפותחה על יד 
+שהיתה נקודת מוצא של אלגברה מודרנית, במיוחד התיאוריה שפותחה על יד 
 \L{\'{E}variste Galois}.
 \item
 העובדה שיש בניות שאינן אפשריות קשה לעיכול ולכן מאוד מעניין.
 \item
-מעציב אבל אנשים רבים בעולם מבזבזים שנים של חייהם בניסיון לבצע בניות שאינן אפשריות. חשוב שתלמידים יכירו שהמאמצים הללו חסרי תוחלת.
+מעציב שאנשים רבים מבזבזים שנים של חייהם בניסיון לבצע בניות שאינן אפשריות. חשוב שתלמידים יכירו שהמאמצים הללו חסרי תוחלת.
 \end{itemize}
 
 
@@ -130,32 +128,55 @@
 
 \section{מחוגה קבועה ומחוגה מתמוטטת}\label{s.collapse}
 
-$\overline{AB}$
-שווה כמובן לאורך של
-$\overline{BA}$,
-ולכן למעגלים רדיוס זהה.
+בספרי לימוד גיאומטריה ניתן למצוא בנייה של אנך אמצעי לקטע קו על ידי בניית שני מעגלים שמרכזם על הקו,ובלבד שהרדיוס גדול ממחצית המרחק בין המרכזים 
+(\ref{f.collapse-perp-bisector-fixed}).
+בנייה זו אפשרית רק עם מחוגה קבועה כי לאחר בניית המעגל שמרכזו 
+$A$,
+המרחק בין רגלי המחוגה חייב להישאר ללא שינוי כדי לבנותאת המעגל שמרכזו 
+$B$.
 
-בבנייה עם המחוגה המתמוטטת קל להוכיח שמתקבל משולש שווה-צלעות. האורך של
-$\overline{AC}$
-שווה לאורכו של
-$\overline{AB}$,
-כי שניהם רדיוסים של אותו מעגל, ומאותה סיבה האורך של
-$\overline{BC}$
-שווה לאורכו של
+\ref{f.collapse-perp-bisector-collapse}
+מראה בנייה של אנך אמצעי שפועלת גם עם מחוגה קבועה וגם עם מחוגה מתמוטטת. נבנה שני מעגלים: אחד שמרכזו 
+$A$
+עם רדיוס
+$\overline{AB}$
+ואחד עם רדיוס
 $\overline{BA}$.
-מכאן ש-%
+הבנייה אפשרית עם מחוגה מתמוטטת כי (ברור)
+$\overline{AB}=\overline{BA}$,
+ולכן המחוגה לא חייבת "לזכור" את האורך של
+$\overline{AB}$
+כדי לבנות מעגל שמרכזו 
+$B$
+עם רדיוס זהה.
+
+הוכחת הנכונות של הבנייה ב-%
+\ref{f.collapse-perp-bisector-fixed}
+לא פשוטה בכלל כי חייבים להשתמש במושגים יחסית מתקדמים כגון משולשים חופפים. אבל הוכחת הנכונות של הבנייה ב-%
+\ref{f.collapse-perp-bisector-collapse}
+פשוטה ומבוססת על העובדה ש-%
+$\triangle ABC$
+הוא משולש שווה-צלעות. טענה זו היא המשפט הראשון בספר של אוקלידס. 
+$\overline{AC}=\overline{AB}$
+כי הם רדיוסים של אותו מעגל, וכן
+$\overline{BC}=\overline{BA}$.
+מכאן:
 $\overline{AC} = \overline{AB} = \overline{BA} = \overline{BC}$.
 
-הבנייה של משולש שווה-צלעות היא המשפט הראשון בספר של אוקלידס. המשפט השני מראה שאפשר להעתיק קטע קו עם מחוגה מתמוטטת, ולכן המחוגה הקבועה לא מוסיפה יכולת חדשה. 
-
-בספרי לימוד גיאומטריה ניתן למצוא בנייה של אנך אמצעי לקטע קו על ידי בניית שני מעגלים שמרכזם על הקו, 
-\textbf{ובלבד שהרדיוס גדול ממחצית המרחק בין המרכזים},
-)תרשים שמאלי(:
+\ref{f.collapse-equilateral-fixed}
+מראה שעבור הבנייה עם מחוגה קבועה, המשולש יהיה שווה-שוקיים, לא בהכרח שווה-צלעות 
+(\ref{f.collapse-equilateral-collapse}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \section{העתקת קטע קו לפי אוקלידס}\label{s.collapse-copy}
+
+המשפט השני של ספרו של אוקלידס מתאר איך להעתיק קטע קו נתון
+$\overline{AB}$
+לקטע באותו אורך שאחת מנקודות הקצה שלו היא נקודה נתונה
+$C$.
+מכאן שמחוגה קבועה לא מוסיף יכולות ואפשר להסתפק במחוגה מתמוטטת, אבל הבניות יהיו מסובכות יותר.
 
 \begin{theorem}
 נתון קטע קו
@@ -163,14 +184,16 @@ $\overline{AB}$
 ונקודה
 $C$,
 ניתן לבנות עם מחוגה מתמוטטת בנקודה
+$C$,
+ניתן לבניות עם מחוגה מתמוטטת קטע קו
+$\overline{CC'}$
+שאחת מנקודות הקצה שלו הוא
 $C$
-קטע קו שאורכו שווה לאורכו של 
-$\overline{AB}$.
-(איור%
-~\ref{f.collapse-copying-1}).
+ואורכו
+$\overline{AB}=\overline{CC'}$ (\ref{f.collapse-copying-1}).
 \end{theorem}
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
 \begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}[scale=0.5]
@@ -211,7 +234,7 @@ $\overline{AB}$.
 \end{figure}
 
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
 \begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}[scale=0.5]
@@ -257,7 +280,7 @@ $\overline{AB}$.
 \end{center}
 \end{figure}
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
 \begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}[scale=0.5]
@@ -297,41 +320,44 @@ $\overline{AB}$.
 \end{figure}
 
 \begin{proof}
-
-\textbf{בנייה:}
-\begin{itemize}
-\item
-חברו בקו את הנקודות
-$A$
-ו-%
-$C$.
-\item
-בנו משולש שווה צלעות שבסיסו
+נבנה קטע קו
 $\overline{AC}$
-(איור%
-~\ref{f.collapse-copying-2}).
-סמנו את הקודקוד של המשולש ב-%
+ומשולש שווה-צלעות 
+$\triangle ACD$
+שבסיסו
+$\overline{AC}$
+(\ref{f.collapse-copying-2}).
+לפי המשפט הראשון של אוקלידס הבנייה אפשרית באמצעות מחוגה מתמוטטת. נבנה קרן שהיא המשך של קטע הקו מ-%
 $D$
-)תרשים ימני למעלה(. 
-\item
-בנו קרן בהמשך של
-$\overline{DA}$
-וקרן בהמשך של 
-$DC$
+לכיוון 
+$A$,
+ונבנה קרן שהיא המשך של 
+$D$
+לכיוון
+$C$
 (\ref{f.collapse-copying-3}).
-\item
-בנו מעגל שמרכזו 
+
+נבנה מעגל שמרכזו 
 $A$
 עם רדיוס
-$\overline{AB}$.
-סמנו
-$E$,
-החיתוך של המעגל עם הקרן
-$\overline{DE}$
+$\overline{AB}$,
+ונסמן ב-%
+$E$
+את נקודת החיתוך של המעגל עם הקרן שממשיכה את
+$\overline{DA}$
+(\ref{f.collapse-copying-4}).
+נבנה מעגל שמרכזו 
+$D$
+עם רדיוס 
+$\overline{DE}$,
+ונסמן ב-%
+$F$
+את נקודת החיתוך של המעגל עם הקרן שממשיכה את
+$\overline{DC}$
 (איור%
-~\ref{f.collapse-copying-4}).
+\ref{f.collapse-copying-5}).
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
 \begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}[scale=0.6]
@@ -339,14 +365,14 @@ $\overline{DE}$
 \coordinate (A) at (2.5,0);
 \coordinate (B) at (5.5,2);
 \draw (A) node[below,xshift=-2pt,yshift=-2pt] {$A$} -- (B) node[right] {$B$};
-\fill (A) circle[radius=3pt];
-\fill (B) circle[radius=3pt];
-\fill (C) node[below,xshift=2pt,yshift=-2pt] {$C$} circle[radius=3pt];
+%\fill (A) circle[radius=3pt];
+%\fill (B) circle[radius=3pt];
+\node[below,xshift=2pt,yshift=-2pt] at (C) {$C$};
 \draw (A) -- (C);
 \path[name path=larc] (C) ++(-70:2.5cm) arc (-70:70:2.5cm);
 \path[name path=rarc] (A) ++(-110:2.5cm) arc (-110:-250:2.5cm);
 \path [name intersections={of=larc and rarc,by={d,D}}];
-\fill (D) node[above] {$D$} circle[radius=3pt];
+\node[above] at (D) {$D$};
 \draw (A) -- (D);
 \draw (C) -- (D);
 \draw[name path=ray2] (D) -- ($ (D) ! 2.7 ! (C) $);
@@ -358,26 +384,29 @@ $D$}\label{f.collapse-copying-3}
 \end{subfigure}
 \hspace{3ex}
 \begin{subfigure}{.4\textwidth}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.6]
 \coordinate (C) at (0,0);
 \coordinate (A) at (2.5,0);
 \coordinate (B) at (5.5,2);
 \draw (A) node[below,xshift=-2pt,yshift=-2pt] {$A$} -- (B) node[right] {$B$};
-\fill (A) circle[radius=3pt];
-\fill (B) circle[radius=3pt];
-\fill (C) node[below,xshift=2pt,yshift=-2pt] {$C$} circle[radius=3pt];
+%\fill (A) circle[radius=3pt];
+%\fill (B) circle[radius=3pt];
+%\fill (C) node[below,xshift=2pt,yshift=-2pt] {$C$} circle[radius=3pt];
+\node[below,xshift=2pt,yshift=-2pt] at (C) {$C$};
 \draw (A) -- (C);
 \path[name path=larc] (C) ++(-70:2.5cm) arc (-70:70:2.5cm);
 \path[name path=rarc] (A) ++(-110:2.5cm) arc (-110:-250:2.5cm);
 \path [name intersections={of=larc and rarc,by={d,D}}];
-\fill (D) node[above] {$D$} circle[radius=3pt];
+%\fill (D) node[above] {$D$} circle[radius=3pt];
+\node[above] at (D) {$D$};
 \draw (A) -- (D);
 \draw (C) -- (D);
 \draw[name path=ray2] (D) -- ($ (D) ! 2.7 ! (C) $);
 \draw[name path=ray1] (D) -- ($ (D) ! 2.7 ! (A) $);
 \node[draw,circle through=(B),name path=c1] at (A) {};
 \path [name intersections={of=c1 and ray1,by={E,e}}];
-\fill (E) node[right,xshift=2pt,yshift=-2pt] {$E$} circle[radius=3pt];
+%\fill (E) node[right,xshift=2pt,yshift=-2pt] {$E$} circle[radius=3pt];
+\node[right,xshift=2pt,yshift=-2pt] at (E) {$E$};
 \end{tikzpicture}
 \selectlanguage{hebrew}
 \caption{בניית מעגל עם רדיוס 
@@ -385,90 +414,73 @@ $\overline{AB}$}\label{f.collapse-copying-4}
 \end{subfigure}
 \end{center}
 \end{figure}
-\item
-בנו מעגל שמרכזו 
-$D$
-עם רדיוס 
-$\overline{DE}$.
-סמנו את החיתוך של
-$\overline{DC}$
-עם המעגל ב-%
-$F$
-(איור%
-~\ref{f.collapse-copying-5}).
-\end{itemize}
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
 \begin{tikzpicture}[scale=0.4]
 \coordinate (C) at (0,0);
 \coordinate (A) at (2.5,0);
 \coordinate (B) at (5.5,2);
-\draw (A) node[below,xshift=-2pt,yshift=-2pt] {$A$} -- node[above] {$x$} (B) node[right] {$B$};
-\fill (A) circle[radius=3pt];
-\fill (B) circle[radius=3pt];
-\fill (C) node[below,xshift=2pt,yshift=-2pt] {$C$} circle[radius=3pt];
+\draw (A) node[below,xshift=-2pt,yshift=-2pt] {$A$} -- (B) node[right] {$B$};
+%\fill (A) circle[radius=3pt];
+%\fill (B) circle[radius=3pt];
+%\fill (C) node[below,xshift=2pt,yshift=-2pt] {$C$} circle[radius=3pt];
+\node[below,xshift=2pt,yshift=-2pt] at (C) {$C$};
 \draw (A) -- (C);
 \path[name path=larc] (C) ++(-70:2.5cm) arc (-70:70:2.5cm);
 \path[name path=rarc] (A) ++(-110:2.5cm) arc (-110:-250:2.5cm);
 \path [name intersections={of=larc and rarc,by={d,D}}];
-\fill (D) node[above] {$D$} circle[radius=3pt];
-\draw (A) -- node[right] {$y$} (D);
-\draw (C) -- node[left] {$y$} (D);
+%\fill (D) node[above] {$D$} circle[radius=3pt];
+\node[above] at (D) {$D$};
+\draw (A) --  (D);
+\draw (C) --  (D);
 \draw[name path=ray2] (D) -- ($ (D) ! 3 ! (C) $);
 \draw[name path=ray1] (D) -- ($ (D) ! 3 ! (A) $);
 \node[draw,circle through=(B),name path=c1] at (A) {};
 \path [name intersections={of=c1 and ray1,by={E,e}}];
-\fill (E) node[right,xshift=2pt,yshift=-2pt] {$E$} circle[radius=3pt];
+%\fill (E) node[right,xshift=2pt,yshift=-2pt] {$E$} circle[radius=3pt];
+\node[right,xshift=2pt,yshift=-2pt] at (E) {$E$};
 \node[draw,circle through=(E),name path=c2] at (D) {};
 \path [name intersections={of=c2 and ray2,by={F,f}}];
-\fill (F) node[left,xshift=-2pt,yshift=-2pt] {$F$} circle[radius=3pt];
-\path (A) -- node[right] {$x$} (E);
-\path (C) -- node[left] {$x$} (F);
+%\fill (F) node[left,xshift=-2pt,yshift=-2pt] {$F$} circle[radius=3pt];
+\node[left,xshift=-2pt,yshift=-2pt] at (F) {$F$};
+\path (A) -- node[right] {$a$} (E);
+\path (C) -- node[left] {$a$} (F);
 \end{tikzpicture}
 \selectlanguage{hebrew}
 \caption{בניית $\overline{CF}=\overline{AB}$}\label{f.collapse-copying-5}
 \end{center}
 \end{figure}
 
-\textbf{טענה:}
-אורכו של קטע הקו
-$\overline{CF}$
-שווה לאורכו של קטע הקו
-$\overline{AB}$.
-
-\textbf{הוכחה:}
 $\overline{DC}=\overline{DA}$
 כי
 $\triangle ACD$
 שווה-צלעות.
 $\overline{AE}=\overline{AB}$
 כי שניהם רדיוסים של המעגל שמרכזו 
-$A$.
-$\overline{DF}=\overline{DE}$
-כי שניהם רדיוסים של המעגל שמרכזו
-$D$.
-אורכו של
-$\overline{CF}$ 
-הוא:
+$A$
+וכן
+$\overline{DF}=\overline{DE}$.
+מכאן:
 \[
 \overline{CF} = \overline{DF} - \overline{DC} = \overline{DE} - \overline{DC} = \overline{DE} - \overline{DA} = \overline{AE} = \overline{AB}\,.
 \].
 \end{proof}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{העתקה שגויה של קטע קו}\label{s.collapse-copy-incorrect}
-
-\begin{itemize}
-\item
-בנו מעגל שמרכזו
-$A$
-עם רדיוס
+הדרישה על כיוון הקרנות חיונית. הוכחה זו נכונה לכל עבור כל קטע קו
+$\overline{AB}$
+וכל נקודה
+$C$,
+ללא תלות במיקום שלו יחסית ל-%
 $\overline{AB}$.
-\begin{figure}[htb]
+בגלל הדרישה על הכיוונים, "החרוט" שכלוא בין שתי הקרנות יחתוך את המעגלים גם אם
+$\overline{AC}>\overline{AB}$
+(איור%
+~\ref{f.collapse-copying-6}).
+
+\begin{figure}[tb]
 \begin{center}
-\begin{tikzpicture}[scale=0.4]
+\begin{tikzpicture}[scale=0.3]
 \clip (-12,-6) rectangle (11,10);
 \coordinate (C) at (-4,0);
 \coordinate (A) at (3,0);
@@ -497,40 +509,18 @@ $\overline{AB}$.
 \selectlanguage{hebrew}
 \caption{בנייה עבור $\overline{AC}>\overline{AB}$}\label{f.collapse-copying-6}
 \end{figure}
-%\begin{figure}[htb]
-%\begin{center}
-%\begin{subfigure}{.4\textwidth}
-%\begin{tikzpicture}[scale=0.6]
-%\begin{scope}
-%\coordinate (C) at (-2,0);
-%\coordinate (A) at (2.5,0);
-%\coordinate (B) at (4.5,1.5);
-%\draw (A) node[below,xshift=-2pt,yshift=-2pt] {$A$} -- (B) node[right] {$B$};
-%\fill (A) circle[radius=3pt];
-%\fill (B) circle[radius=3pt];
-%\fill (C) node[below,xshift=2pt,yshift=-2pt] {$C$} circle[radius=3pt];
-%\end{tikzpicture}
-%\caption{}\label{}
-%\end{subfigure}
-%\hspace{3ex}
-%\begin{subfigure}{.4\textwidth}
-%\begin{tikzpicture}
-%\coordinate (C) at (-2,0);
-%\coordinate (A) at (2.5,0);
-%\coordinate (B) at (4.5,1.5);
-%\draw (A) node[below,xshift=-2pt,yshift=-2pt] {$A$} -- (B) node[right] {$B$};
-%\fill (A) circle[radius=3pt];
-%\fill (B) circle[radius=3pt];
-%\fill (C) node[below,xshift=2pt,yshift=-2pt] {$C$} circle[radius=3pt];
-%\node[draw,circle through=(B),name path=c1] at (A) {};
-%\end{tikzpicture}
-%\caption{}\label{}
-%\end{subfigure}
-%\end{center}
-%\end{figure}
-%\vspace*{-8ex}
-\item
-בנו מעגל שמרכזו
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{העתקה שגויה של קטע קו}\label{s.collapse-copy-incorrect}
+
+\begin{proof}
+
+נבנה שלושה ממעגלים: מעגל שמרכזו
+$A$
+עם רדיוס
+$\overline{AB}$,
+מעגל שמרכזו
 $A$
 עם רדיוס
 $\overline{AC}$
@@ -538,10 +528,11 @@ $\overline{AC}$
 $C$
 עם רדיוס
 $\overline{AC}=\overline{CA}$.
-\item
-סמנו את נקודות החיתוך של המעגלים ב-%
-$E,F$.
-סמנו את נקודת החיתוך של המעגל שמרכזו
+נמן את נקודות החיתוך של המעגלים שמרכזם 
+$A,C$
+ב-%
+$E,F$,
+בהתאמה, ונסמן את נקודת החיתוך של המעגל שמרכזו
 $C$
 עם המעגל שמרכזו 
 $A$
@@ -553,47 +544,82 @@ $D$.
 $\overline{AC}>\overline{AB}$,
 הבנייה היא כפי שרואים באיור%
 ~\ref{f.collapse-incorrect-1}.
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
-\begin{tikzpicture}[scale=0.6]
+\begin{tikzpicture}[scale=0.45]
 \coordinate (C) at (-2,0);
 \coordinate (A) at (2.5,0);
 \coordinate (B) at (4.5,1.5);
 \draw (A) node[below right] {$A$} -- (B) node[right] {$B$};
-\fill (A) circle[radius=3pt];
-\fill (B) circle[radius=3pt];
+%\fill (A) circle[radius=3pt];
+%\fill (B) circle[radius=3pt];
 \fill (C) node[left,xshift=-2pt] {$C$} circle[radius=3pt];
 \node[draw,circle through=(B),name path=c1] at (A) {};
 \node[draw,circle through=(C),name path=c2] at (A) {};
 \node[draw,circle through=(A),name path=c3] at (C) {};
 \path [name intersections={of=c1 and c3,by={D,f}}];
 \path [name intersections={of=c2 and c3,by={E,F}}];
-\fill (D) node[below right,xshift=4pt] {$D$} circle[radius=3pt];
-\fill (E) node[above,yshift=2pt] {$E$} circle[radius=3pt];
-\fill (F) node[below,yshift=-2pt] {$F$} circle[radius=3pt];
+%\fill (D) node[below right,xshift=4pt] {$D$} circle[radius=3pt];
+%\fill (E) node[above,yshift=2pt] {$E$} circle[radius=3pt];
+%\fill (F) node[below,yshift=-2pt] {$F$} circle[radius=3pt];
+\node[below right,xshift=4pt] at (D) {$D$};
+\node[above,yshift=2pt] at (E) {$E$};
+\node[below,yshift=-2pt] at (F) {$F$};
 \end{tikzpicture}
 \selectlanguage{hebrew}
 \end{center}
 \caption{בניית עבור העתקת קו (1)}\label{f.collapse-incorrect-1}
 \end{figure}
-\item
-בנו מעגל שמרכזו 
+
+נבנה מעגל שמרכזו 
 $E$
 עם רדיוס 
 $\overline{ED}$.
-סמנו ב-%
+נסמן ב-%
 $G$
-את החיתוך של המעגל עם המעגל שמרכזו
+את נקודת החיתוך של המעגל עם המעגל שמרכזו
 $A$
 עם רדיוס 
-$\overline{AC}$
+$\overline{AC}$.
+אם יש שתי נקודות חיתוך, נבחר את הנקודה הקרובה יותר ל-%
+$C$
 (איור~%
 \ref{f.collapse-incorrect-2}).
-\end{itemize}
 
-\begin{figure}[htb]
+
+$\overline{CD}=\overline{CE}$
+הם רדיוסים של אותו מעגל כמו גם
+$\overline{AE}=\overline{AG}$.
+לפי הבנייה הרדיוסים 
+$\overline{CE}$
+ו-%
+$\overline{AE}$
+שווים. מכאן ש:
+\[
+\overline{CD} = \overline{CE} = \overline{AE} = \overline{AG}\,.
+\]
+$\overline{EG} = \overline{ED}$
+הם רדיוסים של אותו מעגל, ולכן
+$\triangle EAG\cong \triangle DCE$
+לפי צלע-צלע-צלע ו-%
+$\angle GEA = \angle DEC$.
+
+בגלל ש:
+\[
+\angle GEC = \angle GEA \!-\!\angle CEA = \angle DEC\!-\!\angle CEA = \angle DEA\,,
+\]
+$\triangle ADE\cong\triangle CGE$ 
+לפי צלע-זווית-צלע.
+$\overline{AB}=\overline{AD}$
+הם רדיוסים של המעגל שמרכזו
+$A$,
+ולכן
+$\overline{GC}=\overline{AD}=\overline{AB}$.
+\end{proof}
+
+\begin{figure}[tb]
 \begin{center}
-\begin{tikzpicture}[scale=0.5]
+\begin{tikzpicture}[scale=0.6]
 \clip (-8,-1) rectangle (9,5);
 \coordinate (C) at (-2,0);
 \coordinate (A) at (2.5,0);
@@ -623,97 +649,18 @@ $\overline{AC}$
 \caption{בניית עבור העתקת קו (2)}\label{f.collapse-incorrect-2}
 \end{figure}
 
+הבנייה נכונה רק אם
+$\overline{AC}>\overline{AB}$.
+איור%
+~\ref{f.collapse-incorrect-4}
+מראה תרשים בו
+$\overline{AC}<\overline{A}B$
+ואפשר לראות ש-%
+$\overline{AB}\neq\overline{GC}$.
 
-%\begin{figure}[htb][tb]
-%\begin{center}
-
-%\begin{tikzpicture}[scale=0.8]
-%\clip (-8,-1) rectangle (9,5);
-%\coordinate (C) at (-2,0);
-%\coordinate (A) at (2.5,0);
-%\coordinate (B) at (4.5,1.5);
-%\draw[thick] (A) node[below right] {$A$} -- (B) node[right] {$B$};
-%\fill (A) circle[radius=3pt];
-%\fill (B) circle[radius=3pt];
-%\fill (C) node[below left] {$C$} circle[radius=3pt];
-%\node[draw,circle through=(B),name path=c1] at (A) {};
-%\node[draw,circle through=(C),name path=c2] at (A) {};
-%\node[draw,circle through=(A),name path=c3] at (C) {};
-%\path [name intersections={of=c1 and c3,by={D,f}}];
-%\path [name intersections={of=c2 and c3,by={E,F}}];
-%\fill (D) node[below right,xshift=4pt] {$D$} circle[radius=3pt];
-%\fill (E) node[above,yshift=2pt] {$E$} circle[radius=3pt];
-%\fill (F) node[below,yshift=-2pt] {$F$} circle[radius=3pt];
-%\node[draw,circle through=(D),name path=c4] at (E) {};
-%\path [name intersections={of=c2 and c4,by={g,G}}];
-%\fill (G) node[below left,xshift=-4pt] {$G$} circle[radius=3pt];
-%\draw[thick] (C) -- (G);
-%\draw[thick,dashed] (G) -- (E) -- (C);
-%\draw[thick,dashed] (A) -- (D) -- (E) -- cycle;
-%\end{tikzpicture}
-%\end{center}
-%\selectlanguage{hebrew}
-%\caption{משולשים חופפים}\label{f.collapse1}
-%\end{figure}
-
-\textbf{טענה:}
-ארכו של 
-$\overline{CG}$
-שווה לאורכו של
-$\overline{AB}$.
-
-\begin{proof}
-נניח ש-%
-$\triangle ADE\cong \triangle CGE$.
-אם כן, 
-$\overline{CG}=\overline{AD}=\overline{AB}$
-כי 
-$\overline{AD},\overline{AB}$
-הם רדיוסים של המעגל הקטן שמרכזו 
-$A$.
-למעגל שמרכזו
-$C$
-אותו רדיוס כמו למעגל שמרכזו 
-$A$
-ועובר דרך 
-$E$.
-לכן, ניתן להתייחס אליהם כ-"אותו" מעגל.
-
-עכשיו נוכיח את החפיפה
-$\triangle ADE\cong \triangle CGE$.
-$\overline{EG}=\overline{ED}$
-כי הם רדיוסים של המעגל שמרכזו
-$E$,
-ו-%
-$\overline{EC}=\overline{EA}$
-כי הם רדיוסים של "אותו" מעגל. 
-$\angle GCE=\angle DAE$
-כי הן זוויות היקפיות על "אותו" מיתר 
-$\overline{EG},\overline{ED}$.
- $\angle CGE=\angle ADE$
-כי הן זוויות היקפיות על "אותו" מיתר
-$\overline{EC},\overline{EA}$.
-. לכן,
-$\angle GEC=\angle DEA$
-ו-%
-$\triangle ADE\cong \triangle CGE$
-לפי צ.ז.צ.
-\end{proof}
-
-אין שום שגיאה בהוכחה! השגיאה נובעת ממקור אחר: השווין
-$\overline{AB}=\overline{GC}$
-מתקיים רק כאשר אורכו של 
-$\overline{AB}$
-קטן מאורכו של
-$\overline{AC}$.
-הבנייה של אוקלידס נכונה ללא קשר לאורך היחסי של הקווים ולמיקום של הנקודה
-$C$
-ביחס לקטע הקו
-$\overline{AB}$.
-
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
-\begin{tikzpicture}[scale=0.5]
+\begin{tikzpicture}[scale=0.6]
 \coordinate (C) at (-1,0);
 \coordinate (A) at (2,0);
 \coordinate (B) at (6,1.5);
@@ -744,13 +691,13 @@ $\overline{AB}$.
 \section{
 אין לסמוך על תרשים
 }\label{s.collapse-isoceles}
-בסעיף~%
-\ref{s.collapse-copy-incorrect}
-ראינו שאין לסמוך על ציור. הנה הוכחה "נכונה"
-\textbf{\R{שכל}}
-משולש שווה-שוקיים!
 
-\begin{figure}[htb]
+\begin{theorem}
+\textbf{(שגוי, כמובן)}
+כל משלוש הוא שווה-שוקיים.
+\end{theorem}
+
+\begin{figure}[tb]
 \begin{center}
 \begin{tikzpicture}[scale=1.2]
 \coordinate (P) at (0,0);
@@ -793,7 +740,7 @@ $\overline{AB}$.
 \caption{הוכחה שגוייה שכל משולש שווה-שוקיים}\label{f.isoceles}
 \end{center}
 \end{figure}
-
+\begin{proof}
 נתון משולש שרירותי 
 $\triangle ABC$,
 תהי
@@ -801,35 +748,27 @@ $P$
 נקודת החיתוך בין חוצה הזווית של
 $\angle BAC$
 לבין האנך האמצעי של 
-$\overline{BC}$
-)איור
-\ref{f.isoceles}(.
-סמנו ב-%
-$D,E,F$
-את נקודות החיתוך של האנכים מ-%
+$\overline{BC}$.
+נקודות החיתוך של הגבהים מ-%
 $P$
 לצלעות
-$\overline{BC},\overline{AB},\overline{AC}$. $\triangle APE\cong \triangle APF$
-כי הם משולשים ישר זווית עם זוויות שוות
+$\overline{AB},\overline{AC}$
+מסומנים ב-%
+$E,F$,
+בהתאמה (איור
+\ref{f.isoceles}).
+$\triangle APE\cong \triangle APF$
+כי הם משולשים ישר-זווית עם זוויות שוות
 $\alpha$
-וצלע 
-$\overline{AP}$
-משותף.
-
+וצלע משותף
+$\overline{AP}$.
 $\triangle DPB\cong \triangle DPC$
-לפי צ.ז.צ. כי 
+כי נם משולשים ישר-זווית,
 $\overline{PD}$
-הוא צלע משותף, 
-$\angle PDB=\angle PDC=90^\circ$,
-ו-%
-$\overline{BD}=\overline{DC}=a$
-כי 
-$\overline{PD}$
-הוא האנך האמצעי ל-%
-$\overline{BC}$.
-במשולשים ישר-זווית
+הוא צלע משותף ו-%
+$\overline{BD}=\overline{DC}=a$.
 $\triangle EPB\cong \triangle FPC$
-כי שתי לצועות שוות:
+כי נם משולשים ישר-זווית,
 $\overline{EP}=\overline{PF}$
 לפי החפיפה הראשונה, ו-%
 $\overline{PB}=\overline{PC}$
@@ -839,16 +778,15 @@ $\triangle ABC$
 \[
 \overline{AB}=\overline{AE}+\overline{EB}=\overline{AF}+\overline{FC}=\overline{AC}\,.
 \]
-\qed
-הבעיה בהוכחה היא שתרשים אינו נכון כי הנקודה
+\end{proof}
+
+"הלוגיקה" של ההוכחה נכונה, ההוכחה מבוססת על תרשים שאינו נכון כי הנקודה
 $P$
-נמצאת
-\textbf{מחוץ}
-למשולש כפי שניתן לראות מהציור המדוייק באיור%
-~\ref{f.isoceles-wrong}.
-\begin{figure}[htb]
+נמצאת מחוץ למשולש (איור%
+~\ref{f.isoceles-wrong}).
+\begin{figure}[tb]
 \begin{center}
-\begin{tikzpicture}[scale=.9]
+\begin{tikzpicture}[scale=.7]
 \coordinate (B)  at (0,0);
 \node[left] at (B) {$B$};
 \coordinate (C)  at (7,0);
@@ -866,7 +804,7 @@ $P$
 \draw[name path=perp] ($(B)!.5!(C)$) |- +(0,-3);
 \draw ($(B)!.5!(C)$) rectangle +(8pt,8pt);
 \path [name intersections={of=angle and perp,by={P}}];
-\fill (P) circle(3pt) node[right] {$P$};
+\fill (P) circle(2pt) node[right] {$P$};
 \node[below,yshift=-12pt,xshift=2pt] at (A) {$\alpha$};
 \node[below,yshift=-12pt,xshift=15pt] at (A) {$\alpha$};
 \end{tikzpicture}
@@ -877,11 +815,11 @@ $P$
 
 \subsection*{מה ההפתעה?}
 
-כתלמיד היה לי ברור מאליו שלמחוגה ציר חיכוך ששומר את המרחק בין הוד והעפרון. הכאשר המורה השתשמשה במחוגה המורכבת מחוט וגיר, לא העליתי על דעתי שהיא שונה מהמחוגה שלי. המאמר של
+כתלמיד היה לי מובן מאליו שלמחוגה ציר חיכוך ששומר את המרחק בין החוד והעפרון. הכאשר המורה השתשמשה במחוגה המורכבת מחוט וגיר, לא העליתי על דעתי שהיא שונה מהמחוגה שלי. המאמר של
 \L{Gotfried Toussaint}
-היה הפתעה גמורה, כמו גן ההצגה שלו שההוכחות שבאו לאחר 
+היה הפתעה גמורה, כמו גם ההצגה שלו שההוכחות שבאו לאחר 
 \L{Euclid}
-היו שגויות כי הן היו לתולויות בהנחות חסרות בסיס. אני ממליץ לקורא לעיין במאמר כדי להעמיק את הבנתם על הוכחות במתמטיקה.
+היו שגויות, כי הן היו תלויות בהנחות חסרות בסיס. אני ממליץ לקורא לעיין במאמר כדי להעמיק את הבנתם על הוכחות במתמטיקה.
 
 \subsection*{מקורות}
 
@@ -899,5 +837,5 @@ $P$
 \cite{euclid}
 שנכתב על ידי
 \L{Thomas L. Heath}
-שהיה אחד המומחים הבולטים למתמטיקה יוונית.
+אחד המומחים הבולטים למתמטיקה יוונית.
 

@@ -6,11 +6,9 @@
 ב-%
 $1973$
 \L{Victor Klee}
-שאל כמה שומרים נחוצים כדי לראות את כל הקירות של מוזיאון על מנת לוודא שלא גונבים את הציורים. אם הקירות של המוזיאון מהווים מצולע משוכלל או אפילו מצולע קמור, אפשר להסתפק בשומר אחד (איור%
+שאל כמה שומרים נחוצים כדי לראות את כל הקירות של מוזיאון. אם הקירות של המוזיאון מהווים מצולע משוכלל או אפילו מצולע קמור, אפשר להסתפק בשומר אחד (איור%
 ~\ref{f.museum.convex}).
-
-
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
 \coordinate (O) at (0,0);
@@ -30,7 +28,12 @@ $1973$
 
 מה עם מוזיאון עם קירות בצורה של מסור (איור%
 ~\ref{f.museum.nonconvex}).
-\begin{figure}[htb]
+וודא על ידי ספירה שיש 
+$15$
+קירות. כל "שן" מגדירה משולש שמסומן באפור באיור%
+~\ref{f.visibility-tooth}.
+שומרת הניצבת במקום כלשהו בתוך אחד המשולשים יכולה לראות את כל הקירות של אותו משולש (חיצים אדומים).
+\begin{figure}[tb]
 \begin{center}
 \begin{tikzpicture}[scale=1]
 \coordinate (O) at (0,0);
@@ -52,14 +55,7 @@ $1973$
 \end{center}
 \end{figure}
 
-וודא על ידי ספירה שיש 
-$15$
-קירות.
-
-כל "שן" של המסור מגדירה משולש )מסומן באפור(. שומרת הניצבת במקום כלשהו בתוך אחד המשולשים יכולה לראות את כל הקירות של אותו משולש (איור%
-~\ref{f.visibility-tooth}).
-
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
 \begin{tikzpicture}[scale=1]
 \coordinate (O) at (0,0);
@@ -95,9 +91,8 @@ $15$
 
 אם השומרת ניצבת בקירבת הקיר העליון היא יכולה לראות את כל הקירות האופקיים (חצים כחולים באיור%
 ~\ref{f.museum.shaded}).
-ברור שחמש
-שומרות מספיקות כדי לשמור על כל הקירות. אם המשולשים לא חופפים, שומרת במשולש אחד לא יכולה לראות את כל הקירות של משולש אחר )חץ ירוק(, לכן חייבים להעסיק חמש שומרות נחוצות.
-\begin{figure}[htb]
+מכאן שחמש שומרות מספיקות כדי לראות על כל הקירות. בגלל שהמשולשים לא נחתכים שומרת במשולש אחד לא יכולה לראות את כל הקירות של משולש אחר (חץ ירוק) ולכן חמש שומרות נחוצות.
+\begin{figure}[tb]
 \begin{center}
 \begin{tikzpicture}[scale=1]
 \coordinate (O) at (0,0);
@@ -135,18 +130,20 @@ $15$
 ניתן להכליל את הדוגמה באיור%
 ~\ref{f.museum.nonconvex}
 ולהראות ש-%
-$\disfrac{n}{3}$
+$n/3$
 שומרות נחוצות. שאר הפרק מוקדש להוכחה ש-%
-$\disfrac{n}{3}$
-מספיקות עבור כל מוזיאון.
+$n/3$
+שומרות מספיקות לשמור על כל מוזיאון.
 
 סעיף%
 ~\ref{s.museum-triangulating}
-מוכיח שניתן לצבוע כל מצולע מתולת בשלושה צבעים. נשתמש במשפט הזה בסעיף%
+מוכיח שניתן לצבוע כל מצולע מתולת
+\L{(triangulated)}
+בשלושה צבעים. נשתמש במשפט זה בסעיף%
 ~\ref{s.museum-guard}
 כי להוכיח ש-%
 $n/3$
-מספיקים. סעיף%
+שומרות מספיקות. סעיף%
 ~\ref{s.museum-triangulated}
 משלים את ההוכחה ומראה שניתן לתלת כל מצולע.
 
@@ -156,10 +153,10 @@ $n/3$
 
 \begin{definition}
 \textbf{אלכסון \L{(diagonal)}}
-של מצולע הוא צלע המחבר שני קודקודים והוא אינו אחד מהצלעות (החיצוניים) של המצולע.
+של מצולע הוא צלע המחברת שני קודקודים והוא אינו אחת מהצלעות (החיצוניות) של המצולע.
 \end{definition}
 \begin{definition}
-ניתן
+ניתן 
 \textbf{לתלת}
 \L{(triangulate)}
 מצולע אם ניתן לצייר אלכסונים כך שהשטח הפנימי של המצולע מכוסה על ידי משולשים.
@@ -173,11 +170,11 @@ $n/3$
 \begin{definition}
 קודקוד במצולע הוא 
 \textbf{קמור}
-אם הזווית הפנימית פחות מ-%
+אם הזווית הפנימית שלו פחות מ-%
 $180^\circ$.
 קודקוד במצולע הוא
 \textbf{קעור}
-אם הזווית הפנימית גדולה מ-%
+אם הזווית הפנימית שלו גדולה מ-%
 $180^\circ$.
 
 במצולע באיור%
@@ -188,7 +185,7 @@ $1$
 $2$
 קעור.
 \end{definition}
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
 \draw[thick]
@@ -220,9 +217,9 @@ $2$
 \begin{definition}
 ניתן
 \textbf{לצבוע מצולע בשלושה צבעים}
-אם קיים מיפוי
+אם קיים מיפוי:
 \[
-c: V \mapsto \{\textrm{\R{אדום, כחול, ירוק}}\}
+c: V \mapsto \{\textrm{\R{אדום, כחול, ירוק}}\},
 \]
 כך ששני הקודקודים של צלע מקבלים צבעים שונים.
 \end{definition}
@@ -231,15 +228,17 @@ c: V \mapsto \{\textrm{\R{אדום, כחול, ירוק}}\}
 \label{thm.colored}
 \end{theorem}
 \begin{proof}
-באינדוקציה על מספר הקודקודים. ברור שניתן לצבוע משולש בשלושה צבעים. ניתן מצולע עם 
+באינדוקציה על מספר הקודקודים. ניתן לצבוע משולש בשלושה צבעים. למצולע עם 
 $n>3$
-קודקודים. חייבים לצייר לפחות אלכסון אחד כדי לתלת את המצולע. בחר אלכסון שרירותי
-$\overline{AB}$:
+קודקודים חייב להיות אלכסון. נבחר אלכסון שרירותי
+$\overline{AB}$
+(\ref{f.museum.three-1})
+ונחלק את המצולע לאורך האלכסון לשני מצולעים קטנים יותר
+(\ref{f.museum.three-2}).
+לפי הנחת האינדוקציה ניתן לצבוע כל אחד מהמצולעים הללו בשלושה צבעים 
+(\ref{f.museum.three-3}).
 
-וחלק את המצולע לאורך אלכסון זה לשני מצולעים קטנים יותר (איור%
-~\ref{f.museum.three-1}).
-
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
 \begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}[scale=.8]
@@ -341,10 +340,7 @@ $\overline{AB}$:
 \end{center}
 \end{figure}
 
-לפי הנחת האינדוקציה, ניתן לצבוע כל אחד מהמצולעים הללו בשלושה צבעים (איור%
-~\ref{f.museum.three-2}).
-
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
 \begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}[scale=.6]
@@ -482,161 +478,25 @@ $\overline{AB}$:
 \end{center}
 \end{figure}
 
-
-%\begin{center}
-%
-%\begin{tikzpicture}[scale=.8]
-%\path
-%  (0,0) coordinate (A1) -- 
-%  ++(3,0) coordinate (B1) --
-%  ++(2,2) coordinate (C1) --
-%  ++(-1.5,-.5) coordinate (D1);
-%\draw[thick]
-%  (D1) --
-%  ++(3,3) coordinate (E1) -- 
-%  ++(-4,-1) coordinate (F1) --
-%  ++(-2,1) coordinate (G1) --
-%  ++(-1,-1) coordinate (H1) --
-%  ++(.5,-1.5) coordinate (I1) --
-%  ++(-2,-.5) coordinate (J1) --
-%  ++(3,-.2) coordinate (K1);
-%\path
-%  (K1) -- 
-%  ++(-4,-.3) coordinate (L1) --
-%  (A1);
-%  
-%\draw[thick,dashed]
-%  (D1) -- (F1) -- (I1) -- (K1) -- (F1) -- (H1);
-%\draw[thick] (D1) -- (K1);
-%
-%\node[below,yshift=-4pt] at (K1) {$A$};
-%\node[below,yshift=-4pt] at (D1) {$B$};
-%
-%\foreach \point/\color in {D1/red,E1/blue,F1/green,G1/red,H1/blue,I1/red,J1/green,K1/blue}
-%  \fill[color=\color] (\point) circle(5pt);
-%
-%
-%\begin{scope}[yshift=-1.8cm]
-%
-%\draw[thick]
-%  (0,0) coordinate (A2) -- 
-%  ++(3,0) coordinate (B2) --
-%  ++(2,2) coordinate (C2) --
-%  ++(-1.5,-.5) coordinate (D2);
-%\path
-%  (D2) --
-%  ++(3,3) coordinate (E2) --
-%  ++(-4,-1) coordinate (F2) --
-%  ++(-2,1) coordinate (G2) --
-%  ++(-1,-1) coordinate (H2) --
-%  ++(.5,-1.5) coordinate (I2) --
-%  ++(-2,-.5) coordinate (J2) --
-%  ++(3,-.2) coordinate (K2);
-%\draw[thick]
-%  (K2) --
-%  ++(-4,-.3) coordinate (L2) --
-%  (A2);
-%  
-%\draw[thick,dashed]
-%  (K2) -- (A2) -- (D2) -- (B2) -- (D2);
-%\draw[thick] (D2) -- (K2);
-%\node[above,yshift=4pt] at (K2) {$A$};
-%\node[above,yshift=4pt] at (D2) {$B$};
-%
-%\foreach \point/\color in {A2/red,B2/blue,C2/red,D2/green,K2/blue,L2/green}
-%  \fill[color=\color] (\point) circle(5pt);
-%
-%
-%\end{scope}
-%\end{tikzpicture}
-%\end{center}
-השיוך של צבעים לקודקודים הוא שרירותי, כך שאם הקודקודים 
+המיפוי של קודקודים לצבעים הוא שרירותי, כך שאם הקודקודים 
 $A,B$
 מקבלים צבעים שונים בשני המצולעים, ניתן לשנות את הצבעים באחד מהם כך שהצבעים של 
 $A,B$
-זהים בשני המצולעים. נחליף את הצבעים
+זהים בשני המצולעים. למשל, נחליף את הצבעים
 \textbf{אדום}
 ו-%
 \textbf{ירוק}
-במצולע התחתון (איור%
-~\ref{f.museum.three-3}).
-
-%\begin{center}
-%
-%\begin{tikzpicture}[scale=.8]
-%\path
-%  (0,0) coordinate (A1) -- 
-%  ++(3,0) coordinate (B1) --
-%  ++(2,2) coordinate (C1) --
-%  ++(-1.5,-.5) coordinate (D1);
-%\draw[thick]
-%  (D1) --
-%  ++(3,3) coordinate (E1) -- 
-%  ++(-4,-1) coordinate (F1) --
-%  ++(-2,1) coordinate (G1) --
-%  ++(-1,-1) coordinate (H1) --
-%  ++(.5,-1.5) coordinate (I1) --
-%  ++(-2,-.5) coordinate (J1) --
-%  ++(3,-.2) coordinate (K1);
-%\path
-%  (K1) -- 
-%  ++(-4,-.3) coordinate (L1) --
-%  (A1);
-%  
-%\node[below,yshift=-4pt] at (K1) {$A$};
-%\node[below,yshift=-4pt] at (D1) {$B$};
-%
-%\draw[thick,dashed]
-%  (D1) -- (F1) -- (I1) -- (K1) -- (F1) -- (H1);
-%\draw[thick] (D1) -- (K1);
-%\foreach \point/\color in {D1/red,E1/blue,F1/green,G1/red,H1/blue,I1/red,J1/green,K1/blue}
-%  \fill[color=\color] (\point) circle(5pt);
-%
-%\begin{scope}[yshift=-1.8cm]
-%
-%\draw[thick]
-%  (0,0) coordinate (A2) -- 
-%  ++(3,0) coordinate (B2) --
-%  ++(2,2) coordinate (C2) --
-%  ++(-1.5,-.5) coordinate (D2);
-%\path
-%  (D2) --
-%  ++(3,3) coordinate (E2) --
-%  ++(-4,-1) coordinate (F2) --
-%  ++(-2,1) coordinate (G2) --
-%  ++(-1,-1) coordinate (H2) --
-%  ++(.5,-1.5) coordinate (I2) --
-%  ++(-2,-.5) coordinate (J2) --
-%  ++(3,-.2) coordinate (K2);
-%\draw[thick]
-%  (K2) --
-%  ++(-4,-.3) coordinate (L2) --
-%  (A2);
-%  
-%
-%\draw[thick,dashed]
-%  (K2) -- (A2) -- (D2) -- (B2) -- (D2);
-%\draw[thick] (D2) -- (K2);
-%\node[above,yshift=4pt] at (K2) {$A$};
-%\node[above,yshift=4pt] at (D2) {$B$};
-%
-%
-%\foreach \point/\color in {A2/green,B2/blue,C2/green,D2/red,K2/blue,L2/red}
-%  \fill[color=\color] (\point) circle(5pt);
-%
-%\end{scope}
-%\end{tikzpicture}
-%\end{center}
-
-כעת ניתן להדביק את שני המצולעים ביחד כדי לשחזר את המצולע המקורי עם
+במצולע התחתון 
+(~\ref{f.museum.three-3}).
+נהדביק את שני המצולעים כדי לשחזר את המצולע המקורי עם
 $n$
-קודקודים (איור%
-~\ref{f.museum.three-4}).
- המצולע יהיה צבוע בשלושה צבעים (איור%
+קודקודים 
+(~\ref{f.museum.three-4}).
+המצולע יהיה צבוע בשלושה צבעים (איור%
 ~\ref{f.museum.three-5}). 
 \end{proof}
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
 \draw[thick]
@@ -675,39 +535,34 @@ $n$
 
 \begin{theorem}
 $n/3$
-שומרים יכולים לשמור מוזיאון עם 
+שומרים יכולים לשמור על מוזיאון עם 
 $n$
 קירות.
 \end{theorem}
-
-
 \begin{proof}
 לפי משפט
 \ref{thm.tri}
 ניתן לתלת את המצולע ולפי משפט
 \ref{thm.colored}
-ניתן לצבוע את המצולע בשלושה צבעים. שלושת הקודקודים של כל משולש יהיו צבועים בצבעים שונים, כך שכל צבע מופיע באחד הקודקודים של כל משולש. אם צובעים 
+ניתן לצבוע את המצולע בשלושה צבעים. שלושת הקודקודים של כל משולש יהיו צבועים בצבעים שונים כדי שכל צבע יופיע באחד הקודקודים של כל משולש. אם צובעים 
 $n$
-קודקודים בשלושה צבעים, צבע אחד לפחות )נניח אדום( מופיע לכל היותר
-$\disfrac{n}{3}$
-פעמים, ובכל משולש חייב להיות קודקוד צבוע אדום.
-
-אם נציב שומרת בקודקוד אדום, היא יכולה לראות את הקירות של אותו משולש. כל המשולשים של תילות המצולע כוללים את כל הצלעות של המצולע, ולכן
-$\disfrac{n}{3}$
+קודקודים בשלושה צבעים, צבע אחד לפחות, נניח אדום, יופיע לכל היותר
+$n/3$
+פעמים, ובכל משולש חייב להיות קודקוד צבוע אדום. נציב שומרת בfk קודקוד אדום והיא יכולה לראות את הקירות של אותו משולש. כל המשולשים של תילות המצולע כוללים את כל הצלעות של המצולע ולכן
+$n/3$
 שומרות מספיקות כדי לראות את כל הקירות של המוזיאון.
 \end{proof}
-
 אם
 $n$
 לא מתחלק ב-%
 $3$
-מספר השומרים הדרושים הוא
+מספר השומרות הדרושות הוא
 $\lfloor n/3\rfloor$, 
 המספר השלם הגדול ביותר פחות או שווה ל-%
 $n/3$.
 למשל, 
 $4$
-שומרים מספיקים למוזיאון עם 
+שומרות מספיקות למוזיאון עם 
 $12, 13, 14$
 קירות כי
 $\lfloor 12/3\rfloor =\lfloor 13/3\rfloor=\lfloor 14/3\rfloor=4$. 
@@ -731,10 +586,10 @@ $180^\circ(n-2)$.
 $\theta_i$
 (איור%
 ~\ref{f.museum.exterior}).
-אם נסכם את הזוויות החיצוניות נקבל 
-$\displaystyle\sum_{i=1}^n \theta_i = 360^\circ$.
-ניתן לראות את הסיכום באיור על ידי "סיבוב" הקווים המקווקווים מאחד לשני לפי הסדר 
-$\theta_1,\ldots,\theta_5$.
+אם נסכם את הזוויות החיצוניות נקבל:
+\[ 
+\displaystyle\sum_{i=1}^n \theta_i = 360^\circ\,.
+\]
 עבור כל זוית חיצונית
 $\theta_i$
 נסמן את הזוית הפנימית של אותו קודקוד ב-%
@@ -745,9 +600,8 @@ $\phi_i$.
 %n\cdot 180^\circ-\displaystyle\sum_1^n \phi_i &=& 360^\circ\\
 \displaystyle\sum_1^n \phi_i &=& n\cdot 180^\circ-360^\circ =180^\circ(n-2)\,.
 \end{eqn}
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
-
 \begin{tikzpicture}[scale=.6]
 \coordinate (O) at (0,0);
 %\fill (O) circle (2pt);
@@ -780,29 +634,25 @@ $\phi_i$.
 \selectlanguage{hebrew}
 \caption{הזוויות החיצוניות של מצולע קמור}\label{f.museum.exterior}
 \end{figure}
-
-נבדוק מה קורה אם נוסיף קודקוד קעור
-(איור%
-~\ref{f.museum.concave})
-קיים משולש המורכב משתי הצלעות שנוגעות בקודקוד הקעור והצלע המסומן בקו מקווקוו. נסכם את הזוויות של המשולש:
-
+אם יש קודקוד קעור
+($B$
+באיור%
+~\ref{f.museum.concave}),
+קיים משולש המורכב משני הצלעות שנוגעים בקודקוד הקעור והצלע המסומן בקו מקווקוו. נסכם את הזוויות של המשולש:
 \begin{eqn}
 (180^\circ - \alpha) + (360^\circ - \beta) + (180^\circ - \gamma) &=& 180^\circ\\
 \alpha + \beta + \gamma &=& 3\cdot 180^\circ\,.
 \end{eqn}
 סכום הזוויות הפנימיות גדל ב-%
 $\alpha+\beta+\gamma$
-ומספר הקודקודים גדל בשלוש:
-
+ומספר הקודקודים גדל בשלוש ולכן המשוואה במשפט נשמר:
 \begin{eqn}
 \displaystyle\sum_1^n \phi_i + (\alpha + \beta + \gamma) &=& 180^\circ(n-2)+3\cdot 180^\circ\\
 &=& 180^\circ((n+3)-2)\,.
 \end{eqn}
 \end{proof}
-
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
-
 \begin{tikzpicture}
 \draw[thick] (0,0) -- (3,0) coordinate (A) node[above left,yshift=8pt] {$\alpha$} -- ++(60:2) coordinate (B) node[above,yshift=8pt] {$\beta$} -- ++(-60:2) coordinate (C) node[above right,yshift=8pt] {$\gamma$}  -- ++(3,0);
 
@@ -816,58 +666,55 @@ $\alpha+\beta+\gamma$
 \selectlanguage{hebrew}
 \caption{קודקוד קעור}\label{f.museum.concave}
 \end{figure}
-
 \begin{theorem}\label{thm.convex}
 חייב להיות לפחות שלושה קודקודים קמורים במצולע.
 \end{theorem}
 \begin{proof}
-נסמן ב-%
+יהי
 $k$
-את מספר הקודקודים הקעורים, כאשר הזווית הפנימית של כל אחד הוא
+מספר הקודקודים הקעורים כאשר הזווית הפנימית של כל אחד הוא
 $180^\circ+\epsilon_i$, $\epsilon_i>0$.
 סכום הזוויות הפנימיות של הקודקודים
 \textbf{הקעורים}
 הוא בוודאי פחות או שווה לסכום
 \textbf{כל}
 הזוויות הפנימיות:
-
 \begin{eqn}
 k\cdot 180^\circ +\displaystyle\sum_{i=1}^{k}\epsilon_i &\leq& 180^\circ(n-2)\\
 k\cdot 180^\circ  &<& 180^\circ(n-2)\\
 %(k+2)\cdot 180^\circ &<& n\cdot 180^\circ\\
 k&<&n-2\,.
 \end{eqn}
-מכאן שיש לא רק קודקוד אחד, אבל לפחות שלושה קודקודים שאינם קעורים.
+מכאן שיש לא רק קודקוד אחד אבל לפחות שלושה קודקודים שאינם קעורים.
 \end{proof}
 
-\begin{proof}
-הוכחה של משפט%
-~\ref{thm.tri}:
-
+\begin{proof}\textbf{%
+(משפט%
+~\ref{thm.tri})}
 באינדוקציה על מספר הקודקודים. עבור
 $n=3$
 אין מה להוכיח. נניח ש-%
 $n>3$.
 לפי משפט%
-~\ref{thm.convex},
+~\ref{thm.convex}
 חייב להיות קודקוד קמור
 $C$.
 סמנו את הקודקודים השכנים שלו
 $B,D$.
 אם
 $\overline{BD}$
-נמצא כולו בתוך המצולע (איור%
-~\ref{f.contained}),
+נמצא כולו בתוך המצולע 
+(\ref{f.contained}),
 אזי הוא אלכסון וניתן לחלק את המצולע למשולש 
 $\triangle BCD$
-ולמצולע קטן יותר כאשר
-$\overline{BD}$
-הוא צלע. לפי הנחת האינדוקציה, ניתן לתלת את המצולע ואז להדביק אותו למשולש
+ולמצולע אחר
+$\overline{ABDE}$
+עם צלע
+$\overline{BD}$.
+לפי הנחת האינדוקציה ניתן לתלת את המצולע ואז להדביק אותו למשולש
 $\triangle BCD$
 ולקבל תילות של המצולע המקורי.
-
-
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
 \begin{subfigure}{.4\textwidth}
 \begin{tikzpicture}[scale=1.4]
@@ -917,60 +764,26 @@ $\triangle BCD$
 \end{subfigure}
 \end{center}
 \end{figure}
-%
-%\begin{center}
-%
-%\begin{tikzpicture}[scale=1.6]
-%\clip (-2,-.2) rectangle (3.8,2.2);
-%\draw[thick]
-%  (0,0) coordinate (A) -- 
-%  ++(1.5,0) coordinate (B) --
-%  ++(2,2) coordinate (C) --
-%  ++(-1.8,-.5) coordinate (D) --
-%  ++(-1,.5) coordinate (E) --
-%%  ++(1.3,-1) coordinate (F) --
-%  (A);
-%\draw[thick,dashed] (B) -- (D);
-%%\draw[very thick,dotted] (C) -- (F);
-%%\node [draw,circle through=(F)] at (C) {};
-%\foreach \point/\pos in {A/below,B/below,C/right,D/above,E/left}
-%  \fill (\point) circle(.7pt) node[\pos] {$\point$};
-%\end{tikzpicture}
-%\end{center}
-אחרת, חייב להיות קודקוד קעור
+
+אם 
+$\overline{BD}$
+לא נמצא בתוך המצולע, חייב להיות קודקוד קעור
 $F$
 הקרוב ביותר ל-%
 $C$
-(אויר%
-~\ref{f.museum.concave-vertices}),
-ולכן
+(\ref{f.museum.concave-vertices}).
 $\overline{CF}$
-הוא אלכסון המחלק את המצולע לשני מצולעים קטנים יותר. לפי הנחת האינדוקציה ניתן לתלת אותם ולהדביק אותם אחד לשני.
+הוא אלכסון המחלק את המצולע לשני מצולעים קטנים יותר
+$\overline{CFED}$
+ו-%
+$\overline{CFAB}$.
+לפי הנחת האינדוקציה ניתן לתלת אותם ולהדביק אותם אחד לשני.
 \end{proof}
-%\begin{center}
-%
-%\begin{tikzpicture}[scale=1.6]
-%\clip (-2,-.2) rectangle (3.8,2.2);
-%\draw[thick]
-%  (0,0) coordinate (A) -- 
-%  ++(1.5,0) coordinate (B) --
-%  ++(2,2) coordinate (C) --
-%  ++(-1.8,-.5) coordinate (D) --
-%  ++(-1,.5) coordinate (E) --
-%  ++(1.3,-1) coordinate (F) --
-%  (A);
-%%\draw[thick,dashed] (B) -- (D);
-%\draw[very thick,dashed] (C) -- (F);
-%\node [draw,circle through=(F)] at (C) {};
-%\foreach \point/\pos in {A/below,B/below,C/right,D/above,E/left,F/below}
-%  \fill (\point) circle(.7pt) node[\pos] {$\point$};
-%\end{tikzpicture}
-%\end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection*{מה ההפתעה?}
-משפט המוזיאון מפתיע כי ההוכחה של מה שנראה כמשפט בגיאומטריה משתמשת בצורה אלגנטית במתמטיקה של צביעת גרפים.
+משפט המוזיאון מפתיע כי ההוכחה של מה שנראה כמשפט בגיאומטריה משתמשת בצורה אלגנטית בצביעת גרפים.
 
 \subsection*{מקורות}
 

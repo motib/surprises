@@ -8,9 +8,9 @@
 
 \selectlanguage{hebrew}
 
-לרבע את המעגל הוא אחת מבעיות הבנייה שהיוונים ניסו לפתור ולא הצליחו. בניגוד לחלוקה זווית לשלושה חלקים ולהפכלת הקוביוה שאינן ניתנת לבנייה בגלל התכונות של השורשים של פולינומים, לא ניתן לרבע את המעגל בגלל ש-%
+לרבע את המעגל היא אחת מבעיות הבנייה שהיוונים ניסו לפתור ולא הצליחו. בניגוד לחלוקה זווית לשלושה חלקים ולהפכלת הקוביוה שאינן ניתנת לבנייה בגלל התכונות של השורשים של פולינומים, לא ניתן לרבע את המעגל בגלל ש-%
 $\pi$
-הוא טרנסנדנטי, כלומר, הוא אינו פתרון של אף משוואה אלגברית. ההוכחה מסובכת וניתנה רק בי-%
+הוא טרנסנדנטי: הוא אינו פתרון של אף פולינום עם מקדמים רציונליים. ההוכחה מסובכת וניתנה רק בי-%
 $1882$
 כל ידי 
 \L{Carl von Lindemann}.
@@ -29,14 +29,14 @@ $\pi$.
 ~\ref{s.square-kochanski})
 ושתי בניות של
 \L{Ramanujan}
-(סעיף%
+(סעיפים%
 ~\ref{s.square-ramanujan-first}, \ref{s.square-ramanujan-second}).
 סעיף%
 ~\ref{s.square-quad}
-מסביר איך לרבע את המעגל על ידי שימוש בקוודרטריקס.
+מסביר איך לרבע את המעגל באמצעות קוודרטריקס.
 
 
-הטבלה שלהלן מביא את הנוסחאות של האורכים שנבנו, ערכם המקורב, ההפרש בין ערכים הללו והערך של 
+הטבלה שלהלן מביא את הנוסחאות של האורכים שננבנה, ערכם המקורב, ההפרש בין ערכים הללו והערך של 
 $\pi$,
 והשגיאה (במטרים) אם משתמשים בקירוב כדי לחשב את היקף כדור הארץ, כאשר נתון שהרדיוס הוא
 $6378$
@@ -59,51 +59,48 @@ $6378$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\selectlanguage{hebrew}
-
-
 \section{הבנייה של
-\L{Kochansky}}\label{s.square-kochanski}
+\L{\large Kochansky}}\label{s.square-kochanski}
 
 \textbf{%
 בנייה (איור%
 ~\ref{f.square-kochansky}):}
 \begin{itemize}
 \item
-בנו מעגל יחידה שמרכזו 
+נבנה מעגל יחידה שמרכזו 
 $O$
 עם קוטר
 $\overline{AB}$
-ובנו משיק למעגל ב-%
+ונבנה משיק למעגל ב-%
 $A$.
 \item
-בנו מעגל יחידה שמרכזו
+נבנה מעגל יחידה שמרכזו
 $A$
-וסמנו את החיתוך עם המעגל הראשון ב-%
+ונסמן את החיתוך עם המעגל הראשון ב-%
 $C$.
-בנו מעגל יחידה שמרכזו 
+נבנה מעגל יחידה שמרכזו 
 $C$
-וסמנו את החיתוך שלו עם המעגל השני ב-%
+ונסמן את החיתוך שלו עם המעגל השני ב-%
 $D$. 
 \item
-בנו
+נבנה
 $\overline{OD}$
-וסמנו את החיתוך שלו עם המשיק ב-%
+ונסמן את החיתוך שלו עם המשיק ב-%
 $E$.
 \item
 מ-%
 $E$
-בנו
+נבנה
 $F,G,H$,
 כל אחת במרחק 
 $1$
 מהנקודה הקודמת.
 \item
-בנו
+נבנה
 $\overline{BH}$.
 \end{itemize}
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
 \begin{tikzpicture}[scale=.55]
 % Scale at 4
@@ -240,7 +237,7 @@ $AOCD$
 הוא מעויין ולכן האלכסונים שלו ניצבים זה לזה וחוצים זה את זה בנקודה שסומנה
 $K$,
 $\overline{AK}=1/2$.
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
 
 \begin{tikzpicture}[scale=1.2]
@@ -321,21 +318,21 @@ $\overline{OA}$
 היא זווית ישרה ולכן
 $\angle KAE=30^\circ$.
 נחשב:
-
 \begin{eqn}
 \disfrac{1/2}{\overline{EA}}&=&
 \cos 30^\circ=\disfrac{\sqrt{3}}{2}\\
 \overline{EA}&=&\disfrac{1}{\sqrt{3}}\\
-\overline{AH}&=&3-\overline{EA}\\
-&=&\left(3-\disfrac{1}{\sqrt{3}}\right)
+\overline{AH}&=&3-\overline{EA}
+=\left(3-\disfrac{1}{\sqrt{3}}\right)
 =\disfrac{3\sqrt{3}-1}{\sqrt{3}}
 \end{eqn}
 $\triangle ABH$
-הוא משולש ישר-זווית ולפי משפט פיתרוגס:
-
+הוא משולש ישר-זווית ו-%
+$\overline{AH}=3-\overline{EA}$,
+ןלכן לפי משפט פיתרגורס:
 \begin{eqn}
 \overline{BH}^2&=&\overline{AB}^2+\overline{AH}^2\\
-&=&2^2+\left(\disfrac{3\sqrt{3}-1}{\sqrt{3}}\right)^2\\
+%&=&2^2+\left(\disfrac{3\sqrt{3}-1}{\sqrt{3}}\right)^2\\
 &=&4+\disfrac{27 -6\sqrt{3}+1}{3}=\disfrac{40}{3}-2\sqrt{3}\\
 \overline{BH}&=&\sqrt{\disfrac{40}{3}-2\sqrt{3}}\approx 3.141533387\approx \pi\,.
 \end{eqn}
@@ -343,21 +340,19 @@ $\triangle ABH$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\selectlanguage{hebrew}
-
 \section{הבנייה הראשונה של
-\L{Ramanujan}}\label{s.square-ramanujan-first}
+\L{\large Ramanujan}}\label{s.square-ramanujan-first}
 
 \textbf{בנייה (איור%
 ~\ref{f.ramanujan1}):}
 \begin{itemize}
 \item
-בנו מעגל יחידה שמרכזו 
+נבנה מעגל יחידה שמרכזו 
 $O$
 עם קוטר
 $\overline{PR}$.
 \item
-בנו נקודה
+נבנה נקודה
 $H$
 שחוצה את
 $\overline{PO}$
@@ -369,51 +364,51 @@ $\overline{TR}$
 $\overline{OR}$
 לשלושה קטעים שווים.
 \item
-בנו ניצב ב-%
+נבנה ניצב ב-%
 $T$
 שחותך את המעגל ב-%
 $Q$.
 \item
-בנו את המיתרים
+נבנה את המיתרים
 $\overline{RS}=\overline{QT}$
 ו-%
 $\overline{PS}$.
 \item
-בנו קו מקביל ל-%
+נבנה קו מקביל ל-%
 $\overline{RS}$
-העובר דרך
-$T$,
-וסמנו ב-%
-$N$
-את החיתוך שלו עם 
-$\overline{PS}$.
+שמתחיך ב-%
+$T$
+שחותך את
+$\overline{PS}$
+ב-%
+$N$.
 \item
-בנו קו מקביל ל-%
+נבנה קו מקביל ל-%
 $\overline{RS}$
-העובר דרך
-$O$,
-וסמנו ב-%
-$M$
-את החיתוך שלו עם 
-$\overline{PS}$.
+שמתחיך ב-%
+$O$
+שחותך את
+$\overline{PS}$
+ב-%
+$M$.
 \item
-בנו את המיתר
+נבנה מיתר
 $\overline{PK}=\overline{PM}$.
 \item
-בנו משיק ב-%
+נבנה משיק ב-%
 $P$
 שאורכו
 $\overline{PL}=\overline{MN}$.
 \item
-חברו את הנקודות
+נחבר את הנקודות
 $K,L,R$.
 \item
-מצאו נקודה 
+נמצא נקודה 
 $C$
 כך ש-%
 $\overline{RC}=\overline{RH}$.
 \item
-בנו קו
+נבנה קו
 $\overline{CD}$
 המקביל ל-%
 $\overline{KL}$
@@ -423,7 +418,7 @@ $\overline{LR}$
 $D$. 
 \end{itemize}
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
 
 \begin{tikzpicture}[scale=1,align=left]
@@ -515,7 +510,7 @@ $\triangle QOT$:
 $\angle PSR$
 נשען על קוטר כך ש-%
 $\triangle PSR$
-הוא משולש ישר-זווית ולכן לפי משפט פיתגורס:
+הוא משולש ישר-זווית ולפי משפט פיתגורס:
 \[
 \overline{PS} = \sqrt{2^2-\left(\frac{\sqrt{5}}{3}\right)^2}=\sqrt{4-\frac{5}{9}}=\frac{\sqrt{31}}{3}\,.
 \]
@@ -523,8 +518,7 @@ $\triangle PSR$
 $\overline{MO} \| \overline{RS}$
 כך ש-%
 $\triangle MPO\sim \triangle SPR$
-ולכן:
-
+ול:
 \begin{eqn}
 \disfrac{\overline{PM}}{\overline{PO}}&=&\disfrac{\overline{PS}}{\overline{PR}}\\
 \disfrac{\overline{PM}}{1}&=&\disfrac{\sqrt{31}/3}{2}\\
@@ -534,8 +528,7 @@ $\triangle MPO\sim \triangle SPR$
 $\overline{NT}\|\overline{RS}$
 כך ש-%
 $\triangle NPT\sim \triangle SPR$
-ולכן:
-
+ו:
 \begin{eqn}
 \disfrac{\overline{PN}}{\overline{PT}}&=&\disfrac{\overline{PS}}{\overline{PR}}\\
 \disfrac{\overline{PN}}{5/3}&=&\disfrac{\sqrt{31}/3}{2}\\
@@ -556,7 +549,7 @@ $\triangle PLR$
 $\overline{PL}$
 הוא משיק ולכן
 $\angle PLR$
-הוא משולש ישר זווית. לפי הבנייה
+הוא משולש-ישר זווית. לפי הבנייה
 $\overline{PL}=\overline{MN}$
 ולפי משפט פיתגורס:
 \[
@@ -578,7 +571,7 @@ $\overline{CD}\parallel \overline{LK}$.
 אורכי קטעי הקו מסומנים.
 \end{proof}
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
 
 \begin{tikzpicture}[scale=1,align=left]
@@ -647,11 +640,8 @@ $\overline{CD}\parallel \overline{LK}$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\selectlanguage{hebrew}
-
-
 \section{הבנייה השנייה של
-\L{Ramanujan}}\label{s.square-ramanujan-second}
+\L{\large Ramanujan}}\label{s.square-ramanujan-second}
 
 \textbf{%
 בנייה (איור%
@@ -659,73 +649,75 @@ $\overline{CD}\parallel \overline{LK}$.
 
 \begin{itemize}
 \item
-בנו מעגל יחידה שמרכזו
+נבנה מעגל יחידה שמרכזו
 $O$
 עם קוטר
 $\overline{AB}$
-וסמנו ב-%
+ונסמן ב-%
 $C$
-את החיתוך של הניצב ב-%
+את החיתוך של הניצב ל-%
+$\overline{AB}$
+ב-%
 $O$
 עם המעגל.
 \item
-חלקו את הקטע
+נחלק את הקטע
 $\overline{AO}$
 כך ש-%
 $\overline{AT}=1/3$ 
 ו-%
 $\overline{TO}=2/3$.
 \item
-בנו
+נבנה
 $\overline{BC}$
-ומצאו נקודות
+ונמצא נקודות
 $M,N$
 כך ש-%
 $\overline{CM}=\overline{MN}=\overline{AT}=1/3$.
 \item
-בנו 
+נבנה 
 $\overline{AM}$
 ו-%
 $\overline{AN}$
-וסמנו ב-%
+ונסמן ב-%
 $P$
 את הנקודה על
 $\overline{AN}$
 כך ש-%
 $\overline{AP}=\overline{AM}$.
 \item
-בנו קו המקביל ל-%
+נבנה קו המקביל ל-%
 $\overline{MN}$
 שעובר דרך
 $P$
-וסמנו ב-%
+ונסמן ב-%
 $Q$
 את נקודת החיתוך שלו עם
 $\overline{AM}$.
 \item
-בנו
+נבנה
 $\overline{OQ}$
-ובנו קו המקביל ל-%
+ונבנה קו המקביל ל-%
 $\overline{OQ}$
 שעובר דרך 
 $T$
-וסמנו ב-%
+ונסמן ב-%
 $R$
 את נקודת החיתוך שלו עם
 $\overline{AM}$.
 \item
-בנו משיק
+נבנה משיק
 $\overline{AS}$
 כך ש-%
 $\overline{AS}=\overline{AR}$.
 \item
-בנו
+נבנה
 $\overline{SO}$.
 \end{itemize}
 
 
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
 
 \begin{tikzpicture}[scale=1.3]
@@ -798,32 +790,28 @@ $3\sqrt{\overline{SO}}=\left(9^2+\disfrac{19^2}{22}\right)^{1/4}\approx \pi$.
 \end{theorem}
 \begin{proof}
 $\triangle COB$
-הוא משולש ישר-זווית כך שלפי משפט פיתגורס
+הוא משולש ישר-זווית ולפי משפט פיתגורס
 $\overline{CB}=\sqrt{2}$
 ו-%
-$\overline{NB}=\sqrt{2}-2/3$.
+\[
+\overline{NB}=\sqrt{2}-2/3\,.
+\]
 $\triangle COB$
 הוא המשולש שווה-שוקיים ולכן
 $\angle NBA =\angle MBA=45^\circ$.
-נשתמש במשפט הקוסינוסים על 
-$\triangle NBA$
-כדי לחשב את
-$\overline{AN}$:
+לפי משפט הקוסינוסים:
 \begin{eqn}
 \overline{AN}^2&=&\overline{AB}^2 + \overline{BN}^2-2\cdot\overline{AB}\cdot\overline{BN}\cdot\cos \angle NBA\\
-&=&2^2+\left(\sqrt{2}-\disfrac{2}{3}\right)^2-2\cdot 2 \cdot \left(\sqrt{2}-\disfrac{2}{3}\right)\cdot \disfrac{\sqrt{2}}{2}=\disfrac{22}{9}\,.
+&=&2^2+\left(\sqrt{2}-\disfrac{2}{3}\right)^2-2\cdot 2 \cdot \left(\sqrt{2}-\disfrac{2}{3}\right)\cdot \disfrac{\sqrt{2}}{2}=\disfrac{22}{9}\\
 %&=&4+2-\disfrac{4\sqrt{2}}{3}+\disfrac{4}{9} - 4 + \disfrac{4\sqrt{2}}{3}=\disfrac{22}{9}\\
-%\overline{AN}&=&\sqrt{\disfrac{22}{9}}\,.
+\overline{AN}&=&\sqrt{\disfrac{22}{9}}\,.
 \end{eqn}
-באופן דומה, נשתמש במשפט הקוסינוסים על
-$\triangle MBA$
-כדי לחשב את
-$\overline{AM}$:
+שוב לפי משפט הקוסינוסים:
 \begin{eqn}
 \overline{AM}^2&=&\overline{AB}^2 + \overline{BM}^2-2\cdot\overline{AB}\cdot\overline{BM}\cdot\cos \angle MBA\\
-&=&2^2+\left(\sqrt{2}-\disfrac{1}{3}\right)^2-2\cdot 2 \cdot \left(\sqrt{2}-\disfrac{1}{3}\right)\cdot \disfrac{\sqrt{2}}{2}=\sqrt{\disfrac{19}{9}}\,.
+&=&2^2+\left(\sqrt{2}-\disfrac{1}{3}\right)^2-2\cdot 2 \cdot \left(\sqrt{2}-\disfrac{1}{3}\right)\cdot \disfrac{\sqrt{2}}{2}=\sqrt{\disfrac{19}{9}}\\
 %&=&4+2-\disfrac{2\sqrt{2}}{3}+\disfrac{1}{9} - 4 + \disfrac{2\sqrt{2}}{3}=\disfrac{19}{9}\\
-%\overline{AM}&=&\sqrt{\disfrac{19}{9}}\,.
+\overline{AM}&=&\sqrt{\disfrac{19}{9}}\,.
 \end{eqn}
 לפי הבנייה
 $\overline{QP}\parallel \overline{MN}$
@@ -841,11 +829,11 @@ $\overline{AP}=\overline{AM}$,
 $\overline{TR}\parallel \overline{OQ}$
 ולכן
 $\triangle RAT\sim \triangle QAO$
-כך ש:
+ו:
 \begin{eqn}
 \disfrac{\overline{AR}}{\overline{AQ}}&=&\disfrac{\overline{AT}}{\overline{AO}}\\
-\overline{AR}&=&\overline{AQ}\cdot\disfrac{\overline{AT}}{\overline{AO}}\\
-&=&\disfrac{19}{3\sqrt{22}}\cdot\disfrac{1/3}{1}=\disfrac{19}{9\sqrt{22}}\,.
+\overline{AR}&=&\overline{AQ}\cdot\disfrac{\overline{AT}}{\overline{AO}}
+=\disfrac{19}{3\sqrt{22}}\cdot\disfrac{1/3}{1}=\disfrac{19}{9\sqrt{22}}\,.
 \end{eqn}
 לפי הבנייה
 $\overline{AS}=\overline{AR}$
@@ -854,7 +842,6 @@ $\triangle OAS$
 הוא משולש ישר-זווית כי 
 $\overline{AS}$
 הוא משיק. לפי משפט פיתגורס:
-
 \begin{eqn}
 \overline{SO}&=&\sqrt{1^2+\left(\disfrac{19}{9\sqrt{22}}\right)^2}\\
 3\sqrt{\overline{SO}}&=&3\left(1+\disfrac{19^2}{9^2\cdot 22}\right)^{1/4}=\left(9^2+\disfrac{19^2}{22}\right)^{1/4}\approx 3.14159265258\approx \pi\,.
@@ -866,7 +853,7 @@ $\overline{AS}$
 \ref{f.ramanujan2a}
 אורכי קטעי הקו מסומנים.
 \end{proof}
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
 
 \begin{tikzpicture}[scale=1.3]
@@ -966,15 +953,15 @@ $P$
 $x$
 ויהי 
 $G$
-מיקום של הציר ככאשר שני המסקלים מגיעים לציר ה-%
+המקום של הציר כאשר שני המקלות מגיעים לציר ה-%
 $x$,
 כלומר, 
 $G$
-היא נקודה החיתוך בין עקומת הקוודרטיקס לבין ציר ה-%\
+היא נקודה החיתוך בין עקומת הקוודרטיקס לבין ציר ה-%
 $x$
 (איור%
 ~\ref{f.square-quad}).
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
 \begin{tikzpicture}[scale=.7,domain=.01:1.57,samples=100]
 \draw (0,0) node[below left] {$A$} node [above right,xshift=6pt] {$\theta$} -- (8,0) node[below right] {$B$} -- (8,8) node[above right] {$C$} -- (0,8) node[above left] {$D$} -- cycle;
@@ -996,15 +983,15 @@ $x$
 \end{figure}
 
 \begin{theorem}
-$\quad\overline{AG}=2/\pi$.
+$\overline{AG}=2/\pi$.
 \end{theorem}
-
 \begin{proof}
 יהי
 $y=\overline{PF}=\overline{EA}=1-t$.
-הקוודרטיקס יורד בקצב זהה של העלייה ב-%
-$t$
-ולכן:
+על קוודרטיקס
+$\theta$
+יורד בקצב זהה של העלייה ב-%
+$t$:
 \begin{eqn}
 \frac{1-t}{1} &=& \frac{\theta}{\pi/2}\\
 &&\\
@@ -1031,7 +1018,7 @@ $y=0$
 ~\ref{eq.quad-square}
 כי
 $\cot 0$
-לא מוגדר, כך שנחשב את הגבול של
+לא מוגדר. נחשב את הגבול של
 $x$
 כאשר
 $y$
@@ -1043,7 +1030,7 @@ $z=(\pi/2)y$
 \[
 x = y\cot \frac{\pi}{2}y = \frac{2}{\pi} \left(\frac{\pi}{2}y\cot \frac{\pi}{2}y\right)=\frac{2}{\pi}(z\cot z)\,,
 \]
-ואז נחשב את הגבול:
+ונחשב את הגבול:
 \[
 \lim_{z\rightarrow 0} x=\frac{2}{\pi}\lim_{z\rightarrow 0} (z\cot z) = \frac{2}{\pi}\lim_{z\rightarrow 0} \left(\frac{z\cos z}{\sin z}\right) = \frac{2}{\pi}\lim_{z\rightarrow 0} \left(\frac{\cos z}{(\sin z)/z}\right) = \frac{2}{\pi}\frac{\cos 0}{1} = \frac{2}{\pi}\,,
 \]
@@ -1053,7 +1040,7 @@ $\lim_{z\rightarrow 0} (\sin z/z)=1$ (משפט~\ref{thm.limit-sine-over}).
 
 \subsection*{מה ההפתעה?}
 
-מפתיע שניתן לבנות קירובים כל כל מדוייקים ל-%
+מפתיע שניתן לנבנהת קירובים כל כל מדוייקים ל-%
 $\pi$.
 כמובן, אנו נדהמים מהבניות של
 \L{Ramanujan}.
