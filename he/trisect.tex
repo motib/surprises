@@ -220,10 +220,11 @@ $\triangle DTE$:
 a^2 &=& h^2 + \left[\frac{1}{2}\left(\cos \frac{\theta}{2}-\frac{1}{2}\right)\right]^2\\
 h^2&=&\frac{1}{4}\left(\cos \frac{\theta}{2}-\frac{1}{2}\right)^2+\frac{1}{4}\sin^2\frac{\theta}{2}-\left[\frac{1}{2}\left(\cos \frac{\theta}{2}-\frac{1}{2}\right)\right]^2=
 \frac{1}{4}\sin^2\frac{\theta}{2}\\
-h&=&\frac{1}{2}\sin\frac{\theta}{2}\\
+%h&=&\frac{1}{2}\sin\frac{\theta}{2}\\
 \tan\phi &=&\frac{h}{\overline{OE}}=\displaystyle\frac{\displaystyle\frac{1}{2}\sin\frac{\theta}{2}}{\displaystyle\frac{1}{2}+\frac{1}{2}\left(\cos \frac{\theta}{2}\! -\! \frac{1}{2}\right)}
 =\frac{\displaystyle2\sin\frac{\theta}{2}}{\displaystyle 1+2\cos\frac{\theta}{2}}\,.
 \end{eqn}
+\vspace{-1ex}
 \end{proof}
 
 זה קירוב לחלוקת זווית לשלושה חלקים
@@ -675,9 +676,7 @@ x&=&\sqrt[3]{2}\,.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{חלוקת זווית לשלושה באמצעות
-קוודרטריקס%
-}\label{s.q}
+\section{חלוקת זווית לשלושה באמצעות קוודרטריקס}\label{s.q}
 
 יהי
 $\overline{ABCD}$
@@ -718,7 +717,8 @@ $P$
 או פשוט 
 \textbf{קוודרטריקס}
 \L{\textbf{(quadratrix)}}
-(\ref{f.trisect-quad-curve}). 
+(איור~%
+\ref{f.trisect-quad-curve}). 
 ההגדרה מיוחסת למתמטיקאי
 \L{Hippias}\index{Hippias}.
 
@@ -1002,6 +1002,7 @@ $\overline{OD}=(a/b)$.
 \begin{figure}[tb]
 \begin{center}
 \begin{subfigure}{.45\textwidth}
+\centering
 \begin{tikzpicture}[scale=.8]
 \draw[name path=horz] (0,0) coordinate (o) -- (7,0);
 \node[left] at (o) {$O$};
@@ -1027,6 +1028,7 @@ $\overline{OD}=(a/b)$.
 \end{subfigure}
 \hspace{2em}
 \begin{subfigure}[b]{.45\textwidth}
+\centering
 \begin{tikzpicture}[scale=.8]
 \draw[name path=horz] (0,0) coordinate (o) -- (7,0);
 \node[left] at (o) {$O$};
@@ -1111,7 +1113,8 @@ $h=\sqrt{a}$.
 \begin{enumerate}
 \item
 שני קווים נחתכים בנקודה 
-(\ref{f.constructible-two-lines}).
+(איור~%
+\ref{f.constructible-two-lines}).
 ניתן לחשב את הקואורדינטות של נקודה החיתוך מהמשוואות של שני הקווים
 $y=x$
 ו-%
@@ -1120,7 +1123,8 @@ $y=4x-2$.
 $P= (2/3, 2/3)$.
 \item
 קו חותך מעגל באפס, אחת או שתי נקודות 
-(\ref{f.constructible-line-circle}).
+(איור~%
+\ref{f.constructible-line-circle}).
 ניתן לחשב את הקואורדינטות של נקודות החיתוך מהמשוואות של הקו 
 $y=x$
 והמעגל
@@ -1142,7 +1146,7 @@ $P=(0,\sqrt{2}),Q=(0,-\sqrt{2})$.
 
 \begin{figure}[tb]
 \begin{center}
-\begin{subfigure}{.4\textwidth}
+\begin{subfigure}{.4\textwidth}\centering
 \begin{tikzpicture}[scale=.66]
 \draw[step=10mm,white!50!black,very thin] (-4,-4) grid (4,4);
 \draw[thick] (-4,0) -- (4,0);
@@ -1162,7 +1166,7 @@ $P=(0,\sqrt{2}),Q=(0,-\sqrt{2})$.
 \caption{נקודת החיתוך של שני קווים}\label{f.constructible-two-lines}
 \end{subfigure}
 \hspace{3em}
-\begin{subfigure}[b]{.4\textwidth}
+\begin{subfigure}[b]{.4\textwidth}\centering
 \begin{tikzpicture}[scale=.66]
 \coordinate (O) at (0,0);
 \draw[step=10mm,white!50!black,very thin] (-4,-4) grid (4,4);

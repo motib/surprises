@@ -1,12 +1,11 @@
 % !TeX root = surprises.tex
 
 \usepackage{mathpazo}
-\usepackage{verbatim}
-\usepackage{url}         % Format links
+\usepackage{url}
 \usepackage{subcaption}
-\usepackage{fancyhdr}
 
-\setcounter{tocdepth}{1} % TOC for chapters and sections
+% TOC for chapters and sections
+\setcounter{tocdepth}{1} 
 
 % TikZ
 \usepackage{tikz}
@@ -14,26 +13,22 @@
   intersections,arrows.meta,%
   external,shapes.geometric}
 \tikzset{>=stealth}
+\tikzexternalize[prefix=tikz/]
+
+% Fixed size of circle in vertex
 \newcommand*{\vertex}[1]
   {\fill[shift only] (#1) circle (1.5pt)}
 
-% Store TikZ images in external directory
-\tikzexternalize[prefix=tikz/]
-
-% Formating commands
-
 % QED symbol at end of proofs
-%\newcommand*{\qed}{\hfill\rule{1ex}{2ex}}
 \newcommand\qed{\hfill\hbox{\rlap{$\sqcap$}$\sqcup$}}
+
 % Display style for fractions
 \newcommand*{\disfrac}[2]{\displaystyle\frac{#1}{#2}}
-% Display style for binomial
-\newcommand*{\dischoose}[2]{\displaystyle{#1 \choose #2}}
-% Extra row height for array and eqnarray
-\newcommand*{\erh}[1]{\setlength{\extrarowheight}{#1}}
+
 % Very small size of math symbols 
 \newcommand*{\sm}[1]{$\scriptstyle #1$}
-% Symbol for use in proof of constructibility of heptadecagon
+
+% Symbol for use in constructibility of heptadecagon
 \newcommand*{\occ}[2]{%
   \stackrel{\textstyle r^{#1}}{\!\!\!\scriptscriptstyle #2}}
 
@@ -51,13 +46,6 @@
 \renewcommand*{\L}[1]{\textenglish{\small #1}}
 \newcommand*{\R}[1]{\texthebrew{#1}}
 
-% Use fancyhdr to make all page numbers uniform
-\pagestyle{fancy}
-\fancyhead{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-\fancyfoot[C]{$\thepage$}
-
 % Modify page layout
 \setlength{\textheight}{230mm}
 \setlength{\topmargin}{-4mm}
@@ -74,28 +62,18 @@
 \newtheorem{example}{דוגמה}[chapter]
 \newenvironment{proof}{\vspace{-1ex}\textbf{הוכחה}}{\qed}
 
-% Use english equation numbers in hebrew document
-\renewcommand{\theequation}{\L{\arabic{equation}}}
-
-% Subfigures
+% Subfigures captions
 \DeclareCaptionSubType*{figure}
 \captionsetup[subfigure]{labelformat=simple}
-\renewcommand\thesubfigure{איור~\textenglish{\arabic{chapter}.\arabic{figure}}(\alph{subfigure})}
-\renewcommand\thefigure{\textenglish{\arabic{chapter}.\arabic{figure}}}
 
 % Box advanced material
-\newenvironment{advanced}
-{
+\newenvironment{advanced}{
 \begin{center}
 \begin{tabular}
   {|@{\hspace*{1em}}p{0.9\textwidth}@{\hspace*{1em}}|}
-  \hline\smallskip
-}
-{ 
-\\\\\hline
+  \hline\smallskip}{\\\\\hline
 \end{tabular} 
-\end{center}
-}
+\end{center}}
 
 % Reduce space around c column in eqn
 \newenvironment{eqn}
@@ -108,6 +86,11 @@
    \begin{eqnarray}}
   {\end{eqnarray}}
 
-% Use english equation numbers in hebrew document
-\renewcommand{\theequation}%
-{\L{\arabic{chapter}.\arabic{equation}}}
+% Alter some LaTeX defaults for better treatment of figures
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\setcounter{topnumber}{1}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{3}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.7}

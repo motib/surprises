@@ -4,20 +4,23 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\vspace*{-2ex}
+
 במחוגה מודרנית היא 
 \textbf{מחוגה קבועה}:
-ניתן לקבע את המרחק בין שתי הרגליים וכך להעתיק קטע קו או מעגל ממקום למקום (%
-\ref{fig.fixed-compass}).
+ניתן לקבע את המרחק בין שתי הרגליים וכך להעתיק קטע קו או מעגל ממקום למקום (איור%
+~\ref{fig.fixed-compass}).
 אוקלידס השתמש במחוגה 
 \textbf{מתמוטטת}
 \L{(collapsing)}
-בה לא ניתן לשמור מרחק קבוע (%
-\ref{fig.collapsing-compass}).
+בה לא ניתן לשמור מרחק קבוע (איור%
+~\ref{fig.collapsing-compass}).
 שרגליה מתקפלות כאשר מרימים אותן מהנייר. לעתים קרובות מורים משתמשים מחוגה מתמוטטת המורכבת מטוש שמחובר לחוט כדי לבנות מעגל הלוח. אי-אפשר לשמור על מרחק קבוע כאשר מרימים את המחוגה מהלוח.
 
 \begin{figure}[tb]
 \begin{center}
 \begin{subfigure}{.4\textwidth}
+\centering
 \begin{tikzpicture}
 \begin{scope}[rotate=0,transform shape,scale=2.6]
 \draw (2.95,3.7) rectangle (3,3.95);
@@ -48,6 +51,7 @@
 \end{subfigure}
 \hspace{3em}
 \begin{subfigure}[b]{.4\textwidth}
+\centering
 \begin{tikzpicture}[rotate=0,scale=.9]          
 \fill[gray!50] (0,4) -- (0.4,4) -- (0.4,0) --
                (0.3,-0.15) -- (0.2,0) -- (0.1,-0.14) --
@@ -129,13 +133,15 @@
 \section{מחוגה קבועה ומחוגה מתמוטטת}\label{s.collapse}
 
 בספרי לימוד גיאומטריה ניתן למצוא בנייה של אנך אמצעי לקטע קו על ידי בניית שני מעגלים שמרכזם על הקו,ובלבד שהרדיוס גדול ממחצית המרחק בין המרכזים 
-(\ref{f.collapse-perp-bisector-fixed}).
+(איור%
+~\ref{f.collapse-perp-bisector-fixed}).
 בנייה זו אפשרית רק עם מחוגה קבועה כי לאחר בניית המעגל שמרכזו 
 $A$,
 המרחק בין רגלי המחוגה חייב להישאר ללא שינוי כדי לבנותאת המעגל שמרכזו 
 $B$.
 
-\ref{f.collapse-perp-bisector-collapse}
+איור%
+~\ref{f.collapse-perp-bisector-collapse}
 מראה בנייה של אנך אמצעי שפועלת גם עם מחוגה קבועה וגם עם מחוגה מתמוטטת. נבנה שני מעגלים: אחד שמרכזו 
 $A$
 עם רדיוס
@@ -150,10 +156,10 @@ $\overline{AB}$
 $B$
 עם רדיוס זהה.
 
-הוכחת הנכונות של הבנייה ב-%
-\ref{f.collapse-perp-bisector-fixed}
-לא פשוטה בכלל כי חייבים להשתמש במושגים יחסית מתקדמים כגון משולשים חופפים. אבל הוכחת הנכונות של הבנייה ב-%
-\ref{f.collapse-perp-bisector-collapse}
+הוכחת הנכונות של הבנייה באיור%
+~\ref{f.collapse-perp-bisector-fixed}
+לא פשוטה בכלל כי חייבים להשתמש במושגים יחסית מתקדמים כגון משולשים חופפים. אבל הוכחת הנכונות של הבנייה באיור%
+~\ref{f.collapse-perp-bisector-collapse}
 פשוטה ומבוססת על העובדה ש-%
 $\triangle ABC$
 הוא משולש שווה-צלעות. טענה זו היא המשפט הראשון בספר של אוקלידס. 
@@ -163,9 +169,11 @@ $\overline{BC}=\overline{BA}$.
 מכאן:
 $\overline{AC} = \overline{AB} = \overline{BA} = \overline{BC}$.
 
-\ref{f.collapse-equilateral-fixed}
+איור%
+~\ref{f.collapse-equilateral-fixed}
 מראה שעבור הבנייה עם מחוגה קבועה, המשולש יהיה שווה-שוקיים, לא בהכרח שווה-צלעות 
-(\ref{f.collapse-equilateral-collapse}).
+(איור~
+\ref{f.collapse-equilateral-collapse}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -190,12 +198,15 @@ $\overline{CC'}$
 שאחת מנקודות הקצה שלו הוא
 $C$
 ואורכו
-$\overline{AB}=\overline{CC'}$ (\ref{f.collapse-copying-1}).
+$\overline{AB}=\overline{CC'}$ 
+(איור~
+\ref{f.collapse-copying-1}).
 \end{theorem}
 
 \begin{figure}[tb]
 \begin{center}
 \begin{subfigure}{.4\textwidth}
+\centering
 \begin{tikzpicture}[scale=0.5]
 \coordinate (A) at (0,0);
 \coordinate (B) at (4,0);
@@ -210,10 +221,11 @@ $\overline{AB}=\overline{CC'}$ (\ref{f.collapse-copying-1}).
 \draw ($ (b) ! 1.2 ! (t)$) -- ($ (t) ! 1.2 ! (b)$);
 \end{tikzpicture}
 \selectlanguage{hebrew}
-\caption{בניית חוצה אנכי עם מחוגה קבועי}\label{f.collapse-perp-bisector-fixed}
+\caption{חוצה אנכי עם מחוגה קבועי}\label{f.collapse-perp-bisector-fixed}
 \end{subfigure}
 \hfill
 \begin{subfigure}{.4\textwidth}
+\centering
 \begin{tikzpicture}[scale=0.5]
 \coordinate (A) at (0,0);
 \coordinate (B) at (4,0);
@@ -228,7 +240,7 @@ $\overline{AB}=\overline{CC'}$ (\ref{f.collapse-copying-1}).
 \draw ($ (b) ! 1.2 ! (t)$) -- ($ (t) ! 1.2 ! (b)$);
 \end{tikzpicture}
 \selectlanguage{hebrew}
-\caption{בניית חוצה אנכי עם מוחגה מתמוטטת}\label{f.collapse-perp-bisector-collapse}
+\caption{חוצה אנכי עם מוחגה מתמוטטת}\label{f.collapse-perp-bisector-collapse}
 \end{subfigure}
 \end{center}
 \end{figure}
@@ -237,6 +249,7 @@ $\overline{AB}=\overline{CC'}$ (\ref{f.collapse-copying-1}).
 \begin{figure}[tb]
 \begin{center}
 \begin{subfigure}{.4\textwidth}
+\centering
 \begin{tikzpicture}[scale=0.5]
 \coordinate (A) at (0,0);
 \coordinate (B) at (4,0);
@@ -254,10 +267,11 @@ $\overline{AB}=\overline{CC'}$ (\ref{f.collapse-copying-1}).
 \draw (B) -- (t);
 \end{tikzpicture}
 \selectlanguage{hebrew}
-\caption{בניית משולש שווה-שוקיים עם מחוגה קבועה}\label{f.collapse-equilateral-fixed}
+\caption{משולש שווה-שוקיים עם מחוגה קבועה}\label{f.collapse-equilateral-fixed}
 \end{subfigure}
 \hspace{3em}
 \begin{subfigure}{.4\textwidth}
+\centering
 \begin{tikzpicture}[scale=0.5]
 \coordinate (A) at (0,0);
 \coordinate (B) at (4,0);
@@ -275,14 +289,15 @@ $\overline{AB}=\overline{CC'}$ (\ref{f.collapse-copying-1}).
 \draw (B) -- (t);
 \end{tikzpicture}
 \selectlanguage{hebrew}
-\caption{בניית משולש שווה-צלעות עם מחוגה מתמוטטת}\label{f.collapse-equilateral-collapse}
+\caption{משולש שווה-צלעות עם מחוגה מתמוטטת}\label{f.collapse-equilateral-collapse}
 \end{subfigure}
 \end{center}
 \end{figure}
 
-\begin{figure}[tb]
+\begin{figure}[b]
 \begin{center}
 \begin{subfigure}{.4\textwidth}
+\centering
 \begin{tikzpicture}[scale=0.5]
 \coordinate (C) at (0,0);
 \coordinate (A) at (3,0);
@@ -295,10 +310,11 @@ $\overline{AB}=\overline{CC'}$ (\ref{f.collapse-copying-1}).
 \vertex{D};
 \end{tikzpicture}
 \selectlanguage{hebrew}
-\caption{העתקת קטע קו$\overline{AB}$; אין חשיבות לכיוון של $\overline{CC'}$}\label{f.collapse-copying-1}
+\caption{העתקת קטע קו$\overline{AB}$}\label{f.collapse-copying-1}
 \end{subfigure}
 \hspace{3ex}
 \begin{subfigure}{.4\textwidth}
+\centering
 \begin{tikzpicture}[scale=0.5]
 \coordinate (C) at (0,0);
 \coordinate (A) at (3,0);
@@ -326,7 +342,8 @@ $\overline{AC}$
 $\triangle ACD$
 שבסיסו
 $\overline{AC}$
-(\ref{f.collapse-copying-2}).
+(איור~
+\ref{f.collapse-copying-2}).
 לפי המשפט הראשון של אוקלידס הבנייה אפשרית באמצעות מחוגה מתמוטטת. נבנה קרן שהיא המשך של קטע הקו מ-%
 $D$
 לכיוון 
@@ -335,7 +352,8 @@ $A$,
 $D$
 לכיוון
 $C$
-(\ref{f.collapse-copying-3}).
+(איור~
+\ref{f.collapse-copying-3}).
 
 נבנה מעגל שמרכזו 
 $A$
@@ -345,7 +363,8 @@ $\overline{AB}$,
 $E$
 את נקודת החיתוך של המעגל עם הקרן שממשיכה את
 $\overline{DA}$
-(\ref{f.collapse-copying-4}).
+(איור~
+\ref{f.collapse-copying-4}).
 נבנה מעגל שמרכזו 
 $D$
 עם רדיוס 
@@ -355,11 +374,12 @@ $F$
 את נקודת החיתוך של המעגל עם הקרן שממשיכה את
 $\overline{DC}$
 (איור%
-\ref{f.collapse-copying-5}).
+~\ref{f.collapse-copying-5}).
 
 \begin{figure}[tb]
 \begin{center}
 \begin{subfigure}{.4\textwidth}
+\centering
 \begin{tikzpicture}[scale=0.6]
 \coordinate (C) at (0,0);
 \coordinate (A) at (2.5,0);
@@ -379,11 +399,12 @@ $\overline{DC}$
 \draw[name path=ray1] (D) -- ($ (D) ! 2.7 ! (A) $);
 \end{tikzpicture}
 \selectlanguage{hebrew}
-\caption{בניית קרניים מ-%
+\caption{קרניים מ-%
 $D$}\label{f.collapse-copying-3}
 \end{subfigure}
 \hspace{3ex}
 \begin{subfigure}{.4\textwidth}
+\centering
 \begin{tikzpicture}[scale=0.6]
 \coordinate (C) at (0,0);
 \coordinate (A) at (2.5,0);
@@ -409,7 +430,7 @@ $D$}\label{f.collapse-copying-3}
 \node[right,xshift=2pt,yshift=-2pt] at (E) {$E$};
 \end{tikzpicture}
 \selectlanguage{hebrew}
-\caption{בניית מעגל עם רדיוס 
+\caption{מעגל עם רדיוס 
 $\overline{AB}$}\label{f.collapse-copying-4}
 \end{subfigure}
 \end{center}
@@ -586,6 +607,7 @@ $C$
 (איור~%
 \ref{f.collapse-incorrect-2}).
 
+\newpage
 
 $\overline{CD}=\overline{CE}$
 הם רדיוסים של אותו מעגל כמו גם
@@ -598,12 +620,14 @@ $\overline{AE}$
 \[
 \overline{CD} = \overline{CE} = \overline{AE} = \overline{AG}\,.
 \]
+
+\newpage
+
 $\overline{EG} = \overline{ED}$
 הם רדיוסים של אותו מעגל, ולכן
 $\triangle EAG\cong \triangle DCE$
 לפי צלע-צלע-צלע ו-%
 $\angle GEA = \angle DEC$.
-
 בגלל ש:
 \[
 \angle GEC = \angle GEA \!-\!\angle CEA = \angle DEC\!-\!\angle CEA = \angle DEA\,,
@@ -688,9 +712,7 @@ $\overline{AB}\neq\overline{GC}$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{
-אין לסמוך על תרשים
-}\label{s.collapse-isoceles}
+\section{אין לסמוך על תרשים}\label{s.collapse-isoceles}
 
 \begin{theorem}
 \textbf{(שגוי, כמובן)}

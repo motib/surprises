@@ -8,9 +8,9 @@ Published by Springer-Nature under the Open Access Program.
 You can download the book from
 [SpringerLink](https://link.springer.com/book/10.1007/978-3-031-13566-8).
 
-The directory `en` contains the LaTeX / TikZ source of the published book.
+The directory `en` contains the LaTeX / TikZ source of the published book. The pdfLaTeX compiler was used.
 
-The directory `he` contains an unfinished draft of a Hebrew translation. The XeTeX compiler is used.
+The directory `he` contains the LaTeX / TikZ Hebrew translation. The XeLaTeX compiler was used.
 
 ### Contents
 

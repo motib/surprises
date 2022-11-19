@@ -58,9 +58,10 @@ $1890$
 \textbf{צביעה}
 של מפה היא השמה של צבע לכל שטח כך שכל שטחים שיש להם גבולות  משותפים צבועים בצבעים שונים.
 \end{definition}
-\ref{f.five-planar-map-five}
-מראה צביעה בחמישה צבעים של מפה מישורית עם עשרה שטחים.
-\ref{f.five-planar-map-five}
+איור%
+~\ref{f.five-planar-map-five}
+מראה צביעה בחמישה צבעים של מפה מישורית עם עשרה שטחים. איור%
+~\ref{f.five-planar-map-four}
 מראה צביעה עם ארבעה צבעים של אותה מפה.
 \begin{definition}
 \textbf{גרף}
@@ -84,7 +85,7 @@ $E$,
 
 \begin{figure}[tb]
 \begin{center}
-\begin{subfigure}{.4\textwidth}
+\begin{subfigure}{.4\textwidth}\centering
 \begin{tikzpicture}[scale=.667]
 \draw[fill=blue!80] (-3.5,-3.5) rectangle +(7,7);
 
@@ -121,7 +122,7 @@ $E$,
 \caption{צביעת מפה עם חמישה צבעים}\label{f.five-planar-map-five}
 \end{subfigure}
 \hspace{3em}
-\begin{subfigure}{.4\textwidth}
+\begin{subfigure}{.4\textwidth}\centering
 \begin{tikzpicture}[scale=.667]
 \draw[fill=blue!80] (-3.5,-3.5) rectangle +(7,7);
 
@@ -168,17 +169,18 @@ $E$,
 בנו צומת עבור כל שטח במפה ובנו קשת בין שני צמתים אם ורק אם קיים גבול בין שני השטחים.
 \end{proof}
 \begin{example}
-\ref{f.five-planar-graph-map}
-מראה את המפה המישורית מ-%
-\ref{f.five-planar-map-four}
-עם הצמתים המתאימים לכל השטחים. 
-\ref{f.five-planar-graph-graph}
+איור%
+~\ref{f.five-planar-graph-map}
+מראה את המפה המישורית מאיור%
+~\ref{f.five-planar-map-four}
+עם הצמתים המתאימים לכל השטחים. איור%
+~\ref{f.five-planar-graph-graph}
 מראה גרף מישורי המתאים למפה.
 \end{example}
 
 \begin{figure}[tb]
 \begin{center}
-\begin{subfigure}{.45\textwidth}
+\begin{subfigure}{.45\textwidth}\centering
 \begin{tikzpicture}[scale=.667]
 
 \draw[fill=blue!80] (-3.5,-3.5) rectangle +(7,7);
@@ -226,7 +228,7 @@ $E$,
  במפה מישורית}
 \label{f.five-planar-graph-map}
 \end{subfigure}
-\begin{subfigure}{.4\textwidth}
+\begin{subfigure}{.4\textwidth}\centering
 \hspace{2em}
 \begin{tikzpicture}[scale=.667]
 \foreach \x/\y/\name in {
@@ -288,8 +290,8 @@ $E$,
 של הגרף.
 \end{definition}
 \begin{example}
-השטחים של הגרף המישורי ב-%
-\ref{f.five-planar-graph-graph}
+השטחים של הגרף המישורי באיור%
+~\ref{f.five-planar-graph-graph}
 מתולתים כי כל אחד חסום על ידי שלוש קשתות. הקשתות מעוגלות ולכן השטחים אינם משולשים, שהם מצולעים שצלעותיהם קטעי קו ישרים.
 \end{example}
 \begin{advanced}
@@ -340,7 +342,7 @@ $n$
 \end{figure}
 
 \section{הנוסחה של
-\L{Euler}}\label{s.euler}
+\L{\normalsize Euler}}\label{s.euler}
 
 \begin{theorem}[\L{Euler}]\label{thm.euler}
 יהי
@@ -368,12 +370,14 @@ $e$.
 
 \textbf{מקרה 1:}
 הגרף מפסיק להיות מקושר
-(\ref{f.five-disconnected-removing}).
+(איור~
+\ref{f.five-disconnected-removing}).
 נשלב את
 $v_1$
 עם
 $v_2$
-(\ref{f.five-disconnected-merge}).
+(איור~
+\ref{f.five-disconnected-merge}).
 ל-%
 $G'$
 הגרף המישוי שנוצר פחות קשתות מ-%
@@ -387,7 +391,7 @@ $G$.
 
 \begin{figure}[tb]
 \begin{center}
-\begin{subfigure}{.4\textwidth}
+\begin{subfigure}{.4\textwidth}\centering
 \begin{tikzpicture}[scale=.95]
 \draw (2,0) -- (1,1.5) -- (0,0) -- (2,0) node[below] {$v_1$} -- node[above] {$e$} (4,0) node[below] {$v_2$} -- (6,0) -- (5,1.5) -- (4,0);
 \end{tikzpicture}
@@ -395,7 +399,7 @@ $G$.
 \caption{הגרף לא קשור}\label{f.five-disconnected-removing}
 \end{subfigure}
 \hspace{3em}
-\begin{subfigure}{.4\textwidth}
+\begin{subfigure}{.4\textwidth}\centering
 \begin{tikzpicture}[scale=.95]
 \draw (2,0) -- (1,1.5) -- (0,0) -- (2,0) node[below] {$v_1,v_2$} -- (4,0) -- (3,1.5) -- (2,0);
 \end{tikzpicture}
@@ -407,12 +411,14 @@ $G$.
 
 \textbf{מקרה 2:}
 הגרף נשאר מקושר
-(\ref{f.five-connected-remains}).
+(איור~
+\ref{f.five-connected-remains}).
 לגרף הנוצר
 $G'$
 פחות קשתות מ-%
 $G$
-(\ref{f.five-connected-fewer}),
+(איור~
+\ref{f.five-connected-fewer}),
 ולכן לפי הנחת האינדוקציה,
 $V-(E-1)+(F-1)=2$
 כי מחיקת קשת אחת מאחדת שני שטחים לאחד. נפשט ונקבל
@@ -423,7 +429,7 @@ $G$.
 
 \begin{figure}[tb]
 \begin{center}
-\begin{subfigure}{.4\textwidth}
+\begin{subfigure}{.4\textwidth}\centering
 \begin{tikzpicture}
 \foreach \x/\y in {0/0, 2/0, 1/1.5,4/0,6/0,5/1.5}
   \fill (\x,\y) circle (1.5pt);
@@ -436,7 +442,7 @@ $G$.
 \caption{הגרף נשאר קשור לאחר מחיקת קשת}\label{f.five-connected-remains}
 \end{subfigure}
 \hspace{3em}
-\begin{subfigure}{.4\textwidth}
+\begin{subfigure}{.4\textwidth}\centering
 \begin{tikzpicture}
 \foreach \x/\y in {0/0, 2/0, 1/1.5,4/0,6/0,5/1.5}
   \fill (\x,\y) circle (1.5pt);
@@ -469,8 +475,8 @@ E&=&3V-6\,.
 \end{eqn}
 \end{proof}
 \begin{example}
-בגרף המישורי
-\ref{f.five-planar-graph-graph}
+בגרף המישורי באיור%
+~\ref{f.five-planar-graph-graph}
 יש
 $10$
 צמתים ו-%
@@ -502,7 +508,7 @@ $E\leq 3V-6$.
 
 \begin{figure}[tb]
 \begin{center}
-\begin{subfigure}{.45\textwidth}
+\begin{subfigure}{.45\textwidth}\centering
 \begin{tikzpicture}[scale=.9]
 \foreach \x/\y in {0/0, 2/0, 1/1.5,4/0,6/0,5/1.5}
   \fill (\x,\y) circle (1.5pt);
@@ -514,7 +520,7 @@ $E\leq 3V-6$.
 \caption{פחות קשתות מהחסם העליון}\label{f.five-fewer}
 \end{subfigure}
 \hspace{1em}
-\begin{subfigure}{.45\textwidth}
+\begin{subfigure}{.45\textwidth}\centering
 \begin{tikzpicture}[scale=.9]
 \foreach \x/\y in {0/0, 2/0, 1/1.5,4/0,6/0,5/1.5}
   \fill (\x,\y) circle (1.5pt);
@@ -537,7 +543,8 @@ $8$
 $6$
 צמתים ולכן
 $8< 3\cdot 6 - 6= 12$.
-\ref{f.five-upper-limit}
+איור%
+~\ref{f.five-upper-limit}
 מראה גרף מתולת עם
 $6$
 צמתים ו-%
@@ -546,20 +553,21 @@ $3\cdot 6 - 6= 12$
 \end{example}
 
 \section{גרפים שאינם מישוריים}
-נסטה מעט מהסיפור כדי להראות איך ניתן להשתמש במשפטים 
-\L{~\ref{thm.euler}}\label{s.nonplanar}
+נסטה מעט מהסיפור כדי להראות איך ניתן להשתמש במשפטים% 
+~\ref{thm.euler}\label{s.nonplanar}
 ו-%
-\L{~\ref{thm.count}}
+\ref{thm.count}
 כדי להוכיח שגרפים מסויימים אינם מישוריים.
 
 \begin{theorem}
 $K_5$,
 הגרף השלם עם חמישה צמתים, אינו מישורי 
-(\ref{f.five-k5-failed}).
+(איור%
+~\ref{f.five-k5-failed}).
 \end{theorem}
 \begin{figure}[tb]
 \begin{center}
-\begin{subfigure}{.45\textwidth}
+\begin{subfigure}{.45\textwidth}\centering
 \begin{tikzpicture}[scale=.75]
 \node (pentagon) [minimum size=4cm,regular polygon,regular polygon sides=5] at (0,0) {};
 \draw (pentagon.corner 1) -- (pentagon.corner 2);
@@ -580,7 +588,7 @@ $K_5$,
 \label{f.five-k5-failed}
 \end{subfigure}
 \hspace{1em}
-\begin{subfigure}{.45\textwidth}
+\begin{subfigure}{.45\textwidth}\centering
 \begin{tikzpicture}[scale=.75]
 \node (pentagon) [minimum size=4cm,regular polygon,regular polygon sides=5] at (0,0) {};
 \draw (pentagon.corner 1) -- (pentagon.corner 2);
@@ -618,12 +626,13 @@ $3\cdot 5 -6=9$
 \begin{theorem}
 $K_{3,3}$,
 הגרף הדו-אזורי עם שלושה צמתים בכל איזור 
-(\ref{f.five-k33}),
+(איור~
+\ref{f.five-k33}),
 אינו מישורי.
 \end{theorem}
 \begin{figure}[tb]
 \begin{center}
-\begin{subfigure}{.4\textwidth}
+\begin{subfigure}{.4\textwidth}\centering
 \begin{tikzpicture}[scale=1]
 \draw (0,0) -- (3,0);
 \draw (0,2) -- (3,2);
@@ -640,7 +649,7 @@ $K_{3,3}$,
 \caption{$K_{3,3}$ אינו מישורי}\label{f.five-k33}
 \end{subfigure}
 \hspace{3em}
-\begin{subfigure}{.4\textwidth}
+\begin{subfigure}{.4\textwidth}\centering
 \begin{tikzpicture}
 \draw (0,4) -- (3,4);
 \draw (0,2) -- (3,4);
@@ -766,10 +775,10 @@ $2$, \ldots, $d_k$
 $k$, 
 אזי
 $V=\sum_{i=1}^{k}d_i$. 
-מהמשפטים
-\L{~\ref{thm.count}}
+מהמשפטים%
+~\ref{thm.count}
 ו-%
-\L{~\ref{thm.degrees}}
+\ref{thm.degrees}
 נקבל:
 \[
 \sum_{i=1}^{k} i\cdot d_i=2E\leq 2(3V-6) = 6V-12=6\sum_{i=1}^{k} d_i -12\,.
@@ -798,8 +807,8 @@ $i<6$.
 \[
 d_{\textit{\footnotesize avg}}=\frac{\sum_{i=1}^{k} i\cdot d_i}{V}\,.
 \]
-אבל סכום המעלות הוא פעמיים מספר הקשתות ולפי משפט
-\L{~\ref{thm.count}}:
+אבל סכום המעלות הוא פעמיים מספר הקשתות ולפי משפט%
+~\ref{thm.count}:
 \[
 d_{\textit{\footnotesize avg}}=\frac{2E}{V}\leq \frac{6V-12}{V}=6-\frac{6}{V}<6\,.
 \]
@@ -809,7 +818,7 @@ d_{\textit{\footnotesize avg}}=\frac{2E}{V}\leq \frac{6V-12}{V}=6-\frac{6}{V}<6\
 \end{proof}
 
 \begin{example}
-סכום המעלות cברף באיור%
+סכום המעלות בגרף באיור%
 ~\ref{f.five-planar-graph-graph}
 הוא
 $8\cdot 5 + 2\cdot 4=48$.
@@ -832,7 +841,7 @@ $4$
 באינדוקציה על מספר הצמתים ב-%
 $G$.
 אם לגרף ששה צמתים או פחות, ברור שניתן לצבוע את הגרף בששה צבעים. עבור הצעד האינדוקטיבי, לפי משפט
-\L{~\ref{thm.degree5}}
+~\ref{thm.degree5}
 קיים צומת
 $v$
 ממעלה חמש או פחות. נמחק צומת
@@ -844,15 +853,17 @@ $G'$
 עם ששה צבעים, אבל ל-%
 $v$
 חמישה שכנים לכל היותר שצבועים בחמישה צבעים לכל היותר
-(\ref{f.five-six-five}),
+(איור~%
+\ref{f.five-six-five}),
 כך שנשאר צבע ששי שניתן לצבוע בו את
 $v$
-(\ref{f.five-six-six}).
+(איור~%
+\ref{f.five-six-six}).
 \end{proof}
 
 \begin{figure}[tb]
 \begin{center}
-\begin{subfigure}{.4\textwidth}
+\begin{subfigure}{.4\textwidth}\centering
 \begin{tikzpicture}[scale=.5,minimum size=5mm,inner sep=0pt]
 \foreach \name/\color/\theta in
     {A/red/18,B/green/90,C/blue!80/162,D/yellow/234,E/orange/306}
@@ -870,7 +881,7 @@ $v$
 $v$}\label{f.five-six-five}
 \end{subfigure}
 \hspace{3em}
-\begin{subfigure}{.4\textwidth}
+\begin{subfigure}{.4\textwidth}\centering
 \begin{tikzpicture}[scale=.5,minimum size=5mm,inner sep=0pt]
 \foreach \name/\color/\theta in
     {A/red/18,B/green/90,C/blue!80/162,D/yellow/234,E/orange/306}
@@ -922,8 +933,8 @@ $G$
 \begin{proof}
 באינדקציה על מספר הצמתים. אם ב-%
 $G$
-חמישה צמתים או פחות, ניתן לצבוע עם חמישה צבעים. עבור הצעד האינדוקטיבי, לפי משפט
-\L{~\ref{thm.degree5}}
+חמישה צמתים או פחות, ניתן לצבוע עם חמישה צבעים. עבור הצעד האינדוקטיבי, לפי משפט%
+~\ref{thm.degree5}
 קיים צומת
 $v$
 ממעלה חמש או פחות. נמחק את הצומת
@@ -1165,7 +1176,9 @@ $\overline{vv_1},\overline{vv_3}$.
 נקבל מסלול סגור
 $P$
 (המסומן בקו כפול) שמחלק את המישור לשטח "פנימי" ולשטח "חיצוני" (איור%
-~\ref{f.five-color-proof}, אמצע).
+~\ref{f.five-color-proof}, \R{אמצע}).
+
+\newpage
 
 כעת נתבונן בצומת
 $v_2$
@@ -1189,7 +1202,7 @@ $P$,
 וזה סותר את ההנחה שהגרף מישורי. לכן הם חייבים להיות בתוך שתי שרשראות ירוק-כתום 
 \textbf{לא קשורות}
 (מסומנות בקו מקווקוו כפול באיור
-~\ref{f.five-color-proof}, באמצע).
+~\ref{f.five-color-proof}, \R{באמצע}).
 נחליף את שני ההצבעים בשרשרת המכילה את
 $v_2$
 ואז אפשר לצבוע את 
@@ -1197,7 +1210,7 @@ $v$
 בירוק כדי לקבל צביעה עם חמישה צבעים של 
 $G$
 (איור%
-~\ref{f.five-color-proof}, למטה).
+~\ref{f.five-color-proof}, \R{למטה}).
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1217,7 +1230,7 @@ $P$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{ההוכחה השגויה של
-\L{Kempe}
+\L{\normalsize Kempe}
 לבעיית ארבע הצבעים}
 \label{s.kempe}
 
@@ -1245,7 +1258,8 @@ $v_1,v_4$
 (מסומן בקו כפול מקווקוו).
 
 נחליף את הצבעים בשרשרת הכחול-ירוק ובשרשרת הכחול-צהוב 
-(\ref{f.five-kempe1-exchange}).
+(איור%
+~\ref{f.five-kempe1-exchange}).
 השכנים של
 $v$
 צבועים בשלושה צבעים, אדום, ירוק צהוב, וניתן לצבוע את
@@ -1358,10 +1372,11 @@ $v$
 \L{Heawood}
 שם לב שיש אפשרות שלמסלולים הסגורים המוגדרים על ידי השרשראות האדום-צהוב והאדום-ירוק יש צמתים אדומים משותפים
 ($v_1,v_8$
-ב-%
-\ref{f.five-kempe2}).
+באיור%
+~\ref{f.five-kempe2}).
 כאשר מחליפים צבעים בשרשראות הכחול-ירוק והכחול-צהוב, יש אפשרות שיהיו צמתים צבועים בכחול הקשורים בקשת
-(\ref{f.five-kempe2-share}),
+(איור%
+~\ref{f.five-kempe2-share}),
 כך שהצביעה כבר לא חוקית.
 \begin{figure}[tb]
 \begin{center}
@@ -1459,13 +1474,13 @@ $5$
 
 \subsection*{מקורות}
 על משפט ארבעת הצבעים ראו 
-\L{\cite{thomas}, \cite{wiki:four}}.
+\cite{thomas}, \cite{wiki:four}.
 ההוכחה של משפט חמשת הצבעים לקוחה מ-%
-\L{\cite{thebook}, \cite{wiki:five}}.
-\L{\cite{eppstein}}
+\cite{thebook}, \cite{wiki:five}.
+\cite{eppstein}
 מביא הוכחות רבות לנוסחת
 \L{Euler}.
 השגיאה בהוכחה של 
 \L{Kempe}
 מתוארת ב-%
-\L{\cite{sipka}}.
+\cite{sipka}.

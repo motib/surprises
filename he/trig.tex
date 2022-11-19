@@ -29,6 +29,7 @@
 
 \section{משפטים על משולשים}\label{a.triangles}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{חישוב השטח של משולש}
@@ -50,10 +51,12 @@ $h$
 הוא הגובה ל-%
 $b$
 מהקודקוד הנגדי
-(\ref{f.area-base-height-1}).
+(איור~%
+\ref{f.area-base-height-1}).
 \end{theorem}
 
 \begin{proof}
+איור~%
 \ref{f.area-base-height-2}
 מראה שעל ידי "חיתוך" המשולש במחצית גובהו, נוכל "להזיז" את המשולשים הצבועים כדי לבנות מלבן ששטחו שווה לשטח המשולש. בסיס המלבן הוא 
 $b$
@@ -243,6 +246,9 @@ $\frac{1}{2}(a+b+c)$.
 \end{center}
 \caption{משולש החוסם מעגל}\label{f.inscribed-trig}
 \end{figure}
+
+\newpage
+
 השטח של
 $\triangle ABC$
 הוא סכום השטחים של ששת המשולשים הללו. הגובה של כל  אחד מהמשולשים הוא 
@@ -311,18 +317,17 @@ $u=s-a, v=s-b, w=s-c$.
 $-\alpha$
 ו-%
 $90^\circ-\alpha$.
-
 נתון משולש ישר-זווית 
 $\triangle ABC$
 עם זווית חדה
-$\alpha$
-ונתון משלוש ישר-זווית 
+$\alpha$,
+ומשלוש ישר-זווית 
 $\triangle ACD$
 עם זווית חדה
 $\beta$,
-ניתן לחבר אותם ולקבל מצולעים עם זווית 
+ניתן לחברם ולקבל מצולעים עם זווית 
 $\alpha+\beta$ (איור.~\ref{f.sin-sum1}).
-המצולע השמאלי מראה את המצולע המופיע לעתים קרובות בהוכחות בספרי לימוד. כאן נביא הוכחות המבוססות על המצולעים במרכז ובימין.
+המצולע השמאלי מופיע לעתים קרובות בהוכחות בספרי לימוד. כאן נביא הוכחות המבוססות על המצולעים במרכז ובימין.
 \begin{figure}[tb]
 \begin{center}
 \begin{tikzpicture}[scale=.85]
@@ -400,16 +405,9 @@ $h$
 \triangle ABD &=& \frac{1}{2}bc\sin(\alpha+\beta)\\
 \triangle ABD &=& \triangle ABC+\triangle ADC\\
 &=& \frac{1}{2}ch\sin \alpha + \frac{1}{2}bh\sin \beta\\
-&=& \frac{1}{2}c(b\cos\beta)\sin \alpha + \frac{1}{2}b(c\cos\alpha)\sin \beta\,.
+&=& \frac{1}{2}c(b\cos\beta)\sin \alpha + \frac{1}{2}b(c\cos\alpha)\sin \beta\\
+\sin(\alpha+\beta)&=&\sin\alpha\cos\beta+\cos \alpha\sin\beta\,.
 \end{eqn}
-נשווה את שתי הנוסחות עבור 
-$\triangle ABD$
-ומצמצום 
-$\frac{1}{2}bc$
-נקבל:
-\[
-\sin(\alpha+\beta)=\sin\alpha\cos\beta+\cos \alpha\sin\beta\,.
-\]
 \end{proof}
 
 \begin{figure}[tb]
@@ -443,8 +441,15 @@ $1$
 (איור.~\ref{f.chord-angle}).
 \end{theorem}
 
-\begin{figure}[bt]
-\begin{center}
+
+\begin{figure}[tb]
+\centering
+\selectlanguage{hebrew}
+\subcaptionbox{כל הזוויות הנתמכות על ידי מיתר שוות
+\label{f.chord-angle}}
+[.45\textwidth]
+{
+\centering
 \begin{tikzpicture}[scale=.7]
 
 \coordinate (A) at (0,0);
@@ -466,16 +471,50 @@ $1$
 \node[right] at (B) {$C$};
 \node[left] at (D) {$D$};
 \end{tikzpicture}
-\end{center}
-\caption{כל הזוויות הנתמכות על ידי מיתר שוות}\label{f.chord-angle}
+}
+\hspace{1em}
+\subcaptionbox{מרובע חסום בתוך מעגל
+\label{f.trig-quad-circle}}
+[.45\textwidth]
+{
+\centering
+\begin{tikzpicture}[scale=.8]
+\coordinate (A) at (0,0);
+\node[left] at (A) {$A$};
+\node[right,xshift=6pt,yshift=5pt] at (A) {$\alpha$};
+\node[above right,xshift=4pt,yshift=8pt] at (A) {$\beta$};
+\coordinate (B) at (3.5,0);
+\node[right] at (B) {$B$};
+\draw (A) -- +(70:4.5) coordinate (D);
+\node[above left] at (D) {$D$};
+\path[name path=dc1] (D) -- +(-20:2.5);
+\path[name path=bc1] (B) -- +(90:4);
+\path[name intersections={of=dc1 and bc1,by={C}}];
+\node[above right] at (C) {$C$};
+\draw[rotate=90] (B) rectangle +(9pt,9pt);
+\draw[rotate=-110] (D) rectangle +(9pt,9pt);
+\draw (A) -- (B) -- (C) -- (D) -- cycle;
+\draw (A) -- (C);
+\draw (D) -- (B);
+
+\coordinate (O) at ($(A)!.5!(C)$);
+\node[draw,circle through=(A),name path=circle] at (O) {};
+\node[below right,xshift=6pt,yshift=-4pt] at (D) {$\alpha$};
+\node[below,xshift=1pt,yshift=-10pt] at (D) {$\gamma$};
+\node[below left,xshift=-6pt,yshift=4pt] at (C) {$\delta$};
+\node[below,xshift=-4pt,yshift=-6pt] at (C) {$\gamma$};
+\node[above left,xshift=-7pt,yshift=4pt] at (B) {$\delta$};
+\node[above,xshift=-4pt,yshift=14pt] at (B) {$\beta$};
+\end{tikzpicture}
+}
 \end{figure}
 
 \begin{proof}
 יהי
 $\overline{AB}$
-קוטר ותהי
-$\angle BAC=\alpha$.
-תהי 
+קוטר, 
+$\angle BAC=\alpha$
+ו-%
 $D$
 כל נקודה אחרת במעגל המייצרת את המשולש
 $\triangle BDC$.
@@ -510,39 +549,9 @@ $\angle ADC+\angle ABC=180^\circ$
 $360^\circ$
 ולכן
 $\angle DAB+\angle DCB=180^\circ$. 
-\begin{figure}[tb]
-\begin{center}
-\begin{tikzpicture}[scale=.8]
-\coordinate (A) at (0,0);
-\node[left] at (A) {$A$};
-\node[right,xshift=6pt,yshift=5pt] at (A) {$\alpha$};
-\node[above right,xshift=4pt,yshift=8pt] at (A) {$\beta$};
-\coordinate (B) at (3.5,0);
-\node[right] at (B) {$B$};
-\draw (A) -- +(70:4.5) coordinate (D);
-\node[above left] at (D) {$D$};
-\path[name path=dc1] (D) -- +(-20:2.5);
-\path[name path=bc1] (B) -- +(90:4);
-\path[name intersections={of=dc1 and bc1,by={C}}];
-\node[above right] at (C) {$C$};
-\draw[rotate=90] (B) rectangle +(9pt,9pt);
-\draw[rotate=-110] (D) rectangle +(9pt,9pt);
-\draw (A) -- (B) -- (C) -- (D) -- cycle;
-\draw (A) -- (C);
-\draw (D) -- (B);
 
-\coordinate (O) at ($(A)!.5!(C)$);
-\node[draw,circle through=(A),name path=circle] at (O) {};
-\node[below right,xshift=6pt,yshift=-4pt] at (D) {$\alpha$};
-\node[below,xshift=1pt,yshift=-10pt] at (D) {$\gamma$};
-\node[below left,xshift=-6pt,yshift=4pt] at (C) {$\delta$};
-\node[below,xshift=-4pt,yshift=-6pt] at (C) {$\gamma$};
-\node[above left,xshift=-7pt,yshift=4pt] at (B) {$\delta$};
-\node[above,xshift=-4pt,yshift=14pt] at (B) {$\beta$};
-\end{tikzpicture}
-\end{center}
-\caption{מרובע חסום בתוך מעגל}\label{f.trig-quad-circle}
-\end{figure}
+
+
 נניח שקוטר המעגל הוא
 $1$
 (אחרת הכפל הכל באורך הקוטר). הצלעות של המרובע הם:
@@ -1174,7 +1183,10 @@ $\angle EAC=180^\circ-\alpha$:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{משפט \L{Ptolemy}}\label{a.ptolemy}
+\newpage
+
+\section{משפט
+\L{\normalsize Ptolemy}}\label{a.ptolemy}
 \index{Ptolemy's theorem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1201,7 +1213,9 @@ $\widehat{DCB}$
 ו-%
 $\angle DCB$
 שווה לחצי הקשת
-$\widehat{DAB}$ (\ref{f.trap-1}).
+$\widehat{DAB}$ 
+(איור~%
+\ref{f.trap-1}).
 שתי הקשתות ביחד מקיפים את כל היקף המעגל ולכן סכומן 
 $360^\circ$. 
 מכאן ש-%
@@ -1239,7 +1253,9 @@ $\angle ADC + \angle ABC = 180^\circ$.
 }
 \hspace{3em}
 \subcaptionbox{%
-הקודקוד הרביעי חייב להיות על היקף המעגל
+הקודקוד
+$C$
+חייב להיות על היקף המעגל
 \label{f.trap-2}}
 [.45\textwidth]
 {
@@ -1280,7 +1296,8 @@ $C'$
 על היקף המעגל. ללא הגבלת הכלליות נניח ש-%
 $C'$
 נמצאת בתוך המעגל 
-(\ref{f.trap-2}).
+(איור~%
+\ref{f.trap-2}).
 
 בנה קרן שמאריכה את 
 $\overline{DC'}$
@@ -1300,6 +1317,8 @@ $C$
 $C'$
 נמצאת בתוך המעגל.
 \end{proof}
+
+\newpage
 
 \begin{theorem}\label{thm.isoceles-trapezoid}
 הזוויות הנגדיות של טרפז שווה-שוקיים משלימות.
@@ -1418,7 +1437,7 @@ $\angle D = 180^\circ - \angle B$
 $\cos \angle D = - \cos \angle B$
 ו-%
 $\cos \angle C = -\cos \angle A$.
-נצמצם את הקוסינוס מהמשוואות הללו כדי לקבל:
+נצמצם את הקוסינוס כדי לקבל:
 \begin{eqn}
 e^2(cd+ab)&=&abc^2+abd^2+a^2cd+b^2cd\\
 e^2 &=& \frac{(ac+bd)(ad+bc)}{(ab+cd)}\\
@@ -1434,7 +1453,8 @@ ef &=& (ac+bd)\,.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{המשפט של \L{Ceva}}\label{a.ceva}
+\section{המשפט של
+\L{\normalsize Ceva}}\label{a.ceva}
 
 \index{Ceva's theorem}\label{thm.ceva}
 \begin{theorem}[Ceva]
@@ -1589,7 +1609,7 @@ c-e &=& \frac{ad}{b} - \frac{af}{b}=\frac{a}{b}(d-f)\\
 
 \begin{figure}[tb]
 \begin{center}
-\begin{tikzpicture}[scale=.6]
+\begin{tikzpicture}[scale=.8]
 \clip (-.8,-.4) rectangle +(11.2,6.5);
 \coordinate (D) at (0,0) node[left] {$D$};
 \draw (D) -- ++(60:6) coordinate (C) node[left] {$C$};
@@ -1620,7 +1640,10 @@ c-e &=& \frac{ad}{b} - \frac{af}{b}=\frac{a}{b}(d-f)\\
 \caption{המשפט של \L{Menelaus}}\label{f.menelaus}
 \end{figure}
 
-\section{המשפט של \L{Menelaus}}\label{a.menelaus}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{המשפט של
+\L{\normalsize Menelaus}}\label{a.menelaus}
 
 \begin{theorem}[\L{Menelaus}]\label{thm.menelaus}\index{Menelaus's theorem}
 יהי 

@@ -2,7 +2,9 @@
 
 \selectlanguage{hebrew}
 
-\chapter{תורת \L{\Large Ramsey}}\label{c.ramsey}
+\chapter[תורת
+\L{\normalsize Ramsey}]{תורת
+\L{\Large Ramsey}}\label{c.ramsey}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 תורת 
@@ -50,7 +52,8 @@ $a^2+b^2=c^2$,
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{שלשות \L{\large Schur}}\label{s.schur}
+\section{שלשות
+\L{\normalsize Schur}}\label{s.schur}
 \index{Schur triples}
 
 \begin{definition}
@@ -227,7 +230,8 @@ $k$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{שלשות \L{\large Pythagorean}}\label{s.pyth}
+\section{שלשות
+\L{\normalsize Pythagorean}}\label{s.pyth}
 
 \begin{definition}
 נתונה חלקה שרירותית של קבוצה של המספרים השלמים:
@@ -310,7 +314,7 @@ $10^{10}$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{\L{\large Van der Waerden} הבעיה של}\label{s.van}
+\section{\L{\normalsize Van der Waerden} הבעיה של}\label{s.van}
 
 נעיין בסדרות של שמונה נקודות צבעוניות באיור%
 ~\ref{f.vdw1}.
@@ -398,18 +402,21 @@ $k=4$, $n=35$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{משפט \L{\large Ramsey}}\label{s.ramsey}
+\newpage
+
+\section{משפט \L{\normalsize Ramsey}}\label{s.ramsey}
 
 נצבע עם שני צבעים את הקשתות של 
 $K_5$, 
 הגרף השלם על 
 $5$
 צמתים
-(\ref{f.ramsey5}).
+(איור~%
+\ref{f.ramsey5}).
 אין תת-גרפים חד-צבעוניים 
 $K_3$
-(משולשים) בגרף.
-~\ref{f.ramsey6}
+(משולשים) בגרף. איור~%
+\ref{f.ramsey6}
 מראה צביעה אחת של 
 $K_6$
 וניתן לראות שיש משולשים חד-צבעוניים 
@@ -503,14 +510,15 @@ $v$
 מחובר לחמשת הצמתים האחרים וכאשר הקשתות צבועות עם שני צבעים, לפחות שלוש קשתות חד-צבעוניות יהיו מחוברות ל-%
 $v$. 
 
-ב-%
-\ref{f.ramsey4a}, $\overline{AB}, \overline{AC}, \overline{AE}$ 
+באיור%
+~\ref{f.ramsey4a}, $\overline{AB}, \overline{AC}, \overline{AE}$ 
 צבועות באדום. הגרף שלם ולכן כל הצמתים מחוברים, כך שאם אחת מהקשתות 
 $\overline{BC}$, $\overline{BE}$, $\overline{CE}$
 צבועה באדום, נניח
 $\overline{BE}$,
 משולש אדום נוצר. אחרת כל שלושת הקשתות צבועות בכחול והן מייצרות משולש כחול 
-(\ref{f.ramsey4b}).
+(איור%
+~\ref{f.ramsey4b}).
 \end{proof}
 
 ניתן להכליל את המשפט לכל מספר של צבעים וכן לתת-גרפים שאינם בגודל אחיד. 
@@ -565,6 +573,8 @@ $K_6$\label{f.ramsey4b}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newpage
+
 \section{השיטה ההסתברותית}\label{s.bounds}
 
 רק שני מספרי 
@@ -596,7 +606,7 @@ $A$,
 \textbf{אקראי}
 של התכונה 
 $A$
-היא גדול מאפס. חשוב להבין שהשיטה לא בונה איבר עם התכונה. היא רק מוכיחה שקיים איבר העונה על הדרישה. למרות שידועה לנו ממשפט
+היא גדול מאפס. חשוב להבין שהשיטה לא בונה איבר עם התכונה. היא רק מוכיחה שקיים איבר העונה על הדרישה. למרות שידועה לנו ממשפט%
 ~\ref{thm.ramsey}
 ש-%
 $R(3)=6$,
@@ -612,7 +622,7 @@ $K_n$
 בשני צבעים, נעיין בתת-גרף שרירותי
 $K_3$,
 כלומר, משולש שרירותי עם
-$\dischoose{3}{2}=3$
+${3\choose 2}=3$
 צלעות. ההסתברות שכל הקשתות צבועות באדום היא
 $2^{-3}$
 כמו גם ההסתברות שכל הקשתות צבעות בכחול. לכן ההסתברות שהמשולש הוא חד-צבעונית היא
@@ -620,14 +630,14 @@ $2^{-3}+2^{-3}=2^{-2}=1/4$.
 מספר המשולשים ב-%
 $K_n$
 הוא
-$\dischoose{n}{3}$, 
+${n\choose 3}$, 
 ולכן,
 $P(n,3)$,
 ההסתברות שקיים משולש חד-צבעונית בצביעה אקראית של 
 $K_n$,
 היא:
 \[
-P(n,3)=\dischoose{n}{3}\cdot \frac{1}{4}\,.
+P(n,3)={n \choose 3}\cdot \frac{1}{4}\,.
 \]
 אם
 $P(n,3)<1$
@@ -639,6 +649,8 @@ $0$,
 $K_n$
 \textbf{לא מכילה}
 משולש חד-צבעונית גדולה מאפס וצביעה אחת כזאת חייבת להתקיים.
+
+\newpage
 
 הטבלה שלהלן מראה
 $\overline{P}(n,3)$
@@ -663,8 +675,8 @@ n & \overline{P}(n,3) & \textrm{קיימת}\\
 \]
 \end{proof}
 
-במבט ראשון התוצאה מוזרה כי 
-\ref{f.ramsey5}
+במבט ראשון התוצאה מוזרה כי איור%
+~\ref{f.ramsey5}
 מראה שיש צביעה של
 $K_5$
 ללא משולש חד-צבעונית. אולם, הקריטריון ההסתברותי מספיק ולא הכרחי. מדובר בחסם תחתון שמוכיח ש-%
@@ -682,12 +694,12 @@ $K_n$
 $K_k$
 חד-צבעוני היא:
 \[
-P(n,k)=\dischoose{n}{k}\cdot 2\cdot 2^{-{k \choose 2}}\,.
+P(n,k)={n \choose k}\cdot 2\cdot 2^{-{k \choose 2}}\,.
 \]
 עבור
 $k=4$:
 \begin{eqn}
-\overline{P}(n,4)&=&1-\dischoose{n}{4}\cdot 2^{-5}=\left.\left(32-\dischoose{n}{4}\right)\right/32\\
+\overline{P}(n,4)&=&1-{n \choose 4}\cdot 2^{-5}=\left.\left(32-{n \choose 4}\right)\right/32\\
 \overline{P}(6,4)&=&(32-15)/32=17/32\\
 \overline{P}(7,4)&=&(32-35)/32=-3/32\,.
 \end{eqn}
@@ -698,13 +710,15 @@ $R(4)=18$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{\L{\large SAT Solving}}\label{s.sat}
+\section{\L{\normalsize SAT Solving}}\label{s.sat}
 
 \L{SAT Solving}
 היא שיטה לפתרון בעיות על ידי קידוד הבעיה כנוסחה בלוגיקה (תחשיב הפסוקים) ואז משתמשים בתכנית מחשב כדי לבדוק את ערך האמת של הנוסחה. התקדמות באלגוריתמים ובמימושם מאפשרות פתרונות מעשיים למגוון בעיות. נביא סקירה של 
 \L{SAT Solving}
 ונסביר איך להשתמש בה כדי לפתור את הבעיות המתמטיות שתיארנו בפרק זה. אנו מניחים שלקורא ידע בסיסי בתחשיב הפסוקים כפי שמוצג בהגדרה%
 ~\ref{def.sat}.\index{Propositional logic}
+
+\newpage
 
 \subsection{תחשיב הפסוקים ובעיית \L{SAT}}
 
@@ -786,7 +800,7 @@ $T$.
 \L{SAT solver}
 הפכו להיות כלים חשובים לפתרון של בעיות בהרבה שטחים כולל במתמטיקה.
 
-\subsection{שלשות \L{\large Schur}}\index{Schur triples}
+\subsection{שלשות \L{ Schur}}\index{Schur triples}
 
 נקדד את בעיית שלשות
 \L{Schur}
@@ -911,7 +925,7 @@ $S(9)$
 קיימת שלשת
 \L{Schur}.
 
-\subsection{שלשות \L{\large Pythagorean}}\index{Pythagorean triples}
+\subsection{שלשות \L{ Pythagorean}}\index{Pythagorean triples}
 
 \L{Heule}\index{Heule, Marijn J.H.}
 ו-%
@@ -960,7 +974,7 @@ $128$
 \L{Coq},
 שתומך בעבודה של מתמטיקאית ובודק אותה, מבלי להפוך את פיתוח ההוכחה לאוטומטית לחלוטין.
 
-\subsection{מבט על אלגוריתם \L{\large DPLL}}\index{SAT solver!DPLL algorithm}
+\subsection{מבט על אלגוריתם \L{ DPLL}}\index{SAT solver!DPLL algorithm}
 
 האלגוריתם הראשון שלומדים עבור
 \L{SAT solving}
@@ -1107,7 +1121,7 @@ $p_4$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{שלושות \L{\large Pythagorean} במתמטיקה בבלית}\label{s.plimpton}
+\section{שלושות \L{\normalsize Pythagorean} במתמטיקה בבלית}\label{s.plimpton}
 
 סעיף זה חורג מתורת
 \L{Ramsey}
@@ -1399,34 +1413,34 @@ $R(n)$
 לסקירה של תורת
 \L{Ramsey}
 ראו
-\L{\cite{burton}}.
+\cite{burton}.
 דיון מעמיק נמצא ב-%
-\L{\cite{rudiments}}.
+\cite{rudiments}.
 הסעיף על השיטה ההסתברותית מבוסס על דוגמה
 \L{4o}
 של
-\L{\cite{ross}}
+\cite{ross}
 ופרק
 $4$
 של
-\L{\cite{burton}}.
+\cite{burton}.
 מסד נתונים של מספרי
 \L{Ramsey}
 נמצא ב-%
-\L{\cite{mckay}}.
+\cite{mckay}.
 
 ההוכחה של המשפט על שלשות
 \L{Pythagorean}
 מתואר לפרטים ב-%
-\L{\cite{brute}}.
+\cite{brute}.
 ראו 
-\L{\cite{mlcs}}
+\cite{mlcs}
 למבוא ללוגיקה ו-%
 \L{SAT solving}.
 הארכיב של ה-%
 \L{SAT solver}
 הלימודי שלי 
-\L{\cite{joss}}
+\cite{joss}
 מכיל נוסחאות עבור שלשות
 \L{Schur}, 
 מספרי
@@ -1437,8 +1451,8 @@ $4$
 סעיף%
 ~\ref{s.plimpton}
 מבוסס על
-\L{\cite{wiki:plimpton}}, \L{\cite{robson}}. 
+\cite{wiki:plimpton}, \cite{robson}. 
 מספרים בבסיס
 $60$
 מתוארים ב-%
-\L{\cite{wiki:sexagesimal}}.
+\cite{wiki:sexagesimal}.

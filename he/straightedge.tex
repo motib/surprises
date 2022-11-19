@@ -54,12 +54,12 @@ $r$,
 $O$.
 אם נצליח לבנות את הנקודות
 $X,Y$
-המסומנות ב-%
-\ref{f.se-only-line-circle},
+המסומנות באיור%
+~\ref{f.se-only-line-circle},
 נוכל לטעון שהצלחנו לבנות את נקודות החיתוך של מעגל נתון עם קו נתון. באופן דומה, הבנייה של
 $X,Y$
-ב-%
-\ref{f.se-only-two-circles},
+באיור%
+~\ref{f.se-only-two-circles},
 היא בניית נקודות החיתוך של שני מעגלים נתונים. המעגלים המצויירים בקווים מקווקווים לא מופיעים בבנייה והם רק עוזרים להבנתה.
 
 המעגל היחיד בבנייה ייקרא המעגל הקבוע ויכול להופיע בכל מקום במישור עם רדיוס שרירותי.
@@ -232,7 +232,8 @@ $r$.
 $P$
 היא נקודה שאיננה נמצאת כל הקן דרכה יש לבנות קו המקביל ל-%
 $l$
-(\ref{f.se-parallel-other1}).
+(איור~%
+\ref{f.se-parallel-other1}).
 
 נבחר
 $M$,
@@ -256,15 +257,17 @@ $\overline{UV}$
 $A$.
 שחותך את המעגל ב-%
 $X,Y$
-(\ref{f.se-parallel-other2}).
+(איור~%
+\ref{f.se-parallel-other2}).
 \begin{figure}[tb]
 \begin{center}
 \begin{subfigure}{.45\textwidth}
+\centering
 \begin{tikzpicture}[scale=.8]
 \coordinate (O) at (0,0);
 \fill (O) node[below right] {$O$} circle[radius=1.5pt];
 \draw[name path=circle] (O) circle[radius=2cm];
-\draw[name path=l] (-4,-3) -- node[above, near end] {$l$} +(9,0);
+\draw[name path=l] (-4,-3) -- node[above, near end] {$l$} +(8,0);
 \path[name path=mo] (-2,-3) coordinate (M) -- ($(-2,-3)!1.65!(O)$);
 \fill (M) node[below] {$M$} circle[radius=1.5pt];
 \path [name intersections={of=circle and mo,by={V,U}}];
@@ -277,12 +280,14 @@ $X,Y$
 \selectlanguage{hebrew}
 \caption{בניית קו מכוון}\label{f.se-parallel-other1}
 \end{subfigure}
+\hspace{2em}
 \begin{subfigure}{.45\textwidth}
-\begin{tikzpicture}[scale=.9]
+\centering
+\begin{tikzpicture}[scale=.8]
 \coordinate (O) at (0,0);
 \fill (O) node[below right] {$O$} circle[radius=1.5pt];
 \draw[name path=circle] (O) circle[radius=2cm];
-\draw[name path=l] (-4,-3) -- node[above,near end,xshift=24pt] {$l$} +(9,0);
+\draw[name path=l] (-4,-3) -- node[above,near end,xshift=24pt] {$l$} +(8,0);
 \path[name path=mo] (-2,-3) coordinate (M) -- ($(-2,-3)!1.65!(O)$);
 \fill (M) node[below] {$M$} circle[radius=1.5pt];
 \path [name intersections={of=circle and mo,by={V,U}}];
@@ -561,26 +566,6 @@ $\theta$
 יחסיות לציר (איור%
 ~\ref{f.se-copy1}).
 
-%
-%בסוף סעיף
-%\ref{s.parallel}
-%הראינו שאפשר להעתיק קטע קו מקביל לעצמו. כאן המטרה היא להעתיק את קטע הקו
-%$\overline{PQ}$
-%ל-%
-%$\overline{AS}$,
-%כך ש-%
-%$\overline{AS}$
-%יהיה באותה זווית
-%$\theta$
-%יחסית לאותו ציר. באיור
-%$\overline{PQ}$
-%נמצא על ציר ה-%
-%$x$
-%אבל אין לזה חשיבות
-%(איור%
-%~\ref{f.se-copy1}).
-
-
 \begin{proof}
 לפי משפט%
 ~\ref{thm.parallel-line}
@@ -630,6 +615,7 @@ $\overline{AS}=\overline{PQ}$.
 \selectlanguage{hebrew}
 \caption{העתקת קו בכיוון נתון}\label{f.se-copy1}
 \end{figure}
+
 נבנה שני רדיוסים במעגל הקבוע 
 $\overline{OU},\overline{OV}$
 שמקביליים ל-%
@@ -1165,6 +1151,8 @@ $q$
 מהביטויים
 $d+r_2,d-r_2,2t$.
 
+\newpage
+
 \textbf{בניית האורך
 $x$:}
 לפי משפט פיתגורס:
@@ -1196,9 +1184,8 @@ $1$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection*{מקורות}
-הפרק מבוסס על בעיה
-$34$
+הפרק מבוסס על בעיה 34
 ב-%
-\L{\cite{dorrie1}}
+\cite{dorrie1}
 שעובדה על ידי
-\L{Michael Woltermann} \L{\cite{dorrie2}}. 
+\L{Michael Woltermann} \cite{dorrie2}. 

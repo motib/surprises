@@ -114,7 +114,7 @@ $1894$
 טען שבנה מצולע משוכלל עם
 $65537$
 צלעות.
-כתב היד שלו נשמר באוניברסיטת 
+כתב היד שלו שמור באוניברסיטת 
 \L{G\"{o}ttigen}.
 
 כדי לבנות מצולע משוכלל מספיק לבנות קטע קו באורך 
@@ -185,6 +185,8 @@ $\cos(360^\circ/17$,
 \end{eqn}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
 
 \section{המשפט הבסיסי של אלגברה}\label{s.fundamental}
 
@@ -384,7 +386,7 @@ r+r^2+\cdots + r^{n-2}+r^{n-1}&=&-1\,.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{ההוכחה של 
-\L{Gauss}
+\L{\normalsize Gauss}
 שניתן לבנות 
 \L{heptadecagon}}\label{s.gauss}
 
@@ -716,8 +718,10 @@ r_1+r_{16}&=&\cos\left(\frac{2\pi}{17}\right)+i\sin\left(\frac{2\pi}{17}\right)+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newpage
+
 \section{פיתוח הנוסחה של %
-\L{Gauss}%
+\L{\normalsize Gauss}%
 }\label{s.derivation}
 
 הנוסחה שקיבלנו עבור 
@@ -753,6 +757,9 @@ $-4\sqrt{34-2\sqrt{17}}$
 &=&2\sqrt{(18\cdot 34-4\cdot17)+\sqrt{17}(2\cdot 34 - 2\cdot 18)}\\
 &=&2\cdot 4\sqrt{34+2\sqrt{17}}\,.
 \end{eqn}
+
+\newpage
+
 נציב את הגורמים ונקבל את הנוסחה של
 \L{Gauss}:
 
@@ -782,7 +789,7 @@ $-4\sqrt{34-2\sqrt{17}}$
 
 
 \section{בניית
-\L{heptadecagon}}
+\L{\normalsize heptadecagon}}
 \label{s.construction}
 
 בנו מעגל יחידה שמרכזו
@@ -957,6 +964,8 @@ $\overline{MF}=\overline{MQ}=f$:
 שימו לב ש-%
 $\overline{MO}=1-\overline{MQ}=1-\overline{MF}$.
 
+\newpage
+
 נבנה חצי מעגל שקוטרו 
 $\overline{OE}$.
 נבנה מיתר
@@ -987,7 +996,7 @@ $\overline{OG}=\overline{OF}=g$
 \path[name intersections={of=circ and yaxis,by={F1,F}}];
 \draw (M) -- node[below] {$f$} (F);
 
-\draw[name path=OEarc,thick] (E) arc(0:-180:1.025cm);
+\draw[name path=OEarc] (E) arc(0:-180:1.025cm);
 \path[name path=OFcircle] (O)
   let
     \p1 = ($(O)-(F)$)
@@ -1019,7 +1028,7 @@ $\overline{OG}=\overline{OF}=g$
 
 \end{tikzpicture}
 \caption{בניית \L{heptadecagon} (3)}
-\label{f.hept-construction3}).
+\label{f.hept-construction3}
 \end{center}
 \end{figure}
 \begin{eqn}
@@ -1126,9 +1135,9 @@ $x$.
   \node[\po] at (\name) {$\n$};
 }
 \draw (a) -- node[above] {$1$} (b) -- node[above] {$1$} (c) -- node[left] {$1$} (d) -- node[below] {$1$} (e) -- node[right] {$1$} (a);
-\draw[thick] (a) -- node[above] {$x$} (c);
-\draw[thick,name path=ad] (a) -- node[above] {$x$} (d);
-\draw[thick,name path=cd] (c) -- node[above] {$x$} (e);
+\draw (a) -- node[above] {$x$} (c);
+\draw[name path=ad] (a) -- node[above] {$x$} (d);
+\draw[name path=cd] (c) -- node[above] {$x$} (e);
 \path[name intersections={of=ad and cd,by={f}}];
 \node[above] at (f) {$\psi$};
 \vertex{f};
@@ -1193,16 +1202,16 @@ $\triangle ACE\sim\triangle AEF$.
   \node[\po] at (\name) {$\n$};
 }
 \draw (a) -- node[above] {$1$} (b) -- node[above] {$1$} (c) -- node[left] {$1$} (d) -- node[below] {$1$} (e);
-\draw[very thick] (e)-- node[right] {$1$} (a);
-\draw[very thick] (a) -- (c);
-\draw[very thick] (c) -- node[below] {$x$} (e);
+\draw[thick] (e)-- node[right] {$1$} (a);
+\draw[thick] (a) -- (c);
+\draw[thick] (c) -- node[below] {$x$} (e);
 
 \path[name path=ef] (e) -- +(108:5);
 \path[name path=ac] (a) -- (c);
 \path[name intersections={of=ac and ef,by={f}}];
 \vertex{f};
 \node[above] at (f) {$F$};
-\draw[very thick] (e) -- node[right] {$1$} (f);
+\draw[thick] (e) -- node[right] {$1$} (f);
 \path (a) -- node[above,xshift=-4pt] {$x-1$} (f);
 \node[below left] at (a) {$\alpha$};
 \node[below right,xshift=2pt] at (f) {$\alpha$};
@@ -1233,31 +1242,31 @@ x^2-x-1=0\,,
 \subsection*{מקורות}
 
 הפרק מבוסס על
-\L{\cite{jorg}}.
+\cite{jorg}.
 אפשר לעיין בתרגום לאנגלית של ספרו של 
 \L{Gauss}
-\L{\cite{gauss}}.
+\cite{gauss}.
 משוואה%
 ~\ref{eq.not-gauss}
 מופיעה ב-%
-\L{\cite{rike}}.
+\cite{rike}.
 המחבר נותן תרגיל להמיר את הנוסחה לזו שמופיעה בעמוד 
 $458$
 של
-\L{\cite{gauss}}
+\cite{gauss}
 ועמוד
 $68$
 של
-\L{\cite{jorg}}.
+\cite{jorg}.
 
 
 הבנייה של המצולע לקוחה מ-%
-\L{\cite{callagy}}.
+\cite{callagy}.
 ניתן למצוא בניות אחרות ב-%
-\L{\cite{wiki:heptadecagon}}.
+\cite{wiki:heptadecagon}.
 הבנייה הטריגונומטרית של מחומש משוכלל לקוחה מ-%
-\L{\cite{wiki:pentagon}}.
+\cite{wiki:pentagon}.
 הבנייה הגיאומטרית של מחומש משוכלל התקבלה מהפתרונות של התרגילים
 \L{2.3.3--2.3.4}
 ב-%
-\L{\cite{stillwell}}.
+\cite{stillwell}.

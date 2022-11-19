@@ -232,16 +232,19 @@ c: V \mapsto \{\textrm{\R{אדום, כחול, ירוק}}\},
 $n>3$
 קודקודים חייב להיות אלכסון. נבחר אלכסון שרירותי
 $\overline{AB}$
-(\ref{f.museum.three-1})
+(איור~%
+\ref{f.museum.three-1})
 ונחלק את המצולע לאורך האלכסון לשני מצולעים קטנים יותר
-(\ref{f.museum.three-2}).
+(איור~%
+\ref{f.museum.three-2}).
 לפי הנחת האינדוקציה ניתן לצבוע כל אחד מהמצולעים הללו בשלושה צבעים 
-(\ref{f.museum.three-3}).
+(איור~%
+\ref{f.museum.three-3}).
 
 \begin{figure}[tb]
 \begin{center}
-\begin{subfigure}{.4\textwidth}
-\begin{tikzpicture}[scale=.8]
+\begin{subfigure}{.4\textwidth}\centering
+\begin{tikzpicture}[scale=.6]
 \draw[thick]
   (0,0) coordinate (A) -- 
   ++(3,0) coordinate (B) --
@@ -270,8 +273,8 @@ $\overline{AB}$
 \caption{אלכסון שרירותי במצולע}\label{f.museum.three-1}
 \end{subfigure}
 \hspace{3em}
-\begin{subfigure}{.4\textwidth}
-\begin{tikzpicture}[scale=.8]
+\begin{subfigure}{.4\textwidth}\centering
+\begin{tikzpicture}[scale=.6]
 \path
   (0,0) coordinate (A1) -- 
   ++(3,0) coordinate (B1) --
@@ -342,7 +345,7 @@ $\overline{AB}$
 
 \begin{figure}[tb]
 \begin{center}
-\begin{subfigure}{.4\textwidth}
+\begin{subfigure}{.4\textwidth}\centering
 \begin{tikzpicture}[scale=.6]
 \path
   (0,0) coordinate (A1) -- 
@@ -409,7 +412,7 @@ $\overline{AB}$
 \caption{צבע את שני המצולעים הקטנים עם שלושה צבעים}\label{f.museum.three-3}
 \end{subfigure}
 \hspace{3em}
-\begin{subfigure}{.4\textwidth}
+\begin{subfigure}{.4\textwidth}\centering
 \begin{tikzpicture}[scale=.6]
 \path
   (0,0) coordinate (A1) -- 
@@ -487,18 +490,20 @@ $A,B$
 ו-%
 \textbf{ירוק}
 במצולע התחתון 
-(~\ref{f.museum.three-3}).
+(איור%
+~\ref{f.museum.three-3}).
 נהדביק את שני המצולעים כדי לשחזר את המצולע המקורי עם
 $n$
 קודקודים 
-(~\ref{f.museum.three-4}).
+(איור%
+~\ref{f.museum.three-4}).
 המצולע יהיה צבוע בשלושה צבעים (איור%
 ~\ref{f.museum.three-5}). 
 \end{proof}
 
 \begin{figure}[tb]
 \begin{center}
-\begin{tikzpicture}[scale=.8]
+\begin{tikzpicture}[scale=.6]
 \draw[thick]
   (0,0) coordinate (A) -- 
   ++(3,0) coordinate (B) --
@@ -552,6 +557,7 @@ $n/3$
 $n/3$
 שומרות מספיקות כדי לראות את כל הקירות של המוזיאון.
 \end{proof}
+
 אם
 $n$
 לא מתחלק ב-%
@@ -569,6 +575,8 @@ $\lfloor 12/3\rfloor =\lfloor 13/3\rfloor=\lfloor 14/3\rfloor=4$.
 למען הפשטות נתעלם מסיבוך זה.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
 
 \section{ניתן לתלת כל מצולע}\label{s.museum-triangulated}
 
@@ -704,7 +712,8 @@ $B,D$.
 אם
 $\overline{BD}$
 נמצא כולו בתוך המצולע 
-(\ref{f.contained}),
+(איור~%
+\ref{f.contained}),
 אזי הוא אלכסון וניתן לחלק את המצולע למשולש 
 $\triangle BCD$
 ולמצולע אחר
@@ -716,7 +725,7 @@ $\triangle BCD$
 ולקבל תילות של המצולע המקורי.
 \begin{figure}[tb]
 \begin{center}
-\begin{subfigure}{.4\textwidth}
+\begin{subfigure}{.4\textwidth}\centering
 \begin{tikzpicture}[scale=1.4]
 \clip (-.5,-.4) rectangle (3.8,2.2);
 \draw
@@ -736,7 +745,7 @@ $\triangle BCD$
 \caption{תילות כאשר האלכסון נמצא בתוך המצולע}\label{f.contained}
 \end{subfigure}
 \hspace{3em}
-\begin{subfigure}{.4\textwidth}
+\begin{subfigure}{.4\textwidth}\centering
 \begin{tikzpicture}[scale=1.4]
 \clip (-.2,-.4) rectangle (3.8,2.2);
 \draw
@@ -771,7 +780,8 @@ $\overline{BD}$
 $F$
 הקרוב ביותר ל-%
 $C$
-(\ref{f.museum.concave-vertices}).
+(איור~%
+\ref{f.museum.concave-vertices}).
 $\overline{CF}$
 הוא אלכסון המחלק את המצולע לשני מצולעים קטנים יותר
 $\overline{CFED}$
@@ -787,5 +797,5 @@ $\overline{CFAB}$.
 
 \subsection*{מקורות}
 
-פרק זה מבוסס על פרק~$39$ ב-%
+פרק זה מבוסס על פרק~39 ב-%
 \cite{thebook}.
