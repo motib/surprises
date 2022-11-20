@@ -1,0 +1,28 @@
+Errata for Mathematical Surprises
+
+p. vii line 15: in list labeled -> in a list labeled.
+
+p. ix, line -12: squaring a circle -> doubling a cube
+
+p. 24, line -6: of depth n-1 -> a,b,c are of depth n-1
+
+p. 41 line 3: four countries -> four colors
+
+p. 45 line 6: Thm. 4.4 -> Thm. 4.3
+
+p. 59 line -4: suprising -> surprising
+
+p. 77 line 11: x -> x^3
+
+p. 80 caption of Fig. 7.4: (a+b)^3 = (a^3+b^3) + \cdots
+
+p. 81 caption of Fig. 7.5: (a+b)^3 = \cdots + 3ab(a+b)
+
+p. 86 line -7: r_2=c/b -> r_2\approx -c/b
+
+p. 137 line 5-6: is construct -> is constructed.
+
+p. 203 line -3: on the circle one ->
+on the circle that forms a triangle $\triangle BDC$, one
+
+p. 218 line -3: Thm. -> Eq.
