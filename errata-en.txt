@@ -26,9 +26,11 @@ p. 86 line -7: r_2=c/b -> r_2\approx -c/b
 
 p. 137 line 6: is construct at -> is constructed at
 
+p. 187 line 3: "The powers of $r^3$" should be "The $3^0, 3^1, 3^2, \ldots$ powers of $r$.
+
 p. 189 line -7,-8: The text seems to indicate that Fig. 16.5 is a proof that c_0/2 = \cos (360/17), but it is actually a visualization. The proof uses complex numbers as shown in the box above the Figure.
 
-p. 203 line 3: on the circle one of whose ->
+p. 203 line -3: on the circle one of whose ->
   on the circle that forms a triangle $\triangle BDC$,
   one of whose
 
