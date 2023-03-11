@@ -1,0 +1,808 @@
+\chapter{La méthode de Lill et le pli de Beloch}\label{c.origami-cube}
+
+
+
+\section{Une astuce magique}\label{s.magic}
+
+
+Construisons un chemin constitué de quatre segments  $\{a_3=1,a_2=6,a_1=11,a_0=6\}$, en partant de l'origine dans la direction des $x>0$ et en tournant de $90^\circ$ dans le sens inverse des aiguilles d'une montre entre les segments. Construisons un second chemin comme ceci : construisons une droite en partant de l'origine avec un angle de $\mbox{63,4}^\circ$. Soit $P$ son intersection avec $a_2$. Tournons à gauche de $90^\circ$, construisons une droite. Soit $Q$ son intersection avec $a_1$. Tournons encore une fois à gauche de $90^\circ$, construisons une droite et remarquons qu'elle coupe l'extrémité du premier chemin en $(-10,0)$ (fig.~\ref{f.magic}).
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=.75]
+% Draw help lines and axes
+\draw[step=10mm,white!50!black] (-11,-1) grid (2,7);
+\draw[thick] (-11,0) -- (2,0);
+\draw[thick] (0,-1) -- (0,7);
+\foreach \x in {-10,...,2}
+  \node at (\x-.3,-.2) {\sm{\x}};
+\foreach \y in {1,...,7}
+  \node at (-.2,\y-.3) {\sm{\y}};
+
+% Draw first path
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (1,6);
+\coordinate (D) at (-10,6);
+\coordinate (E) at (-10,0);
+\draw[very thick] (A) --
+  node[below,xshift=1pt,yshift=-10pt] {$a_3=1$} (B);
+\draw[very thick,name path=bc] (B) -- 
+  node[right,yshift=6pt] {$a_2=6$} (C);
+\draw[very thick,name path=cd] (C) --
+  node[above,xshift=4pt] {$a_1=11$}(D);
+\draw[very thick,name path=de] (D) --
+  node[left,xshift=3pt,yshift=6pt] {$a_0=6$}(E);
+
+% Draw first segment of second path
+\path[name path=a2] (A) -- +(63.4:4);
+\path [name intersections = {of = a2 and bc, by = {A2}}];
+\node[above right] at (A2) {$P$};
+\draw[very thick,dashed] (A) -- (A2);
+\draw ($(A) + (14pt,0)$)
+  arc [start angle=0, end angle = 63.4, radius=14pt];
+\node[above right,xshift=34pt,yshift=2pt] at (A) {$\mbox{63,4}^\circ$};
+\draw[->] ($(A)+(32pt,8pt)$) -- +(-18pt,0);
+\draw[rotate=153.4] (A2) rectangle +(7pt,7pt);
+
+% Draw second segment of second path
+\path[name path=b2] (A2) -- +(153.4:10);
+\path [name intersections = {of = b2 and cd, by = {B2}}];
+\node[above left] at (B2) {$Q$};
+\draw[very thick,dashed] (A2) -- (B2);
+\draw[rotate=243.4] (B2) rectangle +(7pt,7pt);
+
+% Draw third segment of second path%
+\draw[very thick,dashed] (B2) -- (E);
+\end{tikzpicture}
+%\includegraphics[width=\textwidth]{Fig11_1}
+\caption{Une astuce magique.}\label{f.magic}
+\end{figure}
+
+Calculons l'opposé de la tangente de l'angle au début du second chemin : $-\tan \mbox{63,4}^\circ=-2$. Substituons cette valeur dans le polynôme dont les coefficients sont les longueurs des segments du premier chemin :
+\begin{align*}
+p(x)&=a_3x^3+a_2x^2+a_1x+a_0\\
+&=x^3+6x^2+11x+6\\
+p(-\tan \mbox{63,4}^\circ)&=(-2)^3+6(-2)^2+11(-2)+6=0\,.
+\end{align*}
+Nous avons trouvé une racine du polynôme de degré trois  $x^3+6x^2+11x+6$ !
+
+
+Continuons l'exemple. Le polynôme $p(x)=x^3+6x^2+11x+6$ a trois racines $-1,-2,-3$. Calculons l'arc tangente de l'opposée des racines :
+\begin{align*}
+\alpha&=-\arctan (-1) = 45^\circ,\\
+\beta&=-\arctan(-2) \approx \mbox{63,4}^\circ,\\
+\gamma&=-\arctan(-3)\approx \mbox{71,6}^\circ.
+\end{align*}
+Pour chaque angle, le second chemin coupe l'extrémité du premier chemin (fig.~\ref{f.cube-multiple}).
+
+
+La valeur $-\tan \mbox{56,3}^\circ\approx -\mbox{1,5}$ n'est pas une racine de l'équation. La figure~\ref{f.noroots} montre le résultat de l'application de la méthode pour cet angle. Le deuxième chemin ne coupe pas le segment  pour le coefficient $a_0$ en $(-10,0)$.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=.8]
+% Draw help lines and axes
+\draw[step=10mm,white!50!black] (-11,-1) grid (2,7);
+\draw[thick] (-11,0) -- (2,0);
+\draw[thick] (0,-1) -- (0,7);
+\foreach \x in {-10,...,2}
+  \node at (\x-.3,-.2) {\sm{\x}};
+\foreach \y in {1,...,7}
+  \node at (-.2,\y-.3) {\sm{\y}};
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (1,6);
+\coordinate (D) at (-10,6);
+\coordinate (E) at (-10,0);
+\draw[very thick] (A) --
+  node[below,yshift=-5pt] {$1$} (B);
+\draw[very thick,name path=bc] (B) -- 
+  node[right,yshift=24pt] {$6$} (C);
+\draw[very thick,name path=cd] (C) --
+  node[above] {$11$}(D);
+\path[name path=de] (D) -- ($(E)+(0,-.8)$);
+\draw[very thick] (D) --
+  node[left,yshift=6pt] {$6$} (E);
+
+
+% Draw first segment of first second path
+\path[name path=a1] (A) -- +(45:3);
+\path [name intersections = {of = a1 and bc, by = {A1}}];
+\node[above right] at (A1) {$P_1$};
+\draw[very thick,dashed] (A) -- (A1);
+\draw[thick] ($(A) + (16pt,0)$)
+  arc [start angle=0, end angle = 45, radius=16pt];
+\node[above right,xshift=44pt,yshift=0pt] at (A) {$\alpha$};
+\draw[rotate=135] (A1) rectangle +(7pt,7pt);
+\draw[Stealth-,thick] ($(A) + (15pt,5pt)$) -- +(24pt,0);
+
+% Draw second segment of first second path
+\path[name path=b1] (A1) -- +(135:8);
+\path [name intersections = {of = b1 and cd, by = {B1}}];
+\node[above right] at (B1) {$Q_1$};
+\draw[very thick,dashed] (A1) -- (B1);
+\draw[rotate=225] (B1) rectangle +(7pt,7pt);
+
+% Draw third segment of first second path
+\draw[very thick,dashed] (B1) -- (E);
+
+% Draw first segment of second second path
+\path[name path=a2] (A) -- +(63.4:4);
+\path [name intersections = {of = a2 and bc, by = {A2}}];
+\node[above right] at (A2) {$P_2$};
+\draw[very thick,dashed] (A) -- (A2);
+\draw[thick] ($(A) + (24pt,0)$)
+  arc [start angle=0, end angle = 63.4, radius=24pt];
+\node[above right,xshift=44pt,yshift=8pt] at (A) {$\beta$};
+\draw[rotate=153.4] (A2) rectangle +(7pt,7pt);
+\draw[<-,thick] ($(A) + (22pt,14pt)$) -- +(18pt,0);
+
+% Draw second segment of second second path%
+\path[name path=b2] (A2) -- +(153.4:10);
+\path [name intersections = {of = b2 and cd, by = {B2}}];
+\node[above right] at (B2) {$Q_2$};
+\draw[very thick,dashed] (A2) -- (B2);
+\draw[rotate=243.4] (B2) rectangle +(7pt,7pt);
+
+% Draw third segment of second second path%
+\draw[very thick,dashed] (B2) -- (E);
+
+% Draw first segment of second second path%
+\path[name path=a3] (A) -- +(71.6:4);
+\path [name intersections = {of = a3 and bc, by = {A3}}];
+\node[above right] at (A3) {$P_3$};
+\draw[very thick,dashed] (A) -- (A3);
+\draw[thick] ($(A) + (38pt,0)$)
+  arc [start angle=0, end angle = 70, radius=40pt];
+\node[above right,xshift=44pt,yshift=22pt] at (A) {$\gamma$};
+\draw[rotate=161.6] (A3) rectangle +(7pt,7pt);
+\draw[<-,thick] ($(A) + (32pt,25pt)$) -- +(10pt,0);
+
+% Draw second segment of second second path%
+\path[name path=b3] (A3) -- +(161.6:10);
+\path [name intersections = {of = b3 and cd, by = {B3}}];
+\node[above right] at (B3) {$Q_3$};
+\draw[very thick,dashed] (A3) -- (B3);
+\draw[rotate=251.6] (B3) rectangle +(7pt,7pt);
+
+% Draw third segment of second second path%
+\draw[very thick,dashed] (B3) -- (E);
+\end{tikzpicture}
+%\includegraphics[width=\textwidth]{Fig11_2}
+\caption{Méthode de Lill pour les trois racines du polynôme.}\label{f.cube-multiple}
+\end{figure}
+
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=.8]
+% Draw help lines and axes
+\draw[step=10mm,white!50!black] (-11,-1) grid (2,7);
+\draw[thick] (-11,0) -- (2,0);
+\draw[thick] (0,-1) -- (0,7);
+\foreach \x in {-10,...,2}
+  \node at (\x-.3,-.2) {\sm{\x}};
+\foreach \y in {1,...,7}
+  \node at (-.2,\y-.3) {\sm{\y}};
+
+% Draw first path
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (1,6);
+\coordinate (D) at (-10,6);
+\coordinate (E) at (-10,0);
+\draw[very thick] (A) --
+  node[below,yshift=-5pt] {$1$} (B);
+\draw[very thick,name path=bc] (B) -- 
+  node[right,yshift=6pt] {$6$} (C);
+\draw[very thick,name path=cd] (C) --
+  node[above] {$11$}(D);
+\draw[very thick] (D) --
+  node[left,yshift=6pt] {$6$}(E);
+\path[name path=de] (-10,-1) -- (-10,7);
+
+% Draw first segment of second path
+\path[name path=a2] (A) -- +(56.3:3);
+\path [name intersections = {of = a2 and bc, by = {A2}}];
+\node[above right] at (A2) {$P$};
+\draw[very thick,dashed] (A) -- (A2);
+\draw ($(A) + (14pt,0)$)
+  arc [start angle=0, end angle = 56.3, radius=14pt];
+\node[above right,xshift=10pt,yshift=6pt] at (A) {$\mbox{56,3}^\circ$};
+\draw[rotate=146.3] (A2) rectangle +(7pt,7pt);
+
+% Draw second segment of second path
+\path[name path=b2] (A2) -- +(146.3:10);
+\path [name intersections = {of = b2 and cd, by = {B2}}];
+\node[above right] at (B2) {$Q$};
+\draw[very thick,dashed] (A2) -- (B2);
+\draw[rotate=236.3] (B2) rectangle +(7pt,7pt);
+
+% Draw third segment of second path
+\path[name path=c2] (B2) -- +(236.3:8.5);
+\path [name intersections = {of = c2 and de, by = {C2}}];
+\vertex{C2};
+\draw[very thick,dashed] (B2) -- (C2);
+\end{tikzpicture}
+%\includegraphics[width=\textwidth]{Fig11_3}
+\caption{Un chemin qui ne mène pas à une racine.}\label{f.noroots}
+\end{figure}
+
+Cet exemple illustre une méthode découverte par Eduard Lill en 1867 pour trouver graphiquement les racines réelles de tout polynôme. Nous ne trouvons pas réellement les racines mais vérifions qu'une valeur donnée est une racine.
+
+La section~\ref{s.method} présente  formellement  la méthode de Lill (limitée aux polynômes de degré trois) et donne des exemples de son fonctionnement dans des cas particuliers. Une démonstration de l'exactitude de la méthode de Lill est donnée dans la section~\ref{s.proof}. La section~\ref{s.beloch-fold} montre comment la méthode peut être mise en œuvre en utilisant l'axiome~6 de l'origami, appelé pli de Beloch, qui a précédé de plusieurs années la formalisation des axiomes de l'origami.
+
+\section{Spécification de la méthode de Lill}\label{s.method}
+
+\subsection{La méthode de Lill en tant qu'algorithme}
+
+\begin{itemize}
+\item Commençons avec un polynôme 
+ arbitraire  de degré trois $p(x)=a_3x^3+a_2x^2+a_1x+a_0$.
+\item Construction du premier chemin.
+\begin{itemize}
+\item Pour chaque coefficient $a_3,a_2,a_1,a_0$ (dans cet ordre), construisons un segment  de cette longueur, en partant de l'origine $O=(0,0)$ dans la direction des $x>0$. Tournons de  $90^\circ$ dans le sens inverse des aiguilles d'une montre entre chaque segment.
+\end{itemize}
+\item Construction du deuxième chemin.
+\begin{itemize}
+\item Construisons une droite qui part de $O$ et qui forme un angle de $\theta$ avec l'axe des $x>0$. Elle  coupe $a_2$ au point $P$.
+\item Tournons de $\pm 90^\circ$ et construisons une droite à partir de $P$ qui coupe $a_1$ en $Q$.
+\item Tournons de $\pm 90^\circ$ et construisons une droite à partir de $Q$ qui coupe $a_0$ en $R$.
+\item Si $R$ est le point d'arrivée du premier chemin, alors $-\tan\theta$ est une racine de $p(x)$.
+\end{itemize}
+\item Cas particuliers.
+\begin{itemize}
+\item Lors de la construction des segments du premier chemin, si un coefficient est négatif, il faut construire le segment à l'envers.
+\item Lors de la construction des segments du premier chemin, si un coefficient est égal à zéro, il ne faut pas construire de segment  mais continuer avec le prochain virage à $\pm 90^\circ$.
+\end{itemize}
+\item Remarques.
+\begin{itemize}
+\item L'expression \emph{intersecte  $a_i$} signifie \emph{intersecte le segment  $a_i$ ou toute extension de $a_i$}.
+\item Lors de la construction du deuxième chemin, choisissons de tourner à gauche ou à droite de $90^\circ$ de sorte qu'il y ait une intersection avec le segment suivant du premier chemin ou son extension.
+\end{itemize}
+\end{itemize}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=.85]
+% Draw help lines and axes
+\draw[step=10mm,white!50!black] (-1,-5) grid (6,2);
+\foreach \x in {0,...,6}
+  \node at (\x-.3,-.2) {\sm{\x}};
+\foreach \y in {-4,...,-1}
+  \node at (-.3,\y-.3) {\sm{\y}};
+\foreach \y in {1,...,2}
+  \node at (-.3,\y-.3) {\sm{\y}};
+
+% Draw first path
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (1,-3);
+\coordinate (D) at (4,-3);
+\coordinate (E) at (4,-4);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt,reversed]}-] (A) --
+  node[below,yshift=-5pt] {$1$} (B);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt]}-,name path=bc] (B) -- 
+  node[right,xshift=3pt] {$a_2=-3$} (C);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt]}-,name path=cd] (C) --
+  node[above,xshift=11pt] {$a_1=-3$}(D);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt,reversed]}-,name path=de] (D) --
+  node[right] {$1$}(E);
+
+% Draw extensions of first path
+\draw[very thick,loosely dotted,name path=a] (-1,0) -- (6,0);
+\draw[very thick,loosely dotted,name path=b] (1,-5) -- (1,2);
+\draw[very thick,loosely dotted,name path=c] (-1,-3) -- (6,-3);
+
+% Draw first second path
+\path[name path=a1] (A) -- +(-75:5);
+\path [name intersections = {of = a1 and b, by = {B1}}];
+\path[name path=b1] (B1) -- +(15:5);
+\path [name intersections = {of = b1 and c, by = {C1}}];
+\draw[thick,loosely dashed] (A) -- (B1) -- (C1) -- (E);
+
+% Draw second second path
+\draw[very thick,dashed] (4,-4) -- (5,-3) coordinate (A2);
+\coordinate (P) at (5,-3);
+\node[above right] at (P) {$Q$};
+\draw[very thick,dashed] (5,-3) -- (1,1) coordinate (B2);
+\coordinate (Q) at (1,1);
+\node[above right] at (Q) {$P$};
+\draw[very thick,dashed] (1,1) -- (0,0);
+
+% Draw third second path
+\path[name path=a3] (A) -- +(-15:5);
+\path [name intersections = {of = a3 and b, by = {B3}}];
+\path[name path=b3] (B3) -- +(-105:5);
+\path [name intersections = {of = b3 and c, by = {C3}}];
+\draw[thick,loosely dashed] (A) -- (B3) -- (C3) -- (E);
+\end{tikzpicture}
+%\includegraphics[width=0.7\textwidth]{Fig11_4}
+\caption{Méthode de Lill avec des racines négatives}\label{f.negative}
+\end{figure}
+
+\subsection{Coefficients négatifs}\label{s.negative}
+
+Démontrons la méthode de Lill sur le polynôme $p(x)=x^3-3x^2-3x+1$ à coefficients négatifs (sect.~\ref{s.ax6}). Commençons par construire un segment de longueur $1$ vers la droite. Ensuite, tournons de $90^\circ$ vers le haut, mais comme le coefficient est négatif, on construit un segment de longueur $3$ vers le bas, c'est-à-dire dans une direction opposée à la flèche. Après avoir tourné de $90^\circ$ vers la gauche, le coefficient est à nouveau négatif, donc on construit un segment de longueur $3$ vers la droite. Enfin, tournons vers le bas et construisons un segment de longueur $1$ (fig.~\ref{f.negative}, les lignes en pointillés seront discutées dans la section~\ref{s.noninteger}).
+
+Commençons le second chemin par une droite à $45^\circ$ avec l'axe des $x>0$. Elle coupe le prolongement du segment 
+ pour $a_2$ en  $(1,1)$. En tournant de $-90^\circ$ (vers la droite), la droite coupe le prolongement du segment  pour $a_1$ en $(5,-3)$. En tournant à nouveau de $-90^\circ$, la droite coupe l'extrémité du premier chemin en $(4,-4)$. Puisque $-\tan 45^\circ=-1$, nous avons trouvé une racine du polynôme :
+\[p(-1)=(-1)^3-3(-1)^2-3(-1)+6=0\,.\]
+
+
+\subsection{Coefficients nuls}\label{s.zero}
+
+Le coefficient $a_2$ du terme $x^2$ du polynôme $x^3-7x-6=0$ est nul. Construisons un segment de longueur $0$, c'est-à-dire ne construisons pas de droite, mais faisons tout de même le virage de $\pm 90^\circ$ comme indiqué par la flèche pointant vers le haut en  $(1,0)$ dans la figure~\ref{f.zero}. Tournons à nouveau et construisons un segment  de longueur $-7$, c'est-à-dire de longueur $7$ en arrière, jusqu'en $(8,0)$. Enfin, tournons encore une fois et construisons un segment  de longueur $-6$ jusqu'en $(8,6)$.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[scale=.7]
+% Draw help lines and axes
+\draw[step=10mm,white!50!black] (-1,-4) grid (11,7);
+\foreach \x in {0,...,11}
+  \node at (\x-.3,-.2) {\sm{\x}};
+\foreach \y in {-3,...,-1}
+  \node at (-.3,\y-.3) {\sm{\y}};
+\foreach \y in {1,...,7}
+  \node at (-.3,\y-.3) {\sm{\y}};
+
+% Draw first path
+\coordinate (A) at (0,0) node[above left] {$O$};
+\coordinate (B) at (1,0);
+\coordinate (C) at (8,0);
+\coordinate (D) at (8,6);
+\node[below right] at (D) {$A$};
+\draw[very thick,{Stealth[scale=1.4,inset=2pt,reversed]}-] (A) --
+  node[below,yshift=-5pt] {$1$} (B);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] (B) --
+  ($(B)+(0,.1)$);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt]}-,name path=bc] (B) -- 
+  node[below,xshift=-6pt,yshift=-5pt] {$-7$} (C);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt]}-,name path=cd] (C) --
+  node[right,yshift=4pt] {$-6$}(D);
+
+% Draw extensions of first path
+\draw[very thick,loosely dotted] (1,-3) -- (1,7);
+\draw[very thick,loosely dotted] (-1,0) -- (11,0);
+
+% Draw first second path
+\draw[very thick,dashed,->] (0,0) -- (1,-3);
+\coordinate (P1) at (1,-3);
+\node[below left] at (P1) {$P_1$};
+\draw[very thick,dashed,->] (1,-3) coordinate (A1) -- (10,0);
+\coordinate (Q1) at (10,0);
+\node[below right] at (Q1) {$Q_1$};
+\draw[very thick,dashed,->] (10,0) coordinate (B1) -- (D);
+
+% Draw second second path
+\draw[very thick,dashed,->] (0,0) -- (1,1) coordinate (A2);
+\node[above right] at (A2) {$P_2$};
+\draw[very thick,dashed,->] (A2) -- (2,0) coordinate (B2);
+\node[below right] at (B2) {$Q_2$};
+\draw[very thick,dashed,->] (B2) -- (D);
+
+% Draw third second path
+\draw[very thick,dashed,->] (0,0) -- (1,2) coordinate (A3);
+\node[above left] at (A3) {$P_3$};
+\draw[very thick,dashed,->] (A3) -- (5,0) coordinate (B3);
+\node[below right] at (B3) {$Q_3$};
+\draw[very thick,dashed,->] (B3) -- (D);
+\end{tikzpicture}
+%\includegraphics[width=\textwidth]{Fig11_5}
+\caption{Méthode de Lill avec des polynômes à coefficients nuls}\label{f.zero}
+\end{figure}
+Les deuxièmes chemins avec les angles suivants croisent l'extrémité du premier chemin :
+\[
+-\arctan (-1)= 45^\circ,\quad -\arctan (-2)\approx \mbox{63,4}^\circ,\quad -\arctan 3\approx -\mbox{71,6}^\circ\,.
+\]
+
+
+On en conclut qu'il existe trois racines réelles $\{-1,-2,3\}$.
+Vérifions :
+\[
+(x+1)(x+2)(x-3)=(x^2+3x+2)(x-3) =x^3-7x-6\,.
+\]
+
+
+\subsection{Racines non entières}\label{s.noninteger}
+
+La figure~\ref{f.noninteger} montre la méthode de Lill pour $p(x)=x^3-2x+1$. Le premier chemin va de $(0,0)$ à $(1,0)$ et tourne ensuite vers le haut. Le coefficient de $x^2$ étant nul, aucun segment  n'est construit et le chemin tourne à gauche. Le segment  suivant est de longueur $-2$ et va donc en arrière de $(1,0)$ à $(3,0)$. Enfin, le chemin tourne vers le bas et un segment 
+ de longueur 1 est construit de $(3,0)$ à $(3,-1)$.
+
+Il est facile de voir que si le second chemin commence à un angle de $-45^\circ$, il coupera le premier chemin en  $(3,-1)$. Par conséquent, $-\arctan (-45)^\circ=1$ est une racine. Si on divise $p(x)$ par $x-1$, on obtient le polynôme du second degré $x^2+x-1$ dont les racines sont 
+\[
+\frac{-1\pm\sqrt{5}}{2} \approx \mbox{0,62},\; -\mbox{1,62}\,.
+\]
+Il existe deux seconds chemins supplémentaires : l'un commençant à $-\arctan \mbox{0,62}\approx -\mbox{31,8}^\circ$,  l'autre commençant à $-\arctan(-\mbox{1,62})\approx \mbox{58,3}^\circ$.
+
+Le polynôme $p(x)=x^3-3x^2-3x+1$ (sect.~\ref{s.negative}) a pour racines $ 2\pm\sqrt{3}\approx \mbox{3,73}; \mbox{0,27}$. Les angles correspondants sont $-\arctan \mbox{3,73} \approx -75^\circ$ et $-\arctan \mbox{0,27} \approx -15^\circ$ comme le montrent les lignes en pointillés sur la figure~\ref{f.negative}.
+
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=1.3]
+\clip (-1.1,-2.1) rectangle (4.2,2.2);
+% Draw help lines and axes
+\draw[step=10mm,white!70!black,] (-1,-2) grid (4,2);
+\foreach \x in {0,...,4}
+  \node at (\x-.2,-.1) {\sm{\x}};
+\foreach \y in {-1}
+  \node at (-.1,\y-.2) {\sm{\y}};
+\foreach \y in {1,2}
+  \node at (-.1,\y-.2) {\sm{\y}};
+
+% Draw first path
+\coordinate (A) at (0,0);
+\node[above left] at (A) {$O$};
+\coordinate (B) at (1,0);
+\coordinate (C) at (3,0);
+\coordinate (D) at (3,-1);
+\node[below right] at (D) {$A$};
+\draw[very thick] (A) -- node[above,yshift=2pt] {$1$} (B);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] ($(A)+(.1,0)$) --
+  ($(A)+(.15,0)$);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] ($(B)+(0,.05)$) --
+  ($(B)+(0,.1)$);
+\draw[very thick,name path=bc] (B) -- 
+  node[above,xshift=-4pt,yshift=2pt] {$-2$} (C);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] ($(B)+(.22,0)$) --
+  ($(B)+(.17,0)$);
+\draw[very thick,name path=cd] (C) --
+  node[left] {$1$}(D);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] ($(C)+(0,-.05)$) --
+ ($(C)+(0,-.1)$);
+
+% Draw extensions of first path
+\draw[very thick,loosely dotted,name path=b] (1,-2) -- (1,2);
+\draw[very thick,loosely dotted,name path=c] (-1,0) -- (4,0);
+\draw[very thick,loosely dotted,name path=d] (3,-2) -- (3,2);
+
+% Draw first second path
+\coordinate (A1) at (1,-1);
+\draw[very thick,dashed,->] (0,0) -- (A1);
+\node[below right] at (A1) {$P_1$};
+\coordinate (B1) at (2,0);
+\draw[very thick,dashed,->] (A1) -- (B1);
+\node[above right,xshift=4pt] at (B1) {$Q_1$};
+\draw[very thick,dashed,->] (B1) -- (D);
+\draw[rotate=45] (A1) rectangle +(4pt,4pt);
+\draw[rotate=-135] (B1) rectangle +(4pt,4pt);
+
+% Draw second second path
+\path[name path=a2] (0,0) -- +(-31.7:4);
+\path [name intersections = {of = a2 and b, by = {A2}}];
+\draw[very thick,dashed,->] (0,0) -- (A2);
+\node[below left,xshift=-18pt] at (A2) {$P_2$};
+\draw[<-] ($(A2)+(-2pt,-1pt)$) -- +(-165:15pt);
+\path[name path=b2] (A2) -- +(58.3:2.5);
+\path [name intersections = {of = b2 and c, by = {B2}}];
+\draw[very thick,dashed,->] (A2) -- (B2);
+\node[above] at (B2) {$Q_2$};
+\draw[very thick,dashed,->] (B2) -- (D);
+\draw[rotate=58.3]   (A2) rectangle +(4pt,4pt);
+\draw[rotate=-121.7] (B2) rectangle +(4pt,4pt);
+
+% Draw third second path
+\path[name path=a3] (0,0) -- +(58.3:2.5);
+\path [name intersections = {of = a3 and b, by = {A3}}];
+\draw[very thick,dashed,->] (0,0) -- (A3);
+\node[above left] at (A3) {$P_3$};
+\path[name path=b3] (A3) -- +(-31.7:4);
+\path [name intersections = {of = b3 and c, by = {B3}}];
+\draw[very thick,dashed,->] (A3) -- (B3);
+\node[above right] at (B3) {$Q_3$};
+\path[name path=c3] (B3) -- +(-121.7:4);
+\draw[very thick,dashed,->] (B3) -- (D);
+\draw[rotate=-121.7]   (A3) rectangle +(4pt,4pt);
+\draw[rotate=-211.7]   (B3) rectangle +(4pt,4pt);
+\end{tikzpicture}
+%\includegraphics[width=0.8\textwidth]{Fig11_6}
+\caption{Méthode de Lill avec des racines non entières.}\label{f.noninteger}
+\end{figure}
+
+
+
+\subsection{La racine cubique de deux}\label{s.cube}
+
+Pour dupliquer un cube, calculons $\sqrt[3]{2}$, une racine du polynôme de degré trois $x^3-2$. Dans la construction du premier chemin, on tourne deux fois à gauche sans construire de segments  car $a_2$ et $a_1$ sont tous deux nuls. Ensuite, tournons à nouveau à gauche (vers le bas) et construisons en arrière (vers le haut) parce que $a_0=-2$ est négatif. Le premier segment de la deuxième trajectoire est construit à un angle de $-\arctan \sqrt[3]{2}\approx -\mbox{51,6}^\circ$ (fig.~\ref{f.cube-two}).
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=1]
+% Draw help lines and axes
+\draw[step=10mm,white!70!black,] (-1,-2) grid (3,3);
+\foreach \x in {0,...,3}
+  \node at (\x-.2,-.1) {\sm{\x}};
+\foreach \y in {-1}
+  \node at (-.2,\y-.2) {\sm{\y}};
+\foreach \y in {1,2,3}
+  \node at (-.2,\y-.2) {\sm{\y}};
+
+% Draw first path
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (1,2);
+\draw[very thick] (A) -- node[above,yshift=2pt] {$1$} (B);
+
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] ($(A)+(.05,0)$) --
+  ($(A)+(.1,0)$);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] ($(B)+(0,.05)$) --
+  ($(B)+(0,.1)$);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] ($(B)+(.1,.3)$) --
+  ($(B)+(.08,.3)$);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] ($(B)+(0,.55)$) --
+  ($(B)+(0,.5)$);
+
+\draw[very thick] (B) -- 
+  node[left,yshift=6pt] {$-2$} (C);
+
+% Draw extensions of first path
+\draw[very thick,loosely dotted,name path=a] (-1,0) -- (3,0);
+\draw[very thick,loosely dotted,name path=b] (1,-2) -- (1,3);
+
+% Draw first segment of second path
+\path[name path=a1] (0,0) -- +(-51.6:2);
+\path [name intersections = {of = a1 and b, by = {A1}}];
+\draw[very thick,dashed,->] (A) -- (A1);
+\node[below left] at (A1) {$P_1$};
+\draw[rotate=38.4]   (A1) rectangle +(8pt,8pt);
+
+% Draw second segment of second path
+\path[name path=b1] (A1) -- +(38.4:2.5);
+\path [name intersections = {of = b1 and a, by = {B1}}];
+\draw[very thick,dashed,->] (A1) -- (B1);
+\node[above right] at (B1) {$Q_1$};
+\draw[rotate=128.4] (B1) rectangle +(8pt,8pt);
+
+% Draw third segement of second path
+\draw[very thick,dashed,->] (B1) -- (C);
+\end{tikzpicture}
+%\includegraphics[width=0.4\textwidth]{Fig11_7}
+\caption{La racine cubique de deux.}\label{f.cube-two}
+\end{figure}
+
+\section{Démonstration de la méthode de Lill}\label{s.proof}
+
+
+La démonstration concerne les polynômes unitaires de degré trois $p(x)=x^3+a_2x^2+a_1x+a_0$. Si le polynôme n'est pas unitaire, divisons-le par $a_3$ et le polynôme résultant aura les mêmes racines. Dans la figure~\ref{f.lill-proof}, les segments  du premier chemin sont étiquetés avec les coefficients et avec $b_2,b_1,a_2-b_2,a_1-b_1$. Dans un triangle rectangle, si un angle aigu vaut $\theta$, l'autre angle vaut $90^\circ-\theta$. Par conséquent, l'angle au-dessus de $P$ et l'angle à gauche de $Q$ sont égaux à $\theta$. Voici les formules pour $\tan \theta$ telles que calculées à partir des trois triangles :
+\begin{align*}
+\tan \theta &= \frac{b_2}{1}=b_2\\
+\tan \theta &= \frac{b_1}{a_2-b_2}=\frac{b_1}{a_2-\tan\theta}\\
+\tan \theta &= \frac{a_0}{a_1-b_1}=\frac{a_0}{a_1-\tan\theta(a_2-\tan\theta)}\,.
+\end{align*}
+Simplifions la dernière équation, multiplions par $-1$ et absorbons $-1$ dans les puissances :
+\begin{align*}
+(\tan\theta)^3-a_2(\tan\theta)^2+a_1(\tan\theta)-a_0&=0\\
+(-\tan\theta)^3+a_2(-\tan\theta)^2+a_1(-\tan\theta)+a_0&=0\,.
+\end{align*}
+Il s'ensuit que $-\tan\theta$ est une racine réelle de  $p(x)=x^3+a_2x^2+a_1x+a_0$.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=.75]
+% Draw grid and axes
+\draw[step=10mm,white!50!black] (-11,-1) grid (2,7);
+\draw[thick] (-11,0) -- (2,0);
+\draw[thick] (0,-1) -- (0,7);
+\foreach \x in {-10,...,2}
+  \node at (\x-.3,-.2) {\sm{\x}};
+\foreach \y in {1,...,7}
+  \node at (-.2,\y-.3) {\sm{\y}};
+  
+% Draw the points of the first path
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (1,6);
+\coordinate (D) at (-10,6);
+\coordinate (E) at (-10,0);
+\draw[rotate=90] (B) rectangle +(7pt,7pt);
+  
+% Draw A -- B and arrow
+\draw[very thick] (A) --(B);
+\draw[thick,<->] ($(A)+(0,-16pt)$) --
+  node[fill=white] {$1$} ($(B)+(0,-16pt)$);
+
+% Draw B -- C and arrow
+\draw[very thick,name path=bc] (B) -- (C);
+\draw[thick,<->] ($(B)+(42pt,0)$) --
+  node[fill=white] {$a_2$} ($(C)+(44pt,0)$);
+
+% Draw C -- D and arrow
+\draw[very thick,name path=cd] (C) --(D);
+\draw[thick,<->] ($(C)+(0,24pt)$) -- 
+  node[fill=white] {$a_1$} ($(D)+(0,24pt)$);
+
+% Draw D -- E and arrow
+\draw[very thick,name path=de] (D) -- (E);
+\draw[thick,<->] ($(D)+(-16pt,0)$) --
+  node[fill=white] {$a_0$} ($(E)+(-16pt,0)$);
+
+% Draw first angled segment of the second path and intersection A2 with BC
+\path[name path=a2] (A) -- +(63.4:4);
+\path [name intersections = {of = a2 and bc, by = {A2}}];
+\node[above right] at (A2) {$P$};
+\draw[very thick,dashed] (A) -- (A2);
+\path (B) -- node[right] {$b_2$} (A2);
+\path (A2) -- node[right,xshift=-1pt,yshift=8pt] {$a_2\!-\!b_2$} (C);
+\draw[rotate=153.4] (A2) rectangle +(7pt,7pt);
+
+% Draw second segment of the second path and intersection B2 with CD
+\path[name path=b2] (A2) -- +(153.4:10);
+\path [name intersections = {of = b2 and cd, by = {B2}}];
+\node[above right] at (B2) {$Q$};
+\draw[very thick,dashed] (A2) -- (B2);
+\draw[rotate=243.4] (B2) rectangle +(7pt,7pt);
+\path (D) -- node[above] {$a_1\!-\!b_1$} (B2); 
+\path (B2) -- node[above] {$b_1$} (C);
+
+% Draw third segment of the second path to E
+\draw[very thick,dashed] (B2)-- (E);
+
+% Label A, A2, B2 with theta
+\draw ($(A) + (14pt,0)$)
+  arc [start angle=0, end angle = 63.4, radius=14pt];
+\node[above right,xshift=10pt,yshift=8pt] at (A) {$\theta$};
+\draw ($(A2) + (0,14pt)$)
+  arc [start angle=90, end angle = 153.4, radius=14pt];
+\node[above left,xshift=-4pt,yshift=14pt] at (A2) {$\theta$};
+\draw ($(B2) + (-14pt,0)$)
+  arc [start angle=180, end angle = 243.4, radius=14pt];
+\node[below left,xshift=-14pt,yshift=-4pt] at (B2) {$\theta$};
+\end{tikzpicture}
+%\includegraphics[width=\textwidth]{Fig11_8}
+\caption{Démonstration de la méthode de Lill.}\label{f.lill-proof}
+\end{figure}
+
+\section{Le pli de Beloch}\label{s.beloch-fold}
+
+Margharita P. Beloch a découvert un lien remarquable entre le pliage et la méthode de Lill : une application de l'opération connue plus tard sous le nom d'axiome~6 de l'origami génère une racine réelle d'un polynôme de degré trois. L'opération est souvent appelée le 
+ pliage de Beloch.
+
+Considérons le polynôme $p(x)=x^3+6x^2+11x+6$ (sect.~\ref{s.magic}). Rappelons qu'un pli est la médiatrice du segment  entre un point quelconque et sa réflexion autour du pli. Nous voulons que $\overline{RS}$ dans la figure~\ref{f.beloch-fold2} soit la médiatrice de $\overline{QQ'}$ et $\overline{PP'}$, où $Q'$ et $P'$ sont les réflexions de $Q$ et $P$ autour de $\overline{RS}$.
+
+\begin{figure}[thbp]
+\centering
+\begin{tikzpicture}[scale=.55]
+% Draw help lines and axes
+\draw[step=10mm,white!60!black] (-11,-1) grid (3,13);
+\draw[thick] (-11,0) -- (3,0);
+\draw[thick] (0,-1) -- (0,13);
+\foreach \x in {-10,...,3}
+  \node at (\x-.3,-.2) {\sm{\x}};
+\foreach \y in {1,...,13}
+  \node at (-.2,\y-.3) {\sm{\y}};
+  
+% Draw first path with five points
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (1,6);
+\coordinate (D) at (-10,6);
+\coordinate (E) at (-10,0);
+\node[below right,yshift=-6pt] at (A) {$P$};
+\node[below left,yshift=-6pt] at (E) {$Q$};
+
+\draw[thick] (A) -- (B);
+\draw[thick,name path=bc] (B) -- node[right,near end] {$a_2$} (C);
+\draw[thick,name path=cd] (C) -- node[above] {$a_1$} (D);
+\draw[thick,name path=de] (D) -- (E);
+
+% Draw parallel lines
+\draw[thick,name path=bpcp] ($(B)+(1,-1)$) --
+  node[above right] {$a_2'$}
+  ($(C)+(1,7)$);
+\draw[thick,name path=cpdp] ($(C)+(2,6)$) -- 
+  node[above left,xshift=-24pt] {$a_1'$} 
+  ($(D)+(-1,6)$);
+
+% Draw first segment of second path
+\path[name path=a2] (A) -- +(63.4:4);
+\path [name intersections = {of = a2 and bc, by = {A2}}];
+\draw[ultra thick,dotted] (A) -- (A2);
+\node[above right,xshift=4pt] at (A2) {$R$};
+\draw[rotate=153.4] (A2) rectangle +(10pt,10pt);
+
+% Draw second segment of second path
+\path[name path=b2] (A2) -- +(153.4:10);
+\path [name intersections = {of = b2 and cd, by = {B2}}];
+\node[above left] at (B2) {$S$};
+\draw[very thick,dashed] (A2) -- (B2);
+\draw[rotate=243.4] (B2) rectangle +(10pt,10pt);
+
+% Draw third segment of second path
+\draw[ultra thick,dotted] (B2) -- (E);
+
+% Locate reflections on parallel lines and draw lines
+\coordinate (PP) at ($(A2)+(1,2)$);
+\node[above right] at (PP) {$P'$};
+\draw[ultra thick,dotted] (A2) -- (PP);
+
+\coordinate (QP) at ($(B2)+(3,6)$);
+\node[above right] at (QP) {$Q'$};
+\draw[ultra thick,dotted] (B2) -- (QP);
+\end{tikzpicture}
+%\includegraphics[width=\textwidth]{Fig11_9}
+\caption{Le pli de Beloch pour trouver une racine de  $x^3+6x^2+11x+6$.}\label{f.beloch-fold2}
+\end{figure}
+
+Construisons une droite $a_2'$ parallèle à $a_2$ à la même distance de $a_2$ que $a_2$ est de $P$, et construisons une droite $a_1'$ parallèle à $a_1$ à la même distance de $a_1$ que $a_1$ est de $Q$. Appliquons l'axiome~6 pour placer simultanément $P$ à $P'$ sur $a_2'$ et pour placer $Q$ à $Q'$ sur $a_1'$. Le pli $\overline{RS}$ est la médiatrice des droites $\overline{PP'}$ et $\overline{QQ'}$ donc les angles à $R$ et $S$ sont tous deux des angles droits comme requis par la méthode de Lill.
+
+
+
+La figure~\ref{f.beloch-fold3} montre le pli de Beloch pour le polynôme $x^3-3x^2-3x+1$ (sect.~\ref{s.negative}). Le segment $a_2$ est  vertical, de longueur $3$ et d'équation $x=1$. Sa droite parallèle est $a_2'$ dont l'équation est $x=2$  car $P$ est à une distance de $1$ de $a_2$. Le segment $a_1$ est horizontal, de longueur $3$ et d'équation $y=-3$. Sa droite parallèle est $a_1'$ dont l'équation est $y=-2$ car $Q$ est à une distance de $1$ de $a_1$. Le pli $\overline{RS}$ est la médiatrice à la fois de $\overline{PP'}$ et de  $\overline{QQ'}$, et  $\overline{PRSQ}$ est identique au deuxième chemin de la figure~\ref{f.negative}.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=.75]
+% Draw help lines and axes
+\draw[step=10mm,white!50!black] (-1,-5) grid (6,2);
+\foreach \x in {0,...,6}
+  \node at (\x-.3,-.2) {\sm{\x}};
+\foreach \y in {-4,...,-1}
+  \node at (-.3,\y-.3) {\sm{\y}};
+\foreach \y in {1,...,2}
+  \node at (-.3,\y-.3) {\sm{\y}};
+
+% Draw first path
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (1,-3);
+\coordinate (D) at (4,-3);
+\coordinate (E) at (4,-4);
+\node[above left] at (A) {$P$};
+\node[below right] at (E) {$Q$};
+\draw[very thick,{Stealth[scale=1.4,inset=2pt,reversed]}-] (A) --
+  (B);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt]}-,name path=bc] (B) -- 
+  node[left] {$a_2$} (C);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt]}-,name path=cd] (C) --
+  node[above] {$a_1$}(D);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt,reversed]}-,name path=de] (D) --
+ (E);
+
+% Draw extensions of first path
+\draw[very thick,loosely dotted,name path=b] (1,-4) -- (1,2);
+\draw[very thick,loosely dotted,name path=c] (-1,-3) -- (6,-3);
+
+% Draw reflected points
+\coordinate (PP) at (2,2);
+\coordinate (QP) at (6,-2);
+\node[above left] at (PP) {$P'$};
+\node[below right] at (QP) {$Q'$};
+
+% Midpoints of bisected lines
+\coordinate (R) at (1,1);
+\coordinate (S) at (5,-3);
+\node[above left] at (R) {$R$};
+\node[below right] at (S) {$S$};
+
+% Draw reflected lines
+\draw[thick] ($(B)+(1,2)$) --
+  node[right,very near end,yshift=-8pt] {$a_2'$} ($(C)+(1,-2)$);
+\draw[thick] ($(C)+(-2,1)$) --
+  node[above,very near start,xshift=-8pt,yshift=-1pt] {$a_1'$} ($(D)+(2,1)$);
+\draw[ultra thick,dotted] (A) -- (PP);
+\draw[ultra thick,dotted] (E) -- (QP);
+
+% Draw fold
+\draw[very thick,dashed] (R) -- (S);
+\draw[rotate=-45] (R) rectangle +(8pt,8pt);
+\draw[rotate=45] (S) rectangle +(8pt,8pt);
+\end{tikzpicture}
+%\includegraphics[width=0.8\textwidth]{Fig11_10}
+\caption{Le pli de Beloch pour trouver une racine de $x^3-3x^2-3x+1$.}\label{f.beloch-fold3}
+\end{figure}
+
+%\vspace{-3ex}
+
+
+\subsection*{Quelle est la surprise ?}
+
+L'exécution de la méthode de Lill comme une astuce magique ne manque jamais de surprendre. Il peut être réalisé pendant un cours magistral à l'aide d'un logiciel graphique tel que {GeoGebra}. Il est également surprenant que la méthode de Lill, publiée en $1867$, et le pli de Beloch, publié en $1936$, aient précédé de plusieurs années l'axiomatisation de l'origami.
+
+%\vspace{-3ex}
+
+\subsection*{Sources}
+
+Ce chapitre se base sur 
+ \cite{bradford, hull-beloch, riaz}.

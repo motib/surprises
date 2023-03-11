@@ -1,0 +1,515 @@
+
+\chapter{Le raisonnement par récurrence}\label{c.induction}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\abstract*{This chapter begins with a short review of mathematical induction. Inductive proofs are given of results that may not be known to most readers concerning Fibonacci and Fermat numbers. The chapter concludes with a discussion of John McCarthy $91$-function and the Josephus problem.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Le raisonnement par  récurrence est largement utilisé comme méthode de démonstration en mathématiques. Ce chapitre présente des démonstrations par récurrence de résultats qui peuvent ne pas être connus du lecteur. Nous commençons par un bref examen du raisonnement par récurrence en mathématiques (sect.~\ref{s.induction-axiom}). Dans la section~\ref{s.induction-fibonacci}, on démontre par récurrence des propriétés de la suite de Fibonacci tandis que la section~\ref{s.induction-fermat} propose des démonstrations par récurrence à propos des nombres de Fermat. La section~\ref{s.induction-mccarthy} présente la fonction $91$ découverte par John McCarthy ; la démonstration est faite par récurrence sur une suite inhabituelle : les entiers dans un ordre inverse. La démonstration de la formule du problème de Josèphe (sect.~\ref{s.josephus}) est également inhabituelle en raison de la double récurrence sur deux parties différentes d'une expression.
+
+
+\section{Le principe  de récurrence }\label{s.induction-axiom}
+\index{Mathematical induction}
+
+Le raisonnement par  récurrence est la principale méthode permettant de démontrer que des affirmations sont vraies pour un ensemble non limité de nombres. Considérons 
+\[
+1=1,\quad 1+2=3,\quad 1+2+3=6,\quad 1+2+3+4=10.
+\]
+Nous pourrions remarquer que 
+\[
+1=(1\cdot 2)/2,\quad 3=(2\cdot 3)/2,\quad  6=(3\cdot 4)/2,\quad 10=(4\cdot 5)/2,
+\]
+et ensuite conjecturer que pour tous les entiers $n\geq 1$,
+\[
+\sum_{i=1}^n i = \frac{n(n+1)}{2}\,.
+\]
+Si vous avez suffisamment de patience, vérifier cette formule pour toute valeur spécifique de $n$ est facile, mais comment la démontrer pour la totalité des nombres entiers positifs ? C'est là que la récurrence entre en jeu.
+
+\begin{axiom}
+Soit $P(n)$ une propriété (telle qu'une équation, une formule ou un théorème), où $n$ est un nombre entier positif. Supposons que vous puissiez 
+\begin{itemize}
+\item démontrer que $P(1)$ est vraie (initialisation) .
+\item pour un nombre arbitraire $m$, démontrer que $P(m+1)$ est vraie à condition de supposer que $P(m)$ soit vraie (hérédité).
+\end{itemize}
+Alors $P(n)$ est vraie pour tout $n\geq 1$.
+L'hypothèse selon laquelle $P(m)$ est vraie pour un $m$ arbitraire s'appelle l'hypothèse de récurrence.
+\end{axiom}
+Voici un exemple simple de démonstration par récurrence.
+\begin{theorem}\label{t.sum}
+Pour tout $n\geq 1$,
+\[
+\sum_{i=1}^n i = \frac{n(n+1)}{2}\,.
+\]
+\end{theorem}
+
+\begin{proof} L'initialisation de la récurrence est triviale:
+\[
+\sum_{i=1}^1 i = 1 =\frac{1(1+1)}{2}\,.
+\]
+L'hypothèse de récurrence est que l'équation suivante est vraie pour $m$ :
+\[
+\sum_{i=1}^{m} i = \frac{m(m+1)}{2}\,.
+\]
+L'hérédité consiste à démontrer l'équation pour $m+1$ :
+\begin{align}
+\sum_{i=1}^{m+1} i &= \sum_{i=1}^m i + (m+1)\label{l.sum1}\\
+&=\frac{m(m+1)}{2} + (m+1)\label{l.sum2}\\
+%&=&\frac{m(m+1) + 2(m+1)}{2}\label{l.sum3}\\
+&=\frac{(m+1)(m+2)}{2}\,.\label{l.sum4}
+\end{align}
+Par le principe de récurrence, pour tout $n\geq 1$,
+\[
+\sum_{i=1}^n i = \frac{n(n+1)}{2}\,.
+\qedhere\]
+\end{proof}
+
+L'hypothèse de récurrence peut prêter à confusion car il semble que nous supposions ce que nous essayons de démontrer. Le raisonnement n'est pas circulaire car nous supposons la vérité d'une propriété pour quelque chose de petit, puis nous utilisons cette hypothèse pour démontrer la propriété pour quelque chose de plus grand.
+
+Le principe de  récurrence est un axiome, il ne peut donc être question de le démontrer. Il suffit d'accepter le principe de  récurrence comme vous acceptez d'autres axiomes mathématiques tels que $x+0=x$. Bien entendu, vous êtes libre de rejeter le principe de  récurrence, mais vous devrez alors rejeter une grande partie des mathématiques modernes.
+\begin{advanced}
+Le principe de  récurrence est une règle d'inférence qui est l'un des axiomes de Peano pour la formalisation des entiers naturels. La propriété de bon ordre peut être utilisée pour démontrer le principe  de récurrence et, inversement, le principe de récurrence peut être utilisé pour démontrer la propriété de bon ordre. Cependant, le principe de récurrence ne peut pas être démontré à partir des autres axiomes de Peano, plus élémentaires.
+\end{advanced}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{La suite de Fibonacci}\label{s.induction-fibonacci}
+
+La suite de Fibonacci est l'exemple classique d'une définition par récurrence :
+\begin{align*}
+f_1 &= 1\\
+f_2 &= 1\\
+f_n &= f_{n-1} + f_{n-2}\; \textrm{si} \;\; n \geq 3\,.
+\end{align*}
+Les douze premiers éléments de la suite sont :
+\[
+1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144\,.
+\]
+\begin{theorem}\label{thm.fib-div3}
+Chaque quatrième élément de la suite  de Fibonacci est divisible par $3$.
+\end{theorem}
+
+\begin{example}
+$f_4=3=3\cdot 1,\; f_8=21=3\cdot 7,\; f_{12}=144=3\cdot 48$.
+\end{example}
+
+\begin{proof}
+Initialisation: $f_4=3$ est divisible par $3$. L'hypothèse de récurrence est que $f_{4n}$ est divisible par $3$. Par récurrence,
+\begin{align*}
+f_{4(n+1)} &= f_{4n+4}\\
+&= f_{4n+3}+f_{4n+2}\\
+&= (f_{4n+2}+f_{4n+1})+f_{4n+2}\\
+&= ((f_{4n+1}+f_{4n})+f_{4n+1})+f_{4n+2}\\
+&= ((f_{4n+1}+f_{4n})+f_{4n+1})+(f_{4n+1}+f_{4n})\\
+&= 3f_{4n+1}+2f_{4n}\,.
+\end{align*}
+$3f_{4n+1}$ est divisible par $3$ et, par hypothèse de récurrence, $f_{4n}$ est divisible par $3$. Par conséquent, $f_{4(n+1)}$ est divisible par $3$.
+\end{proof}
+
+
+
+\begin{theorem}\label{thm.seven-fourths}
+$f_n < \left(\displaystyle\frac{7}{4}\right)^n$.
+\end{theorem}
+
+\begin{proof}
+Initialisation: $f_1=1<\left(\displaystyle\frac{7}{4}\right)^1$ et $f_2=1<\left(\displaystyle\frac{7}{4}\right)^2=\displaystyle\frac{49}{16}$. L'étape de récurrence donne 
+\begin{align*}
+f_{n+1}&=f_n+f_{n-1}\\
+%&<&\left(\frac{7}{4}\right)^n + f_{n-1}\\
+&<\left(\frac{7}{4}\right)^n + \left(\frac{7}{4}\right)^{n-1}\\
+&=\left(\frac{7}{4}\right)^{n-1}\cdot\left(\frac{7}{4}+1\right)\\
+&<\left(\frac{7}{4}\right)^{n-1}\cdot\left(\frac{7}{4}\right)^2\\
+&=\left(\frac{7}{4}\right)^{n+1}
+\end{align*}
+puisque
+\[
+\left(\frac{7}{4}+1\right) = \frac{11}{4} = \frac{44}{16}<\frac{49}{16}=\left(\frac{7}{4}\right)^2.
+\qedhere\]
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{theorem}[formule de Binet]
+
+\begin{displaymath}
+f_n = \frac{\phi^n - \bar{\phi}^n}{\sqrt{5}}, \;\; \mathrm{o\grave{u}} \;\;
+\phi = \frac{1+\sqrt{5}}{2},\;\bar{\phi} = \frac{1-\sqrt{5}}{2}\,.
+\end{displaymath}
+\end{theorem}\index{Binet's formula}
+
+\begin{proof}
+Nous démontrons d'abord que $\phi^2=\phi+1$:
+\begin{align*}
+\phi^2 &= \left(\frac{1+\sqrt{5}}{2}\right)^2\\
+&= \frac{1}{4} + \frac{2\sqrt{5}}{4} + \frac{5}{4}= \left(\frac{1}{2} + \frac{\sqrt{5}}{2}\right) + 1\\
+%&=& \frac{1+2\sqrt{5}}{2} + 1\\
+&=\phi + 1\,.
+\end{align*}
+De même, nous pouvons démontrer que $\bar{\phi}^2=\bar{\phi}+1$.
+
+L'initialisation de la formule se fait ainsi:
+\[
+\frac{\phi^1 - \bar{\phi}^1}{\sqrt{5}}=\frac{\frac{1+\sqrt{5}}{2}-\frac{1-\sqrt{5}}{2}}{\sqrt{5}}=\frac{\sqrt{5}}{\sqrt{5}}=1=f_1\,.
+\]
+Supposons l'hypothèse de récurrence pour tous les $k\leq n$. L'étape de récurrence donne
+\begin{align*}
+\phi^{n+1} - \bar{\phi}^{n+1} &= \phi^2\phi^{n-1} - \bar{\phi}^2\bar{\phi}^{n-1}\\
+&=(\phi+1)\phi^{n-1} - (\bar{\phi}+1)\bar{\phi}^{n-1}\\
+&=(\phi^{n} - \bar{\phi}^{n}) + (\phi^{n-1} - \bar{\phi}^{n-1})\\
+&=\sqrt{5}f_{n} + \sqrt{5}f_{n-1}\\
+\frac{\phi^{n+1} - \bar{\phi}^{n+1}}{\sqrt{5}} &= f_{n} + f_{n-1} = f_{n+1}\,.\qedhere
+\end{align*}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{theorem}
+\[
+f_n = \binom{n}{0} + \binom{n-1}{1} + \binom{n-2}{2} + \cdots.
+\]
+\end{theorem}
+
+\begin{proof}
+Commençons par démontrer la règle de Pascal :
+\[
+\binom{n}{k} + \binom{n}{k+1} = \binom{n+1}{k+1}.
+\]
+\begin{align*}
+\binom{n}{k} + \binom{n}{k+1} &= \frac{n!}{k!(n-k)!} + \frac{n!}{(k+1)!(n-(k+1))!}\\
+&=\frac{n!(k+1)}{(k+1)!(n-k)!}+\frac{n!(n-k)}{(k+1)!(n-k)!}\\
+%&=&\frac{n![(k+1)+(n-k)]}{(k+1)!(n-k)!}\\
+&=\frac{n!(n+1)}{(k+1)!(n-k)!}\\
+&=\frac{(n+1)!}{(k+1)!((n+1)-(k+1))!}\\
+&=\binom{n+1}{k+1}\,.
+\end{align*}
+Nous utiliserons également l'égalité $\displaystyle\binom{k}{0} = \frac{k!}{0!(k-0)!} = 1$ pour tout $k\geq 1$.
+
+\medskip
+
+Nous pouvons maintenant démontrer le théorème. L'initialisation est facile: 
+\[
+f_1 =  \binom{1}{0} = \frac{1!}{0!(1-0)!}=1\,.
+\]
+
+
+
+L'étape de récurrence donne
+\begin{align*}
+f_n=f_{n-1} + f_{n-2} &= \binom{n-1}{0} + \binom{n-2}{1} + \binom{n-3}{2} + \binom{n-4}{3} + \cdots\\
+&\quad\quad\quad\quad\quad\, \binom{n-2}{0} + \binom{n-3}{1} + \binom{n-4}{2} + \cdots\\
+&=\binom{n-1}{0} + \binom{n-1}{1} + \binom{n-2}{2} + \binom{n-3}{3} + \cdots\\
+&=\binom{n}{0} + \binom{n-1}{1} + \binom{n-2}{2} + \binom{n-3}{3} + \cdots.\qedhere
+\end{align*}
+
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Les nombres de Fermat}\label{s.induction-fermat}
+
+\begin{definition}
+Les entiers $F_n=2^{2^{n}}+1$ pour tout $n\geq 0$ sont appelés \emph{nombres de Fermat}.
+\end{definition}
+
+Les cinq premiers nombres de Fermat sont des nombres premiers :
+\[
+F_0=3,\quad F_1=5,\quad F_2=17,\quad F_3=257,\quad F_4=65\,537\,.
+\]
+Le mathématicien du XVIIe siècle Pierre de Fermat a conjecturé que tous les nombres de Fermat sont premiers, mais près de cent ans plus tard, Leonhard Euler a remarqué que
+\[F_5=2^{2^5}+1 = 2^{32}+1 = 4\,294\,967\,297 = 641 \;\times\; 6\,700\,417\,.\]
+Les nombres de Fermat deviennent extrêmement grands lorsque $n$ augmente. On sait que les nombres de Fermat ne sont pas premiers pour $5\leq n \leq 32$, mais la factorisation de certains de ces nombres n'est toujours pas connue.
+
+\begin{theorem}
+Pour tout $n\geq 2$, le dernier chiffre de $F_n$ est $7$.
+\end{theorem}
+\begin{proof}
+L'initialisation s'écrit $F_2=2^{2^2}+1=17$.
+L'hypothèse de récurrence est $F_n=10k_n+7$ pour un certain $k_n\geq 1$. La récurrence donne
+\begin{align*}
+F_{n+1}&=2^{2^{n+1}}+1=2^{2^{n}\cdot 2^1}+1=\left(2^{2^{n}}\right)^2+1\\
+&=\left(\left(2^{2^{n}}+1\right)-1\right)^2+1=(F_n-1)^2+1\\
+&=(10k_n+7-1)^2+1=(10k_n+6)^2+1\\
+&=100k_n^2+120k_n+36+1\\
+&=10(10k_n^2+12k_n+3)+6+1\\
+&=10k_{n+1}+7,\quad \textrm{pour un certain} \;\;k_{n+1}\geq 1\,.\qedhere
+\end{align*}
+\end{proof}
+
+
+\begin{theorem}
+Pour tout $n\geq 1$, $\displaystyle F_n = \prod_{k=0}^{n-1} F_k + 2$.
+\end{theorem}
+\begin{proof}
+L'initialisation s'écrit
+\[
+F_1=\prod_{k=0}^{0} F_k + 2=F_0+2=3+2=5\,.
+\]
+L'étape de récurrence se passe ainsi:
+\begin{align*}
+\prod_{k=0}^{n}F_k&=\left(\prod_{k=0}^{n-1}F_k\right) F_n \\
+&=(F_n-2)F_n\\
+&= \left(2^{2^n}+1-2\right)\left(2^{2^n}+1\right)\\
+&= \left(2^{2^{n}}\right)^2-1= \left(2^{2^{n+1}}+1\right)-2\\
+&=F_{n+1}-2\\
+F_{n+1}&=\prod_{k=0}^{n}F_k + 2\,. \qedhere
+\end{align*}
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{La fonction 91 de McCarthy}\label{s.induction-mccarthy}
+
+
+On associe généralement le raisonnement par  récurrence aux démonstra\-tions  de propriétés définies sur l'ensemble des entiers naturels. Ici, nous abordons un raisonnement par  récurrence basé sur un ordre étrange où les grands nombres sont inférieurs aux petits nombres. La récurrence fonctionne car la seule propriété requise de l'ensemble est qu'il soit ordonné.
+
+Considérons la fonction récursive suivante définie sur les nombres entiers :
+\[
+f(x) = \left \{\begin{array}{ll}
+x-10 & \mathrm{si}\  x > 100, \\
+f(f(x+11)) & \mathrm{sinon}.
+\end{array}
+\right.
+\]
+Pour les nombres strictement supérieurs à 100, on trouve trivialement
+\[
+f(101) = 91, \;\; f(102) = 92,\;\; f(103) = 93,\;\; f(104) = 94,\;\ldots\;
+\]
+Qu'en est-il des nombres inférieurs ou égaux à $100$ ? Calculons $f(x)$ pour certains nombres, où le calcul de chaque ligne utilise les résultats des lignes précédentes :
+\begin{align*}
+f(100) &= f(f(100+11)) = f(f(111)) = f(101) = 91\\
+f(99) &= f(f(99+11)) = f(f(110)) = f(100) = 91\\
+f(98) &= f(f(98+11)) = f(f(109)) = f(99) = 91\\
+&\cdots&\\
+f(91) &= f(f(91+11)) = f(f(102)) = f(92)\\
+& \quad = f(f(103)) = f(93) = \cdots =f(98) = 91\\
+f(90) &= f(f(90+11)) = f(f(101)) = f(91) = 91\\
+f(89) &= f(f(89+11)) = f(f(100)) = f(91) = 91\,.
+\end{align*}
+Définissons la fonction $g$ comme ceci:
+\[
+g(x) = \left \{\begin{array}{ll}
+x-10 & \mathrm{si}\  x > 100, \\
+91 & \mathrm{sinon}.
+\end{array}
+\right.
+\]
+
+\begin{theorem}
+Pour tout $x$, $f(x) = g(x)$.
+\end{theorem}
+
+\begin{proof}
+La démonstration se fait par récurrence sur l'ensemble des entiers $S=\{x\,|\,x\leq 101\}$ en utilisant la  relation $\prec$ définie par 
+\[
+y \prec x \;\; \textrm{si et seulement si}\;\; x < y\,,
+\]
+où, du côté droit,  $<$ est l'inégalité stricte habituelle  sur les entiers.
+Cette définition donne lieu à l'ordre suivant :
+\[
+101 \prec 100 \prec 99 \prec 98 \prec 97 \prec \cdots\,.
+\]
+Il y a trois cas pour la démonstration. Nous utilisons les résultats des calculs ci-dessus.
+
+\textit{Premier cas:}
+$x > 100$. Ceci est trivial de par les définitions de $f$ et $g$.
+
+\textit{Deuxième cas:}
+$90\leq x \leq 100$. L'initialisation de la récurrence s'écrit
+$
+f(100) =  91 = g(100)$, puisque nous avons montré que $f(100)=91$ et puisque par définition $g(100)=91$.
+
+L'hypothèse de récurrence est $f(y) = g(y)$ pour $y\prec x$ et la récurrence fonctionne ainsi :
+\begin{subequations}
+\begin{align}
+f(x) &= f(f(x+11))\slabel{m91-1}\\
+&= f(x+11-10)= f(x+1)\slabel{m91-3}\\
+&= g(x+1)\slabel{m91-4}\\
+&= 91\slabel{m91-5}\\
+&= g(x)\slabel{m91-6}\,.
+\end{align}
+\end{subequations}
+L'équation~\ref{m91-1} est la définition de $f$ pour $x\leq 100$.
+L'égalité  \ref{m91-3} est la définition de $f$ étant donné que $x \geq 90$ implique $x+11 > 100$. L'égalité  \ref{m91-4} découle de l'hypothèse de récurrence puisque $x\leq 100$ implique  $x+1 \leq 101$, donc $x+1\in S$ et $x+1\prec x$. Les égalités  \ref{m91-5} et \ref{m91-6} découlent de la définition de $g$ et du fait que  $x+1 \leq 101$ implique $x \leq 100$.
+
+\textit{Troisième cas:}
+$x< 90$. L'initialisation s'écrit 
+$f(89) = f(f(100)) = f(91) = 91 = g(89)$ 
+par définition de $g$ puisque $89<100$.
+
+L'hypothèse de récurrence est $f(y) = g(y)$ pour $y\prec x$ et la récurrence donne
+\begin{subequations}
+\begin{align}
+f(x) &= f(f(x+11))\slabel{m91a}\\
+&= f(g(x+11))\slabel{m91b}\\
+&= f(91)\slabel{m91c}\\
+&= 91\slabel{m91d}\\
+&= g(x)\,.
+\end{align}
+\end{subequations}
+L'équation~\ref{m91a} est vraie par définition de $f$  puisque $x<90\leq 100$.
+L'égalité  \ref{m91b} découle de l'hypothèse de récurrence  et de ce que $x < 90$ implique $x+11< 101$, donc $x+11\in S$ et $x+11 \prec x$. L'égalité~\ref{m91c} découle de la définition de $g$ et de $x+11 < 101$. Nous avons déjà démontré que $f(91)=91$. Enfin  $g(x)=91$ pour $x<90$ par définition.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Le problème de Josèphe}\label{s.josephus}
+
+
+Flavius Josèphe était le commandant de la ville de Yodfat pendant la rébellion juive contre les Romains. La force  de l'armée romaine a fini par écraser la résistance de la ville et Josèphe s'est réfugié dans une grotte avec certains de ses hommes. Ils ont préféré se suicider plutôt que d'être tués ou capturés par les Romains. Selon le récit de Josèphe, il s'arrangea pour se sauver, devint un observateur des Romains et écrivit plus tard une histoire de la rébellion. Nous présentons le problème comme un problème mathématique abstrait.
+
+\begin{definition}[problème de Josèphe]
+Considérons les nombres $1,\ldots,n\!+\!1$ disposés en cercle. Supprimons chaque $q$-ième nombre en faisant le tour du cercle $q, 2q, 3q, \ldots$ (où le calcul est effectué modulo $n\!+\!1$) jusqu'à ce qu'il ne reste qu'un seul nombre $m$. Alors $J(n+1,q)=m$ est le nombre de Josèphe pour $n+1$ et $q$.
+\end{definition}
+
+\begin{example}
+Soient $n+1=41$ et $q=3$. Disposons les nombres en cercle :
+\[
+\rightarrow\,1\enspace 2\enspace 3\enspace 4\enspace 5\enspace 6\enspace 7\enspace 8\enspace 9\enspace 10\enspace 
+           11\enspace 12\enspace 13\enspace 14\enspace 15\enspace 16\enspace 17\enspace 18\enspace 19\enspace 20\enspace 21\enspace 
+\downarrow\]
+\[\uparrow\,41\enspace 40\enspace 39\enspace 38\enspace 37\enspace 36\enspace 35\enspace 34\enspace 33\enspace 
+32\enspace 31\enspace 30\enspace 29\enspace 28\enspace 27\enspace 26\enspace 25\enspace 24\enspace 23\enspace 22\enspace 
+\]
+La première série de suppressions conduit à 
+\[
+\rightarrow\, 1\enspace  2\enspace \!\not\! 3\enspace 4\enspace 5\enspace \!\not\! 6\enspace 7\enspace 8\enspace \!\not\! 9\enspace 10\enspace       11\enspace \!\not\!\! 12\enspace 13\enspace 14\enspace \!\not\!\! 15\enspace 16\enspace 17\enspace \!\not\!\! 18\enspace 19\enspace 20\enspace \!\not\!\! 21\enspace 
+\downarrow\]
+\[\uparrow\, 41\enspace40 \enspace\!\not\!\! 39\enspace 38\enspace 37\enspace \!\not\!\! 36\enspace 35\enspace 34\enspace\!\not\!\! 33\enspace 32\enspace 31\enspace \!\not\!\! 30\enspace 29\enspace 28\enspace\!\not\!\! 27\enspace 26\enspace 25\enspace\!\not\!\! 24\enspace 23\enspace 22
+\]
+Après avoir enlevé les nombres  supprimés, on obtient
+\[
+1\ 2\ 4\ 5\ 7\ 8\ 10\ 11\ 13\ 14\ 16\ 17\ 19\ 20\ 
+22\ 23\ 25\ 26\ 28\ 29\ 31\ 32\ 34\ 35\ 37\ 38\ 40\ 41.
+\]
+La deuxième série de suppressions (en commençant par la dernière suppression de 39) conduit à 
+\[
+\not\! 1\ 2\ 4 \not\!5\ 7\ 8 \not\!\! 10\ 11\ 13 \not\!\!14\ 16 \ 17 \not\!\! 19\ 20\ 
+22 \not\!\! 23\ 25\ 26 \not\!\! 28\ 29\ 31 \not\!\! 32\ 34\ 
+ 35 \not\!\! 37\ 38\ 40 \not\!\! 41.
+\]
+Nous continuons à supprimer un nombre sur trois jusqu'à ce qu'il n'en reste plus qu'un :
+\begin{align*}
+&2\  4 \not\!7\ 8\ 11 \not\!\!13\ 16\ 17 \not\!\!20\ 22\ 25 \not\!\!26\ 29\ 31 \not\!\!34\ 35\ 38 \not\!\!40
+\\
+&2\ 4 \not\!8\ 11\ 16 \not\!\!17\ 22\ 25 \not\!\!29\ 31\ 35 \not\!\!38\\
+&2\ 4 \not\!\!11\ 16\ 22 \not\!\!25\ 31\ 35\\
+&\!\!\not\!2\ 4\ 16 \not\!\!22\ 31\ 35\\
+&\!\!\not\!4\ 16\ 31 \not\!\!35\\
+&\!\!\not\!\!16\ 31\\
+&31.
+\end{align*}
+Il en résulte que $J(41,3)=31$.
+\end{example}
+
+Le lecteur est invité à effectuer le calcul pour supprimer chaque septième nombre d'un cercle de 40 nombres afin de vérifier que le dernier nombre est 30.
+
+\begin{theorem}\label{thm.jo1}
+$J(n+1,q)=(J(n,q)+q) \pmod {n+1}$.
+\end{theorem}
+
+\begin{proof}
+Le premier nombre supprimé au premier tour est le $q$-ième nombre et les nombres qui restent après la suppression sont les $n$ nombres 
+\[
+\begin{array}{rrrrrrrr}
+\;1&\;2&\;\ldots&\;q-1&\;q+1&\;\ldots&\;n&\;n+1 \pmod {n+1}\,.
+\end{array}
+\]
+Le comptage pour trouver la prochaine suppression commence avec $q+1$. En associant $1,\ldots,n$ à cette suite, nous obtenons 
+\[
+\begin{array}{ccccccccc}
+1& 2&\ldots& n-q& n+1-q& n+2-q&\ldots& n& \!\!\!\!\!\!\!\!\!\!\!\!\!\!\pmod {n\!+\!1}\\
+\downarrow& \downarrow&&\downarrow& \downarrow&\quad \downarrow&& \downarrow\\
+q+1& q+2&\ldots&n& n+1&\quad 1&\ldots& q-1& \!\!\!\!\!\!\!\!\!\pmod {n\!+\!1}.
+\end{array}
+\]
+Rappelons que les calculs sont modulo $n+1$ :
+\[
+\begin{array}{lclcl}
+(n+2-q)+q&=& (n+1)+1&=& 1 \quad\;\;\pmod {n+1}\\
+(n)+q&= &(n+1)-1+q&= &q-1\pmod {n+1}\,.
+\end{array}
+\]
+C'est le problème de Josèphe pour $n$ nombres, sauf que les nombres sont décalés de $q$. Il s'ensuit que :
+\[
+J(n+1,q)=(J(n,q)+q) \pmod {n+1}\,.
+\qedhere\]
+\end{proof}
+
+\begin{theorem}\label{lem.jo}
+Pour tout $n\geq 1$, il existe des nombres $a\geq 0$ et $0\leq t < 2^a$  tels que $n=2^a+t$.
+\end{theorem}
+\begin{proof}
+On peut appliquer de manière répétée 
+ l'algorithme de division par $2^0, 2^1, 2^2, 2^4,\ldots$, mais il est facile de le voir à partir de la représentation binaire de $n$. Il existe  $a$ et $b_{a-1},b_{a-2},\ldots,b_{1},b_{0}$, avec  $b_i=0$ ou $b_i=1$  pour tout $i$, tels que le nombre $n$ s'exprime comme 
+\begin{align*}
+n&=2^a+b_{a-1}2^{a-1}+\cdots+b_{0}2^{0}\\
+n&=2^a+(b_{a-1}2^{a-1}+\cdots+b_{0}2^{0})\\
+n&=2^a+t,\quad \textrm{avec}\; t\leq 2^a-1\,.\qedhere
+\end{align*}
+\end{proof}
+
+
+Nous démontrons maintenant qu'il existe une formule simple  et explicite pour $J(n,2)$. 
+\begin{theorem}\label{thm.jo2}
+Si $n=2^a+t$ avec $a\geq 0$ et $0\leq t < 2^a$, alors $J(n,2)=2t+1$.
+\end{theorem}
+
+\begin{proof}
+D'après le théorème~\ref{lem.jo}, 
+ le nombre $n$ s'exprime comme indiqué dans ce théorème. La démonstration que $J(n,2)=2t+1$ se fait par une double récurrence, d'abord sur $a$ puis sur $t$.
+
+\textit{Première récurrence:}
+
+Initialisation. Supposons que $t=0$ de sorte que $n=2^a$. Soit $a=1$.  Il y a deux nombres dans le cercle: $1,2$. Puisque $q=2$, le deuxième nombre sera supprimé, donc le nombre restant est $1$ et $J(2^1,2)=1$.
+
+L'hypothèse de récurrence est que $J(2^a,2)=1$. Que vaut $J(2^{a+1},2)$? Au premier tour, tous les nombres pairs sont supprimés:
+\[
+\begin{array}{rrrrrrrrrrrrrrrrrrrrrrrrrrrr}
+1&\quad\not\! 2&\quad3&\quad\not\! 4& \quad\ldots&\quad 2^{a+1}\!-\!1&\quad \not\! 2^{a+1}\,.
+\end{array}
+\]
+Il reste maintenant $2^a$ nombres :
+\[
+\begin{array}{rrrrrrrrrrrrrrrrrrrrrrrrrrrr}
+1&\quad3&\quad\ldots&\quad 2^{a+1}\!-\!1\,.
+\end{array}
+\]
+D'après l'hypothèse de récurrence, $J(2^{a+1},2)=J(2^a,2)=1$, donc  $J(n,2)=1$ chaque fois que $n=2^a+0$.
+
+\textit{Seconde récurrence:}
+
+Nous avons démontré que $J(2^a+0,2)=2\cdot 0 +1$, qui est l'initialisation de la deuxième récurrence.
+
+L'hypothèse de récurrence est $J(2^a+t,2)=2t+1$. D'après le théorème~\ref{thm.jo1},
+\[
+J(2^a+(t+1),2)=J(2^a+t,2)+2=2t+1+2=2(t+1)+1\,.
+\qedhere\]
+\end{proof}
+
+
+Les théorèmes~\ref{lem.jo} et~\ref{thm.jo2} donnent un algorithme simple pour calculer $J(n,2)$. D'après la démonstration du théorème~\ref{lem.jo},
+\[
+n=2^a+t=2^a+(b_{a-1}2^{a-1}+\cdots+b_{0}2^{0})\,,
+\]
+donc $t=b_{a-1}2^{a-1}+\cdots+b_{0}2^{0}$. Il suffit de multiplier par $2$ (décalage à gauche d'un chiffre) et d'ajouter $1$. Par exemple, puisque $n=41=2^5+2^3+2^0=101001$, il s'ensuit que $J(41,2)=2t+1$, et en notation binaire 
+\begin{align*}
+41&=101001\\
+9&=01001\\
+2t+1&=10011=16+2+1=19\,.
+\end{align*}
+Le lecteur peut vérifier le résultat en supprimant chaque deuxième nombre dans un cercle $1,\ldots,41$.
+
+Il existe une formule explicite pour $J(n,3)$ mais elle est assez compliquée.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{Quelle est la surprise ?}
+
+Le raisonnement par  récurrence est peut-être la technique de démonstration la plus importante des mathématiques modernes. Bien que la suite de Fibonacci soit extrêmement connue et que les nombres de Fermat soient également faciles à comprendre, j'ai été surpris de trouver tant de formules que je ne connaissais pas (comme les  théorèmes~\ref{thm.fib-div3} et \ref{thm.seven-fourths}) qui peuvent être démontrées par récurrence. La fonction $91$ de McCarthy a été découverte dans le contexte de l'informatique, bien qu'il s'agisse d'un résultat purement mathématique. Ce qui est surprenant, ce n'est pas la fonction elle-même, mais l'étrange récurrence utilisée pour l'étudier, avec  $98\prec 97$. La surprise du problème de Josèphe, c'est  le raisonnement  par récurrence  bidirectionnel.
+
+\subsection*{Sources}
+
+Pour une présentation complète du raisonnement par récurrence, voir \cite{gunderson}. La démonstration pour la fonction $91$ de McCarthy provient de \cite{manna} où elle est attribuée à Rod M. Burstall. La présentation du problème de Josèphe se base sur \cite[chapitre~17]{gunderson}, qui traite également du contexte historique. Ce chapitre contient d'autres problèmes intéressants avec des démonstrations par récurrence, tels que les enfants boueux, la fausse pièce et les centimes dans une boîte. On  trouvera des informations supplémentaires sur le problème de Josèphe dans \cite{schumer,wiki:josephus}.

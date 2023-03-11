@@ -1,0 +1,307 @@
+\documentclass[openany]{book}
+\usepackage[a5paper,margin=2cm]{geometry}
+
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage[french]{babel}
+ \usepackage[T1]{fontenc}
+
+ \usepackage[textfont={it}]{caption}
+ \captionsetup[figure]{name=Fig.}
+ \captionsetup[table]{name=Tab.}
+
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\usepackage{eurosym}
+\usepackage{rotating}
+
+\usepackage{epigraph}
+\setlength{\epigraphrule}{0pt}
+\setlength{\epigraphwidth}{0.66\textwidth}
+ \renewcommand\textflush{flushepinormal}
+ \renewenvironment{flushepinormal}{}{\vspace*{-\baselineskip}}
+ 
+\usepackage{makeidx}
+\usepackage{multicol}
+\usepackage[bottom]{footmisc}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\large\bfseries}
+  {\chaptertitlename\ \thechapter}{10pt}{\Large}
+\titleformat{\section}
+  {\normalfont\normalsize\bfseries}{\thesection}{1em}{}
+  \titleformat{\subsection}
+  {\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+\titlespacing{\chapter}{0pt}{0pt plus 2pt minus 2pt}{20pt plus 1.5pt minus 0.25pt}  
+
+%\newtheorem{theorem}{Théorème}
+
+\theoremstyle{definition}
+\newtheorem{axiom}{Axiome}[chapter]
+\newtheorem{definition}{Définition}[chapter]
+
+\theoremstyle{remark}
+\newtheorem{example}{Exemple}[chapter]
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Théorème}[chapter]
+
+% TOC contains chapters and sections
+
+\setcounter{tocdepth}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Fix \smartqed bug
+
+\renewcommand\qedsymbol{\hbox{$\square$}}
+%\smartqed
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% My added packages
+
+\usepackage{url}
+\usepackage{subeqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\makeindex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TikZ
+
+\usepackage{tikz}
+\usetikzlibrary{through,calc,intersections}
+\usetikzlibrary{arrows.meta,shapes.geometric}
+%\tikzset{>=stealth}
+%\usetikzlibrary{external}
+%\tikzexternalize[prefix=tikz/]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% My new commands
+
+% Display vertex not affected by tikz scale
+\newcommand*{\vertex}[1]
+  {\fill[shift only] (#1) circle (1.5pt)}
+\newcommand*{\vertexcolor}[2]
+  {\fill[shift only,#2] (#1) circle (1.5pt)}
+
+% Very small math, used in drawings
+\newcommand*{\sm}[1]{$\scriptstyle #1$}
+
+% In heptdecagon chapter, stack numbers of occurrences, variables
+\newcommand*{\occ}[2]{\underset{#2\quad}{r^{#1}}}
+
+% A bit more interline spacing
+\renewcommand{\baselinestretch}{1.1}
+
+% Theorem-like environment for axioms
+%\spnewtheorem{axiom}[theorem]{Axiom}{\bfseries}{\rmfamily}
+
+% Box advanced material
+\newenvironment{advanced}
+{
+\begin{center}
+\begin{tabular}
+  {|@{\hspace*{1em}}p{0.9\textwidth}@{\hspace*{1em}}|}
+  \hline\smallskip
+}
+{ 
+\\\\\hline
+\end{tabular} 
+\end{center}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\includeonly{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\sloppy
+
+\author{Mordechai Ben-Ari}
+\title{Surprises mathématiques}
+\date{Traduction : Nicolas Bacaër}
+
+
+
+\pagestyle{empty}
+
+\begin{center}
+{\huge Mordechai Ben-Ari}\\
+
+\vspace{1cm}
+
+{\Large Traduction: Nicolas Bacaër}
+
+
+
+
+
+\vspace{2cm}
+
+\centerline{\fontsize{52}{52}\selectfont Surprises}
+
+\centerline{\fontsize{52}{52}\selectfont mathématiques}
+
+   
+    \vspace{2cm}
+
+\includegraphics[height=5cm]{Delaunay2}
+    \end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\normalsize
+
+\frontmatter
+
+
+
+\maketitle
+
+\lhead[\fancyplain{}{}]%
+{\fancyplain{}{}}
+\rhead[\fancyplain{}{}]%
+{\fancyplain{}{}}
+\cfoot{}
+\pagestyle{fancyplain}
+
+%\tikzsetfigurename{front}
+\include{front}
+
+\mainmatter
+
+\lhead[\fancyplain{}{\thepage}]%
+{\fancyplain{}{\nouppercase{Chapitre \thechapter }}}
+\rhead[\fancyplain{}{}]%
+{\fancyplain{}{\thepage}}
+\cfoot{}
+\pagestyle{fancyplain}
+
+%\tikzsetfigurename{collapse}
+\include{collapse}
+
+%\tikzsetfigurename{trisect}
+\include{trisect}
+
+%\tikzsetfigurename{square}
+\include{square}
+
+%\tikzsetfigurename{five}
+\include{five}
+
+%\tikzsetfigurename{museum}
+\include{museum}
+
+%\tikzsetfigurename{induction}
+\include{induction}
+
+%\tikzsetfigurename{quadratic}
+\include{quadratic}
+
+%\tikzsetfigurename{ramsey}
+\include{ramsey}
+
+%\tikzsetfigurename{langford}
+\include{langford}
+
+%\tikzsetfigurename{origami-axioms}
+\include{origami-axioms}
+
+%\tikzsetfigurename{origami-cube}
+\include{origami-cube}
+
+%\tikzsetfigurename{origami-constructions}
+\include{origami-constructions}
+
+%\tikzsetfigurename{compass}
+\include{compass}
+
+%\tikzsetfigurename{straightedge}
+\include{straightedge}
+
+%\tikzsetfigurename{congruent}
+\include{congruent}
+
+%\tikzsetfigurename{heptadecagon}
+\include{heptadecagon}
+
+\lhead[\fancyplain{}{\thepage}]%
+{\fancyplain{}{\nouppercase{Annexe A}}}
+\rhead[\fancyplain{}{}]%
+{\fancyplain{}{\thepage}}
+\cfoot{}
+\pagestyle{fancyplain}
+
+\appendix
+
+%\tikzsetfigurename{trig}
+\include{trig}
+
+\backmatter
+
+\lhead[\fancyplain{}{\thepage}]%
+{\fancyplain{}{\nouppercase{Bibliographie}}}
+\rhead[\fancyplain{}{}]%
+{\fancyplain{}{\thepage}}
+\cfoot{}
+\pagestyle{fancyplain}
+
+
+\include{references2}
+
+
+\newpage
+
+\newgeometry{margin=1.5cm}
+
+\lhead[\fancyplain{}{}]%
+{\fancyplain{}{}}
+\rhead[\fancyplain{}{}]%
+{\fancyplain{}{}}
+\cfoot{}
+\pagestyle{empty}
+
+\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\begin{tabular}{lll}
+\begin{minipage}{\textwidth}
+\large
+
+
+\vspace{2cm}
+
+\indent $\quad$ Ce livre  réserve d'agréables surprises mathématiques. Il existe de nombreux résultats fascinants qui n'apparaissent pas dans les manuels scolaires, bien qu'ils soient accessibles avec une bonne connaissance des mathématiques du lycée. Ce livre présente une sélection de ces sujets, notamment la formalisation mathématique de l'origami, la construction à la règle et au compas (ou avec d'autres instruments), le théorème des cinq couleurs, un avant-goût de la théorie de Ramsey et des théorèmes peu connus démontrés par récurrence.\\
+
+\indent $\quad$ Parmi les théorèmes les plus surprenants, citons le théorème de Mohr-Mascheroni, selon lequel un compas seul permet de réaliser toutes les constructions classiques à la règle et au compas, et le théorème de Steiner, selon lequel une règle seule suffit à condition qu'un seul cercle soit donné. Le livre contient une présentation détaillée de la démonstration purement algébrique due à Gauss de la constructibilité  d'un heptadécagone régulier.  Bien que les mathématiques utilisées dans ce livre soient élémentaires (géométrie euclidienne et analytique, algèbre, trigonométrie), les élèves des lycées et des universités, les enseignants et les autres lecteurs intéressés seront ravis de pouvoir relever le défi de comprendre ces théorèmes surprenants.
+
+\vspace{2cm}
+
+
+\begin{tabular}{lr}
+ISBN: 979-10-396-4380-1 & \\
+\includegraphics[width=3.5cm]{ISBN_fr}
+&
+\raisebox{1cm}{24\euro}
+\end{tabular}
+
+\end{minipage}&\quad \quad \quad  \,&
+
+\raisebox{-9.5cm}{\begin{turn}{90} 
+\LARGE
+\mbox{\textsc{Mordechai Ben-Ari} /  \textsc{Nicolas Bacaër}  \quad  \quad  \quad Surprises mathématiques}  
+\end{turn} }
+\end{tabular}
+
+
+
+\end{document}

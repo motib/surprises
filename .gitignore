@@ -1,10 +1,8 @@
-﻿boris/*
-springer/*
-published/*
+﻿published/*
 en/tikz/*
 he/tikz/*
-en/*.pdf
-he/*.pdf
+*.pdf
+!surprises-he*.pdf
 *.bat
 *.zip
 *~
@@ -21,4 +19,3 @@ he/*.pdf
 *.thm
 *.idx
 *.py
-

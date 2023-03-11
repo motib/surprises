@@ -1,0 +1,353 @@
+\chapter{Le problème de Langford}\label{c.langford}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+C. Dudley Langford a remarqué que son fils avait disposé des blocs de couleur comme indiqué sur la figure~\ref{f.langford}.
+Il y a un bloc entre les blocs rouges, deux blocs entre les blocs bleus et trois blocs entre les blocs verts. 
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=.8]
+\draw[rounded corners,fill=green] (0,0)  
+  rectangle +(1.6cm,.8cm);
+\draw[rounded corners,fill=red]   (2.2,0)
+  rectangle +(1.6cm,.8cm);
+\draw[rounded corners,fill=blue]  (4.4,0)
+  rectangle +(1.6cm,.8cm);
+\draw[rounded corners,fill=red]   (6.6,0)
+  rectangle +(1.6cm,.8cm);
+\draw[rounded corners,fill=green] (8.8,0)
+  rectangle +(1.6cm,.8cm);
+\draw[rounded corners,fill=blue]  (11,0)
+  rectangle +(1.6cm,.8cm);
+\end{tikzpicture}
+%\includegraphics[width=\textwidth]{Fig9_1}
+\caption{Disposition des blocs pour le problème de Langford.}\label{f.langford}
+\end{figure}
+
+
+\begin{definition}[problème de Langford $L(n)$] Étant donné le multi-ensemble\footnote{Un \emph{multiensemble} est comme un ensemble, sauf qu'il peut y avoir plus d'une occurrence d'un élément.}
+ d'entiers strictement positifs 
+\[
+\{1,1,2,2,3,3,\ldots,n,n\}\,,
+\]
+peut-on les ordonner dans une suite telle que pour $1\leq i \leq n$ il y ait $i$ nombres entre les deux occurrences de $i$?
+\end{definition}
+
+La figure~\ref{f.langford} montre que 312132 est une solution pour $L(3)$.
+
+\smallskip
+
+La section~\ref{s.langford-covering} reformule le problème de Langford en utilisant un formalisme mathématique qui facilite la résolution du problème. La section~\ref{s.langford-theorem} caractérise les valeurs de $n$ pour lesquelles $L(n)$ peut être résolu et présente deux démonstrations du théorème. La première démonstration, relativement simple, utilise la technique du double comptage: compter la même valeur de deux manières différentes et mettre en équation les formules résultantes. La seconde démonstration est une récurrence astucieuse mais la \og comptabilité\fg{} impliquée nécessite une attention particulière aux détails. La section~\ref{s.langford-four} donne la solution pour $L(4)$.
+
+\section{Le problème de Langford en tant que problème de recouvrement}\label{s.langford-covering}
+
+Le problème de Langford peut être posé à l'aide d'un tableau. Pour $L(3)$, il y a six colonnes, une pour chaque position à laquelle les six chiffres peuvent être placés. Il y a une ligne pour chaque emplacement possible de l'un des chiffres, c'est-à-dire que les deux occurrences de $k$ doivent être séparées par $k$ chiffres. Il y a quatre positions possibles pour les deux   1, trois pour les deux 2 et deux pour les deux 3 :
+
+\begin{center}
+\addtolength{\tabcolsep}{4pt}
+\begin{tabular}{|c||c|c|c|c|c|c|}
+\hline
+&1&2&3&4&5&6\\\hline\hline
+1&1&&1&&&\\\hline
+2&&1&&1&&\\\hline
+3&&&1&&1&\\\hline
+4&&&&1&&1\\\hline
+5&2&&&2&&\\\hline
+6&&2&&&2&\\\hline
+7&&&2&&&2\\\hline
+8&3&&&&3&\\\hline
+9&&3&&&&3\\\hline
+\end{tabular}
+\end{center}
+Pour résoudre le problème, nous devons choisir une ligne pour les $1$, une ligne pour les $2$ et une ligne pour les $3$, de telle sorte que si nous empilons ces lignes les unes sur les autres, aucune colonne ne contienne plus d'un nombre.
+
+La ligne 9 n'a pas besoin d'être prise en compte en raison de la symétrie : commencer par la ligne 9 donne juste l'inversion de la suite obtenue en commençant par la ligne 8.
+
+La ligne 8 est la seule à contenir des $3$, elle doit donc être choisie et la suite est 3\textvisiblespace \textvisiblespace \textvisiblespace 3\textvisiblespace. Il n'est plus possible d'utiliser les rangées contenant des chiffres dans les colonnes 1 et 5, car un seul chiffre peut être placé à chaque position. Signalons les lignes autorisées et interdites ainsi: 
+\[\not\! 1,2,\not\! 3,4,\not\! 5, \not\! 6, 7, 8\,.\]
+
+La ligne 7 est la seule ligne restante contenant des $2$, elle doit donc être choisie et la suite est 3\textvisiblespace 2\textvisiblespace 3{}2. En supprimant les lignes qui ne peuvent plus être utilisées, on obtient 
+\[\not\! 1,2,\not\! 3,\not\! 4,\not\! 5, \not\! 6, 7, 8\,.\]
+
+En choisissant la seule ligne restante, la ligne 2, on obtient la solution 3{}1{}2{}1{}3{}2:
+\begin{center}
+\addtolength{\tabcolsep}{4pt}
+\begin{tabular}{|c||c|c|c|c|c|c|}
+\hline
+&1&2&3&4&5&6\\\hline\hline
+2&&1&&1&&\\\hline
+7&&&2&&&2\\\hline
+8&3&&&&3&\\\hline
+\end{tabular}
+\end{center}
+L'analyse a montré que c'est la seule solution, à l'exception de la solution symétrique obtenue en commençant par la ligne 9.
+
+\section{Pour quelles valeurs de $n$ le problème de Langford est-il être résolu?}\label{s.langford-theorem}
+
+\begin{theorem} \label{thm.langford}
+$L(n)$ a une solution si et seulement si $n=4k$ ou $n=4k+3$.
+\end{theorem}
+
+Nous démontrons le sens direct du théorème. La démonstration~1 montre que si $L(n)$ a une solution alors $n=4k$ ou $n=4k+3$. La démonstration~2 montre que si $n=4k+1$ ou $n=4k+2$ alors $L(n)$ n'a pas de solution.
+
+\noindent \emph{Démonstration 1}. Si la première occurrence du nombre $k$ est à la position $i_k$, la deuxième occurrence est à la position $i_k+k+1$. Par exemple, dans 3{}1{}2{}1{}3{}2, la solution de $L(3)$, en choisissant $k=2$, on obtient $i_k=3$ et $i_k+k+1=3+2+1=6$.
+
+ La somme $S_n$ des positions de tous les nombres est 
+\begin{align*}
+S_n&=\sum_{k=1}^{n}i_k+\sum_{k=1}^{n}(i_k+k+1)\\
+& = 2\sum_{k=1}^{n}i_k+\sum_{k=1}^{n}(k+1)\\
+&= 2\sum_{k=1}^{n}i_k+\frac{n(n+3)}{2}\,.
+\end{align*}
+Mais $S_n$ est simplement $1+2+3+\cdots+2n$, donc 
+\[
+S_n=\sum_{k=1}^{2n}k = \frac{2n(2n+1)}{2}\,.
+\]
+L'égalité des deux formules pour $S_n$ donne 
+\begin{align*}
+2\sum_{k=1}^{n}i_k+\frac{n(n+3)}{2} &= \frac{2n(2n+1)}{2}\\
+\sum_{k=1}^{n}i_k &= \frac{1}{2}\left(\frac{2n(2n+1)}{2} - \frac{n(n+3)}{2}\right) \\
+&= \frac{3n^2-n}{4}\,.
+\end{align*}
+
+Le côté gauche est un entier puisqu'il s'agit de la somme d'entiers (les positions), donc le côté droit doit aussi être un entier. Quand $3n^3-n$ est-il divisible par $4$ ? La factorisation de $3n^2-n$ donne $n(3n-1)$.
+
+Si $n$ est un multiple de $4$, le produit est divisible par $4$.
+
+Quand $3n-1$ est-il divisible par $4$ ? Tout entier $n$ peut être exprimé sous la forme  $n=4i+j$ avec $j=0,1,2,3$. Si $3n-1$ est divisible par $4$, alors $3(4i+j)-1 = 12i+3j-1$ l'est aussi. Or $12i$ est divisible par $4$. Pour $j=\{0,1,2,3\}$, $3j-1=\{-1,2,5,8\}$ est divisible par $4$ si et seulement si $j=3$, c'est-à-dire $n=4i+3$.\qed
+
+\medskip
+
+Pour introduire l'idée de la deuxième démonstration, considérons ce à quoi pourrait ressembler une solution pour $n=4$. Dans les tableaux suivants, les positions des occurrences de 4 sont 1 et 6, et les positions des occurrences de 2 sont 5 et 8. Dans les deux cas, une position est impaire et l'autre est paire. 
+\[
+\addtolength{\arraycolsep}{1pt}
+\begin{array}{|c|c|c|c|c|c|c|c|}
+\hline
+1&2&3&4&5&6&7&8\\
+\hline\hline
+4&1&3&1&2&4&3&2\\\hline
+*&&&&&*&&\\\hline
+\end{array}
+\hspace{1em}
+\begin{array}{|c|c|c|c|c|c|c|c|}
+\hline
+1&2&3&4&5&6&7&8\\
+\hline\hline
+4&1&3&1&2&4&3&2\\\hline
+&&&&*&&&*\\\hline
+\end{array}
+\]
+
+Soit $k=2m$ un nombre pair. Si $i$ est la position de la première occurrence de $k$, alors la position de la deuxième occurrence est $i+k+1$.
+La somme des positions est :
+\[
+i+(i+k+1)=2i+2m+1=2(i+m)+1\,,
+\]
+qui est un nombre impair. Pour que la somme de deux nombres soit impaire, l'un doit être impair et l'autre pair.
+
+\'Etudions maintenant les positions des occurrences des nombres impairs. Les positions des occurrences de 1 sont 2 et 4, deux nombres pairs, et les positions des occurrences de 3 sont 3 et 7, deux nombres impairs.
+\[
+\addtolength{\arraycolsep}{1pt}
+\begin{array}{|c|c|c|c|c|c|c|c|}
+\hline
+1&2&3&4&5&6&7&8\\
+\hline\hline
+4&1&3&1&2&4&3&2\\\hline
+&*&&*&&&&\\\hline
+\end{array}
+\hspace{1em}
+\begin{array}{|c|c|c|c|c|c|c|c|}
+\hline
+1&2&3&4&5&6&7&8\\
+\hline\hline
+4&1&3&1&2&4&3&2\\\hline
+&&*&&&&*&\\\hline
+\end{array}
+\]
+Soit $k=2m+1$ un nombre impair. La somme des positions est 
+\[
+i+(i+k+1)=2i+2m+1+1=2(i+m+1)\,,
+\]
+qui est un nombre pair. Pour que la somme de deux nombres soit paire, les deux doivent être impairs ou pairs.
+
+Les positions $1,2,\ldots,2n-1,2n$ contiennent un nombre égal de positions paires et impaires. Les deux occurrences d'un nombre dans une rangée \og recouvrent\fg{} deux positions. Lorsque l'ensemble des lignes recouvre toutes les positions, elles doivent recouvrir un nombre égal de positions paires et de positions impaires. La parité d'un ensemble de lignes est définie comme la différence entre le nombre de positions paires et impaires recouvertes. Initialement, la parité est égale à zéro, et si le problème a une solution, l'ensemble de lignes dans la solution a également une parité nulle.
+
+Lorsque deux occurrences d'un nombre pair sont placées, elles recouvrent une position paire et une position impaire, la parité reste donc la même :
+\[
+\addtolength{\arraycolsep}{1pt}
+\begin{array}{|c|c|c|c|c|c|c|c|}
+\hline
+1&2&3&4&5&6&7&8\\
+\hline\hline
+4&1&3&1&2&4&3&2\\\hline
+-1&&&&&+1&&\\\hline
+\end{array}
+\hspace{1em}
+\begin{array}{|c|c|c|c|c|c|c|c|}
+\hline
+1&2&3&4&5&6&7&8\\
+\hline\hline
+4&1&3&1&2&4&3&2\\\hline
+&&&&-1&&&+1\\\hline
+\end{array}
+\]
+Lorsque deux occurrences d'un nombre impair sont placées, la parité devient $+2$ ou $-2$, nous devons donc pouvoir associer cette paire à une paire d'occurrences d'un autre nombre impair qui sont placées à des positions qui équilibrent la parité :
+\[
+\addtolength{\arraycolsep}{1pt}
+\begin{array}{|c|c|c|c|c|c|c|c|}
+\hline
+1&2&3&4&5&6&7&8\\
+\hline\hline
+4&1&3&1&2&4&3&2\\\hline
+&+1&&+1&&&&\\\hline
+\end{array}
+\hspace{1em}
+\begin{array}{|c|c|c|c|c|c|c|c|}
+\hline
+1&2&3&4&5&6&7&8\\
+\hline\hline
+4&1&3&1&2&4&3&2\\\hline
+&&-1&&&&-1&\\\hline
+\end{array}
+\]
+Nous avons montré qu'il peut y avoir une solution au problème de Langford si et seulement si il y a un nombre pair de nombres impairs dans $\{1,\ldots,n\}$ !
+Le théorème affirme que si c'est vrai alors soit $n=4k$, soit $n=4k-1$, et sinon soit $n=4k-2$, soit $4k-3$.
+
+\medskip
+
+\noindent \emph{Démonstration 2}.   
+La démonstration se fait par récurrence.
+Il y a quatre cas de base :
+\begin{itemize}
+\item $n=4k-3=1$. Dans $\{1\}$ il y a un nombre impair de nombres impairs et il n'y a pas de solution.
+\item $n=4k-2=2$. Dans $\{1,2\}$ il y a un nombre impair de nombres impairs et il n'y a pas de solution.
+\item $n=4k-1=3$. Dans $\{1,2,3\}$, il y a un nombre pair de nombres impairs et nous avons vu qu'il existe une solution.
+\item $n=4k-0$. Dans $\{1,2,3,4\}$ il y a un nombre pair de nombres impairs et la section~\ref{s.langford-four} donne une solution.
+\end{itemize}
+
+L'hypothèse de récurrence est que le théorème est vrai pour $\{1,\ldots,4k-j\}$, $k\ge 1$, $0\leq j\leq 3$, et nous démontrerons qu'il est vrai pour $n=4(k+1)-j$.
+
+\begin{itemize}
+\item Ajoutons $4k+1=4(k+1)-3$ à $\{1,\ldots,4k\}$. Par hypothèse de récurrence, pour $4k=4k-0$, il existe un nombre pair de nombres impairs. Comme $4(k+1)-3$ est impair, il y a donc maintenant un nombre impair de nombres impairs et il n'y a pas de solution.
+\item Ajoutons $4k+2=4(k+1)-2$ à $\{1,\ldots,4k+1\}$. Par hypothèse de récurrence, pour $4k+1=4(k+1)-3$, il existe un nombre impair de nombres impairs. Puisque $4(k+1)-2$ est pair,  il y a encore un nombre impair de nombres impairs et il n'y a pas de solution.
+\item Ajoutons $4k+3=4(k+1)-1$ à $\{1,\ldots,4k+2\}$. Par hypothèse de récurrence, pour $4k+2=4(k+1)-2$, il existe un nombre impair de nombres impairs. Puisque $4(k+1)-1$ est impair,  il y a un nombre pair de nombres impairs et une solution peut exister.
+\item Ajoutons $4k+4=4(k+1)-0$ à $\{1,2,\ldots,4k+3\}$. Par hypothèse de récurrence, pour $4k+3=4(k+1)-1$, il existe un nombre pair de nombres impairs. Puisque $4(k+1)-0$ est pair, il y a  un nombre pair de nombres impairs et une solution peut  exister.\qed
+\end{itemize}
+
+%%%%%%%%%%%% Solution for L(4) %%%%%%%%%%%%%%%%%%
+
+
+
+\section{Solution de $L(4)$}\label{s.langford-four}
+
+
+Voici le tableau pour $L(4)$. Essayez de trouver la solution vous-même.
+\begin{center}
+\addtolength{\tabcolsep}{4pt}
+\begin{tabular}{|c||c|c|c|c|c|c|c|c|}
+\hline
+&1&2&3&4&5&6&7&8\\\hline\hline
+1&1&&1&&&&&\\\hline
+2&&1&&1&&&&\\\hline
+3&&&1&&1&&&\\\hline
+4&&&&1&&1&&\\\hline
+5&&&&&1&&1&\\\hline
+6&&&&&&1&&1\\\hline
+7&2&&&2&&&&\\\hline
+8&&2&&&2&&&\\\hline
+9&&&2&&&2&&\\\hline
+10&&&&2&&&2&\\\hline
+11&&&&&2&&&2\\\hline
+12&3&&&&3&&&\\\hline
+13&&3&&&&3&&\\\hline
+14&&&3&&&&3&\\\hline
+15&&&&3&&&&3\\\hline
+16&4&&&&&4&&\\\hline
+17&&4&&&&&4&\\\hline
+18&&&4&&&&&4\\\hline
+\end{tabular}
+\end{center}
+Par symétrie, la ligne 18 peut être éliminée.
+
+\smallskip
+
+%$1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17$
+\noindent Choisissons la ligne 16. La suite est 4 \textvisiblespace\textvisiblespace\textvisiblespace\textvisiblespace 4 \textvisiblespace\textvisiblespace.
+Toute ligne comportant un élément en position 1 ou 6 ne peut plus faire partie de la solution.
+
+$\not\! 1,2,3,\not\! 4,5,\not\! 6,\not\! 7,8,\not\! 9,10,11,\not\!\! 12,\not\!\! 13,14,15,16,\not\!\! 17$
+
+\noindent Choisissons la ligne 14. La suite est  4\textvisiblespace 3\textvisiblespace\textvisiblespace 4{}3\textvisiblespace.
+
+$\not\! 1,2,\not\! 3,\not\! 4,\not\! 5,\not\! 6,\not\! 7,8,\not\! 9,\not\!\! 10,11,\not\!\! 12,\not\!\! 13,14, \not\!\! 15,16,\not\!\! 17$
+
+\noindent Choisissons la ligne 8. La suite est   4{}2{}3\textvisiblespace 2{}4{}3\textvisiblespace.
+
+$\not\! 1,\not\! 2,\not\! 3,\not\! 4,\not\! 5,\not\! 6,\not\! 7,8,\not\! 9,\not\!\! 10,\not\!\! 11,\not\!\! 12,\not\!\! 13,14, \not\!\! 15,16,\not\!\! 17$
+
+\noindent Tous les choix de 1 ont été éliminés, nous devons donc revenir en arrière.
+
+\smallskip
+
+\noindent Au lieu de la ligne 8, choisissons la ligne 11 et la suite est  4\textvisiblespace 3\textvisiblespace 2{}4{}3{}2.
+
+
+$\not\! 1,2,\not\! 3,\not\! 4,\not\! 5,\not\! 6,\not\! 7,\not\! 8,\not\! 9,\not\!\! 10,11,\not\!\! 12,\not\!\! 13,14, \not\!\! 15,16,\not\!\! 17$
+
+\noindent Choisissons la ligne 2. Nous avons une solution 4{}1{}3{}1{}2{}4{}3{}2.
+
+\smallskip
+
+\noindent Continuons à revenir en arrière pour voir s'il existe une autre solution.
+
+\smallskip
+
+\noindent Au lieu de la ligne 14, choisissons la ligne 15. La suite est  4\textvisiblespace \textvisiblespace 3\textvisiblespace 4\textvisiblespace 3.
+
+$\not\! 1,\not\! 2,3,\not\! 4,5,\not\! 6,\not\! 7,8,\not\! 9,\not\!\! 10,\not\!\! 11,\not\!\! 12,\not\!\! 13,\not\!\! 14,15,16,\not\!\! 17$
+
+
+
+\noindent On doit choisir la ligne 8 et la suite est 4{}2\textvisiblespace 3{}2{}4\textvisiblespace 3.
+
+$\not\! 1,\not\! 2,\not\! 3,\not\! 4,\not\! 5,\not\! 6,\not\! 7,8,\not\! 9,\not\!\! 10,\not\!\! 11,\not\!\! 12,\not\!\! 13,\not\!\! 14,15,16,\not\!\! 17$
+
+\noindent Tous les choix de 1 ont été éliminés, donc nous revenons en arrière.
+
+\smallskip
+
+\noindent Au lieu de la ligne 16, choisissons la ligne 17 et la suite est \textvisiblespace 4\textvisiblespace \textvisiblespace \textvisiblespace\textvisiblespace 4\textvisiblespace.
+
+$1,\not\! 2,3,4,\not\! 5,6,7,\not\! 8,9,\not\!\! 10,11,12,\not\!\! 13,\not\!\! 14,15,\not\!\! 16,17$
+
+\noindent Choisissons la ligne 15 et la suite est  \textvisiblespace 4\textvisiblespace 3\textvisiblespace\textvisiblespace 4{}3.
+
+$1,\not\! 2,3,\not\! 4,\not\! 5,\not\! 6,\not\! 7,\not\! 8,9,\not\!\! 10,\not\!\! 11,\not\!\! 12,\not\!\! 13,\not\!\! 14,15,\not\!\! 16,17$
+
+\noindent On doit choisir la ligne 9 et la suite est \textvisiblespace 4{}2{}3\textvisiblespace 2{}4{}3.
+
+$1,\not\! 2,\not\! 3,\not\! 4,\not\! 5,\not\! 6,\not\! 7,\not\! 8,9,\not\!\! 10,\not\!\! 11,\not\!\! 12,\not\!\! 13,\not\!\! 14,15,\not\!\! 16,17$
+
+\noindent Tous les choix de 1 ont été éliminés. Nous pouvons revenir en arrière une dernière fois. 
+%$1,\not\! 2,3,4,\not\! 5,6,7,\not\! 8,9,\not\! 10,11,12,\not\! 13,\not\! 14,15,\not\! 16,17$
+
+\smallskip
+
+\noindent Au lieu de la ligne 15, choisissons la ligne 12 et la suite est 3{}4\textvisiblespace \textvisiblespace 3\textvisiblespace 4.
+
+$\not\! 1,\not\! 2,\not\! 3,\not\! 4,\not\! 5,\not\! 6,\not\! 7,\not\! 8,9,\not\!\! 10,\not\!\! 11,12,\not\!\! 13,\not\!\! 14,\not\!\! 15,\not\!\! 16,17$
+
+\noindent Encore une fois, tous les choix de 1 ont été éliminés.
+
+\medskip
+
+\noindent La seule solution est donc $41312432$.
+
+\subsection*{Quelle est la surprise ?}
+
+La source d'inspiration d'un théorème mathématique peut être surprenante. Langford a remarqué un motif dans les blocs colorés de son fils, ce qui a conduit à l'intéressant théorème~ \ref{thm.langford}. Les élèves devraient également être initiés au fait qu'un théorème peut avoir plusieurs démonstrations complètement différentes.
+
+\subsection*{Sources}
+Ce chapitre se base sur \cite{miller}. \cite{davies} montre comment trouver une solution pour $n=4k$ et $n=4k+3$.
