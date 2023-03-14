@@ -1,24 +1,43 @@
 # Mathematical Surprises
 
-### [Mordechai (Moti) Ben-Ari](https://www.weizmann.ac.il/sci-tea/benari/home)
+## [Mordechai (Moti)Ben-Ari](https://www.weizmann.ac.il/sci-tea/benari/home)
 
-Copyright 2022 by M. Ben-Ari, Creative Commons Attribution.
+This presents surprising results in mathematics that usually do not
+appear in textbooks although they are accessible with a good knowledge of
+secondary-school mathematics.
 
-Published by Springer-Nature under the Open Access Program.
-You can download the book from
+The repository contains LaTeX / TikZ source code for three languages:
+English, French, Hebrew. (Compile Hebrew with XeLaTeX.) The PDF and
+printed books are available as follows:
+
+**English**
+
+Open access book published by Springer-Nature. Copyright 2022 by
+Mordechai Ben-Ari, Creative Commons Attribution. Download PDF and order
+the printed book at
 [SpringerLink](https://link.springer.com/book/10.1007/978-3-031-13566-8).
 
-The directory `en` contains the LaTeX / TikZ source of the published book. The pdfLaTeX compiler was used.
+**French**
 
-The directory `he` contains the LaTeX / TikZ Hebrew translation. The XeLaTeX compiler was used.
+Translation by <a href="mailto:nicolas.bacaer@ird.fr">Nicolas Bacaër</a>. 
+Copyright 2023 by Nicolas Bacaër.
+Download
+[PDF](http://www.ummisco.ird.fr/perso/bacaer/SurprisesMathematiques.pdf)
+and order the printed book from
+[CoolLibri](https://www.coollibri.com/bibliotheque-en-ligne/mordechai-ben-ari/surprises-mathematiques_429665).
 
-### Contents
+**Hebrew**
+
+Download PDF from this repository. You have to print books yourself.
+
+
+## Contents
 
 **The collapsing compass** Euclid proved that any construction that can be done using a fixed compass can performed with a collapsing compass.
 
 **Trisection of an angle** Trisecting an angle is impossible but it can be done using instruments somewhat more complex that the straightedge and compass. Many claimed constructions are actually good approximations.
 
-**Squaring the circle** Adam Kochansy and Ramanujan gave constructions with straightedge and compass for lengths that are very good approximations to $\pi$.
+**Squaring the circle** Adam Kochansy and Ramanujan gave constructions with straightedge and compass for lengths that are very good approximations to pi.
 
 **The five-color theorem** The proof that any graph can be colored with four colors is extremely difficult, but it is relatively simple to prove that it can be done with five or six colors. Alfred Kempe gave a proof of the four-color theorem that was later shown to be incorrect.
 
