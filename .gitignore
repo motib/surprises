@@ -1,8 +1,7 @@
-﻿de/*
-published/*
+﻿published/*
 en/tikz/*
 he/tikz/*
-ge/tikz/*
+de/tikz/*
 *.pdf
 !surprises-he*.pdf
 *.bat

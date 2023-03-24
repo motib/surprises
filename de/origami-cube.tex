@@ -1,0 +1,790 @@
+% !TeX root = surprises.tex
+
+\chapter{Lill's Method and the Beloch Fold}\label{c.origami-cube}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Ein Zaubertrick}\label{s.magic}
+\index{Lill's method}
+
+Konstruieren Sie eine Bahn, die aus vier Liniensegmenten $\{a_3=1,a_2=6,a_1=11,a_0=6\}$ besteht, ausgehend vom Ursprung entlang der positiven Richtung der $x$-Achse, und drehen Sie $90^\circ$ zwischen den Segmenten gegen den Uhrzeigersinn. Konstruieren Sie eine zweite Bahn wie folgt: Konstruieren Sie eine Linie vom Ursprung unter dem Winkel $63.4^\circ$ und markieren Sie ihren Schnittpunkt mit $a_2$ durch $P$. Wenden Sie sich nach links $90^\circ$, konstruieren Sie eine Gerade und markieren Sie deren Schnittpunkt mit $a_1$ durch $Q$. Wenden Sie sich erneut nach links $90^\circ$, konstruieren Sie eine Linie und stellen Sie fest, dass sie das Ende des ersten Pfades bei $(-10,0)$ schneidet (Abb.~\ref{f.magic}).
+
+\begin{figure}[b]
+\begin{center}
+\begin{tikzpicture}[scale=.85]
+% Draw help lines and axes
+\draw[step=10mm,white!50!black] (-11,-1) grid (2,7);
+\draw[thick] (-11,0) -- (2,0);
+\draw[thick] (0,-1) -- (0,7);
+\foreach \x in {-10,...,2}
+  \node at (\x-.3,-.2) {\sm{\x}};
+\foreach \y in {1,...,7}
+  \node at (-.2,\y-.3) {\sm{\y}};
+
+% Draw first path
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (1,6);
+\coordinate (D) at (-10,6);
+\coordinate (E) at (-10,0);
+\draw[very thick] (A) --
+  node[below,xshift=1pt,yshift=-10pt] {$a_3=1$} (B);
+\draw[very thick,name path=bc] (B) -- 
+  node[right,yshift=6pt] {$a_2=6$} (C);
+\draw[very thick,name path=cd] (C) --
+  node[above,xshift=4pt] {$a_1=11$}(D);
+\draw[very thick,name path=de] (D) --
+  node[left,xshift=3pt,yshift=6pt] {$a_0=6$}(E);
+
+% Draw first segment of second path
+\path[name path=a2] (A) -- +(63.4:4);
+\path [name intersections = {of = a2 and bc, by = {A2}}];
+\node[above right] at (A2) {$P$};
+\draw[very thick,dashed] (A) -- (A2);
+\draw ($(A) + (14pt,0)$)
+  arc [start angle=0, end angle = 63.4, radius=14pt];
+\node[above right,xshift=34pt,yshift=2pt] at (A) {$63.4^\circ$};
+\draw[->] ($(A)+(32pt,8pt)$) -- +(-18pt,0);
+\draw[rotate=153.4] (A2) rectangle +(7pt,7pt);
+
+% Draw second segment of second path
+\path[name path=b2] (A2) -- +(153.4:10);
+\path [name intersections = {of = b2 and cd, by = {B2}}];
+\node[above left] at (B2) {$Q$};
+\draw[very thick,dashed] (A2) -- (B2);
+\draw[rotate=243.4] (B2) rectangle +(7pt,7pt);
+
+% Draw third segment of second path%
+\draw[very thick,dashed] (B2) -- (E);
+\end{tikzpicture}
+\end{center}
+\caption{Ein Zaubertrick}\label{f.magic}
+\end{figure}
+
+Berechnen Sie die Negation des Tangens des Winkels am Anfang der zweiten Strecke: $-\tan 63.4^\circ=-2$. Setze diesen Wert in das Polynom ein, dessen Koeffizienten die Längen der Segmente des ersten Pfades sind:
+\begin{eqnarray*}
+p(x)&=&a_3x^3+a_2x^2+a_1x+a_0\\
+&=&x^3+6x^2+11x+6\\
+p(-\tan 63.4^\circ)&=&(-2)^3+6(-2)^2+11(-2)+6=0\,.
+\end{eqnarray*}
+Wir haben eine Wurzel aus dem kubischen Polynom $x^3+6x^2+11x+6$ gefunden!
+
+\index{Lill's method!multiple roots}
+Lassen Sie uns das Beispiel fortsetzen. Das Polynom $p(x)=x^3+6x^2+11x+6$ hat drei Wurzeln $-1,-2,-3$. Berechnen Sie den Arcustangens der Negation der Wurzeln:
+\[
+\alpha=-\tan^{-1} (-1) = 45^\circ,\quad \beta=-\tan^{-1}(-2) \approx 63.4^\circ,\quad \gamma=-\tan^{-1}(-3)\approx 71.6^\circ\,.
+\]
+Für jeden Winkel schneidet die zweite Bahn das Ende der ersten Bahn (Abb.~\ref{f.cube-multiple}).
+
+\index{Lill's method!paths that do not lead to roots}
+Der Wert $-\tan 56,3\approx -1,5$ ist keine Wurzel aus der Gleichung. Abb.~\ref{f.noroots} zeigt das Ergebnis der Anwendung der Methode für diesen Winkel. Der zweite Pfad schneidet das Liniensegment für den Koeffizienten $a_0$ nicht bei $(-10,0)$.
+
+\begin{figure}[b]
+\begin{center}
+\begin{tikzpicture}[scale=.85]
+% Draw help lines and axes
+\draw[step=10mm,white!50!black] (-11,-1) grid (2,7);
+\draw[thick] (-11,0) -- (2,0);
+\draw[thick] (0,-1) -- (0,7);
+\foreach \x in {-10,...,2}
+  \node at (\x-.3,-.2) {\sm{\x}};
+\foreach \y in {1,...,7}
+  \node at (-.2,\y-.3) {\sm{\y}};
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (1,6);
+\coordinate (D) at (-10,6);
+\coordinate (E) at (-10,0);
+\draw[very thick] (A) --
+  node[below,yshift=-5pt] {$1$} (B);
+\draw[very thick,name path=bc] (B) -- 
+  node[right,yshift=24pt] {$6$} (C);
+\draw[very thick,name path=cd] (C) --
+  node[above] {$11$}(D);
+\path[name path=de] (D) -- ($(E)+(0,-.8)$);
+\draw[very thick] (D) --
+  node[left,yshift=6pt] {$6$} (E);
+
+% Draw first segment of first second path
+\path[name path=a1] (A) -- +(45:3);
+\path [name intersections = {of = a1 and bc, by = {A1}}];
+\node[above right] at (A1) {$P_1$};
+\draw[very thick,dashed] (A) -- (A1);
+\draw[thick] ($(A) + (16pt,0)$)
+  arc [start angle=0, end angle = 45, radius=16pt];
+\node[above right,xshift=44pt,yshift=0pt] at (A) {$\alpha$};
+\draw[rotate=135] (A1) rectangle +(7pt,7pt);
+\draw[Stealth-,thick] ($(A) + (15pt,5pt)$) -- +(24pt,0);
+
+% Draw second segment of first second path
+\path[name path=b1] (A1) -- +(135:8);
+\path [name intersections = {of = b1 and cd, by = {B1}}];
+\node[above right] at (B1) {$Q_1$};
+\draw[very thick,dashed] (A1) -- (B1);
+\draw[rotate=225] (B1) rectangle +(7pt,7pt);
+
+% Draw third segment of first second path
+\draw[very thick,dashed] (B1) -- (E);
+
+% Draw first segment of second second path
+\path[name path=a2] (A) -- +(63.4:4);
+\path [name intersections = {of = a2 and bc, by = {A2}}];
+\node[above right] at (A2) {$P_2$};
+\draw[very thick,dashed] (A) -- (A2);
+\draw[thick] ($(A) + (24pt,0)$)
+  arc [start angle=0, end angle = 63.4, radius=24pt];
+\node[above right,xshift=44pt,yshift=8pt] at (A) {$\beta$};
+\draw[rotate=153.4] (A2) rectangle +(7pt,7pt);
+\draw[<-,thick] ($(A) + (22pt,14pt)$) -- +(18pt,0);
+
+% Draw second segment of second second path%
+\path[name path=b2] (A2) -- +(153.4:10);
+\path [name intersections = {of = b2 and cd, by = {B2}}];
+\node[above right] at (B2) {$Q_2$};
+\draw[very thick,dashed] (A2) -- (B2);
+\draw[rotate=243.4] (B2) rectangle +(7pt,7pt);
+
+% Draw third segment of second second path%
+\draw[very thick,dashed] (B2) -- (E);
+
+% Draw first segment of second second path%
+\path[name path=a3] (A) -- +(71.6:4);
+\path [name intersections = {of = a3 and bc, by = {A3}}];
+\node[above right] at (A3) {$P_3$};
+\draw[very thick,dashed] (A) -- (A3);
+\draw[thick] ($(A) + (38pt,0)$)
+  arc [start angle=0, end angle = 70, radius=40pt];
+\node[above right,xshift=44pt,yshift=22pt] at (A) {$\gamma$};
+\draw[rotate=161.6] (A3) rectangle +(7pt,7pt);
+\draw[<-,thick] ($(A) + (32pt,25pt)$) -- +(10pt,0);
+
+% Draw second segment of second second path%
+\path[name path=b3] (A3) -- +(161.6:10);
+\path [name intersections = {of = b3 and cd, by = {B3}}];
+\node[above right] at (B3) {$Q_3$};
+\draw[very thick,dashed] (A3) -- (B3);
+\draw[rotate=251.6] (B3) rectangle +(7pt,7pt);
+
+% Draw third segment of second second path%
+\draw[very thick,dashed] (B3) -- (E);
+\end{tikzpicture}
+\end{center}
+\caption{Lill's Methode für die drei Wurzeln des Polynoms}\label{f.cube-multiple}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{center}
+\begin{tikzpicture}[scale=.85]
+% Draw help lines and axes
+\draw[step=10mm,white!50!black] (-11,-1) grid (2,7);
+\draw[thick] (-11,0) -- (2,0);
+\draw[thick] (0,-1) -- (0,7);
+\foreach \x in {-10,...,2}
+  \node at (\x-.3,-.2) {\sm{\x}};
+\foreach \y in {1,...,7}
+  \node at (-.2,\y-.3) {\sm{\y}};
+
+% Draw first path
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (1,6);
+\coordinate (D) at (-10,6);
+\coordinate (E) at (-10,0);
+\draw[very thick] (A) --
+  node[below,yshift=-5pt] {$1$} (B);
+\draw[very thick,name path=bc] (B) -- 
+  node[right,yshift=6pt] {$6$} (C);
+\draw[very thick,name path=cd] (C) --
+  node[above] {$11$}(D);
+\draw[very thick] (D) --
+  node[left,yshift=6pt] {$6$}(E);
+\path[name path=de] (-10,-1) -- (-10,7);
+
+% Draw first segment of second path
+\path[name path=a2] (A) -- +(56.3:3);
+\path [name intersections = {of = a2 and bc, by = {A2}}];
+\node[above right] at (A2) {$P$};
+\draw[very thick,dashed] (A) -- (A2);
+\draw ($(A) + (14pt,0)$)
+  arc [start angle=0, end angle = 56.3, radius=14pt];
+\node[above right,xshift=10pt,yshift=6pt] at (A) {$56.3^\circ$};
+\draw[rotate=146.3] (A2) rectangle +(7pt,7pt);
+
+% Draw second segment of second path
+\path[name path=b2] (A2) -- +(146.3:10);
+\path [name intersections = {of = b2 and cd, by = {B2}}];
+\node[above right] at (B2) {$Q$};
+\draw[very thick,dashed] (A2) -- (B2);
+\draw[rotate=236.3] (B2) rectangle +(7pt,7pt);
+
+% Draw third segment of second path
+\path[name path=c2] (B2) -- +(236.3:8.5);
+\path [name intersections = {of = c2 and de, by = {C2}}];
+\vertex{C2};
+\draw[very thick,dashed] (B2) -- (C2);
+\end{tikzpicture}
+\end{center}
+\caption{Ein Pfad, der nicht zu einer Wurzel führt}\label{f.noroots}
+\end{figure}
+
+Dieses Beispiel veranschaulicht eine von Eduard Lill 1867 entdeckte Methode zur grafischen Ermittlung der reellen Wurzeln eines beliebigen Polynoms. Es geht nicht darum, die Wurzeln zu finden, sondern zu überprüfen, ob ein bestimmter Wert eine Wurzel ist.
+
+Abschnitt~\ref{s.method} stellt eine formale Spezifikation der Lill-Methode vor (beschränkt auf kubische Polynome) und gibt Beispiele dafür, wie sie in speziellen Fällen funktioniert. Ein Beweis für die Korrektheit der Lillschen Methode wird in Abschnitt~\ref{s.proof} gegeben. Abschnitt~\ref{s.beloch-fold} zeigt, wie die Methode unter Verwendung des Origami-Axioms~6 implementiert werden kann. Dies wird als Beloch-Faltung bezeichnet und ging der Formalisierung der Origami-Axiome um viele Jahre voraus.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Spezifikation der Lill'schen Methode}\label{s.method}
+
+\subsection{Die Lillsche Methode als Algorithmus}
+\index{Lill's method!algorithm}
+\begin{itemize}
+\item Beginnen Sie mit einem beliebigen kubischen Polynom $p(x)=a_3x^3+a_2x^2+a_1x+a_0$.
+\item Konstruiere den ersten Pfad:
+\begin{itemize}
+\item Konstruiere für jeden Koeffizienten $a_3,a_2,a_1,a_0$ (in dieser Reihenfolge) eine Strecke dieser Länge, die am Ursprung $O=(0,0)$ in positiver Richtung der $x$-Achse beginnt. Drehe $90^\circ$ zwischen den einzelnen Segmenten gegen den Uhrzeigersinn.
+\end{itemize}
+\item Konstruiere den zweiten Pfad:
+\begin{itemize}
+\item Konstruieren Sie eine Linie von $O$ unter einem Winkel von $\theta$ mit der positiven $x$-Achse, die $a_2$ im Punkt $P$ schneidet.
+\item Drehen Sie $\pm 90^\circ$ und konstruieren Sie von $P$ eine Gerade, die $a_1$ im Punkt $Q$ schneidet.
+\item Drehen Sie $\pm 90^\circ$ und konstruieren Sie eine Linie von $Q$ aus, die $a_0$ in $R$ schneidet.
+\item Wenn $R$ der Endpunkt des ersten Pfades ist, dann ist $-\tan\theta$ eine Wurzel von $p(x)$.
+\end{itemize}
+\item Sonderfälle:
+\begin{itemize}
+\item Bei der Konstruktion der Liniensegmente des ersten Pfades, wenn ein Koeffizient negativ ist, konstruiere das Liniensegment \emph{backwards}.
+\item Bei der Konstruktion der Liniensegmente des ersten Pfades, wenn ein Koeffizient Null ist, konstruiere kein Liniensegment, sondern fahre mit der nächsten $\pm 90^\circ$ Runde fort.
+\end{itemize}
+\item Notizen:
+\begin{itemize}
+\item Der Ausdruck \emph{intersects $a_i$} bedeutet \emph{intersects the line segment $a_i$ or any extension of $a_i$}.
+\item Beim Bau des zweiten Pfades kann man wählen, ob man um $90^\circ$ nach links oder rechts abbiegt, so dass ein Schnittpunkt mit dem nächsten Segment des ersten Pfades oder dessen Verlängerung entsteht.
+\end{itemize}
+\end{itemize}
+
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=.85]
+% Draw help lines and axes
+\draw[step=10mm,white!50!black] (-1,-5) grid (6,2);
+\foreach \x in {0,...,6}
+  \node at (\x-.3,-.2) {\sm{\x}};
+\foreach \y in {-4,...,-1}
+  \node at (-.3,\y-.3) {\sm{\y}};
+\foreach \y in {1,...,2}
+  \node at (-.3,\y-.3) {\sm{\y}};
+
+% Draw first path
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (1,-3);
+\coordinate (D) at (4,-3);
+\coordinate (E) at (4,-4);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt,reversed]}-] (A) --
+  node[below,yshift=-5pt] {$1$} (B);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt]}-,name path=bc] (B) -- 
+  node[right,xshift=3pt] {$a_2=-3$} (C);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt]}-,name path=cd] (C) --
+  node[above,xshift=11pt] {$a_1=-3$}(D);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt,reversed]}-,name path=de] (D) --
+  node[right] {$1$}(E);
+
+% Draw extensions of first path
+\draw[very thick,loosely dotted,name path=a] (-1,0) -- (6,0);
+\draw[very thick,loosely dotted,name path=b] (1,-5) -- (1,2);
+\draw[very thick,loosely dotted,name path=c] (-1,-3) -- (6,-3);
+
+% Draw first second path
+\path[name path=a1] (A) -- +(-75:5);
+\path [name intersections = {of = a1 and b, by = {B1}}];
+\path[name path=b1] (B1) -- +(15:5);
+\path [name intersections = {of = b1 and c, by = {C1}}];
+\draw[thick,loosely dashed] (A) -- (B1) -- (C1) -- (E);
+
+% Draw second second path
+\draw[very thick,dashed] (4,-4) -- (5,-3) coordinate (A2);
+\coordinate (P) at (5,-3);
+\node[above right] at (P) {$Q$};
+\draw[very thick,dashed] (5,-3) -- (1,1) coordinate (B2);
+\coordinate (Q) at (1,1);
+\node[above right] at (Q) {$P$};
+\draw[very thick,dashed] (1,1) -- (0,0);
+
+% Draw third second path
+\path[name path=a3] (A) -- +(-15:5);
+\path [name intersections = {of = a3 and b, by = {B3}}];
+\path[name path=b3] (B3) -- +(-105:5);
+\path [name intersections = {of = b3 and c, by = {C3}}];
+\draw[thick,loosely dashed] (A) -- (B3) -- (C3) -- (E);
+\end{tikzpicture}
+\end{center}
+\caption{Lillsche Methode mit negativen Wurzeln}\label{f.negative}
+\end{figure}
+
+\subsection{Negative Koeffizienten}\label{s.negative}
+\index{Lill's method!negative coefficients}
+Wir wollen die Lillsche Methode für das Polynom $p(x)=x^3-3x^2-3x+1$ mit negativen Koeffizienten demonstrieren (Sect.~\ref{s.ax6}). Man beginnt mit der Konstruktion eines Segments der Länge $1$ nach rechts. Als nächstes dreht man $90^\circ$ nach oben, aber da der Koeffizient negativ ist, konstruiert man ein Segment der Länge $3$ nach unten, d.h. in die dem Pfeil entgegengesetzte Richtung. Nachdem man $90^\circ$ nach links gedreht hat, ist der Koeffizient wieder negativ, also konstruiert man ein Segment der Länge $3$ nach rechts. Wenden Sie sich schließlich nach unten und konstruieren Sie ein Segment der Länge $1$ (Abb.~\ref{f.negative}, die grob gestrichelten Linien werden in Sect.~\ref{s.noninteger} besprochen).
+
+Der zweite Pfad beginnt mit einer Linie bei $45^\circ$ mit der positiven $x$-Achse. Sie schneidet die Verlängerung des Linienabschnitts für $a_2$ bei $(1,1)$. Dreht man $-90^\circ$ (nach rechts), so schneidet die Linie die Verlängerung der Strecke für $a_1$ in $(5,-3)$. Dreht man $-90^\circ$ erneut, so schneidet die Linie das Ende der ersten Strecke bei $(4,-4)$. Da $-\tan 45^\circ=-1$ ist, haben wir eine Wurzel des Polynoms gefunden:
+\[p(-1)=(-1)^3-3(-1)^2-3(-1)+6=0\,.\]
+
+\subsection{Null-Koeffizienten}\label{s.zero}
+\index{Lill's method!zero coefficients}
+$a_2$, der Koeffizient des Terms $x^2$ im Polynom $x^3-7x-6=0$, ist Null. Konstruieren Sie eine Strecke der Länge $0$, d.h. konstruieren Sie keine Linie, sondern machen Sie trotzdem die $\pm 90^\circ$-Drehung, die durch den nach oben zeigenden Pfeil bei $(1,0)$ in Abb.~\ref{f.zero} angezeigt wird. Drehen Sie sich erneut und konstruieren Sie ein Liniensegment der Länge $-7$, also der Länge $7$ rückwärts, bis $(8,0)$. Drehen Sie sich schließlich noch einmal um und konstruieren Sie eine Strecke der Länge $-6$ nach $(8,6)$.
+
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=.7]
+% Draw help lines and axes
+\draw[step=10mm,white!50!black] (-1,-4) grid (11,7);
+\foreach \x in {0,...,11}
+  \node at (\x-.3,-.2) {\sm{\x}};
+\foreach \y in {-3,...,-1}
+  \node at (-.3,\y-.3) {\sm{\y}};
+\foreach \y in {1,...,7}
+  \node at (-.3,\y-.3) {\sm{\y}};
+
+% Draw first path
+\coordinate (A) at (0,0) node[above left] {$O$};
+\coordinate (B) at (1,0);
+\coordinate (C) at (8,0);
+\coordinate (D) at (8,6);
+\node[below right] at (D) {$A$};
+\draw[very thick,{Stealth[scale=1.4,inset=2pt,reversed]}-] (A) --
+  node[below,yshift=-5pt] {$1$} (B);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] (B) --
+  ($(B)+(0,.1)$);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt]}-,name path=bc] (B) -- 
+  node[below,xshift=-6pt,yshift=-5pt] {$-7$} (C);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt]}-,name path=cd] (C) --
+  node[right,yshift=4pt] {$-6$}(D);
+
+% Draw extensions of first path
+\draw[very thick,loosely dotted] (1,-3) -- (1,7);
+\draw[very thick,loosely dotted] (-1,0) -- (11,0);
+
+% Draw first second path
+\draw[very thick,dashed,->] (0,0) -- (1,-3);
+\coordinate (P1) at (1,-3);
+\node[below left] at (P1) {$P_1$};
+\draw[very thick,dashed,->] (1,-3) coordinate (A1) -- (10,0);
+\coordinate (Q1) at (10,0);
+\node[below right] at (Q1) {$Q_1$};
+\draw[very thick,dashed,->] (10,0) coordinate (B1) -- (D);
+
+% Draw second second path
+\draw[very thick,dashed,->] (0,0) -- (1,1) coordinate (A2);
+\node[above right] at (A2) {$P_2$};
+\draw[very thick,dashed,->] (A2) -- (2,0) coordinate (B2);
+\node[below right] at (B2) {$Q_2$};
+\draw[very thick,dashed,->] (B2) -- (D);
+
+% Draw third second path
+\draw[very thick,dashed,->] (0,0) -- (1,2) coordinate (A3);
+\node[above left] at (A3) {$P_3$};
+\draw[very thick,dashed,->] (A3) -- (5,0) coordinate (B3);
+\node[below right] at (B3) {$Q_3$};
+\draw[very thick,dashed,->] (B3) -- (D);
+\end{tikzpicture}
+\end{center}
+\caption{Lillsche Methode mit Polynomen mit Nullkoeffizienten}\label{f.zero}
+\end{figure}
+Die zweiten Bahnen mit den folgenden Winkeln schneiden das Ende der ersten Bahn:
+\[
+-\tan^{-1} (-1)= 45^\circ,\quad -\tan^{-1} (-2)\approx 63.4^\circ,\quad -\tan^{-1} 3\approx -71.6^\circ\,.
+\]
+Wir schließen daraus, dass es drei reelle Wurzeln $\{-1,-2,3\}$ gibt.
+Prüfen:
+\[
+(x+1)(x+2)(x-3)=(x^2+3x+2)(x-3) =x^3-7x-6\,.
+\]
+
+\subsection{Nicht-ganzzahlige Wurzeln}\label{s.noninteger}
+\index{Lill's method!non-integer roots}
+Abbildung~\ref{f.noninteger} zeigt die Lillsche Methode für $p(x)=x^3-2x+1$. Der erste Pfad geht von $(0,0)$ nach $(1,0)$ und dreht dann nach oben. Der Koeffizient von $x^2$ ist Null, so dass kein Liniensegment konstruiert wird und der Pfad nach links abbiegt. Das nächste Liniensegment hat die Länge $-2$ und führt rückwärts von $(1,0)$ nach $(3,0)$. Schließlich biegt der Weg nach unten ab, und es wird ein Linienabschnitt der Länge $1$ von $(3,0)$ nach $(3,-1)$ konstruiert.
+
+Es ist leicht zu erkennen, dass die zweite Bahn, wenn sie in einem Winkel von $-45^\circ$ beginnt, die erste Bahn in $(3,-1)$ schneidet. Daher ist $-\tan^{-1} (-45)^\circ=1$ eine Wurzel. Dividiert man $p(x)$ durch $x-1$, so erhält man das quadratische Polynom $x^2+x-1$, dessen Wurzeln sind:
+\[
+\frac{-1\pm\sqrt{5}}{2} \approx 0.62,\; -1.62\,.
+\]
+Es gibt zwei zusätzliche zweite Pfade: einer beginnt bei $-\tan^{-1} 0.62\approx -31.8^\circ$, der andere bei $-\tan^{-1}(-1.62)\approx 58.3^\circ$.
+
+Das Polynom $p(x)=x^3-3x^2-3x+1$ (Sect.~\ref{s.negative}) hat Wurzeln $ 2\pm\sqrt{3}\approx 3.73, 0.27$. Die entsprechenden Winkel sind $-\tan^{-1} 3.73 \approx -75^\circ$ und $-\tan^{-1} 0.27 \approx -15^\circ$, wie die grob gestrichelten Linien in Abb.~\ref{f.negative} zeigen.
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=1.3]
+\clip (-1.1,-2.1) rectangle (4.2,2.2);
+% Draw help lines and axes
+\draw[step=10mm,white!70!black,] (-1,-2) grid (4,2);
+\foreach \x in {0,...,4}
+  \node at (\x-.2,-.1) {\sm{\x}};
+\foreach \y in {-1}
+  \node at (-.1,\y-.2) {\sm{\y}};
+\foreach \y in {1,2}
+  \node at (-.1,\y-.2) {\sm{\y}};
+
+% Draw first path
+\coordinate (A) at (0,0);
+\node[above left] at (A) {$O$};
+\coordinate (B) at (1,0);
+\coordinate (C) at (3,0);
+\coordinate (D) at (3,-1);
+\node[below right] at (D) {$A$};
+\draw[very thick] (A) -- node[above,yshift=2pt] {$1$} (B);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] ($(A)+(.1,0)$) --
+  ($(A)+(.15,0)$);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] ($(B)+(0,.05)$) --
+  ($(B)+(0,.1)$);
+\draw[very thick,name path=bc] (B) -- 
+  node[above,xshift=-4pt,yshift=2pt] {$-2$} (C);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] ($(B)+(.22,0)$) --
+  ($(B)+(.17,0)$);
+\draw[very thick,name path=cd] (C) --
+  node[left] {$1$}(D);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] ($(C)+(0,-.05)$) --
+ ($(C)+(0,-.1)$);
+
+% Draw extensions of first path
+\draw[very thick,loosely dotted,name path=b] (1,-2) -- (1,2);
+\draw[very thick,loosely dotted,name path=c] (-1,0) -- (4,0);
+\draw[very thick,loosely dotted,name path=d] (3,-2) -- (3,2);
+
+% Draw first second path
+\coordinate (A1) at (1,-1);
+\draw[very thick,dashed,->] (0,0) -- (A1);
+\node[below right] at (A1) {$P_1$};
+\coordinate (B1) at (2,0);
+\draw[very thick,dashed,->] (A1) -- (B1);
+\node[above right,xshift=4pt] at (B1) {$Q_1$};
+\draw[very thick,dashed,->] (B1) -- (D);
+\draw[rotate=45] (A1) rectangle +(4pt,4pt);
+\draw[rotate=-135] (B1) rectangle +(4pt,4pt);
+
+% Draw second second path
+\path[name path=a2] (0,0) -- +(-31.7:4);
+\path [name intersections = {of = a2 and b, by = {A2}}];
+\draw[very thick,dashed,->] (0,0) -- (A2);
+\node[below left,xshift=-18pt] at (A2) {$P_2$};
+\draw[<-] ($(A2)+(-2pt,-1pt)$) -- +(-165:15pt);
+\path[name path=b2] (A2) -- +(58.3:2.5);
+\path [name intersections = {of = b2 and c, by = {B2}}];
+\draw[very thick,dashed,->] (A2) -- (B2);
+\node[above] at (B2) {$Q_2$};
+\draw[very thick,dashed,->] (B2) -- (D);
+\draw[rotate=58.3]   (A2) rectangle +(4pt,4pt);
+\draw[rotate=-121.7] (B2) rectangle +(4pt,4pt);
+
+% Draw third second path
+\path[name path=a3] (0,0) -- +(58.3:2.5);
+\path [name intersections = {of = a3 and b, by = {A3}}];
+\draw[very thick,dashed,->] (0,0) -- (A3);
+\node[above left] at (A3) {$P_3$};
+\path[name path=b3] (A3) -- +(-31.7:4);
+\path [name intersections = {of = b3 and c, by = {B3}}];
+\draw[very thick,dashed,->] (A3) -- (B3);
+\node[above right] at (B3) {$Q_3$};
+\path[name path=c3] (B3) -- +(-121.7:4);
+\draw[very thick,dashed,->] (B3) -- (D);
+\draw[rotate=-121.7]   (A3) rectangle +(4pt,4pt);
+\draw[rotate=-211.7]   (B3) rectangle +(4pt,4pt);
+\end{tikzpicture}
+\end{center}
+\caption{Lillsche Methode mit nicht-ganzzahligen Wurzeln}\label{f.noninteger}
+\end{figure}
+
+\subsection{Die Kubikwurzel von Zwei}\label{s.cube}
+\index{Lill's method!cube root of two}
+Um einen Würfel zu verdoppeln, berechnet man $\sqrt[3]{2}$, eine Wurzel aus dem kubischen Polynom $x^3-2$. Bei der Konstruktion des ersten Weges biegt man zweimal nach links ab, ohne Liniensegmente zu konstruieren, da $a_2$ und $a_1$ beide Null sind. Dann wendet man sich wieder nach links (nach unten) und konstruiert rückwärts (nach oben), weil $a_0=-2$ negativ ist. Das erste Segment des zweiten Pfades wird in einem Winkel von $-\tan^{-1} \sqrt[3]{2}\approx -51,6^\circ$ konstruiert (Abb.~\ref{f.cube-two}).
+
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=1]
+% Draw help lines and axes
+\draw[step=10mm,white!70!black,] (-1,-2) grid (3,3);
+\foreach \x in {0,...,3}
+  \node at (\x-.2,-.1) {\sm{\x}};
+\foreach \y in {-1}
+  \node at (-.2,\y-.2) {\sm{\y}};
+\foreach \y in {1,2,3}
+  \node at (-.2,\y-.2) {\sm{\y}};
+
+% Draw first path
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (1,2);
+\draw[very thick] (A) -- node[above,yshift=2pt] {$1$} (B);
+
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] ($(A)+(.05,0)$) --
+  ($(A)+(.1,0)$);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] ($(B)+(0,.05)$) --
+  ($(B)+(0,.1)$);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] ($(B)+(.1,.3)$) --
+  ($(B)+(.08,.3)$);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick] ($(B)+(0,.55)$) --
+  ($(B)+(0,.5)$);
+
+\draw[very thick] (B) -- 
+  node[left,yshift=6pt] {$-2$} (C);
+
+% Draw extensions of first path
+\draw[very thick,loosely dotted,name path=a] (-1,0) -- (3,0);
+\draw[very thick,loosely dotted,name path=b] (1,-2) -- (1,3);
+
+% Draw first segment of second path
+\path[name path=a1] (0,0) -- +(-51.6:2);
+\path [name intersections = {of = a1 and b, by = {A1}}];
+\draw[very thick,dashed,->] (A) -- (A1);
+\node[below left] at (A1) {$P_1$};
+\draw[rotate=38.4]   (A1) rectangle +(8pt,8pt);
+
+% Draw second segment of second path
+\path[name path=b1] (A1) -- +(38.4:2.5);
+\path [name intersections = {of = b1 and a, by = {B1}}];
+\draw[very thick,dashed,->] (A1) -- (B1);
+\node[above right] at (B1) {$Q_1$};
+\draw[rotate=128.4] (B1) rectangle +(8pt,8pt);
+
+% Draw third segement of second path
+\draw[very thick,dashed,->] (B1) -- (C);
+\end{tikzpicture}
+\end{center}
+\caption{Die Kubikwurzel aus zwei}\label{f.cube-two}
+\end{figure}
+
+\section{Nachweis der Lill'schen Methode}\label{s.proof}
+\index{Lill's method!proof of}
+
+Der Beweis gilt für monische {Monische Polynome} kubische Polynome $p(x)=x^3+a_2x^2+a_1x+a_0$. Wenn das Polynom nicht monisch ist, teilt man es durch $a_3$ und das resultierende Polynom hat die gleichen Wurzeln. In Abb.~\ref{f.lill-proof} sind die Liniensegmente des ersten Pfades mit den Koeffizienten und mit $b_2,b_1,a_2-b_2,a_1-b_1$ beschriftet. Wenn in einem rechtwinkligen Dreieck ein spitzer Winkel $\theta$ ist, ist der andere Winkel $90^\circ-\theta$. Daher sind der Winkel über $P$ und der Winkel links von $Q$ gleich $\theta$. Hier sind die Formeln für $\tan \theta$, wie sie aus den drei Dreiecken berechnet wurden:
+\begin{eqnarray*}
+\tan \theta &=& \frac{b_2}{1}=b_2\\
+\tan \theta &=& \frac{b_1}{a_2-b_2}=\frac{b_1}{a_2-\tan\theta}\\
+\tan \theta &=& \frac{a_0}{a_1-b_1}=\frac{a_0}{a_1-\tan\theta(a_2-\tan\theta)}\,.
+\end{eqnarray*}
+Vereinfache die letzte Gleichung, multipliziere mit $-1$ und setze $-1$ in die Potenzen ein:
+\begin{eqnarray*}
+(\tan\theta)^3-a_2(\tan\theta)^2+a_1(\tan\theta)-a_0&=&0\\
+(-\tan\theta)^3+a_2(-\tan\theta)^2+a_1(-\tan\theta)+a_0&=&0\,.
+\end{eqnarray*}
+Daraus folgt, dass $-\tan\theta$ eine reelle Wurzel von $p(x)=x^3+a_2x^2+a_1x+a_0$ ist.
+
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=.8]
+% Draw grid and axes
+\draw[step=10mm,white!50!black] (-11,-1) grid (2,7);
+\draw[thick] (-11,0) -- (2,0);
+\draw[thick] (0,-1) -- (0,7);
+\foreach \x in {-10,...,2}
+  \node at (\x-.3,-.2) {\sm{\x}};
+\foreach \y in {1,...,7}
+  \node at (-.2,\y-.3) {\sm{\y}};
+  
+% Draw the points of the first path
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (1,6);
+\coordinate (D) at (-10,6);
+\coordinate (E) at (-10,0);
+\draw[rotate=90] (B) rectangle +(7pt,7pt);
+  
+% Draw A -- B and arrow
+\draw[very thick] (A) --(B);
+\draw[thick,<->] ($(A)+(0,-16pt)$) --
+  node[fill=white] {$1$} ($(B)+(0,-16pt)$);
+
+% Draw B -- C and arrow
+\draw[very thick,name path=bc] (B) -- (C);
+\draw[thick,<->] ($(B)+(42pt,0)$) --
+  node[fill=white] {$a_2$} ($(C)+(44pt,0)$);
+
+% Draw C -- D and arrow
+\draw[very thick,name path=cd] (C) --(D);
+\draw[thick,<->] ($(C)+(0,24pt)$) -- 
+  node[fill=white] {$a_1$} ($(D)+(0,24pt)$);
+
+% Draw D -- E and arrow
+\draw[very thick,name path=de] (D) -- (E);
+\draw[thick,<->] ($(D)+(-16pt,0)$) --
+  node[fill=white] {$a_0$} ($(E)+(-16pt,0)$);
+
+% Draw first angled segment of the second path and intersection A2 with BC
+\path[name path=a2] (A) -- +(63.4:4);
+\path [name intersections = {of = a2 and bc, by = {A2}}];
+\node[above right] at (A2) {$P$};
+\draw[very thick,dashed] (A) -- (A2);
+\path (B) -- node[right] {$b_2$} (A2);
+\path (A2) -- node[right,xshift=-1pt,yshift=8pt] {$a_2\!-\!b_2$} (C);
+\draw[rotate=153.4] (A2) rectangle +(7pt,7pt);
+
+% Draw second segment of the second path and intersection B2 with CD
+\path[name path=b2] (A2) -- +(153.4:10);
+\path [name intersections = {of = b2 and cd, by = {B2}}];
+\node[above right] at (B2) {$Q$};
+\draw[very thick,dashed] (A2) -- (B2);
+\draw[rotate=243.4] (B2) rectangle +(7pt,7pt);
+\path (D) -- node[above] {$a_1\!-\!b_1$} (B2); 
+\path (B2) -- node[above] {$b_1$} (C);
+
+% Draw third segment of the second path to E
+\draw[very thick,dashed] (B2)-- (E);
+
+% Label A, A2, B2 with theta
+\draw ($(A) + (14pt,0)$)
+  arc [start angle=0, end angle = 63.4, radius=14pt];
+\node[above right,xshift=10pt,yshift=8pt] at (A) {$\theta$};
+\draw ($(A2) + (0,14pt)$)
+  arc [start angle=90, end angle = 153.4, radius=14pt];
+\node[above left,xshift=-4pt,yshift=14pt] at (A2) {$\theta$};
+\draw ($(B2) + (-14pt,0)$)
+  arc [start angle=180, end angle = 243.4, radius=14pt];
+\node[below left,xshift=-14pt,yshift=-4pt] at (B2) {$\theta$};
+\end{tikzpicture}
+\end{center}
+\caption{Nachweis der Lillschen Methode}\label{f.lill-proof}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Die Beloch-Falte}\label{s.beloch-fold}
+
+Margharita P. Beloch\index{Beloch, Margherita P.} entdeckte eine bemerkenswerte Verbindung zwischen dem Falten und der Lill-Methode: Eine Anwendung der Operation, die später als Origami-Axiom~6 bekannt wurde, erzeugt eine reelle Wurzel eines kubischen Polynoms. Die Operation wird oft als \emph{Beloch-Faltung} bezeichnet.\index{Beloch-Faltung}
+
+Betrachten wir das Polynom $p(x)=x^3+6x^2+11x+6$ (Sect.~\ref{s.magic}). Erinnern wir uns, dass eine Faltung die Mittelsenkrechte der Strecke zwischen einem beliebigen Punkt und seiner Spiegelung an der Faltung ist. Wir wollen, dass $\overline{RS}$ in Abb.~\ref{f.beloch-fold2} die senkrechte Winkelhalbierende sowohl von $\overline{QQ'}$ als auch von $\overline{PP'}$ ist, wobei $Q',P'$ die Spiegelungen von $Q,P$ um $\overline{RS}$ sind.
+
+\begin{figure}[ht]
+\begin{center}
+\begin{tikzpicture}[scale=.6]
+% Draw help lines and axes
+\draw[step=10mm,white!60!black] (-11,-1) grid (3,13);
+\draw[thick] (-11,0) -- (3,0);
+\draw[thick] (0,-1) -- (0,13);
+\foreach \x in {-10,...,3}
+  \node at (\x-.3,-.2) {\sm{\x}};
+\foreach \y in {1,...,13}
+  \node at (-.2,\y-.3) {\sm{\y}};
+  
+% Draw first path with five points
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (1,6);
+\coordinate (D) at (-10,6);
+\coordinate (E) at (-10,0);
+\node[below right,yshift=-6pt] at (A) {$P$};
+\node[below left,yshift=-6pt] at (E) {$Q$};
+
+\draw[thick] (A) -- (B);
+\draw[thick,name path=bc] (B) -- node[right,near end] {$a_2$} (C);
+\draw[thick,name path=cd] (C) -- node[above] {$a_1$} (D);
+\draw[thick,name path=de] (D) -- (E);
+
+% Draw parallel lines
+\draw[thick,name path=bpcp] ($(B)+(1,-1)$) --
+  node[above right] {$a_2'$}
+  ($(C)+(1,7)$);
+\draw[thick,name path=cpdp] ($(C)+(2,6)$) -- 
+  node[above left,xshift=-24pt] {$a_1'$} 
+  ($(D)+(-1,6)$);
+
+% Draw first segment of second path
+\path[name path=a2] (A) -- +(63.4:4);
+\path [name intersections = {of = a2 and bc, by = {A2}}];
+\draw[ultra thick,dotted] (A) -- (A2);
+\node[above right,xshift=4pt] at (A2) {$R$};
+\draw[rotate=153.4] (A2) rectangle +(10pt,10pt);
+
+% Draw second segment of second path
+\path[name path=b2] (A2) -- +(153.4:10);
+\path [name intersections = {of = b2 and cd, by = {B2}}];
+\node[above left] at (B2) {$S$};
+\draw[very thick,dashed] (A2) -- (B2);
+\draw[rotate=243.4] (B2) rectangle +(10pt,10pt);
+
+% Draw third segment of second path
+\draw[ultra thick,dotted] (B2) -- (E);
+
+% Locate reflections on parallel lines and draw lines
+\coordinate (PP) at ($(A2)+(1,2)$);
+\node[above right] at (PP) {$P'$};
+\draw[ultra thick,dotted] (A2) -- (PP);
+
+\coordinate (QP) at ($(B2)+(3,6)$);
+\node[above right] at (QP) {$Q'$};
+\draw[ultra thick,dotted] (B2) -- (QP);
+\end{tikzpicture}
+\end{center}
+\caption{Die Beloch-Falte zum Auffinden einer Wurzel aus $x^3+6x^2+11x+6$}\label{f.beloch-fold2}
+\end{figure}
+
+Konstruieren Sie eine zu $a_2$ parallele Linie $a_2'$ im gleichen Abstand von $a_2$, wie $a_2$ von $P$ entfernt ist, und konstruieren Sie eine zu $a_1$ parallele Linie $a_1'$ im gleichen Abstand von $a_1$, wie $a_1$ von $Q$ entfernt ist. Wenden Sie Axiom~6 an, um gleichzeitig $P$ bei $P'$ auf $a_2'$ und $Q$ bei $Q'$ auf $a_1'$ zu legen. Die Falte $\overline{RS}$ ist die Mittelsenkrechte der Linien $\overline{PP'}$ und $\overline{QQ'}$, so dass die Winkel an $R$ und $S$ beide rechte Winkel sind, wie es die Lillsche Methode verlangt.
+
+Abbildung~\ref{f.beloch-fold3} zeigt die Beloch-Faltung für das Polynom $x^3-3x^2-3x+1$ (Sect.~\ref{s.negative}). $a_2$ ist das senkrechte Liniensegment der Länge $3$, dessen Gleichung $x=1$ ist, und seine Parallele ist $a_2'$, dessen Gleichung $x=2$ ist, weil $P$ im Abstand von $1$ von $a_2$ liegt. $a_1$ ist das waagerechte Liniensegment der Länge $3$, dessen Gleichung $y=-3$ ist, und seine Parallele ist $a_1'$, deren Gleichung $y=-2$ ist, weil $Q$ von $a_1$ einen Abstand von $1$ hat. Die Falte $\overline{RS}$ ist die Mittelsenkrechte sowohl von $\overline{PP'}$ als auch von $\overline{QQ'}$, und die Linie $\overline{PRSQ}$ ist die gleiche wie der zweite Weg in Abb.~\ref{f.negative}.
+
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=.8]
+% Draw help lines and axes
+\draw[step=10mm,white!50!black] (-1,-5) grid (6,2);
+\foreach \x in {0,...,6}
+  \node at (\x-.3,-.2) {\sm{\x}};
+\foreach \y in {-4,...,-1}
+  \node at (-.3,\y-.3) {\sm{\y}};
+\foreach \y in {1,...,2}
+  \node at (-.3,\y-.3) {\sm{\y}};
+
+% Draw first path
+\coordinate (A) at (0,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (1,-3);
+\coordinate (D) at (4,-3);
+\coordinate (E) at (4,-4);
+\node[above left] at (A) {$P$};
+\node[below right] at (E) {$Q$};
+\draw[very thick,{Stealth[scale=1.4,inset=2pt,reversed]}-] (A) --
+  (B);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt]}-,name path=bc] (B) -- 
+  node[left] {$a_2$} (C);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt]}-,name path=cd] (C) --
+  node[above] {$a_1$}(D);
+\draw[very thick,{Stealth[scale=1.4,inset=2pt,reversed]}-,name path=de] (D) --
+ (E);
+
+% Draw extensions of first path
+\draw[very thick,loosely dotted,name path=b] (1,-4) -- (1,2);
+\draw[very thick,loosely dotted,name path=c] (-1,-3) -- (6,-3);
+
+% Draw reflected points
+\coordinate (PP) at (2,2);
+\coordinate (QP) at (6,-2);
+\node[above left] at (PP) {$P'$};
+\node[below right] at (QP) {$Q'$};
+
+% Midpoints of bisected lines
+\coordinate (R) at (1,1);
+\coordinate (S) at (5,-3);
+\node[above left] at (R) {$R$};
+\node[below right] at (S) {$S$};
+
+% Draw reflected lines
+\draw[thick] ($(B)+(1,2)$) --
+  node[right,very near end,yshift=-8pt] {$a_2'$} ($(C)+(1,-2)$);
+\draw[thick] ($(C)+(-2,1)$) --
+  node[above,very near start,xshift=-8pt,yshift=-1pt] {$a_1'$} ($(D)+(2,1)$);
+\draw[ultra thick,dotted] (A) -- (PP);
+\draw[ultra thick,dotted] (E) -- (QP);
+
+% Draw fold
+\draw[very thick,dashed] (R) -- (S);
+\draw[rotate=-45] (R) rectangle +(8pt,8pt);
+\draw[rotate=45] (S) rectangle +(8pt,8pt);
+\end{tikzpicture}
+\end{center}
+\caption{Die Beloch-Falte zum Auffinden einer Wurzel aus $x^3-3x^2-3x+1$}\label{f.beloch-fold3}
+\end{figure}
+
+\subsection*{Was ist die Überraschung?}
+
+Die Aufführung der Lill-Methode als Zaubertrick sorgt immer wieder für Überraschungen. Sie kann während einer Vorlesung mit einer Grafiksoftware wie GeoGebra durchgeführt werden. Überraschend ist auch, dass Lills Methode, veröffentlicht in $1867$, und Belochs Faltung, veröffentlicht in $1936$, der Axiomatisierung des Origami um viele Jahre vorausgingen.
+
+\subsection*{Quellen}
+
+Dieses Kapitel basiert auf \cite{bradford, hull-beloch, riaz}.

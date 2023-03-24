@@ -1,0 +1,780 @@
+% !TeX root = surprises.tex
+
+\chapter{Geometric Constructions Using Origami}\label{c.origami-constructions}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\index{Origami!geometric constructions}
+Dieses Kapitel zeigt, dass Konstruktionen mit Origami leistungsfähiger sind als Konstruktionen mit Lineal und Zirkel. Wir geben zwei Konstruktionen für die Dreiteilung eines Winkels, eine von Hisashi Abe\index{Abe, Hisashi} (Sect.~\ref{s.abe-trisection}) und die andere von George E. Martin\index{Martin, George E.} (Sect.~\ref{s.martin-trisection}), zwei Konstruktionen zur Verdoppelung eines Würfels, eine von Peter Messer\index{Messer, Peter} (Sect.~\ref{s.messer}) und die andere von Marghareta P. Beloch\index{Beloch, Margherita P.} (Sect.~\ref{s.cube2}), und die Konstruktion eines Nonagons, eines regelmäßigen Polynoms mit neun Seiten (Sect.~\ref{s.nonagon}).
+
+\section{Abe's Dreiteilung eines Winkels}\label{s.abe-trisection}
+\index{Origami!trisection of an angle}
+\index{Trisection of an angle!origami@using origami}
+
+\noindent\textbf{Konstruktion:}
+Bei einem spitzen Winkel $\angle PQR$ konstruiere $p$, die Senkrechte zu $\overline{QR}$ in $Q$. Konstruiere $q$, die Senkrechte zu $p$, die $\overline{PQ}$ im Punkt $A$ schneidet, und konstruiere $r$, die Senkrechte zu $p$ in $B$, die auf halbem Weg zwischen $Q$ und $A$ liegt. Konstruieren Sie unter Verwendung von Axiom~6 die Faltung $l$, die $A$ bei $A'$ auf der $\overline{PQ}$ und $Q$ bei $Q'$ auf $r$ legt. Sei $B'$ die Spiegelung von $B$ um $l$. Konstruieren Sie Linien durch $\overline{QB'}$ und $QQ'$ (Abb.~\ref{f.abe1}).
+\begin{figure}[ht]
+\begin{center}
+\begin{tikzpicture}[scale=.8]
+
+% Place points P, Q, R
+\coordinate (P) at (60:10cm); %(5,8.67);
+\coordinate (Q) at (0,0);
+\coordinate (R) at (10,0);
+\node[below right] at (P) {$P$};
+\node[left]  at (Q) {$Q$};
+\node[right] at (R) {$R$};
+
+% Draw PQR
+\draw (P)  -- (Q) -- (R);
+
+% Draw perpendicular to QR
+\draw (Q) -- node[left,very near end] {$p$} +(0,11);
+
+% Draw parallel to QR and parallel halfway
+\coordinate (A) at (0,5);
+\coordinate (B) at (0,2.5);
+\draw  (A) -- node[above,very near end] {$q$} +(10,0);
+\draw  (B) -- node[above,very near end] {$r$} +(10,0);
+\node[left] at (A) {$A$};
+\node[left] at (B) {$B$};
+\path (Q) -- node[left] {$a$} (B) -- node[left] {$a$} (A);
+\draw (A) rectangle +(8pt,8pt);
+\draw (B) rectangle +(8pt,8pt);
+\draw (Q) rectangle +(8pt,8pt);
+
+% Tangent line y = -2.75x + 10.69
+
+% Draw fold
+\coordinate (D) at (0,10.69);
+\coordinate (fold-x) at (3.89,0);
+\coordinate (AP) at (3.65,6.33);
+\coordinate (QP) at (6.87,2.5);
+\coordinate (BP) at (5.26,4.42);
+\node[left] at (D) {$D$};
+\node[above,yshift=6pt] at (AP) {$A'$};
+\node[above,yshift=6pt] at (QP) {$Q'$};
+\node[above,xshift=2pt,yshift=2pt] at (BP) {$B'$};
+\draw [very thick,dashed] (D) -- node[left,near start] {$l$} ($(D)!1.03!(fold-x)$);
+
+% Draw line of reflections
+\draw (D) -- (QP);
+
+% Draw trisecting lines
+\draw (Q) -- ($(Q)!1.3!(QP)$);
+\draw (Q) -- ($(Q)!1.3!(BP)$);
+
+% Complete triangle
+\draw (A) -- (QP);
+
+\draw[->,very thick,dotted,bend left=40] ($(A)+(.1,.1)$) to ($(AP)+(-.1,0)$);
+\draw[->,dotted,very thick,bend right=30] ($(Q)+(.1,-.1)$) to ($(QP)+(0,-.1)$);
+\end{tikzpicture}
+\end{center}
+\caption{Abe's Dreiteilung eines Winkels}\label{f.abe1}
+\end{figure}
+
+\begin{theorem} $\angle PQB'=\angle B'QQ'=\angle Q'QR=\angle PQR/3$.
+\end{theorem}
+
+\begin{proof}
+(1)
+$A', B', Q'$ sind Spiegelungen um die Linie $l$ der Punkte $A,B,Q$ an der Linie $\overline{DQ}$, liegen also auf der Spiegelungslinie $\overline{DQ'}$. Durch die Konstruktion $\overline{AB}=\overline{BQ}$, $\angle ABQ'=\angle QBQ'=90^\circ$ und $\overline{BQ'}$ ist eine gemeinsame Seite, so dass $\triangle ABQ'\cong \triangle QBQ'$ durch side-angle-side. Daher ist $\angle AQQ'=\angle QAQ'=\alpha$ und $\triangle AQ'Q$ isoceles (Abb.~\ref{f.abe2}).
+
+\begin{figure}[ht]
+\begin{center}
+\begin{tikzpicture}[scale=.8]
+
+% Place points P, Q, R
+\coordinate (P) at (60:10cm);
+\coordinate (Q) at (0,0);
+\coordinate (R) at (10,0);
+\node[below right] at (P) {$P$};
+\node[left,xshift=-4pt] at (Q) {$Q$};
+\node[right] at (R) {$R$};
+
+% Draw PQR
+\draw (Q) -- (R);
+
+% Draw perpendicular to QR
+\draw (Q) -- node[left,very near end] {$p$} +(0,11);
+
+% Draw parallel to QR and parallel halfway
+\coordinate (A) at (0,5);
+\coordinate (B) at (0,2.5);
+\draw (A) -- node[above,very near end] {$q$} +(10,0);
+\draw[name path=Br] (B) -- node[above,very near end] {$r$} +(10,0);
+\node[left,xshift=-4pt] at (A) {$A$};
+\node[left,xshift=-4pt] at (B) {$B$};
+\path (Q) -- node[left,xshift=-4pt] {$a$} (B) -- node[left,xshift=-4pt] {$a$} (A);
+\draw (A) rectangle +(8pt,8pt);
+\draw (B) rectangle +(8pt,8pt);
+\draw (Q) rectangle +(8pt,8pt);
+
+% Tangent line y = -2.75x + 10.69
+
+% Draw fold
+\coordinate (D) at (0,10.69);
+\coordinate (fold-x) at (3.89,0);
+\coordinate (AP) at (3.65,6.33);
+\coordinate (QP) at (6.87,2.5);
+\coordinate (BP) at (5.26,4.42);
+\node[left] at (D) {$D$};
+\node[above,yshift=6pt] at (AP)  {$A'$};
+\node[above,xshift=2pt,yshift=6pt] at (QP) {$Q'$};
+\node[above,xshift=4pt,yshift=2pt] at (BP) {$B'$};
+\draw[name path=fold,very thick,dashed] (D) -- node[left,near start] {$l$}  ($(D)!1.03!(fold-x)$);
+	
+% Draw line of reflections
+\draw (D) -- (AP);
+
+% Draw trisecting lines
+\draw (Q) -- ($(Q)!1.3!(BP)$);
+
+\draw [very thick,loosely dash dot,red] (Q) -- (QP);
+\draw [very thick,loosely dash dot,red] (QP) -- (AP);
+\draw [very thick,loosely dash dot,red] (AP) -- (Q);
+\draw [very thick,loosely dash dot dot,blue] ($(Q)+(0,-4pt)$) -- ($(QP)+(0,-4pt)$);
+\draw [very thick,dash dot dot,blue] ($(QP)+(0,-4pt)$) -- ($(A)+(0,-4pt)$);
+\draw [very thick,dash dot dot,blue] ($(A)+(-4pt,0)$) -- ($(Q)+(-4pt,0)$);
+
+\draw (A) -- (AP);
+
+\node[left,xshift=-40pt,yshift=7pt] at (QP) {$\alpha$};
+\node[left,xshift=-40pt,yshift=-6pt] at (QP) {$\alpha$};
+\node[right,xshift=40pt,yshift=6pt] at (Q) {$\alpha$};
+\node[right,xshift=40pt,yshift=28pt] at (Q) {$\alpha$};
+\node[right,xshift=30pt,yshift=42pt] at (Q) {$\alpha$};
+
+\draw (AP) -- (P);
+
+\path[name path=Qr] (Q) -- (QP);
+\path[name intersections = {of = fold and Qr, by = {U}}];
+\node[above left,xshift=-2pt,yshift=-2pt] at (U) {$U$};
+\draw[rotate=20] (U) rectangle +(8pt,8pt);
+\path[name intersections = {of = fold and Br, by = {V}}];
+\node[above left,xshift=-2pt,yshift=-2pt] at (V)  {$V$};
+\end{tikzpicture}
+\end{center}
+\caption{Proofs of Abe's trisection ($U,V$ are used in Proof 2)}\label{f.abe2}
+\end{figure}
+
+Durch Spiegelung ist $\triangle AQ'Q\cong \triangle A'QQ'$, also ist $\triangle A'QQ'$ auch ein isözisches Dreieck.
+$\overline{QB'}$, die Spiegelung von $\overline{Q'B}$, ist die Mittelsenkrechte eines isözischen Dreiecks, so dass $\angle A'QB'=\angle Q'QB'=\angle QQ'B=\alpha$.
+Durch Wechsel der Innenwinkel ergibt sich $\angle Q'QR=\angle QQ'B=\alpha$.
+Zusammen haben wir:
+\[
+\triangle PQB'=\angle A'QB'=\angle B'QQ'=\angle Q'QR=\alpha\,.
+\]
+\end{proof}
+
+\begin{proof} (2)
+Da $l$ eine Falte ist, ist sie die Mittelsenkrechte von $\overline{QQ'}$. Bezeichne den Schnittpunkt von $l$ mit $\overline{QQ'}$ mit $U$ und seinen Schnittpunkt mit $\overline{QB'}$ mit $V$ (Abb.~\ref{f.abe2}). $\triangle VUQ\cong \triangle VUQ'$ by side-angle-side da $\overline{VU}$ eine gemeinsame Seite ist, sind die Winkel bei $U$ rechte Winkel und $\overline{QU}=\overline{Q'U}$. Daher sind $\angle VQU=\angle VQ'U=\alpha$ und $\angle Q'QR=\angle VQ'U=\alpha$ durch abwechselnde Innenwinkel.
+
+Wie im ersten Beweis sind $A', B', Q'$ alle Spiegelungen um $l$, liegen also auf der Linie $\overline{DQ'}$ und $\overline{A'B'}=\overline{AB}=\overline{BQ}=\overline{B'Q'}=a$. Dann ist $\triangle A'B'Q\cong\triangle Q'B'Q$ durch side-angle-side und $\angle A'QB'=\angle Q'QB'=\alpha$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Martin's Dreiteilung eines Winkels}\label{s.martin-trisection}
+\index{Origami!trisection of an angle}
+\index{Trisection of an angle!origami@using origami}
+
+\noindent\textbf{Konstruktion:}
+Sei ein spitzer Winkel $\angle PQR$ gegeben, so sei $M$ der Mittelpunkt von $\overline{PQ}$. Konstruiere $p$ die Senkrechte zu $\overline{QR}$ durch $M$ und konstruiere $q$ die Senkrechte zu $p$ durch $M$, so dass $q\parallel\overline{QR}$. Konstruieren Sie unter Verwendung von Axiom 6 die Faltung $l$, die $P$ bei $P'$ auf $p$ und $Q$ bei $Q'$ auf $q$ platziert. Falls mehrere Faltungen möglich sind, wähle diejenige, die $\overline{PM}$ schneidet. Konstruieren Sie $\overline{PP'}$ und $\overline{QQ'}$ (Abb.~\ref{f.martin}).
+
+\begin{theorem}
+$\angle Q'QR=\angle PQR/3$.
+\end{theorem}
+\begin{proof}
+Bezeichne den Schnittpunkt von $\overline{QQ'}$ mit $p$ mit $U$ und seinen Schnittpunkt mit $l$ mit $V$. Bezeichne den Schnittpunkt von $\overline{PQ}$ und $\overline{P'Q'}$ mit $l$ durch $W$. Es ist nicht unmittelbar klar, dass $\overline{PQ}$ und $\overline{P'Q'}$ $l$ in demselben Punkt schneiden. Aber $\triangle PWP' \sim \triangle QWQ'$, so dass die Höhen die beiden vertikalen Winkel $\angle PWP', \angle QWQ'$ halbieren und sie auf derselben Linie liegen müssen.
+
+$\triangle QMU\cong \triangle PMP'$ durch Winkel-Seiten-Winkel, da $\angle P'PM=\angle UQM=\beta$ durch abwechselnde Innenwinkel, $\overline{QM}=\overline{MP}=a$ weil $M$ der Mittelpunkt von $\overline{PQ}$ ist und $\angle QMU=\angle PMP'=\gamma$ vertikale Winkel sind. Daher ist $\overline{P'M}=\overline{MU}=b$.
+
+$\triangle P'MQ'\cong \triangle UMQ'$ durch Seite-Winkel-Seite, da $\overline{P'M}=\overline{MU}=b$, sind die Winkel bei $M$ rechtwinklig und $\overline{MQ'}$ ist eine gemeinsame Seite. Da die Höhe des isozyklischen Dreiecks $\triangle P'Q'U$ die Winkelhalbierende von $\angle P'Q'U$ ist, folgt daraus, dass $\angle P'Q'M=\angle UQ'M=\alpha$. Außerdem ist $\angle UQ'M=\angle Q'QR=\alpha$ durch abwechselnde Innenwinkel. $\triangle QWV\cong\triangle Q'WV$ by side-angle-side, da $\overline{QV}=\overline{VQ'}=c$, die Winkel bei $V$ rechte Winkel sind und $\overline{VW}$ eine gemeinsame Seite ist. Daraus folgt:
+\begin{eqnarray*}
+\angle WQV&=&\beta=\angle WQ'V=2\alpha\\
+\angle PQR &=& \beta + \alpha = 3\alpha\,.
+\end{eqnarray*}
+\end{proof}
+
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=.8]
+
+% Place points P, Q, R
+\coordinate (P) at (60:10cm); %(5,8.67);
+\coordinate (Q) at (0,0);
+\coordinate (R) at (10,0);
+\node[below right] at (P) {$P$};
+\node[above left] at (Q) {$Q$};
+\node[right] at (R) {$R$};
+
+% Draw PQR
+\draw (R)  -- (Q);
+\draw [name path=pq] (Q) -- (P);
+
+% M is the midpoint of PQ
+\coordinate (M) at (2.5, 4.33);
+\node[above left,xshift=2pt] at (M) {$M$};
+\draw [rotate=-90] (M) rectangle +(9pt,9pt);
+
+% Drop a perpendicular from M to QR and extend the line upwards
+% This is the given line p
+\coordinate (pQR) at (M |- Q);
+\draw [name path=p] (pQR) --
+   node[left, very near end,yshift=20pt] {$p$}
+   ($(pQR)!2!(M)$);
+\draw (pQR) rectangle +(9pt,9pt);
+
+% Construct q perpendicular to p through M
+\draw [name path=q] ($(M)+(-2,0)$) --
+   node[above, very near start,xshift=-30pt] {$q$}
+   ($(M)+(10,0)$);
+
+% Construct the fold line t
+% Its equation is y = -2.75x + 18.51, as obtained from Geogebra
+\coordinate (t1) at (6.7,.085);
+\coordinate (t2) at (3.5,8.89);
+\draw [very thick,dashed,name path=t] (t1) --
+   node[very near end,left] {$l$}
+   (t2);
+
+% Construct a perpendicular to t through P
+\coordinate (perp-p) at ($(t1)!(P)!(t2)$);
+\path [name path=perp-p] (P) -- ($(P)!2.5!(perp-p)$);
+
+% Get its intersection with t denoted Pt
+% and its intersection with p named PP
+\path [name intersections = {of = t and perp-p, by = {Pt}}];
+\path [name intersections = {of = p and perp-p, by = {PP}}];
+\node[left] at (PP) {$P'$};
+\draw [rotate=22] (Pt) rectangle +(9pt,9pt);
+
+% Draw PT
+\draw (P) -- (PP);
+
+% Construct a perpendicular to t through Q
+\coordinate (perp-q) at ($(t1)!(Q)!(t2)$);
+\path[name path=perp-q] (Q) -- ($(Q)!2.1!(perp-q)$);
+
+% Get its intersection with t denoted V
+% and its intersection with q denoted S=Q'
+\path [name intersections = {of = t and perp-q, by = {V}}];
+\path [name intersections = {of = q and perp-q, by = {QP}}];
+\node[above,yshift=4pt] at (QP) {$Q'$};
+\node[above left,xshift=-4pt,yshift=-2pt] at (V) {$V$};
+\draw [rotate=22] (V) rectangle +(9pt,9pt);
+
+% Draw Q QP
+\draw [name path=qs] (Q) -- (QP);
+
+% Get the intersection of QS with p denoted U
+\path [name intersections = {of = p and qs, by = {U}}];
+\node[above left] at (U) {$U$};
+
+% Draw PP QP
+\draw [name path=ts] (PP) -- (QP);
+
+% Get its intersection with QP denoted W
+\path [name intersections = {of = ts and pq, by = {W}}];
+\node[right,xshift=4pt,yshift=4pt] at (W) {$W$};
+
+% Label line segments
+\path (P) -- node[left] {$a$} (M);
+\path (M) -- node[left]  {$a$} (Q);
+\path (PP) -- node[left]  {$b$} (M);
+\path (M) -- node[right] {$b$} (U);
+\path (Q) -- node[below,near end] {$c$} (V);
+\path (V) -- node[below] {$c$} (QP);
+
+% Label angles
+\node [xshift=5pt,yshift=20pt]        at (M) {$\gamma$};
+\node [xshift=-5pt,yshift=-20pt]      at (M) {$\gamma$};
+\node [xshift=15pt,yshift=13pt]       at (Q) {$\beta$};
+\node [xshift=-10pt,yshift=-10pt]     at (P) {$\beta$};
+\node [left,xshift=-30pt,yshift=7pt]  at (QP) {$\alpha$};
+\node [left,xshift=-30pt,yshift=-7pt] at (QP) {$\alpha$};
+\node [right,xshift=25pt,yshift=5pt]  at (Q) {$\alpha$};
+\end{tikzpicture}
+\end{center}
+\caption{Martinsche Dreiteilung eines Winkels}\label{f.martin}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Messer's Verdoppelung eines Würfels}\label{s.messer}
+\index{Doubling a cube!origami@using origami}
+\index{Origami!doubling a cube}
+
+Ein Würfel mit dem Volumen $V$ hat Seiten der Länge $\sqrt[3]{V}$. Ein Würfel mit dem doppelten Volumen hat Seiten der Länge $\sqrt[3]{2 V}=\sqrt[3]{2}\sqrt[3]{V}$. Wenn wir also $\sqrt[3]{2}$ konstruieren können, können wir mit der gegebenen Länge $\sqrt[3]{V}$ multiplizieren, um den Würfel zu verdoppeln.
+
+\medspace
+
+\noindent{}\textbf{Konstruktion:}
+Teilen Sie die Seite eines Einheitsquadrats wie folgt in drei Teile: Falten Sie das Quadrat in der Hälfte und legen Sie die Punkte $I=(0,1/2)$ und $J=(1,1/2)$ fest. Konstruieren Sie dann die Linien $\overline{AC}$ und $\overline{BJ}$ (Abb.~\ref{f.messer1}). Den Schnittpunkt $K=(2/3,1/3)$ erhält man durch Lösen der beiden Gleichungen $y=1-x$ und $y=x/2$.
+
+Konstruieren Sie $\overline{EF}$, die Senkrechte zu $\overline{AB}$ durch $K$, und konstruieren Sie die Spiegelung $\overline{GH}$ von $\overline{BC}$ um $\overline{EF}$. Die Seite des Quadrats ist nun gedrittelt.
+
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=.55]
+% Draw square
+\coordinate (A) at (0,12);
+\coordinate (B) at (0,0);
+\coordinate (C) at (12,0);
+\coordinate (D) at (12,12);
+
+\node[left]  at (A) {$A=(0,1)$};
+\node[left]  at (B) {$B=(0,0)$};
+\node[right] at (C) {$C=(1,0)$};
+\node[right] at (D) {$D=(1,1)$};
+
+\draw [thick] (A)  -- (B) -- (C) -- (D) -- cycle;
+
+% Divide a side in half
+
+\coordinate (M)  at (0,6);
+\coordinate (N) at (12,6);
+\node[left] at (M) {$I=(0,1/2)$};
+\node[right] at (N) {$J=(1,1/2)$};
+\draw [thick,dashed] (M) -- (N);
+
+
+\draw [very thick,dotted,name path=ac] (A) -- 
+   node[near start,above,xshift=24pt] {$y=1-x$} (C);
+\draw [very thick,dotted,name path=be2] (B) -- 
+   node[near start,above,xshift=-12pt] {$y=x/2$} (N);
+
+\path [name intersections = {of = ac and be2, by = {I}}];
+\node[below,xshift=-6pt,yshift=-8pt] at (I) {$K=$};
+\node[below,xshift=-6pt,yshift=-20pt] at (I) {$(2/3,1/3)$};
+
+\coordinate (E)  at (0,4);
+\coordinate (F) at (12,4);
+\node[left] at (E) {$E=(0,1/3)$};
+\node[right] at (F) {$F=(1,1/3)$};
+\draw [thick,dashed] (E) -- (F);
+
+\coordinate (G)  at (0,8);
+\coordinate (H) at (12,8);
+\node[left] at (G) {$G=(0,2/3)$};
+\node[right] at (H) {$H=(1,2/3)$};
+\draw (G) -- (H);
+\end{tikzpicture}
+\end{center}
+\caption{Unterteilung einer Länge in Drittel}\label{f.messer1}
+\end{figure}
+
+Unter Verwendung von Axiom~6 setze $C$ bei $C'$ auf $\overline{AB}$ und $F$ bei $F'$ auf $\overline{GH}$.  Bezeichne mit $L$ den Schnittpunkt der Falte mit $\overline{BC}$ und bezeichne mit $b$ die Länge von $\overline{BL}$. Benennen Sie die Länge der Seite des Quadrats mit $a+1$, wobei $a=\overline{AC'}$. Die Länge von $\overline{LC}$ ist $(a+1)-b$ (Abb.~\ref{f.messer3}).
+
+\begin{theorem}
+$\overline{AC'}=\sqrt[3]{2}$.
+\end{theorem}
+
+\begin{proof}
+Bei der Faltung wird das Liniensegment $\overline{LC}$ auf das Liniensegment $\overline{LC'}$ gespiegelt und $\overline{CF}$ wird auf das Liniensegment $\overline{C'F'}$ gefaltet. Deshalb:
+\begin{align}
+\overline{GC'}=a-\frac{a+1}{3}=\frac{2a-1}{3}\,.\label{eq.one-third}
+\end{align}
+Da $\angle FCL$ ein rechter Winkel ist, ist es auch $\angle F'C'L$.
+
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=.65]
+% Draw and label square
+\coordinate (A) at (0,12);
+\coordinate (B) at (0,0);
+\coordinate (C) at (12,0);
+\coordinate (D) at (12,12);
+\node[left]  at (A) {$A$};
+\node[left]  at (B) {$B$};
+\node[right] at (C) {$C$};
+\node[right] at (D) {$D$};
+\draw (B) rectangle +(9pt,9pt);
+\draw[rotate=90] (C) rectangle +(9pt,9pt);
+\draw [thick] (A)  -- (B) -- (C) -- (D) -- cycle;
+
+% Draw line one-third from botton
+\coordinate (E)  at (0,4);
+\coordinate (F) at (12,4);
+\node[left] at (E) {$E$};
+\node[right] at (F) {$F$};
+\draw [name path=ef] (E) -- (F);
+
+% Draw line two-thirds from bottom
+\coordinate (G)  at (0,8);
+\coordinate (H) at (12,8);
+\node[left] at (G) {$G$};
+\node[right] at (H) {$H$};
+\draw[rotate=-90] (G) rectangle +(9pt,9pt);
+\draw (G) -- (H);
+
+% Draw reflections of C and F
+\coordinate (CP) at (0,5.31);
+\coordinate (FP) at (2.96,8);
+\node[left] at (CP) {$C'$};
+\node[above right,yshift=8pt] at (CP) {$\alpha$};
+\node[below right,xshift=-2pt,yshift=-12pt] at (CP) {$\alpha'$};
+\node[above] at (FP) {$F'$};
+\node[below left,xshift=-8pt] at (FP) {$\alpha'$};
+\draw[rotate=-50] (CP) rectangle +(9pt,9pt);
+\draw (CP) -- (FP);
+
+% Draw fold and fold arrows
+% Tangent is y = 2.26x - 10.9
+% Crosses x axis at (4.83,0)
+\coordinate (J) at (4.83,0);
+\node[below] at (J) {$L$};
+\node[above left,xshift=-8pt] at (J) {$\alpha$};
+\draw [very thick,dashed,name path=jd] (J) -- node[very near end,left] {$l$} (10,12);
+\draw[thick,dotted,bend right=40,->] (C) to ($(CP)+(4pt,0)$);
+\draw[thick,dotted,bend right=40,->] (F) to ($(FP)+(4pt,4pt)$);
+
+% Draw hypotenuses of right triangles
+\draw (CP) -- (J);
+\path (J)  -- (C);
+
+% Labels on BC and hypotenuses
+\path (CP) -- node[right] {$(a+1)-b$} (J);
+\path (J)  -- node[below] {$(a+1)-b$} (C);
+\path (B)  -- node[below] {$b$} (J);
+\path (C)  -- node[right] {$\displaystyle\frac{a+1}{3}$} (F);
+\path (CP) -- node[right,xshift=10pt] {$\displaystyle\frac{a+1}{3}$} (FP);
+
+% Labels on AB
+\draw[<->] ($(A)+(-1,0)$)    --
+  node[fill=white] {$a$} ($(CP)+(-1,0)$);
+\draw[<->] ($(CP)+(-1,0)$)   --
+  node[fill=white] {$1$} ($(B)+(-1,0)$);
+\draw[<->] ($(CP)+(-2.5,0)$) --
+  node[fill=white] {$\displaystyle\frac{2a-1}{3}$} ($(G)+(-2.5,0)$);
+\draw[<->] ($(A)+(-2.5,0)$) --
+  node[fill=white] {$\displaystyle\frac{a+1}{3}$} ($(G)+(-2.5,0)$);
+\end{tikzpicture}
+\end{center}
+
+\caption{Konstruktion von $\sqrt[3]{2}$}\label{f.messer3}
+\end{figure}
+
+$\triangle C'BL$ ist ein rechtwinkliges Dreieck, also nach dem Satz des Pythagoras:
+\begin{subeqnarray}
+1^2 + b^2 &=& ((a+1)-b)^2\\
+%&=& a^2+2a+1 - 2(a+1)b + b^2\\
+%a^2+2a - 2(a+1)b&=&0\\
+b&=&\frac{a^2+2a}{2(a+1)}\,.\slabel{eq.value-of-b}
+\end{subeqnarray}
+$\angle GC'F' + \angle F'C'L + \angle LC'B = 180^\circ$, da sie die gerade Linie $\overline{GB}$ bilden. Bezeichne $\triangle GC'F'$ mit $\alpha$. Dann:
+\[
+\angle LC'B=180^\circ - \angle F'C'L - \angle GC'F'= 180^\circ - 90^\circ - \alpha = 90^\circ -\alpha\,,
+\]
+die wir mit $\alpha'$ bezeichnen. Die Dreiecke $\triangle C'BL$, $\triangle F'GC'$ sind rechtwinklige Dreiecke, also $\angle C'LB=\alpha$ und $\angle C'F'G=\alpha'$. Daher ist $\triangle C'BL\sim\triangle F'GC'$ und:
+\[
+\frac{\overline{BL}}{\overline{C'L}}=\frac{\overline{GC'}}{\overline{C'F'}}\,.
+\]
+Unter Verwendung von Gl.~\ref{eq.one-third} ergibt sich:
+\[
+\frac{b}{(a+1)-b}=\frac{\displaystyle\frac{2a-1}{3}}{\displaystyle\frac{a+1}{3}}\,.
+\]
+Die Substitution von $b$ mit Hilfe von Gl.~\ref{eq.value-of-b} ergibt:
+\[
+\displaystyle\frac{\displaystyle\frac{a^2+2a}{2(a+1)}}{(a+1)-\displaystyle\frac{a^2+2a}{2(a+1)}}=\frac{2a-1}{a+1}\,.
+\]
+Vereinfachen Sie die Gleichung, um $a^3=2$ und $a=\sqrt[3]{2}$ zu erhalten.
+\end{proof}
+
+\section{Belochs Verdoppelung eines Würfels}\label{s.cube2}
+\index{Doubling a cube!origami@using origami}
+\index{Origami!doubling a cube}
+
+Da die Beloch-Faltung (Axiom~6) kubische Gleichungen lösen kann, liegt die Vermutung nahe, dass sie auch zur Verdoppelung eines Würfels verwendet werden kann. Hier geben wir eine direkte Konstruktion an, die diese Faltung verwendet.
+
+\noindent\textbf{Konstruktion:}
+Es sei $A=(-1,0)$, $B=(0,-2)$. $p$ sei die Linie $x=1$ und $q$ sei die Linie $y=2$. Konstruieren Sie mit Hilfe der Beloch-Faltung die Falte $l$, die $A$ bei $A'$ auf $p$ und $B$ bei $B'$ auf $q$ platziert. Bezeichne den Schnittpunkt der Falte mit der $y$-Achse mit $Y$ und den Schnittpunkt der Falte mit der $x$-Achse mit $X$ (Abb.~\ref{f.beloch-doubling}).
+
+\begin{figure}[b]
+\begin{center}
+\begin{tikzpicture}[scale=.8]
+% Draw and label square
+\coordinate (O) at (0,0);
+\coordinate (A) at (-2,0);
+\coordinate (B) at (0,-4);
+\node[below left,xshift=-7pt] at (O) {$O$};
+\node[below left,yshift=-12pt] at (O) {$(0,0)$};
+\node[above left,xshift=-7pt] at (A) {$A$};
+\node[below left,xshift=2pt,yshift=0pt] at (A) {$(-1,0)$};
+\node[above right,xshift=10pt] at (A) {$\alpha$};
+\node[left,xshift=-12pt] at (B) {$B$};
+\node[left,yshift=-12pt] at (B) {$(0,-2)$};
+\node[above right,yshift=12pt] at (B) {$\alpha'$};
+
+\draw[thick] (0,-4.5) --  node[very near end,above left,yshift=12pt] {$y$-axis} +(0,10);
+\draw[thick] (-5,0)   -- node[very near start,above left] {$x$-axis} +(12,0);
+\draw[thick] (2,-4.5) -- node[very near start, right,yshift=-10pt] {$p\!:x=1$} +(0,10);
+\draw[thick] (-5,4) -- node[very near start, above,xshift=-16pt] {$q\!: y=2$} +(12,0);
+
+\coordinate (AP) at (2,5);
+\node[above right] at (AP) {$A'$};
+\coordinate (BP) at (6.34,4);
+\node[above right] at (BP) {$B'$};
+
+% Tangent y = -0.8x + 1.26
+
+% Exchanged X and Y 
+\coordinate (X) at (0,2.52);
+\coordinate (Y) at (3.15,0);
+\node[right,xshift=4pt,yshift=2pt] at (X) {$Y$};
+\node[below right,yshift=-14pt] at (X) {$\alpha$};
+\node[below left,xshift=2pt,yshift=-12pt] at (X) {$\alpha'$};
+\node[above right,xshift=10pt] at (Y) {$X$};
+\node[below left,xshift=-10pt] at (Y) {$\alpha$};
+\node[above left,xshift=-13pt] at (Y) {$\alpha'$};
+\draw [very thick,dashed] ($(X)!-1.1!(Y)$) -- node[very near end,right,xshift=8pt] {$l$} ($(X)!2!(Y)$);
+
+\draw [very thick,dotted] (A) -- (AP);
+\draw [very thick,dotted] (B) -- (BP);
+
+\draw[thick,dotted,bend left=40,->] (A) to ($(AP)+(-4pt,0)$);
+\draw[thick,dotted,bend left=40,->] (B) to ($(BP)+(-6pt,-3pt)$);
+
+\draw[rotate=-130] (X) rectangle +(10pt,10pt);
+\draw[rotate=-130] (Y) rectangle +(10pt,10pt);
+\end{tikzpicture}
+\end{center}
+\caption{Belochs Verdoppelung des Würfels}\label{f.beloch-doubling}
+\end{figure}
+
+\begin{theorem}
+$\overline{OY}=\sqrt[3]{2}$.
+\end{theorem}
+\begin{proof}
+Die Falte ist die Mittelsenkrechte von sowohl $\overline{AA'}$ als auch $\overline{BB'}$, also $\overline{AA'}\parallel\overline{BB'}$. Bei abwechselnden Innenwinkeln $\angle YAO =\angle BXO=\alpha$. Die Beschriftung der anderen Winkel in der Abbildung ergibt sich aus den Eigenschaften von rechtwinkligen Dreiecken.
+
+$\triangle AOY\sim \triangle YOX \sim \triangle XOB$ und $\overline{OA}=1$, $\overline{OB}=2$ sind so gegeben:
+\[
+\begin{array}{l}
+\displaystyle\frac{\overline{OY}}{\overline{OA}}=\displaystyle\frac{\overline{OX}}{\overline{OY}}=\displaystyle\frac{\overline{OB}}{\overline{OX}}\\
+\\
+\displaystyle\frac{\overline{OY}}{1}=\displaystyle\frac{\overline{OX}}{\overline{OY}}=\displaystyle\frac{2}{\overline{OX}}\,.
+\end{array}
+\]
+Aus dem ersten und zweiten Verhältnis ergibt sich $\overline{OX}=\overline{OY}^2$ und aus dem ersten und dritten Verhältnis ergibt sich $\overline{OY}\:\overline{OX}=2$.
+Die Substitution für $\overline{OX}$ ergibt $\overline{OY}^3=2$ und
+$\overline{OY}=\sqrt[3]{2}$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Konstruktion eines regelmäßigen Nonagons}\label{s.nonagon}
+
+\index{Origami!construction of a nonagon}
+\index{Nonagon|see {Origami, construction of a nonagon}}
+
+Ein Nonagon (ein regelmäßiges Polygon mit neun Seiten) wird konstruiert, indem man die kubische Gleichung für seinen zentralen Winkel herleitet und dann die Gleichung mit Hilfe der Lillschen Methode und der Beloch-Faltung löst. Der zentrale Winkel ist $\theta=360^\circ/9=40^\circ$. Nach Thm.~\ref{thm.triple-angle}:
+\[
+\cos 3\theta=4\cos^3 \theta -3\cos\theta\,.
+\]
+Es sei $x=\cos 40^{\circ}$. Dann lautet die Gleichung für das Nonagon $4x^3-3x+(1/2)=0$, da $\cos 3\cdot 40^\circ=\cos 120^\circ=-(1/2)$. Abbildung~\ref{f.nonagon2} zeigt die Pfade für die nach der Lillschen Methode konstruierte Gleichung.
+
+\begin{figure}[ht]
+\begin{center}
+\begin{tikzpicture}[scale=.85]
+% Draw help lines and axes
+\draw[step=10mm,white!60!black] (-1,-4) grid (9,1);
+\draw[thick] (-1,0) -- (9,0);
+\draw[thick] (0,-4) -- (0,1);
+\foreach \x in {1,...,9}
+  \node at (\x-.3,.3) {\sm{\x}};
+\foreach \y in {-3,...,1}
+  \node at (-.3,\y-.3) {\sm{\y}};
+  
+% Points of first path
+\coordinate (A) at (0,0);
+\coordinate (B) at (4,0);
+\coordinate (C) at (7,0);
+\coordinate (D) at (7,-.5);
+\node[above left] at (A) {$P$};
+\node[below right,xshift=12pt] at (A) {$37.45^\circ$};
+\node[below right] at (D) {$Q$};
+
+% Draw first path
+\draw[very thick,-{Stealth[scale=1.4,inset=2pt]}] 
+  (A) -- node[below,xshift=6pt] {$a_3$} (B);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick]
+  (B) -- ($(B)+(0,.1)$);
+\draw[name path=c,very thick,{Stealth[scale=1.4,inset=2pt]}-]
+  (B) -- node[below] {$a_1$} (C);
+\draw[very thick,-{Stealth[scale=1.4,inset=2pt]}]
+  (C) -- node[right,yshift=-2pt] {$a_0$} (D);
+
+% Draw extension of second segment of first path
+\draw[thick,name path=b] 
+  ($(B)+(0,-4)$) -- node[right] {$a_2$} ($(B)+(0,1)$);
+
+% Draw second path
+\path[name path=one] (A) -- +(-37.45:6cm);
+\path [name intersections = {of = b and one, by = {R}}];
+\node[below left] at (R) {$R$};
+\draw[thick,dashed] (A) -- (R);
+
+\path[name path=two] (R) -- +(52.5463:6cm);
+\path [name intersections = {of = c and two, by = {S}}];
+\node[above] at (S) {$S$};
+\draw[thick,dashed] (R) -- (S);
+
+\draw[thick,dashed] (S) -- (D);
+
+% Draw right angle rectangles
+\draw[thick,rotate=52.5463] (R) rectangle +(9pt,9pt);
+\draw[thick,rotate=-127.4537] (S) rectangle +(9pt,9pt);
+\end{tikzpicture}
+\end{center}
+\caption{Lillsche Methode für ein Nichteck}\label{f.nonagon2}
+\end{figure}
+Die zweite Bahn startet von $P$ unter einem Winkel von etwa $-37,45^\circ$. Drehungen von $90^\circ$ bei $R$ und dann $-90^\circ$ bei $S$ bewirken, dass sich der Pfad mit dem ersten Pfad an seinem Endpunkt $Q$ schneidet. Daher ist $x=-\tan (-37,45^\circ)\approx 0,766$ eine Wurzel aus $4x^3-3x+(1/2)$.
+
+Die Wurzel kann mit Hilfe der Beloch-Faltung gewonnen werden. Konstruieren Sie die Linie $a_2'$ parallel zu $a_2$ im gleichen Abstand von $a_2$ wie $a_2$ von $P$. Obwohl die Länge von $a_2$ gleich Null ist, hat sie dennoch eine Richtung (nach oben), so dass die parallele Linie konstruiert werden kann. In ähnlicher Weise konstruiert man die Linie $a_1'$ parallel zu $a_1$ im gleichen Abstand von $a_1$ wie $a_1$ von $Q$. Die Beloch-Faltung $\overline{RS}$ legt gleichzeitig $P$ bei $P'$ auf $a_2'$ und $Q$ bei $Q'$ auf $a_1'$. Dadurch wird der Winkel $\angle SPR=-37.45^\circ$ konstruiert (Abb.~\ref{f.nonagon3}).
+
+\begin{figure}[ht]
+\begin{center}
+\begin{tikzpicture}[scale=.85]
+% Draw help lines and axes
+\draw[step=10mm,white!60!black] (-1,-7) grid (9,1);
+\draw[thick] (-1,0) -- (9,0);
+\draw[thick] (0,-7) -- (0,1);
+\foreach \x in {1,...,9}
+  \node at (\x-.3,.3) {\sm{\x}};
+\foreach \y in {-6,...,1}
+  \node at (-.3,\y-.3) {\sm{\y}};
+  
+% Points of first path
+\coordinate (A) at (0,0);
+\coordinate (B) at (4,0);
+\coordinate (C) at (7,0);
+\coordinate (D) at (7,-.5);
+\node[above right] at (A) {$P$};
+\node[below right] at (D) {$Q$};
+
+% Draw first path
+\draw[very thick,-{Stealth[scale=1.4,inset=2pt]}] 
+  (A) -- node[below] {$a_3$} (B);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick]
+  (B) -- ($(B)+(0,.1)$);
+\draw[name path=c,very thick,{Stealth[scale=1.4,inset=2pt]}-]
+  (B) -- node[below] {$a_1$} (C);
+\draw[very thick,-{Stealth[scale=1.4,inset=2pt]}]
+  (C) -- node[right,yshift=-2pt] {$a_0$} (D);
+
+% Draw extension of second segment of first path
+\draw[very thick,loosely dotted,name path=b] 
+  ($(B)+(0,-7)$) -- node[right,near end] {$a_2$} ($(B)+(0,1)$);
+
+% Draw second path
+\path[name path=one] (A) -- +(-37.45:6cm);
+\path [name intersections = {of = b and one, by = {R}}];
+\node[below left] at (R) {$R$};
+\path[name path=two] (R) -- +(52.55:6cm);
+\path [name intersections = {of = c and two, by = {S}}];
+\node[above] at (S) {$S$};
+\draw[very thick,dashed] (R) -- (S);
+
+% Draw parallel lines
+\draw[thick,name path=para-2] 
+  (8,1) -- node[right,yshift=8pt] {$a_2'$} (8,-7);
+\draw[thick,name path=para-1] 
+  (-1,.5) -- node[right,xshift=44mm] {$a_1'$} (9,.5);
+
+% Draw second segments of the folds
+\path[name path=p-two] (A) -- +(-37.45:11cm);
+\path [name intersections = {of = para-2 and p-two, by = {PP}}];
+\node[below left] at (PP) {$P'$};
+\draw[very thick,dotted] (A) -- (PP);
+
+\path[name path=p-one] (D) -- +(142.55:2cm);
+\path [name intersections = {of = para-1 and p-one, by = {QP}}];
+\node[above] at (QP) {$Q'$};
+\draw[very thick,dotted] (D) -- (QP);
+
+% Draw right angle indications
+\draw[thick,rotate=-37.45] (R) rectangle +(9pt,9pt);
+\draw[thick,rotate=-127.4537] (S) rectangle +(9pt,9pt);
+\end{tikzpicture}
+\end{center}
+\caption{Die Beloch-Faltung zur Lösung der Gleichung des Nonagons}\label{f.nonagon3}
+\end{figure}
+
+Nach der Lill'schen Methode ist $-\tan (-37.45^\circ)\approx 0.766$ und somit $\cos \theta \approx 0.766$ eine Wurzel aus der Gleichung für den zentralen Winkel $\theta$. Wir schließen die Konstruktion des Nichtecks ab, indem wir $\cos^{-1} 0.766\approx 40^\circ$ konstruieren.
+
+Das rechtwinklige Dreieck $\triangle ABC$ mit $\angle CAB\approx 37.45^\circ$ und $\overline{AB}=1$ hat die gegenüberliegende Seite $\overline{BC}\approx 0.766$ durch die Definition des Tangens (Fig.~\ref{f.nonagon5-eq}).
+Falten Sie $\overline{CB}$ auf die $\overline{AB}$, so dass die Spiegelung von $C$ $D$ ist und $\overline{DB}=0.766$. Erweitern Sie $\overline{DB}$ und konstruieren Sie $E$ so, dass $\overline{DE}=1$ ist.
+Falten Sie $\overline{DE}$, um $E$ an $F$ in der Verlängerung von $\overline{BC}$ zu spiegeln (Abb.~\ref{f.nonagon5-central}). Dann:
+\[
+\angle BDF=\cos^{-1} \frac{0.766}{1}\approx 40^\circ\,.
+\]
+
+\begin{figure}[ht]
+\begin{minipage}{.45\textwidth}
+
+\begin{tikzpicture}[scale=1]
+\draw (0,0) coordinate (A) -- (4,0) coordinate (B);
+\draw (B) -- node[right] {$0.766$} 
+  ($(B)+(0,0.766*4)$) coordinate (C);
+\draw (A) -- (C);
+\draw[rotate=90] (B) rectangle +(8pt,8pt);
+\node[above left] at (A) {$A$};
+\node[above right] at (B) {$B$};
+\node[right] at (C) {$C$};
+\coordinate (D) at (0.234*4,0);
+\node[below left] at (D)  {$D$};
+\coordinate (E) at ($(D)+(4,0)$);
+\draw (D) -- (B);
+\draw (B) -- (E);
+\node[above right] at (E) {$E$};
+\draw[very thick,dotted,->,bend right=50] ($(C)+(-.2,0)$) to ($(A)+(.94,.4)$);
+\draw[<->] ($(D)+(0,-1.2)$) -- node[fill=white] {$1$} ($(E)+(0,-1.2)$);
+\draw[<->] ($(A)+(0,-.8)$) -- node[fill=white] {$1$} ($(B)+(0,-.8)$);
+\node[above right,xshift=14pt] at (A) {$37.45^\circ$};
+\vertex{D};
+\vertex{E};
+\end{tikzpicture}
+\caption{Die Tangente, die die Lösung der Gleichung für das Nichteck ist}\label{f.nonagon5-eq}
+\end{minipage}
+\hfill
+\begin{minipage}{.45\textwidth}
+\begin{tikzpicture}[scale=1]
+\coordinate (B) at (4,0);
+\draw (B) -- ($(B)+(0,0.766*4)$) coordinate (C);
+\draw[rotate=90] (B) rectangle +(8pt,8pt);
+\node[above right] at (B) {$B$};
+\node[right] at (C) {$C$};
+\coordinate (D) at (0.234*4,0);
+\node[above left] at (D) {$D$};
+\node[above right,xshift=8pt,yshift=4pt] at (D) {$40^\circ$};
+\coordinate (E) at ($(D)+(4,0)$);
+\draw (D) -- node[fill=white] {$0.766$} (B);
+\draw (B) -- (E);
+\node[above right,xshift=4pt] at (E) {$E$};
+\coordinate (F) at ($(B)+(0,4)$);
+\draw[very thick,dotted,->,bend right=50] ($(E)+(.1,.2)$) to ($(F)+(.2,0)$);
+\draw (B) -- (F);
+\node[left] at (F) {$F$};
+\draw (D) -- node[fill=white] {$1$} (F);
+\draw[<->] ($(D)+(0,-.8)$) -- node[fill=white] {$1$} ($(E)+(0,-.8)$);
+\vertex{C};
+\vertex{E};
+\coordinate (A) at (0,0) node [above left] {$A$};
+\draw (A) -- (D);
+\vertex{A};
+\vertex{D};
+\end{tikzpicture}
+\end{minipage}
+\caption{Der Kosinus des zentralen Winkels des Nichtecks}\label{f.nonagon5-central}
+\end{figure}
+
+\subsection*{Was ist die Überraschung?}
+
+Wir haben in den Kapiteln ~\ref{c.trisect} und ~\ref{c.square} gesehen, dass Werkzeuge wie die Neusis Konstruktionen ermöglichen, die mit Lineal und Zirkel nicht möglich sind. Es ist erstaunlich, dass die Dreiteilung eines Winkels und die Verdopplung eines Würfels nur mit Papierfalten konstruiert werden können. Roger C. Alperin\index{Alperin, Roger C.} hat eine Hierarchie von vier Konstruktionsmethoden entwickelt, die jeweils leistungsfähiger sind als die vorherige.
+
+\subsection*{Quellen}
+
+Dieses Kapitel basiert auf \cite{alperin,lang,martin,newton}.

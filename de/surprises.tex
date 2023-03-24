@@ -1,0 +1,178 @@
+\documentclass[openany]{book}
+\usepackage[a5paper,margin=2cm]{geometry}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+
+\usepackage{verbatim}
+
+\usepackage{makeidx}
+\usepackage{multicol}
+\usepackage[bottom]{footmisc}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\large\bfseries}
+  {\chaptertitlename\ \thechapter}{10pt}{\Large}
+\titleformat{\section}
+  {\normalfont\normalsize\bfseries}{\thesection}{1em}{}
+  \titleformat{\subsection}
+  {\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+   \titlespacing{\chapter}{0pt}{0pt plus 2pt minus 2pt}
+   {20pt plus 1.5pt minus 0.25pt}  
+
+% Change LaTeX defaults for figures
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\setcounter{topnumber}{1}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{3}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.7}
+
+\theoremstyle{definition}
+\newtheorem{axiom}{Axiom}[chapter]
+\newtheorem{definition}{Definition}[chapter]
+
+\theoremstyle{remark}
+\newtheorem{example}{Beispiel}[chapter]
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Satz}[chapter]
+
+\usepackage[textfont={it}]{caption}
+\captionsetup[figure]{name=Abb.}
+\captionsetup[table]{name=Tab.}
+
+% TOC contains chapters and sections
+\setcounter{tocdepth}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Smart qed
+\renewcommand\qedsymbol{\hbox{$\square$}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% My added packages
+\usepackage{url}
+\usepackage{subeqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeindex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TikZ
+\usepackage{tikz}
+\usetikzlibrary{through,calc,intersections}
+\usetikzlibrary{arrows.meta,shapes.geometric}
+\tikzset{>=stealth}
+\usetikzlibrary{external}
+\tikzexternalize[prefix=tikz/]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Display vertex not affected by tikz scale
+\newcommand*{\vertex}[1]
+  {\fill[shift only] (#1) circle (1.5pt)}
+\newcommand*{\vertexcolor}[2]
+  {\fill[shift only,#2] (#1) circle (1.5pt)}
+
+% Very small math, used in drawings
+\newcommand*{\sm}[1]{$\scriptstyle #1$}
+
+% In heptadecagon chapter,
+%   stack numbers of occurrences and variables
+\newcommand*{\occ}[2]{\underset{#2\quad}{r^{#1}}}
+
+% A bit more interline spacing
+\renewcommand{\baselinestretch}{1.1}
+
+% Box advanced material
+\newenvironment{advanced}
+{
+\begin{center}
+\begin{tabular}
+  {|@{\hspace*{1em}}p{0.9\textwidth}@{\hspace*{1em}}|}
+  \hline\smallskip
+}
+{ 
+\\\\\hline
+\end{tabular} 
+\end{center}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\includeonly{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\tikzsetfigurename{front}
+\include{front}
+
+\tikzsetfigurename{collapse}
+\include{collapse}
+
+\tikzsetfigurename{trisect}
+\include{trisect}
+
+\tikzsetfigurename{square}
+\include{square}
+
+\tikzsetfigurename{five}
+\include{five}
+
+\tikzsetfigurename{museum}
+\include{museum}
+
+\tikzsetfigurename{induction}
+\include{induction}
+
+\tikzsetfigurename{quadratic}
+\include{quadratic}
+
+\tikzsetfigurename{ramsey}
+\include{ramsey}
+
+\tikzsetfigurename{langford}
+\include{langford}
+
+\tikzsetfigurename{origami-axioms}
+\include{origami-axioms}
+
+\tikzsetfigurename{origami-cube}
+\include{origami-cube}
+
+\tikzsetfigurename{origami-constructions}
+\include{origami-constructions}
+
+\tikzsetfigurename{compass}
+\include{compass}
+
+\tikzsetfigurename{straightedge}
+\include{straightedge}
+
+\tikzsetfigurename{congruent}
+\include{congruent}
+
+\tikzsetfigurename{heptadecagon}
+\include{heptadecagon}
+
+\appendix
+
+\tikzsetfigurename{trig}
+\include{trig}
+
+\include{references}
+
+\include{ind}
+\end{document}

@@ -1,0 +1,657 @@
+% !TeX root = surprises.tex
+
+\chapter{Ein Lineal und ein Kreis sind ausreichend}\label{c.straightedge}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Kann jede Konstruktion mit Lineal und Zirkel auch nur mit einem Lineal durchgeführt werden? Die Antwort lautet nein, denn Linien sind durch lineare Gleichungen definiert und können keine Kreise darstellen, die durch quadratische Gleichungen definiert sind. 1822 stellte Jean-Victor Poncelet die Vermutung auf, dass ein Lineal ausreicht, wenn es in der Ebene nur einen Kreis gibt. Dies wurde 1833 von Jakob Steiner bewiesen.\index{Steiner, Jakob}
+
+Nachdem in Abschnitt.~\ref{s.se-what} erklärt wurde, was unter einer Konstruktion mit nur einem Lineal und einem Kreis zu verstehen ist, wird der Beweis schrittweise anhand von fünf Hilfskonstruktionen präsentiert: Konstruktion einer Linie parallel zu einer gegebenen Linie (Abschnitt~\ref{s.parallel}), Konstruktion einer Senkrechten zu einer gegebenen Linie (Abschnitt~\ref{s.perp}), Kopieren eines Liniensegments in einer gegebenen Richtung (Abschnitt~\ref{s.copy}), Konstruktion eines Liniensegments als Verhältnis von Segmenten (Abschnitt~\ref{s.relative}) und Konstruktion einer Quadratwurzel (Abschnitt~\ref{s.root}). Abschnitt~\ref{s.line-circle-straight} zeigt, wie man den/die Schnittpunkt(e) einer Linie mit einem Kreis findet und Abschnitt~\ref{s.two-circles} zeigt, wie man den/die Schnittpunkt(e) von zwei Kreisen findet.
+
+\section{Was ist eine Konstruktion mit nur einem Lineal?}\label{s.se-what}
+Eine Konstruktion mit Lineal und Zirkel ist eine Folge von drei Vorgängen:
+\begin{itemize}
+\item Finde den Schnittpunkt von zwei Linien.
+\item Finde den/die Schnittpunkt(e) einer Linie und eines Kreises.
+\item Finde den/die Schnittpunkt(e) von zwei Kreisen.
+\end{itemize}
+Die erste Operation kann nur mit einem Haarlineal durchgeführt werden.
+
+Ein Kreis ist definiert durch einen Punkt $O$, seinen \emph{Zentrum}, und durch einen \emph{Radius} $r$, ein Liniensegment der Länge $r$, dessen einer Endpunkt das Zentrum ist. Wenn wir die mit $X$ und $Y$ bezeichneten Punkte in Abb.~\ref{f.se-only-line-circle} konstruieren können, können wir behaupten, die Schnittpunkte eines bestimmten Kreises mit einer bestimmten Linie erfolgreich konstruiert zu haben. In ähnlicher Weise ist die Konstruktion von $X,Y$ in Abb.~\ref{f.se-only-two-circles} die Konstruktion der Schnittpunkte von zwei gegebenen Kreisen. Die in einem Diagramm gestrichelt gezeichneten Kreise kommen in einer Konstruktion nicht wirklich vor; sie werden nur verwendet, um die Konstruktion besser zu verstehen.
+
+Der einzelne gegebene Kreis, der in den Konstruktionen verwendet wird, der so genannte \emph{fixed circle}, kann überall in der Ebene erscheinen und einen beliebigen Radius haben.
+
+\begin{figure}[t]
+\begin{minipage}{.45\textwidth}
+\begin{tikzpicture}[scale=.8]
+\coordinate (O) at (0,0);
+\node[above right] at (O) {$O$};
+\draw[thick,dashed,name path=circle] (0,0) circle[radius=2cm];
+\draw (0,0) -- node[left] {$r$} ++(-60:2cm);
+\draw[name path=line] (-3,-.5) -- ++(20:6cm);
+\path [name intersections={of=circle and line,by={X,Y}}];
+\node[above right,xshift=-2pt,yshift=4pt] at (X) {$X$};
+\node[above left] at (Y) {$Y$};
+\vertex{O};
+%\vertex{X};
+%\vertex{Y};
+\end{tikzpicture}
+\caption{$X,Y$ sind die Schnittpunkte einer Linie und eines Kreises}\label{f.se-only-line-circle}
+\end{minipage}
+\hfill
+\begin{minipage}{.45\textwidth}
+\begin{tikzpicture}[scale=.8]
+\coordinate (O1) at (0,0);
+\coordinate (O2) at (3,0);
+\node[above right] at (O1) {$O_1$};
+\node[above right] at (O2) {$O_2$};
+\draw[thick,dashed,name path=circle1] (0,0) circle[radius=2cm];
+\draw[thick,dashed,name path=circle2] (3,0) circle[radius=1.7cm];
+\draw (0,0) -- node[left] {$r_1$} ++(-60:2cm);
+\draw (3,0) -- node[left,below] {$r_2$} ++(-20:1.7cm);
+\path [name intersections={of=circle1 and circle2,by={X,Y}}];
+\node[above,yshift=4pt] at (X) {$X$};
+\node[below,yshift=-4pt] at (Y) {$Y$};
+\vertex{O1};
+\vertex{O2};
+%\vertex{X};
+%\vertex{Y};
+\end{tikzpicture}
+\caption{$X,Y$ sind die Schnittpunkte von zwei Kreisen}\label{f.se-only-two-circles}
+\end{minipage}
+\end{figure}
+
+\section{Konstruktion einer Linie parallel zu einer gegebenen Linie}\label{s.parallel}
+
+\begin{theorem}\label{thm.straight-parallel}
+Bei einer Linie $l$, die durch zwei Punkte $A,B$ und einen nicht auf der Linie liegenden Punkt $P$ definiert ist, kann man eine Linie durch $P$ konstruieren, die parallel zu $\overline{AB}$.
+\end{theorem}
+
+\begin{proof}
+
+Der Beweis ist in zwei Fällen zu erbringen.
+
+\textit{Fall 1:}
+$\overline{AB}$ ist ein \emph{gerichtetes Liniensegment}, wenn der Mittelpunkt $M$ von $\overline{AB}$ gegeben ist.  Konstruieren Sie einen Strahl, der $\overline{AP}$ verlängert, und wählen Sie einen beliebigen Punkt $S$ auf dem Strahl jenseits von $P$. Konstruieren Sie die Linien $\overline{BP}, \overline{SM}, \overline{SB}$. Der Schnittpunkt von $\overline{BP}$ und $\overline{SM}$ wird mit $O$ bezeichnet. Konstruieren Sie einen Strahl, der $\overline{AO}$ verlängert und bezeichnen Sie mit $Q$ den Schnittpunkt des Strahls $\overline{AO}$ mit $\overline{SB}$ (Abb.~\ref{f.se-parallel-directed}).
+
+Wir behaupten, dass $\overline{PQ}\parallel \overline{AB}$ ist. 
+
+\begin{figure}[ht]
+\begin{center}
+\begin{tikzpicture}
+\draw[name path=pq] (-4,0) -- (4,0);
+\draw (-2,-2) node[below left] {$A$} coordinate (A) -- (2,-2) node[below right] {$B$} coordinate (B);
+\draw[name path=as] (A) -- ++(50:4cm) node[above] {$S$} coordinate (S);
+\draw[name path=sb] (S) -- (B);
+\path [name intersections={of=pq and as,by={P}}];
+\path [name intersections={of=pq and sb,by={Q}}];
+\node[above left] at (P) {$P$};
+\node[above right] at (Q) {$Q$};
+\draw[name path=pb] (P) -- (B);
+\draw[name path=qa] (Q) -- (A);
+\path [name intersections={of=pb and qa,by={O}}];
+\node[right,xshift=2pt] at (O) {$O$};
+\coordinate (M) at (0,-2);
+\node[below right] at (M) {$M$};
+\draw (S) -- (M);
+%\vertex{O};
+%\vertex{P};
+%\vertex{A};
+%\vertex{B};
+\end{tikzpicture}
+\end{center}
+\caption{Konstruktion einer parallelen Linie im Falle einer gerichteten Linie}\label{f.se-parallel-directed}
+\end{figure}
+Der Beweis erfolgt mit Hilfe des Ceva-Satzes.
+
+\textit{Ceva-Satzes (Thm.~\ref{a.ceva}):} Wenn sich die Liniensegmente von den Scheitelpunkten eines Dreiecks zu den gegenüberliegenden Kanten in einem Punkt $O$ schneiden (wie in Abb.~\ref{f.se-parallel-directed}), erfüllen die Längen der Segmente:
+\[
+\frac{\overline{AM}}{\overline{MB}}\cdot\frac{\overline{BQ}}{\overline{QS}}\cdot\frac{\overline{SP}}{\overline{PA}} = 1\,.
+\]
+In Abb.~\ref{f.se-parallel-directed} ist $M$ der Mittelpunkt von $\overline{AB}$, so dass $\displaystyle\frac{\overline{AM}}{\overline{MB}}=1$ und die Gleichung wird:
+\begin{align}
+\frac{\overline{BQ}}{\overline{QS}}=\frac{\overline{PA}}{\overline{SP}}=\frac{\overline{AP}}{\overline{PS}}\,,\label{eq.ceva}
+\end{align}
+da die Reihenfolge der Endpunkte eines Linienabschnitts nicht wichtig ist.
+
+Wir behaupten, dass $\triangle ABS \sim \triangle PQS$:
+\begin{eqnarray*}
+\frac{\overline{BS}}{\overline{QS}}&=&\frac{\overline{BQ}}{\overline{QS}}+\frac{\overline{QS}}{\overline{QS}} = \frac{\overline{BQ}}{\overline{QS}}+1\\
+&&\\
+\frac{\overline{AS}}{\overline{PS}} &=& \frac{\overline{AP}}{\overline{PS}} + \frac{\overline{PS}}{\overline{PS}} = \frac{\overline{AP}}{\overline{PS}} + 1\,.
+\end{eqnarray*}
+Unter Verwendung von Gl.~\ref{eq.ceva}:
+\[
+\frac{\overline{BS}}{\overline{QS}}=\frac{\overline{BQ}}{\overline{QS}}+1=\frac{\overline{AP}}{\overline{PS}}+1=\frac{\overline{AP}}{\overline{PS}}+\frac{\overline{PS}}{\overline{PS}}=\frac{\overline{AS}}{\overline{PS}}\,,
+\]
+und es folgt, dass $\triangle ABS \sim \triangle PQS$ und somit $\overline{PQ}\parallel\overline{AB}$.
+
+\textit{Fall 2:}
+$\overline{AB}$ ist nicht notwendigerweise ein gerichteter Linienabschnitt. Der feste Kreis $c$ hat den Mittelpunkt $O$ und den Radius $r$. $P$ ist der Punkt, der nicht auf der Linie liegt, durch die eine zu $l$ parallele Linie konstruiert werden muss (Abb.~\ref{f.se-parallel-other1}).
+
+Wählen Sie $M$, einen beliebigen Punkt auf $l$, und konstruieren Sie einen Strahl, der $\overline{MO}$ verlängert und den Kreis in $U,V$ schneidet.
+$\overline{UV}$ ist ein gerichteter Linienabschnitt, weil $O$, der Mittelpunkt des Kreises, den Durchmesser $\overline{UV}$ halbiert. Man wählt einen Punkt $A$ auf $l$ und konstruiert mit Hilfe der Konstruktion für eine gerichtete Strecke (Fall 1) eine Linie durch $A$ parallel zu $\overline{UV}$, die den Kreis in $X,Y$ schneidet (Abb.~\ref{f.se-parallel-other2}).
+
+\begin{figure}[t]
+\begin{minipage}{.45\textwidth}
+\begin{tikzpicture}[scale=.75]
+\coordinate (O) at (0,0);
+\node[below right] at (O) {$O$};
+\draw[name path=circle] (O) circle[radius=2cm];
+\draw[name path=l] (-4,-3) --
+  node[above, near end,xshift=24pt] {$l$} +(7,0);
+\path[name path=mo] (-2,-3) coordinate (M) -- 
+  ($(-2,-3)!1.65!(O)$);
+\node[below] at (M) {$M$};
+\path [name intersections={of=circle and mo,by={V,U}}];
+\node[below,xshift=2pt,yshift=-4pt] at (U) {$U$};
+\node[right,xshift=4pt] at (V) {$V$};
+\draw (M) -- (U) -- node[left] {$r$} (O) -- node[left] {$r$} (V);
+\node at (-1.6,1.6) {$c$};
+\coordinate (P) at (-4,1);
+\node[above left] at (P) {$P$};
+\vertex{O};
+\vertex{P};
+\end{tikzpicture}
+\caption{Konstruktion einer gerichteten Linie}\label{f.se-parallel-other1}
+\end{minipage}
+\hfill
+\begin{minipage}{.45\textwidth}
+\begin{tikzpicture}[scale=.75]
+\coordinate (O) at (0,0);
+\node[below right] at (O) {$O$};
+\draw[name path=circle] (O) circle[radius=2cm];
+\draw[name path=l] (-4,-3) --
+  node[above,near end,xshift=24pt] {$l$} +(7,0);
+\path[name path=mo] (-2,-3) coordinate (M) --
+  ($(-2,-3)!1.65!(O)$);
+\node[below] at (M) {$M$};
+\path [name intersections={of=circle and mo,by={V,U}}];
+\node[below,xshift=2pt,yshift=-4pt] at (U) {$U$};
+\node[right,xshift=4pt] at (V) {$V$};
+\draw (M) -- (V);
+\path[name path=ax] (-3,-3) coordinate (A) --
+  ($(-3,-3)!1.8!(-1,0)$);
+\node[below] at (A) {$A$};
+\path [name intersections={of=circle and ax,by={Y,X}}];
+\node[left] at (X) {$X$};
+\node[above] at (Y) {$Y$};
+\node at (-1.6,1.6) {$c$};
+\draw (A) -- (Y);
+\coordinate (P) at (-4,1);
+\node[above left] at (P) {$P$};
+\vertex{O};
+\vertex{P};
+\end{tikzpicture}
+\caption{Konstruktion einer Linie parallel zur gerichteten Linie}\label{f.se-parallel-other2}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[b]
+\begin{center}
+\begin{tikzpicture}[scale=.75]
+\coordinate (O) at (0,0);
+\node[below right] at (O) {$O$};
+\draw[name path=circle] (O) circle[radius=2cm];
+\draw[name path=l] (-5,-3) --
+  node[above,near end,xshift=40pt] {$l$} +(9,0);
+\path[name path=mo] (-2,-3) coordinate (M) -- 
+  ($(-2,-3)!1.65!(O)$);
+\node[below] at (M) {$M$};
+\path [name intersections={of=circle and mo,by={V,U}}];
+\node[below,xshift=2pt,yshift=-4pt] at (U) {$U$};
+\node[above right] at (V) {$V$};
+\draw (M) -- (V);
+\path[name path=ax] (-3,-3) coordinate (A) -- 
+  ($(-3,-3)!1.8!(-1,0)$);
+\node[below] at (A) {$A$};
+\path [name intersections={of=circle and ax,by={Y,X}}];
+\node[left] at (X) {$X$};
+\node[above] at (Y) {$Y$};
+\node at (-1.6,1.6) {$c$};
+\draw (A) -- (Y);
+\coordinate (P) at (-4,1);
+\node[above] at (P) {$P$};
+\path[name path=xo] (X) -- ($(X)!2.2!(O)$);
+\path[name intersections={of=circle and xo,by={Xp}}];
+\node[above right] at (Xp) {$X'$};
+\draw (X) -- (Xp);
+\path[name path=yo] (Y) -- ($(Y)!2.2!(O)$);
+\path[name intersections={of=circle and yo,by={y,Yp}}];
+\node[below right] at (Yp) {$Y'$};
+\draw (Y) -- (Yp);
+\path[name path=xy] (Xp) -- ($(Xp)!1.6!(Yp)$);
+\path[name intersections={of=l and xy,by={B}}];
+\node[below] at (B) {$B$};
+\draw (Xp) -- (B);
+\draw[thick,dotted,name path=z] (-5,0) -- 
+  (4,0) node[above,near end,xshift=40pt] {$l'$};
+\draw[thick,dashed] (-5,1) -- +(9,0);
+\path[name intersections={of=ax and z,by={Z}}];
+\path[name intersections={of=xy and z,by={Zp}}];
+\node[above left] at (Z) {$Z$};
+\node[below right] at (Zp) {$Z'$};
+\vertex{O};
+\vertex{P};
+\end{tikzpicture}
+\end{center}
+\caption{Der Beweis, dass $l'$ parallel ist zu $l$}\label{f.se-parallel-other3}
+\end{figure}
+
+Konstruieren Sie einen Durchmesser von $X$ durch $O$, der die andere Seite des Kreises in $X'$ schneidet, und konstruieren Sie in gleicher Weise den Durchmesser $\overline{YY'}$. Konstruieren Sie den Strahl von $X'$ durch $Y'$ und bezeichnen Sie mit $B$ seinen Schnittpunkt mit $l$. Wir behaupten, dass $M$ die Winkelhalbierende von $\overline{AB}$ ist, so dass $\overline{AB}$ ein gerichteter Linienabschnitt ist und daher eine Linie durch $P$ parallel zu $l$ konstruiert werden kann (Abb.~\ref{f.se-parallel-other3}).
+
+$\overline{OX}, \overline{OX'}, \overline{OY}, \overline{OY'}$ sind alle Radien des Kreises und $\angle XOY = \angle X'OY'$, da sie vertikale Winkel sind, also $\triangle XOY\cong\triangle X'OY'$ durch side-angle-side. Definieren, nicht konstruieren, denn wir befinden uns mitten im Beweis, dass eine solche Linie konstruiert werden kann. $l'$ sei eine Linie durch $O$ parallel zu $l$, die $\overline{XY}$ in $Z$ und $\overline{X'Y'}$ in $Z'$ schneidet. $\angle XOZ=\angle X'OZ'$ sind vertikale Winkel, $\angle ZXO=\angle Z'X'O$ sind abwechselnde Innenwinkel und $\overline{XO}=\overline{XO'}$ sind Radien, so dass $\triangle XOZ\cong\triangle X'OZ'$ durch Winkel-Seiten-Winkel und $\overline{ZO}=\overline{OZ'}$. Daher sind $\overline{AMOZ}$ und $\overline{BMOZ'}$ Parallelogramme und $\overline{AM}=\overline{ZO}=\overline{OZ'}=\overline{MB}$.
+\end{proof}
+
+\begin{theorem}
+Gegeben ein Liniensegment $\overline{AB}$ und einen Punkt $P$, der nicht auf der Linie liegt, ist es möglich, ein Liniensegment $\overline{PQ}$ zu konstruieren, das parallel zu $\overline{AB}$ ist und dessen Länge gleich der Länge von $\overline{AB}$ ist, d.h. es ist möglich, $\overline{AB}$ parallel zu sich selbst zu kopieren mit $P$ als einem seiner Endpunkte.
+\end{theorem}
+
+\begin{proof}
+Wir haben bewiesen, dass es möglich ist, eine Linie $m$ durch $P$ parallel zu $\overline{AB}$ und eine Linie $n$ durch $B$ parallel zu $\overline{AP}$ zu konstruieren. Das Viereck $\overline{ABQP}$ ist ein Parallelogramm, so dass die gegenüberliegenden Seiten gleich sind $\overline{AB}=\overline{PQ}$ (Abb.~\ref{f.se-parallel-other4}).
+\end{proof}
+
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=.5]
+\coordinate (P) at (0,0);
+\coordinate (Q) at (3,0);
+\coordinate (A) at (-2,2.5);
+\coordinate (B) at (1,2.5);
+\draw ($(P)!-.6!(Q)$) -- node[above,near end,xshift=36pt,yshift=-5pt] {$m$} ($(P)!1.8!(Q)$);
+\node[below] at (P) {$P$};
+\node[below left] at (Q) {$Q$};
+\draw ($(A)!-.6!(B)$) -- node[above,near end,xshift=40pt,yshift=-5pt] {$l$} ($(A)!2.5!(B)$);
+\node[above left] at (A) {$A$};
+\node[above right] at (B) {$B$};
+\draw (A) -- (P);
+\draw ($(B)!-.3!(Q)$) -- node[above,near end,xshift=18pt,yshift=-18pt] {$n$} ($(B)!1.4!(Q)$);
+\end{tikzpicture}
+\end{center}
+\caption{Construction of  a copy of a line parallel to an existing line}\label{f.se-parallel-other4}
+\end{figure}
+
+\section{Konstruktion einer Senkrechten zu einer gegebenen Linie}\label{s.perp}
+
+\begin{theorem}\label{thm.straight-perp}
+Bei einem Linienabschnitt $l$ und einem Punkt $P$, der nicht auf $l$ liegt, kann man eine Senkrechte zu $l$ durch $P$ konstruieren.
+\end{theorem}
+
+\begin{proof}
+Nach Thm.~\ref{thm.straight-parallel} konstruiere eine zu $l$ parallele Linie $l'$, die den festen Kreis in $U,V$ schneidet. Konstruieren Sie den Durchmesser $\overline{UOU'}$ und die Sehne $\overline{VU'}$ (Abb.~\ref{f.se-perp}). $\angle UVU'$ ist ein rechter Winkel, weil er von einem Durchmesser begrenzt wird. Daher steht $\overline{VU'}$ senkrecht auf $\overline{UV}$ und $l$. Wiederum nach Thm.~\ref{thm.straight-parallel} konstruiert man die Parallele zu $\overline{VU'}$ durch $P$.
+\end{proof}
+
+\begin{figure}[htb]
+\begin{center}
+\begin{tikzpicture}[scale=.7]
+\coordinate (O) at (0,0);
+\coordinate (P) at (3.5,.6);
+\draw[name path=circle] (O) circle[radius=2cm];
+\draw[name path=l] (-4,-3) -- node[above,near end,xshift=45pt] {$l$} ++(9,0);
+\draw[name path=lp] (-3,-1) -- node[above,near end,xshift=40pt] {$l'$} ++(8,0);
+\node[above left] at (O) {$O$};
+\node[right] at (P) {$P$};
+\path[name intersections={of=circle and lp,by={U,V}}];
+\node[below left] at (U) {$U$};
+\node[below right] at (V) {$V$};
+\path[name path=d] (U) -- ($(U)!2.3!(O)$);
+\path[name intersections={of=circle and d,by={Up}}];
+\draw (U) -- (Up);
+\node[above right] at (Up) {$U'$};
+\draw (Up) -- (V);
+\path[name path=p] (P) -- ++(0,-4);
+\path[name intersections={of=p and l,by={X}}];
+\draw (X) rectangle +(9pt,9pt);
+\draw[rotate=90] (V) rectangle +(9pt,9pt);
+\vertex{O};
+\vertex{P};
+\draw (P) -- ++(0,1);
+\draw (P) -- (X);
+\end{tikzpicture}
+\end{center}
+\caption{Konstruktion einer senkrechten Linie}\label{f.se-perp}
+\end{figure}
+
+\section{Kopieren eines Liniensegments in eine bestimmte Richtung}\label{s.copy}
+
+\begin{theorem}\label{thm.straight-direction}
+Es ist möglich, eine Kopie eines bestimmten Linienabschnitts in Richtung einer anderen Linie zu konstruieren.
+\end{theorem}
+
+Die Bedeutung von ``Richtung'' ist, dass die durch zwei Punkte $A',H'$ definierte Linie einen Winkel $\theta$ relativ zu einer Achse einnimmt, und das Ziel ist, $\overline{AS}=\overline{PQ}$ so zu konstruieren, dass $\overline{AS}$ denselben Winkel $\theta$ relativ zu dieser Achse einnimmt (Abb.~\ref{f.se-copy1}).
+
+\begin{proof}
+Durch Thm.~\ref{thm.straight-parallel} ist es möglich, ein Liniensegment $\overline{AH}$ so zu konstruieren, dass $\overline{AH}\parallel\overline{A'H'}$, und ein Liniensegment $\overline{AK}$ so zu konstruieren, dass $\overline{AK}\parallel\overline{PQ}$.
+$\angle HAK=\theta$, so dass es bleibt, einen Punkt $S$ auf $\overline{AH}$ zu finden, so dass $\overline{AS}=\overline{PQ}$.
+
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=.7]
+\coordinate (A) at (0,0);
+\coordinate (P) at (3cm,2);
+\coordinate (Q) at (4.5cm,2);
+\draw (P) -- (Q);
+\node[left] at (P) {$P$};
+\node[right] at (Q) {$Q$};
+\coordinate (A1) at (-3,1);
+\draw (A1) -- ++(60:3cm) coordinate (H1);
+\draw (A1) -- ++(0:2cm);
+\node[left] at (A1) {$A'$};
+\node[left] at (H1) {$H'$};
+\draw (A) -- ++(60:1.5cm) coordinate (S);
+\node[left] at (S) {$S$};
+\draw (A) -- ++(1.5,0);
+\node[left] at (A) {$A$};
+\node[above right,xshift=4pt] at (A1) {$\theta$};
+\node[above right,xshift=4pt] at (A) {$\theta$};
+\draw (A) -- ++(60:3cm) coordinate (H);
+\node[left] at (H) {$H$};
+\draw (A) -- ++(1.5,0) coordinate (K);
+\node[right] at (K) {$K$};
+\vertex{P};
+\vertex{Q};
+\vertex{A};
+\vertex{S};
+\end{tikzpicture}
+\end{center}
+\caption{Kopieren eines Liniensegments in eine bestimmte Richtung}\label{f.se-copy1}
+\end{figure}
+
+Konstruieren Sie zwei zu $\overline{AH}, \overline{AK}$ parallele Radien $\overline{OU}, \overline{OV}$ des Festkreises und konstruieren Sie einen Strahl durch $K$ parallel zu $\overline{UV}$. Bezeichnen Sie seinen Schnittpunkt mit $\overline{AH}$ mit $S$ (Abb.~\ref{f.se-copy3}). Durch Konstruktion sind $\overline{AH}\parallel\overline{OU}$ und $\overline{AK}\parallel\overline{OV}$, also $\angle SAK=\angle HAK=\angle UOV=\theta$. $\overline{SK}\parallel\overline{UV}$ und $\triangle SAK\sim\triangle UOV$ durch Winkel-Winkel-Winkel, $\triangle UOV$ ist gleichschenklig, weil $\overline{OU}, \overline{OV}$ Radien des gleichen Kreises sind. Daher ist $\triangle SAK$ gleichschenklig und $\overline{AS}=\overline{AK}=\overline{PQ}$.
+\end{proof}
+
+\begin{figure}[b]
+\begin{center}
+\begin{tikzpicture}[scale=.7]
+\coordinate (A) at (0,0);
+\coordinate (P) at (3cm,2);
+\coordinate (Q) at (4.5cm,2);
+\draw (P) -- (Q);
+\node[left] at (P) {$P$};
+\node[right] at (Q) {$Q$};
+\coordinate (A1) at (-3,1);
+\draw (A1) -- ++(60:3cm) coordinate (H1);
+\node[left] at (A1) {$A'$};
+\node[left] at (H1) {$H'$};
+\node[left] at (A) {$A$};
+\draw (A) -- ++(60:3cm) coordinate (H);
+\node[left] at (H) {$H$};
+\draw (A) -- ++(1.5,0) coordinate (K);
+\node[right] at (K) {$K$};
+\draw (A) -- (K);
+\path (A) -- ++(60:1.5cm) coordinate (S);
+\node[right] at (S) {$S$};
+\draw (K) -- ($(K)!1.8!(S)$);
+\node[above right,xshift=4pt] at (A) {$\theta$};
+\node[above right,xshift=4pt] at (A1) {$\theta$};
+\draw (A1) -- ++(1.5,0);
+\vertex{P};
+\vertex{Q};
+\begin{scope}[xshift=3cm]
+\coordinate (O) at (6,1);
+\draw[name path=circle] (O) circle[radius=2.5cm];
+\node[above left] at (O) {$O$};
+\path[name path=u] (O) -- ++(60:2.5cm);
+\path[name path=v] (O) -- ++(2.5,0);
+\path[name intersections={of=circle and u,by={U}}];
+\path[name intersections={of=circle and v,by={V}}];
+\node[above right] at (U) {$U$};
+\node[right] at (V) {$V$};
+\draw (O) -- (U) -- (V) -- cycle;
+\node[above right,xshift=4pt] at (O) {$\theta$};
+\vertex{O};
+\end{scope}
+\end{tikzpicture}
+\end{center}
+\caption{Verwenden des festen Kreises zum Kopieren des Liniensegments}\label{f.se-copy3}
+\end{figure}
+
+\section{Konstruktion eines Liniensegments als Verhältnis von Segmenten}\label{s.relative}
+
+\begin{theorem}\label{thm.straight-relative}
+Bei Liniensegmenten der Länge $n, m, s$ kann man ein Liniensegment der Länge konstruieren:
+\[x=\displaystyle\frac{n}{m}s\,.\]
+\end{theorem}
+
+\begin{proof}
+Man wähle Punkte $A,B,C$, die nicht auf derselben Geraden liegen, und konstruiere Strahlen $\overline{AB}, \overline{AC}$. Durch Thm.~\ref{thm.straight-direction} ist es möglich, Punkte $M,N,S$ so zu konstruieren, dass $\overline{AM}= m$, $\overline{AN} =n$, $\overline{AS}=s$. Nach Thm.~\ref{thm.straight-parallel} konstruiere eine Linie durch $N$ parallel zu $\overline{MS}$, die $\overline{AC}$ in $X$ schneidet und beschrifte $\overline{AX}$ mit $x$ (Abb.~\ref{f.se-three2}). $\triangle MAS\sim\triangle NAX$ by angle-angle-angle so $\displaystyle\frac{m}{n}=\displaystyle\frac{s}{x}$ und $x=\displaystyle\frac{n}{m}s$.
+\end{proof}
+
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=.8]
+\coordinate (A) at (0,0);
+\draw[name path=ac] (A) node[left] {$A$} -- ++(7,0) node[right] {$C$};
+\draw (A) -- ++(40:5cm) node[right] {$B$};
+\path (A) -- node[above,xshift=-2pt] {$m$} ++(40:3cm) coordinate (M) node[above left] {$M$};
+\path (A) -- ++(40:4cm) coordinate (N) node[above left] {$N$};
+\path[name path=ms] (M) -- ++(-50:3.5cm);
+\path[name path=nx] (N) -- ++(-50:4cm);
+\path[name intersections={of=ac and ms,by={S}}];
+\path[name intersections={of=ac and nx,by={X}}];
+\node[below] at (S) {$S$};
+\node[below] at (X) {$X$};
+\path (A) -- node[below] {$s$} (S);
+\draw (S) -- (M);
+\draw (X) -- (N);
+\draw[<->] ($(A)+(0,-.8)$) -- node[fill=white] {$x$} ($(X)+(0,-.8)$);
+\draw[<->] ($(A)+(-.6,.8)$) -- node[fill=white] {$n$} ++(40:3.9cm);
+\end{tikzpicture}
+\end{center}
+\caption{Ähnliche Dreiecke zur Konstruktion des Längenverhältnisses}\label{f.se-three2}
+\end{figure}
+
+\section{Konstruktion einer Quadratwurzel}\label{s.root}
+
+\begin{theorem}\label{thm.straight-sqrt}
+Aus Liniensegmenten der Länge $a,b$ lässt sich ein Liniensegment der Länge $\sqrt{ab}$ konstruieren.
+\end{theorem}
+
+\begin{proof}
+Wir wollen $x=\sqrt{ab}$ als $x=\displaystyle\frac{n}{m}s$ ausdrücken, um Thm.~\ref{thm.straight-relative} zu verwenden.
+\begin{itemize}
+\item Für $n$ verwenden wir $d$, den Durchmesser des festen Kreises.
+\item Für $m$ verwenden wir $t=a+b$, das durch Thm.~\ref{thm.straight-direction} aus $a,b$ konstruiert werden kann.
+\item Wir definieren $s=\sqrt{hk}$, wobei $h,k$ als Ausdrücke auf den Längen $a,b,t,d$ definiert sind.
+\end{itemize}
+Definiere $h=\displaystyle\frac{d}{t}a$ und $k=\displaystyle\frac{d}{t}b$ und berechne dann:
+\begin{eqnarray*}
+x&=&\sqrt{ab}=\sqrt{\frac{th}{d}\frac{tk}{d}}=\sqrt{\left(\frac{t}{d}\right)^2hk}=\frac{t}{d}\sqrt{hk}=\frac{t}{d}s\\
+h+k &=& \frac{d}{t}a + \frac{d}{t}b = \frac{d(a+b)}{t} = \frac{dt}{t} = d\,.
+\end{eqnarray*}
+
+Nach Thm.~\ref{thm.straight-direction} konstruiere $\overline{HA}= h$ auf einem Durchmesser $\overline{HK}$ des Festkreises. Aus $h+k=d$ ergibt sich $\overline{AK}=k$ (Abb.~\ref{f.se-sqrt}). Nach Thm.~\ref{thm.straight-perp} konstruieren wir eine Senkrechte zu $\overline{HK}$ bei $A$ und bezeichnen den Schnittpunkt dieser Linie mit dem Kreis mit $S$. $\overline{OS}=\overline{OK}=d/2$ und $\overline{OA}=(d/2)-k$. 
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=.7]
+\coordinate (O) at (0,0);
+\coordinate (H) at (-3,0);
+\coordinate (K) at (3,0);
+\node at (-2.4,2.4) {$c$};
+\draw (H) -- (K);
+\draw[name path=circle] (O) circle[radius=3cm];
+\node[below] at (O) {$O$};
+\node[left] at (H) {$H$};
+\node[right] at (K) {$K$};
+\path[name path=as] (1,0) coordinate (A) -- ++(0,3.2);
+\node[below] at (A) {$A$};
+\path[name intersections={of=circle and as,by={S}}];
+\node[above] at (S) {$S$};
+\draw (A) -- node[right] {$s$} (S);
+\path (H) -- node[above] {$h$} (A);
+\path (A) -- node[above] {$k$} (K);
+\draw (O) -- node[left,xshift=-2pt] {$\displaystyle\frac{d}{2}$} (S);
+\node at (.5,-1.5) {$\displaystyle\frac{d}{2}-k$};
+\draw[->] (.5, -1.2) -- ++(0,1);
+\draw[rotate=90] (A) rectangle +(8pt,8pt);
+\vertex{O};
+\end{tikzpicture}
+\end{center}
+\caption{Konstruktion einer Quadratwurzel}\label{f.se-sqrt}
+\end{figure}
+
+Durch den Satz des Pythagoras:
+\begin{eqnarray*}
+s^2&=& \left(\frac{d}{2}\right)^2 - \left(\frac{d}{2}-k\right)^2\\
+&=& \left(\frac{d}{2}\right)^2 - \left(\frac{d}{2}\right)^2 + 2\frac{dk}{2} - k^2\\
+&=& k(d-k) = kh\\
+s&=&\sqrt{hk}\,.
+\end{eqnarray*}
+Nun kann $x=\displaystyle\frac{t}{d}s$ durch Thm.~\ref{thm.straight-relative} konstruiert werden.
+\end{proof}
+
+\section{Konstruktion des Schnittpunkts einer Linie und eines Kreises}\label{s.line-circle-straight}
+
+\begin{theorem}
+Ausgehend von einer Linie $l$ und einem Kreis $c(O,r)$ kann man ihre Schnittpunkte konstruieren (Abb.~\ref{f.se-line-circle1}).
+\end{theorem}
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=.7]
+\coordinate (O) at (0,0);
+\node[below right] at (O) {$O$};
+\vertex{O};
+\draw[thick,dashed,name path=circle] (O) circle[radius=3cm];
+\draw (O) -- node[above] {$r$} ++(-130:3cm) coordinate (R);
+\draw[name path=l] (O) ++(170:4cm) --
+  node[below, near end,xshift=30pt,yshift=10pt] {$l$} ++(20:8cm);
+\path[name intersections={of=circle and l,by={Y,X}}];
+\node[above left] at (X) {$X$};
+\node[above right] at (Y) {$Y$};
+\end{tikzpicture}
+\end{center}
+\caption{Konstruktion der Schnittpunkte einer Linie und eines Kreises (1)}\label{f.se-line-circle1}
+\end{figure}
+
+\begin{proof}
+Nach Thm.~\ref{thm.straight-perp} ist es möglich, eine Senkrechte vom Mittelpunkt des Kreises $O$ zur Linie $l$ zu konstruieren. Der Schnittpunkt von $l$ mit der Senkrechten wird mit $M$ bezeichnet. $\overline{OM}$ halbiert die Sehne $\overline{XY}$, wobei $X, Y$ die Schnittpunkte der Linie mit dem Kreis sind (Abb.~\ref{f.se-line-circle2}). Definieren Sie $\overline{XY}=2s$ und $\overline{OM}=t$. Man beachte, dass $s,X,Y$ nur Definitionen sind und nicht konstruiert wurden.
+\begin{figure}[b]
+\begin{center}
+\begin{tikzpicture}[scale=.7]
+\coordinate (O) at (0,0);
+\draw[thick,dashed,name path=circle] (O) circle[radius=3cm];
+\node[below right] at (O) {$O$};
+\vertex{O};
+\path (O) --  ++(-130:3cm) coordinate (R);
+\node[below left,yshift=2pt,xshift=2pt] at (R) {$R$};
+\draw[name path=l] (O) ++(170:4cm) --
+  node[below, near end,xshift=30pt,yshift=10pt] {$l$} ++(20:8cm);
+\path[name intersections={of=circle and l,by={Y,X}}];
+\node[above left] at (X) {$X$};
+\node[above right] at (Y) {$Y$};
+\draw (O) -- node[below] {$r$} (X);
+\path (X) -- ($(X)!.5!(Y)$) coordinate (M);
+\node[above] at (M) {$M$};
+\draw (O) -- node[right] {$t$} (M);
+\path (X) -- node[above] {$s$} (M);
+\path (M) -- node[above] {$s$} (Y);
+\draw (O) ++(170:4cm) -- ++(20:3.1cm) -- ++(-70:10pt) -- ++(20:10pt);
+\draw (O) -- node[below] {$t$} +(50:2) coordinate (RTT);
+\draw (O) -- node[below] {$t$} +(-130:2) coordinate (RT);
+\vertex{RT};
+\draw (RT) -- node[right,yshift=-2pt] {$r-t$} ($(RT)+(-130:1cm)$);
+\vertex{RTT};
+\draw[<->] ($(RT)+(.5cm,-1.6cm)$) -- node[fill=white] {$r+t$}+(50:5);
+\end{tikzpicture}
+\end{center}
+\caption{Konstruktion der Schnittpunkte einer Linie und eines Kreises (2)}\label{f.se-line-circle2}
+\end{figure}
+
+Nach dem Satz des Pythagoras $s^2=r^2-t^2=(r+t)(r-t)$. Nach Thm.~\ref{thm.straight-direction} ist es möglich, aus $O$ in den beiden Richtungen $\overline{OR}$ und $\overline{RO}$ Linienabschnitte der Länge $t$ zu konstruieren. Das Ergebnis sind zwei Linienabschnitte der Länge $r+t,r-t$.
+
+Durch Thm.~\ref{thm.straight-sqrt} lässt sich ein Liniensegment der Länge $s=\sqrt{(r+t)(r-t)}$ konstruieren, und durch Thm.~\ref{thm.straight-direction} lassen sich Liniensegmente der Länge $s$ von $M$ entlang $l$ in beide Richtungen konstruieren. Ihre anderen Endpunkte sind die Schnittpunkte von $l$ und $c$.
+\end{proof}
+
+\section{Konstruktion des Schnittpunkts von zwei Kreisen}\label{s.two-circles}
+
+\begin{theorem}
+Bei zwei Kreisen $c(O_1,r_1), c(O_2,r_2)$ ist es möglich, deren Schnittpunkte zu konstruieren.
+\end{theorem}
+
+\begin{proof}
+Konstruiere $\overline{O_1O_2}$ und beschrifte ihre Länge $t$ (Abb.~\ref{f.se-circle-circle1}).
+Beschrifte mit $A$ den Schnittpunkt von $\overline{O_1O_2}$ und $\overline{XY}$, und beschrifte $q=\overline{O_1A}$, $x=\overline{XA}$ (Fig.~\ref{f.se-circle-circle2}). $A$ ist noch nicht konstruiert, aber wenn $q,x$ konstruiert sind, dann kann durch Thm.~\ref{thm.straight-direction} der Punkt $A$ der Länge $q$ von $O_1$ in der Richtung $\overline{O_1O_2}$ konstruiert werden.
+
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+\coordinate (O1) at (0,0);
+\coordinate (O2) at (2.5,0);
+\node[below left] at (O1) {$O_1$};
+\node[below right] at (O2) {$O_2$};
+\vertex{O1};
+\vertex{O2};
+\draw[thick,dashed,name path=circle1] (O1) circle[radius=2cm];
+\draw[thick,dashed,name path=circle2] (O2) circle[radius=1.6cm];
+\path [name intersections={of=circle1 and circle2,by={X,Y}}];
+\node[above,yshift=4pt] at (X) {$X$};
+\node[below,yshift=-4pt] at (Y) {$Y$};
+\draw (O1) -- node[above] {$r_1$} ++(160:2cm);
+\draw (O2) -- node[above] {$r_2$} ++(30:1.6cm);
+\draw (O1) -- (O2);
+\node at (-1.7,1.6) {$c_1$};
+\node at (3.8,1.4) {$c_2$};
+\draw[<->] (0,-.6) -- node[fill=white] {$t$} +(2.5,0);
+\end{tikzpicture}
+\end{center}
+\caption{Konstruktion des Schnittpunkts zweier Kreise (1)}\label{f.se-circle-circle1}
+\end{figure}
+
+\begin{figure}[b]
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+\coordinate (O1) at (0,0);
+\coordinate (O2) at (2.5,0);
+\vertex{O1};
+\vertex{O2};
+\node[below left] at (O1) {$O_1$};
+\node[below right] at (O2) {$O_2$};
+\draw[thick,dashed,name path=circle1] (O1) circle[radius=2cm];
+\draw[thick,dashed,name path=circle2] (O2) circle[radius=1.6cm];
+\path [name intersections={of=circle1 and circle2,by={X,Y}}];
+\node[above,yshift=4pt] at (X) {$X$};
+\node[below,yshift=-4pt] at (Y) {$Y$};
+\draw (O1) -- node[above,xshift=-4pt] {$r_1$} (X);
+\draw (O2) -- node[above,xshift=4pt] {$r_2$} (X);
+\draw[name path=oo] (O1) -- (O2);
+\node at (-1.7,1.6) {$c_1$};
+\node at (3.8,1.4) {$c_2$};
+\draw[name path=xy] (X) -- (Y);
+\path[name intersections={of=xy and oo,by={A}}];
+\node[below left] at (A) {$A$};
+\draw (A) rectangle +(6pt,6pt);
+\path (O1) -- node[below,xshift=-2pt] {$q$} (A);
+\path (X) -- node[left,yshift=-2pt] {$x$} (A);
+\draw[<->] (0,-.6) -- node[fill=white] {$t$} +(2.5,0);
+\end{tikzpicture}
+\end{center}
+\caption{Konstruktion des Schnittpunkts von zwei Kreisen (2)}\label{f.se-circle-circle2}
+\end{figure}
+
+Ist $A$ konstruiert, so lässt sich durch Thm.~\ref{thm.straight-perp} eine Senkrechte auf $\overline{O_1O_2}$ bei $A$ konstruieren, und durch Thm.~\ref{thm.straight-direction} kann man von $A$ aus in beiden Richtungen entlang der Senkrechten Linienabschnitte der Länge $x$ konstruieren. Ihre anderen Endpunkte sind die Schnittpunkte der Kreise.
+
+\noindent\textbf{Konstruktion der Länge $q$:} Definiere $d=\sqrt{r_1^2+t^2}$, die Hypotenuse eines rechtwinkligen Dreiecks, das aus den bekannten Längen $r_1,t$ konstruiert werden kann. Man beachte, dass $\triangle O_1XO_2$ nicht notwendigerweise ein rechtwinkliges Dreieck ist; das rechtwinklige Dreieck kann überall in der Ebene konstruiert werden. Im rechtwinkligen Dreieck $\triangle XAO_1$ ist $\cos\angle XO_1A=q/r_1$. Nach dem Kosinussatz \index{Kosinussatz} für $\triangle XO_1O_2$:
+\begin{eqnarray*}
+r_2^2 &=& t^2 + r_1^2 - 2r_1t\cos\angle XO_1O_2\\
+&=& t^2 + r_1^2 - 2tq\\
+2tq &=& (t^2+r_1^2) - r_2^2=d^2-r_2^2\\
+q&=&\frac{(d+r_2)(d-r_2)}{2t}\,.
+\end{eqnarray*}
+Durch Thm.~\ref{thm.straight-direction} können diese Längen konstruiert werden und durch Thm.~\ref{thm.straight-relative} kann $q$ aus $d+r_2,d-r_2,2t$ konstruiert werden.
+
+\medskip
+
+\noindent\textbf{Konstruktion der Länge $x$:} Durch den Satz des Pythagoras:
+\[
+x=\sqrt{r_1^2-q^2}=\sqrt{(r_1+q)(r_1-q)}\,.
+\]
+Durch Thm.~\ref{thm.straight-direction} kann $h =r_1+ q,k= r_1 - q$ konstruiert werden, ebenso $x=\sqrt{hk}$ durch Thm.~\ref{thm.straight-sqrt}.
+\end{proof}
+
+\subsection*{Was ist die Überraschung?}
+
+Ein Zirkel ist notwendig, weil ein Lineal nur die Wurzeln von linearen Gleichungen berechnen kann, nicht aber Werte wie $\sqrt{2}$, die Hypotenuse eines rechtwinkligen Dreiecks mit der Seitenlänge $1$. Es ist jedoch erstaunlich, dass das Vorhandensein eines einzigen Kreises, unabhängig von der Lage seines Mittelpunkts und der Länge seines Radius, ausreicht, um jede Konstruktion durchzuführen, die mit Lineal und Zirkel möglich ist.
+
+\subsection*{Quellen}
+
+Dieses Kapitel basiert auf dem Problem $34$ von \cite{dorrie1}, das von Michael Woltermann überarbeitet wurde. \cite{dorrie2}.

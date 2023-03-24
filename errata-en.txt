@@ -24,7 +24,11 @@ p. 81 caption of Fig. 7.5 should be:
 
 p. 86 line -7: r_2=c/b -> r_2\approx -c/b
 
+p. 121 line 4-5: should be: "such that the distance from p_i to l_f is equal to the distance from its reflection p_i' from from l_f"
+
 p. 137 line 6: is construct at -> is constructed at
+
+p. 161 line -6: $MYM'$ should be $\triangle MYM'$
 
 p. 168 line 6-7: AK must be equal to PQ so use Theorem 14.2.
 

@@ -1,0 +1,518 @@
+% !TeX root = surprises.tex
+
+\chapter{Induction}\label{c.induction}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Das Axiom der mathematischen Induktion wird in der Mathematik häufig als Beweismethode verwendet. In diesem Kapitel werden induktive Beweise von Ergebnissen vorgestellt, die dem Leser vielleicht nicht bekannt sind. Wir beginnen mit einem kurzen Überblick über die mathematische Induktion (Abschnitt ~\ref{s.induction-axiom}). Abschnitt~\ref{s.induction-fibonacci} beweist Ergebnisse über die bekannten Fibonacci-Zahlen, während Sect.~\ref{s.induction-fermat} Ergebnisse über Fermat-Zahlen beweist. Abschnitt~\ref{s.induction-mccarthy} stellt die von John McCarthy entdeckte $91$-Funktion vor; der Beweis erfolgt durch Induktion auf eine ungewöhnliche Folge: ganze Zahlen in einer umgekehrten Reihenfolge. Der Beweis der Formel für das Josephus-Problem (Sect.~\ref{s.josephus}) ist wegen der doppelten Induktion auf zwei verschiedene Teile eines Ausdrucks ebenfalls ungewöhnlich.
+
+\section{Das Axiom der mathematischen Induktion}\label{s.induction-axiom}
+\index{Mathematische Induktion}
+
+Die mathematische Induktion ist die wichtigste Methode, um zu beweisen, dass Aussagen für eine unbeschränkte Menge von Zahlen wahr sind. Betrachten Sie:
+\[
+1=1,\quad 1+2=3,\quad 1+2+3=6,\quad 1+2+3+4=10.
+\]
+Wir könnten feststellen, dass:
+\[
+1=(1\cdot 2)/2,\quad 3=(2\cdot 3)/2,\quad 6=(3\cdot 4)/2,\quad 10=(4\cdot 5)/2,
+\]
+und vermuten dann, dass für \emph{all} ganze Zahlen $n\geq 1$:
+\[
+\sum_{i=1}^n i = \frac{n(n+1)}{2}\,.
+\]
+Wenn man genug Geduld hat, ist es einfach, diese Formel für einen bestimmten Wert von $n$ zu überprüfen, aber wie kann man sie für \emph{all} der unendlichen Anzahl von positiven ganzen Zahlen beweisen? An dieser Stelle kommt die mathematische Induktion ins Spiel.
+
+\begin{axiom}
+Sei $P(n)$ eine Eigenschaft (wie eine Gleichung, eine Formel oder ein Theorem), wobei $n$ eine positive ganze Zahl ist. Nehmen Sie an, dass Sie das können:
+\begin{itemize}
+\item \emph{Basisfall}: Beweisen Sie, dass $P(1)$ wahr ist.
+\item \emph{Induktiver Schritt}: Beweisen Sie für beliebige $m$, dass $P(m+1)$ wahr ist, sofern Sie annehmen, dass $P(m)$ wahr ist.
+\end{itemize}
+Dann ist $P(n)$ wahr für alle $n\geq 1$.
+Die Annahme, dass $P(m)$ für beliebige $m$ wahr ist, nennt man die \emph{induktive Hypothese}.
+\end{axiom}
+Hier ist ein einfaches Beispiel für einen Beweis durch mathematische Induktion.
+\begin{theorem}\label{t.sum}
+Für $n\geq 1$:
+\[
+\sum_{i=1}^n i = \frac{n(n+1)}{2}\,.
+\]
+\end{theorem}
+
+\begin{proof} Der Basisfall ist trivial:
+\[
+\sum_{i=1}^1 i = 1 =\frac{1(1+1)}{2}\,.
+\]
+Die Induktionshypothese lautet, dass die folgende Gleichung für $m$ wahr ist:
+\[
+\sum_{i=1}^{m} i = \frac{m(m+1)}{2}\,.
+\]
+Der induktive Schritt besteht darin, die Gleichung für $m+1$ zu beweisen:
+\begin{eqnarray*}
+\sum_{i=1}^{m+1} i &=& \sum_{i=1}^m i + (m+1)\label{l.sum1}\\
+&=&\frac{m(m+1)}{2} + (m+1)\label{l.sum2}
+%&=&\frac{m(m+1) + 2(m+1)}{2}\label{l.sum3}\\
+=\frac{(m+1)(m+2)}{2}\,.\label{l.sum4}
+\end{eqnarray*}
+Nach dem Prinzip der mathematischen Induktion, für jedes $n\geq 1$:
+\[
+\sum_{i=1}^n i = \frac{n(n+1)}{2}\,.
+\]
+\end{proof}
+
+Die induktive Hypothese kann verwirrend sein, weil es scheint, dass wir das, was wir zu beweisen versuchen, annehmen. Die Argumentation ist nicht zirkulär, weil wir die Wahrheit einer Eigenschaft für etwas Kleines annehmen und dann die Annahme verwenden, um die Eigenschaft für etwas Größeres zu beweisen.
+
+Da die mathematische Induktion ein Axiom ist, kann es nicht darum gehen, die Induktion zu beweisen. Man muss die Induktion einfach akzeptieren, wie man auch andere Axiome der Mathematik akzeptiert, z. B. $x+0=x$. Es steht Ihnen natürlich frei, die mathematische Induktion abzulehnen, aber dann müssten Sie auch einen Großteil der modernen Mathematik ablehnen.
+\begin{advanced}
+Die mathematische Induktion ist eine Schlussregel, die zu den \emph{Peano-Axiomen}\index{Peano-Axiomen} zur Formalisierung der natürlichen Zahlen gehört. Das \emph{Wohlordnungsaxiom} kann verwendet werden, um das Induktionsaxiom zu beweisen, und umgekehrt kann das Induktionsaxiom verwendet werden, um das Wohlordnungsaxiom zu beweisen. Das Induktionsaxiom kann jedoch nicht aus den anderen, elementareren Peano-Axiomen bewiesen werden.
+\end{advanced}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Fibonacci-Zahlen}\label{s.induction-fibonacci}
+\index{Fibonacci numbers}
+Die Fibonacci-Zahlen sind das klassische Beispiel für eine rekursive Definition:
+\begin{eqnarray*}
+f_1 &=& 1\\
+f_2 &=& 1\\
+f_n &=& f_{n-1} + f_{n-2}\; \textrm{for} \;\; n \geq 3\,.
+\end{eqnarray*}
+Die ersten zwölf Fibonacci-Zahlen sind:
+\[
+1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144\,.
+\]
+\begin{theorem}\label{thm.fib-div3}
+Jede vierte Fibonacci-Zahl ist durch $3$ teilbar.
+\end{theorem}
+
+\begin{example}
+$f_4=3=3\cdot 1,\; f_8=21=3\cdot 7,\; f_{12}=144=3\cdot 48$.
+\end{example}
+
+\begin{proof}
+Basisfall: $f_4=3$ ist durch $3$ teilbar. Die induktive Hypothese ist, dass $f_{4n}$ durch $3$ teilbar ist. Der induktive Schritt ist:
+\begin{eqnarray*}
+f_{4(n+1)} &=& f_{4n+4}\\
+&=& f_{4n+3}+f_{4n+2}\\
+&=& (f_{4n+2}+f_{4n+1})+f_{4n+2}\\
+&=& ((f_{4n+1}+f_{4n})+f_{4n+1})+f_{4n+2}\\
+&=& ((f_{4n+1}+f_{4n})+f_{4n+1})+(f_{4n+1}+f_{4n})\\
+&=& 3f_{4n+1}+2f_{4n}\,.
+\end{eqnarray*}
+$3f_{4n+1}$ ist durch $3$ teilbar und nach der Induktionshypothese ist $f_{4n}$ durch $3$ teilbar. Daher ist $f_{4(n+1)}$ durch $3$ teilbar.
+\end{proof}
+
+\begin{theorem}\label{thm.seven-fourths}
+$f_n < \left(\displaystyle\frac{7}{4}\right)^n$.
+\end{theorem}
+
+\begin{proof}
+Basisfälle: $f_1=1<\left(\displaystyle\frac{7}{4}\right)^1$ and $f_2=1<\left(\displaystyle\frac{7}{4}\right)^2=\displaystyle\frac{49}{16}$. Der induktive Schritt ist:
+\begin{eqnarray*}
+f_{n+1}&=&f_n+f_{n-1}\\
+%&<&\left(\frac{7}{4}\right)^n + f_{n-1}\\
+&<&\left(\frac{7}{4}\right)^n + \left(\frac{7}{4}\right)^{n-1}\\
+&=&\left(\frac{7}{4}\right)^{n-1}\cdot\left(\frac{7}{4}+1\right)\\
+&<&\left(\frac{7}{4}\right)^{n-1}\cdot\left(\frac{7}{4}\right)^2\\
+&=&\left(\frac{7}{4}\right)^{n+1},
+\end{eqnarray*}
+seit:
+\[
+\left(\frac{7}{4}+1\right) = \frac{11}{4} = \frac{44}{16}<\frac{49}{16}=\left(\frac{7}{4}\right)^2.
+\]
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{theorem}[Binet's formula]
+
+\begin{displaymath}
+f_n = \frac{\phi^n - \bar{\phi}^n}{\sqrt{5}}, \;\; \mathrm{where} \;\;
+\phi = \frac{1+\sqrt{5}}{2},\;\bar{\phi} = \frac{1-\sqrt{5}}{2}\,.
+\end{displaymath}
+\end{theorem}\index{Binet's formula}
+
+\begin{proof}
+Wir zeigen zunächst, dass $\phi^2=\phi+1$:
+\begin{eqnarray*}
+\phi^2 &=& \left(\frac{1+\sqrt{5}}{2}\right)^2\\
+&=& \frac{1}{4} + \frac{2\sqrt{5}}{4} + \frac{5}{4}= \left(\frac{1}{2} + \frac{\sqrt{5}}{2}\right) + 1\\
+%&=& \frac{1+2\sqrt{5}}{2} + 1\\
+&=&\phi + 1\,.
+\end{eqnarray*}
+In ähnlicher Weise können wir zeigen, dass $\bar{\phi}^2=\bar{\phi}+1$.
+
+Der Basisfall für Binets Formel ist:
+\[
+\frac{\phi^1 - \bar{\phi}^1}{\sqrt{5}}=\frac{\frac{1+\sqrt{5}}{2}-\frac{1-\sqrt{5}}{2}}{\sqrt{5}}=\frac{\sqrt{5}}{\sqrt{5}}=1=f_1\,.
+\]
+
+Nehmen Sie die induktive Hypothese für alle $k\leq n$ an. Der induktive Schritt ist:
+\begin{eqnarray*}
+\phi^{n+1} - \bar{\phi}^{n+1} &=& \phi^2\phi^{n-1} - \bar{\phi}^2\bar{\phi}^{n-1}\\
+&=&(\phi+1)\phi^{n-1} - (\bar{\phi}+1)\bar{\phi}^{n-1}\\
+&=&(\phi^{n} - \bar{\phi}^{n}) + (\phi^{n-1} - \bar{\phi}^{n-1})\\
+&=&\sqrt{5}f_{n} + \sqrt{5}f_{n-1}\\
+\frac{\phi^{n+1} - \bar{\phi}^{n+1}}{\sqrt{5}} &=& f_{n} + f_{n-1} = f_{n+1}\,.
+\end{eqnarray*}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{theorem}
+\[
+f_n = \binom{n}{0} + \binom{n-1}{1} + \binom{n-2}{2} + \cdots.
+\]
+\end{theorem}
+
+\begin{proof}
+Wir wollen zunächst die Pascalsche Regel beweisen:\index{Pascal's rule}
+\[
+\binom{n}{k} + \binom{n}{k+1} = \binom{n+1}{k+1}.
+\]
+\begin{eqnarray*}
+\binom{n}{k} + \binom{n}{k+1} &=& \frac{n!}{k!(n-k)!} + \frac{n!}{(k+1)!(n-(k+1))!}\\
+\\
+&=&\frac{n!(k+1)}{(k+1)!(n-k)!}+\frac{n!(n-k)}{(k+1)!(n-k)!}\\\\
+%&=&\frac{n![(k+1)+(n-k)]}{(k+1)!(n-k)!}\\
+&=&\frac{n!(n+1)}{(k+1)!(n-k)!}\\\\
+&=&\frac{(n+1)!}{(k+1)!((n+1)-(k+1))!}\\\\
+&=&\binom{n+1}{k+1}\,.
+\end{eqnarray*}
+Wir werden auch die Gleichheit $\displaystyle\binom{k}{0} = \frac{k!}{0!(k-0)!} = 1$ für jedes $k\geq 1$ verwenden.
+
+Wir können nun das Theorem beweisen. Der Basisfall ist:
+\[
+f_1 =  \binom{1}{0} = \frac{1!}{0!(1-0)!}=1\,.
+\]
+The inductive step is:
+\begin{eqnarray*}
+f_n=f_{n-1} + f_{n-2} &=& \binom{n-1}{0} + \binom{n-2}{1} + \binom{n-3}{2} + \binom{n-4}{3} + \cdots\\
+&&\quad\quad\quad\quad\binom{n-2}{0} + \binom{n-3}{1} + \binom{n-4}{2} + \cdots\\
+&=&\binom{n-1}{0} + \binom{n-1}{1} + \binom{n-2}{2} + \binom{n-3}{3} + \cdots\\
+&=&\binom{n}{0} + \binom{n-1}{1} + \binom{n-2}{2} + \binom{n-3}{3} + \cdots.
+\end{eqnarray*}
+
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Fermat-Zahlen}\label{s.induction-fermat}
+\index{Fermat numbers}
+\begin{definition}
+Die ganzen Zahlen $F_n=2^{2^{n}}+1$ für $n\geq 0$ werden \emph{Fermat-Zahlen} genannt.
+\end{definition}
+
+Die ersten fünf Fermat-Zahlen sind Primzahlen:
+\[
+F_0=3,\quad F_1=5,\quad F_2=17,\quad F_3=257,\quad F_4=65537\,.
+\]
+Jahrhundert behauptete der Mathematiker Pierre de Fermat\index{Fermat, Pierre de}, dass alle Fermat-Zahlen Primzahlen sind, aber fast hundert Jahre später zeigte Leonhard Euler\index{Euler, Leonhard}, dass:
+\[F_5=2^{2^5}+1 = 2^{32}+1 = 4294967297 = 641 \;\times\; 6700417\,.\]
+Die Fermat-Zahlen werden extrem groß, wenn $n$ zunimmt. Es ist bekannt, dass die Fermat-Zahlen für $5\leq n \leq 32$ nicht prim sind, aber die Faktorisierung einiger dieser Zahlen ist noch nicht bekannt.
+
+\begin{theorem}
+For $n\geq 2$, the last digit of $F_n$ is $7$.
+\end{theorem}
+\begin{proof}
+The base case is $F_2=2^{2^2}+1=17$.
+The inductive hypothesis is $F_n=10k_n+7$ for some $k_n\geq 1$. The inductive step is:
+\begin{eqnarray*}
+F_{n+1}&=&2^{2^{n+1}}+1=2^{2^{n}\cdot 2^1}+1=\left(2^{2^{n}}\right)^2+1\\
+&=&\left(\left(2^{2^{n}}+1\right)-1\right)^2+1=(F_n-1)^2+1\\
+&=&(10k_n+7-1)^2+1=(10k_n+6)^2+1\\
+&=&100k_n^2+120k_n+36+1\\
+&=&10(10k_n^2+12k_n+3)+6+1\\
+&=&10k_{n+1}+7,\quad \textrm{für einige} \;\;k_{n+1}\geq 1\,.
+\end{eqnarray*}
+\end{proof}
+
+
+\begin{theorem}
+For $n\geq 1$, $\displaystyle F_n = \prod_{k=0}^{n-1} F_k + 2$.
+\end{theorem}
+\begin{proof}
+Der Basisfall ist:
+\[
+F_1=\prod_{k=0}^{0} F_k + 2=F_0+2=3+2=5\,.
+\]
+Der induktive Schritt ist:
+\begin{eqnarray*}
+\prod_{k=0}^{n}F_k&=&\left(\prod_{k=0}^{n-1}F_k\right) F_n \\
+&=& (F_n-2)F_n\\
+&=& \left(2^{2^n}+1-2\right)\left(2^{2^n}+1\right)\\
+&=& \left(2^{2^{n}}\right)^2-1= \left(2^{2^{n+1}}+1\right)-2\\
+&=&F_{n+1}-2\\
+F_{n+1}&=&\prod_{k=0}^{n}F_k + 2\,.
+\end{eqnarray*}
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{McCarthy's $91$-Funktion}\label{s.induction-mccarthy}
+
+\index{McCarthy, John}
+Normalerweise assoziieren wir Induktion mit Beweisen von Eigenschaften, die auf der Menge der positiven ganzen Zahlen definiert sind. Hier bringen wir einen induktiven Beweis, der auf einer merkwürdigen Ordnung basiert, bei der größere Zahlen kleiner sind als kleinere Zahlen. Die Induktion funktioniert, weil die einzige Eigenschaft, die die Menge haben muss, darin besteht, dass sie unter einem relationalen Operator geordnet ist.
+
+Betrachten Sie die folgende rekursive Funktion, die auf den ganzen Zahlen definiert ist:\index{McCarthy's $91$-function}
+\[
+f(x) = \textrm{if}\;\; x > 100 \;\;\textrm{then}\;\; x - 10 \;\;\textrm{else}\;\; f(f(x+11))\,.
+\]
+Für Zahlen größer als $100$ ist das Ergebnis der Anwendung der Funktion trivial:
+\[
+f(101) = 91, \;\; f(102) = 92,\;\; f(103) = 93,\;\; f(104) = 94,\;\ldots\;.
+\]
+Was ist mit Zahlen, die kleiner oder gleich $100$ sind? Berechnen wir $f(x)$ für einige Zahlen, wobei die Berechnung in jeder Zeile die Ergebnisse der vorherigen Zeilen verwendet:
+\begin{eqnarray*}
+f(100) &=& f(f(100+11)) = f(f(111)) = f(101) = 91\\
+f(99) &=& f(f(99+11)) = f(f(110)) = f(100) = 91\\
+f(98) &=& f(f(98+11)) = f(f(109)) = f(99) = 91\\
+&\cdots&\\
+f(91) &=& f(f(91+11)) = f(f(102)) = f(92)\\
+&& \quad = f(f(103)) = f(93) = \cdots =f(98) = 91\\
+f(90) &=& f(f(90+11)) = f(f(101)) = f(91) = 91\\
+f(89) &=& f(f(89+11)) = f(f(100)) = f(91) = 91\,.
+\end{eqnarray*}
+Definieren Sie die Funktion $g$ als:
+\[
+g(x) = \textrm{if}\;\; x > 100 \;\;\textrm{then}\;\; x - 10 \;\;\textrm{else}\;\; 91\,.
+\]
+
+\begin{theorem}
+Für alle $x$, $f(x) = g(x)$.
+\end{theorem}
+
+\begin{proof}
+Der Beweis erfolgt durch Induktion über die Menge der ganzen Zahlen $S=\{x\,|\,x\leq 101\}$ unter Verwendung des relationalen Operators $\prec$, der durch definiert ist:
+\[
+y \prec x \;\; \textrm{if and only if}\;\; x < y\,,
+\]
+wobei auf der rechten Seite $<$ der übliche relationale Operator auf den ganzen Zahlen ist.
+Aus dieser Definition ergibt sich die folgende Reihenfolge:
+\[
+101 \prec 100 \prec 99 \prec 98 \prec 97 \prec \cdots\,.
+\]
+Es gibt drei Fälle für den Beweis. Wir verwenden die Ergebnisse der obigen Berechnungen.
+
+\textit{Fall 1:}
+$x > 100$. Dies ist trivial durch die Definitionen von $f$ und $g$.
+
+\textit{Fall 2:}
+$90\leq x \leq 100$. Der Basisfall der Induktion ist:
+\[
+f(100) =  91 = g(100)\,,
+\]
+da wir gezeigt haben, dass $f(100)=91$ und per Definition $g(100)=91$.
+
+Die induktive Annahme ist $f(y) = g(y)$ für $y\prec x$ und der induktive Schritt ist:
+\begin{subeqnarray}
+f(x) &=& f(f(x+11))\slabel{m91-1}\\
+&=& f(x+11-10)= f(x+1)\slabel{m91-3}\\
+&=& g(x+1)\slabel{m91-4}\\
+&=& 91\slabel{m91-5}\\
+&=& g(x)\slabel{m91-6}\,.
+\end{subeqnarray}
+Gleichung~\ref{m91-1} gilt durch die Definition von $f$, da $x\leq 100$.
+Die Gleichheit von Gl.~\ref{m91-1} und Gl.~\ref{m91-3} gilt durch die Definition von $f$, weil $x \geq 90$, also $x+11 > 100$. Die Gleichheit von Gl.~\ref{m91-3} und Gl.~\ref{m91-4} folgt durch die Induktionshypothese $x\leq 100$, also $x+1 \leq 101$, was impliziert, dass $x+1\in S$ und $x+1\prec x$ ist. Die Gleichheit von Gl.~\ref{m91-4}, Gl.~\ref{m91-5} und Gl.~\ref{m91-6} folgt aus der Definition von $g$ und $x+1 \leq 101$, also $x \leq 100$.
+
+\textit{Fall 3:}
+$x< 90$. Der Basisfall ist:
+$f(89) = f(f(100)) = f(91) = 91 = g(89)$
+durch Definition von $g$, da $89<100$.
+
+Die induktive Annahme ist $f(y) = g(y)$ für $y\prec x$ und der induktive Schritt ist:
+\begin{subeqnarray}
+f(x) &=& f(f(x+11))\slabel{m91a}\\
+&=& f(g(x+11))\slabel{m91b}\\
+&=& f(91)\slabel{m91c}\\
+&=& 91\slabel{m91d}\\
+&=& g(x)\,.
+\end{subeqnarray}
+Gleichung~\ref{m91a} gilt durch die Definition von $f$ und $x<90\leq 100$.
+Die Gleichheit von Gleichung~\ref{m91a} und Gleichung~\ref{m91b} folgt aus der Induktionshypothese $x < 90$, also $x+11< 101$, was impliziert, dass $x+11 \in S$ und $x+11 \prec x$ ist. Die Gleichheit von Gl.~\ref{m91b} und Gl~\ref{m91c} folgt aus der Definition von $g$ und $x+11 < 101$. Schließlich haben wir bereits gezeigt, dass $f(91)=91$ und $g(x)=91$ für $x<90$ per Definition gelten.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Das Josephus-Problem}\label{s.josephus}
+\index{Josephus problem}
+
+Josephus war der Kommandant der Stadt Jodfat während des jüdischen Aufstands gegen die Römer. Die überwältigende Stärke der römischen Armee brach schließlich den Widerstand der Stadt und Josephus flüchtete sich mit einigen seiner Männer in eine Höhle. Sie zogen es vor, Selbstmord zu begehen, als von den Römern getötet oder gefangen genommen zu werden. Nach dem Bericht von Josephus arrangierte er seine Rettung, wurde Beobachter bei den Römern und schrieb später eine Geschichte des Aufstandes. Wir stellen das Problem als ein abstraktes mathematisches Problem dar.
+
+\begin{definition}[Josephus-Problem]
+Betrachte die Zahlen $1,\ldots,n\!+\!1$, die in einem Kreis angeordnet sind. Lösche jede $q$-te Zahl, die den Kreis $q, 2q, 3q, \ldots$ umrundet (wobei die Berechnung modulo $n\!+\!1$ durchgeführt wird), bis nur noch eine Zahl $m$ übrig bleibt. $J(n+1,q)=m$ ist die \emph{Josephuszahl} für $n+1$ und $q$.
+\end{definition}
+
+\begin{example}
+Sei $n+1=41$ und sei $q=3$. Ordnen Sie die Zahlen in einem Kreis an:
+\[
+\begin{array}{rrrrrrrrrrrrrrrrrrrrrrr}
+\rightarrow&1&2&3&4&5&6&7&8&9&10&11&12&13&14\\
+&\uparrow&&&&&&&&&&&&&15\\
+&41&&&&&&&&&&&&&16\\
+&40&&&&&&&&&&&&&17\\
+&39&&&&&&&&&&&&&18\\
+&38&&&&&&&&&&&&&19\\
+&37&&&&&&&&&&&&&20\\
+&36&&&&&&&&&&&&&21\\
+&35&34&33&32&31&30&29&28&27&26&25&24&23&22\\
+\end{array}
+\]
+Die erste Runde von Streichungen führt zu:
+\[
+\begin{array}{rrrrrrrrrrrrrrrrrrrrrrr}
+\rightarrow&1&2&\not\! 3&4&5&\not\! 6&7&8&\not\! 9&10&11&\not\!\! 12&13&14\\
+&\uparrow&&&&&&&&&&&&&\not\!\! 15\\
+&41&&&&&&&&&&&&&16\\
+&40&&&&&&&&&&&&&17\\
+&\not 39&&&&&&&&&&&&&\not\!\! 18\\
+&38&&&&&&&&&&&&&19\\
+&37&&&&&&&&&&&&&20\\
+&\not 36&&&&&&&&&&&&&\not\!\! 21\\
+&35&34&\not\!\! 33&32&31&\not\!\! 30&29&28&\not\!\! 27&26&25&\not\!\! 24&23&22\\
+\end{array}
+\]
+Nach Entfernen der gestrichenen Zahlen kann dies wie folgt geschrieben werden:
+\[
+\begin{array}{rrrrrrrrrrrrrrrrrrrrrrrrrrrr}
+1&2&4&5&7&8&10&11&13&14&16&17&19&20&\\
+41&40&38&37&35&34&32&31&29&28&26&25&23&22&
+\end{array}
+\]
+Die zweite Runde von Streichungen (beginnend mit der letzten Streichung von $39$) führt zu:
+\[
+\begin{array}{rrrrrrrrrrrrrrrrrrrrrrrrrrrr}
+\not\!\! 1&2&4&\not\!\! 5&7&8&\not\!\! 10&11&13&\not\!\! 14&16&17&\not\!\! 19&20&\\
+\not\!\!41&40&38&\not\!\!37&35&34&\not\!\!32&31&29&\not\!\!28&26&25&23&\not\!\!22&
+
+\end{array}
+\]
+Wir fahren fort, jede dritte Zahl zu löschen, bis nur noch eine übrig bleibt:
+\[
+\begin{scriptsize}
+\begin{array}{rrrrrrrrrrrrrrrrrr}
+2&4&\not\!7&8&11&\not\!\!13&16&17&\not\!\!20&22&25&\not\!\!26&29&31&\not\!\!34&35&38&\not\!\!40
+\\
+2&4&\not\!8&11&16&\not\!\!17&22&25&\not\!\!29&31&35&\not\!\!38
+\\
+2&4&\not\!\!11&16&22&\not\!\!25&31&35
+\\
+\not\!2&4&16&\not\!\!22&31&35
+\\
+\not\!4&16&31&\not\!\!35
+\\
+\not\!\!16&31
+\\
+31
+\end{array}
+\end{scriptsize}
+\]
+Daraus folgt, dass $J(41,3)=31$.
+\end{example}
+
+Der Leser wird aufgefordert, die Berechnung für das Löschen jeder siebten Zahl aus einem Kreis von $40$ Zahlen durchzuführen, um zu überprüfen, dass die letzte Zahl $30$ ist.
+
+\begin{theorem}\label{thm.jo1}
+$J(n+1,q)=(J(n,q)+q) \pmod {n+1}$.
+\end{theorem}
+
+\begin{proof}
+Die erste Zahl, die in der ersten Runde gelöscht wird, ist die $q$-te Zahl, und die Zahlen, die nach der Löschung übrig bleiben, sind die $n$-Zahlen:
+\[
+\begin{array}{rrrrrrrr}
+\;1&\;2&\;\ldots&\;q-1&\;q+1&\;\ldots&\;n&\;n+1 \pmod {n+1}\,.
+\end{array}
+\]
+Die Zählung, um die nächste Löschung zu finden, beginnt mit $q+1$. Wenn wir $1,\ldots,n$ in diese Folge einfügen, erhalten wir $\pmod {n\!+\!1}$:
+\[
+\begin{array}{cccccccccc}
+1&\, 2&\ldots& n-q&\, n+1-q&\, n+2-q&\ldots&n-1&\, n&\\
+\downarrow&\, \downarrow&&\downarrow&\, \downarrow&\, \downarrow&&\downarrow&\, \downarrow\\
+q+1&\, q+2&\ldots&n&\, n+1&\, 1&\ldots&q-2&\, q-1\,.
+\end{array}
+\]
+Denken Sie daran, dass die Berechnungen modulo $n+1$ sind $\pmod {n\!+\!1}$:
+\[
+\begin{array}{lclcl}
+(n+2-q)+q&=& (n+1)+1&=& 1\\
+(n)+q&= &(n+1)-1+q&= &q-1\,.
+\end{array}
+\]
+Es handelt sich um das Josephus-Problem für $n$ Zahlen, nur dass die Zahlen um $q$ versetzt sind. Daraus folgt, dass:
+\[
+J(n+1,q)=(J(n,q)+q) \pmod {n+1}\,.
+\]
+\end{proof}
+
+\begin{theorem}\label{lem.jo}
+Für $n\geq 1$ gibt es Zahlen $a\geq 0, 0\leq t < 2^a$, so dass $n=2^a+t$.
+\end{theorem}
+\begin{proof}
+Dies kann durch wiederholte Anwendung des Divisionsalgorithmus mit den Teilern $2^0, 2^1, 2^2, 2^4,\ldots$ bewiesen werden, aber es ist auch leicht aus der binären Darstellung von $n$ zu erkennen. Für einige $a$ und $b_{a-1},b_{a-2},\ldots,b_{1},b_{0}$, wobei für alle $i$, $b_i=0$ oder $b_i=1$, $n$ ausgedrückt werden kann als:
+\begin{eqnarray*}
+n&=&2^a+b_{a-1}2^{a-1}+\cdots+b_{0}2^{0}\\
+n&=&2^a+(b_{a-1}2^{a-1}+\cdots+b_{0}2^{0})\\
+n&=&2^a+t,\quad \textrm{where}\; t\leq 2^a-1\,.
+\end{eqnarray*}
+\end{proof}
+Wir beweisen nun, dass es eine einfache geschlossene Form für $J(n,2)$ gibt. 
+\begin{theorem}\label{thm.jo2}
+Für $n=2^a+t$, $a\geq 0, 0\leq t < 2^a$, $J(n,2)=2t+1$.
+\end{theorem}
+
+\begin{proof}
+Nach Thm.~\ref{lem.jo} kann $n$ wie im Satz angegeben ausgedrückt werden. Der Beweis, dass $J(n,2)=2t+1$ ist, erfolgt durch eine doppelte Induktion, zuerst auf $a$ und dann auf $t$.
+
+\textit{Erste Induktion:}
+
+Basisfall. Nehmen wir an, dass $t=0$ ist, so dass $n=2^a$. Es sei $a=1$, so dass es zwei Zahlen im Kreis $1,2$ gibt. Da $q=2$, wird die zweite Zahl gestrichen, so dass die verbleibende Zahl $1$ ist und $J(2^1,2)=1$.
+
+Die Induktionshypothese lautet, dass $J(2^a,2)=1$. Wie lautet $J(2^{a+1},2)$? In der ersten Runde werden alle geraden Zahlen gestrichen:
+\[
+\begin{array}{rrrrrrrrrrrrrrrrrrrrrrrrrrrr}
+1&\quad\not\! 2&\quad3&\quad\not\! 4& \quad\ldots&\quad 2^{a+1}\!-\!1&\quad \not\! 2^{a+1}\,.
+\end{array}
+\]
+Es sind nun $2^a$ Zahlen übrig:
+\[
+\begin{array}{rrrrrrrrrrrrrrrrrrrrrrrrrrrr}
+1&\quad3&\quad\ldots&\quad 2^{a+1}\!-\!1\,.
+\end{array}
+\]
+Durch die Induktionshypothese $J(2^{a+1},2)=J(2^a,2)=1$ also durch Induktion $J(n,2)=1$ immer $n=2^a+0$.
+
+\textit{Zweite Induktion:}
+
+Wir haben $J(2^a+0,2)=2\cdot 0 +1$ bewiesen, den Basisfall der zweiten Induktion.
+
+Die Induktionshypothese ist $J(2^a+t,2)=2t+1$. Nach Thm.~\ref{thm.jo1}:
+\[
+J(2^a+(t+1),2)=J(2^a+t,2)+2=2t+1+2=2(t+1)+1\,.
+\]
+\end{proof}
+
+Die Theoreme~\ref{lem.jo} und~\ref{thm.jo2} geben einen einfachen Algorithmus zur Berechnung von $J(n,2)$. Aus dem Beweis von Thm.~\ref{lem.jo}:
+\[
+n=2^a+t=2^a+(b_{a-1}2^{a-1}+\cdots+b_{0}2^{0})\,,
+\]
+so $t=b_{a-1}2^{a-1}+\cdots+b_{0}2^{0}$. Wir multiplizieren einfach mit $2$ (Verschiebung nach links um eine Stelle) und addieren $1$. Da zum Beispiel $n=41=2^5+2^3+2^0=101001$, folgt daraus, dass $J(41,2)=2t+1$, und in binärer Schreibweise:
+\begin{eqnarray*}
+41&=&101001\\
+9&=&01001\\
+2t+1&=&10011=16+2+1=19\,.
+\end{eqnarray*}
+Der Leser kann das Ergebnis überprüfen, indem er jede zweite Zahl in einem Kreis $1,\ldots,41$ löscht.
+
+Es gibt eine geschlossene Form für $J(n,3)$, aber sie ist recht kompliziert.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{Was ist die Überraschung?}
+
+Die Induktion ist vielleicht die wichtigste Beweistechnik in der modernen Mathematik. Während die Fibonacci-Zahlen sehr bekannt sind und auch die Fermat-Zahlen leicht zu verstehen sind, war ich überrascht, so viele Formeln zu finden, die ich nicht kannte (wie Thms.~\ref{thm.fib-div3} und \ref{thm.seven-fourths}) und die durch Induktion bewiesen werden können. Die $91$-Funktion von McCarthy wurde im Kontext der Informatik entdeckt, obwohl sie ein rein mathematisches Ergebnis ist. Das Überraschende ist nicht die Funktion selbst, sondern die merkwürdige Induktion, mit der sie bewiesen wird, nämlich $98\prec 97$. Das Überraschende am Josephus-Problem ist der bidirektionale induktive Beweis.
+
+\subsection*{Quellen}
+
+Für eine umfassende Darstellung der Induktion siehe \cite{gunderson}. Der Beweis der McCarthy'schen $91$-Funktion stammt aus \cite{manna}, wo er Rod M. Burstall zugeschrieben wird.\index{Burstall, Rod M.} Die Darstellung des Josephus-Problems stützt sich auf \cite[Chapter~17]{gunderson}, in dem auch der historische Hintergrund erörtert wird. Dieses Kapitel enthält weitere interessante Probleme mit induktiven Beweisen, wie z. B. die schlammigen Kinder, die gefälschte Münze und die Pfennige in einer Schachtel. Zusätzliches Material zum Josephus-Problem findet sich in \cite{schumer,wiki:josephus}.
