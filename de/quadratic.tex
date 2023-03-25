@@ -187,7 +187,7 @@ r_2&=&\frac{83+127}{2}=105\,.
 \begin{example}
 Theorem~\ref{thm.roots-coefficients} kann auf Polynome höheren Grades verallgemeinert werden. Hier ist ein interessantes Beispiel für eine \emph{quartische Gleichung}\index{Quartische Gleichung} $x^4-10x^2-x+20=0$. Wie für quadratische Gleichungen gibt es auch für kubische und quartische Gleichungen (allerdings nicht für Gleichungen höherer Potenzen) Formeln zum Lösen, aber die Formeln sind recht kompliziert.
 
-Kann dieses Polynom vierten Grades in zwei quadratische Polynome mit ganzzahligen Koeffizienten zerlegt werden? Wenn ja, müssen die Koeffizienten der $x$-Terme \emph{gleich und mit entgegengesetztem Vorzeichen} sein, da der Koeffizient des $x^3$-Terms Null ist. Daher lautet die Form der quadratischen Faktoren:
+Kann dieses Polynom vierten Grades in zwei quadratische Polynome mit ganzzahligen Koeffizienten zerlegt werden? Wenn dies der Fall ist, müssen die Koeffizienten der $x$-Terme in den quadratischen Faktoren \emph{gleich und mit entgegengesetzten Vorzeichen} sein, da der Koeffizient des $x^3$-Terms im quartischen Polynom Null ist. Daher lautet die Form der quadratischen Faktoren:
 \[
 f(x) = (x^2 - nx + k_1)\, (x^2 + nx + k_2)\,.
 \]
@@ -414,7 +414,7 @@ Kombiniert man die fünf Körper in Abb.~\ref{f.cardano1} und Abb.~\ref{f.cardan
 
 \end{tikzpicture}
 \end{center}
-\caption{$(a^3+b^3)=(a^3+b^3)+\cdots$}\label{f.cardano1}
+\caption{$(a+b)^3 = (a^3+b^3) + \cdots$}\label{f.cardano1}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -538,7 +538,7 @@ Kombiniert man die fünf Körper in Abb.~\ref{f.cardano1} und Abb.~\ref{f.cardan
 
 \end{tikzpicture}
 \end{center}
-\caption{$(a^3+b^3)=\cdots+3ab(a+b)$}\label{f.cardano2}
+\caption{$(a+b)^3 = \cdots + 3ab(a+b)$}\label{f.cardano2}
 \end{figure}
 
 \section{Sie ließen sich von imaginären Zahlen nicht einschüchtern}\label{s.imaginary}
@@ -817,7 +817,7 @@ Können wir es besser machen? Mit Gleichung ~\ref{eq.viete-quad}:
 \[
 r_1+r_2 = -b\,,\quad\quad r_1r_2=c\,.
 \]
-Wenn $r_2$ viel kleiner ist als $r_1$, also $r_2\ll r_1$, dann ist $r_1\approx -b$ und $r_2=c/b$. Die von einem Computerprogramm berechnete Tabelle~\ref{t.quadratic} vergleicht die Werte der mit diesen Formeln berechneten Wurzeln mit den Werten, die sich aus der traditionellen Formel Eq.~\ref{eq.quadratic-numerical} ergeben. Der Wert von $c$ ist auf $4$ festgelegt und die Wurzeln für steigende Werte von $b$ werden gezeigt.
+Wenn $r_2$ viel kleiner ist als $r_1$, also $r_2\ll r_1$, dann ist $r_1\approx -b$ und $r_2\approx c/b$. Die von einem Computerprogramm berechnete Tabelle~\ref{t.quadratic} vergleicht die Werte der mit diesen Formeln berechneten Wurzeln mit den Werten, die sich aus der traditionellen Formel Eq.~\ref{eq.quadratic-numerical} ergeben. Der Wert von $c$ ist auf $4$ festgelegt und die Wurzeln für steigende Werte von $b$ werden gezeigt.
 
 Zunächst sind die wahren Werte, die mit der traditionellen Formel für $r_2$ berechnet werden, genauer ($r_2-r_{2v}$ ist negativ), aber ab $b=100000$ ist die Berechnung auf der Grundlage von Eq.~\ref{eq.viete-quad} genauer. Das sind die Überraschungen der numerischen Analyse.
 

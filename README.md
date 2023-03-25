@@ -28,7 +28,7 @@ or [Cassini](https://store.cassini.fr/fr/hors-collection/145-surprises-mathemati
 
 **German**
 
-The directory contains LaTeX files of a *preliminary* draft of a translation. Please contact me if you are a native speaker who is willing to edit the draft.
+There is a PDF of a *preliminary* draft of a translation and a directory of the LaTeX files. Please contact me if you are a native speaker who is willing to edit the draft!
 
 **Hebrew**
 

@@ -4,7 +4,8 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Karten verwenden Farben, um eine Region von einer anderen zu unterscheiden, indem sie dafür sorgen, dass benachbarte Regionen mit unterschiedlichen Farben eingefärbt werden. Im Jahr 1852 stellte Francis Guthrie fest, dass eine Karte der Grafschaften Englands mit nur vier Ländern eingefärbt werden konnte. Die Behauptung, dass vier Länder ausreichen, um eine beliebige ebene Karte einzufärben, wird als \emph{Vier-Farben-Theorem} bezeichnet und wurde erst 1976 von Kenneth Appel\index{Appel, Kenneth} und Wolfgang Haken\index{Haken, Wolfgang} bewiesen. Sie wendeten ausgeklügelte mathematische Argumente an, um zu zeigen, dass, wenn es ein Gegenbeispiel gibt (eine Karte, die mehr als vier Farben benötigt), diese mit einer von $1834$ Konfigurationen verbunden sein muss. Anschließend überprüften sie diese Konfigurationen mit einem Computer.
+Karten verwenden Farben, um eine Region von einer anderen zu unterscheiden, indem sie dafür sorgen, dass benachbarte Regionen mit unterschiedlichen Farben eingefärbt werden. Im Jahr 1852 stellte Francis Guthrie fest, dass eine Karte der Grafschaften Englands mit nur vier Farben eingefärbt werden konnte.
+Die Behauptung, dass vier Länder ausreichen, um eine beliebige ebene Karte einzufärben, wird als \emph{Vier-Farben-Theorem} bezeichnet und wurde erst 1976 von Kenneth Appel\index{Appel, Kenneth} und Wolfgang Haken\index{Haken, Wolfgang} bewiesen. Sie wendeten ausgeklügelte mathematische Argumente an, um zu zeigen, dass, wenn es ein Gegenbeispiel gibt (eine Karte, die mehr als vier Farben benötigt), diese mit einer von $1834$ Konfigurationen verbunden sein muss. Anschließend überprüften sie diese Konfigurationen mit einem Computer.
 
 Während das Vier-Farben-Theorem extrem schwierig zu beweisen ist, sind die Beweise für das Fünf- und Sechs-Farben-Theorem relativ einfach (Abschnitte ~\ref{s.six-color}, ~\ref{s.five-color}). Auf dem Weg zum Beweis dieser Theoreme definieren wir planare Karten und Graphen (Sect.~\ref{s.planar}), beweisen die Eulersche Formel (Sect.~\ref{s.euler}) und zeigen, dass ein planarer Graph Scheitelpunkte haben muss, deren Grad kleiner oder gleich fünf ist. In Sect.~\ref{s.nonplanar} wird die Eulersche Formel verwendet, um zu zeigen, dass zwei Graphen nicht planar sind.
 
@@ -301,7 +302,7 @@ Der Graph bleibt verbunden (Abb.~\ref{f.five-connected-remains}). $G'$ hat wenig
 \end{minipage}
 \end{figure}
 
-\begin{theorem}
+\begin{theorem}\label{thm.3v6}
 Sei $G$ ein zusammenhängender, triangulierter, planarer Graph mit $E$ Kanten und $V$ Scheitelpunkten. Dann sei $E= 3V-6$.
 \end{theorem}
 \begin{proof}
@@ -322,7 +323,7 @@ Sei $G$ ein zusammenhängender planarer Graph. Dann sei $E\leq 3V-6$.
 \end{theorem}
 
 \begin{proof}
-Triangulieren Sie $G$, um $G'$ zu erhalten. $E'= 3V'-6$ nach Thm.~\ref{thm.count}. Entfernen Sie nun Kanten aus $G'$, um $G$ zu erhalten. Die Anzahl der Scheitelpunkte ändert sich nicht, so dass $E'= 3V-6$ ist.
+Triangulieren Sie $G$, um $G'$ zu erhalten. $E'= 3V'-6$ nach Thm.~\ref{thm.3v6}. Entfernen Sie nun Kanten aus $G'$, um $G$ zu erhalten. Die Anzahl der Scheitelpunkte ändert sich nicht, so dass $E'= 3V-6$ ist.
 \end{proof}
 
 \begin{example}

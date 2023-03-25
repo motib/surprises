@@ -4,6 +4,7 @@ he/tikz/*
 de/tikz/*
 *.pdf
 !surprises-he*.pdf
+*.docx
 *.bat
 *.zip
 *~

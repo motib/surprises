@@ -203,7 +203,7 @@ r_2&=&\frac{83+127}{2}=105\,.
 \begin{example}
 Theorem~\ref{thm.roots-coefficients} can be generalized to polynomials of higher degrees. Here is an interesting example for a \emph{quartic equation}\index{Quartic equation} $x^4-10x^2-x+20=0$. As with quadratic equations there are formulas for solving cubic and quartic equations (though not equations of higher powers), but the formulas are quite complicated.
 
-Does this polynomial of degree four factor into two quadratic polynomials with integer coefficients? If so, the coefficients of the $x$ terms must be \emph{equal and of opposite signs} since the coefficient of the $x^3$ term is zero. Therefore, the form of the quadratic factors is:
+Does this polynomial of degree four factor into two quadratic polynomials with integer coefficients? If so, the coefficients of the $x$ terms in the quadratic factors must be \emph{equal and of opposite signs} since the coefficient of the $x^3$ term in the quartic polynomial is zero. Therefore, the form of the quadratic factors is:
 \[
 f(x) = (x^2 - nx + k_1)\, (x^2 + nx + k_2)\,.
 \]
@@ -434,7 +434,7 @@ By combining the five solids in Fig.~\ref{f.cardano1} and Fig.~\ref{f.cardano2} 
 
 \end{tikzpicture}
 \end{center}
-\caption{$(a^3+b^3)=(a^3+b^3)+\cdots$}\label{f.cardano1}
+\caption{$(a+b)^3 = (a^3+b^3) + \cdots$}\label{f.cardano1}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -558,7 +558,7 @@ By combining the five solids in Fig.~\ref{f.cardano1} and Fig.~\ref{f.cardano2} 
 
 \end{tikzpicture}
 \end{center}
-\caption{$(a^3+b^3)=\cdots+3ab(a+b)$}\label{f.cardano2}
+\caption{$(a+b)^3 = \cdots + 3ab(a+b)$}\label{f.cardano2}
 \end{figure}
 
 \section{They Weren't Intimidated by Imaginary Numbers}\label{s.imaginary}
@@ -845,7 +845,7 @@ Can we do better? By Eq.~\ref{eq.viete-quad}:
 \[
 r_1+r_2 = -b\,,\quad\quad r_1r_2=c\,.
 \]
-If $r_2$ is much less that $r_1$, written $r_2\ll r_1$, then $r_1\approx -b$ and $r_2=c/b$. Table~\ref{t.quadratic}, computed by a computer program, compares the values of the roots computed by these formulas with the values obtained from the traditional formula Eq.~\ref{eq.quadratic-numerical}. The value of $c$ is fixed at $4$ and the roots for increasing values of $b$ are shown.
+If $r_2$ is much less that $r_1$, written $r_2\ll r_1$, then $r_1\approx -b$ and $r_2\approx c/b$. Table~\ref{t.quadratic}, computed by a computer program, compares the values of the roots computed by these formulas with the values obtained from the traditional formula Eq.~\ref{eq.quadratic-numerical}. The value of $c$ is fixed at $4$ and the roots for increasing values of $b$ are shown.
 
 Initially, the true values computed by the traditional formula for $r_2$ are more accurate ($r_2-r_{2v}$ is negative) but from $b=100000$, the computation based upon Eq.~\ref{eq.viete-quad} is more accurate. Such are the surprises of numerical analysis.
 

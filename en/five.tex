@@ -10,7 +10,7 @@ In 1879 Alfred B. Kempe published a proof of the four-color theorem, but in 1890
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Maps use colors to distinguish one region from another by ensuring that adjacent regions are colored with different colors. In 1852 Francis Guthrie\index{Guthrie, Francis} noticed that a map of the counties of England could be colored using only four countries. The claim that four countries suffice to color any planar map is called the \emph{four-color theorem} and was only proved in 1976 by Kenneth Appel\index{Appel, Kenneth} and Wolfgang Haken\index{Haken, Wolfgang}. They used sophisticated mathematical arguments to show that if there is a counterexample (a map needing more than four colors), it had to be associated with one of $1834$ configurations. They then used a computer to check these configurations.
+Maps use colors to distinguish one region from another by ensuring that adjacent regions are colored with different colors. In 1852 Francis Guthrie\index{Guthrie, Francis} noticed that a map of the counties of England could be colored using only four colors. The claim that four countries suffice to color any planar map is called the \emph{four-color theorem} and was only proved in 1976 by Kenneth Appel\index{Appel, Kenneth} and Wolfgang Haken\index{Haken, Wolfgang}. They used sophisticated mathematical arguments to show that if there is a counterexample (a map needing more than four colors), it had to be associated with one of $1834$ configurations. They then used a computer to check these configurations.
 
 While the four-color theorem is extremely difficult to prove, the proofs of the five- and six-color theorems are relatively simple (Sects.~\ref{s.six-color}, ~\ref{s.five-color}). On the way to proving these theorems, we define planar maps and graphs (Sect.~\ref{s.planar}), prove Euler's formula (Sect.~\ref{s.euler}) and show that a planar graph must have vertex whose degree is less than or equal to five. In Sect.~\ref{s.nonplanar} Euler's formula is used to show that two graphs are not planar.
 
@@ -312,7 +312,7 @@ The graph remains connected (Fig.~\ref{f.five-connected-remains}). $G'$ has fewe
 \end{figure}
 
 
-\begin{theorem}
+\begin{theorem}\label{thm.3v6}
 Let $G$ be a connected, triangulated planar graph with $E$ edges and $V$ vertices. Then $E= 3V-6$.
 \end{theorem}
 \begin{proof}
@@ -333,7 +333,7 @@ Let $G$ be a connected planar graph. Then $E\leq 3V-6$.
 \end{theorem}
 
 \begin{proof}
-Triangulate $G$ to obtain $G'$. $E'= 3V'-6$ by Thm.~\ref{thm.count}. Now remove edges from $G'$ to obtain $G$. The number of vertices does not change so  $E\leq 3V-6$.
+Triangulate $G$ to obtain $G'$. $E'= 3V'-6$ by Thm.~\ref{thm.3v6}. Now remove edges from $G'$ to obtain $G$. The number of vertices does not change so  $E\leq 3V-6$.
 \end{proof}
 
 \begin{example}
