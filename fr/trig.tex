@@ -44,7 +44,7 @@ La figure~\ref{f.area-base-height-2} montre qu'en \og coupant\fg{} le triangle �
 \node[above right,xshift=4pt] at (A) {$\theta$};
 \node[above] at (B) {$B$};
 \node[right] at (C) {$C$};
-\draw (B) -- node[right,yshift=-4pt] {$h=c\sin\theta$} 
+\draw (B) -- node[right,yshift=-12pt] {$h=c\sin\theta$} 
   (B|-A) coordinate (H);
 \draw[rotate=90] (H) rectangle +(8pt,8pt);
 \end{tikzpicture}
@@ -185,7 +185,7 @@ Le rayon d'un cercle et une tangente qui coupe le rayon sont perpendiculaires. D
            ($(b)+(0,-10pt)$);
 \draw[<->] ($(a)+(-10pt,8pt)$) -- node[fill=white] {$b$}
            ($(c)+(-10pt,8pt)$);
-\draw[<->] ($(b)+(6pt,10pt)$) -- node[fill=white] {$c$}
+\draw[<->] ($(b)+(6pt,10pt)$) -- node[fill=white] {$a$}
            ($(c)+(6pt,10pt)$);
 % Inscribed circle
 \node[very thick,dotted,draw,circle through=(ap)] at (center) {};
@@ -195,10 +195,10 @@ Le rayon d'un cercle et une tangente qui coupe le rayon sont perpendiculaires. D
 \end{figure}
 L'aire $\triangle ABC$ est la somme des six triangles énumérés ci-dessus. Comme la hauteur des six triangles est égale au rayon $r$ du cercle inscrit, on obtient 
 \begin{align}
-\triangle ABC&=\triangle AOB'\!+\!\triangle AOC'\!+\!\triangle BOA'\!+\!\triangle BOC'\!+\!\triangle COA'\!+\!\triangle COB'\\
-\triangle ABC&=\frac{1}{2}r(u+u+v+v+w+w)\\
-\triangle ABC&=\frac{1}{2}r(a+b+c)\\
-\triangle ABC&=rs \slabel{eq.area-heron}\,.
+\triangle ABC&=\triangle AOB'\!+\!\triangle AOC'\!+\!\triangle BOA'\!+\!\triangle BOC'\!+\!\triangle COA'\!+\!\triangle COB'\,,\\
+\triangle ABC&=\frac{1}{2}r(u+u+v+v+w+w)\,,\\
+\triangle ABC&=\frac{1}{2}r(a+b+c)\,,\\
+\triangle ABC&=rs \label{eq.area-heron}\,.
 \end{align}
 Déterminons maintenant les côtés en fonction des tangentes des angles centraux :
 \begin{displaymath}
@@ -213,7 +213,7 @@ s = u+v+w = r\left(\tan \frac{\alpha}{2}+\tan \frac{\beta}{2}+\tan \frac{\gamma}
 Puisque $\frac{\alpha}{2}+\frac{\alpha}{2}+\frac{\beta}{2}+\frac{\beta}{2}+\frac{\gamma}{2}+\frac{\gamma}{2}=360^\circ$ et donc puisque $\frac{\alpha}{2}+\frac{\beta}{2}+\frac{\gamma}{2}=180^\circ$, d'après le théorème~\ref{thm.tangent3},
 \begin{align*}
 s&=r\left(\tan \frac{\alpha}{2}\tan \frac{\beta}{2}\tan \frac{\gamma}{2}\right)\\
-&=r\left(\frac{u}{r}\frac{v}{r}\frac{w}{r}\right)=\frac{1}{r^2}(u\,v\,w)\\
+&=r\left(\frac{u}{r}\frac{v}{r}\frac{w}{r}\right)=\frac{1}{r^2}(u\,v\,w)\,,\\
 r&=\sqrt{\displaystyle\frac{u\,v\,w}{s}}\,.
 \end{align*}
 D'après l'équation~\ref{eq.area-heron},
@@ -235,9 +235,9 @@ La formule de Héron découle de $u=s-a$, $v=s-b$ et $w=s-c$.
 
 \begin{theorem}\label{thm.sum-of-trig}
 \begin{align*}
-\sin(\alpha+\beta) &= \sin\alpha\cos\beta + \cos\alpha\sin\beta\\
-\sin(\alpha-\beta) &= \sin\alpha\cos\beta - \cos\alpha\sin\beta\\
-\cos(\alpha+\beta) &= \cos\alpha\cos\beta - \sin\alpha\sin\beta\\
+\sin(\alpha+\beta) &= \sin\alpha\cos\beta + \cos\alpha\sin\beta\,,\\
+\sin(\alpha-\beta) &= \sin\alpha\cos\beta - \cos\alpha\sin\beta\,,\\
+\cos(\alpha+\beta) &= \cos\alpha\cos\beta - \sin\alpha\sin\beta\,,\\
 \cos(\alpha-\beta) &= \cos\alpha\cos\beta + \sin\alpha\sin\beta\,.
 \end{align*}
 \end{theorem}
@@ -309,14 +309,14 @@ Nous démontrerons la première formule ; les autres formules s'obtiennent en ut
 Calculons l'aire  $\triangle ABD$ de deux manières différentes :  en utilisant l'équation~\ref{eq.area-from-sine} pour $\triangle ABD$ et  en utilisant l'équation séparément pour $\triangle ABC$ et $\triangle ADC$ (fig.~\ref{f.sin-sum2}).
 On calcule également  $h$ en utilisant la définition des fonctions trigonométriques :
 \begin{align*}
-\triangle ABD &= \frac{1}{2}bc\sin(\alpha+\beta)\\
+\triangle ABD &= \frac{1}{2}bc\sin(\alpha+\beta)\,,\\
 \triangle ABD &= \triangle ABC+\triangle ADC\\
 &= \frac{1}{2}ch\sin \alpha + \frac{1}{2}bh\sin \beta\\
 &= \frac{1}{2}c(b\cos\beta)\sin \alpha + \frac{1}{2}b(c\cos\alpha)\sin \beta\,.
 \end{align*}
 En égalant les deux formules pour $\triangle ABD$ et en simplifiant par $\frac{1}{2}bc$, on obtient 
 \[
-\sin(\alpha+\beta)=\sin\alpha\cos\beta+\cos \alpha\sin\beta\,.  \qed
+\sin(\alpha+\beta)=\sin\alpha\cos\beta+\cos \alpha\sin\beta\,.   \tag*{\qed}
 \]
 
 
@@ -429,9 +429,9 @@ $\angle ADC+\angle ABC=180^\circ$ puisque les deux angles sont des angles droits
 
 Supposons que le diamètre du cercle soit 1 (sinon, multiplions tout par la longueur du diamètre). Alors les côtés du quadrilatère sont 
 \[
-\overline{BC}=\sin\alpha,\quad \overline{CD}=\sin\beta,\quad \overline{AB}=\sin\gamma,\quad \overline{DA}=\sin\delta\,,
+\overline{BC}=\sin\alpha,\quad \overline{CD}=\sin\beta,\quad \overline{AB}=\sin\gamma,\quad \overline{DA}=\sin\delta\,.
 \]
-et leurs diagonales sont 
+Les diagonales sont 
 \[
 \overline{BD}=\sin(\alpha + \beta),\quad \overline{CA}=\sin (\alpha+\gamma)\,.
 \]
@@ -442,7 +442,7 @@ D'après le théorème de Ptolémée (théorème~\ref{thm.ptolemy}), le produit 
 \sin \alpha \sin\delta + \sin \beta\sin \gamma,\\
 \sin (\alpha+\beta)\sin(90^\circ)&=
 \sin \alpha \sin(90^\circ-\beta) + \sin \beta\sin (90^\circ-\alpha),\\
-\sin (\alpha+\beta)&=\sin\alpha\cos\beta+\cos\alpha\sin \beta\,. \qed
+\sin (\alpha+\beta)&=\sin\alpha\cos\beta+\cos\alpha\sin \beta\,. \tag*{\qed}
 \end{align*}
 
 
@@ -462,7 +462,7 @@ La démonstration utilise les formules du théorème~\ref{thm.sum-of-trig} et la
 \cos 3\alpha &= \cos (2\alpha +\alpha)\\
 &= \cos 2\alpha\cos\alpha - \sin 2\alpha\sin\alpha\\
 &= (\cos^2\alpha -\sin^2\alpha)\cos\alpha - (2\sin\alpha\cos\alpha)\sin\alpha\\
-&=\cos^3\alpha - \cos\alpha\sin^2\alpha -2\sin^2\alpha\cos\alpha)\\
+&=\cos^3\alpha - \cos\alpha\sin^2\alpha -2\sin^2\alpha\cos\alpha\\
 &=\cos^3\alpha - \cos\alpha +\cos^3\alpha -2\cos\alpha+2\cos^3\alpha\\
 &=4\cos^3\alpha -3\cos\alpha\,.\qedhere
 \end{align*}
@@ -484,11 +484,11 @@ Pour un triangle, $0\!<\!\alpha\!<\!180^\circ$, donc $0\!<\!\alpha/2\!<\!90^\cir
 \begin{proof}
 La démonstration utilise les formules du théorème~\ref{thm.sum-of-trig} et la formule $\sin^2\alpha+\cos^2\alpha=1$:
 \begin{align*}
-\cos \alpha&=\cos 2\left(\frac{\alpha}{2}\right)=\cos \left(\frac{\alpha}{2}\right)\cos\left(\frac{\alpha}{2}\right)-\sin \left(\frac{\alpha}{2}\right)\sin\left(\frac{\alpha}{2}\right)\\
-&=2\cos^2 \left(\frac{\alpha}{2}\right)-1\\
-\cos \left(\frac{\alpha}{2}\right)&=\sqrt{\frac{1+\cos\alpha}{2}}\\
-\sin^2\left(\frac{\alpha}{2}\right)&= 1-\cos^2\left(\frac{\alpha}{2}\right)=1-\frac{1+\cos\alpha}{2}\\
-\sin \left(\frac{\alpha}{2}\right)&=\sqrt{\frac{1-\cos\alpha}{2}}\,.
+\cos \alpha&=\cos \left(2\cdot \frac{\alpha}{2}\right)=\cos \left(\frac{\alpha}{2}\right)\cos\left(\frac{\alpha}{2}\right)-\sin \left(\frac{\alpha}{2}\right)\sin\left(\frac{\alpha}{2}\right)\\
+&=2\cos^2 \left(\frac{\alpha}{2}\right)-1\,,\\
+\cos \left(\frac{\alpha}{2}\right)&=\sqrt{\frac{1+\cos\alpha}{2}}\,,\\
+\sin^2\left(\frac{\alpha}{2}\right)&= 1-\cos^2\left(\frac{\alpha}{2}\right)=1-\frac{1+\cos\alpha}{2}\,,\\
+\sin \left(\frac{\alpha}{2}\right)&=\sqrt{\frac{1-\cos\alpha}{2}}\,.\qedhere
 \end{align*}
 \end{proof}
 
@@ -509,15 +509,15 @@ c^2=a^2+b^2-2ab\cos \angle ACB\,.
 Traçons la hauteur issue de $C$ et utilisons la définition du cosinus et le théorème de Pythagore :
 \begin{subequations}
 \begin{align}
-c&= x+(c-x)=a\cos \beta + b\cos \alpha\\
-c^2&=ac\cos \beta + bc\cos \alpha\,.\slabel{eq.lc1}
+c&= x+(c-x)=a\cos \beta + b\cos \alpha\,,\\
+c^2&=ac\cos \beta + bc\cos \alpha\,.\label{eq.lc1}
 \end{align}
 \end{subequations}
-De la même manière, traçons  les hauteurs issues de$A$ et de $B$ pour obtenir 
+De la même manière, traçons  les hauteurs issues de $A$ et de $B$ pour obtenir 
 \begin{subequations}
 \begin{align}
-a^2&=ca\cos \beta + ba\cos \gamma\slabel{eq.lc2}\\
-b^2&=cb\cos \alpha + ab\cos \gamma\,.\slabel{eq.lc3}
+a^2&=ca\cos \beta + ba\cos \gamma\,,\label{eq.lc2}\\
+b^2&=cb\cos \alpha + ab\cos \gamma\,.\label{eq.lc3}
 \end{align}
 \end{subequations}
 
@@ -526,8 +526,8 @@ En additionnant les équations~\ref{eq.lc2} et \ref{eq.lc3} et en soustrayant l'
 a^2+b^2-c^2&=ca\cos \beta + ba\cos \gamma\\
 &\;\; +\,cb\cos \alpha + ab\cos \gamma \\
 &\;\; -\,ac\cos \beta - bc\cos \alpha\\
-&=2ab\cos \gamma\\
-c^2&=a^2+b^2-2ab\cos \gamma\,.\qed
+&=2ab\cos \gamma\,,\\
+c^2&=a^2+b^2-2ab\cos \gamma\,.\tag*{\qed}
 \end{align*}
 
 
@@ -559,14 +559,14 @@ c^2&=a^2+b^2-2ab\cos \gamma\,.\qed
 La deuxième démonstration utilise le théorème de Ptolémée  (théorème~\ref{thm.ptolemy}).\footnote{La section~\ref{a.ptolemy} utilise la loi des cosinus pour démontrer le théorème de Ptolémée ! La première démonstration de la loi des cosinus permet d'éviter ce raisonnement circulaire. De plus, il existe des démonstrations du théorème de Ptolémée qui n'utilisent pas la loi des cosinus.}
 
 Le triangle $\triangle ABC$ peut être circonscrit par un cercle. 
-Construisons un autre triangle $\triangle ABC'$ isométrique à $\triangle ABC$ et inscrit dans le même cercle (fig.~\ref{f.law-cosines3}). Pour cela, on construit un angle à partir de $\overline{AB}$ égal à $\angle CAB$ qui coupe le cercle en $C'$, puis on construit la droite $\overline{C'A}$.
+Construisons un autre triangle $\triangle ABC'$ isométrique à $\triangle ABC$ et inscrit dans le même cercle (fig.~\ref{f.law-cosines3}). Pour cela, on construit en $B$ un angle avec $\overline{AB}$ égal à $\angle CAB$. Il coupe le cercle en $C'$. Puis on construit la droite $\overline{C'A}$.
 Puisque les angles sous-tendus par la même corde sont égaux, $\angle AC'B =\angle BCA$, il en est de même pour $\angle CBA=\angle C'AB$ et donc $\triangle ABC'\cong \triangle BAC$ (deux angles et un côté égaux) avec le côté commun $\overline{AB}$.
 
 Traçons les perpendiculaires à $\overline{AB}$ de $C$ à $D$ et de $C'$ à $D'$ de sorte que $x=a\cos \beta$. D'après le théorème de Ptolémée pour le quadrilatère $\overline{ABCC'}$,
 \begin{align*}
 b^2&=a^2+c(c-2x)\\
 &= a^2 + c(c-2a\cos\beta)\\
-&=a^2+c^2-2ac\cos\beta\,.\qedhere
+&=a^2+c^2-2ac\cos\beta\,.\tag*{\qed}
 \end{align*}
 
 
@@ -675,7 +675,7 @@ Si $\alpha+\beta+\gamma=180^\circ$, alors
 \begin{align*}
 \tan\gamma &= \tan (180^\circ-(\alpha+\beta))\\
 &= -\tan (\alpha+\beta)\\
-&= -\frac{\tan\alpha+\tan\beta}{1-\tan\alpha\tan\beta}\\
+&= -\frac{\tan\alpha+\tan\beta}{1-\tan\alpha\tan\beta}\,,\\
 \tan\alpha\tan\beta\tan\gamma &=\tan\alpha+\tan\beta+\tan\gamma\,.\qedhere
 \end{align*}
 
@@ -685,17 +685,9 @@ Si $\alpha+\beta+\gamma=180^\circ$, alors
 
 
 
-\subsection{La limite de $\sin\alpha/\alpha$}\label{s.sin-over-x}
+\subsection{La limite de $\frac{\sin\alpha}{\alpha}$}\label{s.sin-over-x}
 
-
-\begin{theorem}\label{thm.limit-sine-over}
-\[
-\lim_{\alpha\rightarrow 0}\frac{\sin\alpha}{\alpha}=1\,.
-\]
-\end{theorem}
-
-\begin{proof}
-En examinant les polygones réguliers inscrits dans un cercle (fig.~\ref{fig.regular-polygons}), on constate que plus un polygone a de côtés, plus son périmètre est proche de la circonférence du cercle. 
+En examinant les polygones réguliers inscrits dans un cercle unité  (fig.~\ref{fig.regular-polygons}), on constate que plus un polygone a de côtés, plus son périmètre est proche de la circonférence du cercle. 
 
 
 \begin{figure}[htbp]
@@ -741,7 +733,7 @@ En examinant les polygones réguliers inscrits dans un cercle (fig.~\ref{fig.reg
 \caption{Polygones réguliers à 3, 8 et 16 côtés inscrits dans un cercle.}\label{fig.regular-polygons}
 \end{figure}
 
-La circonférence du cercle divisée par le nombre de côtés est la longueur d'un arc dont les extrémités sont les mêmes que celles du côté correspondant, puisque dans un polygone régulier tous les côtés ont la même longueur. Puisque le rapport entre la circonférence du cercle et le périmètre d'un polygone inscrit se rapproche de 1 lorsque le nombre de côtés augmente, il en va de même pour le rapport entre la longueur d'un arc et la corde correspondante. Ceci est illustré par les exemples numériques suivants :
+La circonférence du cercle divisée par le nombre de côtés est la longueur d'un arc dont les extrémités sont les mêmes que celles du côté correspondant. Comme le rapport entre la circonférence du cercle et le périmètre d'un polygone inscrit se rapproche de 1 lorsque le nombre de côtés augmente, il en va de même pour le rapport entre la longueur d'un arc et la corde correspondante. Ceci est illustré par les exemples numériques suivants :
 
 \enlargethispage{\baselineskip}
 \vspace{-1ex}
@@ -760,6 +752,13 @@ La circonférence du cercle divisée par le nombre de côtés est la longueur d'
 
 Puisque $a=b=1$, la longueur de la corde $c$ sous-tendant $\alpha$ peut être calculée à partir de la loi des cosinus 
  (fig.~\ref{fig.length-of-a-chord}):
+\begin{align*}
+c^2&=a^2+b^2-2ab\cos \alpha\,,\\
+c&=\sqrt{2-2\cos \alpha}\,.\\
+%\lim_{\alpha\rightarrow 0} c&= \sqrt{2-2\cdot 1}=0\,.
+\end{align*}
+
+
 \begin{figure}[htbp]
 \centering
         \begin{tikzpicture}[scale=1.1]
@@ -774,12 +773,15 @@ Puisque $a=b=1$, la longueur de la corde $c$ sous-tendant $\alpha$ peut être ca
 
 \caption{La longueur d'une corde correspondant à un arc d'angle $\alpha$.}\label{fig.length-of-a-chord}
 \end{figure}
-\begin{align*}
-c^2&=a^2+b^2-2ab\cos \alpha\\
-c&=\sqrt{2-2\cos \alpha}\\
-\lim_{\alpha\rightarrow 0} c&= \sqrt{2-2\cdot 1}=0\,.
-\end{align*}
-En se référant à la figure~\ref{fig.ratio-of-sine-to-x},
+
+
+\begin{theorem}\label{thm.limit-sine-over}
+\[
+\lim_{\alpha\rightarrow 0}\frac{\sin\alpha}{\alpha}=1\,.
+\]
+\end{theorem}
+
+\begin{proof} En se référant\footnote{N.D.T. On peut remarquer pour $0<\alpha<\pi/2$ que $\sin \alpha \leq \alpha\leq \tan \alpha$ implique $\cos \alpha \leq \tfrac{\sin \alpha}{\alpha} \leq 1$, ce qui donne la limite quand $\alpha \to 0$.} à la figure~\ref{fig.ratio-of-sine-to-x},
 \[
 \lim_{\alpha \rightarrow 0} \frac{\sin \alpha}{\alpha} = \lim_{\alpha \rightarrow 0} \frac{2\sin \alpha}{2\alpha}\,.
 \]
@@ -826,7 +828,7 @@ Mais nous avons vu que ce rapport converge vers $1$ lorsque l'angle sous-tendu $
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\section{Théorèmes de la bissectrice }\label{a.bisector}
+\section{Les théorèmes de la bissectrice }\label{a.bisector}
 
 
 \begin{theorem}\label{thm.angle-bisector}
@@ -864,10 +866,10 @@ Dans $\triangle ABC$, la bissectrice de $\angle BAC$ coupe $\overline{BC}$ en $D
 \begin{proof}
 Nous démontrons le théorème en calculant les aires de deux triangles en utilisant d'une part  la base et la hauteur (équation~\ref{eq.area-from-base}), d'autre part la base, l'angle et le côté (équation~\ref{eq.area-from-sine}):
 \begin{align*}
-\triangle ABD&=\frac{1}{2}\overline{BD}h=\frac{1}{2}\overline{AB}\,\overline{AD}\sin \alpha\\
-\frac{\overline{BD}}{\overline{AB}}&=\frac{\overline{AD}\sin \alpha}{h}\\
-\triangle ACD&=\frac{1}{2}\overline{CD}h=\frac{1}{2}\overline{AC}\,\overline{AD}\sin \alpha\\
-\frac{\overline{CD}}{\overline{AC}}&=\frac{\overline{AD}\sin \alpha}{h}\\
+\triangle ABD&=\frac{1}{2}\overline{BD}h=\frac{1}{2}\overline{AB}\,\overline{AD}\sin \alpha\,,\\
+\frac{\overline{BD}}{\overline{AB}}&=\frac{\overline{AD}\sin \alpha}{h}\,,\\
+\triangle ACD&=\frac{1}{2}\overline{CD}h=\frac{1}{2}\overline{AC}\,\overline{AD}\sin \alpha\,,\\
+\frac{\overline{CD}}{\overline{AC}}&=\frac{\overline{AD}\sin \alpha}{h}\,,\\
 \frac{\overline{BD}}{\overline{CD}}&=\frac{\overline{AB}}{\overline{AC}}\,.\qedhere
 \end{align*}
 \end{proof}
@@ -909,11 +911,11 @@ Dans $\triangle ABC$, soit $\overline{AE}$ la bissectrice de l'angle supplément
 
 
 
-\begin{proof} Puisque $\overline{AC}$ est une droite, $\angle EAC=180^\circ-\alpha$.
+\begin{proof} On a $\angle EAC=180^\circ-\alpha$.
 \begin{align*}
-\triangle ABE&=\frac{1}{2}\overline{BE}h=\frac{1}{2}\overline{AE}\,\overline{AB}\sin \alpha\\
-\triangle ACE&=\frac{1}{2}\overline{CE}h=\frac{1}{2}\overline{AE}\,\overline{AC}\sin (180^\circ-\alpha)=\frac{1}{2}\overline{AE}\,\overline{AC}\sin \alpha\\
-\frac{\overline{BE}}{\overline{AB}}&=\frac{\overline{AE}\sin \alpha}{h}=\frac{\overline{CE}}{\overline{AC}}\\
+\triangle ABE&=\frac{1}{2}\overline{BE}h=\frac{1}{2}\overline{AE}\,\overline{AB}\sin \alpha\,,\\
+\triangle ACE&=\frac{1}{2}\overline{CE}h=\frac{1}{2}\overline{AE}\,\overline{AC}\sin (180^\circ-\alpha)=\frac{1}{2}\overline{AE}\,\overline{AC}\sin \alpha\,,\\
+\frac{\overline{BE}}{\overline{AB}}&=\frac{\overline{AE}\sin \alpha}{h}=\frac{\overline{CE}}{\overline{AC}}\,,\\
 \frac{\overline{BE}}{\overline{CE}}&=\frac{\overline{AB}}{\overline{AC}}\,. \qedhere
 \end{align*}
 \end{proof}
@@ -997,7 +999,7 @@ Tout triangle peut être circonscrit par un cercle. On circonscrit $\triangle DA
 
 Construisons une demi-droite qui prolonge $\overline{DC'}$. Soit $C$ son intersection avec le cercle. $\overline{ABCD}$ est circonscrit par un cercle, donc 
 \begin{align*}
-\angle DAB + \angle DCB &=  180^\circ = \angle DAB + \angle DC'B\\
+\angle DAB + \angle DCB &=  180^\circ = \angle DAB + \angle DC'B\,,\\
 \angle DCB &= \angle DC'B\,,
 \end{align*}
 ce qui est impossible si $C$ est sur le cercle et $C'$ est à l'intérieur du cercle. \qed
@@ -1006,10 +1008,10 @@ ce qui est impossible si $C$ est sur le cercle et $C'$ est à l'intérieur du ce
 Les angles opposés d'un trapèze isocèle sont supplémentaires.
 \end{theorem}
 \begin{proof}
-Construisons la droite $\overline{AB'}$ parallèle à $\overline{CD}$ (fig.~\ref{f.trap-3}). $\overline{AB'CD}$ est un parallélogramme et  $\triangle ABB'$ est un triangle isocèle, donc $\angle C= \angle ABB' = \angle AB'B = \angle B$. De même, $\angle A = \angle D$. Puisque la somme des angles internes de tout quadrilatère est égale à $360^\circ$,
+Construisons le segment $\overline{AB'}$ parallèle à $\overline{CD}$ (fig.~\ref{f.trap-3}). $\overline{AB'CD}$ est un parallélogramme et  $\triangle ABB'$ est un triangle isocèle, donc $\angle C= \angle AB'B = \angle ABB' = \angle B$. De même, $\angle A = \angle D$. Puisque la somme des angles internes de tout quadrilatère est égale à $360^\circ$,
 \begin{align*}
-\angle A + \angle B + \angle C + \angle D &= 360^\circ\\
-2\angle A + 2 \angle C &= 360^\circ\\
+\angle A + \angle B + \angle C + \angle D &= 360^\circ\,,\\
+2\angle A + 2 \angle C &= 360^\circ\,,\\
 \angle A +  \angle C &= 180^\circ\,,
 \end{align*}
 et de même $\angle B +  \angle D = 180^\circ$.
@@ -1094,23 +1096,23 @@ f^2 &= b^2 + c^2 - 2bc \cos \angle C\,.
 \end{align*}
 $\angle C = 180^\circ - \angle A$ et $\angle D = 180^\circ - \angle B$ car ce sont des angles opposés d'un quadrilatère circonscrit par un cercle, donc $\cos \angle D = - \cos \angle B$ et $\cos \angle C = -\cos \angle A$. Éliminons le terme en cosinus des équations ci-dessus pour obtenir 
 \begin{align*}
-e^2(cd+ab)&=abc^2+abd^2+a^2cd+b^2cd\\
-e^2 &= \frac{(ac+bd)(ad+bc)}{(ab+cd)}\\
+e^2(cd+ab)&=abc^2+abd^2+a^2cd+b^2cd\,,\\
+e^2 &= \frac{(ac+bd)(ad+bc)}{(ab+cd)}\,,\\
 f^2 &= \frac{(ab+cd)(ac+bd)}{(ad+bc)}\,.
 \end{align*}
 Multiplions les deux équations et simplifions pour obtenir le théorème de Ptolémée 
 \begin{align*}
-e^2\cdot f^2 &= (ac+bd)^2\\
-ef &= (ac+bd)\,.\qedhere
+e^2\cdot f^2 &= (ac+bd)^2\,,\\
+ef &= ac+bd\,.\qedhere
 \end{align*}
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Théorème de Ceva}\label{a.ceva}
+\section{Le théorème de Ceva}\label{a.ceva}
 
 \begin{theorem}[Ceva]
-Pour des segments  allant des sommets d'un triangle aux bords opposés et se coupant en un point, les longueurs des segments (fig.~\ref{f.ceva1}) vérifient 
+Pour des segments  qui vont des sommets d'un triangle aux côtés opposés et qui se coupent en un point, les longueurs des segments (fig.~\ref{f.ceva1}) vérifient 
   \label{thm.ceva}
 \[
 \frac{\overline{AM}}{\overline{MB}}\cdot\frac{\overline{BQ}}{\overline{QS}}\cdot\frac{\overline{SP}}{\overline{PA}} = 1\,.
@@ -1242,15 +1244,15 @@ En soustrayant les surfaces des triangles indiqués, on obtient le rapport entre
 
 Cela peut sembler étrange au premier abord. Nous allons donc l'expliquer en utilisant une notation plus simple :
 \begin{align*}
- \frac{c}{d} &=\frac{a}{b}\\
- \frac{e}{f} &=\frac{a}{b}\\
-c-e &= \frac{ad}{b} - \frac{af}{b}=\frac{a}{b}(d-f)\\
+ \frac{c}{d} &=\frac{a}{b}\,,\\
+ \frac{e}{f} &=\frac{a}{b}\,,\\
+c-e &= \frac{ad}{b} - \frac{af}{b}=\frac{a}{b}(d-f)\,,\\
 \frac{c-e}{d-f} &= \frac{a}{b}\,.
 \end{align*}
 De même, nous pouvons démontrer :
 \begin{align*}
-\frac{\overline{AM}}{\overline{MB}} &= \frac{\triangle AOS}{\triangle BOS}\\
-\frac{\overline{SP}}{\overline{PA}} &=\frac{\triangle SOB}{\triangle AOB}\;,
+\frac{\overline{AM}}{\overline{MB}} &= \frac{\triangle AOS}{\triangle BOS}\,,\\
+\frac{\overline{SP}}{\overline{PA}} &=\frac{\triangle SOB}{\triangle AOB}\,,
 \end{align*}
 donc
 \[
@@ -1262,7 +1264,7 @@ puisque l'ordre des sommets dans un triangle ne fait aucune différence.
 \section{Le théorème de Ménélaüs}\label{a.menelaus}
 
 \begin{theorem}[Ménélaüs]\label{thm.menelaus} 
-Soit $\triangle ABC$ un triangle et $\overline{DBQ}$ une droite transversale qui coupe les trois arêtes du triangle ou leurs prolongements (fig.~\ref{f.menelaus}). Alors \footnote{Selon la configuration du triangle et de la droite transversale, le résultat de la multiplication peut être plus ou moins un.}
+Soit $\triangle ABC$ un triangle et $\overline{DBQ}$ une droite transversale qui coupe les trois côtés du triangle ou leurs prolongements (fig.~\ref{f.menelaus}). Alors \footnote{Selon la configuration du triangle et de la droite transversale, le résultat de la multiplication peut être plus ou moins un.}
 \begin{align}
 \displaystyle\frac{\overline{AB}}{\overline{BP}}\cdot
 \displaystyle\frac{\overline{PQ}}{\overline{QC}}\cdot
@@ -1305,7 +1307,7 @@ Soit $\triangle ABC$ un triangle et $\overline{DBQ}$ une droite transversale qui
 \end{figure}
 
 \begin{proof}
-Traçons une droite passant par $C$ et parallèle à $\overline{AB}$ et prolongeons $\overline{DQ}$ jusqu'à ce qu'elle coupe la parallèle en $K$. De $\triangle ADB \sim \triangle CDK$, il résulte que 
+Traçons une droite passant par $C$ et parallèle à $\overline{AB}$. Prolongeons $\overline{DQ}$ jusqu'à ce qu'elle coupe la parallèle en $K$. De $\triangle ADB \sim \triangle CDK$, il résulte que 
 \begin{equation*}
 \displaystyle\frac{\overline{CD}}{\overline{AD}}=\displaystyle\frac{\overline{CK}}{\overline{AB}}\,.
 \end{equation*}

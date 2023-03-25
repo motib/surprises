@@ -42,9 +42,9 @@ F_0=3,\quad F_1=5,\quad F_2=17,\quad F_3=257,\quad F_4=65\,537\,.
 \]
 Un polygone régulier à $257$ côtés a été construit par Magnus Georg Paucker en $1822$ et par Friedrich Julius Richelot en $1832$. En 1894, Johann Gustav Hermes a affirmé avoir construit un polygone régulier à 65\,537 côtés.
 
-Pour construire un polygone régulier, il suffit de construire un segment  de longueur $\cos \theta$, où $\theta$ est l'angle central sous-tendu par une corde qui est un côté du polygone inscrit dans un cercle unitaire. Étant donné le segment $\overline{OB}=\cos\theta$, construisons une perpendiculaire à $B$. Soit $C$ son intersection avec le cercle unitaire. Alors 
+Pour construire un polygone régulier, il suffit de construire un segment  de longueur $\cos \theta$, où $\theta$ est l'angle central sous-tendu par une corde qui est un côté du polygone inscrit dans un cercle unité. Étant donné le segment $\overline{OB}=\cos\theta$, construisons une perpendiculaire à $B$. Soit $C$ son intersection avec le cercle unité. Alors 
 \begin{align*}
-\cos \theta&=\displaystyle\frac{\overline{OB}}{\overline{OC}}=\overline{OB}\\
+\cos \theta&=\displaystyle\frac{\overline{OB}}{\overline{OC}}=\overline{OB}\,,\\
 \theta &= \arccos (\overline{OB})\,.
 \end{align*}
 La corde $\overline{AC}$ est un côté du polygone régulier  (fig.~\ref{f.hept-central1}).
@@ -105,7 +105,7 @@ Le polynôme $x^2+1$ à coefficients entiers a deux racines complexes $\pm\sqrt{
 
 \section{Les racines de l'unité}\label{s.roots}
 
-D'après le théorème fondamental de l'algèbre (théorème~\ref{thm.fundamental}), le polynôme $x^{n}-1$ a $n$ racines pour tout entier $n> 1$. On observe que $x=1$ est une racine. Donc il y a $n-1$ autres racines. On désigne l'une de ces racines par $r$. Puisque $r^{n}=1$, la racine est appelée une racine $n$-ième de l'unité. Qu'en est-il de $r^2$ ?
+D'après le théorème fondamental de l'algèbre (théorème~\ref{thm.fundamental}), le polynôme $x^{n}-1$ a $n$ racines pour tout entier $n> 1$. On observe que $x=1$ est une racine. Donc il y a $n-1$ autres racines. On désigne l'une de ces racines par $r$. Puisque $r^{n}=1$, la racine est appelée une \emph{racine $n$-ième de l'unité}. Qu'en est-il de $r^2$ ?
 \[
 (r^{2})^n=(r^{n})^2=1^2=1\,.
 \]
@@ -136,26 +136,24 @@ sont distinctes, donc ce sont toutes les racines $n$-ièmes  de l'unité.
 \end{theorem}
 
 \begin{proof}
-Supposons que les puissances ne soient pas distinctes de sorte que $r^i=r^j$ avec $0\leq i<j\leq n-1$. Alors $r^j/r^i=r^{j-i}=1$ donc il existe au moins un entier strictement positif $i'$ inférieur à $n$ tel que $r^{i'}=1$. Soit $m$ le plus petit de ces entiers strictement  positifs. Par l'algorithme de division euclidienne pour les entiers,  $n=ml+k$ avec $0<l<n$ et $0\leq k<m$. De 
+Supposons que les puissances ne soient pas distinctes de sorte que $r^i=r^j$ avec $0\leq i<j\leq n-1$. Alors $r^j/r^i=r^{j-i}=1$ donc il existe  un entier  $i'$ avec $0<i'<n$  tel que $r^{i'}=1$. Soit $m$ le plus petit de ces entiers strictement  positifs. Par l'algorithme de division euclidienne pour les entiers,  $n=ml+k$ avec $0<l<n$ et $0\leq k<m$. De 
 \[
 1=r^n=r^{ml+k}=(r^m)^l\cdot r^k=1^l\cdot r^k=r^k\,,
 \]
 on déduit $0\leq k<m$ et $r^k=1$. Puisque $m$ a été défini comme étant le plus petit entier strictement positif de ce type, $k=0$ et $n=ml$ n'est pas premier.
 \end{proof}
 
-\begin{theorem} Soit $\{a_1,a_2,\ldots,a_{n-1},a_n\}$ les racines d'un polynôme $f(x)$ de degré $n$. Alors 
+\begin{theorem} Soit $\{a_1,a_2,\ldots,a_{n-1},a_n\}$ les racines d'un polynôme unitaire $f(x)$ de degré $n$. Alors 
 \begin{align}\label{eq.viete}
 f(x) =(x-a_1) (x-a_2)\cdots (x-a_{n-1})(x-a_n)\,.
 \end{align}
 \end{theorem}
 
 \begin{proof}
-Si $a_i$ est une racine de $f(x)$, on a par définition $f(a_i)=0$. Mais 
-\begin{align*}
-f(a_i)&=(a_i-a_1) (a_i-a_2)\cdots (a_i-a_{n-1})(a_i-a_n)\\
-&=\cdots (a_i-a_i) \cdots =0\,.
-\end{align*}
-Par conséquent, $f(x)=(x-a_i)g_i(x)$ pour un certain $g_i(x)$. Par récurrence, ceci est valable pour toutes les racines.
+Si $a_i$ est une racine de $f(x)$, on a par définition $f(a_i)=0$. La division euclidienne de $f(x)$ par $x-a_i$ donne  
+\[
+f(x)=(x-a_i)g_i(x)+f(a_i)=(x-a_i)g_i(x)\]
+ pour un certain polynôme $g_i(x)$ de degré $n-1$. Le théorème résulte d'une  récurrence sur le degré.
 \end{proof}
 
 D'après l'équation~\ref{eq.viete} il est facile de voir que le coefficient de $x^{n-1}$ est 
@@ -164,7 +162,7 @@ D'après l'équation~\ref{eq.viete} il est facile de voir que le coefficient de 
 \]
 Puisque le coefficient de $x^{n-1}$ dans $x^n-1$ pour $n\geq 2$ est nul, on a 
 \begin{align*}
--(1+r+r^2+\cdots + r^{n-2}+r^{n-1})&=0\\
+-(1+r+r^2+\cdots + r^{n-2}+r^{n-1})&=0\,,\\
 r+r^2+\cdots + r^{n-2}+r^{n-1}&=-1\,.
 \end{align*}
 Pour l'heptadécagone, on obtient
@@ -208,7 +206,7 @@ et soit $a_1$ la somme des racines dans les positions paires de l'équation~\ref
 \[
 a_1=r^3 + r^{10} + r^{5} +r^{11} +r^{14} + r^7+r^{12}+r^6\,.
 \]
-Pour obtenir $a_0,a_1$ comme racines d'une équation du second degré, il faut d'abord calculer leur somme et utiliser l'équation~\ref{eq.minus-one}:
+Pour obtenir $a_0$ et $a_1$ comme racines d'une équation du second degré, il faut d'abord calculer leur somme et utiliser l'équation~\ref{eq.minus-one}:
 \[
 a_0+a_1=r + r^2 + \cdots +r^{16}=-1\,.
 \]
@@ -229,18 +227,18 @@ a_0a_1&=&(r + r^9 + r^{13} +r^{15} +r^{16} + r^8+r^4+r^2)\;\;\times\\
 &=&-4\,.
 \end{array}
 \]
-Vérifions que chaque racine apparaît exactement quatre fois, de sorte que -- en utilisant à nouveau l'équation \ref{eq.minus-one} -- la valeur du produit est $-4$.
+En effet, chaque racine apparaît exactement quatre fois et  l'équation \ref{eq.minus-one} montre que la valeur du produit est $-4$.
 
 
-Puisque $a_0+a_1=-1$ et $a_0 a_1=-4$, $a_1$ et $a_2$ sont les racines de l'équation du second degré $y^2+y-4=0$. Elles peuvent être calculées en utilisant la formule pour les racines d'une équation du second degré :
+Puisque $a_0+a_1=-1$ et $a_0 a_1=-4$, $a_1$ et $a_2$ sont les racines de l'équation du second degré $y^2+y-4=0$. Elles peuvent être calculées en utilisant la formule pour les racines d'une équation du second degré\footnote{N.D.T. Il faut préciser comme dans \cite{Carrega} que $\theta=360^\circ/17$ implique $r+r^{16}=2\cos \theta>1$, $r^2+r^{15}=2\cos(2\theta)>1$,  $r^4+r^{13}=2\cos (4\theta)>0$ et $r^8+r^9=2\cos(8\theta)>-2$. Donc $a_0>0$.}:
 \[
-a_{0,1} = \frac{-1\pm\sqrt{17}}{2}\,.
+a_{0} = \frac{-1+\sqrt{17}}{2}\,,\quad a_{1} = \frac{-1-\sqrt{17}}{2}\,,
 \]
 Maintenant, soient $b_0,b_1,b_2,b_3$ les sommes d'une racine sur quatre à partir de $r^1,r^3,r^9,r^{10}$, respectivement :
 \begin{align*}
-b_0&= r^1+ r^{13} + r^{16} + r^4\\
-b_1&= r^3+ r^{5} + r^{14} + r^{12}\\
-b_2&= r^9+ r^{15} + r^{8} + r^2\\
+b_0&= r^1+ r^{13} + r^{16} + r^4\,,\\
+b_1&= r^3+ r^{5} + r^{14} + r^{12}\,,\\
+b_2&= r^9+ r^{15} + r^{8} + r^2\,,\\
 b_3&= r^{10}+ r^{11} + r^{7} + r^6\,.
 \end{align*}
 Vérifions que $b_0+b_2=a_0$ et $b_1+b_3=a_1$. Calculons les produits correspondants :
@@ -256,12 +254,12 @@ b_1b_3&=(r^3 + r^{5} + r^{14} +r^{12})\;\;\times\;(r^{10} + r^{11} + r^{7} +r^{6
 \end{align*}
 Pour résumer ces calculs :
 \begin{align*}
-b_0+b_2&=a_0\\
-b_0b_2&=-1\\
-b_1+b_3&=a_1\\
+b_0+b_2&=a_0\,,\\
+b_0b_2&=-1\,,\\
+b_1+b_3&=a_1\,,\\
 b_1b_3&=-1\,.
 \end{align*}
-Donc $b_0$ et $b_2$ sont les solutions de $y^2-a_0y-1= 0$, tandis que $b_1$ et $b_3$ sont les solutions de $y^2-a_1y-1 =0$. En utilisant les valeurs calculées précédemment pour $a_0$ et $a_1$, nous pouvons calculer les racines $b_0$ et $b_1$.
+Donc $b_0$ et $b_2$ sont les solutions de $y^2-a_0y-1= 0$, tandis que $b_1$ et $b_3$ sont les solutions de $y^2-a_1y-1 =0$. En utilisant les valeurs calculées précédemment pour $a_0$ et $a_1$, nous pouvons calculer\footnote{N.D.T. On a $r+r^{16}=2\cos \theta>2\cos(2\theta)=r^2+r^{15}$ et $r^4+r^{13}=2\cos (4\theta)>2\cos(8\theta)$. Donc $b_0>b_2$. De même, $b_1>b_3$.} les racines $b_0$ et $b_1$:
 \begin{align*}
 b_0&=\frac{a_0+\sqrt{a_0^2+4}}{2}\\
 &=\frac{
@@ -275,7 +273,7 @@ b_0&=\frac{a_0+\sqrt{a_0^2+4}}{2}\\
 &=\frac{
      (-1+\sqrt{17}) + 
      \sqrt{34-2\sqrt{17}}
-   }{4}\\
+   }{4}\,,\\
 b_1&=\frac{a_1+\sqrt{a_1^2+4}}{2}\\
 &=\frac{
      \displaystyle\frac{(-1-\sqrt{17})}{2} + 
@@ -293,13 +291,13 @@ b_1&=\frac{a_1+\sqrt{a_1^2+4}}{2}\\
 
 Enfin, soient $c_0$ et $c_4$ les sommes d'une racine sur huit en commençant par $r^1$ et $r^{13}$ :
 \begin{align*}
-c_0&=r^1+r^{16}\\
-c_4&=r^{13}+r^4\\
-c_0+c_4&=r^1+r^{16}+r^{13}+r^4=b_0\\
+c_0&=r^1+r^{16}\,,\\
+c_4&=r^{13}+r^4\,,\\
+c_0+c_4&=r^1+r^{16}+r^{13}+r^4=b_0\,,\\
 c_0c_4&=(r^1+r^{16})\cdot(r^{13}+r^4)\\
 &=r^{14}+r^5+r^{12}+r^3=b_1\,.
 \end{align*}
-Donc $c_0$ et $c_4$ sont les racines de $y^2-b_0y+b_1=0$. Puisque $\cos(360^\circ/17) = c_0/2$ (fig.~\ref{f.hept-cosine} et encadré), il suffit de calculer la racine $c_0=r^1+r^{16}$:
+Donc $c_0$ et $c_4$ sont les racines de $y^2-b_0y+b_1=0$. Puisque $\cos(360^\circ/17) = c_0/2$ (fig.~\ref{f.hept-cosine} et encadré), il suffit de calculer\footnote{N.D.T. On a $c_0=2\cos \theta>2\cos(4\theta)=c_4$.} la racine $c_0=r^1+r^{16}$:
 \begin{align*}
 c_0&=\frac{b_0+\sqrt{b_0^2-4b_1}}{2}\\
 &=\frac{1}{2}
@@ -455,7 +453,7 @@ En substituant les termes, on obtient la formule de Gauss :
 
 \section{Construction d'un heptadécagone}\label{s.construction}
 
-Construisons un cercle unitaire de centre $O$ avec des diamètres perpendiculaires $\overline{QP}$ et $\overline{SR}$  (fig.~\ref{f.hept-construction1}).
+Construisons un cercle unité de centre $O$ avec des diamètres perpendiculaires $\overline{QP}$ et $\overline{SR}$  (fig.~\ref{f.hept-construction1}).
 \begin{figure}[htbp]
 \centering
         \begin{tikzpicture}[scale=1.2]
@@ -507,15 +505,15 @@ D'après le théorème de Pythagore,
 \]
 Soit $B$ l'intersection de la bissectrice interne de $\angle OAP$ et du segment  $\overline{OP}$. Soit $C$ l'intersection de la bissectrice externe de $\angle OAP$ et du segment $\overline{QO}$. D'après le théorème~\ref{thm.angle-bisector},
 \begin{align*}
-\frac{\overline{OB}}{\overline{BP}}&=\frac{\overline{AO}}{\overline{AP}}\\
-\frac{\overline{OB}}{1-\overline{OB}}&=\frac{1/4}{\sqrt{17}/{4}}\\
+\frac{\overline{OB}}{\overline{BP}}&=\frac{\overline{AO}}{\overline{AP}}\,,\\
+\frac{\overline{OB}}{1-\overline{OB}}&=\frac{1/4}{\sqrt{17}/{4}}\,,\\
 \overline{OB}&=\frac{1}{1+\sqrt{17}}=\frac{1}{1+\sqrt{17}}\cdot \frac{1-\sqrt{17}}{1-\sqrt{17}}\\
 &=\frac{-1+\sqrt{17}}{16}\,.
 \end{align*}
 D'après le théorème~\ref{thm.external-angle-bisector},
 \begin{align*}
-\frac{\overline{OC}}{\overline{CP}}&=\frac{\overline{AO}}{\overline{AP}}\\
-\frac{\overline{OC}}{1+\overline{OC}}&=\frac{1/4}{\sqrt{17}/{4}}\\
+\frac{\overline{OC}}{\overline{CP}}&=\frac{\overline{AO}}{\overline{AP}}\,,\\
+\frac{\overline{OC}}{1+\overline{OC}}&=\frac{1/4}{\sqrt{17}/{4}}\,,\\
 \overline{OC}&=\frac{1}{-1+\sqrt{17}}=\frac{1}{-1+\sqrt{17}}\cdot \frac{1+\sqrt{17}}{1+\sqrt{17}}\\
 &=\frac{1+\sqrt{17}}{16}\,.
 \end{align*}
@@ -702,14 +700,15 @@ Les racines cinquièmes complexes de l'unité sont
 \subsection{Trigonométrie}
 L'angle central d'un pentagone régulier est  $360^\circ/5=72^\circ$. Calculons $\cos 36^\circ$ en utilisant les formules trigonométriques pour $2\theta$ et $\theta/2$  (théorèmes~\ref{s.sum-of-trig} et \ref{thm.sine-cosine-half}):
 \begin{align*}
-0=\cos 90^\circ &= \cos(72^\circ+18^\circ)=\cos 2\cdot 36^\circ\cos 36^\circ/2 - \sin 2\cdot 36^\circ\sin 36^\circ/2\\
+0=\cos 90^\circ &= \cos(72^\circ+18^\circ)\\
+&=\cos (2\cdot 36^\circ)\cos (36^\circ/2) - \sin (2\cdot 36^\circ)\sin (36^\circ/2)\\
 &=(2\cos^2 36^\circ-1)\sqrt{\frac{1+\cos 36^\circ}{2}}-2\sin 36^\circ\cos 36^\circ\sqrt{\frac{1-\cos 36^\circ}{2}}\,.
 \end{align*}
 Il n'y a maintenant qu'un seul angle dans la formule. Soit $x=\cos 36^\circ$. Alors 
 \begin{align*}
-(2x^2-1)\sqrt{\frac{1+x}{2}}&=2\sqrt{1-x^2}\cdot x \cdot \sqrt{\frac{1-x}{2}}\\
-(2x^2-1)\sqrt{1+x}&=2\sqrt{1-x}\cdot\sqrt{1+x}\cdot x \cdot \sqrt{1-x}\\
-2x^2-1&=2x(1-x)\\
+(2x^2-1)\sqrt{\frac{1+x}{2}}&=2\sqrt{1-x^2}\cdot x \cdot \sqrt{\frac{1-x}{2}}\,,\\
+(2x^2-1)\sqrt{1+x}&=2\sqrt{1-x}\cdot\sqrt{1+x}\cdot x \cdot \sqrt{1-x}\,,\\
+2x^2-1&=2x(1-x)\,,\\
 4x^2-2x-1&=0\,.
 \end{align*}
 La résolution de l'équation du second degré donne une valeur constructible :

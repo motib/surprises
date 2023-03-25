@@ -6,7 +6,7 @@
 
 Un compas moderne est un compas fixe : la distance entre les deux branches peut être fixée de manière à pouvoir copier un segment  ou un cercle d'une position à une autre (fig.~\ref{fig.fixed-compass}). Euclide utilise un \og compas éphémère\fg{} qui ne permet pas de conserver  une distance fixe entre les branches  (fig.~\ref{fig.collapsing-compass}). Les enseignants utilisent souvent un compas éphémère constitué d'un marqueur attaché à une ficelle pour tracer un cercle sur un tableau blanc. Il est impossible de maintenir une longueur fixe lorsque le compas est retiré du tableau blanc. 
 
-Ce chapitre commence par une discussion sur la pertinence de l'étude de la construction avec une règle et un compas (section~\ref{s.relevance}).
+Ce chapitre commence par une discussion sur la pertinence de l'étude de la construction avec une règle et un compas (sect.~\ref{s.relevance}).
 Dans la section~\ref{s.collapse}, on  compare les deux types de compas dans la construction la plus élémentaire, celle d'une médiatrice. La section~\ref{s.collapse-copy} présente la méthode d'Euclide pour copier un segment  à l'aide d'un compas éphémère. Cela montre que toute construction qui peut être réalisée à l'aide d'un compas fixe peut l'être à l'aide d'un compas éphémère. La section~\ref{s.collapse-copy-incorrect} présente  une démonstration de ce théorème qui semble correcte, mais qui ne fonctionne pas pour toutes les configurations de droites et de points. Pour souligner qu'il ne faut pas se fier aux figures, la section~\ref{s.collapse-isoceles} présente une célèbre fausse démonstration  que tous les triangles sont isocèles; la démonstration  semble correcte mais ne l'est pas car elle est basée sur une figure qui n'est pas correcte.
 
 %\vspace{0.4cm}
@@ -137,7 +137,7 @@ Certains manuels de géométrie présentent la construction de la médiatrice  d
 \draw ($ (b) ! 1.2 ! (t)$) -- ($ (t) ! 1.2 ! (b)$);
 \end{tikzpicture}
 %\includegraphics[width=0.6\textwidth]{Fig1_2b}
-         \captionof{figure}{Construction d'une médiatrice  à l'aide d'un compas fixe ou d'un compas euclidien.}
+         \captionof{figure}{Construction d'une médiatrice  à l'aide d'un compas fixe ou d'un compas éphémère.}
          \label{f.collapse-perp-bisector-collapse}
      \end{minipage}
 
@@ -346,7 +346,7 @@ $\overline{DC}=\overline{DA}$ car $\triangle ACD$ est équilatéral. $\overline{
 \draw[white,fill=white] (-5,4.5) rectangle +(13,1.5);
 \end{tikzpicture}
 %         \includegraphics[height=4cm]{Fig1_6.jpg}
-     \caption{Construction de $\overline{CF}=\overline{AB}$}
+     \caption{Construction de $\overline{CF}=\overline{AB}$.}
      \label{f.collapse-copying-5}
 \end{figure}
 
@@ -463,7 +463,7 @@ Puisque
 \[
 \angle GEC = \angle GEA \!-\!\angle CEA = \angle DEC\!-\!\angle CEA = \angle DEA\,,
 \] 
-il s'ensuit que $\triangle ADE\cong\triangle CGE$ par le troisième cas d'égalité des triangles (deux côtés et un angle égaux). $\overline{AB}=\overline{AD}$ sont des rayons du petit cercle de  centre  $A$, donc $\overline{GC}=\overline{AD}=\overline{AB}$.
+il s'ensuit que $\triangle ADE\cong\triangle CGE$ d'après l'un des cas d'égalité des triangles (deux côtés et un angle égaux). $\overline{AB}=\overline{AD}$ sont des rayons du petit cercle de  centre  $A$, donc $\overline{GC}=\overline{AD}=\overline{AB}$.
 \end{proof}
 
 La démonstration n'est correcte que si $\overline{AC}>\overline{AB}$.  La figure~\ref{f.collapse-incorrect-4} montre un cas où $\overline{AC}<\overline{A}B$. On peut voir que $\overline{AB}\neq\overline{GC}$.

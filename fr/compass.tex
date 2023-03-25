@@ -14,9 +14,9 @@ Il y aura des droites dans les figures de ce chapitre, mais elles ne servent qu'
 
 Une construction à l'aide d'une règle et d'un compas est une suite de trois opérations :
 \begin{itemize}
-\item Trouver le point d'intersection de deux droites.
-\item Trouver les points d'intersection d'une droite et d'un cercle.
-\item Trouver les points d'intersection de deux cercles.
+\item trouver le point d'intersection de deux droites.
+\item trouver les points d'intersection d'une droite et d'un cercle.
+\item trouver les points d'intersection de deux cercles.
 \end{itemize}
 La troisième opération peut être réalisée avec un simple compas. Nous devons montrer que les deux premières opérations peuvent être effectuées uniquement avec un compas. 
 
@@ -79,16 +79,16 @@ La troisième opération peut être réalisée avec un simple compas. Nous devon
 \section{Réflexion d'un point}\label{s.reflection}
 
 \begin{definition}
-Un point $C'$ est la \emph{réflexion} du point $C$ autour d'un segment  $\overline{AB}$ si $\overline{AB}$ (ou la droite contenant $\overline{AB}$) est la médiatrice du segment $\overline{CC'}$.
+Un point $C'$ est le \emph{symétrique} du point $C$ par rapport au segment  $\overline{AB}$ si  la droite contenant $\overline{AB}$ est la médiatrice du segment $\overline{CC'}$.
 \end{definition}
 
 \begin{theorem}\label{thm.compass-reflection}
-Étant donné une droite $\overline{AB}$ et un point $C$ non situé sur $\overline{AB}$, il est possible de construire $C'$, la réflexion de $C$ autour de $\overline{AB}$.
+Étant donné une droite $\overline{AB}$ et un point $C$ non situé sur $\overline{AB}$, il est possible de construire le symétrique $C'$ de $C$ par rapport à $\overline{AB}$.
 \end{theorem}
 
 \begin{proof} 
-Construisons un cercle de centre $A$ passant par $C$ et un cercle de centre $B$ passant par $C$. L'autre intersection des deux cercles est le point $C'$ qui est la réflexion de $C$ (fig.~\ref{f.compass-reflection}).
-$\triangle ABC \cong \triangle ABC'$ (trois côtés égaux) puisque $\overline{AC}$ et $\overline{AC'}$ sont des rayons du même cercle, tout comme $\overline{BC}$ et $\overline{BC'}$, tandis que  $\overline{AB}$ est un côté commun. Par conséquent, $\angle CAB = \angle C'AB$ et donc $\overline{AB}$ est la bissectrice de $\angle CAC'$. Mais $\triangle CAC'$ est un triangle isocèle. La bissectrice  $\overline{AB}$ est aussi la médiatrice de $\overline{CC'}$, la base de $\triangle CAC'$. Par définition, $C'$ est la réflexion de $C$ autour de $\overline{AB}$.
+Construisons un cercle de centre $A$ passant par $C$ et un cercle de centre $B$ passant par $C$. L'autre intersection des deux cercles est le point $C'$ qui est le  symétrique de $C$ (fig.~\ref{f.compass-reflection}).
+$\triangle ABC \cong \triangle ABC'$ (trois côtés égaux) puisque $\overline{AC}$ et $\overline{AC'}$ sont des rayons du même cercle, tout comme $\overline{BC}$ et $\overline{BC'}$, tandis que  $\overline{AB}$ est un côté commun. Par conséquent, $\angle CAB = \angle C'AB$ et donc $\overline{AB}$ est la bissectrice de $\angle CAC'$. Mais $\triangle CAC'$ est un triangle isocèle. La bissectrice  $\overline{AB}$ est aussi la médiatrice de $\overline{CC'}$, la base de $\triangle CAC'$. Par définition, $C'$ est le symétrique de $C$ par rapport à $\overline{AB}$.
 \end{proof}
 
 \begin{figure}[t]
@@ -116,7 +116,7 @@ $\triangle ABC \cong \triangle ABC'$ (trois côtés égaux) puisque $\overline{A
 \draw[rotate=90] (center) rectangle +(8pt,8pt);
 \end{tikzpicture}
 %\includegraphics[width=\textwidth]{Fig13_2}
-\caption{Construction d'une réflexion.}\label{f.compass-reflection}
+\caption{Construction du symétrique.}\label{f.compass-reflection}
 \end{figure}
 
 
@@ -131,7 +131,7 @@ $\triangle ABC \cong \triangle ABC'$ (trois côtés égaux) puisque $\overline{A
 \end{theorem}
 
 \begin{proof}
-Construisons $c(A,B)$ et $c(B,A)$. Soient $X$ et $Y$  leurs points d'intersection (fig.~\ref{f.compass-circle1}). $A$ est la réflexion de $B$ autour de $\overline{XY}$ puisque $\triangle YAX\cong \triangle YBX$ (trois côtés égaux). Avec le théorème~\ref{thm.compass-reflection}, on construit $C'$, la réflexion de $C$ autour de $\overline{XY}$ et ensuite on construit $c(A,\overline{AC'})$ (fig.~\ref{f.compass-circle3}).
+Construisons $c(A,B)$ et $c(B,A)$. Soient $X$ et $Y$  leurs points d'intersection (fig.~\ref{f.compass-circle1}). $A$ est le symétrique de $B$ par rapport à $\overline{XY}$ puisque $\triangle YAX\cong \triangle YBX$ (trois côtés égaux). Avec le théorème~\ref{thm.compass-reflection}, on construit le symétrique $C'$ de $C$ par rapport à $\overline{XY}$ et ensuite on construit $c(A,\overline{AC'})$ (fig.~\ref{f.compass-circle3}).
 
 \begin{figure}[htbp]
 \centering
@@ -254,7 +254,7 @@ On peut construire un trapèze isocèle.
 \end{theorem}
 
 \begin{proof}
-Soit $H$ un point quelconque sur $c(Q,b)$. Construisons $H'$ sa réflexion autour de $\overline{PQ}$. Soit $h$ la longueur de $\overline{HH'}$  (fig.~\ref{f.compass-isoceles-trap1}).
+Soit $H$ un point quelconque sur $c(Q,b)$. Construisons son symétrique $H'$ par rapport à $\overline{PQ}$. Soit $h$ la longueur de $\overline{HH'}$  (fig.~\ref{f.compass-isoceles-trap1}).
 
 \begin{figure}[ht]
 \centering
@@ -281,7 +281,7 @@ Soit $H$ un point quelconque sur $c(Q,b)$. Construisons $H'$ sa réflexion autou
 \caption{Construction d'un trapèze isocèle  (1).}\label{f.compass-isoceles-trap1}
 \end{figure}
 
-Construisons les cercles $c(H,b)$ et $c(Q,h)$. Soit $K$ un point d'intersection des cercles. Construisons $K'$ la réflexion de $K$ par rapport à $\overline{PQ}$ (fig.~\ref{f.compass-isoceles-trap2}).
+Construisons les cercles $c(H,b)$ et $c(Q,h)$. Soit $K$ un point d'intersection des cercles. Construisons le symétrique $K'$  de $K$ par rapport à $\overline{PQ}$ (fig.~\ref{f.compass-isoceles-trap2}).
 
 \begin{figure}[htbp]
 \centering
@@ -338,7 +338,7 @@ in
 
 
 
-La droite contenant $\overline{PQ}$ est la médiatrice de $\overline{HH'}$ et $\overline{KK'}$, donc $\overline{HH'}\parallel \overline{KK'}$. $\overline{KH}=b$ puisque c'est le rayon du cercle de centre $H$. Les points $K'$ et $H'$ sont des réflexions de $K$ et $H$. $\triangle QQ'H\cong \triangle QQ'H'$ (trois côtés égaux) et $\triangle KQH\cong \triangle K'QH'$ (deux côtés et un angle égaux), donc $\overline{K'H'}=\overline{KH}=b$. Il s'ensuit que $\overline{KHH'K'}$ est un trapèze isocèle dont les bases sont $\overline{HH'}=h$ et $\overline{KK'}=2h$ (fig.~\ref{f.compass-isoceles-trap3}). On note  $d$ la longueur des diagonales $\overline{K'H}=\overline{KH'}$.
+La droite contenant $\overline{PQ}$ est la médiatrice de $\overline{HH'}$ et $\overline{KK'}$, donc $\overline{HH'}\parallel \overline{KK'}$. $\overline{KH}=b$ puisque c'est le rayon du cercle de centre $H$. Les points $K'$ et $H'$ sont les symétriques de $K$ et $H$. $\triangle QQ'H\cong \triangle QQ'H'$ (trois côtés égaux) et $\triangle KQH\cong \triangle K'QH'$ (deux côtés et un angle égaux), donc $\overline{K'H'}=\overline{KH}=b$. Il s'ensuit que $\overline{KHH'K'}$ est un trapèze isocèle dont les bases sont $\overline{HH'}=h$ et $\overline{KK'}=2h$ (fig.~\ref{f.compass-isoceles-trap3}). On note  $d$ la longueur des diagonales $\overline{K'H}=\overline{KH'}$.
 \end{proof}
 
 \begin{figure}[htbp]
@@ -462,7 +462,7 @@ in
 \end{figure}
 
 Construisons $S$, l'intersection de 
-$c(K,d)$ et $c(K',d)$ (fig.~\ref{f.compass-two-circles}). $\triangle QSK'$ est un triangle rectangle, donc on a d'après le théorème de Pythagore $\overline{QS}^2 = d^2-h^2=x^2$ and $\overline{QS}=x$.
+$c(K,d)$ et $c(K',d)$ (fig.~\ref{f.compass-two-circles}). $\triangle QSK'$ est un triangle rectangle, donc on a d'après le théorème de Pythagore $\overline{QS}^2 = d^2-h^2=x^2$ et $\overline{QS}=x$.
 
 \begin{figure}[bhtp]
 \centering
@@ -743,7 +743,7 @@ Choisissons un point $H$ sur $c_2$ et notons $w$ la longueur de $\overline{AH}$.
 
 $\triangle ZAB\sim\triangle ZHK$ puisque les deux sont des triangles isocèles et que nous avons montré qu'ils ont le même angle au sommet. Posons $x=\overline{HK}$. Alors 
 \begin{align*}
-\frac{m}{s} &= \frac{n}{x}\\
+\frac{m}{s} &= \frac{n}{x}\,,\\
 x&=\frac{n}{m}s\,.\qedhere
 \end{align*}
 
@@ -759,7 +759,7 @@ x&=\frac{n}{m}s\,.\qedhere
 \end{theorem}
 
 \begin{proof}
-Soit $C'$ et $D'$ les réflexions de $C$ et $D$ autour de $\overline{AB}$.
+Soit $C'$ et $D'$ les symétriques de $C$ et $D$ par rapport à $\overline{AB}$.
 Il y a deux cas selon que $C$ et $D$ se trouvent du même côté de $\overline{AB}$ ou de côtés différents. Posons $x=\overline{CS}, c=\overline{CC'}, d=\overline{DD'}, e=\overline{CD}$ comme indiqué sur les figures~\ref{f.compass-intersection1} et \ref{f.compass-intersection2}. Nous calculons la valeur de $x$ pour chaque cas.
 
 \textit{Cas 1:}
@@ -970,7 +970,7 @@ in
 \end{theorem}
 
 \begin{proof}
-Construisons $M'$, la réflexion de $M$ par rapport à $l$ et construisons le cercle $k'=c(M',r)$. Puisque $MYM'\cong\triangle MXM'$, les points $X$ et $Y$   d'intersection de $k$ et $k'$ sont les points d'intersection de $l$ et de $k$  (fig.~\ref{f.compass-circle4}).
+Construisons le symétrique $M'$ de $M$ par rapport à $l$ et construisons le cercle $k'=c(M',r)$. Puisque $MYM'\cong\triangle MXM'$, les points $X$ et $Y$   d'intersection de $k$ et $k'$ sont les points d'intersection de $l$ et de $k$  (fig.~\ref{f.compass-circle4}).
 \begin{figure}[htbp]
 
 \centering

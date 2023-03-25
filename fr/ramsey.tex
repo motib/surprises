@@ -5,7 +5,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 La théorie de Ramsey est une branche de la combinatoire qui pose des questions de la forme suivante : quelle doit être la taille d'un ensemble pour que, si on le divise en sous-ensembles, au moins un sous-ensemble ait une certaine propriété ?
-Les résultats de la théorie de Ramsey sont difficiles à démontrer et de nombreux problèmes restent ouverts. Dans ce chapitre, nous présentons des cas simples de quatre problèmes pour donner un aperçu de ce sujet fascinant : les triplets de Schur (sect.~\ref{s.schur}), des triplets d'entiers tels que $a+b=c$; les triplets de Pythagore (sect.~\ref{s.pyth}), des triplets d'entiers tels que $a^2+b^2=c^2$; le problème de van der Waarden (sect.~\ref{s.van}) qui concerne les suites de nombres; le théorème de Ramsey (sect.~\ref{s.ramsey}) sur le coloriage des graphes. La section~\ref{s.bounds} montre comment la méthode probabiliste en combinatoire permet de trouver une borne inférieure pour les nombres de Ramsey.
+Les résultats de la théorie de Ramsey sont difficiles à démontrer et de nombreux problèmes restent ouverts. Dans ce chapitre, nous présentons des cas simples de quatre problèmes pour donner un aperçu de ce sujet fascinant : les triplets de Schur (sect.~\ref{s.schur}), qui sont des triplets d'entiers tels que $a+b=c$; les triplets de Pythagore (sect.~\ref{s.pyth}), qui sont des triplets d'entiers tels que $a^2+b^2=c^2$; le problème de van der Waarden (sect.~\ref{s.van}) qui concerne les suites de nombres; le théorème de Ramsey (sect.~\ref{s.ramsey}) sur le coloriage des graphes. La section~\ref{s.bounds} montre comment la méthode probabiliste en combinatoire permet de trouver une borne inférieure pour les nombres de Ramsey.
 
 Le problème des triplets pythagoriciens a récemment été résolu à l'aide d'ordinateurs, en utilisant une méthode relativement nouvelle appelée résolution SAT. Pour les lecteurs familiers avec la logique propositionnelle, la section \ref{s.sat} donne un aperçu de la méthode utilisée.
 
@@ -234,7 +234,7 @@ Colorions les arêtes de $K_5$, le graphe complet à 5 sommets, avec deux couleu
 
 
 \begin{definition}
- Le nombre de Ramsey pour $k$,  $R(k)$, est le plus petit nombre $n$ tel que dans tout coloriage avec deux couleurs de $K_{n}$, le graphe complet à $n$ sommets,  il existe un sous-graphe complet monochromatique $K_k$.
+ Le nombre de Ramsey pour $k$,  $R(k)$, est le plus petit nombre $n$ tel que dans tout coloriage avec deux couleurs de $K_{n}$, le graphe complet à $n$ sommets,  il existe un sous-graphe complet $K_k$ monochromatique.
 \end{definition}
 
 
@@ -301,7 +301,7 @@ Pour démontrer qu'il existe un élément d'un ensemble $S$ qui possède la prop
 $\quad R(3) > 4$.
 \end{theorem}
 \begin{proof}
-Étant donné un coloriage aléatoire de $K_n$ par les deux couleurs rouge et bleu, on considère un sous-graphe arbitraire $K_3$, c'est-à-dire un triangle arbitraire avec $\binom{3}{2}=3$ côtés. La probabilité que tous les côtés soient coloriés en rouge est $2^{-3}$, tout comme la probabilité que tous les côtés soient coloriés en bleu. Donc la probabilité que le triangle soit monochromatique est $2^{-3}+2^{-3}=2^{-2}=1/4$. Le nombre de triangles dans $K_n$ est $\binom{n}{3}$, donc $P(n,3)$, la probabilité qu'un triangle quelconque contenu dans un coloriage aléatoire de $K_n$ soit monochromatique, est 
+Étant donné un coloriage aléatoire de $K_n$ par les deux couleurs rouge et bleu, on considère un sous-graphe arbitraire $K_3$, c'est-à-dire un triangle arbitraire avec $\binom{3}{2}=3$ côtés. La probabilité que tous les côtés soient coloriés en rouge est $2^{-3}$, tout comme la probabilité que tous les côtés soient coloriés en bleu. Donc la probabilité que le triangle soit monochromatique est $2^{-3}+2^{-3}=2^{-2}=1/4$. Le nombre de triangles dans $K_n$ est $\binom{n}{3}$, donc  la probabilité  $P(n,3)$ qu'un triangle quelconque contenu dans un coloriage aléatoire de $K_n$ soit monochromatique est 
 \[
 P(n,3)=\binom{n}{3}\cdot \frac{1}{4}\,.
 \]
@@ -331,8 +331,8 @@ P(n,k)=\binom{n}{k}\cdot 2\cdot 2^{-\binom{k}{2}}\,.
 \]
 Pour $k=4$,
 \begin{align*}
-\overline{P}(n,4)&=1-\binom{n}{4}\cdot 2^{-5}=\left.\left(32-\binom{n}{4}\right)\right/32\\
-\overline{P}(6,4)&=(32-15)/32=17/32\\
+\overline{P}(n,4)&=1-\binom{n}{4}\cdot 2^{-5}=\left.\left(32-\binom{n}{4}\right)\right/32\,,\\
+\overline{P}(6,4)&=(32-15)/32=17/32\,,\\
 \overline{P}(7,4)&=(32-35)/32=-3/32\,.
 \end{align*}
 Il s'ensuit que $R(4)>6$ ce qui est beaucoup moins que la valeur connue $R(4)=18$.
@@ -365,7 +365,7 @@ Le \emph{problème SAT} consiste à décider si une formule donnée en FNC est s
 
 \subsection{Les triplets de Schur}
 
-Codons le problème des triplets de Schur $S(8)$ comme une formule en FNC. La formule sera satisfaisable si et seulement s'il existe une décomposition d'un ensemble $S$ en sous-ensembles disjoints $S_1$ et $S_2$ telle que ni $S_1$ ni $S_2$ ne contiennent un triplet de Schur. Il existe un atome $p_i$ pour chacun des nombres $1\leq i \leq 8$. Le sens voulu d'une interprétation de la formule est qu'elle attribue $V$ à $p_i$ si $i$ est dans le premier sous-ensemble $S_1$ et qu'elle attribue $F$ à $p_i$ si $i$ est dans le second sous-ensemble $S_2$. Pour montrer que dans toutes les décompositions, aucun sous-ensemble ne contient un triplet de Schur, l'interprétation doit garantir que pour chaque triplet de Schur possible, au moins un atome prend la valeur $V$ et un atome prend la valeur $F$. 
+Codons le problème des triplets de Schur $S(8)$ comme une formule en FNC. La formule sera satisfaisable si et seulement s'il existe une décomposition d'un ensemble $S$ en sous-ensembles disjoints $S_1$ et $S_2$ telle que ni $S_1$ ni $S_2$ ne contiennent un triplet de Schur. Il y a un atome $p_i$ pour chacun des nombres $1\leq i \leq 8$. Le sens voulu d'une interprétation de la formule est qu'elle attribue $V$ à $p_i$ si $i$ est dans le premier sous-ensemble $S_1$ et qu'elle attribue $F$ à $p_i$ si $i$ est dans le second sous-ensemble $S_2$. Pour montrer que dans toutes les décompositions, aucun sous-ensemble ne contient un triplet de Schur, l'interprétation doit garantir que pour chaque triplet de Schur possible, au moins un atome prend la valeur $V$ et un atome prend la valeur $F$. 
 
 Par exemple, $\{2,4,6\}$ est un triplet de Schur, donc au moins un des trois entiers doit être dans $S_1$ et au moins un d'entre eux doit être dans $S_2$. Par conséquent, $p_2 \vee p_4 \vee p_6$ doit être vrai et aussi $\neg p_2 \vee \neg p_4 \vee \neg p_6$ doit être vrai. Il y a $12$ triplets de Schur possibles, donc la formule en FNC est 
 \begin{align}
@@ -409,7 +409,7 @@ Lorsque l'on donne cette formule au solveur SAT, il répond que la formule est i
 
 \subsection{Les triplets pythagoriciens}
 
-Heule et Kullmann ont résolu le problème des triplets pythagoriciens à l'aide d'un solveur SAT hautement optimisé. Ils ont constaté une différence d'efficacité significative entre le fait de trouver une décomposition qui n'a pas de triplets pythagoriciens (il suffit d'une seule décomposition) et celui de montrer que toutes les décompositions ont un triplet pythagoricien (il faut toutes les vérifier). Montrer que pour toutes les $S(n)$, $1\leq n\leq 7\,824$, il existe une décomposition sans triplet n'a pris qu'une minute de temps de calcul, alors que montrer que chaque décomposition de $S(7\,825)$ a un triplet a pris environ deux jours de temps de calcul pour un ordinateur avec $800$ 
+Heule et Kullmann ont résolu le problème des triplets pythagoriciens à l'aide d'un solveur SAT hautement optimisé. Ils ont constaté une différence d'efficacité significative entre le fait de trouver une décomposition qui n'a pas de triplets pythagoriciens (il suffit d'une seule décomposition) et celui de montrer que toutes les décompositions ont un triplet pythagoricien (il faut toutes les vérifier). Montrer que pour tous les $S(n)$ avec $1\leq n\leq 7\,824$ il existe une décomposition sans triplet n'a pris qu'une minute de temps de calcul, alors que montrer que chaque décomposition de $S(7\,825)$ a un triplet a pris environ deux jours de temps de calcul pour un ordinateur avec $800$ 
  processeurs travaillant en parallèle, soit $40\,000$ heures de temps de calcul.
 
 L'utilisation des ordinateurs en mathématiques soulève naturellement la question : peut-on faire confiance à une démonstration générée par un ordinateur ? Bien sûr, même les démonstrations mathématiques \og ordinaires\fg{} peuvent ne pas être correctes (sect.~\ref{s.kempe}), mais notre expérience des bogues informatiques fréquents, ainsi que l'opacité des grands programmes informatiques, nous rendent plus sensibles aux erreurs potentielles des démonstrations générées par ordinateur.
@@ -460,7 +460,7 @@ Une affectation supplémentaire de $F$ à $p_4$ aboutit à une interprétation s
 
 Cette section est une digression de la théorie de Ramsey ; elle est incluse pour donner un aperçu de la riche théorie des triplets pythagoriciens et pour démontrer la profondeur des connaissances mathématiques dans le monde antique. Les triplets pythagoriciens étaient connus des mathématiques babyloniennes depuis au moins 1800 avant notre ère.
 \begin{definition}
-Un \emph{triplet pythagoricien primitif} est un ensemble de trois entiers positifs $\{a,b,c\}$ tels que $a^2+b^2=c^2$ et tels que $a,b,c$ n'aient pas de facteur commun strictement supérieur à $1$.
+Un \emph{triplet pythagoricien primitif} est un ensemble de trois entiers strictement positifs $\{a,b,c\}$ tels que $a^2+b^2=c^2$ et tels que $a,b,c$ n'aient pas de facteur commun strictement supérieur à $1$.
 \end{definition}
 \begin{example}
 $\{3,4,5\}$ est un triplet pythagoricien primitif mais $\{6,8,10\}$ est un triplet pythagoricien qui n'est pas primitif puisque $2$ est un facteur commun.
@@ -480,7 +480,7 @@ a=u^2-v^2,\quad b=2uv,\quad c=u^2+v^2\,.
 \end{theorem}
 
 \begin{table}[htbp]
-\caption{Les triplets babyloniens de la tablette de Plimpton $322$.}\label{t.babylonian}
+\caption{Les triplets babyloniens de la tablette  Plimpton $322$.}\label{t.babylonian}
 \footnotesize
 \[
 \begin{array}{r@{$\quad\ $}r@{$\quad\ $}r@{$\quad\ $}r@{$\quad\ $}r@{$\quad\ $}r@{$\quad\ $}r@{$\quad\ $}r@{$\quad\ $}r}
@@ -555,8 +555,8 @@ Le lecteur peut vérifier que ces valeurs sont les mêmes que les valeurs décim
 \[
 \renewcommand{\arraystretch}{1.3}
 \begin{array}{lclclcr}
-(3\times 60^2) &+& (31\times 60^1) &\;+\;& (49\times 60^0) &=&   12\,709\\
-(5\times 60^2) &\;+\;& (9\times 60^1) &\;+\;& (1\times 60^0) &=& 18\,541
+(3\times 60^2) &+& (31\times 60^1) &\;+\;& (49\times 60^0) &=&   12\,709,\\
+(5\times 60^2) &\;+\;& (9\times 60^1) &\;+\;& (1\times 60^0) &=& 18\,541.
 \end{array}
 \]
 

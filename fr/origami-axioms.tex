@@ -6,13 +6,13 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-L'origami, l'art du pliage du papier, a été développé il y a plusieurs siècles au Japon et connaît aujourd'hui un succès mondial. La théorie mathématique de l'origami a été développée à la fin du vingtième siècle. Elle repose sur un ensemble de sept axiomes, les \og axiomes de  Huzita-Hatori\fg{}, du nom de Humiaki Huzita qui a formalisé les six premiers axiomes et de Koshiro Hatori qui a trouvé le septième. Jacques Justin a publié les sept axiomes plusieurs années avant Huzita et Hatori, et Margherita P. Beloch a formulé le sixième axiome en 1936. Néanmoins, les axiomes sont connus comme les axiomes de Huzita-Hatori.
+L'origami, l'art du pliage du papier, a été développé il y a plusieurs siècles au Japon et connaît aujourd'hui un succès mondial. La théorie mathématique de l'origami a été développée à la fin du \textsc{xx}$^\text{e}$ siècle. Elle repose sur un ensemble de sept axiomes, les \og axiomes de  Huzita-Hatori\fg{}, du nom de Humiaki Huzita qui a formalisé les six premiers axiomes et de Koshiro Hatori qui a trouvé le septième. Jacques Justin a publié les sept axiomes plusieurs années avant Huzita et Hatori, et Margherita P. Beloch a formulé le sixième axiome en 1936. Néanmoins, les axiomes sont connus comme les axiomes de Huzita-Hatori\footnote{N.D.T. \og Axiomes de Justin-Huzita-Hatori\fg{} dans \cite{Delahaye}.} .
 
 Dans une suite de trois chapitres, nous allons explorer les mathématiques de l'origami. Ce chapitre présente les axiomes, le chapitre~\ref{c.origami-cube} relie l'origami aux racines des polynômes et le chapitre~\ref{c.origami-constructions} montre que les constructions avec l'origami peuvent résoudre des problèmes impossibles à résoudre à la règle et au compas.
  
 Ce chapitre contient une section pour chacun des sept axiomes. Après l'énoncé d'un axiome et un diagramme du pli qu'il spécifie, on présente les équations du pli et des points d'intersection en utilisant la géométrie analytique. Un pli peut également être défini comme un lieu géométrique, c'est-à-dire l'ensemble de tous les points satisfaisant à une certaine propriété. Le terme \og pli\fg{} vient de l'opération d'origami consistant à plier une feuille de papier, mais il est utilisé ici pour désigner la droite qui serait créée par le pliage du papier.
 
-Les plis se traduisent par des réflexions. Étant donné un point $p$, sa réflexion autour d'un pli $l$ donne un point $p'$ tel que $l$ est la médiatrice du segment  $\overline{pp'}$  (fig.~\ref{f.origami-def}).
+Les plis se traduisent par des réflexions. Étant donné un point $p$, son symétrique par rapport au pli $l$ est un point $p'$ tel que $l$ soit la médiatrice du segment  $\overline{pp'}$  (fig.~\ref{f.origami-def}).
 
 \begin{figure}[h]
 \centering
@@ -36,7 +36,7 @@ Les plis se traduisent par des réflexions. Étant donné un point $p$, sa réfl
 \draw[very thick,dotted,->,bend right=50] (2.1,1.9) to (6.05,3.9);
 \end{tikzpicture}
 %\includegraphics[width=0.4\textwidth]{Fig10_1}
-\caption{Le pli est la médiatrice de la ligne reliant un point et son image.}\label{f.origami-def}
+\caption{Le pli est la médiatrice du segment qui relie un point et son image.}\label{f.origami-def}
 \end{figure}
 
 
@@ -76,13 +76,13 @@ y - y_1 = \frac{y_2-y_1}{x_2-x_1}(x-x_1)\,.
 \draw[very thick,dotted,->,bend left=30] (2,5) to (4,1);
 \end{tikzpicture}
 %\includegraphics[width=0.8\textwidth]{Fig10_2}
-\caption{Axiome  $1$}\label{f.origami-axiom1}
+\caption{Axiome  $1$.}\label{f.origami-axiom1}
 \end{figure}
 
 \begin{example}
 Soient  $p_1=(2,2)$ et $p_2=(6,4)$. L'équation de $l$ est 
 \begin{align*}
-y-2&=\frac{4-2}{6-2}(x-2)\\
+y-2&=\frac{4-2}{6-2}(x-2)\,,\\
 y&=\frac{1}{2}x+1\,.
 \end{align*}
 \end{example}
@@ -127,11 +127,11 @@ Le pli est le lieu géométrique de tous les points équidistants de $p_1$ et $p
 \draw[very thick,dotted,->,bend right=50] (2.1,1.9) to (6,3.9);
 \end{tikzpicture}
 %\includegraphics[width=0.9\textwidth]{Fig10_3}
-\caption{Axiome  $2$}\label{f.origami-axiom2}
+\caption{Axiome  $2$.}\label{f.origami-axiom2}
 \end{figure}
 
 \noindent\textbf{Détermination de l'équation du pli.}
-Le pli $l$ est la médiatrice de $\overline{p_1p_2}$. Sa pente est l'inverse de l'opposé de la pente de la droite reliant $p_1$ et $p_2$. Le pli $l$ passe par le milieu des deux points :
+Le pli $l$ est la médiatrice de $\overline{p_1p_2}$. Sa pente est l'inverse de l'opposé de la pente de la droite qui relie $p_1$ et $p_2$. Le pli $l$ passe par le milieu des deux points :
 \begin{align}
 y - \frac{y_1+y_2}{2} = -\frac{x_2-x_1}{y_2-y_1}\left(x-\frac{x_1+x_2}{2}\right)\,.\label{eq.midpoint1}
 \end{align}
@@ -139,7 +139,7 @@ y - \frac{y_1+y_2}{2} = -\frac{x_2-x_1}{y_2-y_1}\left(x-\frac{x_1+x_2}{2}\right)
 \begin{example}
 Soient $p_1=(2,2)$ et $p_2=(6,4)$. L'équation de $l$ est 
 \begin{align*}
-y-\left(\frac{2+4}{2}\right)&=-\frac{6-2}{4-2}\left(x-\left(\frac{2+6}{2}\right)\right)\\
+y-\left(\frac{2+4}{2}\right)&=-\frac{6-2}{4-2}\left(x-\left(\frac{2+6}{2}\right)\right)\,,\\
 y&=-2x+11\,.
 \end{align*}
 \end{example}
@@ -151,7 +151,7 @@ y&=-2x+11\,.
 
 
 \begin{axiom}
-Étant donné deux lignes $l_1$ et $l_2$, il existe un pli $l$ qui place $l_1$ sur $l_2$. (fig.~\ref{f.origami-axiom3}).
+Étant donné deux droites $l_1$ et $l_2$, il existe un pli $l$ qui place $l_1$ sur $l_2$. (fig.~\ref{f.origami-axiom3}).
 \end{axiom}
 
 Le pli est le lieu géométrique des points qui sont équidistants de $l_1$ et $l_2$, où la distance d'un point à une droite est la longueur du segment passant par le point et perpendiculaire à la droite. En utilisant des triangles isométriques, il est facile de montrer que le pli est une bissectrice de l'angle formé par $l_1$ et $l_2$.
@@ -194,34 +194,34 @@ Le pli est le lieu géométrique des points qui sont équidistants de $l_1$ et $
 \draw[very thick,dotted,->,bend left=50] (6.2,1.6) to (1.8,1.3);
 \end{tikzpicture}
 %\includegraphics[width=0.9\textwidth]{Fig10_4}
-\caption{Axiome  $3$}\label{f.origami-axiom3}
+\caption{Axiome  $3$.}\label{f.origami-axiom3}
 \end{figure}
 
 \noindent\textbf{Détermination de l'équation du pli}
 
-\noindent\textit{$l_1,l_2$ sont parallèles :} Soient $l_1$ d'équation $y=mx+b_1$ et  $l_2$ d'équation $y=mx+b_2$. Le pli est la droite parallèle à $l_1$ et $l_2$ qui est à mi-chemin entre elles :
+\noindent\textit{$l_1$ et $l_2$ sont parallèles.} Soient $l_1$ d'équation $y=mx+b_1$ et  $l_2$ d'équation $y=mx+b_2$. Le pli est la droite parallèle à $l_1$ et $l_2$ qui est à mi-chemin entre elles :
 \[
 y=mx+\frac{b_1+b_2}{2}\,.
 \]
-\noindent\textit{$l_1,l_2$ se croisent:} Soient $l_1$ d'équation  $y=m_1x+b_1$ et  $l_2$ d'équation $y=m_2x+b_2$. Le point d'intersection des deux droites, $p_i=(x_i,y_i)$,  vérifie
+\noindent\textit{$l_1$ et $l_2$ se croisent.} Soient $l_1$ d'équation  $y=m_1x+b_1$ et  $l_2$ d'équation $y=m_2x+b_2$. Le point d'intersection des deux droites, $p_i=(x_i,y_i)$,  vérifie
 \begin{align*}
-m_1x_i+b_1&=m_2x_i+b_2\\
-x_i &= \frac{b_2-b_1}{m_1-m_2}\\
+m_1x_i+b_1&=m_2x_i+b_2\,,\\
+x_i &= \frac{b_2-b_1}{m_1-m_2}\,,\\
 y_i &=m_1x_i+b_1\,.
 \end{align*}
 
 \begin{example}\label{ex.axiom3}
 Soient $l_1$ d'équation $y=2x-2$ et $l_2$ d'équation $y=-x+8$. Alors $p_i=(x_i,y_i)$ est donné par
 \begin{align*}
-x_i&=\frac{8-(-2)}{2-(-1)}=\frac{10}{3}\approx \mbox{3,33}\\
+x_i&=\frac{8-(-2)}{2-(-1)}=\frac{10}{3}\approx \mbox{3,33}\,,\\
 y_i &= 2\cdot\frac{10}{3}-2=\frac{14}{3}\approx \mbox{4,67}\,.
 \end{align*}
 \end{example}
 
 
-Le pli est la bissectrice de l'angle formé par $l_1$ et $l_2$ à leur point d'intersection. Il y a deux plis possibles puisqu'il y a deux paires d'angles. Nous devons déterminer les pentes des bissectrices des angles. Si l'angle de la droite $l_1$ par rapport à l'axe $x$ est $\theta_1$ et l'angle de la droite $l_2$ par rapport à l'axe $x$ est $\theta_2$, alors le pli est la droite qui fait un angle  $\theta_b=(\theta_1+\theta_2)/2$ par rapport à l'axe $x$.
+Le pli est la bissectrice de l'angle formé par $l_1$ et $l_2$ à leur point d'intersection. Il y a deux plis possibles puisqu'il y a deux paires d'angles. Nous devons déterminer les pentes des bissectrices des angles. Si l'angle de la droite $l_1$ par rapport à l'axe $x$ est $\theta_1$ et l'angle de la droite $l_2$ par rapport à l'axe $x$ est $\theta_2$, alors le pli est la droite qui fait un angle  $\theta_b=(\theta_1+\theta_2)/2$ par rapport à l'axe~$x$.
 
-Soient $m_1=\tan\theta_1$ et $m_2=\tan \theta_2$. D'après le théorème~\ref{thm.tangent-sum},  la pente $m_s$ de la droite faisant un angle de $\theta_1+\theta_2$ par rapport à l'axe $x$, est 
+Soient $m_1=\tan\theta_1$ et $m_2=\tan \theta_2$. D'après le théorème~\ref{thm.tangent-sum},  la pente $m_s$ de la droite qui fait un angle  $\theta_1+\theta_2$ avec l'axe $x$ est 
 \[
 m_s=\tan(\theta_1+\theta_2)= \frac{\tan\theta_1+\tan\theta_2}{1-\tan\theta_1\tan\theta_2}=\frac{m_1+m_2}{1-m_1m_2}\,.
 \]
@@ -233,14 +233,14 @@ m_b= \tan\frac{\theta_1+\theta_2}{2}=\frac{-1\pm\sqrt{1+\tan^2(\theta_1+\theta_2
 Pour $y=2x-2$ et $y=-x+8$, la pente de la bissectrice de l'angle est donnée par
 %
 \begin{align*}
-m_s&=\frac{2+(-1)}{1-(2 \cdot -1)}=\frac{1}{3}\\
+m_s&=\frac{2+(-1)}{1-(2 \cdot -1)}=\frac{1}{3}\,,\\
 m_b&=\frac{-1\pm\sqrt{1+(1/3)^2}}{1/3}=-3\pm \sqrt{10}\approx -\mbox{6,16};\; \mbox{0,162}\,.
 \end{align*}
 \end{example}
 
 Déterminons l'équation du pli $l_{p_1}$ dont la pente est positive. D'après l'exemple~\ref{ex.axiom3}, les coordonnées de l'intersection des deux droites sont $(10/3, 14/3)$. Par conséquent :
 \begin{align*}
-\frac{14}{3} &= (-3+\sqrt{10}) \cdot \frac{10}{3} + b_i\\ b_i&=\frac{44-10\sqrt{10}}{3}\\
+\frac{14}{3} &= (-3+\sqrt{10}) \cdot \frac{10}{3} + b_i\,,\\ b_i&=\frac{44-10\sqrt{10}}{3}\,,\\
 y&= (-3+\sqrt{10})x + \frac{44-10\sqrt{10}}{3}\approx \mbox{0,162}x+\mbox{4,13}\,.
 \end{align*}
 
@@ -251,7 +251,7 @@ y&= (-3+\sqrt{10})x + \frac{44-10\sqrt{10}}{3}\approx \mbox{0,162}x+\mbox{4,13}\
 
 
 \begin{axiom}
-Étant donné un point $p_1$ et une ligne $l_1$, il existe un pli unique $l$ perpendiculaire à $l_1$ qui passe par le point $p_1$ (fig.~\ref{f.origami-axiom4}).
+Étant donné un point $p_1$ et une droite $l_1$, il existe un pli unique $l$ perpendiculaire à $l_1$ qui passe par le point $p_1$ (fig.~\ref{f.origami-axiom4}).
 \end{axiom}
 
 Le pli est le lieu géométrique de tous les points de la droite perpendiculaire à $l_1$ qui passe par $p_1$.
@@ -285,8 +285,8 @@ Le pli est le lieu géométrique de tous les points de la droite perpendiculaire
 \noindent\textbf{Détermination de l'équation du pli.}
 Soient $l_1$ d'équation $y = m_1x + b_1$ et  $p_1=(x_1,y_1)$. Le pli $l$ est perpendiculaire à $l_1$ donc sa pente est $-(1/m_1)$. Comme il passe par $p_1$, nous pouvons calculer l'ordonnée à l'origine $b$ et écrire son équation :
 \begin{align*}
-y_1&=-\frac{1}{m_1} x_1 + b\\
-b&= \frac{(m_1 y_1+x_1)}{m_1}\\
+y_1&=-\frac{1}{m_1} x_1 + b\,,\\
+b&= \frac{(m_1 y_1+x_1)}{m_1}\,,\\
 y&=-\frac{1}{m_1} x +\frac{(m_1y_1+x_1)}{m_1}\,.
 \end{align*}
 \begin{example}
@@ -307,7 +307,7 @@ y=-\frac{1}{2}x + \frac{2\cdot 6 + 2}{2}=-\frac{1}{2}x + 7\,.
 Etant donné deux points $p_1$ et $p_2$ et une droite $l_1$, il existe un pli $l$ qui place $p_1$ sur $l_1$ et passe par $p_2$  (fig.~\ref{f.origami-axiom5}).
 \end{axiom}
 
-Puisque le pli passe par $p_2$ et que $p_2$ est sur la médiatrice de $\overline{p_1p_1'}$, le lieu géométrique de l'image de $p_1$ est le cercle de centre $p_2$ et de rayon $\overline{p_1p_2}$. Le pli est contraint de manière à ce que la réflexion $p_1'$ soit sur la droite donnée $l_1$.
+Puisque le pli passe par $p_2$ et que $p_2$ est sur la médiatrice de $\overline{p_1p_1'}$, le lieu géométrique de l'image de $p_1$ est le cercle de centre $p_2$ et de rayon $\overline{p_1p_2}$. Le pli est contraint par le fait  que le symétrique $p_1'$ par rapport à ce pli doit être sur la droite donnée $l_1$.
 
 \begin{figure}[ht]
 \centering
@@ -349,7 +349,7 @@ Puisque le pli passe par $p_2$ et que $p_2$ est sur la médiatrice de $\overline
 \draw[very thick,dotted,->,bend left=50] (2.2,7.95) to (6.05,.1);
 \end{tikzpicture}
 %\includegraphics[width=\textwidth]{Fig10_6}
-\caption{Axiome  $5$}\label{f.origami-axiom5}
+\caption{Axiome  $5$.}\label{f.origami-axiom5}
 \end{figure}
 
 \noindent\textbf{Détermination des équations des plis.}
@@ -360,7 +360,7 @@ r^2&= (x_2-x_1)^2 + (y_2-y_1)^2\,.
 \end{align*}
 En substituant l'équation de $l_1$ dans l'équation du cercle, on obtient 
 \begin{align*}
-(x-x_2)^2+((m_1x+b_1)-y_2)^2&=r^2\\
+(x-x_2)^2+((m_1x+b_1)-y_2)^2&=r^2\,,\\
 (x-x_2)^2+(m_1x+(b_1-y_2))^2&=r^2\,.
 \end{align*}
 C'est une équation du second degré  pour les coordonnées $x$ des intersections possibles :
@@ -371,9 +371,9 @@ Puisqu'une équation du second degré a au plus deux solutions, pour une paire d
 \begin{example}
 Soient $p_1=(2,8)$ et $p_2=(4,4)$. Soit $l_1$ d'équation  $y=-\frac{1}{2}x +3$. L'équation du cercle est $(x-4)^2 + (y-4)^2 = (4-2)^2+(4-8)^2=20$. Substituons  l'équation de la droite dans l'équation du cercle pour obtenir une équation du second degré pour les coordonnées $x$ des intersections (ou utilisons  l'équation~\ref{eq.intersections}) :
 \begin{align*}
-(x-4)^2 + \left(\left(-\frac{1}{2}x+3\right)-4\right)^2&=20\\
-(x-4)^2 + (-1)^2\cdot\left(\frac{1}{2}x+1\right)^2-20&=0\\
-5x^2 -28x -12&=0\\
+(x-4)^2 + \left(\left(-\frac{1}{2}x+3\right)-4\right)^2&=20\,,\\
+(x-4)^2 + (-1)^2\cdot\left(\frac{1}{2}x+1\right)^2-20&=0\,,\\
+5x^2 -28x -12&=0\,,\\
 (5x+2)(x-6)&=0\,.
 \end{align*}
 Les deux points d'intersection sont 
@@ -383,18 +383,18 @@ p_1'=(-2/5; 16/5) = (-\mbox{0,4}; \mbox{3,2})\,,\quad p_1''=(6; 0)\,.
 \end{example}
 Les plis seront les médiatrices de $\overline{p_1p_1'}$ et $\overline{p_1p_1''}$.
 \begin{example}
-Pour $p_1=(2,8)$ et $p_1'=(-2/5,16/5)$, l'équation de  $l_{p_1}$  est 
+Pour $p_1=(2,8)$ et $p_1'=(-2/5,16/5)$, l'équation de  $l_{p_2}$  est 
 \begin{align*}
-y-\frac{8+(16/5)}{2}&=-\frac{(-2/5)-2}{(16/5)-8}\left(x-\frac{2+\left(-2/5\right)}{2}\right)\\
+y-\frac{8+(16/5)}{2}&=-\frac{(-2/5)-2}{(16/5)-8}\left(x-\frac{2+\left(-2/5\right)}{2}\right)\,,\\
 y&=-\frac{1}{2}x+6\,.
 \end{align*}
 \end{example}
 
 \begin{example}
-Pour $p_1=(2,8)$ et $p_1''=(6,0)$, l'équation de  $l_{p_2}$ est
+Pour $p_1=(2,8)$ et $p_1''=(6,0)$, l'équation de  $l_{p_1}$ est
 %
 \begin{align*}
-y-\frac{8+0}{2}&=-\frac{6-2}{0-8}\left(x-\frac{2+6}{2}\right)\\
+y-\frac{8+0}{2}&=-\frac{6-2}{0-8}\left(x-\frac{2+6}{2}\right)\,,\\
 y&=\frac{1}{2}x+2\,.
 \end{align*}
 \end{example}
@@ -409,7 +409,7 @@ y&=\frac{1}{2}x+2\,.
 Étant donné deux points $p_1$ et $p_2$ et deux droites $l_1$ et $l_2$, il existe un pli $l$ qui place $p_1$ sur $l_1$ et place $p_2$ sur $l_2$ (fig.~\ref{f.origami-axiom6}).
 \end{axiom}
 
-Un pli qui place $p_i$ sur $l_i$ est une droite $l_p$ telle que la distance de $p_i$ à $l_p$ soit égale à la distance de $l_i$ à $l_p$. Le lieu géométrique des points équidistants d'un point $p_i$ et d'une droite $l_i$ est une parabole. Le point $p_i$ est appelé le foyer et la droite $l_1$ la droite directrice. Un pli peut être toute droite tangente à la parabole 
+Un pli qui place $p_i$ sur $l_i$ est une droite $l_p$ telle que la distance de $p_i$ à $l_p$ soit égale à la distance de son symétrique $p'_i$ à $l_p$. Le lieu géométrique des points équidistants d'un point $p_i$ et d'une droite $l_i$ est une parabole. Le point $p_i$ est appelé le foyer et la droite $l_i$ la droite directrice. Un pli peut être toute droite tangente à la parabole 
  (sect.~\ref{s.parabola}).
 
 \begin{figure}[ht]
@@ -604,21 +604,21 @@ Soit $(0,f)$ le foyer d'une parabole dont la droite directrice est $y=d$. Soit $
 Posons $a=2ph$ de sorte que l'équation de la parabole soit 
 \begin{subequations}
 \begin{align}
-y&=\frac{x^2}{2p}+\frac{a}{2p}\\
-x^2-2py+a&=0\,.\slabel{eq.eq-parabola}
+y&=\frac{x^2}{2p}+\frac{a}{2p}\,,\\
+x^2-2py+a&=0\,.\label{eq.eq-parabola}
 \end{align}
 \end{subequations}
 L'équation de la parabole de la figure \ref{f.elements-parabola} est  $x^2-12y +12=0$.
 
 Substituons l'équation d'une droite arbitraire $y=mx+b$ dans l'équation~\ref{eq.eq-parabola} pour obtenir une équation pour les points d'intersection de la droite et de la parabole :
 \begin{align*}
-x^2-2p(mx+b)+a&=0\\
+x^2-2p(mx+b)+a&=0\,,\\
 x^2+(-2mp)x+(-2pb+a)&=0\,.
 \end{align*}
 La droite sera tangente à la parabole si et seulement si cette équation du second degré a exactement une solution, c'est-à-dire si et seulement si son discriminant est nul :
 \begin{subequations}
 \begin{align}
-(-2mp)^2\:-\:4\cdot 1\cdot (-2pb+a)&=0\\
+(-2mp)^2\:-\:4\cdot 1\cdot (-2pb+a)&=0\,,\\
 m^2p^2+2pb-a&=0\,.\slabel{eq.disc}
 \end{align}
 \end{subequations}
@@ -652,7 +652,7 @@ m^2-b-3=0\,.
 \]
 Les solutions des deux équations 
 \begin{align*}
-m^2+b-3&=0\\
+m^2+b-3&=0\,,\\
 m^2-b-3&=0
 \end{align*}
 sont $m=\pm\sqrt{3}\approx \pm \mbox{1,73}$ et $b=0$. Il existe deux tangentes communes :
@@ -678,7 +678,7 @@ En substituant $p$ et $a$ dans l'équation~\ref{eq.disc} et en simplifiant, on o
 \]
 Les solutions des deux équations 
 \begin{align*}
-m^2+b-3&=0\\
+m^2+b-3&=0\,,\\
 2m^2-b-4&=0
 \end{align*}
 sont $m=\pm\sqrt{\displaystyle\frac{7}{3}}\approx \pm \mbox{1,53}$ et $b=\displaystyle\frac{2}{3}$. Il y a deux tangentes communes :
@@ -705,17 +705,17 @@ C'est une équation avec $x$ et $y^2$ au lieu de $x^2$ et $y$, donc l'équation~
 
 Substituons l'équation d'une droite dans l'équation~\ref{eq.x-symmetry-parabola} :
 \begin{align*}
-(mx+b)^2-4x+12&=0\\
+(mx+b)^2-4x+12&=0\,,\\
 m^2x^2+(2mb-4)x+(b^2+12)&=0\,.
 \end{align*}
 \'Ecrivons que le discriminant est égal à zéro et simplifions :
 \begin{align*}
-(2mb-4)^2\:-\:4m^2(b^2+12)&=0\\
+(2mb-4)^2\:-\:4m^2(b^2+12)&=0\,,\\
 -3m^2-mb+1&=0\,.
 \end{align*}
 Si on essaie de résoudre les deux équations 
 \begin{align*}
-m^2+b-3&=0\\
+m^2+b-3&=0\,,\\
 -3m^2-mb+1&=0\,,
 \end{align*}
 on obtient une équation de degré trois en la variable $m$ :
@@ -725,10 +725,10 @@ m^3-3m^2-3m+1=0\,.\label{eq.cubic}
 Comme une équation de degré trois a au moins une et au plus trois solutions réelles, il peut y avoir une, deux ou trois tangentes communes.
 
 La formule pour résoudre les équations générales de degré trois  est assez compliquée. On a donc utilisé une calculatrice sur internet et obtenu les trois solutions :
-\[m=\mbox{3,73},\:m=-1,\:m=\mbox{0,27}\,.\]
+\[m=\approx{3,73},\:m=-1,\:m\approx\mbox{0,27}\,.\]
 D'après la forme de l'équation~\ref{eq.cubic}, on peut deviner que $m=1$ ou $m=-1$ est une solution :
 \begin{align*}
-1^3-3\cdot 1^2-3\cdot 1+1&=-4\\
+1^3-3\cdot 1^2-3\cdot 1+1&=-4\,,\\
 (-1)^3-3\cdot (-1)^2-3\cdot(-1)+1&=0\,.
 \end{align*}
 Divisons l'équation~\ref{eq.cubic} par $m-(-1)=m+1$ pour obtenir l'équation du second degré $m^2-4m+1$,  dont les racines sont les deux autres solutions de l'équation du troisième degré:  $m=2\pm\sqrt{3}\approx \mbox{3,73}; \mbox{0,27}$.
@@ -737,17 +737,17 @@ Divisons l'équation~\ref{eq.cubic} par $m-(-1)=m+1$ pour obtenir l'équation du
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Détermination des équations des réflexions}
-On cherche la position de l'image  $p_1'=(x_1',y_1')$ de $p_1=(x_1,y_1)$ par la réflexion autour d'une droite tangente $l_t$ dont l'équation est $y=m_tx+b_t$. On commence par trouver la droite $l_p$ d'équation $y=m_px+b_p$ qui est perpendiculaire à $l_t$ et passe par $p_1$ :
+On cherche la position du symétrique  $p_1'=(x_1',y_1')$ de $p_1=(x_1,y_1)$ par rapport à une droite tangente $l_t$ dont l'équation est $y=m_tx+b_t$. On commence par trouver la droite $l_p$ d'équation $y=m_px+b_p$ qui est perpendiculaire à $l_t$ et passe par $p_1$ :
 \begin{align*}
-y&=-\frac{1}{m_t}x+b_p\\
-y_1&=-\frac{1}{m_t}x_1+b_p\\
+y&=-\frac{1}{m_t}x+b_p\,,\\
+y_1&=-\frac{1}{m_t}x_1+b_p\,,\\
 y&=\frac{-x}{m_t}+\left(y_1+\frac{x_1}{m_t}\right)\,.
 \end{align*}
 Trouvons ensuite l'intersection $p_t=(x_t,y_t)$ de $l_t$ et $l_p$ :
 %
 \begin{align*}
-m_tx_t+b_t&=\frac{-x_t}{m_t}+\left(y_1+\frac{x_1}{m_t}\right)\\
-x_t&=\frac{\left(y_1+\displaystyle\frac{x_1}{m_t}-b_t\right)}{\left(m_t+\displaystyle\frac{1}{m_t}\right)}\\
+m_tx_t+b_t&=\frac{-x_t}{m_t}+\left(y_1+\frac{x_1}{m_t}\right)\,,\\
+x_t&=\frac{\left(y_1+\displaystyle\frac{x_1}{m_t}-b_t\right)}{\left(m_t+\displaystyle\frac{1}{m_t}\right)}\,,\\
 y_t&=m_tx_t+b_t\,.
 \end{align*}
 $p_t$ est le milieu de  $p_1$ et $p_1'$ :
@@ -761,9 +761,9 @@ y_t&=\displaystyle\frac{y_1+y_1'}{2}\,,\quad  y_1'=2y_t-y_1\,.
 \begin{example}
 Soit $l_t$ d'équation $y=\sqrt{3}x+0$ et soit $p_1=(0,4)$ :
 \begin{align*}
-x_t&=\frac{\left(4+\displaystyle\frac{0}{\sqrt{3}}-0\right)}{\left(\sqrt{3}+\displaystyle\frac{1}{\sqrt{3}}\right)}=\sqrt{3}\\
-y_t&=\sqrt{3}\sqrt{3}+0=3\\
-x_1'&=2x_t-x_1=2\sqrt{3}\approx \mbox{3,46}\\
+x_t&=\frac{\left(4+\displaystyle\frac{0}{\sqrt{3}}-0\right)}{\left(\sqrt{3}+\displaystyle\frac{1}{\sqrt{3}}\right)}=\sqrt{3}\,,\\
+y_t&=\sqrt{3}\sqrt{3}+0=3\,,\\
+x_1'&=2x_t-x_1=2\sqrt{3}\approx \mbox{3,46}\,,\\
 y_1'&=2y_t-y_1= 2\,.
 \end{align*}
 \end{example}
@@ -774,7 +774,7 @@ y_1'&=2y_t-y_1= 2\,.
 
 Nous souhaitons démontrer que les plis de l'axiome~$6$ sont tangents aux paraboles.
 La figure~\ref{f.parabola-locus} montre cinq points
-$p_i$, $i=1,\ldots,5$, chaque point $p_i$ étant à une distance $a_i$ du foyer et de la droite directrice. Traçons  des droites perpendiculaires à la droite directrice passant par $p_i$ et désignons par $p_i'$ les intersections de ces droites avec la droite directrice. D'après l'axiome~$2$, il existe des plis $l_i$ passant par $p_i$ qui placent $p$ sur la droite directrice. Les points $p_i'$ sont les réflexions de $p$ autour des plis. La figure \ref{f.parabola-locus} montre le pli $l_1$ passant par $p_1$ et le point  $p_1'$.
+$p_i$, $i=1,\ldots,5$, chaque point $p_i$ étant à une distance $a_i$ du foyer et de la droite directrice. Traçons  des droites perpendiculaires à la droite directrice passant par $p_i$ et désignons par $p_i'$ les intersections de ces droites avec la droite directrice. D'après l'axiome~$2$, il existe des plis $l_i$ passant par $p_i$ qui placent $p$ sur la droite directrice. Les points $p_i'$ sont les symétriques de $p$ par rapport aux plis. La figure \ref{f.parabola-locus} montre le pli $l_1$ passant par $p_1$ et le point  $p_1'$.
 
 \begin{figure}[ht]
 \centering
@@ -840,9 +840,9 @@ $p_i$, $i=1,\ldots,5$, chaque point $p_i$ étant à une distance $a_i$ du foyer 
 \node[left,yshift=-4pt] at (F5) {$q$};
 \coordinate (F5p) at (-5,-2);
 \node[below] at (F5p) {$p''$};
-\draw (F) -- node[above] {$b$} (F4) -- node[left] {$b$} (FP);
-\draw (F) -- node[above] {$c$} (F5);
-\draw (F5) -- node[left] {$e$} (F5p);
+\draw (F) -- node[above] {$$} (F4) -- node[left] {$$} (FP);
+\draw (F) -- node[above] {$$} (F5);
+\draw (F5) -- node[left] {$$} (F5p);
 \draw[thick,dashed,name path=fold] ($(F4)+(140:4)$) -- (F4) -- node[below,xshift=3pt,yshift=-4pt] {$l$} ($(F4)+(-40:5.3)$);
 \draw (FP) rectangle +(10pt,10pt);
 \draw (F5p) rectangle +(10pt,10pt);
@@ -851,22 +851,25 @@ $p_i$, $i=1,\ldots,5$, chaque point $p_i$ étant à une distance $a_i$ du foyer 
 \path [name intersections = {of = base and fold, by = {G}}];
 \node[below,yshift=-4pt] at (G) {$s$};
 \draw[rotate=140] (G) rectangle +(10pt,10pt);
-\path (FP) -- node[left] {$c$} (F5);
-\path (F) -- node[below] {$a$} (G) -- node[below] {$a$} (FP);
+\path (FP) -- node[left] {$$} (F5);
+\path (F) -- node[below] {$$} (G) -- node[below] {$$} (FP);
 \end{tikzpicture}
 %\includegraphics[width=\textwidth]{Fig10_12}
 
-\caption{La démonstration que le pli est une tangente.}\label{f.tangent-proof}
+\caption{La démonstration que le pli est une tangente à la parabole.}\label{f.tangent-proof}
 \end{figure}
 
 \begin{theorem}\label{thm.parabola-tangents}
 Les plis de l'axiome~$6$ sont les tangentes aux deux paraboles qui sont les lieux des points équidistants de $p_1$ et $l_1$ (respectivement $p_2$ et $l_2$).
 \end{theorem}
 \begin{proof}
-Dans la figure~\ref{f.tangent-proof}, le foyer est $p$ et la droite directrice est $d$. Le point $p'$ est  sur la droite directrice et $l$ est le pli qui envoie $p$ sur $p'$. Soit $s$ l'intersection de $\overline{pp'}$ et $l$. Alors $\overline{ps}=\overline{p's}=a$ et $l\perp \overline{pp'}$ puisque $l$ est la médiatrice de $\overline{pp'}$.
+Dans la figure~\ref{f.tangent-proof}, le foyer est $p$ et la droite directrice est $d$. Le point $p'$ est  sur la droite directrice et $l$ est le pli qui envoie $p$ sur $p'$. Soit $s$ l'intersection de $\overline{pp'}$ et $l$. Alors $\overline{ps}=\overline{p's}$ et $l\perp \overline{pp'}$ puisque $l$ est la médiatrice de $\overline{pp'}$.
 
 Soit $r$ l'intersection de la droite perpendiculaire à $d$ passant par $p'$ et du pli $l$. Alors $\triangle psr\cong \triangle p'sr$ (deux côtés et un angle identiques). Il s'ensuit que 
-$\overline{pr}=\overline{p'r}=b$ donc $r$ est un point de la parabole. Choisissons un point $p''$ sur la droite directrice qui est distinct de $p'$ et supposons que le pli $l$ envoie aussi $p$ sur $p''$. Soit $q$ l'intersection de la perpendiculaire à $d$ passant par $p''$ et du pli $l$. $\triangle psq\cong \triangle p'sq$ donc $\overline{pq}=\overline{p'q}=c$. Posons $\overline{qp''}=e$. Si $q$ est un point de la parabole, alors $e=\overline{qp''}=\overline{qp}=c$, mais $c$ est l'hypoténuse du triangle rectangle $\triangle qp''p'$ et il n'est pas possible que l'hypoténuse soit égale à l'un des autres côtés du triangle rectangle. Par conséquent, le pli $l$ n'a qu'une seule intersection avec la parabole et doit être une tangente.
+$\overline{pr}=\overline{p'r}$ donc $r$ est un point de la parabole. 
+
+Supposons que le pli $l$ recoupe la parabole en un point $q\neq r$. Soit $p''$ la projection orthogonale de $q$ sur la droite directrice $d$. On a $p''\neq p'$. Puisque $q$ est sur la parabole, on a $\overline{pq}=\overline{p''q}$. Puisque $q$ est sur le pli $l$ qui est la médiatrice de $\overline{pp'}$, on a $\overline{pq}=\overline{p'q}$. D'où $\overline{p''q}=\overline{p'q}$, ce qui est impossible car $\overline{p'q}$ est l'hypoténuse du triangle rectangle $\triangle qp''p'$:  l'hypoténuse ne peut être  égale à l'un des autres côtés du triangle rectangle. Par conséquent, le pli $l$ n'a qu'une seule intersection avec la parabole et doit être une tangente.
+%Choisissons un point $p''$ sur la droite directrice qui est distinct de $p'$ et supposons que le pli $l$ envoie aussi $p$ sur $p''$. Soit $q$ l'intersection de la perpendiculaire à $d$ passant par $p''$ et du pli $l$. $\triangle psq\cong \triangle p'sq$ donc $\overline{pq}=\overline{p'q}=c$. Posons $\overline{qp''}=e$. Si $q$ est un point de la parabole, alors $e=\overline{qp''}=\overline{qp}=c$, mais $c$ est l'hypoténuse du triangle rectangle $\triangle qp''p'$ et il n'est pas possible que l'hypoténuse soit égale à l'un des autres côtés du triangle rectangle. Par conséquent, le pli $l$ n'a qu'une seule intersection avec la parabole et doit être une tangente.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -933,15 +936,15 @@ Soit $p_1=(x_1,y_1)$. Soient $l_1$ d'équation $y = m_1x + b_1$ et $l_2$ d'équa
 
 La droite $l_p$ passe par $p_1$, donc $y_1=m_2x_1+b_p$ et son équation est $y=m_2x+(y_1-m_2x_1)$. L'image $p_1'=(x_1',y_1')$ est l'intersection de $l_1$ et $l_p$ :
 \begin{align*}
-m_1x_1'+b_1&=m_2x_1'+(y_1-m_2x_1)\\
-x_1'&=\frac{y_1-m_2x_1-b_1}{m_1-m_2}\\
+m_1x_1'+b_1&=m_2x_1'+(y_1-m_2x_1)\,,\\
+x_1'&=\frac{y_1-m_2x_1-b_1}{m_1-m_2}\,,\\
 y_1'&=m_1x_1'+b_1\,.
 \end{align*}
 Les coordonnées du milieu $p_m=(x_m,y_m)$ sur $l_p$ est 
 \[
 (x_m,y_m)=\left(\frac{x_1+x_1'}{2},\frac{y_1+y_1'}{2}\right)\,.
 \]
-$l\perp l_2$ et  passe par $p_m$. Donc son équation est 
+$l\perp l_2$ et  $l$ passe par $p_m$. Donc son équation est 
 \[
 y=-\frac{1}{m_2}x+b_m,
 \]
@@ -954,8 +957,8 @@ y=-\frac{1}{m_2}x+\left(y_m+\displaystyle\frac{x_m}{m_2}\right)\,.
 \begin{example}
 Soit $p_1=(5,3)$. Soient  $l_1$ d'équation $y=3x-3$ et  $l_2$ d'équation $y=-x+11$. Alors 
 \begin{align*}
-x_1'&=\frac{3-(-1)\cdot 5-(-3)}{3-(-1)}=\frac{11}{4}\\
-y_1'&=3\cdot \frac{11}{4} + (-3)=\frac{21}{4}\\
+x_1'&=\frac{3-(-1)\cdot 5-(-3)}{3-(-1)}=\frac{11}{4}\,,\\
+y_1'&=3\cdot \frac{11}{4} + (-3)=\frac{21}{4}\,,\\
 p_m&=\left(\frac{5+\displaystyle\frac{11}{4}}{2},\frac{3+\displaystyle\frac{21}{4}}{2}\right)=\left(\frac{31}{8},\frac{33}{8}\right)\,.
 \end{align*}
 L'équation du pli $l$ est 
@@ -968,7 +971,7 @@ y=-\frac{1}{-1}\cdot x+\left(\frac{33}{8}+\frac{\displaystyle\frac{31}{8}}{-1}\r
 
 \subsection*{Quelle est la surprise ?}
 
-L'origami, l'art du pliage du papier, est pratiqué depuis des centaines d'années. Il est donc surprenant que la formalisation mathématique ne remonte qu'au vingtième siècle. Il est encore plus surprenant qu'il existe une axiomatisation du pliage du papier. Les mathématiques de l'origami sont un excellent moyen d'apprendre la géométrie analytique, les propriétés des paraboles et le concept de lieu géométrique.
+L'origami, l'art du pliage du papier, est pratiqué depuis des centaines d'années. Il est donc surprenant que la formalisation mathématique ne remonte qu'au \textsc{xx}$^\text{e}$ siècle. Il est encore plus surprenant qu'il existe une axiomatisation du pliage du papier. Les mathématiques de l'origami sont un excellent moyen d'apprendre la géométrie analytique, les propriétés des paraboles et le concept de lieu géométrique.
 
 \vspace{-2ex}
 

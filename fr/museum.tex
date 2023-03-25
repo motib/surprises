@@ -178,8 +178,8 @@ Dans la  figure~\ref{f.museum.arbitrary}, le sommet $1$ est convexe et le sommet
 \end{figure}
 
 \begin{definition}
-Un polygone avec des sommets $V$ peut être \emph{colorié avec trois couleurs} s'il existe une application 
-\[c: V \mapsto \{\mathit{rouge},\mathit{bleu},\mathit{vert}\}\,\] 
+Un polygone avec des sommets $S$ peut être \emph{colorié avec trois couleurs} s'il existe une application 
+\[c: S\mapsto \{\mathit{rouge},\mathit{bleu},\mathit{vert}\}\,\] 
 telle qu'aucune arête n'ait deux sommets qui ont la même couleur.
 \end{definition}
 
@@ -523,12 +523,12 @@ En passant d'une ligne pointillée à la suivante, on effectue une rotation auto
 
 Pour chaque angle extérieur $\theta_i$, on désigne l'angle intérieur correspondant par $\phi_i$. Alors 
 \begin{align*}
-\displaystyle\sum_{i=1}^n \theta_i &=\displaystyle\sum_{i=1}^n (180^\circ-\phi_i)= 360^\circ\\
+\displaystyle\sum_{i=1}^n \theta_i &=\displaystyle\sum_{i=1}^n (180^\circ-\phi_i)= 360^\circ\,,\\
 \displaystyle\sum_{i=1}^n \phi_i &= n\cdot 180^\circ-360^\circ =180^\circ(n-2)\,.
 \end{align*}
-S'il existe un sommet concave ($B$ dans la figure~\ref{f.museum.concave}), il existe un triangle formé par les deux arêtes qui arrivent au sommet concave et la droite $\overline{AC}$ reliant les deux autres sommets. En additionnant les angles du triangle, on obtient 
+S'il existe un sommet concave ($B$ dans la figure~\ref{f.museum.concave}), il existe un triangle formé par les deux arêtes qui arrivent au sommet concave et le segment  $\overline{AC}$ qui relie les deux autres sommets. En additionnant les angles du triangle, on obtient 
 \begin{align*}
-(180^\circ - \alpha) + (360^\circ - \beta) + (180^\circ - \gamma) &= 180^\circ\\
+(180^\circ - \alpha) + (360^\circ - \beta) + (180^\circ - \gamma) &= 180^\circ\,,\\
 \alpha + \beta + \gamma &= 3\cdot 180^\circ\,.
 \end{align*}
 La somme des angles intérieurs augmente de $\alpha+\beta+\gamma$ tandis que le nombre de sommets augmente de trois, ce qui  préserve  la formule du théorème :
@@ -569,9 +569,9 @@ Il doit y avoir au moins trois sommets convexes dans un polygone.
 \begin{proof} Soit $k$ le nombre de sommets concaves pour lesquels l'angle intérieur est $180^\circ+\epsilon_i$ avec $\epsilon_i>0$. La somme des angles intérieurs des sommets concaves est certainement inférieure ou égale à la somme des angles intérieurs de tous les sommets :
 %
 \begin{align*}
-k\cdot 180^\circ +\displaystyle\sum_{i=1}^{k}\epsilon_i &\leq 180^\circ(n-2)\\
-(k+2)\cdot 180^\circ +\displaystyle\sum_{i=1}^{k}\epsilon_i &\leq n\cdot 180^\circ\\
-(k+2)\cdot 180^\circ &< n\cdot 180^\circ\\
+k\cdot 180^\circ +\displaystyle\sum_{i=1}^{k}\epsilon_i &\leq 180^\circ(n-2)\,,\\
+(k+2)\cdot 180^\circ +\displaystyle\sum_{i=1}^{k}\epsilon_i &\leq n\cdot 180^\circ\,,\\
+(k+2)\cdot 180^\circ &< n\cdot 180^\circ\,,\\
 k&<n-2\,.
 \end{align*}
 Il s'ensuit qu'il doit y avoir au moins trois sommets qui sont convexes et non concaves.
@@ -631,8 +631,9 @@ Par récurrence sur le nombre de sommets. Pour $n=3$ il n'y a rien à démontrer
 \end{tikzpicture}
 %\includegraphics[width=\textwidth]{Fig5_11b}
          \captionof{figure}{Triangulation où une diagonale n'est pas contenue dans le polygone.}
-     \end{minipage}
 \label{f.museum.concave-vertices}
+     \end{minipage}
+
 \vspace{0.4cm}
 
 

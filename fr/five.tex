@@ -5,7 +5,7 @@
 
 
 
-Les cartes utilisent des couleurs pour distinguer une région d'une autre en veillant à ce que les régions adjacentes soient coloriées avec des couleurs différentes. En 1852, Francis Guthrie a remarqué qu'une carte des comtés d'Angleterre pouvait être coloriée en utilisant seulement quatre couleurs. L'affirmation selon laquelle quatre couleurs suffisent à colorier toute carte plane est appelée le théorème des quatre couleurs et n'a été démontrée qu'en 1976 par Kenneth Appel et Wolfgang Haken. Ils ont utilisé des arguments mathématiques sophistiqués pour montrer que s'il existe un contre-exemple (une carte nécessitant plus de quatre couleurs), il doit être associé à une configuration parmi $1834$. Ils ont ensuite utilisé un ordinateur pour examiner ces configurations.
+Les cartes utilisent des couleurs pour distinguer une région d'une autre en veillant à ce que les régions adjacentes soient coloriées avec des couleurs différentes. En 1852, Francis Guthrie a remarqué qu'une carte des comtés de l'Angleterre pouvait être coloriée en utilisant seulement quatre couleurs. L'affirmation selon laquelle quatre couleurs suffisent à colorier toute carte plane est appelée le théorème des quatre couleurs et n'a été démontrée qu'en 1976 par Kenneth Appel et Wolfgang Haken. Ils ont utilisé des arguments mathématiques sophistiqués pour montrer que s'il existe un contre-exemple (une carte nécessitant plus de quatre couleurs), il doit être associé à une configuration parmi $1834$. Ils ont ensuite utilisé un ordinateur pour examiner ces configurations.
 
 Si le théorème des quatre couleurs est extrêmement difficile à démontrer, les démonstrations des théorèmes des cinq et six couleurs sont relativement simples (sect.~\ref{s.six-color} et \ref{s.five-color}). Pour démontrer ces théorèmes, nous définissons les cartes et les graphes planaires (sect.~\ref{s.planar}), démontrons la formule d'Euler (sect.~\ref{s.euler}) et montrons qu'un graphe planaire doit avoir un sommet dont le degré est inférieur ou égal à cinq. Dans la section~\ref{s.nonplanar}, la formule d'Euler est utilisée pour démontrer que deux graphes ne sont pas planaires.
 
@@ -230,11 +230,11 @@ Un graphe est \emph{triangulaire} si toutes ses faces sont délimitées par troi
 \end{definition}
 
 \begin{example}
-Les faces du graphe planaire de la figure~\ref{f.five-planar-graph-graph} sont triangulaires car chacune d'elles est délimitée par trois arêtes. Les arêtes sont courbées et les faces ne sont donc pas des triangles, qui sont des polygones dont les trois arêtes sont des segments de  droite.
+Les faces du graphe planaire de la figure~\ref{f.five-planar-graph-graph} sont triangulaires car chacune d'elles est délimitée par trois arêtes. Les arêtes sont courbées et les faces ne sont donc pas des triangles, qui sont des polygones dont les trois côtés sont des segments.
 \end{example}
 
 \begin{advanced}
-Le {\bf théorème de F\'{a}ry} stipule que tout graphe planaire triangulaire peut être transformé en un graphe planaire équivalent dont les arêtes sont des segments de droite. Par conséquent, sans perte de généralité, les démonstrations peuvent être limitées aux graphes planaires dont les faces sont des triangles.
+Le {\bf théorème de F\'{a}ry} stipule que tout graphe planaire triangulaire peut être transformé en un graphe planaire équivalent dont les arêtes sont des segments. Par conséquent, sans perte de généralité, les démonstrations peuvent être limitées aux graphes planaires dont les faces sont des triangles.
 \end{advanced}
 
 \begin{example}
@@ -548,7 +548,7 @@ S'il existe $d_1$ sommets de degré $1$, $d_2$ sommets de degré $2$, \ldots, $d
 Par conséquent,
 %
 \begin{align*}
-\sum_{i=1}^{k} i\cdot d_i &\leq 6\sum_{i=1}^{k} d_i -12\\
+\sum_{i=1}^{k} i\cdot d_i &\leq 6\sum_{i=1}^{k} d_i -12\,,\\
 \sum_{i=1}^{k} (6-i)d_i&\geq 12\,.
 \end{align*}
 Puisque $12>0$ et puisque tous les $d_i$ sont positifs ou nuls, pour au moins un $i$ on a $6-i>0$ et donc $i<6$.\qed
@@ -625,7 +625,7 @@ Pour l'étape de récurrence, d'après le théorème~\ref{thm.degree5}, $G$ a un
 \section{Le théorème des cinq couleurs}\label{s.five-color}
 
 \begin{definition}
-Soit $G$ un graphe planaire coloré. Une \emph{chaîne} (de Kempe) $G'$ est un sous-graphe maximal, colorié avec deux couleurs et connexe de $G$.
+Soit $G$ un graphe planaire colorié. Une \emph{chaîne} (de Kempe) $G'$ est un sous-graphe maximal, colorié avec deux couleurs et connexe de $G$.
 \end{definition}
 
  
@@ -1056,7 +1056,7 @@ Heawood a remarqué que les chemins fermés définis par la chaîne rouge-jaune 
 \node[left,xshift=-8pt] at (X2) {$s_8$};
 \end{tikzpicture}
 %\includegraphics[width=\textwidth]{Fig4_12b}
-         \captionof{figure}{En échangeant les couleurs, les sommets bleus sont reliés}
+         \captionof{figure}{En échangeant les couleurs, les sommets bleus sont reliés.}
          \label{f.five-kempe2-share}
      \end{minipage}
 

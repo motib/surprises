@@ -7,6 +7,7 @@ de/tikz/*
 *.docx
 *.bat
 *.zip
+*.7z
 *~
 *.aux
 *.log

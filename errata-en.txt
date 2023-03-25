@@ -4,7 +4,9 @@ p. vii line 15: in list labeled -> in the list labeled
 
 p. ix, line -12: squaring a circle -> doubling a cube
 
-p. 24, line -6: and of depth n-1 ->
+p. 18 line -5: \overline{CP} -> \overline{CP}^2
+
+p. 24 line -6: and of depth n-1 ->
   where a,b,c are of depth n-1
 
 p. 41 line 3: using only four countries ->

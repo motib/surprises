@@ -78,8 +78,8 @@ Le principe de  récurrence est une règle d'inférence qui est l'un des axiomes
 
 La suite de Fibonacci est l'exemple classique d'une définition par récurrence :
 \begin{align*}
-f_1 &= 1\\
-f_2 &= 1\\
+f_1 &= 1\,,\\
+f_2 &= 1\,,\\
 f_n &= f_{n-1} + f_{n-2}\; \textrm{si} \;\; n \geq 3\,.
 \end{align*}
 Les douze premiers éléments de la suite sont :
@@ -158,7 +158,7 @@ Supposons l'hypothèse de récurrence pour tous les $k\leq n$. L'étape de récu
 \phi^{n+1} - \bar{\phi}^{n+1} &= \phi^2\phi^{n-1} - \bar{\phi}^2\bar{\phi}^{n-1}\\
 &=(\phi+1)\phi^{n-1} - (\bar{\phi}+1)\bar{\phi}^{n-1}\\
 &=(\phi^{n} - \bar{\phi}^{n}) + (\phi^{n-1} - \bar{\phi}^{n-1})\\
-&=\sqrt{5}f_{n} + \sqrt{5}f_{n-1}\\
+&=\sqrt{5}f_{n} + \sqrt{5}f_{n-1}\,,\\
 \frac{\phi^{n+1} - \bar{\phi}^{n+1}}{\sqrt{5}} &= f_{n} + f_{n-1} = f_{n+1}\,.\qedhere
 \end{align*}
 \end{proof}
@@ -218,7 +218,7 @@ Les cinq premiers nombres de Fermat sont des nombres premiers :
 \[
 F_0=3,\quad F_1=5,\quad F_2=17,\quad F_3=257,\quad F_4=65\,537\,.
 \]
-Le mathématicien du XVIIe siècle Pierre de Fermat a conjecturé que tous les nombres de Fermat sont premiers, mais près de cent ans plus tard, Leonhard Euler a remarqué que
+Le mathématicien du \textsc{xvii}e siècle Pierre de Fermat a conjecturé que tous les nombres de Fermat sont premiers, mais près de cent ans plus tard, Leonhard Euler a remarqué que
 \[F_5=2^{2^5}+1 = 2^{32}+1 = 4\,294\,967\,297 = 641 \;\times\; 6\,700\,417\,.\]
 Les nombres de Fermat deviennent extrêmement grands lorsque $n$ augmente. On sait que les nombres de Fermat ne sont pas premiers pour $5\leq n \leq 32$, mais la factorisation de certains de ces nombres n'est toujours pas connue.
 
@@ -253,7 +253,7 @@ L'étape de récurrence se passe ainsi:
 &=(F_n-2)F_n\\
 &= \left(2^{2^n}+1-2\right)\left(2^{2^n}+1\right)\\
 &= \left(2^{2^{n}}\right)^2-1= \left(2^{2^{n+1}}+1\right)-2\\
-&=F_{n+1}-2\\
+&=F_{n+1}-2\,,\\
 F_{n+1}&=\prod_{k=0}^{n}F_k + 2\,. \qedhere
 \end{align*}
 \end{proof}
@@ -279,13 +279,13 @@ f(101) = 91, \;\; f(102) = 92,\;\; f(103) = 93,\;\; f(104) = 94,\;\ldots\;
 \]
 Qu'en est-il des nombres inférieurs ou égaux à $100$ ? Calculons $f(x)$ pour certains nombres, où le calcul de chaque ligne utilise les résultats des lignes précédentes :
 \begin{align*}
-f(100) &= f(f(100+11)) = f(f(111)) = f(101) = 91\\
-f(99) &= f(f(99+11)) = f(f(110)) = f(100) = 91\\
-f(98) &= f(f(98+11)) = f(f(109)) = f(99) = 91\\
+f(100) &= f(f(100+11)) = f(f(111)) = f(101) = 91\,,\\
+f(99) &= f(f(99+11)) = f(f(110)) = f(100) = 91\,,\\
+f(98) &= f(f(98+11)) = f(f(109)) = f(99) = 91\,,\\
 &\cdots&\\
-f(91) &= f(f(91+11)) = f(f(102)) = f(92)\\
-& \quad = f(f(103)) = f(93) = \cdots =f(98) = 91\\
-f(90) &= f(f(90+11)) = f(f(101)) = f(91) = 91\\
+f(91) &= f(f(91+11)) = f(f(102)) = f(92)\,,\\
+& \quad = f(f(103)) = f(93) = \cdots =f(98) = 91\,,\\
+f(90) &= f(f(90+11)) = f(f(101)) = f(91) = 91\,,\\
 f(89) &= f(f(89+11)) = f(f(100)) = f(91) = 91\,.
 \end{align*}
 Définissons la fonction $g$ comme ceci:
@@ -324,11 +324,11 @@ f(100) =  91 = g(100)$, puisque nous avons montré que $f(100)=91$ et puisque pa
 L'hypothèse de récurrence est $f(y) = g(y)$ pour $y\prec x$ et la récurrence fonctionne ainsi :
 \begin{subequations}
 \begin{align}
-f(x) &= f(f(x+11))\slabel{m91-1}\\
-&= f(x+11-10)= f(x+1)\slabel{m91-3}\\
-&= g(x+1)\slabel{m91-4}\\
-&= 91\slabel{m91-5}\\
-&= g(x)\slabel{m91-6}\,.
+f(x) &= f(f(x+11))\label{m91-1}\\
+&= f(x+11-10)= f(x+1)\label{m91-3}\\
+&= g(x+1)\label{m91-4}\\
+&= 91\label{m91-5}\\
+&= g(x)\label{m91-6}\,.
 \end{align}
 \end{subequations}
 L'équation~\ref{m91-1} est la définition de $f$ pour $x\leq 100$.
@@ -445,8 +445,8 @@ Pour tout $n\geq 1$, il existe des nombres $a\geq 0$ et $0\leq t < 2^a$  tels qu
 On peut appliquer de manière répétée 
  l'algorithme de division par $2^0, 2^1, 2^2, 2^4,\ldots$, mais il est facile de le voir à partir de la représentation binaire de $n$. Il existe  $a$ et $b_{a-1},b_{a-2},\ldots,b_{1},b_{0}$, avec  $b_i=0$ ou $b_i=1$  pour tout $i$, tels que le nombre $n$ s'exprime comme 
 \begin{align*}
-n&=2^a+b_{a-1}2^{a-1}+\cdots+b_{0}2^{0}\\
-n&=2^a+(b_{a-1}2^{a-1}+\cdots+b_{0}2^{0})\\
+n&=2^a+b_{a-1}2^{a-1}+\cdots+b_{0}2^{0}\,,\\
+n&=2^a+(b_{a-1}2^{a-1}+\cdots+b_{0}2^{0})\,,\\
 n&=2^a+t,\quad \textrm{avec}\; t\leq 2^a-1\,.\qedhere
 \end{align*}
 \end{proof}
@@ -496,8 +496,8 @@ n=2^a+t=2^a+(b_{a-1}2^{a-1}+\cdots+b_{0}2^{0})\,,
 \]
 donc $t=b_{a-1}2^{a-1}+\cdots+b_{0}2^{0}$. Il suffit de multiplier par $2$ (décalage à gauche d'un chiffre) et d'ajouter $1$. Par exemple, puisque $n=41=2^5+2^3+2^0=101001$, il s'ensuit que $J(41,2)=2t+1$, et en notation binaire 
 \begin{align*}
-41&=101001\\
-9&=01001\\
+41&=101001\,,\\
+9&=01001\,,\\
 2t+1&=10011=16+2+1=19\,.
 \end{align*}
 Le lecteur peut vérifier le résultat en supprimant chaque deuxième nombre dans un cercle $1,\ldots,41$.

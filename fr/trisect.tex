@@ -126,10 +126,10 @@ Calculons la longueur $2a=\overline{CD}$ en utilisant le théorème de Pythagore
 
 La longueur $h=\overline{TE}$ peut être calculée à partir du théorème de Pythagore dans $\triangle DTE$ :
 \begin{align*}
-a^2 &= h^2 + \left[\frac{1}{2}\left(\cos \frac{\theta}{2}-\frac{1}{2}\right)\right]^2\\
+a^2 &= h^2 + \left[\frac{1}{2}\left(\cos \frac{\theta}{2}-\frac{1}{2}\right)\right]^2\,,\\
 h^2&=\frac{1}{4}\left(\cos \frac{\theta}{2}-\frac{1}{2}\right)^2+\frac{1}{4}\sin^2\frac{\theta}{2}-\left[\frac{1}{2}\left(\cos \frac{\theta}{2}-\frac{1}{2}\right)\right]^2=
-\frac{1}{4}\sin^2\frac{\theta}{2}\\
-h&=\frac{1}{2}\sin\frac{\theta}{2}\\
+\frac{1}{4}\sin^2\frac{\theta}{2}\,,\\
+h&=\frac{1}{2}\sin\frac{\theta}{2}\,,\\
 \tan\phi &=\frac{h}{\overline{OE}}=\displaystyle\frac{\displaystyle\frac{1}{2}\sin\frac{\theta}{2}}{\displaystyle\frac{1}{2}+\frac{1}{2}\left(\cos \frac{\theta}{2}\! -\! \frac{1}{2}\right)}
 =\frac{\displaystyle2\sin\frac{\theta}{2}}{\displaystyle 1+2\cos\frac{\theta}{2}}\,.\qedhere
 \end{align*}                  
@@ -233,7 +233,7 @@ Soit $\theta=\angle AOB$ un angle arbitraire et  supposons sans perte de génér
 \]
 \end{theorem}
 
-\begin{proof} D'après la loi des cosinus dans $\triangle DOC$,
+\begin{proof} D'après la loi des cosinus\footnote{Théorème \ref{thm.law-of-cosines}, aussi appelé théorème d'Al-Kashi } dans $\triangle DOC$,
 \[
 \overline{CD}= \left(\frac{1}{3}\right)^2+\left(\frac{1}{3}\right)^2-2\left(\frac{1}{3}\right)\left(\frac{1}{3}\right)\cos (\theta/2)=\frac{2}{9}(1-\cos(\theta/2))\,.
 \]
@@ -350,9 +350,9 @@ Soit $\alpha=\angle ABE$ un angle arbitraire dans un cercle unitaire de centre $
 Construisons $\overline{BC}$ et désignons les angles et les segments  comme indiqué sur la figure~\ref{f.trisect-neusis-2}.
 $\triangle ABC$ et $\triangle BCD$ sont des triangles isocèles : $\overline{AB} = \overline{BC}$ sont des rayons du même cercle et $\overline{BC} = \overline{CD}$ par construction en utilisant la \emph{neusis}. Puisque la somme des angles d'un triangle est égale à $180^\circ$ et que la somme des angles supplémentaires est également égale à $180^\circ$, on a 
 \begin{align*}
-\epsilon &= 180^\circ - 2\beta\\
-\gamma &= 180^\circ - \epsilon = 2\beta\\
-\delta &= 180^\circ - 2\gamma = 180^\circ - 4\beta\\
+\epsilon &= 180^\circ - 2\beta\,,\\
+\gamma &= 180^\circ - \epsilon = 2\beta\,,\\
+\delta &= 180^\circ - 2\gamma = 180^\circ - 4\beta\,,\\
 \alpha &= 180^\circ - \delta - \beta=3\beta\,.\qedhere
 \end{align*}
 \end{proof}
@@ -435,9 +435,9 @@ $x=\sqrt[3]{2}$.
 Puisque $\triangle ABC$ est équilatéral, $\cos \angle CAP=\cos 60^\circ=\frac{1}{2}$ , et par la loi des cosinus dans $\triangle APC$,
 \begin{subequations}
 \begin{align}
-\overline{CP}&=\overline{AC}^2+\overline{AP}^2-2\cdot \overline{AC}\cdot\overline{AP}\cos 60^\circ\\
-(x+1)^2&=1^2+(y+1)^2-2\cdot 1\cdot (y+1)\cdot \frac{1}{2}\\
-x^2+2x&=y^2+y\slabel{eq.eq-cube-double}\,.
+\overline{CP}^2&=\overline{AC}^2+\overline{AP}^2-2\cdot \overline{AC}\cdot\overline{AP}\cos 60^\circ\,,\label{zozo1}\\
+(x+1)^2&=1^2+(y+1)^2-2\cdot 1\cdot (y+1)\cdot \frac{1}{2}\,,\label{zozo2}\\
+x^2+2x&=y^2+y\label{eq.eq-cube-double}\,.
 \end{align}
 \end{subequations}
 
@@ -455,16 +455,16 @@ Par conséquent,
 \begin{align}
 \displaystyle\frac{1}{y}\cdot
 \displaystyle\frac{1}{x}\cdot
-\displaystyle\frac{2}{1}&=1\\
-xy&=2\,.\slabel{eq.menelaus-xy2}
+\displaystyle\frac{2}{1}&=1\,,\label{zozo3}\\
+xy&=2\,.\label{eq.menelaus-xy2}
 \end{align}
 \end{subequations}
 
 En substituant l'équation~\ref{eq.menelaus-xy2} dans l'équation~\ref{eq.eq-cube-double} on obtient
 \begin{align*}
-x^2+2x&=\frac{4}{x^2}+\frac{2}{x}\\
-x^4+2x^3&=4+2x\\
-x^3(x+2)&=2(x+2)\\
+x^2+2x&=\frac{4}{x^2}+\frac{2}{x}\,,\\
+x^4+2x^3&=4+2x\,,\\
+x^3(x+2)&=2(x+2)\,,\\
 %x^3&=&2\\
 x&=\sqrt[3]{2}\,.\qedhere
 \end{align*}
@@ -476,7 +476,7 @@ x&=\sqrt[3]{2}\,.\qedhere
 
 
 
-Soit $\overline{ABCD}$ un carré. Soit $l_1$ un segment placé initialement en $\overline{DC}$ et soit $l_2$ un segment placé initialement en $\overline{AD}$. Déplaçons $l_1$ à une vitesse constante jusqu'à ce qu'il atteigne $\overline{AB}$ et faisons tourner le segment $l_2$ à une vitesse angulaire constante dans le sens des aiguilles d'une montre autour de $A$ jusqu'à ce qu'il atteigne également $\overline{AB}$. Supposons qu'ils atteignent ensemble $\overline{AB}$. Par exemple, si $l_2$ tourne à $1^\circ$/seconde et que le côté du carré est de $9$ centimètres, $l_1$ doit se déplacer à $0,1$ cm/seconde. La trace de leur point d'intersection $P$ est appelée la \og quadratrice\fg{} (fig.~\ref{f.trisect-quad-curve}). Sa définition est attribuée au mathématicien Hippias.
+Soit $\overline{ABCD}$ un carré. Soit $l_1$ un segment placé initialement en $\overline{DC}$ et soit $l_2$ un segment placé initialement en $\overline{AD}$. Déplaçons $l_1$ à une vitesse constante jusqu'à ce qu'il atteigne $\overline{AB}$ et faisons tourner le segment $l_2$ à une vitesse angulaire constante dans le sens des aiguilles d'une montre autour de $A$ jusqu'à ce qu'il atteigne également $\overline{AB}$. Supposons qu'ils atteignent ensemble $\overline{AB}$. Par exemple, si $l_2$ tourne à $1^\circ$/seconde et que le côté du carré est de $9$ centimètres, $l_1$ doit se déplacer à $\mbox{0,1}$ cm/seconde. La trace de leur point d'intersection $P$ est appelée la \og quadratrice\fg{} (fig.~\ref{f.trisect-quad-curve}). Sa définition est attribuée au mathématicien Hippias.
 
 \vspace{0.4cm}
 
@@ -524,7 +524,7 @@ On peut construire une quadratrice à l'aide d'un mécanisme comme indiqué sur 
 On peut utiliser une quadratrice  pour diviser un angle en trois.
 
 \noindent\textbf{Construction.}
-Soit $\angle CDP_1=\alpha$ un angle arbitraire, où $P_1$ est l'intersection de la droite définissant l'angle $\alpha$ par rapport à $\overline{DC}$ et la quadratrice (fig.~\ref{f.trisect-quad-trisect}). Construisons une droite passant par $P_1$ et parallèle à $\overline{DC}$. Notons $E$ son intersection avec $\overline{AD}$. Notons $t$ le segment $\overline{DE}$. Divisons-le en trois (sect.~\ref{s.trisect-constructible}) pour obtenir le point $F$ qui est à une distance $t/3$ de $\overline{DC}$. Soit $P_2$ l'intersection d'une droite qui passe par $F$ et parallèle à $\overline{DC}$ avec la quadratrice. Soit $\theta$ l'angle entre $\overline{DC}$ et $\overline{DP_2}$ (sect.~\ref{f.trisect-quad-trisect}).
+Soit $\angle CDP_1=\alpha$ un angle arbitraire, où $P_1$ est l'intersection de la droite définissant l'angle $\alpha$ par rapport à $\overline{DC}$ avec la quadratrice (fig.~\ref{f.trisect-quad-trisect}). Construisons une droite passant par $P_1$ et parallèle à $\overline{DC}$. Notons $E$ son intersection avec $\overline{AD}$. Notons $t$ le segment $\overline{DE}$. Divisons-le en trois (sect.~\ref{s.trisect-constructible}) pour obtenir le point $F$ qui est à une distance $t/3$ de $\overline{DC}$. Soit $P_2$ l'intersection d'une droite qui passe par $F$ et parallèle à $\overline{DC}$ avec la quadratrice. Soit $\theta$ l'angle entre $\overline{DC}$ et $\overline{DP_2}$ (sect.~\ref{f.trisect-quad-trisect}).
 
 
 \begin{figure}[htbp]
@@ -738,10 +738,10 @@ $(1/b)=(\overline{OD}/a)$, donc  $\overline{OD}=(a/b)$.
 Pour démontrer la réciproque du théorème, nous devons déterminer quelles expressions peuvent être construites à la règle et au compas. Il existe trois constructions:\footnote{Pour des raisons de clarté, elles sont illustrées pour des valeurs spécifiques plutôt que pour les équations les plus générales.}
 
 \begin{enumerate}
-\item Deux lignes se croisent en un point (fig.~\ref{f.constructible-two-lines}). Les coordonnées de l'intersection peuvent être déduites des équations des deux droites
+\item Deux droites se croisent en un point (fig.~\ref{f.constructible-two-lines}). Les coordonnées de l'intersection peuvent être déduites des équations des deux droites
 $y=x$ et $y=4x-2$. Le point d'intersection est $P= (2/3, 2/3)$.
 
-\item Une ligne coupe un cercle en zéro, un ou deux points (fig.~\ref{f.constructible-line-circle}). Les coordonnées des intersections se déduisent des équations de la droite $y=x$ et du cercle $x^2+y^2=4$. Les points d'intersection sont
+\item Une droite coupe un cercle en zéro, un ou deux points (fig.~\ref{f.constructible-line-circle}). Les coordonnées des intersections se déduisent des équations de la droite $y=x$ et du cercle $x^2+y^2=4$. Les points d'intersection sont
 $P=(\sqrt{2}, \sqrt{2})$ et $Q=(-\sqrt{2}, -\sqrt{2})$.
 
 \item Deux cercles se croisent en zéro, un ou deux points (fig.~\ref{f.constructible-two-circles}). Les coordonnées des intersections se déduisent des équations des deux cercles $(x-1)^2+y^2=4$ et $(x+1)^2+y^2=4$. Les points d'intersection sont $P=(0,\sqrt{2})$ et $Q=(0,-\sqrt{2})$.\qedhere
@@ -835,7 +835,7 @@ Pour montrer qu'un nombre n'est pas constructible, nous devons démontrer qu'il 
 Nous montrerons que les nombres constructibles sont les racines d'une certaine classe de polynômes, puis nous démontrerons que la trisection d'un angle et la duplication d'un cube nécessitent la construction de racines de polynômes qui ne font pas partie de cette classe. Aujourd'hui, ces résultats sont démontrés en utilisant la théorie des corps de l'algèbre abstraite, mais ici nous donnons une démonstration qui utilise les mathématiques élémentaires. La démonstration est basée sur la définition suivante.
 
 \begin{definition}
-La profondeur d'une expression construite à partir des entiers et des opérations $\{+,-,\times,/,\surd\}$ est le niveau maximal d'imbrication des racines carrées.
+La \emph{profondeur} d'une expression construite à partir des entiers et des opérations $\{+,-,\times,/,\surd\}$ est le niveau maximal d'imbrication des racines carrées.
 \end{definition}
 
 \begin{example}
@@ -881,7 +881,7 @@ Soit $r=a+b\sqrt{c}$ une racine de $p(x)$ de profondeur minimale $n$, où $a,b,c
 &\quad+\,(3a^2b+b^3c+2a_2ab+a_1b)\sqrt{c}\\
 &=d+e\sqrt{c}=0\,,
 \end{align*}
-où $d,e$ sont des expressions de profondeur $n-1$ formées à partir des coefficients rationnels et $a,b,c$. Alors $\sqrt{c}=-d/e$, donc $a+b\sqrt{c}$ peut être exprimé comme une expression de profondeur $n-1$, contredisant l'hypothèse que $a+b\sqrt{c}$ est de profondeur minimale $n$. Puisque $\sqrt{c}\neq 0$  est de profondeur $n$, pour que $d+e\sqrt{c}$ soit nul, il faut que $d=e=0$.
+où $d$ et $e$ sont des expressions de profondeur $n-1$ formées à partir des coefficients rationnels et $a,b,c$. Alors $\sqrt{c}=-d/e$, donc $a+b\sqrt{c}$ peut être exprimé comme une expression de profondeur $n-1$, contredisant l'hypothèse que $a+b\sqrt{c}$ est de profondeur minimale $n$. Puisque $\sqrt{c}\neq 0$  est de profondeur $n$, pour que $d+e\sqrt{c}$ soit nul, il faut que $d=e=0$.
 
 Considérons maintenant $r'=a-b\sqrt{c}$. En examinant le calcul ci-dessus, nous voyons que $p(r')=d-e\sqrt{c}=0+0\cdot\sqrt{c}=0$. Donc $r'$ est aussi une racine de $p$.
 
@@ -893,12 +893,12 @@ Si un polynôme unitaire de degré 3 à coefficients rationnels
 \[p(x)=x^3+a_2x^2+a_1x+a_0\] n'a pas de racines rationnelles alors aucune de ses racines n'est constructible.
 \end{theorem}
 
-\begin{proof} D'après le théorème fondamental d'algèbre (théorème~\ref{thm.fundamental}), $p(x)$ a trois racines $r_1$, $r_2$ et $r_3$. Soit $r_1=a+b\sqrt{c}$ une racine de profondeur minimale $n$. D'après l'hypothèse qu'il n'existe pas de racines rationnelles, on a $n\geq 1$,  donc $b\neq 0$ et $c\neq 0$. D'après le théorème~\ref{thm.trisect.conjugate}, $r_2=a-b\sqrt{c}$ est aussi une racine. Effectuons la multiplication suivante :
+\begin{proof} D'après le théorème fondamental de l'algèbre (théorème~\ref{thm.fundamental}), $p(x)$ a trois racines $r_1$, $r_2$ et $r_3$. Soit $r_1=a+b\sqrt{c}$ une racine de profondeur minimale $n$. D'après l'hypothèse qu'il n'existe pas de racines rationnelles, on a $n\geq 1$,  donc $b\neq 0$ et $c\neq 0$. D'après le théorème~\ref{thm.trisect.conjugate}, $r_2=a-b\sqrt{c}$ est aussi une racine. Effectuons la multiplication suivante :
 \begin{subequations}
 \begin{align}
 (x-r_1)(x-r_2)(x-r_3)&=x^3 -(r_1+r_2+r_3)x^2\\
-&\quad +\, (r_1r_2+r_1r_3+r_2r_3)x + r_1r_2r_3\slabel{eq.viete3}\\
-a_2&=-(r_1+r_2+r_3)\\
+&\quad +\, (r_1r_2+r_1r_3+r_2r_3)x + r_1r_2r_3\,,\label{eq.viete3}\\
+a_2&=-(r_1+r_2+r_3)\,,\\
 r_3&=-(a_2+r_1+r_2)\,.
 \end{align}
 \end{subequations}
@@ -916,22 +916,22 @@ $\sqrt[3]{2}$ est irrationnel.
 \end{theorem}
 \begin{proof}
 Supposons que $\sqrt[3]{2}$ soit rationnel et égal à $p/q$ où $p$ et $q$ sont des entiers sans facteur commun autre que $\pm 1$. Alors
-\begin{eqnarray*}
-(p/q)^3&=&(\sqrt[3]{2})^3\\
-p^3&=&2q^3\,.
-\end{eqnarray*}
+\begin{align*}
+(p/q)^3&=(\sqrt[3]{2})^3\,,\\
+p^3&=2q^3\,.
+\end{align*}
 Donc $p$ doit être divisible par $2$, disons $p=2r$. Alors 
-\begin{eqnarray*}
-8r^3&=&2q^3\\
-q^3&=&4r^3\,.
-\end{eqnarray*}
+\begin{align*}
+8r^3&=2q^3\,,\\
+q^3&=4r^3\,.
+\end{align*}
 Donc $q$ est divisible par $2$, ce qui contredit l'hypothèse selon laquelle $p$ et $q$ n'ont pas de facteur commun.
 \end{proof}
 
 \begin{theorem}
 $x^3-2$ n'ayant pas de racines rationnelles, il est  impossible de dupliquer un cube à la règle et au  compas.
 \end{theorem}
-\begin{proof} L'une de ses racines est $\sqrt[3]{2}$ qui, selon le théorème~\ref{thm.trisect.cube-root-irrational}, est irrationnelle. Les autres racines sont celles de l'équation du second degré  $x^2+\sqrt[3]{2}x+(\sqrt[3]{2})^2$ obtenue en divisant $x^3-2$ par $x-\sqrt[3]{2}$. Il est facile de vérifier que ses racines ne sont pas rationnelles (en fait, pas même réelles).
+\begin{proof} L'une de ses racines est $\sqrt[3]{2}$ qui, selon le théorème~\ref{thm.trisect.cube-root-irrational}, est irrationnelle. Les autres racines sont celles de l'équation du second degré  $x^2+\sqrt[3]{2}x+(\sqrt[3]{2})^2=0$ obtenue en divisant $x^3-2$ par $x-\sqrt[3]{2}$. Il est facile de vérifier que ses racines ne sont pas rationnelles (en fait, pas même réelles).
 \end{proof}
 
 
@@ -941,23 +941,23 @@ Il est impossible de diviser un angle arbitraire en trois à la règle et au  co
 \begin{proof}
 Il suffit de montrer l'impossibilité pour un seul angle. Essayons de diviser $60^\circ$ en trois pour obtenir $20^\circ$. D'après le théorème~\ref{thm.triple-angle},
 \begin{align*}
-\cos 3\alpha&=4\cos^3\alpha -3\cos\alpha\\
+\cos 3\alpha&=4\cos^3\alpha -3\cos\alpha\,,\\
 \cos 60^\circ&=4\cos^3 20^\circ -3\cos 20^\circ\,.
 \end{align*}
 Soient $x=\cos 20^\circ$ et $y=2x$. Puisque $\cos 60^\circ=1/2$, on a 
 \begin{align*}
-4x^3 -3x-\frac{1}{2} &= 0\\
-8x^3-6x-1&=0\\
+4x^3 -3x-\frac{1}{2} &= 0\,,\\
+8x^3-6x-1&=0\,,\\
 y^3-3y-1&=0\,.
 \end{align*}
 
 Pour démontrer que le polynôme $y^3-3y-1$ n'a pas de racines rationnelles, supposons que $y=a/b$ soit une racine rationnelle avec $a$ et $b$ n'ayant aucun facteur commun autre que $\pm 1$. Alors 
 \begin{subequations}
 \begin{align}
-(a/b)^3-3(a/b)-1&=0\\
-a^3-3ab^2&=b^3\\
-a(a-3b^2)&=b^3\slabel{eq.trisect1}\\
-a^3&=b(b^2+3ab)\slabel{eq.trisect2}\,.
+(a/b)^3-3(a/b)-1&=0\,,\\
+a^3-3ab^2&=b^3\,,\\
+a(a^2-3b^2)&=b^3\,,\label{eq.trisect1}\\
+a^3&=b(b^2+3ab)\label{eq.trisect2}\,.
 \end{align}
 \end{subequations}
 D'après  l'équation~\ref{eq.trisect1}, $b$ doit être divisible par $a$, et d'après l'équation~\ref{eq.trisect2}, $a$ doit être divisible par $b$, ce qui n'est possible que si $a=b=\pm 1$ et $a/b=\pm 1$. Le calcul montre que  $y=a/b=1$ et $y=a/b=-1$ ne sont pas des racines du polynôme.
@@ -970,13 +970,13 @@ Une autre façon de démontrer l'impossibilité des constructions est d'utiliser
 Si un polynôme unitaire  $p(x)=x^n+a_{n-1}x^{n-1}+\cdots+a_0$ avec des coefficients entiers a des racines rationnelles alors il a des racines entières.
 \end{theorem}
 
-Pour démontrer l'impossibilité de dupliquer un cube, nous devons démontrer que 
+Pour démontrer l'impossibilité de dupliquer un cube, il suffit de démontrer que 
 \[
 x^3-2=(x-r_2)(x-r_1)(x-r_0)
 \]
 n'a pas de racines entières. Puisque $r_0r_1r_2=-2$, toutes les racines doivent diviser $2$, donc les seules racines entières possibles sont $\pm 1, \pm 2$. Un calcul rapide montre qu'aucune d'entre elles n'est une racine.
 
-Pour démontrer l'impossibilité de diviser un angle en trois, nous devons montrer que $y^3-3y-1$ n'a pas de racines entières. Une racine entière doit diviser $-1$ mais ni $1$ ni $-1$ ne sont des racines.
+Pour démontrer l'impossibilité de diviser un angle en trois, il suffit de démontrer que $y^3-3y-1$ n'a pas de racines entières. Une racine entière doit diviser $-1$ mais ni $1$ ni $-1$ ne sont des racines.
 
 \subsection*{Quelle est la surprise ?}
 

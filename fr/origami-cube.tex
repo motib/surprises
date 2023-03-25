@@ -62,13 +62,13 @@ Construisons un chemin constitué de quatre segments  $\{a_3=1,a_2=6,a_1=11,a_0=
 Calculons l'opposé de la tangente de l'angle au début du second chemin : $-\tan \mbox{63,4}^\circ=-2$. Substituons cette valeur dans le polynôme dont les coefficients sont les longueurs des segments du premier chemin :
 \begin{align*}
 p(x)&=a_3x^3+a_2x^2+a_1x+a_0\\
-&=x^3+6x^2+11x+6\\
+&=x^3+6x^2+11x+6\,,\\
 p(-\tan \mbox{63,4}^\circ)&=(-2)^3+6(-2)^2+11(-2)+6=0\,.
 \end{align*}
 Nous avons trouvé une racine du polynôme de degré trois  $x^3+6x^2+11x+6$ !
 
 
-Continuons l'exemple. Le polynôme $p(x)=x^3+6x^2+11x+6$ a trois racines $-1,-2,-3$. Calculons l'arc tangente de l'opposée des racines :
+Continuons l'exemple. Le polynôme $p(x)=x^3+6x^2+11x+6$ a trois racines $-1,-2,-3$. Calculons l'opposé de l'arc tangente des racines :
 \begin{align*}
 \alpha&=-\arctan (-1) = 45^\circ,\\
 \beta&=-\arctan(-2) \approx \mbox{63,4}^\circ,\\
@@ -237,31 +237,32 @@ La section~\ref{s.method} présente  formellement  la méthode de Lill (limitée
 
 \subsection{La méthode de Lill en tant qu'algorithme}
 
-\begin{itemize}
-\item Commençons avec un polynôme 
+
+Commençons avec un polynôme 
  arbitraire  de degré trois $p(x)=a_3x^3+a_2x^2+a_1x+a_0$.
-\item Construction du premier chemin.
+
+ Construction du premier chemin.
 \begin{itemize}
 \item Pour chaque coefficient $a_3,a_2,a_1,a_0$ (dans cet ordre), construisons un segment  de cette longueur, en partant de l'origine $O=(0,0)$ dans la direction des $x>0$. Tournons de  $90^\circ$ dans le sens inverse des aiguilles d'une montre entre chaque segment.
 \end{itemize}
-\item Construction du deuxième chemin.
+ Construction du deuxième chemin.
 \begin{itemize}
 \item Construisons une droite qui part de $O$ et qui forme un angle de $\theta$ avec l'axe des $x>0$. Elle  coupe $a_2$ au point $P$.
 \item Tournons de $\pm 90^\circ$ et construisons une droite à partir de $P$ qui coupe $a_1$ en $Q$.
 \item Tournons de $\pm 90^\circ$ et construisons une droite à partir de $Q$ qui coupe $a_0$ en $R$.
 \item Si $R$ est le point d'arrivée du premier chemin, alors $-\tan\theta$ est une racine de $p(x)$.
 \end{itemize}
-\item Cas particuliers.
+ Cas particuliers.
 \begin{itemize}
 \item Lors de la construction des segments du premier chemin, si un coefficient est négatif, il faut construire le segment à l'envers.
 \item Lors de la construction des segments du premier chemin, si un coefficient est égal à zéro, il ne faut pas construire de segment  mais continuer avec le prochain virage à $\pm 90^\circ$.
 \end{itemize}
-\item Remarques.
+ Remarques.
 \begin{itemize}
 \item L'expression \emph{intersecte  $a_i$} signifie \emph{intersecte le segment  $a_i$ ou toute extension de $a_i$}.
-\item Lors de la construction du deuxième chemin, choisissons de tourner à gauche ou à droite de $90^\circ$ de sorte qu'il y ait une intersection avec le segment suivant du premier chemin ou son extension.
+\item Lors de la construction du deuxième chemin, on choisit de tourner à gauche ou à droite de $90^\circ$ de sorte qu'il y ait une intersection avec le segment suivant du premier chemin ou son extension.
 \end{itemize}
-\end{itemize}
+
 
 \begin{figure}[ht]
 \centering
@@ -319,7 +320,7 @@ La section~\ref{s.method} présente  formellement  la méthode de Lill (limitée
 \draw[thick,loosely dashed] (A) -- (B3) -- (C3) -- (E);
 \end{tikzpicture}
 %\includegraphics[width=0.7\textwidth]{Fig11_4}
-\caption{Méthode de Lill avec des racines négatives}\label{f.negative}
+\caption{Méthode de Lill avec des coefficients négatifs.}\label{f.negative}
 \end{figure}
 
 \subsection{Coefficients négatifs}\label{s.negative}
@@ -390,7 +391,7 @@ Le coefficient $a_2$ du terme $x^2$ du polynôme $x^3-7x-6=0$ est nul. Construis
 \draw[very thick,dashed,->] (B3) -- (D);
 \end{tikzpicture}
 %\includegraphics[width=\textwidth]{Fig11_5}
-\caption{Méthode de Lill avec des polynômes à coefficients nuls}\label{f.zero}
+\caption{Méthode de Lill avec des polynômes à coefficients nuls.}\label{f.zero}
 \end{figure}
 Les deuxièmes chemins avec les angles suivants croisent l'extrémité du premier chemin :
 \[
@@ -412,7 +413,7 @@ La figure~\ref{f.noninteger} montre la méthode de Lill pour $p(x)=x^3-2x+1$. Le
 
 Il est facile de voir que si le second chemin commence à un angle de $-45^\circ$, il coupera le premier chemin en  $(3,-1)$. Par conséquent, $-\arctan (-45)^\circ=1$ est une racine. Si on divise $p(x)$ par $x-1$, on obtient le polynôme du second degré $x^2+x-1$ dont les racines sont 
 \[
-\frac{-1\pm\sqrt{5}}{2} \approx \mbox{0,62},\; -\mbox{1,62}\,.
+\frac{-1\pm\sqrt{5}}{2} \approx \mbox{0,62}\,;\; -\mbox{1,62}\,.
 \]
 Il existe deux seconds chemins supplémentaires : l'un commençant à $-\arctan \mbox{0,62}\approx -\mbox{31,8}^\circ$,  l'autre commençant à $-\arctan(-\mbox{1,62})\approx \mbox{58,3}^\circ$.
 
@@ -567,13 +568,13 @@ Pour dupliquer un cube, calculons $\sqrt[3]{2}$, une racine du polynôme de degr
 
 La démonstration concerne les polynômes unitaires de degré trois $p(x)=x^3+a_2x^2+a_1x+a_0$. Si le polynôme n'est pas unitaire, divisons-le par $a_3$ et le polynôme résultant aura les mêmes racines. Dans la figure~\ref{f.lill-proof}, les segments  du premier chemin sont étiquetés avec les coefficients et avec $b_2,b_1,a_2-b_2,a_1-b_1$. Dans un triangle rectangle, si un angle aigu vaut $\theta$, l'autre angle vaut $90^\circ-\theta$. Par conséquent, l'angle au-dessus de $P$ et l'angle à gauche de $Q$ sont égaux à $\theta$. Voici les formules pour $\tan \theta$ telles que calculées à partir des trois triangles :
 \begin{align*}
-\tan \theta &= \frac{b_2}{1}=b_2\\
-\tan \theta &= \frac{b_1}{a_2-b_2}=\frac{b_1}{a_2-\tan\theta}\\
+\tan \theta &= \frac{b_2}{1}=b_2\,,\\
+\tan \theta &= \frac{b_1}{a_2-b_2}=\frac{b_1}{a_2-\tan\theta}\,,\\
 \tan \theta &= \frac{a_0}{a_1-b_1}=\frac{a_0}{a_1-\tan\theta(a_2-\tan\theta)}\,.
 \end{align*}
 Simplifions la dernière équation, multiplions par $-1$ et absorbons $-1$ dans les puissances :
 \begin{align*}
-(\tan\theta)^3-a_2(\tan\theta)^2+a_1(\tan\theta)-a_0&=0\\
+(\tan\theta)^3-a_2(\tan\theta)^2+a_1(\tan\theta)-a_0&=0\,,\\
 (-\tan\theta)^3+a_2(-\tan\theta)^2+a_1(-\tan\theta)+a_0&=0\,.
 \end{align*}
 Il s'ensuit que $-\tan\theta$ est une racine réelle de  $p(x)=x^3+a_2x^2+a_1x+a_0$.
@@ -659,7 +660,7 @@ Il s'ensuit que $-\tan\theta$ est une racine réelle de  $p(x)=x^3+a_2x^2+a_1x+a
 Margharita P. Beloch a découvert un lien remarquable entre le pliage et la méthode de Lill : une application de l'opération connue plus tard sous le nom d'axiome~6 de l'origami génère une racine réelle d'un polynôme de degré trois. L'opération est souvent appelée le 
  pliage de Beloch.
 
-Considérons le polynôme $p(x)=x^3+6x^2+11x+6$ (sect.~\ref{s.magic}). Rappelons qu'un pli est la médiatrice du segment  entre un point quelconque et sa réflexion autour du pli. Nous voulons que $\overline{RS}$ dans la figure~\ref{f.beloch-fold2} soit la médiatrice de $\overline{QQ'}$ et $\overline{PP'}$, où $Q'$ et $P'$ sont les réflexions de $Q$ et $P$ autour de $\overline{RS}$.
+Considérons le polynôme $p(x)=x^3+6x^2+11x+6$ (sect.~\ref{s.magic}). Rappelons qu'un pli est la médiatrice du segment  qui relie un point quelconque et son symétrique par rapport au pli. Nous voulons que $\overline{RS}$ dans la figure~\ref{f.beloch-fold2} soit la médiatrice de $\overline{QQ'}$ et $\overline{PP'}$, où $Q'$ et $P'$ sont les images de $Q$ et $P$ autour de $\overline{RS}$.
 
 \begin{figure}[thbp]
 \centering
@@ -725,7 +726,7 @@ Considérons le polynôme $p(x)=x^3+6x^2+11x+6$ (sect.~\ref{s.magic}). Rappelons
 \caption{Le pli de Beloch pour trouver une racine de  $x^3+6x^2+11x+6$.}\label{f.beloch-fold2}
 \end{figure}
 
-Construisons une droite $a_2'$ parallèle à $a_2$ à la même distance de $a_2$ que $a_2$ est de $P$, et construisons une droite $a_1'$ parallèle à $a_1$ à la même distance de $a_1$ que $a_1$ est de $Q$. Appliquons l'axiome~6 pour placer simultanément $P$ à $P'$ sur $a_2'$ et pour placer $Q$ à $Q'$ sur $a_1'$. Le pli $\overline{RS}$ est la médiatrice des droites $\overline{PP'}$ et $\overline{QQ'}$ donc les angles à $R$ et $S$ sont tous deux des angles droits comme requis par la méthode de Lill.
+Construisons une droite $a_2'$ parallèle à $a_2$ à la même distance de $a_2$ que $a_2$ est de $P$, et construisons une droite $a_1'$ parallèle à $a_1$ à la même distance de $a_1$ que $a_1$ est de $Q$. Appliquons l'axiome~6 pour placer simultanément $P$ en $P'$ sur $a_2'$ et pour placer $Q$ en $Q'$ sur $a_1'$. Le pli $\overline{RS}$ est la médiatrice des droites $\overline{PP'}$ et $\overline{QQ'}$ donc les angles en $R$ et $S$ sont tous deux des angles droits comme requis par la méthode de Lill.
 
 
 

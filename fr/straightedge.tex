@@ -6,7 +6,7 @@
 
 Toute construction à la règle et au  compas peut-elle être réalisée uniquement avec une règle? La réponse est non car les droites sont définies par des équations linéaires et ne peuvent pas représenter des cercles qui sont définis par des équations du second degré. En 1822, Jean-Victor Poncelet a conjecturé qu'une règle seule suffit, à condition qu'un cercle existe dans le plan. Ceci a été démontré en 1833 par Jakob Steiner.
 
-Après avoir expliqué dans la section~\ref{s.se-what} ce que signifie effectuer une construction avec seulement une règle et un cercle, la démonstration est présentée par étapes en commençant par cinq constructions auxiliaires : la construction d'une droite parallèle à une droite donnée (sect.~\ref{s.parallel}), la construction d'une perpendiculaire à une droite donnée (sect.~\ref{s.perp}), la copie d'un segment  dans une direction donnée (sect.~\ref{s.copy}), la construction d'un segment  qui est le rapport d'autres segments (sect.~\ref{s.relative}) et la construction d'une racine carrée (sect.~\ref{s.root}). La section~\ref{s.line-circle-straight} montre comment trouver l'intersection ou les intersections d'une droite avec un cercle et la section~\ref{s.two-circles} montre comment trouver l'intersection ou les intersections de deux cercles.
+Après avoir expliqué dans la section~\ref{s.se-what} ce que signifie effectuer une construction avec seulement une règle et un cercle, la démonstration est présentée par étapes en commençant par cinq constructions auxiliaires : la construction d'une droite parallèle à une droite donnée (sect.~\ref{s.parallel}), la construction d'une perpendiculaire à une droite donnée (sect.~\ref{s.perp}), la copie d'un segment  dans une direction donnée (sect.~\ref{s.copy}), la construction d'un segment  qui est le rapport d'autres segments (sect.~\ref{s.relative}) et la construction d'une racine carrée (sect.~\ref{s.root}). La section~\ref{s.line-circle-straight} montre comment trouver  les intersections d'une droite avec un cercle et la section~\ref{s.two-circles} montre comment trouver  les intersections de deux cercles.
 
 \section{Qu'est-ce qu'une construction avec seulement une règle ?}\label{s.se-what}
 Une construction à la règle et au  compas est une suite de trois opérations :
@@ -117,7 +117,7 @@ Nous affirmons que  $\overline{PQ}\parallel \overline{AB}$.
 
 La démonstration utilise le théorème de Ceva.
 
-\textit{Théorème de Ceva   (théorème~\ref{thm.ceva}).} Si les segments  allant des sommets d'un triangle aux arêtes opposées se coupent en un point $O$ (comme sur la figure~\ref{f.se-parallel-directed}), alors les longueurs des segments satisfont 
+\textit{Théorème de Ceva   (théorème~\ref{thm.ceva}).} Si des segments  allant des sommets d'un triangle aux côtés opposées se coupent en un point $O$ (comme sur la figure~\ref{f.se-parallel-directed}), alors les longueurs des segments satisfont 
 \[
 \frac{\overline{AM}}{\overline{MB}}\cdot\frac{\overline{BQ}}{\overline{QS}}\cdot\frac{\overline{SP}}{\overline{PA}} = 1\,.
 \]
@@ -130,13 +130,13 @@ puisque l'ordre des extrémités d'un segment n'est pas important.
 
 Nous affirmons que $\triangle ABS \sim \triangle PQS$:
 \begin{align*}
-\frac{\overline{BS}}{\overline{QS}}&=\frac{\overline{BQ}}{\overline{QS}}+\frac{\overline{QS}}{\overline{QS}} = \frac{\overline{BQ}}{\overline{QS}}+1\\
-&\\
+\frac{\overline{BS}}{\overline{QS}}&=\frac{\overline{BQ}}{\overline{QS}}+\frac{\overline{QS}}{\overline{QS}} = \frac{\overline{BQ}}{\overline{QS}}+1\,,\\
+%&\\
 \frac{\overline{AS}}{\overline{PS}} &= \frac{\overline{AP}}{\overline{PS}} + \frac{\overline{PS}}{\overline{PS}} = \frac{\overline{AP}}{\overline{PS}} + 1\,.
 \end{align*}
 En utilisant l'équation~\ref{eq.ceva},
 \[
-\frac{\overline{BS}}{\overline{QS}}=\frac{\overline{BQ}}{\overline{QS}}+1=\frac{\overline{AP}}{\overline{PS}}+1=\frac{\overline{AP}}{\overline{PS}}+\frac{\overline{PS}}{\overline{PS}}=\frac{\overline{AS}}{\overline{PS}}\,,
+\frac{\overline{BS}}{\overline{QS}}=\frac{\overline{BQ}}{\overline{QS}}+1=\frac{\overline{AP}}{\overline{PS}}+1=\frac{\overline{AS}}{\overline{PS}}\,,
 \]
 et il s'ensuit que $\triangle ABS \sim \triangle PQS$ et donc 
  $\overline{PQ}\parallel\overline{AB}$.
@@ -268,12 +268,12 @@ Construisons un diamètre de $X$ à $O$ qui coupe l'autre côté du cercle en $X
 $\overline{OX}$, $\overline{OX'}$, $\overline{OY}$ et $\overline{OY'}$ sont tous des rayons du cercle et $\angle XOY = \angle X'OY'$ puisqu'il s'agit d'angles opposés par le sommet, donc $\triangle XOY\cong\triangle X'OY'$ (deux côtés et un angle égaux). Définissons\footnote{Définissons, et non construisons, car nous sommes au milieu de la démonstration qu'une telle droite peut être construite.} $l'$ comme étant une droite qui passe par $O$ et parallèle à $l$ qui coupe $\overline{XY}$ en $Z$ et $\overline{X'Y'}$ en $Z'$. $\angle XOZ=\angle X'OZ'$ sont des angles opposés par le sommet, $\angle ZXO=\angle Z'X'O$ sont des angles  alternes-internes et $\overline{XO}=\overline{XO'}$ sont des rayons, donc $\triangle XOZ\cong\triangle X'OZ'$ (deux angles et un côté égaux) et $\overline{ZO}=\overline{OZ'}$. Par conséquent, $\overline{AMOZ}$ et $\overline{BMOZ'}$ sont des parallélogrammes et $\overline{AM}=\overline{ZO}=\overline{OZ'}=\overline{MB}$.
 \end{proof}
 
-\begin{theorem}
+\begin{theorem}\label{th:p12}
 Étant donné un segment $\overline{AB}$ et un point $P$ non situé sur la droite, il est possible de construire un segment  $\overline{PQ}$ parallèle à $\overline{AB}$ et dont la longueur est égale à la longueur de $\overline{AB}$, c'est-à-dire qu'il est possible de copier $\overline{AB}$ parallèlement à lui-même avec $P$ comme l'un de ses points d'extrémité.
 \end{theorem}
 
 \begin{proof}
-Nous avons démontré qu'il est possible de construire une droite $m$ qui passe par $P$ et parallèle à $\overline{AB}$ et une droite $n$ qui passe par $B$ et parallèle à $\overline{AP}$. Le quadrilatère $\overline{ABQP}$ est un parallélogramme, donc les côtés opposés sont égaux $\overline{AB}=\overline{PQ}$ (fig.~\ref{f.se-parallel-other4}).
+Nous avons démontré qu'il est possible de construire une droite $m$ qui passe par $P$ et parallèle à $\overline{AB}$ et une droite $n$ qui passe par $B$ et parallèle à $\overline{AP}$. Le quadrilatère $\overline{ABQP}$ est un parallélogramme, donc les côtés opposés sont égaux: $\overline{AB}=\overline{PQ}$ (fig.~\ref{f.se-parallel-other4}).
 \end{proof}
 
 \begin{figure}[htbp]
@@ -347,7 +347,7 @@ Il est possible de construire une copie d'un segment  donné dans la direction d
 Par \og direction\fg{}, on veut dire  que la droite définie par deux points $A'$ et $H'$ a un angle $\theta$ par rapport à un certain axe. Le but est de construire $\overline{AS}=\overline{PQ}$ tel que $\overline{AS}$ ait le même angle $\theta$ par rapport à cet axe  (fig.~\ref{f.se-copy1}).
 
 \begin{proof}
-D'après le théorème~\ref{thm.straight-parallel}, il est possible de construire un segment  $\overline{AH}$ tel que $\overline{AH}\parallel\overline{A'H'}$ et de construire un segment  $\overline{AK}$ tel que $\overline{AK}\parallel\overline{PQ}$.
+D'après le théorème~\ref{th:p12}, il est possible de construire un segment  $\overline{AH}$ tel que $\overline{AH}\parallel\overline{A'H'}$ et de construire un segment  $\overline{AK}$ tel que $\overline{AK}\parallel\overline{PQ}$ et $\overline{AK}=\overline{PQ}$.
 $\angle HAK=\theta$, il reste donc à trouver un point $S$ sur $\overline{AH}$ tel que $\overline{AS}=\overline{PQ}$.
 
 \begin{figure}[htbp]
@@ -486,7 +486,7 @@ Nous voulons exprimer $x=\sqrt{ab}$ comme $x=\displaystyle\frac{n}{m}s$ afin d'u
 \end{itemize}
 Posons $h=\displaystyle\frac{d}{t}a$ et $k=\displaystyle\frac{d}{t}b$. Calculons:
 \begin{align*}
-x&=\sqrt{ab}=\sqrt{\frac{th}{d}\frac{tk}{d}}=\sqrt{\left(\frac{t}{d}\right)^2hk}=\frac{t}{d}\sqrt{hk}=\frac{t}{d}s\\
+x&=\sqrt{ab}=\sqrt{\frac{th}{d}\frac{tk}{d}}=\sqrt{\left(\frac{t}{d}\right)^2hk}=\frac{t}{d}\sqrt{hk}=\frac{t}{d}s\,,\\
 h+k &= \frac{d}{t}a + \frac{d}{t}b = \frac{d(a+b)}{t} = \frac{dt}{t} = d\,.
 \end{align*}
 Avec le théorème~\ref{thm.straight-direction}, construisons $\overline{HA}= h$ sur un diamètre $\overline{HK}$ du cercle fixe. Puisque $h+k=d$, on a $\overline{AK}=k$ (fig.~\ref{f.se-sqrt}). Avec le théorème~\ref{thm.straight-perp}, on construit une perpendiculaire à $\overline{HK}$ en $A$ et on note $S$ l'intersection de cette droite avec le cercle. $\overline{OS}=\overline{OK}=d/2$ et $\overline{OA}=(d/2)-k$. 
@@ -523,7 +523,7 @@ D'après le théorème de Pythagore,
 \begin{align*}
 s^2&= \left(\frac{d}{2}\right)^2 - \left(\frac{d}{2}-k\right)^2\\
 &= \left(\frac{d}{2}\right)^2 - \left(\frac{d}{2}\right)^2 + 2\frac{dk}{2} - k^2\\
-&= k(d-k) = kh\\
+&= k(d-k) = kh\,,\\
 s&=\sqrt{hk}\,.
 \end{align*}
 Maintenant, $x=\displaystyle\frac{t}{d}s$ peut être construit d'après le théorème~\ref{thm.straight-relative}.
@@ -670,8 +670,8 @@ Une fois que $A$ a été construit, le théorème~\ref{thm.straight-perp} montre
 \noindent\textbf{Construction de la longueur $q$.} Posons $d=\sqrt{r_1^2+t^2}$. C'est  l'hypoténuse d'un triangle rectangle, qui peut être construite à partir des longueurs connues $r_1$ et $t$. Notons que $\triangle O_1XO_2$ n'est pas nécessairement un triangle rectangle ; le triangle rectangle peut être construit n'importe où dans le plan. Dans le triangle rectangle $\triangle XAO_1$, $\cos\angle XO_1A=q/r_1$. Par la loi des cosinus  pour $\triangle XO_1O_2$,
 \begin{align*}
 r_2^2 &= t^2 + r_1^2 - 2r_1t\cos\angle XO_1O_2\\
-&= t^2 + r_1^2 - 2tq\\
-2tq &= (t^2+r_1^2) - r_2^2=d^2-r_2^2\\
+&= t^2 + r_1^2 - 2tq\,,\\
+2tq &= (t^2+r_1^2) - r_2^2=d^2-r_2^2\,,\\
 q&=\frac{(d+r_2)(d-r_2)}{2t}\,.
 \end{align*}
 D'après le théorème~\ref{thm.straight-direction}, ces longueurs peuvent être construites et, d'après le théorème~\ref{thm.straight-relative}, $q$ peut être construit à partir de $d+r_2$, $d-r_2$ et $2t$.
@@ -689,7 +689,7 @@ D'après le théorème~\ref{thm.straight-direction}, $h =r_1+ q$ et $k= r_1 - q$
 
 \subsection*{Quelle est la surprise ?}
 
-Le compas est nécessaire car la règle ne peut calculer que les racines des équations linéaires et non des valeurs telles que $\sqrt{2}$, l'hypoténuse d'un triangle rectangle isocèle dont les côtés ont une longueur de $1$. Cependant, il est surprenant que l'existence d'un seul cercle, quelle que soit la position de son centre et la longueur de son rayon, suffise pour effectuer toute construction possible à la  règle et au compas.
+Le compas est nécessaire car la règle ne peut trouver que les racines des équations linéaires et non des valeurs telles que $\sqrt{2}$, l'hypoténuse d'un triangle rectangle isocèle dont les côtés ont une longueur de $1$. Cependant, il est surprenant que l'existence d'un seul cercle, quelle que soit la position de son centre et  son rayon, suffise pour effectuer toute construction possible à la  règle et au compas.
 
 
 
