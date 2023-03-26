@@ -22,6 +22,7 @@ Abbildung~\ref{f.five-planar-map-four} zeigt eine vierfarbige Darstellung der gl
 
 \begin{figure}[t]
 \begin{minipage}{.45\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.667]
 \draw[fill=blue!80] (-3.5,-3.5) rectangle +(7,7);
 
@@ -55,9 +56,11 @@ Abbildung~\ref{f.five-planar-map-four} zeigt eine vierfarbige Darstellung der gl
       (270:1) arc[start angle=270, end angle=180,  radius=1];
 \end{tikzpicture}
 \caption{Fünffarbigkeit einer planaren Karte}\label{f.five-planar-map-five}
+\end{center}
 \end{minipage}
 \hfill
 \begin{minipage}{.45\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.667]
 \draw[fill=blue!80] (-3.5,-3.5) rectangle +(7,7);
 
@@ -91,6 +94,7 @@ Abbildung~\ref{f.five-planar-map-four} zeigt eine vierfarbige Darstellung der gl
       (270:1) arc[start angle=270, end angle=180,  radius=1];
 \end{tikzpicture}
 \caption{Vierfarbigkeit einer planaren Karte}\label{f.five-planar-map-four}
+\end{center}
 \end{minipage}
 \end{figure}
 
@@ -118,6 +122,7 @@ Abbildung~\ref{f.five-planar-graph-map} zeigt die planare Karte aus Abb.~\ref{f.
 
 \begin{figure}[t]
 \begin{minipage}{.45\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.667]
 
 \draw[fill=blue!80] (-3.5,-3.5) rectangle +(7,7);
@@ -162,9 +167,11 @@ Abbildung~\ref{f.five-planar-graph-map} zeigt die planare Karte aus Abb.~\ref{f.
 }
 \end{tikzpicture}
 \caption{Associating vertices with the regions of a planar map}\label{f.five-planar-graph-map}
+\end{center}
 \end{minipage}
 \hfill
 \begin{minipage}{.45\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.667]
 
 \foreach \x/\y/\name in {
@@ -203,6 +210,7 @@ Abbildung~\ref{f.five-planar-graph-map} zeigt die planare Karte aus Abb.~\ref{f.
  \fill[\cl] (\x,\y) circle (4pt);
 \end{tikzpicture}
 \caption{Der planare Graph, der der planaren Karte entspricht}\label{f.five-planar-graph-graph}
+\end{center}
 \end{minipage}
 \end{figure}
 
@@ -265,17 +273,21 @@ Durch Induktion über die Anzahl der Kanten. Ist die Anzahl der Kanten im Graphe
 Der Graph wird unzusammenhängend (Abb.~\ref{f.five-disconnected-removing}). Verschmelze $v_1$ mit $v_2$ (Abb.~\ref{f.five-disconnected-merge}). Der resultierende Graph $G'$ ist ein planarer zusammenhängender Graph und hat weniger Kanten als $G$, so dass nach der Induktionshypothese $(V-1)-(E-1)+F=2$, da auch die Anzahl der Scheitelpunkte um eins reduziert ist. Vereinfachend erhalten wir $V-E+F=2$ für $G$.
 \begin{figure}[ht]
 \begin{minipage}{.45\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.95]
 \draw (2,0) -- (1,1.5) -- (0,0) -- (2,0) node[below] {$v_1$} -- node[above] {$e$} (4,0) node[below] {$v_2$} -- (6,0) -- (5,1.5) -- (4,0);
 \end{tikzpicture}
 \caption{Das Entfernen einer Kante unterbricht die Verbindung des Graphen}\label{f.five-disconnected-removing}
+\end{center}
 \end{minipage}
 \hfill
 \begin{minipage}{.45\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.95]
 \draw (2,0) -- (1,1.5) -- (0,0) -- (2,0) node[below] {$v_1,v_2$} -- (4,0) -- (3,1.5) -- (2,0);
 \end{tikzpicture}
 \caption{Verschmelzen von zwei Eckpunkten}\label{f.five-disconnected-merge}
+\end{center}
 \end{minipage}
 \end{figure}
 
@@ -285,20 +297,24 @@ Der Graph bleibt verbunden (Abb.~\ref{f.five-connected-remains}). $G'$ hat wenig
 
 \begin{figure}[ht]
 \begin{minipage}{.45\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.8]
 \draw (2,0) -- (1,1.5) -- (0,0) -- (2,0) -- node[above] {$e$} (4,0) -- (6,0) -- (5,1.5) -- (4,0);
 \draw (1,1.5) -- (5,1.5);
 \end{tikzpicture}
 \caption{Removing an edge does not disconnect the graph}\label{f.five-connected-remains}
+\end{center}
 \end{minipage}
 \hfill
 \begin{minipage}{.45\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.8]
 \draw (2,0) -- (1,1.5) -- (0,0) -- (2,0);
 \draw (4,0) -- (5,1.5) -- (6,0) -- cycle;
 \draw (1,1.5) -- (5,1.5);
 \end{tikzpicture}
 \caption{Der Graph bleibt zusammenhängend und hat weniger Kanten}\label{f.five-connected-fewer}
+\end{center}
 \end{minipage}
 \end{figure}
 
@@ -332,16 +348,18 @@ Abbildung~\ref{f.five-upper-limit} zeigt einen triangulierten Graphen mit $6$ Sc
 \end{example}
 
 \begin{figure}[t]
-\begin{center}
 \begin{minipage}{.4\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.8]
 \draw (2,0) -- (1,1.5) -- (0,0) -- (2,0) -- (4,0) -- (6,0) -- (5,1.5) -- (4,0);
 \draw (1,1.5) -- (5,1.5);
 \end{tikzpicture}
 \caption{Weniger Kanten als die Obergrenze}\label{f.five-fewer}
+\end{center}
 \end{minipage}
 \hfill
 \begin{minipage}{.55\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.8]
 \draw (2,0) -- (1,1.5) -- (0,0) -- (2,0) -- (4,0) -- (6,0) -- (5,1.5) -- (4,0);
 \draw (1,1.5) -- (5,1.5);
@@ -350,8 +368,8 @@ Abbildung~\ref{f.five-upper-limit} zeigt einen triangulierten Graphen mit $6$ Sc
 \draw (2,0) .. controls (3,-1) .. (6,0) .. controls (7,2) and (4,2) .. (1,1.5);
 \end{tikzpicture}
 \caption{In einem triangulierten Graphen ist die Anzahl der Kanten maximal}\label{f.five-upper-limit}
-\end{minipage}
 \end{center}
+\end{minipage}
 \end{figure}
 
 \section{Nicht-planare Diagramme}\label{s.nonplanar}
@@ -363,7 +381,8 @@ $K_5$, der vollständige Graph mit fünf Scheitelpunkten, ist nicht planar (Fig.
 \end{theorem}
 
 \begin{figure}[t]
-\begin{minipage}{.45\textwidth}
+\begin{minipage}{.48\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.8]
 \node (pentagon) [minimum size=4cm,regular polygon,regular polygon sides=5] at (0,0) {};
 \draw (pentagon.corner 1) -- (pentagon.corner 2);
@@ -378,9 +397,11 @@ $K_5$, der vollständige Graph mit fünf Scheitelpunkten, ist nicht planar (Fig.
 \draw (pentagon.corner 3) -- (pentagon.corner 5);
 \end{tikzpicture}
 \caption{$K_5$ nicht planar ist}\label{f.five-k5}
+\end{center}
 \end{minipage}
 \hfill
-\begin{minipage}{.45\textwidth}
+\begin{minipage}{.5\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.8]
 \node (pentagon) [minimum size=4cm,regular polygon,regular polygon sides=5] at (0,0) {};
 \draw (pentagon.corner 1) -- (pentagon.corner 2);
@@ -398,6 +419,7 @@ $K_5$, der vollständige Graph mit fünf Scheitelpunkten, ist nicht planar (Fig.
 \draw[thick] (0,-.95) circle(5pt);
 \end{tikzpicture}
 \caption{Ein gescheiterter Versuch, $K_5$ als planar zu zeichnen}\label{f.five-k5-failed}
+\end{center}
 \end{minipage}
 \end{figure}
 
@@ -519,6 +541,7 @@ Für den Induktionsschritt hat $G$ nach Thm.~\ref{thm.degree5} einen Scheitelpun
 
 \begin{figure}[hbt]
 \begin{minipage}{.45\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.5,minimum size=5mm,inner sep=0pt]
 \foreach \name/\color/\theta in
     {A/red/18,B/green/90,C/blue!80/162,D/yellow/234,E/orange/306}
@@ -532,9 +555,11 @@ Für den Induktionsschritt hat $G$ nach Thm.~\ref{thm.degree5} einen Scheitelpun
 \draw (B) .. controls (-5,1) .. (D);
 \end{tikzpicture}
 \caption{Fünf Farben reichen aus, um die Nachbarn von $v$}\label{f.five-six-five}
+\end{center}
 \end{minipage}
 \hfill
 \begin{minipage}{.45\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.5,minimum size=5mm,inner sep=0pt]
 \foreach \name/\color/\theta in
     {A/red/18,B/green/90,C/blue!80/162,D/yellow/234,E/orange/306}
@@ -548,6 +573,7 @@ Für den Induktionsschritt hat $G$ nach Thm.~\ref{thm.degree5} einen Scheitelpun
 \draw (B) .. controls (-5,1) .. (D);
 \end{tikzpicture}
 \caption{Färbe $v$ mit der sechsten Farbe}\label{f.five-six-six}
+\end{center}
 \end{minipage}
 \end{figure}
 
@@ -783,6 +809,7 @@ Tauschen Sie die Farben der blau-grünen Kette und der blau-gelben Kette (Abb.~\
 
 \begin{figure}[ht]
 \begin{minipage}{.45\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.5,minimum size=5mm,inner sep=0pt]
 
 % Draw center node and adjacent nodes
@@ -828,9 +855,11 @@ Tauschen Sie die Farben der blau-grünen Kette und der blau-gelben Kette (Abb.~\
 \node[left,xshift=-8pt] at (Z2) {$v_8$};
 \end{tikzpicture}
 \caption{Blaugrüne und blau-gelbe Kempe-Ketten}\label{f.five-kempe1}
+\end{center}
 \end{minipage}
 \hfill
 \begin{minipage}{.45\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.5,minimum size=5mm,inner sep=0pt]
 
 % Draw center node and adjacent nodes
@@ -876,13 +905,15 @@ Tauschen Sie die Farben der blau-grünen Kette und der blau-gelben Kette (Abb.~\
 \node[left,xshift=-8pt] at (Z2) {$v_8$};
 \end{tikzpicture}
 \caption{Tauschen Sie die Farben der beiden Kempe-Ketten}\label{f.five-kempe1-exchange}
+\end{center}
 \end{minipage}
 \end{figure}
 
 Heawood stellte fest, dass die geschlossenen Pfade, die durch die rot-gelbe Kette und die rot-grüne Kette definiert sind, rote Scheitelpunkte teilen können ($v_1,v_8$ in Abb.~\ref{f.five-kempe2}). Wenn die Farben in den blau-grünen und blau-gelben Ketten ausgetauscht werden, ist es möglich, dass die blauen Knoten $v_6,v_7$ verbunden sind (Abb.~\ref{f.five-kempe2-share}) und die Färbung nicht mehr korrekt ist.
 
 \begin{figure}[ht]
-\begin{minipage}{.45\textwidth}
+\begin{minipage}{.50\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.5,minimum size=5mm,inner sep=0pt]
 
 % Draw center node and adjacent nodes
@@ -922,9 +953,11 @@ Heawood stellte fest, dass die geschlossenen Pfade, die durch die rot-gelbe Kett
 \node[left,xshift=-8pt] at (X2) {$v_8$};
 \end{tikzpicture}
 \caption{Rot-gelbe und rot-grüne Ketten teilen sich rote Scheitelpunkte}\label{f.five-kempe2}
+\end{center}
 \end{minipage}
 \hfill
-\begin{minipage}{.45\textwidth}
+\begin{minipage}{.50\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.5,minimum size=5mm,inner sep=0pt]
 
 % Draw center node and adjacent nodes
@@ -964,6 +997,7 @@ Heawood stellte fest, dass die geschlossenen Pfade, die durch die rot-gelbe Kett
 \node[left,xshift=-8pt] at (X2) {$v_8$};
 \end{tikzpicture}
 \caption{Durch den Austausch der Farben werden die blauen Eckpunkte miteinander verbunden}\label{f.five-kempe2-share}
+\end{center}
 \end{minipage}
 \end{figure}
 

@@ -192,6 +192,7 @@ Fügen Sie die beiden Polygone zusammen, um das ursprüngliche Polygon mit $n$ S
 
 \begin{figure}[t]
 \begin{minipage}{.45\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.6]
 \draw
   (0,0) coordinate (A) -- 
@@ -216,9 +217,11 @@ Fügen Sie die beiden Polygone zusammen, um das ursprüngliche Polygon mit $n$ S
   (B) -- (D) -- (K) -- (F) -- (I) -- (K) -- (A) -- (D) -- (F) -- (H);
 \end{tikzpicture}
 \caption{Eine beliebige Diagonale in einem Polygon}\label{f.museum.three-1}
+\end{center}
 \end{minipage}
 \hfill
 \begin{minipage}{.45\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.6]
 \path
   (0,0) coordinate (A1) -- 
@@ -277,11 +280,13 @@ Fügen Sie die beiden Polygone zusammen, um das ursprüngliche Polygon mit $n$ S
 \end{scope}
 \end{tikzpicture}
 \caption{Teilen Sie das Polygon}\label{f.museum.three-2}
+\end{center}
 \end{minipage}
 \end{figure}
 
 \begin{figure}[t]
 \begin{minipage}{.45\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.6]
 \path
   (0,0) coordinate (A1) -- 
@@ -345,9 +350,11 @@ Fügen Sie die beiden Polygone zusammen, um das ursprüngliche Polygon mit $n$ S
 \end{scope}
 \end{tikzpicture}
 \caption{Dreifarbige Darstellung der beiden kleineren Polygone}\label{f.museum.three-3}
+\end{center}
 \end{minipage}
 \hfill
 \begin{minipage}{.45\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.6]
 \path
   (0,0) coordinate (A1) -- 
@@ -411,6 +418,7 @@ Fügen Sie die beiden Polygone zusammen, um das ursprüngliche Polygon mit $n$ S
 \end{scope}
 \end{tikzpicture}
 \caption{Tauschen Sie die Farben eines Polygons aus, um sie an das andere anzupassen.}\label{f.museum.three-4}
+\end{center}
 \end{minipage}
 \end{figure}
 
@@ -557,6 +565,7 @@ Durch Induktion auf die Anzahl der Scheitelpunkte. Für $n=3$ gibt es nichts zu 
 
 \begin{figure}[t]
 \begin{minipage}{.45\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=1.4]
 \clip (-.5,-.4) rectangle (3.8,2.2);
 \draw
@@ -573,9 +582,11 @@ Durch Induktion auf die Anzahl der Scheitelpunkte. Für $n=3$ gibt es nichts zu 
 \vertex{D};
 \end{tikzpicture}
 \caption{Triangulation, bei der eine Diagonale im Polygon enthalten ist}\label{f.contained}
+\end{center}
 \end{minipage}
 \hfill
 \begin{minipage}{.45\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=1.4]
 \clip (-.2,-.4) rectangle (3.8,2.2);
 \draw
@@ -599,6 +610,7 @@ Durch Induktion auf die Anzahl der Scheitelpunkte. Für $n=3$ gibt es nichts zu 
 \vertex{F};
 \end{tikzpicture}
 \caption{Triangulation, bei der eine Diagonale nicht im Polygon enthalten ist}\label{f.museum.concave-vertices}
+\end{center}
 \end{minipage}
 \end{figure}
 Wenn $\overline{BD}$ nicht im Polygon enthalten ist, muss es einen konkaven Scheitelpunkt $F$ geben, der $C$ am nächsten liegt (Abb.~\ref{f.museum.concave-vertices}). $\overline{CF}$ ist eine Diagonale und zerlegt das Polygon in zwei kleinere Polygone $\overline{CFED}$ und $\overline{CFAB}$. Durch die Induktionshypothese können diese trianguliert und zusammengeklebt werden.

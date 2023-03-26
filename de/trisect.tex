@@ -455,12 +455,11 @@ x&=&\sqrt[3]{2}\,.
 
 \section{Dreiteilung mit Hilfe einer Quadratrix}\label{s.q}
 
-
-
 Sei $\overline{ABCD}$ ein Quadrat. Sei $l_1$ ein Liniensegment, das anfangs bei $\overline{DC}$ liegt, und sei $l_2$ ein Liniensegment, das anfangs bei $\overline{AD}$ liegt. Bewegen Sie $l_1$ mit einer konstanten linearen Geschwindigkeit, bis es $\overline{AB}$ erreicht, und drehen Sie $l_2$ mit einer konstanten Winkelgeschwindigkeit im Uhrzeigersinn um $A$, bis es ebenfalls $\overline{AB}$ erreicht. Nehmen wir an, dass sie $\overline{AB}$ gemeinsam erreichen. Wenn $l_2$ beispielsweise mit $1^\circ$/Sekunde rotiert und die Seite des Quadrats $9$ Zentimeter beträgt, muss sich $l_1$ mit $0,1$ cm/Sekunde bewegen. Die Spur ihres Schnittpunktes $P$ nennt man eine \emph{Quadratrixkurve} oder einfach eine \emph{Quadratrix} (Abb.~\ref{f.trisect-quad-curve}). Ihre Definition wird auf den Mathematiker Hippias zurückgeführt.
 
 \begin{figure}[b]
-\begin{minipage}{.45\textwidth}
+\begin{minipage}{.48\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.6,domain=.03:1.555,samples=100]
 \draw (.1,.2)
   node[below left,xshift=-8pt] {$A$} -- 
@@ -478,9 +477,11 @@ Sei $\overline{ABCD}$ ein Quadrat. Sei $l_1$ ein Liniensegment, das anfangs bei 
 \draw[thick] plot (4.6*.637*\x,{12.2*.637*\x*cot(\x r)});
 \end{tikzpicture}
 \caption{Eine Quadratrixkurve}\label{f.trisect-quad-curve}
+\end{center}
 \end{minipage}
 \hfill
-\begin{minipage}{.45\textwidth}
+\begin{minipage}{.48\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.6,domain=.03:1.555,samples=100]
 \draw (.1,.2) node[below left,xshift=-8pt] {$A$} -- (7.8,.2) node[below right] {$B$} -- (8,7.8) node[above right] {$C$} -- (.1,7.8) node[above left,xshift=-8pt] {$D$} -- cycle;
 \draw[rounded corners,rotate=60] (0,-.2) rectangle (8.2,.2);
@@ -489,6 +490,7 @@ Sei $\overline{ABCD}$ ein Quadrat. Sei $l_1$ ein Liniensegment, das anfangs bei 
 \draw[thick] plot (4.6*.637*\x,{12.2*.637*\x*cot(\x r)});
 \end{tikzpicture}
 \caption{Ein Quadratzirkel}\label{f.trisect-quad-compass}
+\end{center}
 \end{minipage}
 \end{figure}
 
@@ -617,7 +619,8 @@ By similar triangles in Fig.~\ref{f.trisect-division},
 $(1/b)=(\overline{OD}/a)$, so $\overline{OD}=(a/b)$.
 
 \begin{figure}[t]
-\begin{minipage}{.45\textwidth}
+\begin{minipage}{.48\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.8]
 \draw[name path=horz] (0,0) coordinate (o) -- (7,0);
 \node[left] at (o) {$O$};
@@ -639,9 +642,11 @@ $(1/b)=(\overline{OD}/a)$, so $\overline{OD}=(a/b)$.
 \path (o) -- node[below] {$a$} (d);
 \end{tikzpicture}
 \caption{Konstruktion der Multiplikation}\label{f.trisect-multiplication}
+\end{center}
 \end{minipage}
 \hfill
-\begin{minipage}{.45\textwidth}
+\begin{minipage}{.48\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.8]
 \draw[name path=horz] (0,0) coordinate (o) -- (7,0);
 \node[left] at (o) {$O$};
@@ -663,6 +668,7 @@ $(1/b)=(\overline{OD}/a)$, so $\overline{OD}=(a/b)$.
 \path (o) -- node[below] {$a/b$} (d);
 \end{tikzpicture}
 \caption{Aufbau der Abteilung}\label{f.trisect-division}
+\end{center}
 \end{minipage}
 \end{figure}
 

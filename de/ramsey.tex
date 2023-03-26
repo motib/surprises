@@ -177,6 +177,7 @@ Bartel L. van der Waerden stellte das folgende Problem: Für jede positive ganze
 Färben Sie die Kanten von $K_5$, dem vollständigen Graphen mit $5$ Scheitelpunkten, mit zwei Farben wie in Abb.~\ref{f.ramsey5} gezeigt. Es gibt keine einfarbigen Untergraphen $K_3$ (Dreiecke) in dem Graphen. Abbildung~\ref{f.ramsey6} zeigt eine Färbung von $K_6$ und es ist leicht zu sehen, dass es monochromatische Dreiecke $\triangle ACE$ und $\triangle BDF$ gibt. In diesem Abschnitt beweisen wir einen einfachen Fall eines Theorems von Frank P. Ramsey über die Existenz von Teilmengen mit einer bestimmten Eigenschaft.
 \begin{figure}[ht]
 \begin{minipage}{.45\textwidth}
+\begin{center}
 \begin{tikzpicture}
 \node (pentagon) [minimum size=5cm,regular polygon,regular polygon sides=5] at (0,0) {};
 \draw[red]  (pentagon.corner 1) node[black,above] {$A$} -- (pentagon.corner 2);
@@ -191,9 +192,11 @@ Färben Sie die Kanten von $K_5$, dem vollständigen Graphen mit $5$ Scheitelpun
 \draw[dashed,blue] (pentagon.corner 3) -- (pentagon.corner 5);
 \end{tikzpicture}
 \caption{Eine Färbung von $K_5$ mit zwei Farben}\label{f.ramsey5}
+\end{center}
 \end{minipage}
 \hfill
 \begin{minipage}{.45\textwidth}
+\begin{center}
 \begin{tikzpicture}
 \node (hexagon) [minimum size=5cm,regular polygon,regular polygon sides=6] at (0,0) {};
 \draw[red]  (hexagon.corner 1) node[black,above] {$A$} -- (hexagon.corner 2);
@@ -213,6 +216,7 @@ Färben Sie die Kanten von $K_5$, dem vollständigen Graphen mit $5$ Scheitelpun
 \draw[dashed,blue] (hexagon.corner 4) -- (hexagon.corner 6);
 \end{tikzpicture}
 \caption{Eine Färbung $K_6$ mit zwei Farben}\label{f.ramsey6}
+\end{center}
 \end{minipage}
 \end{figure}
 \begin{definition}
@@ -234,6 +238,7 @@ Das Theorem kann auf eine beliebige Anzahl von Farben verallgemeinert werden, so
 
 \begin{figure}[t]
 \begin{minipage}{.45\textwidth}
+\begin{center}
 \begin{tikzpicture}
 \node (hexagon) [minimum size=5cm,regular polygon,regular polygon sides=6] at (0,0) {};
 \draw[red]  (hexagon.corner 1) node[black,above] {$A$} -- (hexagon.corner 2) node[black,above] {$B$};
@@ -243,9 +248,11 @@ Das Theorem kann auf eine beliebige Anzahl von Farben verallgemeinert werden, so
 \draw[red] (hexagon.corner 1) -- (hexagon.corner 5) node[black,right] {$E$};
 \end{tikzpicture}
 \caption{Ein Scheitelpunkt von $K_6$}\label{f.ramsey4a}
+\end{center}
 \end{minipage}
 \hfill
 \begin{minipage}{.45\textwidth}
+\begin{center}
 \begin{tikzpicture}
 \node (hexagon) [minimum size=5cm,regular polygon,regular polygon sides=6] at (0,0) {};
 \draw[very thick,red]  (hexagon.corner 1) node[black,above] {$A$} -- (hexagon.corner 2) node[black,above] {$B$};
@@ -259,6 +266,7 @@ Das Theorem kann auf eine beliebige Anzahl von Farben verallgemeinert werden, so
 \draw[very thick,blue,dashed] (hexagon.corner 5) -- (hexagon.corner 3);
 \end{tikzpicture}
 \caption{Monochromatische Dreiecke in $K_6$}\label{f.ramsey4b}
+\end{center}
 \end{minipage}
 \end{figure}
 

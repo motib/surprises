@@ -1,5 +1,16 @@
 \documentclass[openany]{book}
-\usepackage[a5paper,margin=2cm]{geometry}
+
+% Used in the French translation
+%\usepackage[a5paper,margin=2cm]{geometry}
+
+% Used in Springer's style
+\setlength{\textwidth}{117mm}
+\setlength{\textheight}{191mm}
+\setlength{\topmargin}{0cm}
+\setlength\oddsidemargin   {63pt}
+\setlength\evensidemargin  {63pt}
+\setlength\marginparwidth{90pt}
+\setlength\headsep   {12pt}
 
 \usepackage{amsmath,amsfonts,amssymb,amsthm}
 \usepackage{graphicx}
@@ -7,12 +18,10 @@
 \usepackage[T1]{fontenc}
 
 \usepackage{verbatim}
-
-\usepackage{makeidx}
-\usepackage{multicol}
-\usepackage[bottom]{footmisc}
 \usepackage{newtxtext}
 \usepackage{newtxmath}
+\usepackage{url}
+\usepackage{subeqnarray}
 
 \usepackage{titlesec}
 \titleformat{\chapter}[display]
@@ -53,17 +62,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Smart qed
-\renewcommand\qedsymbol{\hbox{$\square$}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% My added packages
-\usepackage{url}
-\usepackage{subeqnarray}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 % TikZ
 \usepackage{tikz}
 \usetikzlibrary{through,calc,intersections}
@@ -90,6 +88,9 @@
 % A bit more interline spacing
 \renewcommand{\baselinestretch}{1.1}
 
+% Smart qed
+\renewcommand\qedsymbol{\hbox{$\square$}}
+
 % Box advanced material
 \newenvironment{advanced}
 {
@@ -107,8 +108,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\includeonly{}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 

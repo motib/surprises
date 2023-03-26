@@ -456,6 +456,7 @@ Eine Faltung, die $p_i$ auf $l_i$ legt, ist eine solche Linie $l_f$, dass der Ab
 Damit eine Falte gleichzeitig $p_1$ auf $l_1$ und $p_2$ auf $l_2$ legen kann, muss sie eine gemeinsame Tangente an die beiden Parabeln sein. Es kann null, eine, zwei oder drei gemeinsame Tangenten geben (Abb.~\ref{f.two-para-1-zero}, \ref{f.two-para-1-one}, \ref{f.two-para-1-two}, \ref{f.two-para-1-three}).
 \begin{figure}[ht]
 \begin{minipage}{.45\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.45]
 \draw (-6,0) -- (6,0);
 \draw (0,-1) -- (0,7);
@@ -471,9 +472,11 @@ Damit eine Falte gleichzeitig $p_1$ auf $l_1$ und $p_2$ auf $l_2$ legen kann, mu
 \draw[domain=-4.5:4.5,samples=50,very thick,dotted] plot (\x,{.25*\x*\x+1.5});
 \end{tikzpicture}
 \caption{Keine gemeinsamen Berührungspunkte}\label{f.two-para-1-zero}
+\end{center}
 \end{minipage}
 \hfill
 \begin{minipage}{.45\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.45]
 \draw (-6,0) -- (6,0);
 \draw (0,-1) -- (0,7);
@@ -490,11 +493,13 @@ Damit eine Falte gleichzeitig $p_1$ auf $l_1$ und $p_2$ auf $l_2$ legen kann, mu
 \draw[very thick,dashed] (-5,5.85) -- (6,-.9);
 \end{tikzpicture}
 \caption{Eine gemeinsame Tangente}\label{f.two-para-1-one}
+\end{center}
 \end{minipage}
 \end{figure}
 
 \begin{figure}[ht]
 \begin{minipage}{.45\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.45]
 \draw (-6,0) -- (6,0);
 \draw (0,-7) -- (0,5);
@@ -512,9 +517,11 @@ Damit eine Falte gleichzeitig $p_1$ auf $l_1$ und $p_2$ auf $l_2$ legen kann, mu
 \draw[very thick,dashed] (-3,5) -- (4.95,-7);
 \end{tikzpicture}
 \caption{Zwei gemeinsame Berührungspunkte}\label{f.two-para-1-two}
+\end{center}
 \end{minipage}
 \hfill
 \begin{minipage}{.45\textwidth}
+\begin{center}
 \begin{tikzpicture}[scale=.45]
 \draw (-5,0) -- (6,0);
 \draw (0,-4) -- (0,6);
@@ -534,8 +541,9 @@ Damit eine Falte gleichzeitig $p_1$ auf $l_1$ und $p_2$ auf $l_2$ legen kann, mu
 \draw[thick,dashed,domain=-4:7] plot (\x,.27*\x+2.93);
 \draw[thick,dashed,domain=2:4.8] plot (\x,3.73*\x-10.9);
 \end{tikzpicture}
-\end{minipage}
 \caption{Drei gemeinsame Berührungspunkte}\label{f.two-para-1-three}
+\end{center}
+\end{minipage}
 \end{figure}
 
 Die Formel für eine beliebige Parabel ist recht komplex, so dass wir uns bei der Darstellung auf Parabeln beschränken, deren Symmetrieachse die $x$- oder $y$-Achse ist.
