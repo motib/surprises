@@ -4,7 +4,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-1973 stellte Victor Klee die Frage, wie viele Wächter nötig sind, um alle Wände eines Museums zu überwachen. Wenn die Wände ein regelmäßiges Polygon oder sogar ein konvexes Polygon bilden, ist ein Wächter ausreichend (Abb.~\ref{f.museum.convex}).\index{Museum!guard a}
+1973 stellte Victor Klee die Frage, wie viele Wächter nötig sind, um alle Wände eines Museums zu überwachen. Wenn die Wände ein regelmäßiges Polygon oder sogar ein konvexes Polygon bilden, ist ein Wächter ausreichend (Abb.~\ref{f.museum.convex}).
 
 \begin{figure}[ht]
 \begin{center}
@@ -136,14 +136,14 @@ Eine \emph{diagonal} a des Polygons ist eine Kante, die zwei Scheitelpunkte verb
 
 \begin{definition}
 Ein Polygon ist dreieckig, wenn nicht schneidende Diagonalen so konstruiert werden können, dass das Innere des Polygons von Dreiecken bedeckt ist.
-\end{definition}\index{Polygon!triangulated}
+\end{definition}
 
 \begin{theorem}
 Jedes beliebige Polygon kann trianguliert werden.\label{thm.tri}
 \end{theorem}
 Wir stellen den Beweis von Thm.~\ref{thm.tri} zurück.
 \begin{definition}
-Ein Eckpunkt eines Polygons ist \emph{konvex}\index{Polygon!konvexe und konkave Eckpunkte}, wenn sein Innenwinkel kleiner als $180^\circ$ ist; ein Eckpunkt ist \emph{konkav}, wenn sein Innenwinkel größer als $180^\circ$ ist. 
+Ein Eckpunkt eines Polygons ist \emph{konvex}, wenn sein Innenwinkel kleiner als $180^\circ$ ist; ein Eckpunkt ist \emph{konkav}, wenn sein Innenwinkel größer als $180^\circ$ ist. 
 \end{definition}
 In Abb.~\ref{f.museum.arbitrary} ist der Scheitelpunkt $1$ konvex und der Scheitelpunkt $2$ ist konkav.
 
@@ -181,7 +181,7 @@ so dass keine Kante zwei Scheitelpunkte hat, denen die gleiche Farbe zugewiesen 
 
 \begin{theorem}
 Ein dreieckiges Polygon kann dreifarbig sein.\label{thm.colored}
-\end{theorem}\index{Coloring!polygon@of a polygon}
+\end{theorem}
 
 \begin{proof}
 Durch Induktion auf die Anzahl der Scheitelpunkte. Ein Dreieck kann dreifarbig sein. Ein dreieckiges Polygon mit $n>3$ Scheitelpunkten muss eine Diagonale haben. Wähle eine beliebige Diagonale $\overline{AB}$ (Abb.~\ref{f.museum.three-1}) und teile das Polygon entlang dieser Diagonale in zwei kleinere Polygone (Abb.~\ref{f.museum.three-2}). Durch Induktion kann jedes dieser kleineren Polygone dreifarbig sein (Abb.~\ref{f.museum.three-3}).
@@ -449,7 +449,7 @@ Fügen Sie die beiden Polygone zusammen, um das ursprüngliche Polygon mit $n$ S
 \section{Vom Färben von Polygonen zum Bewachen eines Museums}\label{s.museum-guard}
 
 \begin{theorem}\label{thm.guarded} Ein Museum mit $n$ Wänden kann von $n/3$ Wächtern bewacht werden.
-\end{theorem}\index{Museum!triangulated@and triangulated polygons}
+\end{theorem}
 \begin{proof}
 Durch Thm.~\ref{thm.tri} kann das Polygon trianguliert werden und durch Thm.~\ref{thm.colored} kann das Polygon dreifarbig sein. Alle drei Eckpunkte jedes Dreiecks in der Triangulation müssen mit \emph{unterschiedlichen} Farben gefärbt sein, um die Bedingung der Dreifarbigkeit zu erfüllen. Da das Polygon dreifarbig ist, kann mindestens eine Farbe, z.B. Rot, höchstens $n/3$ mal vorkommen, und jedes Dreieck muss einen rot gefärbten Scheitelpunkt haben. Stationiere eine Wache an jedem roten Scheitelpunkt; sie kann alle Wände des Dreiecks beobachten, zu dem der Scheitelpunkt gehört. Da die Dreiecke der Triangulation alle Kanten des Polygons umfassen, reichen $n/3$ Wächter aus, um alle Wände des Museums zu beobachten.
 \end{proof}
@@ -460,7 +460,7 @@ Wenn $n$ nicht durch $3$ teilbar ist, ist die Anzahl der benötigten Wächter $\
 \begin{theorem}\label{thm.interior-angles-of-a-polygon}
 Die Summe der Innenwinkel eines Polygons mit $n$ Scheitelpunkten ist:
 \[180^\circ(n-2)\,.\]
-\end{theorem}\index{Polygon!trianguliert}
+\end{theorem}
 \begin{proof}
 Man betrachte ein konvexes Polygon und bezeichne seine \emph{Außenwinkel} mit $\theta_i$ (Abb.~\ref{f.museum.exterior}).
 Wenn man sich von einer gestrichelten Linie zur nächsten bewegt, vollzieht man eine Drehung um einen Kreis, so:

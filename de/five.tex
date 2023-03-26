@@ -5,17 +5,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Karten verwenden Farben, um eine Region von einer anderen zu unterscheiden, indem sie dafür sorgen, dass benachbarte Regionen mit unterschiedlichen Farben eingefärbt werden. Im Jahr 1852 stellte Francis Guthrie fest, dass eine Karte der Grafschaften Englands mit nur vier Farben eingefärbt werden konnte.
-Die Behauptung, dass vier Länder ausreichen, um eine beliebige ebene Karte einzufärben, wird als \emph{Vier-Farben-Theorem} bezeichnet und wurde erst 1976 von Kenneth Appel\index{Appel, Kenneth} und Wolfgang Haken\index{Haken, Wolfgang} bewiesen. Sie wendeten ausgeklügelte mathematische Argumente an, um zu zeigen, dass, wenn es ein Gegenbeispiel gibt (eine Karte, die mehr als vier Farben benötigt), diese mit einer von $1834$ Konfigurationen verbunden sein muss. Anschließend überprüften sie diese Konfigurationen mit einem Computer.
+Die Behauptung, dass vier Länder ausreichen, um eine beliebige ebene Karte einzufärben, wird als \emph{Vier-Farben-Theorem} bezeichnet und wurde erst 1976 von Kenneth Appel und Wolfgang Haken bewiesen. Sie wendeten ausgeklügelte mathematische Argumente an, um zu zeigen, dass, wenn es ein Gegenbeispiel gibt (eine Karte, die mehr als vier Farben benötigt), diese mit einer von $1834$ Konfigurationen verbunden sein muss. Anschließend überprüften sie diese Konfigurationen mit einem Computer.
 
 Während das Vier-Farben-Theorem extrem schwierig zu beweisen ist, sind die Beweise für das Fünf- und Sechs-Farben-Theorem relativ einfach (Abschnitte ~\ref{s.six-color}, ~\ref{s.five-color}). Auf dem Weg zum Beweis dieser Theoreme definieren wir planare Karten und Graphen (Sect.~\ref{s.planar}), beweisen die Eulersche Formel (Sect.~\ref{s.euler}) und zeigen, dass ein planarer Graph Scheitelpunkte haben muss, deren Grad kleiner oder gleich fünf ist. In Sect.~\ref{s.nonplanar} wird die Eulersche Formel verwendet, um zu zeigen, dass zwei Graphen nicht planar sind.
 
-1879 veröffentlichte Alfred B. Kempe\index{Kempe, Alfred B.} einen Beweis des Vier-Farben-Satzes, aber 1890 zeigte Percy J. Heawood\index{Heawood, Percy J.}, dass der Beweis falsch ist. In Sect.~\ref{s.kempe} präsentieren wir Kempes fehlerhaften Beweis und Heawoods Beweis, dass er nicht korrekt ist.
+1879 veröffentlichte Alfred B. Kempe einen Beweis des Vier-Farben-Satzes, aber 1890 zeigte Percy J. Heawood, dass der Beweis falsch ist. In Sect.~\ref{s.kempe} präsentieren wir Kempes fehlerhaften Beweis und Heawoods Beweis, dass er nicht korrekt ist.
 
 \section{Flächige Karten und Diagramme}\label{s.planar}
 
 \begin{definition}
 Eine \textit{planar map} ist eine Menge von Regionen in der Ebene, die durch Grenzen getrennt sind. Eine \textit{coloring} einer Karte ist eine Zuweisung einer Farbe zu jeder Region, so dass Regionen, die eine Grenze teilen, unterschiedliche Farben zugewiesen werden.
-\end{definition}\index{Planar!map}\index{Coloring!planar graph@of a planar map}
+\end{definition}
 
 Abbildung~\ref{f.five-planar-map-five} zeigt eine fünffarbige Darstellung einer ebenen Karte mit zehn Regionen.
 Abbildung~\ref{f.five-planar-map-four} zeigt eine vierfarbige Darstellung der gleichen Karte.
@@ -100,7 +100,7 @@ Ein \emph{Graph} ist eine Menge von \emph{Scheitelpunkten} $V$ und eine Menge vo
 Ein \emph{planarer Graph} ist ein Graph, bei dem sich keine Kanten kreuzen. In einem planaren Graphen werden die von einer Menge von Kanten eingeschlossenen Bereiche \emph{Flächen} genannt.
 
 Eine \emph{Farbgebung} eines planaren Graphen ist eine Zuordnung von Farben zu Knoten, so dass keine zwei Knoten der gleichen Farbe durch eine Kante verbunden sind.
-\end{definition}\index{Planar!graph}\index{Farbgebung!planarer Graph@eines planaren Graphen}
+\end{definition}
 
 Planare Karten und planare Graphen sind dual und es ist bequem, Färbungsprobleme in Graphen statt in Karten zu untersuchen.
 
@@ -210,14 +210,14 @@ Wir können unsere Graphen weiter auf diejenigen beschränken, deren Flächen dr
 
 \begin{definition}
 Ein Graph ist \emph{dreieckig}, wenn alle seine Flächen durch drei Kanten begrenzt sind. Ein Graph kann \emph{trianguliert} werden, wenn Kanten hinzugefügt werden können, so dass der Graph dreieckig ist. Wir sagen auch, dass es eine \emph{Triangulation} des Graphen gibt.
-\end{definition}\index{Triangulierter Graph}
+\end{definition}
 
 \begin{example}
 Die Flächen des ebenen Graphen in Abb.~\ref{f.five-planar-graph-graph} sind dreieckig, da jede Fläche von drei Kanten begrenzt wird. Da die Kanten gekrümmt sind, handelt es sich bei den Flächen nicht um Dreiecke, sondern um Polygone, deren drei Kanten gerade Liniensegmente sind.
 \end{example}
 
 \begin{advanced}
-\textbf{F\'{a}ry's Theorem}\index{Fary's theorem@F\'{a}ry's theorem} besagt, dass jeder dreieckige flächige Graph in einen äquivalenten flächigen Graph umgewandelt werden kann, dessen Kanten gerade Liniensegmente sind. Daher können die Beweise ohne Verlust an Allgemeinheit auf planare Graphen beschränkt werden, deren Flächen Dreiecke sind.
+\textbf{F\'{a}ry's Theorem} besagt, dass jeder dreieckige flächige Graph in einen äquivalenten flächigen Graph umgewandelt werden kann, dessen Kanten gerade Liniensegmente sind. Daher können die Beweise ohne Verlust an Allgemeinheit auf planare Graphen beschränkt werden, deren Flächen Dreiecke sind.
 \end{advanced}
 
 \begin{example}
@@ -256,7 +256,7 @@ Abb.~\ref{f.five-triangular-graph} (links) zeigt, dass ein Quadrat zweifarbig se
 \section{Eulersche Formel}\label{s.euler}
 
 \begin{theorem}\label{thm.euler} Sei $G$ ein zusammenhängender planarer Graph mit $V$ Scheitelpunkten, $E$ Kanten und $F$ Flächen. Dann sei $V-E+F=2$.
-\end{theorem}\index{Euler's formula}
+\end{theorem}
 
 \begin{proof}
 Durch Induktion über die Anzahl der Kanten. Ist die Anzahl der Kanten im Graphen Null, so gibt es nur einen einzigen Scheitelpunkt und eine einzige Fläche, also $1-0+1=2$. Andernfalls gibt es mindestens eine Kante $e$ und sie verbindet zwei Scheitelpunkte $v_1,v_2$. Löschen Sie die Kante $e$.
@@ -360,7 +360,7 @@ Lassen Sie uns einen kurzen Umweg machen, um zu zeigen, wie Thms.~\ref{thm.euler
 
 \begin{theorem}
 $K_5$, der vollständige Graph mit fünf Scheitelpunkten, ist nicht planar (Fig.~\ref{f.five-k5}).
-\end{theorem}\index{K5@$K_{5}$ is not planar}
+\end{theorem}
 
 \begin{figure}[t]
 \begin{minipage}{.45\textwidth}
@@ -407,7 +407,7 @@ Für $K_5$, $V=5$ und $E=10$. Nach Thm.~\ref{thm.count} muss die Anzahl der Kant
 
 \begin{theorem}
 $K_{3,3}$, der zweistufige Graph mit drei Eckpunkten auf jeder Seite, ist nicht planar (Abb.~\ref{f.five-k33}).
-\end{theorem}\index{K33@$K_{3,3}$ is not planar}
+\end{theorem}
 
 \begin{figure}[b]
 \begin{minipage}{.45\textwidth}
@@ -456,7 +456,7 @@ Im Jahr 1930 bewies Kazimierz Kuratowski eine Umkehrung dieser Theoreme: Wenn ei
 
 \begin{definition}
 $d(v)$, der \emph{Grad} des Scheitelpunkts $v$, ist die Anzahl der Kanten, die mit $v$.
-\end{definition}\index{Degree of a vertex}
+\end{definition}
 
 \begin{example}
 Der Graph in Abb.~\ref{f.five-planar-graph-graph} enthält $8$ Scheitelpunkte, die den beiden Ringen entsprechen, und jeder Scheitelpunkt hat den Grad $5$. Der Scheitelpunkt, der der äußeren Fläche entspricht, hat den Grad $4$, ebenso der Scheitelpunkt, der der inneren Fläche entspricht. Daher
@@ -511,7 +511,7 @@ In Abb.~\ref{f.five-planar-graph-graph} ist die Summe der Grade $8\cdot 5 + 2\cd
 
 \begin{theorem}\label{thm.sixcolor}
 Jeder planare Graph $G$ kann sechsfarbig sein.
-\end{theorem}\index{Six-color theorem}
+\end{theorem}
 \begin{proof}
 Durch Induktion auf die Anzahl der Scheitelpunkte. Wenn $G$ sechs Scheitelpunkte oder weniger hat, genügen sechs Farben.
 Für den Induktionsschritt hat $G$ nach Thm.~\ref{thm.degree5} einen Scheitelpunkt $v$ mit Grad $5$ oder weniger. Löschen Sie den Knoten $v$, um den Graphen $G'$ zu erhalten. Nach der Induktionshypothese kann $G'$ sechsfarbig sein, aber $v$ hat höchstens $5$ Nachbarn und es werden höchstens $5$ Farben verwendet, um sie zu färben (Abb.~\ref{f.five-six-five}), also kann $v$ mit der sechsten Farbe gefärbt werden (Abb.~\ref{f.five-six-six}).
@@ -555,11 +555,11 @@ Für den Induktionsschritt hat $G$ nach Thm.~\ref{thm.degree5} einen Scheitelpun
 
 \begin{definition}
 Sei $G$ ein farbiger planarer Graph. Eine \emph{(Kempe)-Kette} $G'$ ist ein maximaler, zweifarbiger, zusammenhängender Untergraph von $G$.
-\end{definition}\index{Kempe chain}
+\end{definition}
  
 \begin{theorem}\label{thm.fivecolor}
 Jeder planare Graph $G$ kann fünffarbig sein.
-\end{theorem}\index{Five-color theorem}
+\end{theorem}
 
 \begin{proof}
 Durch Induktion auf die Anzahl der Scheitelpunkte. Wenn $G$ fünf Scheitelpunkte oder weniger hat, genügen fünf Farben.
@@ -772,7 +772,7 @@ Die Aussage, dass ein kontinuierlicher Pfad von der \emph{innen} einer geschloss
 
 \begin{theorem}\label{thm.fourcolor}
 Jeder planare Graph $G$ kann vierfarbig sein.
-\end{theorem}\index{Four-color theorem}
+\end{theorem}
 
 \begin{proof}[Falsch] Der Grundfall der Induktion und der größte Teil des Beweises ist derselbe wie der des Fünf-Farben-Satzes. Der neue Fall, der betrachtet werden muss, ist ein Scheitelpunkt $v$ mit fünf Nachbarn, der nach der Induktionshypothese mit vier Farben gefärbt werden kann, nachdem $v$ entfernt wurde.
 

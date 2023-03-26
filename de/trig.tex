@@ -13,7 +13,7 @@ In diesem Anhang werden Theoreme der Geometrie und Trigonometrie vorgestellt, di
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Berechnen des Flächeninhalts eines Dreiecks}
-\index{Triangle!computing the area|(}
+
 
 Die Standardformel zur Berechnung des Flächeninhalts eines Dreiecks aus der Basis und der Höhe ist bekannt. Sie kann mit verschiedenen geometrischen Methoden bewiesen werden.
 
@@ -92,7 +92,7 @@ $h=c\sin \theta$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\index{Triangle!Heron's formula}
+
 \begin{theorem}[Heron] Der Flächeninhalt des Dreiecks $\triangle ABC$ ist gegeben durch:\label{thm.heron} 
 \[
 \triangle ABC = \sqrt{s(s-a)(s-b)(s-c)}\,,
@@ -210,13 +210,13 @@ Von Eq.~\ref{eq.area-heron}:
 \]
 Die Heronsche Formel ergibt sich aus $u=s-a, v=s-b, w=s-c$.
 \end{proof}
-\index{Triangle!computing the area|)}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Trigonometrische Identitäten}\label{a.trig-identities}
-\index{Trigonometric identities|(}
-\index{Trigonometric identities!sine and cosine of the sum and difference of two angles}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -370,7 +370,7 @@ Sei $\overline{AB}$ ein Durchmesser und sei $\angle BAC=\alpha$. Sei $D$ ein bel
 \end{proof}
 
 \begin{proof}(2)
-Dieser Beweis basiert auf dem rechten Diagramm in Abb.~\ref{f.sin-sum1}, das in Abb.~\ref{f.trig-quad-circle} wiedergegeben ist, wo das Viereck $\overline{ABCD}$ in einen Kreis eingeschrieben wurde.\index{Viereck!eingeschrieben in einen Kreis}
+Dieser Beweis basiert auf dem rechten Diagramm in Abb.~\ref{f.sin-sum1}, das in Abb.~\ref{f.trig-quad-circle} wiedergegeben ist, wo das Viereck $\overline{ABCD}$ in einen Kreis eingeschrieben wurde.
 Nach Thm.~\ref{thm.quad-circum} kann ein Viereck dann und nur dann von einem Kreis umschrieben werden, wenn die Summe jedes Paares gegenüberliegender Winkel $180^\circ$ ist.
 $\angle ADC+\angle ABC=180^\circ$, da beide Winkel rechtwinklig sind. Aus Thm.~\ref{thm.interior-angles-of-a-polygon} ist die Summe der Innenwinkel eines Vierecks $360^\circ$, also $\angle DAB+\angle DCB=180^\circ$. 
 \begin{figure}[t]
@@ -430,7 +430,7 @@ Nach dem Satz des Ptolemäus (Thm.~\ref{thm.ptolemy}) ist das Produkt der Diagon
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Der Kosinus eines Dreifachwinkels}\label{s.cosine}
-\index{Trigonometric identities!cosine of a triple angle}
+
 \begin{theorem}\label{thm.triple-angle}
 \[
 \cos 3\alpha=4\cos^3\alpha -3\cos\alpha\,.
@@ -451,7 +451,7 @@ Der Beweis verwendet die Formeln in Thm.~\ref{thm.sum-of-trig} und die Formel $\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Sinus und Kosinus eines Halbwinkels}\label{s.sine-cosine-half}
-\index{Trigonometric identities!sine and cosine of a half-angle}
+
 \begin{theorem}\label{thm.sine-cosine-half}
 Wenn $\alpha$ ein Winkel in einem \emph{Dreieck} ist, dann:\footnote{Die allgemeine Formel ist komplexer, weil die Quadratwurzeln entweder positiv oder negativ sein können, je nachdem, in welchem Quadranten $\alpha/2$ liegt. Für ein Dreieck $0\!<\!\alpha\!<\!180^\circ$ liegt also $0\!<\!\alpha/2\!<\!90^\circ$ im ersten Quadranten und sowohl der Sinus als auch der Kosinus sind positiv.}
 \begin{eqnarray*}
@@ -476,7 +476,7 @@ Der Beweis verwendet die Formeln Thm.~\ref{thm.sum-of-trig} und die Formel $\sin
 \subsection{Das Kosinusgesetz}
 
 \begin{theorem}[Law of cosines]
-In einem Dreieck $\triangle ABC$ mit den Seiten $a,b,c$ (Abb.~\ref{f.law-cosines2}):\label{thm.law-of-cosines}\index{Law of cosines}
+In einem Dreieck $\triangle ABC$ mit den Seiten $a,b,c$ (Abb.~\ref{f.law-cosines2}):\label{thm.law-of-cosines}
 \[
 c^2=a^2+b^2-2ab\cos \angle ACB\,.
 \]
@@ -583,7 +583,7 @@ b^2&=&a^2+c(c-2x)\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Der Tangens der Summe von zwei Winkeln}\label{s.tangent-sum}
-\index{Trigonometric identities!tangent of the sum of two angles}
+
 
 \begin{theorem}\label{thm.tangent-sum}
 \[
@@ -603,7 +603,7 @@ b^2&=&a^2+c(c-2x)\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Der Tangens eines Halbwinkels}\label{s.tangent-half}
-\index{Trigonometric identities!tangent of a half-angle}
+
 \begin{theorem}\label{thm.tangent-half}
 \[
 \tan\left(\frac{\alpha}{2}\right) = \frac{-1\pm\sqrt{1+\tan^2\alpha}}{\tan\alpha}\,.
@@ -629,7 +629,7 @@ Wir leiten eine quadratische Gleichung ab und lösen sie in $\displaystyle\tan\l
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Das Produkt aus drei Tangenten}\label{s.tangent-three}
-\index{Trigonometric identities!product of three tangents}
+
 \begin{theorem}\label{thm.tangent3}
 Wenn $\alpha+\beta+\gamma=180^\circ$ dann:
 \[
@@ -691,7 +691,7 @@ Wenn $\alpha+\beta+\gamma=180^\circ$ dann:
 \end{figure}
 
 \subsection{Die Grenze der $\sin\alpha/\alpha$}\label{s.sin-over-x}
-\index{Trigonometric identities!limit@limit of $\sin \alpha/\alpha$}
+
 
 \begin{theorem}\label{thm.limit-sine-over}
 \[
@@ -711,7 +711,7 @@ Betrachtet man regelmäßige Polygone, die in einen Kreis eingeschrieben sind (A
 5  & 0.087 & 0.087 &1.000 \\\hline
 \end{array}
 \]
-Da $a=b=1$ ist, kann die Länge der Sehne $c$, die $\alpha$ unterlagert, aus dem Kosinussatz \index{Kosinussatz} (Abb.~\ref{fig.length-of-a-chord}) berechnet werden:
+Da $a=b=1$ ist, kann die Länge der Sehne $c$, die $\alpha$ unterlagert, aus dem Kosinussatz  (Abb.~\ref{fig.length-of-a-chord}) berechnet werden:
 \begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=1.1]
@@ -740,7 +740,7 @@ Wir haben aber gesehen, dass dieses Verhältnis gegen $1$ konvergiert, wenn der 
 \lim_{\alpha \rightarrow 0} \frac{\sin \alpha}{\alpha} = 1\,.
 \]
 \end{proof}
-\index{Trigonometric identities|)}
+
 
 \begin{figure}[bt]
 \begin{center}
@@ -777,7 +777,7 @@ Wir haben aber gesehen, dass dieses Verhältnis gegen $1$ konvergiert, wenn der 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Der Satz von der Winkelhalbierenden}\label{a.bisector}
-\index{Triangle!angle bisector theorem}
+
 
 \begin{theorem}\label{thm.angle-bisector}
 Im $\triangle ABC$ schneidet die Winkelhalbierende von $\angle BAC$ die $\overline{BC}$ in $D$ (Abb.~\ref{f.angle-bisector}). Dann:
@@ -821,7 +821,7 @@ Wir beweisen den Satz, indem wir die Flächen zweier Dreiecke berechnen, indem w
 \end{eqnarray*}
 \end{proof}
 Es gibt auch einen Winkelhalbierungssatz für die \emph{externe Winkelhalbierung}:
-\index{Triangle!angle bisector theorem}
+
 \begin{theorem}\label{thm.external-angle-bisector}
 Im $\triangle ABC$ sei $\overline{AE}$ die Winkelhalbierende des Winkels, der zum Winkel $\triangle BAC$ (Abb.~\ref{f.angle-bisector-external}) hinzukommt, und die Winkelhalbierende schneide $\overline{BC}$ in $E$ (Abb.~\ref{f.angle-bisector}). Dann:
 \[
@@ -866,7 +866,7 @@ Im $\triangle ABC$ sei $\overline{AE}$ die Winkelhalbierende des Winkels, der zu
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Ptolemäus' Theorem}\label{a.ptolemy}
-\index{Ptolemy's theorem}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -876,7 +876,7 @@ Vor dem Beweis des Satzes von Ptolemäus werden Theoreme über Vierecke und Trap
 
 \begin{theorem}\label{thm.quad-circum}
 Ein Viereck kann nur dann von einem Kreis umschrieben werden, wenn die gegenüberliegenden Winkel ergänzend sind (Summe $180^\circ$).
-\end{theorem}\index{Umschreibender Kreis}
+\end{theorem}
 
 In den Geometrie-Lehrbüchern findet man den einfachen Beweis für die Vorwärtsrichtung, aber es ist schwierig, einen Beweis für die Umkehrung zu finden, so dass hier beide Beweise gegeben werden.
 
@@ -931,7 +931,7 @@ Ein eingeschriebener Winkel ist gleich der Hälfte des Bogens, der ihn unterspan
 \begin{proof}(Umgekehrte Richtung)
 Jedes Dreieck kann von einem Kreis umschrieben werden. Umschreibe das $\triangle DAB$ durch einen Kreis und nimm an, dass $C'$ ein solcher Punkt ist, dass $\angle DAB + \angle DC'B = 180^\circ$, aber $C'$ nicht auf dem Kreisumfang liegt. Ohne Verlust der Allgemeinheit sei $C'$ innerhalb des Kreises (Abb.~\ref{f.trap-2}).
 
-Konstruieren Sie einen Strahl, der $\overline{DC'}$ verlängert, und lassen Sie $C$ seinen Schnittpunkt mit dem Kreis sein. $\overline{ABCD}$ wird also von einem Kreis umschrieben:\index{Circumscribed circle}
+Konstruieren Sie einen Strahl, der $\overline{DC'}$ verlängert, und lassen Sie $C$ seinen Schnittpunkt mit dem Kreis sein. $\overline{ABCD}$ wird also von einem Kreis umschrieben:
 \begin{eqnarray*}
 \angle DAB + \angle DCB &=&  180^\circ = \angle DAB + \angle DC'B\\
 \angle DCB &=& \angle DC'B\,,
@@ -941,7 +941,7 @@ was nicht möglich ist, wenn $C$ auf dem Kreis liegt und $C'$ innerhalb des Krei
 
 \begin{theorem}\label{thm.isoceles-trapezoid}
 Die gegenüberliegenden Winkel eines gleichschenkligen Trapezes sind ergänzend.
-\end{theorem}\index{Trapezoid, isoceles}\index{Circumscribed circle!trapezoid@around a trapezoid}
+\end{theorem}
 \begin{proof}
 Konstruieren Sie die Linie $\overline{AB'}$ parallel zu $\overline{CD}$ (Abb.~\ref{f.trap-3}). $\overline{AB'CD}$ ist ein Parallelogramm und $\triangle ABB'$ ist ein gleichschenkliges Dreieck, also $\angle C= \angle ABB' = \angle AB'B = \angle B$. Ähnlich verhält es sich mit $\angle A = \angle D$. Da die Summe der Innenwinkel eines beliebigen Vierecks gleich $360^\circ$ ist:
 \begin{eqnarray*}
@@ -990,7 +990,7 @@ Der Beweis ist unmittelbar durch Thms.~\ref{thm.quad-circum}, \ref{thm.isoceles-
 \subsection{Beweis des Satzes von Ptolemäus}
 
 \begin{theorem}(Ptolemy)
-Bei einem Viereck, das von einem Kreis umschrieben wird, setzt die folgende Formel die Längen der Diagonalen und der Seiten in Beziehung (Abb.~\ref{f.trig-ptolemy}).\label{thm.ptolemy}\index{Circumscribed circle}
+Bei einem Viereck, das von einem Kreis umschrieben wird, setzt die folgende Formel die Längen der Diagonalen und der Seiten in Beziehung (Abb.~\ref{f.trig-ptolemy}).\label{thm.ptolemy}
 \[
 ef = ac + bd\,.
 \]
@@ -1021,7 +1021,7 @@ ef = ac + bd\,.
 \end{figure}                       
 
 \begin{proof}
-Nach dem Kosinusgesetz\index{Gesetz der Kosinuskurven} für die vier Dreiecke $\triangle ABC$, $\triangle ADC$, $\triangle DAB$, $\triangle DCB$:
+Nach dem Kosinusgesetz für die vier Dreiecke $\triangle ABC$, $\triangle ADC$, $\triangle DAB$, $\triangle DCB$:
 \begin{eqnarray*}
 e^2 &=& a^2 + b^2 - 2ab \cos \angle B\\
 e^2 &=& c^2 + d^2 - 2cd \cos \angle D\\
@@ -1045,7 +1045,7 @@ ef &=& (ac+bd)\,.
 
 \section{Cevas Theorem}\label{a.ceva}
 
-\index{Ceva's theorem}
+
 \begin{theorem}(Ceva)
 Bei Liniensegmenten von den Eckpunkten eines Dreiecks zu den gegenüberliegenden Kanten, die sich in einem Punkt schneiden, erfüllen die Längen der Segmente (Fig.~\ref{f.ceva1}):\label{thm.ceva}
 \[
@@ -1222,7 +1222,7 @@ da die Reihenfolge der Scheitelpunkte in einem Dreieck keinen Unterschied macht.
 
 \section{Der Satz des Menelaos}\label{a.menelaus}
 
-\begin{theorem}(Menelaos)\label{thm.menelaus}\index{Menelaus's theorem}
+\begin{theorem}(Menelaos)\label{thm.menelaus}
 Sei $\triangle ABC$ ein Dreieck und $\overline{DBQ}$ eine \emph{Transversallinie}, die alle drei Kanten des Dreiecks oder deren Erweiterungen schneidet (Abb.~\ref{f.menelaus}). Dann:\footnote{Abhängig von der Konfiguration des Dreiecks und der transversalen Linie kann das Ergebnis der Multiplikation entweder plus oder minus eins sein.}
 \begin{align}
 \displaystyle\frac{\overline{AB}}{\overline{BP}}\cdot

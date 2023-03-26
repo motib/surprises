@@ -15,7 +15,7 @@ Terminologie: \emph{monochromatisch} bedeutet \emph{mit der gleichen Farbe}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Schur Tripel}\label{s.schur}
-\index{Schur triples}
+
 
 \begin{definition}
 Gegeben ist eine \emph{beliebige} Zerlegung der Menge der positiven ganzen Zahlen:
@@ -100,7 +100,7 @@ Gegebene \emph{beliebige} Zerlegung der Menge der positiven ganzen Zahlen:
 \[
 S(n)=\{1,\ldots,n\}
 \]
-in zwei disjunkte Teilmengen $S_1,S_2$, gibt es $\{a,b,c\}\subseteq S_1$ oder $\{a,b,c\}\subseteq S_2$ (oder beide), so dass $a\!<\!b\!<\!c$ und $a^2+b^2=c^2$? Wenn ja, wird $\{a,b,c\}$ ein \emph{Pythagoreisches Tripel} genannt.\index{Pythagorean triples}
+in zwei disjunkte Teilmengen $S_1,S_2$, gibt es $\{a,b,c\}\subseteq S_1$ oder $\{a,b,c\}\subseteq S_2$ (oder beide), so dass $a\!<\!b\!<\!c$ und $a^2+b^2=c^2$? Wenn ja, wird $\{a,b,c\}$ ein \emph{Pythagoreisches Tripel} genannt.
 \end{definition}
 
 \begin{example}
@@ -111,7 +111,7 @@ S_1 = \{1,3,5,7,9\},\; S_2=\{2,4,6,8,10\}\,,
 es gibt keine pythagoreischen Tripel in $S_1$, aber $\{6,8,10\}$ in $S_2$ ist ein pythagoreisches Tripel, da $6^2+8^2=10^2$.
 \end{example}
 
-Marijn J.H. Heule\index{Heule, Marijn J.H.} und Oliver Kullmann\index{Kullman, Oliver} bewiesen die folgenden Theoreme. Ihre Beweismethode wird in Abschnitt ~\ref{s.sat} diskutiert.
+Marijn J.H. Heule und Oliver Kullmann bewiesen die folgenden Theoreme. Ihre Beweismethode wird in Abschnitt ~\ref{s.sat} diskutiert.
 
 \begin{theorem}
 Für alle $n\leq 7824$ gibt es \emph{eine} Zerlegung von $S(n)$ in zwei disjunkte Teilmengen, so dass beide Teilmengen \emph{kein} pythagoreisches Tripel enthalten.
@@ -166,7 +166,7 @@ Bei neun Punkten muss jede Färbung eine Folge von drei monochromen Punkten enth
 \end{center}
 \caption{van der Waerden's Problem für neun farbige Punkte}\label{f.vdw2}
 \end{figure}
-Bartel L. van der Waerden\index{van der Waerden, Bartel L.} stellte das folgende\index{van der Waerden's problem} Problem: Für jede positive ganze Zahl $k$, was ist die kleinste Zahl $n$, so dass \emph{jede} Folge von $n$ farbigen Punkten \emph{muss} eine Folge von $k$ monochromatischen Punkten enthalten, die eine arithmetische Progression bilden? Für $k=3$, $n=9$, wie oben für eine Zerlegung gezeigt. Das nächste Ergebnis ist schwieriger zu zeigen: für $k=4$, $n=35$.
+Bartel L. van der Waerden stellte das folgende Problem: Für jede positive ganze Zahl $k$, was ist die kleinste Zahl $n$, so dass \emph{jede} Folge von $n$ farbigen Punkten \emph{muss} eine Folge von $k$ monochromatischen Punkten enthalten, die eine arithmetische Progression bilden? Für $k=3$, $n=9$, wie oben für eine Zerlegung gezeigt. Das nächste Ergebnis ist schwieriger zu zeigen: für $k=4$, $n=35$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -174,7 +174,7 @@ Bartel L. van der Waerden\index{van der Waerden, Bartel L.} stellte das folgende
 
 \section{Ramsey's Theorem}\label{s.ramsey}
 
-Färben Sie die Kanten von $K_5$, dem vollständigen Graphen mit $5$ Scheitelpunkten, mit zwei Farben wie in Abb.~\ref{f.ramsey5} gezeigt. Es gibt keine einfarbigen Untergraphen $K_3$ (Dreiecke) in dem Graphen. Abbildung~\ref{f.ramsey6} zeigt eine Färbung von $K_6$ und es ist leicht zu sehen, dass es monochromatische Dreiecke $\triangle ACE$ und $\triangle BDF$ gibt. In diesem Abschnitt beweisen wir einen einfachen Fall eines Theorems von Frank P. Ramsey\index{Ramsey, Frank P.} über die Existenz von Teilmengen mit einer bestimmten Eigenschaft.
+Färben Sie die Kanten von $K_5$, dem vollständigen Graphen mit $5$ Scheitelpunkten, mit zwei Farben wie in Abb.~\ref{f.ramsey5} gezeigt. Es gibt keine einfarbigen Untergraphen $K_3$ (Dreiecke) in dem Graphen. Abbildung~\ref{f.ramsey6} zeigt eine Färbung von $K_6$ und es ist leicht zu sehen, dass es monochromatische Dreiecke $\triangle ACE$ und $\triangle BDF$ gibt. In diesem Abschnitt beweisen wir einen einfachen Fall eines Theorems von Frank P. Ramsey über die Existenz von Teilmengen mit einer bestimmten Eigenschaft.
 \begin{figure}[ht]
 \begin{minipage}{.45\textwidth}
 \begin{tikzpicture}
@@ -218,13 +218,13 @@ Färben Sie die Kanten von $K_5$, dem vollständigen Graphen mit $5$ Scheitelpun
 \begin{definition}
 $\quad R(k)$, die \emph{Ramsey-Zahl} für $k$, ist die kleinste Zahl $n$, so dass in \emph{jeder} Färbung von $K_{n}$, dem vollständigen Graphen auf $n$ Scheitelpunkten, mit zwei Farben ein monochromatischer vollständiger Teilgraph $K_k$ existiert.
 \end{definition}
-\index{Ramsey's theorem}
+
 \begin{theorem}[Ramsey]
 $\quad R(3)=6$.\label{thm.ramsey}
 \end{theorem}
 
 \begin{proof}
-\index{Ramsey's theorem!proof that $R(3)=6$}
+
 Abbildung~\ref{f.ramsey5} zeigt, dass $R(3)>5$. Um zu zeigen, dass $R(3)\leq 6$ ist, betrachtet man einen beliebigen Knoten $v$ in $K_6$. $v$ ist mit fünf anderen Knoten verbunden, und wenn die Kanten mit zwei Farben gefärbt sind, muss es mindestens drei einfarbige Kanten geben, die mit $v$ verbunden sind. 
 
 In Abb.~\ref{f.ramsey4a} sind $\overline{AB}, \overline{AC}, \overline{AE}$ rot gefärbt. Da der Graph vollständig ist, sind alle Eckpunkte miteinander verbunden. Wenn also eine der Kanten $\overline{BC}$, $\overline{BE}$, $\overline{CE}$ rot gefärbt ist, sagen wir $\overline{BE}$, wird ein rotes Dreieck $\triangle ABE$ gebildet. Andernfalls sind alle drei Kanten dieser Kanten blau gefärbt und sie bilden ein blaues Dreieck (Abb.~\ref{f.ramsey4b}).
@@ -266,9 +266,9 @@ Das Theorem kann auf eine beliebige Anzahl von Farben verallgemeinert werden, so
 
 \section{Die probabilistische Methode}\label{s.bounds}
 
-Die einzigen bekannten nicht-trivialen Ramsey-Zahlen sind $R(3)=6$ und $R(4)=18$. 1947 entwickelte Paul Erd\H{o}s\index{Paul Erdos@Paul Erd\H{o}s} die \emph{probabilistische Methode}\index{Probabilistische Methode} und verwendete sie, um untere und obere Schranken für $R(k)$ zu zeigen.\index{Ramsey's theorem!lower bound} Spätere Forschungen haben beide Schranken verbessert, aber dies ist immer noch ein wichtiges Forschungsgebiet, da die Schranken nicht eng sind. Es wurde zum Beispiel bewiesen, dass $43\leq R(5) \leq 48$ und $798\leq R(10)\leq 23556$. In diesem Abschnitt wird die Elementarwahrscheinlichkeit verwendet, um eine untere Schranke für $R(k)$ zu erhalten.
+Die einzigen bekannten nicht-trivialen Ramsey-Zahlen sind $R(3)=6$ und $R(4)=18$. 1947 entwickelte Paul Erd\H{o}ss die \emph{probabilistische Methode} und verwendete sie, um untere und obere Schranken für $R(k)$ zu zeigen. Spätere Forschungen haben beide Schranken verbessert, aber dies ist immer noch ein wichtiges Forschungsgebiet, da die Schranken nicht eng sind. Es wurde zum Beispiel bewiesen, dass $43\leq R(5) \leq 48$ und $798\leq R(10)\leq 23556$. In diesem Abschnitt wird die Elementarwahrscheinlichkeit verwendet, um eine untere Schranke für $R(k)$ zu erhalten.
 
-Um zu zeigen, dass es ein Element einer Menge $S$ gibt, das die Eigenschaft $A$ besitzt, muss man beweisen, dass die Wahrscheinlichkeit, dass ein \emph{zufälliges} Element von $S$ die Eigenschaft $A$ besitzt, größer als Null ist. Es ist wichtig zu verstehen, dass die Methode \emph{nicht-konstruktiv} ist: Sie beweist nur, dass ein solches Element existiert, konstruiert es aber nicht. Obwohl wir aus Thm.~\ref{thm.ramsey} wissen, dass $R(3)=6$ ist, wollen wir die probabilistische Methode verwenden, um eine untere Schranke für $R(3)$ zu erhalten.\index{Ramsey's theorem!lower bound for}
+Um zu zeigen, dass es ein Element einer Menge $S$ gibt, das die Eigenschaft $A$ besitzt, muss man beweisen, dass die Wahrscheinlichkeit, dass ein \emph{zufälliges} Element von $S$ die Eigenschaft $A$ besitzt, größer als Null ist. Es ist wichtig zu verstehen, dass die Methode \emph{nicht-konstruktiv} ist: Sie beweist nur, dass ein solches Element existiert, konstruiert es aber nicht. Obwohl wir aus Thm.~\ref{thm.ramsey} wissen, dass $R(3)=6$ ist, wollen wir die probabilistische Methode verwenden, um eine untere Schranke für $R(3)$ zu erhalten.
 
 \begin{theorem}[Erd\H{o}s]
 $\quad R(3) > 4$.
@@ -314,7 +314,7 @@ Daraus folgt, dass $R(4)>6$ ist, was viel weniger ist als der bekannte Wert $R(4
 
 \section{SAT-Auflösung}\label{s.sat}
 
-SAT-Solving ist eine Methode zur Lösung von Problemen, bei der ein Problem als Formel in der Aussagenlogik kodiert und dann mit einem Computerprogramm auf den Wahrheitswert der Formel überprüft wird. Fortschritte bei den Algorithmen und Implementierungen haben das SAT-Solving zu einem praktikablen Ansatz für die Problemlösung gemacht. Wir geben einen Überblick über das SAT-Solving und erklären, wie es zur Lösung der in diesem Kapitel beschriebenen mathematischen Probleme verwendet werden kann. Es wird vorausgesetzt, dass der Leser über elementare Kenntnisse der Aussagenlogik verfügt, wie sie in Def.~\ref{def.sat}.\index{Propositionslogik} zusammengefasst sind.
+SAT-Solving ist eine Methode zur Lösung von Problemen, bei der ein Problem als Formel in der Aussagenlogik kodiert und dann mit einem Computerprogramm auf den Wahrheitswert der Formel überprüft wird. Fortschritte bei den Algorithmen und Implementierungen haben das SAT-Solving zu einem praktikablen Ansatz für die Problemlösung gemacht. Wir geben einen Überblick über das SAT-Solving und erklären, wie es zur Lösung der in diesem Kapitel beschriebenen mathematischen Probleme verwendet werden kann. Es wird vorausgesetzt, dass der Leser über elementare Kenntnisse der Aussagenlogik verfügt, wie sie in Def.~\ref{def.sat}. zusammengefasst sind.
 
 \subsection{Propositionale Logik und das SAT-Problem}
 
@@ -332,7 +332,7 @@ Die folgende Formel ist in CNF:
 (\neg p \vee q \vee \neg \,r) \;\wedge\; (\neg p \vee r)
 \;\wedge\; (\neg \,r)\;\wedge\;(p \vee q \vee \neg \,r)\,.
 \]
-Das \emph{SAT-Problem} besteht darin, zu entscheiden, ob eine gegebene Formel in CNF erfüllbar ist oder nicht. Ein \emph{SAT solver}\index{SAT solver} ist ein Computerprogramm, das das SAT-Problem lösen kann. Die meisten SAT-Solver basieren auf dem DPLL-Algorithmus, der auf die 1960er Jahre zurückgeht, aber durch neuere Entwicklungen wurde der Algorithmus erheblich verbessert. Hochgradig optimierte Implementierungen dieser Algorithmen haben SAT-Solver zu einem wichtigen Werkzeug für die Lösung von Problemen in vielen Bereichen einschließlich der Mathematik gemacht.
+Das \emph{SAT-Problem} besteht darin, zu entscheiden, ob eine gegebene Formel in CNF erfüllbar ist oder nicht. Ein \emph{SAT solver} ist ein Computerprogramm, das das SAT-Problem lösen kann. Die meisten SAT-Solver basieren auf dem DPLL-Algorithmus, der auf die 1960er Jahre zurückgeht, aber durch neuere Entwicklungen wurde der Algorithmus erheblich verbessert. Hochgradig optimierte Implementierungen dieser Algorithmen haben SAT-Solver zu einem wichtigen Werkzeug für die Lösung von Problemen in vielen Bereichen einschließlich der Mathematik gemacht.
 
 \subsection{Schur-Tripel} Index {Schur-Tripel}
 
@@ -376,9 +376,9 @@ Für $S(9)$ werden vier Paare von Teilformeln für die zusätzlichen möglichen 
 \]
 Wenn der SAT-Solver diese Formel erhält, antwortet er, dass die Formel nicht erfüllbar ist, was bedeutet, dass die \emph{no}-Zerlegung ein \emph{no} Schur-Dreifach. Entfernt man die doppelte Verneinung, bedeutet dies, dass in \emph{jeder} Zerlegung von $S(9)$ ein Schur-Tripel existiert.
 
-\subsection{Pythagoräische Dreiergruppen}\index{Pythagorean triples}
+\subsection{Pythagoräische Dreiergruppen}
 
-Heule\index{Heule, Marijn J.H.} und Kullmann\index{Kullman, Oliver} lösten das Problem der pythagoräischen Tripel mit Hilfe eines hochoptimierten SAT-Lösers. Es gab einen signifikanten Unterschied in der Effizienz zwischen dem Auffinden einer Zerlegung, die keine pythagoräischen Tripel hat (man braucht nur eine Zerlegung), und dem Nachweis, dass alle Zerlegungen ein pythagoräisches Tripel haben (man muss sie alle überprüfen). Um zu zeigen, dass es für alle $S(n)$, $1\leq n\leq 7824$, eine Zerlegung ohne Tripel gibt, brauchte man nur eine Minute Rechenzeit, während der Nachweis, dass jede Zerlegung von $S(7825)$ ein Tripel hat, etwa zwei Tage Rechenzeit für einen Computer mit $800$ parallel arbeitenden \emph{cores} (Prozessoren), insgesamt $40.000$ Stunden Rechenzeit, erforderte.
+Heule und Kullmann lösten das Problem der pythagoräischen Tripel mit Hilfe eines hochoptimierten SAT-Lösers. Es gab einen signifikanten Unterschied in der Effizienz zwischen dem Auffinden einer Zerlegung, die keine pythagoräischen Tripel hat (man braucht nur eine Zerlegung), und dem Nachweis, dass alle Zerlegungen ein pythagoräisches Tripel haben (man muss sie alle überprüfen). Um zu zeigen, dass es für alle $S(n)$, $1\leq n\leq 7824$, eine Zerlegung ohne Tripel gibt, brauchte man nur eine Minute Rechenzeit, während der Nachweis, dass jede Zerlegung von $S(7825)$ ein Tripel hat, etwa zwei Tage Rechenzeit für einen Computer mit $800$ parallel arbeitenden \emph{cores} (Prozessoren), insgesamt $40.000$ Stunden Rechenzeit, erforderte.
 
 Der Einsatz von Computern in der Mathematik wirft natürlich die Frage auf: Können wir einem von einem Computer erzeugten Beweis vertrauen? Natürlich können auch ``gewöhnliche'' mathematische Beweise fehlerhaft sein (Sect.~\ref{s.kempe}), aber unsere Erfahrung mit häufigen Computerfehlern sowie die Undurchsichtigkeit großer Computerprogramme machen uns empfindlicher für mögliche Fehler in computergenerierten Beweisen.
 
@@ -386,13 +386,13 @@ Eine Möglichkeit, das Vertrauen in die Korrektheit eines computergenerierten Be
 
 Der SAT-Solver von Heule und Kullmann schrieb ein Protokoll der Beweisschritte, so dass diese auf ihre Korrektheit hin überprüft werden konnten. Das Protokoll war so umfangreich, $200$ Terabytes, dass es unmöglich war, es direkt zu untersuchen. Zum Vergleich: $200$ Terabyte sind $200.000$ Gigabyte, während Ihr Computer vielleicht einen internen Speicher von $16$ Gigabyte und eine Festplatte von $128$ Gigabyte hat. Stattdessen haben sie ein kleines Programm geschrieben, um die Korrektheit der Daten im Protokoll zu überprüfen. Um sicherzustellen, dass dieses Programm korrekt war, schrieben sie einen formalen Beweis unter Verwendung des Coq-Beweisassistenten, der die Arbeit von Mathematikern unterstützt und überprüft, ohne den Beweisprozess vollständig zu automatisieren.
 
-\subsection{Ein Überblick über den DPLL-Algorithmus}\index{SAT solver!DPLL algorithm}
+\subsection{Ein Überblick über den DPLL-Algorithmus}
 
 Der erste Algorithmus, den man zum Lösen von SAT lernt, ist \emph{Wahrheitstabellen}. Bei einer Formel $A$ in Aussagenlogik mit $n$ verschiedenen Atomen gibt es $2^n$ Interpretationen, da jedem Atom unabhängig $T$ oder $F$ zugeordnet werden kann. Für jede Interpretation ist es einfach, den Wahrheitswert von $A$ mit Hilfe der Definition der Aussagenoperatoren zu berechnen. Die Überprüfung von $2^n$ Interpretationen ist jedoch selbst für mäßig große $n$ sehr ineffizient.
 
 Der DPLL-Algorithmus arbeitet, indem er schrittweise $T$ oder $F$ einem Atom zuordnet und dann versucht, die Formel auszuwerten. Wenn zum Beispiel $A=p \wedge q \wedge \neg\, r$ gegeben ist und $p$ $F$ zugewiesen wird, dann wird $A$ zu $F$ ausgewertet, unabhängig von den Zuweisungen zu $q$ und $r$, und es besteht keine Notwendigkeit, weitere Auswertungen durchzuführen. Analog dazu wird $A=p\vee q \vee \neg\, r$ zu $T$ ausgewertet, wenn $p$ $T$ zugewiesen wird, unabhängig von den Zuweisungen an $q$ und $r$.
 
-Die Effizienz der DPLL ergibt sich aus der \emph{Einheitsfortpflanzung}.\index{SAT-Löser!Einheitsfortpflanzung} Betrachten Sie einen Teil der Formel für Schur-Tripel:
+Die Effizienz der DPLL ergibt sich aus der \emph{Einheitsfortpflanzung}. Betrachten Sie einen Teil der Formel für Schur-Tripel:
 \begin{align}
 \begin{array}{l}\label{eq.schur3}
 (p_1 \vee p_2 \vee p_3) \wedge (\neg p_1 \vee \neg p_2 \vee \neg p_3) \:\wedge \\
@@ -428,12 +428,12 @@ Eine weitere Zuordnung von $F$ zu $p_4$ führt zu einer befriedigenden Interpret
 
 Dieser Abschnitt ist eine Abschweifung von der Ramsey-Theorie; er wurde aufgenommen, um einen Vorgeschmack auf die reichhaltige Theorie der pythagoreischen Tripel zu geben und um die Tiefe des mathematischen Wissens in der antiken Welt zu demonstrieren. Pythagoräische Dreiergruppen waren in der babylonischen Mathematik seit mindestens 1800 v. Chr. bekannt.
 \begin{definition}
-Ein \emph{primitives pythagoreisches Tripel}\index{Pythagoreische Tripel!primitiv} ist eine Menge von drei positiven ganzen Zahlen $\{a,b,c\}$, so dass $a^2+b^2=c^2$ und $a,b,c$ keinen gemeinsamen Faktor größer als $1$ haben.
+Ein \emph{primitives pythagoreisches Tripel} ist eine Menge von drei positiven ganzen Zahlen $\{a,b,c\}$, so dass $a^2+b^2=c^2$ und $a,b,c$ keinen gemeinsamen Faktor größer als $1$ haben.
 \end{definition}
 \begin{example}
 $\{3,4,5\}$ ist ein primitives pythagoreisches Tripel, aber $\{6,8,10\}$ ist ein pythagoreisches Tripel, das nicht primitiv ist, da $2$ ein gemeinsamer Faktor ist.
 \end{example}
-Eine Keilschrifttafel namens \emph{Plimpton $322$}\index{Plimpton 322} ist eines der frühesten Beispiele für babylonische Mathematik. Sie listet fünfzehn primitive pythagoräische Tripel unter Angabe von $a$ und $c$ auf. Tabelle~\ref{t.babylonian} zeigt vier dieser Tripel, zusammen mit den berechneten Werten von $b$ und anderen Werten, die weiter unten diskutiert werden. Mathematikhistoriker haben mehrere Erklärungen dafür vorgeschlagen, wie diese Dreiergruppen gefunden wurden. Eine Erklärung lautet, dass \emph{Euklids Formel}\index{Euklids Formel} verwendet wurde, um die Tripel aus einem Paar von erzeugenden Zahlen zu erhalten.
+Eine Keilschrifttafel namens \emph{Plimpton $322$} ist eines der frühesten Beispiele für babylonische Mathematik. Sie listet fünfzehn primitive pythagoräische Tripel unter Angabe von $a$ und $c$ auf. Tabelle~\ref{t.babylonian} zeigt vier dieser Tripel, zusammen mit den berechneten Werten von $b$ und anderen Werten, die weiter unten diskutiert werden. Mathematikhistoriker haben mehrere Erklärungen dafür vorgeschlagen, wie diese Dreiergruppen gefunden wurden. Eine Erklärung lautet, dass \emph{Euklids Formel} verwendet wurde, um die Tripel aus einem Paar von erzeugenden Zahlen zu erhalten.
 \begin{theorem}[Euclid]
 $\{a,b,c\}$ ist nur dann ein primitives pythagoräisches Tripel, wenn es zwei positive ganze Zahlen $u,v$ gibt, die \emph{Zahlen erzeugen} genannt werden, und zwar so, dass\label{thm.euclid-function}
 \begin{enumerate}
@@ -482,7 +482,7 @@ Jede Zeile der Tabelle~\ref{t.babylonian} zeigt $a_{\textit{factors}}$ und $b_{\
 \begin{definition}
 A \emph{Babylonian triple} is a primitive Pythagorean triple such that the only prime factors of $u,v$ are $2,3,5$.
 \end{definition}
-Der Grund, warum sich die Babylonier auf diese Faktoren beschränkten, ist, dass sie das \emph{sexagesimal}\index{Sexagesimalzahlensystem} oder das Zahlensystem zur Basis $60=2\cdot 2\cdot 3\cdot 5$ verwendeten, dessen Primfaktoren $2,3$ und $5$ sind.
+Der Grund, warum sich die Babylonier auf diese Faktoren beschränkten, ist, dass sie das \emph{sexagesimal} oder das Zahlensystem zur Basis $60=2\cdot 2\cdot 3\cdot 5$ verwendeten, dessen Primfaktoren $2,3$ und $5$ sind.
 
 Für Leser, die mit nicht dezimalen Zahlensystemen nicht vertraut sind, hier ein kurzer Überblick über das Konzept. Die ``Zahl'' $12345$ ist eine Kurzform für die Zahl:
 \[
@@ -540,7 +540,7 @@ Die Babylonier hatten keine $60$ eigenen Symbole für die Ziffern. Stattdessen v
 
 Das Theorem von Frank P. Ramsey schien ein unbedeutendes Ergebnis in der Kombinatorik zu sein. Überraschenderweise war das Theorem die Grundlage für ein völlig neues und anspruchsvolles Gebiet der Mathematik mit vielen offenen Problemen. Auch die Natur der Ramsey-Theorie ist überraschend: Wenn eine Menge groß genug ist, gibt es Regelmäßigkeiten in ihren Teilmengen.
 
-In die Ramsey-Theorie wurde ich durch den Artikel von Marijn J. H. Heule\index{Heule, Marijn J.H.} und Oliver Kullmann\index{Kullman, Oliver} über die pythagoräischen Tripel eingeführt, deren Beweis eine gewisse Ähnlichkeit mit dem Beweis des Vier-Farben-Satzes aufweist: der Einsatz massiver Rechenressourcen, der erst nach theoretischen Fortschritten erfolgreich ist. Daher auch der Titel ihres Artikels: \textit{The Science of Brute Force}.
+In die Ramsey-Theorie wurde ich durch den Artikel von Marijn J. H. Heule und Oliver Kullmann über die pythagoräischen Tripel eingeführt, deren Beweis eine gewisse Ähnlichkeit mit dem Beweis des Vier-Farben-Satzes aufweist: der Einsatz massiver Rechenressourcen, der erst nach theoretischen Fortschritten erfolgreich ist. Daher auch der Titel ihres Artikels: \textit{The Science of Brute Force}.
 
 Probleme in der Kombinatorik verlangen nach bestimmten Zahlenwerten, zum Beispiel muss $R(n)$ eine bestimmte positive ganze Zahl sein. Es ist überraschend, dass probabilistische Methoden sich als so fruchtbar erwiesen haben, um Ergebnisse in diesem Bereich zu erzielen.
 

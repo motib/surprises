@@ -5,7 +5,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Ein Zaubertrick}\label{s.magic}
-\index{Lill's method}
+
 
 Konstruieren Sie eine Bahn, die aus vier Liniensegmenten $\{a_3=1,a_2=6,a_1=11,a_0=6\}$ besteht, ausgehend vom Ursprung entlang der positiven Richtung der $x$-Achse, und drehen Sie $90^\circ$ zwischen den Segmenten gegen den Uhrzeigersinn. Konstruieren Sie eine zweite Bahn wie folgt: Konstruieren Sie eine Linie vom Ursprung unter dem Winkel $63.4^\circ$ und markieren Sie ihren Schnittpunkt mit $a_2$ durch $P$. Wenden Sie sich nach links $90^\circ$, konstruieren Sie eine Gerade und markieren Sie deren Schnittpunkt mit $a_1$ durch $Q$. Wenden Sie sich erneut nach links $90^\circ$, konstruieren Sie eine Linie und stellen Sie fest, dass sie das Ende des ersten Pfades bei $(-10,0)$ schneidet (Abb.~\ref{f.magic}).
 
@@ -69,14 +69,14 @@ p(-\tan 63.4^\circ)&=&(-2)^3+6(-2)^2+11(-2)+6=0\,.
 \end{eqnarray*}
 Wir haben eine Wurzel aus dem kubischen Polynom $x^3+6x^2+11x+6$ gefunden!
 
-\index{Lill's method!multiple roots}
+
 Lassen Sie uns das Beispiel fortsetzen. Das Polynom $p(x)=x^3+6x^2+11x+6$ hat drei Wurzeln $-1,-2,-3$. Berechnen Sie den Arcustangens der Negation der Wurzeln:
 \[
 \alpha=-\tan^{-1} (-1) = 45^\circ,\quad \beta=-\tan^{-1}(-2) \approx 63.4^\circ,\quad \gamma=-\tan^{-1}(-3)\approx 71.6^\circ\,.
 \]
 Für jeden Winkel schneidet die zweite Bahn das Ende der ersten Bahn (Abb.~\ref{f.cube-multiple}).
 
-\index{Lill's method!paths that do not lead to roots}
+
 Der Wert $-\tan 56,3\approx -1,5$ ist keine Wurzel aus der Gleichung. Abb.~\ref{f.noroots} zeigt das Ergebnis der Anwendung der Methode für diesen Winkel. Der zweite Pfad schneidet das Liniensegment für den Koeffizienten $a_0$ nicht bei $(-10,0)$.
 
 \begin{figure}[b]
@@ -236,7 +236,7 @@ Abschnitt~\ref{s.method} stellt eine formale Spezifikation der Lill-Methode vor 
 \section{Spezifikation der Lill'schen Methode}\label{s.method}
 
 \subsection{Die Lillsche Methode als Algorithmus}
-\index{Lill's method!algorithm}
+
 \begin{itemize}
 \item Beginnen Sie mit einem beliebigen kubischen Polynom $p(x)=a_3x^3+a_2x^2+a_1x+a_0$.
 \item Konstruiere den ersten Pfad:
@@ -322,14 +322,14 @@ Abschnitt~\ref{s.method} stellt eine formale Spezifikation der Lill-Methode vor 
 \end{figure}
 
 \subsection{Negative Koeffizienten}\label{s.negative}
-\index{Lill's method!negative coefficients}
+
 Wir wollen die Lillsche Methode für das Polynom $p(x)=x^3-3x^2-3x+1$ mit negativen Koeffizienten demonstrieren (Sect.~\ref{s.ax6}). Man beginnt mit der Konstruktion eines Segments der Länge $1$ nach rechts. Als nächstes dreht man $90^\circ$ nach oben, aber da der Koeffizient negativ ist, konstruiert man ein Segment der Länge $3$ nach unten, d.h. in die dem Pfeil entgegengesetzte Richtung. Nachdem man $90^\circ$ nach links gedreht hat, ist der Koeffizient wieder negativ, also konstruiert man ein Segment der Länge $3$ nach rechts. Wenden Sie sich schließlich nach unten und konstruieren Sie ein Segment der Länge $1$ (Abb.~\ref{f.negative}, die grob gestrichelten Linien werden in Sect.~\ref{s.noninteger} besprochen).
 
 Der zweite Pfad beginnt mit einer Linie bei $45^\circ$ mit der positiven $x$-Achse. Sie schneidet die Verlängerung des Linienabschnitts für $a_2$ bei $(1,1)$. Dreht man $-90^\circ$ (nach rechts), so schneidet die Linie die Verlängerung der Strecke für $a_1$ in $(5,-3)$. Dreht man $-90^\circ$ erneut, so schneidet die Linie das Ende der ersten Strecke bei $(4,-4)$. Da $-\tan 45^\circ=-1$ ist, haben wir eine Wurzel des Polynoms gefunden:
 \[p(-1)=(-1)^3-3(-1)^2-3(-1)+6=0\,.\]
 
 \subsection{Null-Koeffizienten}\label{s.zero}
-\index{Lill's method!zero coefficients}
+
 $a_2$, der Koeffizient des Terms $x^2$ im Polynom $x^3-7x-6=0$, ist Null. Konstruieren Sie eine Strecke der Länge $0$, d.h. konstruieren Sie keine Linie, sondern machen Sie trotzdem die $\pm 90^\circ$-Drehung, die durch den nach oben zeigenden Pfeil bei $(1,0)$ in Abb.~\ref{f.zero} angezeigt wird. Drehen Sie sich erneut und konstruieren Sie ein Liniensegment der Länge $-7$, also der Länge $7$ rückwärts, bis $(8,0)$. Drehen Sie sich schließlich noch einmal um und konstruieren Sie eine Strecke der Länge $-6$ nach $(8,6)$.
 
 \begin{figure}[t]
@@ -400,7 +400,7 @@ Prüfen:
 \]
 
 \subsection{Nicht-ganzzahlige Wurzeln}\label{s.noninteger}
-\index{Lill's method!non-integer roots}
+
 Abbildung~\ref{f.noninteger} zeigt die Lillsche Methode für $p(x)=x^3-2x+1$. Der erste Pfad geht von $(0,0)$ nach $(1,0)$ und dreht dann nach oben. Der Koeffizient von $x^2$ ist Null, so dass kein Liniensegment konstruiert wird und der Pfad nach links abbiegt. Das nächste Liniensegment hat die Länge $-2$ und führt rückwärts von $(1,0)$ nach $(3,0)$. Schließlich biegt der Weg nach unten ab, und es wird ein Linienabschnitt der Länge $1$ von $(3,0)$ nach $(3,-1)$ konstruiert.
 
 Es ist leicht zu erkennen, dass die zweite Bahn, wenn sie in einem Winkel von $-45^\circ$ beginnt, die erste Bahn in $(3,-1)$ schneidet. Daher ist $-\tan^{-1} (-45)^\circ=1$ eine Wurzel. Dividiert man $p(x)$ durch $x-1$, so erhält man das quadratische Polynom $x^2+x-1$, dessen Wurzeln sind:
@@ -493,7 +493,7 @@ Das Polynom $p(x)=x^3-3x^2-3x+1$ (Sect.~\ref{s.negative}) hat Wurzeln $ 2\pm\sqr
 \end{figure}
 
 \subsection{Die Kubikwurzel von Zwei}\label{s.cube}
-\index{Lill's method!cube root of two}
+
 Um einen Würfel zu verdoppeln, berechnet man $\sqrt[3]{2}$, eine Wurzel aus dem kubischen Polynom $x^3-2$. Bei der Konstruktion des ersten Weges biegt man zweimal nach links ab, ohne Liniensegmente zu konstruieren, da $a_2$ und $a_1$ beide Null sind. Dann wendet man sich wieder nach links (nach unten) und konstruiert rückwärts (nach oben), weil $a_0=-2$ negativ ist. Das erste Segment des zweiten Pfades wird in einem Winkel von $-\tan^{-1} \sqrt[3]{2}\approx -51,6^\circ$ konstruiert (Abb.~\ref{f.cube-two}).
 \begin{figure}[t]
 \begin{center}
@@ -551,7 +551,7 @@ Um einen Würfel zu verdoppeln, berechnet man $\sqrt[3]{2}$, eine Wurzel aus dem
 \end{figure}
 
 \section{Nachweis der Lill'schen Methode}\label{s.proof}
-\index{Lill's method!proof of}
+
 
 Der Beweis gilt für monische {Monische Polynome} kubische Polynome $p(x)=x^3+a_2x^2+a_1x+a_0$. Wenn das Polynom nicht monisch ist, teilt man es durch $a_3$ und das resultierende Polynom hat die gleichen Wurzeln. In Abb.~\ref{f.lill-proof} sind die Liniensegmente des ersten Pfades mit den Koeffizienten und mit $b_2,b_1,a_2-b_2,a_1-b_1$ beschriftet. Wenn in einem rechtwinkligen Dreieck ein spitzer Winkel $\theta$ ist, ist der andere Winkel $90^\circ-\theta$. Daher sind der Winkel über $P$ und der Winkel links von $Q$ gleich $\theta$. Hier sind die Formeln für $\tan \theta$, wie sie aus den drei Dreiecken berechnet wurden:
 \begin{eqnarray*}
@@ -646,7 +646,7 @@ Daraus folgt, dass $-\tan\theta$ eine reelle Wurzel von $p(x)=x^3+a_2x^2+a_1x+a_
 
 \section{Die Beloch-Falte}\label{s.beloch-fold}
 
-Margharita P. Beloch\index{Beloch, Margherita P.} entdeckte eine bemerkenswerte Verbindung zwischen dem Falten und der Lill-Methode: Eine Anwendung der Operation, die später als Origami-Axiom~6 bekannt wurde, erzeugt eine reelle Wurzel eines kubischen Polynoms. Die Operation wird oft als \emph{Beloch-Faltung} bezeichnet.\index{Beloch-Faltung}
+Margharita P. Beloch entdeckte eine bemerkenswerte Verbindung zwischen dem Falten und der Lill-Methode: Eine Anwendung der Operation, die später als Origami-Axiom~6 bekannt wurde, erzeugt eine reelle Wurzel eines kubischen Polynoms. Die Operation wird oft als \emph{Beloch-Faltung} bezeichnet.
 
 Betrachten wir das Polynom $p(x)=x^3+6x^2+11x+6$ (Sect.~\ref{s.magic}). Erinnern wir uns, dass eine Faltung die Mittelsenkrechte der Strecke zwischen einem beliebigen Punkt und seiner Spiegelung an der Faltung ist. Wir wollen, dass $\overline{RS}$ in Abb.~\ref{f.beloch-fold2} die senkrechte Winkelhalbierende sowohl von $\overline{QQ'}$ als auch von $\overline{PP'}$ ist, wobei $Q',P'$ die Spiegelungen von $Q,P$ um $\overline{RS}$ sind.
 

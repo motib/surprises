@@ -4,7 +4,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-C. Dudley Langford\index{Langford, C. Dudley} bemerkte, dass sein Sohn farbige Blöcke wie in Abb.~\ref{f.langford} dargestellt angeordnet hatte.
+C. Dudley Langford bemerkte, dass sein Sohn farbige Blöcke wie in Abb.~\ref{f.langford} dargestellt angeordnet hatte.
 Zwischen den roten Blöcken befindet sich ein Block, zwischen den blauen Blöcken zwei und zwischen den grünen Blöcken drei. 
 \begin{figure}[ht]
 \begin{center}
@@ -31,7 +31,7 @@ Zwischen den roten Blöcken befindet sich ein Block, zwischen den blauen Blöcke
 \{1,1,2,2,3,3,\ldots,n,n\}\,,
 \]
 Lassen sie sich so anordnen, dass für $1\leq i \leq n$ $i$ Zahlen zwischen den beiden Vorkommen von $i$ liegen?
-\end{definition}\index{Langford's problem}
+\end{definition}
 
 Abbildung~\ref{f.langford} zeigt, dass 312132 eine Lösung für $L(3)$ ist.
 
@@ -40,7 +40,7 @@ Abbildung~\ref{f.langford} zeigt, dass 312132 eine Lösung für $L(3)$ ist.
 Abschnitt~\ref{s.langford-covering} formuliert das Langford-Problem neu und verwendet dabei einen mathematischen Formalismus, der die Lösung des Problems erleichtert. Abschnitt~\ref{s.langford-theorem} charakterisiert Werte von $n$, für die $L(n)$ lösbar ist, und präsentiert zwei Beweise des Satzes. Der erste Beweis, der relativ einfach ist, verwendet die Technik der Doppelzählung: man zählt denselben Wert auf zwei verschiedene Arten und setzt die resultierenden Formeln gleich. Der zweite Beweis ist eine geschickte Induktion, aber die damit verbundene ``Buchführung'' erfordert eine sorgfältige Beachtung der Details. Abschnitt~\ref{s.langford-four} arbeitet die Lösung für $L(4)$ aus.
 
 \section(Langfords Problem als Deckungsproblem)\label{s.langford-covering}
-\index{Langford's problem!covering@as a covering problem}
+
 Das Langford-Problem kann mit Hilfe einer Matrix gelöst werden. Für $L(3)$ gibt es sechs Spalten, eine für jede Position, an der die sechs Zahlen platziert werden können. Es gibt eine Zeile für jede mögliche Platzierung einer der Zahlen, d.h. die beiden Vorkommen von $k$ müssen $k$ Zahlen zwischen sich haben. Es gibt vier mögliche Platzierungen der $1$-Zahlen, drei der $2$-Zahlen und zwei der $3$-Zahlen:
 
 \begin{center}
@@ -86,7 +86,7 @@ Die Analyse hat gezeigt, dass dies die einzige Lösung ist, mit Ausnahme der sym
 
 \begin{theorem} \label{thm.langford}
 $L(n)$ hat dann und nur dann eine Lösung, wenn $n=4k$ oder $n=4k+3$.
-\end{theorem}\index{Langford's problem!solvability, conditions for}
+\end{theorem}
 
 Wir beweisen die Vorwärtsrichtung des Satzes. Beweis~1 zeigt, dass wenn $L(n)$ eine Lösung hat, dann $n=4k$ oder $n=4k+3$. Beweis~2 zeigt den Kehrsatz: wenn $n=4k+1$ oder $n=4k+2$, dann hat $L(n)$ keine Lösung.
 
@@ -231,7 +231,7 @@ Die induktive Hypothese ist, dass der Satz für $\{1,\ldots,4k-j\}$, $k\ge 1$, $
 
 \section{Lösung für $L(4)$}\label{s.langford-four}
 
-\index{Langford's problem!solution of $L(4)$}
+
 Hier ist das Feld für $L(4)$. Versuchen Sie, die Lösung selbst zu finden.
 \begin{center}
 \addtolength{\tabcolsep}{4pt}

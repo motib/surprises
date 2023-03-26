@@ -5,9 +5,9 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Die einzigen regelmäßigen Polygone, die die Griechen mit Lineal und Zirkel konstruieren konnten, waren das Dreieck, das Quadrat, das Fünfeck und das regelmäßige Polygon mit $15$ Seiten. Bei einem regelmäßigen Vieleck mit $n$ Seiten kann ein Vieleck mit $2n$ Seiten konstruiert werden, indem das Vieleck mit einem Kreis umschrieben und der zentrale Winkel halbiert wird (Abb.~\ref{f.hept-double}). Weitere Fortschritte wurden erst 1796 erzielt, als Carl Friedrich Gauß\index{Gauß, Carl Friedrich} eines Morgens, kurz vor seinem 19. Geburtstag, erwachte und durch ``konzentriertes Denken'' herausfand, wie man ein regelmäßiges \emph{heptadecagon},\index{Heptadecagon} ein regelmäßiges Polygon mit $17$ Seiten konstruieren kann. Diese Leistung inspirierte ihn dazu, Mathematiker zu werden.
+Die einzigen regelmäßigen Polygone, die die Griechen mit Lineal und Zirkel konstruieren konnten, waren das Dreieck, das Quadrat, das Fünfeck und das regelmäßige Polygon mit $15$ Seiten. Bei einem regelmäßigen Vieleck mit $n$ Seiten kann ein Vieleck mit $2n$ Seiten konstruiert werden, indem das Vieleck mit einem Kreis umschrieben und der zentrale Winkel halbiert wird (Abb.~\ref{f.hept-double}). Weitere Fortschritte wurden erst 1796 erzielt, als Carl Friedrich Gauß eines Morgens, kurz vor seinem 19. Geburtstag, erwachte und durch ``konzentriertes Denken'' herausfand, wie man ein regelmäßiges \emph{heptadecagon}, ein regelmäßiges Polygon mit $17$ Seiten konstruieren kann. Diese Leistung inspirierte ihn dazu, Mathematiker zu werden.
 
-In Abschnitt~\ref{s.hept-regular} wird die Beziehung zwischen der Seite eines in einen Kreis eingeschriebenen Polygons und dem zentralen Winkel, den es einschließt, erörtert. Abschnitt~\ref{s.fundamental} gibt ohne Beweis den Fundamentalsatz der Algebra an. Abschnitt~\ref{s.roots} stellt die \emph{roots of unity} vor, die Wurzeln des Polynoms $x^n-1$, die im Mittelpunkt des Gaußschen Beweises stehen. Die Abschnitte~\ref{s.gauss} und~\ref{s.derivation} stellen den Beweis von Gauß vor, der auf Symmetrien der Wurzeln von Polynomen beruht. Gauß leitete eine Formel ab, die beweist, dass das Heptadeck konstruierbar ist, aber eine geometrische Konstruktion wurde fast ein Jahrhundert lang nicht gegeben. Abschnitt~\ref{s.construction} enthält eine elegante Konstruktion von James J. Callagy\index{Callagy, James J.}. Abschnitt~\ref{s.hept-pentagon} zeigt, wie Konstruktionen eines regelmäßigen Fünfecks sowohl aus der Geometrie als auch aus der Trigonometrie abgeleitet werden können.
+In Abschnitt~\ref{s.hept-regular} wird die Beziehung zwischen der Seite eines in einen Kreis eingeschriebenen Polygons und dem zentralen Winkel, den es einschließt, erörtert. Abschnitt~\ref{s.fundamental} gibt ohne Beweis den Fundamentalsatz der Algebra an. Abschnitt~\ref{s.roots} stellt die \emph{roots of unity} vor, die Wurzeln des Polynoms $x^n-1$, die im Mittelpunkt des Gaußschen Beweises stehen. Die Abschnitte~\ref{s.gauss} und~\ref{s.derivation} stellen den Beweis von Gauß vor, der auf Symmetrien der Wurzeln von Polynomen beruht. Gauß leitete eine Formel ab, die beweist, dass das Heptadeck konstruierbar ist, aber eine geometrische Konstruktion wurde fast ein Jahrhundert lang nicht gegeben. Abschnitt~\ref{s.construction} enthält eine elegante Konstruktion von James J. Callagy. Abschnitt~\ref{s.hept-pentagon} zeigt, wie Konstruktionen eines regelmäßigen Fünfecks sowohl aus der Geometrie als auch aus der Trigonometrie abgeleitet werden können.
 
 Ein Teil des Materials ist einfacher, wenn es mit komplexen Zahlen dargestellt wird. Dieses Material ist in Kästen untergebracht, die übersprungen werden können.
 \begin{figure}[b]
@@ -29,13 +29,13 @@ Ein Teil des Materials ist einfacher, wenn es mit komplexen Zahlen dargestellt w
 
 \section{Konstruktion von regelmäßigen Polygonen}\label{s.hept-regular}
 
-Die Konstruktion des regelmäßigen Heptadecks führte zum Gauß-Wantzel-Theorem\index{Gauß-Wantzel-Theorem}, das besagt, dass ein regelmäßiges Polygon mit $n$ Seiten nur dann mit Lineal und Zirkel konstruiert werden kann, wenn $n$ das Produkt aus einer Potenz von $2$ und null oder mehr \emph{distinct} ist. Fermat-Zahlen{Fermat-Zahlen} $2^{2^k}+1$, die Primzahlen sind. Die bekannten Fermat-Primzahlen sind:
+Die Konstruktion des regelmäßigen Heptadecks führte zum Gauß-Wantzel-Theorem, das besagt, dass ein regelmäßiges Polygon mit $n$ Seiten nur dann mit Lineal und Zirkel konstruiert werden kann, wenn $n$ das Produkt aus einer Potenz von $2$ und null oder mehr \emph{distinct} ist. Fermat-Zahlen{Fermat-Zahlen} $2^{2^k}+1$, die Primzahlen sind. Die bekannten Fermat-Primzahlen sind:
 \[
 F_0=3,\quad F_1=5,\quad F_2=17,\quad F_3=257,\quad F_4=65537\,.
 \]
-Ein regelmäßiges Polygon mit $257$ Seiten wurde von Magnus Georg Paucker\index{Paucker, Magnus Georg} in $1822$ und von Friedrich Julius Richelot $1832$ konstruiert.\index{Richelot, Friedrich Julius} In $1894$ behauptete Johann Gustav Hermes\index{Hermes, Johann Gustav}, ein regelmäßiges Polygon mit $65537$ Seiten konstruiert zu haben.
+Ein regelmäßiges Polygon mit $257$ Seiten wurde von Magnus Georg Paucker in $1822$ und von Friedrich Julius Richelot $1832$ konstruiert. In $1894$ behauptete Johann Gustav Hermes, ein regelmäßiges Polygon mit $65537$ Seiten konstruiert zu haben.
 
-Um ein regelmäßiges Polygon zu konstruieren, reicht es aus, ein Liniensegment der Länge $\cos \theta$ zu konstruieren, wobei $\theta$ der zentrale Winkel ist, der von einer Sehne eingeschlossen wird, die eine in einen Einheitskreis eingeschriebene Seite des Polygons ist.\index{Reguläres Polygon!Kosinus des zentralen Winkels} Konstruieren Sie für die Strecke $\overline{OB}=\cos\theta$ eine Senkrechte bei $B$ und bezeichnen Sie ihren Schnittpunkt mit dem Einheitskreis mit $C$. Dann:
+Um ein regelmäßiges Polygon zu konstruieren, reicht es aus, ein Liniensegment der Länge $\cos \theta$ zu konstruieren, wobei $\theta$ der zentrale Winkel ist, der von einer Sehne eingeschlossen wird, die eine in einen Einheitskreis eingeschriebene Seite des Polygons ist. Konstruieren Sie für die Strecke $\overline{OB}=\cos\theta$ eine Senkrechte bei $B$ und bezeichnen Sie ihren Schnittpunkt mit dem Einheitskreis mit $C$. Dann:
 \begin{eqnarray*}
 \cos \theta&=&\displaystyle\frac{\overline{OB}}{\overline{OC}}=\overline{OB}\\
 \theta &=& \cos^{-1} (\overline{OB})\,.
@@ -62,7 +62,7 @@ Die Sehne $\overline{AC}$ ist eine Seite des regelmäßigen Vielecks (Abb.~\ref{
 \caption{Kosinus des zentralen Winkels eines regelmäßigen Polygons}\label{f.hept-central1}
 \end{figure}
 
-Ausgehend von einem Liniensegment der Länge $1$ sind die Längen konstruierbar, die sich aus Liniensegmenten bekannter Länge mit Hilfe der Operationen $\{+,-,\times,/,\surd\}$ gewinnen lassen (Sect.~\ref{s.trisect-constructible}). Gauß zeigte, dass $\cos(360^\circ/17)$, der Kosinus des Zentralwinkels eines Heptadecks, konstruierbar ist, da er nur durch diese Operationen ausgedrückt werden kann:\index{Heptadeck!Kosinus des Zentralwinkels}
+Ausgehend von einem Liniensegment der Länge $1$ sind die Längen konstruierbar, die sich aus Liniensegmenten bekannter Länge mit Hilfe der Operationen $\{+,-,\times,/,\surd\}$ gewinnen lassen (Sect.~\ref{s.trisect-constructible}). Gauß zeigte, dass $\cos(360^\circ/17)$, der Kosinus des Zentralwinkels eines Heptadecks, konstruierbar ist, da er nur durch diese Operationen ausgedrückt werden kann:
 \begin{eqnarray*}
 \cos\left(\frac{360^\circ}{17}\right) &=& 
 -\frac{1}{16}+\frac{1}{16}\sqrt{17} + 
@@ -82,7 +82,7 @@ Ausgehend von einem Liniensegment der Länge $1$ sind die Längen konstruierbar,
 Das folgende Theorem wird ohne Beweis verwendet.
 
 \begin{theorem}\label{thm.fundamental} Jedes Polynom vom Grad $n$ hat genau $n$ Wurzeln.
-\end{theorem}\index{Fundamentalsatz der Algebra}
+\end{theorem}
 
 Die Aussage des Satzes wurde vereinfacht, da wir nur wissen müssen, dass $n$ Wurzeln \emph{existieren}.
 
@@ -97,7 +97,7 @@ Obwohl es sich um endliche algebraische Gebilde handelt - Polynome vom Grad $n$ 
 
 \section{Die Wurzeln der Einheit}\label{s.roots}
 
-Nach dem Fundamentalsatz der Algebra\index{Fundamentalsatz der Algebra} (Thm.~\ref{thm.fundamental}) hat das Polynom $x^{n}-1$ $n$ Wurzeln für jede ganze Zahl $n> 1$. Eine Wurzel ist $x=1$, also gibt es $n-1$ weitere Wurzeln. Bezeichnen Sie eine dieser Wurzeln mit $r$. Da $r^{n}=1$ ist, heißt sie \emph{$n$-te Wurzel der Einheit}.\index{Roots!unity@of unity} Was ist mit $r^2$?
+Nach dem Fundamentalsatz der Algebra (Thm.~\ref{thm.fundamental}) hat das Polynom $x^{n}-1$ $n$ Wurzeln für jede ganze Zahl $n> 1$. Eine Wurzel ist $x=1$, also gibt es $n-1$ weitere Wurzeln. Bezeichnen Sie eine dieser Wurzeln mit $r$. Da $r^{n}=1$ ist, heißt sie \emph{$n$-te Wurzel der Einheit}. Was ist mit $r^2$?
 \[
 (r^{2})^n=(r^{n})^2=1^2=1\,.
 \]
@@ -109,7 +109,7 @@ sind $n$-te Wurzeln der Einheit.
 
 \begin{advanced}
 Sei $r=\cos \left(\frac{2\pi}{n}\right) + i\sin \left(\frac{2\pi}{n}\right)$.
-Nach der Formel von de Moivre:\index{de Moivre's formula}
+Nach der Formel von de Moivre:
 \[
 \left[\cos \left(\frac{2\pi}{n}\right) + i\sin  \left(\frac{2\pi}{n}\right)\right]^{n}=
 \cos \left(\frac{2 n\pi}{n}\right) + i\sin  \left(\frac{2 n\pi}{n}\right)= 1\,.
@@ -455,8 +455,8 @@ Das Einsetzen der Terme ergibt die Gaußsche Formel:
 
 \section{Konstruktion eines Heptadekagons}\label{s.construction}
 
-\index{Construction!hept@of a regular heptadecagon}
-\index{Heptadecagon!construction}
+
+
 Konstruieren Sie einen Einheitskreis mit Mittelpunkt $O$ und senkrechten Durchmessern $\overline{QP}$ und $\overline{SR}$ (Abb.~\ref{f.hept-construction1}). Konstruieren Sie $A$ so, dass $\overline{OA}=(1/4)\overline{OR}$.
 \begin{figure}[b]
 \begin{center}
@@ -671,7 +671,7 @@ Berechnen Sie $\overline{OE}$:
 Schließlich ist $\overline{OH}=\overline{OE}+\overline{EH}$ die Gauß'sche Formel für $\cos (360^\circ/17)$.
 
 \section{Konstruktion eines regelmäßigen Pentagons}\label{s.hept-pentagon}
-\index{Construction!pent@of a regular pentagon}
+
 
 \begin{advanced}
 Die komplexen fünften Wurzeln der Einheit sind:

@@ -7,7 +7,7 @@
 Das Axiom der mathematischen Induktion wird in der Mathematik häufig als Beweismethode verwendet. In diesem Kapitel werden induktive Beweise von Ergebnissen vorgestellt, die dem Leser vielleicht nicht bekannt sind. Wir beginnen mit einem kurzen Überblick über die mathematische Induktion (Abschnitt ~\ref{s.induction-axiom}). Abschnitt~\ref{s.induction-fibonacci} beweist Ergebnisse über die bekannten Fibonacci-Zahlen, während Sect.~\ref{s.induction-fermat} Ergebnisse über Fermat-Zahlen beweist. Abschnitt~\ref{s.induction-mccarthy} stellt die von John McCarthy entdeckte $91$-Funktion vor; der Beweis erfolgt durch Induktion auf eine ungewöhnliche Folge: ganze Zahlen in einer umgekehrten Reihenfolge. Der Beweis der Formel für das Josephus-Problem (Sect.~\ref{s.josephus}) ist wegen der doppelten Induktion auf zwei verschiedene Teile eines Ausdrucks ebenfalls ungewöhnlich.
 
 \section{Das Axiom der mathematischen Induktion}\label{s.induction-axiom}
-\index{Mathematische Induktion}
+
 
 Die mathematische Induktion ist die wichtigste Methode, um zu beweisen, dass Aussagen für eine unbeschränkte Menge von Zahlen wahr sind. Betrachten Sie:
 \[
@@ -65,13 +65,13 @@ Die induktive Hypothese kann verwirrend sein, weil es scheint, dass wir das, was
 
 Da die mathematische Induktion ein Axiom ist, kann es nicht darum gehen, die Induktion zu beweisen. Man muss die Induktion einfach akzeptieren, wie man auch andere Axiome der Mathematik akzeptiert, z. B. $x+0=x$. Es steht Ihnen natürlich frei, die mathematische Induktion abzulehnen, aber dann müssten Sie auch einen Großteil der modernen Mathematik ablehnen.
 \begin{advanced}
-Die mathematische Induktion ist eine Schlussregel, die zu den \emph{Peano-Axiomen}\index{Peano-Axiomen} zur Formalisierung der natürlichen Zahlen gehört. Das \emph{Wohlordnungsaxiom} kann verwendet werden, um das Induktionsaxiom zu beweisen, und umgekehrt kann das Induktionsaxiom verwendet werden, um das Wohlordnungsaxiom zu beweisen. Das Induktionsaxiom kann jedoch nicht aus den anderen, elementareren Peano-Axiomen bewiesen werden.
+Die mathematische Induktion ist eine Schlussregel, die zu den \emph{Peano-Axiomen} zur Formalisierung der natürlichen Zahlen gehört. Das \emph{Wohlordnungsaxiom} kann verwendet werden, um das Induktionsaxiom zu beweisen, und umgekehrt kann das Induktionsaxiom verwendet werden, um das Wohlordnungsaxiom zu beweisen. Das Induktionsaxiom kann jedoch nicht aus den anderen, elementareren Peano-Axiomen bewiesen werden.
 \end{advanced}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Fibonacci-Zahlen}\label{s.induction-fibonacci}
-\index{Fibonacci numbers}
+
 Die Fibonacci-Zahlen sind das klassische Beispiel für eine rekursive Definition:
 \begin{eqnarray*}
 f_1 &=& 1\\
@@ -131,7 +131,7 @@ seit:
 f_n = \frac{\phi^n - \bar{\phi}^n}{\sqrt{5}}, \;\; \mathrm{where} \;\;
 \phi = \frac{1+\sqrt{5}}{2},\;\bar{\phi} = \frac{1-\sqrt{5}}{2}\,.
 \end{displaymath}
-\end{theorem}\index{Binet's formula}
+\end{theorem}
 
 \begin{proof}
 Wir zeigen zunächst, dass $\phi^2=\phi+1$:
@@ -167,7 +167,7 @@ f_n = \binom{n}{0} + \binom{n-1}{1} + \binom{n-2}{2} + \cdots.
 \end{theorem}
 
 \begin{proof}
-Wir wollen zunächst die Pascalsche Regel beweisen:\index{Pascal's rule}
+Wir wollen zunächst die Pascalsche Regel beweisen:
 \[
 \binom{n}{k} + \binom{n}{k+1} = \binom{n+1}{k+1}.
 \]
@@ -200,7 +200,7 @@ f_n=f_{n-1} + f_{n-2} &=& \binom{n-1}{0} + \binom{n-2}{1} + \binom{n-3}{2} + \bi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Fermat-Zahlen}\label{s.induction-fermat}
-\index{Fermat numbers}
+
 \begin{definition}
 Die ganzen Zahlen $F_n=2^{2^{n}}+1$ für $n\geq 0$ werden \emph{Fermat-Zahlen} genannt.
 \end{definition}
@@ -209,7 +209,7 @@ Die ersten fünf Fermat-Zahlen sind Primzahlen:
 \[
 F_0=3,\quad F_1=5,\quad F_2=17,\quad F_3=257,\quad F_4=65537\,.
 \]
-Jahrhundert behauptete der Mathematiker Pierre de Fermat\index{Fermat, Pierre de}, dass alle Fermat-Zahlen Primzahlen sind, aber fast hundert Jahre später zeigte Leonhard Euler\index{Euler, Leonhard}, dass:
+Jahrhundert behauptete der Mathematiker Pierre de Fermat, dass alle Fermat-Zahlen Primzahlen sind, aber fast hundert Jahre später zeigte Leonhard Euler, dass:
 \[F_5=2^{2^5}+1 = 2^{32}+1 = 4294967297 = 641 \;\times\; 6700417\,.\]
 Die Fermat-Zahlen werden extrem groß, wenn $n$ zunimmt. Es ist bekannt, dass die Fermat-Zahlen für $5\leq n \leq 32$ nicht prim sind, aber die Faktorisierung einiger dieser Zahlen ist noch nicht bekannt.
 
@@ -253,10 +253,10 @@ F_{n+1}&=&\prod_{k=0}^{n}F_k + 2\,.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{McCarthy's $91$-Funktion}\label{s.induction-mccarthy}
 
-\index{McCarthy, John}
+
 Normalerweise assoziieren wir Induktion mit Beweisen von Eigenschaften, die auf der Menge der positiven ganzen Zahlen definiert sind. Hier bringen wir einen induktiven Beweis, der auf einer merkwürdigen Ordnung basiert, bei der größere Zahlen kleiner sind als kleinere Zahlen. Die Induktion funktioniert, weil die einzige Eigenschaft, die die Menge haben muss, darin besteht, dass sie unter einem relationalen Operator geordnet ist.
 
-Betrachten Sie die folgende rekursive Funktion, die auf den ganzen Zahlen definiert ist:\index{McCarthy's $91$-function}
+Betrachten Sie die folgende rekursive Funktion, die auf den ganzen Zahlen definiert ist:
 \[
 f(x) = \textrm{if}\;\; x > 100 \;\;\textrm{then}\;\; x - 10 \;\;\textrm{else}\;\; f(f(x+11))\,.
 \]
@@ -337,7 +337,7 @@ Die Gleichheit von Gleichung~\ref{m91a} und Gleichung~\ref{m91b} folgt aus der I
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Das Josephus-Problem}\label{s.josephus}
-\index{Josephus problem}
+
 
 Josephus war der Kommandant der Stadt Jodfat während des jüdischen Aufstands gegen die Römer. Die überwältigende Stärke der römischen Armee brach schließlich den Widerstand der Stadt und Josephus flüchtete sich mit einigen seiner Männer in eine Höhle. Sie zogen es vor, Selbstmord zu begehen, als von den Römern getötet oder gefangen genommen zu werden. Nach dem Bericht von Josephus arrangierte er seine Rettung, wurde Beobachter bei den Römern und schrieb später eine Geschichte des Aufstandes. Wir stellen das Problem als ein abstraktes mathematisches Problem dar.
 
@@ -515,4 +515,4 @@ Die Induktion ist vielleicht die wichtigste Beweistechnik in der modernen Mathem
 
 \subsection*{Quellen}
 
-Für eine umfassende Darstellung der Induktion siehe \cite{gunderson}. Der Beweis der McCarthy'schen $91$-Funktion stammt aus \cite{manna}, wo er Rod M. Burstall zugeschrieben wird.\index{Burstall, Rod M.} Die Darstellung des Josephus-Problems stützt sich auf \cite[Chapter~17]{gunderson}, in dem auch der historische Hintergrund erörtert wird. Dieses Kapitel enthält weitere interessante Probleme mit induktiven Beweisen, wie z. B. die schlammigen Kinder, die gefälschte Münze und die Pfennige in einer Schachtel. Zusätzliches Material zum Josephus-Problem findet sich in \cite{schumer,wiki:josephus}.
+Für eine umfassende Darstellung der Induktion siehe \cite{gunderson}. Der Beweis der McCarthy'schen $91$-Funktion stammt aus \cite{manna}, wo er Rod M. Burstall zugeschrieben wird. Die Darstellung des Josephus-Problems stützt sich auf \cite[Chapter~17]{gunderson}, in dem auch der historische Hintergrund erörtert wird. Dieses Kapitel enthält weitere interessante Probleme mit induktiven Beweisen, wie z. B. die schlammigen Kinder, die gefälschte Münze und die Pfennige in einer Schachtel. Zusätzliches Material zum Josephus-Problem findet sich in \cite{schumer,wiki:josephus}.

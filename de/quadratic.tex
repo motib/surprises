@@ -4,7 +4,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Poh-Shen Loh\index{Loh, Poh-Shen} schlug eine Methode zum Lösen quadratischer Gleichungen vor, die auf einer Beziehung zwischen den Koeffizienten des quadratischen Polynoms und seinen Wurzeln beruht. Abschnitt~\ref{s.traditional} gibt einen Überblick über die traditionellen Methoden zum Lösen quadratischer Gleichungen. 
+Poh-Shen Loh schlug eine Methode zum Lösen quadratischer Gleichungen vor, die auf einer Beziehung zwischen den Koeffizienten des quadratischen Polynoms und seinen Wurzeln beruht. Abschnitt~\ref{s.traditional} gibt einen Überblick über die traditionellen Methoden zum Lösen quadratischer Gleichungen. 
 Abschnitt~\ref{s.computing} versucht, den Leser davon zu überzeugen, dass die Loh-Methode sinnvoll ist, und erklärt dann, wie man die Wurzeln berechnet. In Abschnitt~\ref{s.examples} wird die Berechnung für zwei quadratische Polynome und eine ähnliche Berechnung für ein quartisches Polynom durchgeführt. In Abschnitt~\ref{s.general} wird die traditionelle Formel für die Wurzeln aus den Loh'schen Formeln abgeleitet.
 
 Die Einführung der Algebra und der modernen algebraischen Notation ist relativ neu. Zuvor benutzten die Mathematiker fast ausschließlich die Geometrie, so dass es interessant ist, al-Khwarizmis geometrische Konstruktion der Formel für die Wurzeln quadratischer Gleichungen zu betrachten (Sect.~\ref{s.khwar}). Abschnitt~\ref{s.cardano} zeigt eine geschickte geometrische Konstruktion, die Cardano bei der Entwicklung der Formel für die Wurzeln kubischer Gleichungen verwendet hat.
@@ -12,7 +12,7 @@ Die Einführung der Algebra und der modernen algebraischen Notation ist relativ 
 Abschnitt~\ref{s.lill-quadratic} stellt andere geometrische Methoden zum Auffinden der Wurzeln quadratischer Gleichungen vor.\footnote{Kapitel~\ref{c.origami-cube} ist eine Voraussetzung für das vollständige Verständnis dieser Methoden.} Das Kapitel schließt mit dem Abschnitt ~\ref{s.numerical} ab, der die numerische Berechnung der Wurzeln quadratischer Gleichungen behandelt.
 
 \section{Traditionelle Methoden zum Lösen quadratischer Gleichungen}\label{s.traditional}
-\index{Quadratische Gleichung}
+
 Jeder Mathematikstudent kennt die Formel für die Ermittlung der Wurzeln einer quadratischen Gleichung $ax^2+bx+c=0$ auswendig:
 \[
 x_1, x_2 = \frac{-b\pm\sqrt{b^2-4ac}}{2a}\,.
@@ -31,7 +31,7 @@ Es ist viel schwieriger, $x^2-2x-24$ zu faktorisieren, weil es viele mögliche W
 \]
 
 \section{Die Beziehung zwischen den Wurzeln und den Koeffizienten}\label{s.computing}
-\index{Quadratic equation!roots of}
+
 \begin{theorem}\label{thm.roots-coefficients}
 Wenn $r_1,r_2$ die Wurzeln von $x^2+bx+c$ sind, dann:
 \[
@@ -185,7 +185,7 @@ r_2&=&\frac{83+127}{2}=105\,.
 \end{example}
 
 \begin{example}
-Theorem~\ref{thm.roots-coefficients} kann auf Polynome höheren Grades verallgemeinert werden. Hier ist ein interessantes Beispiel für eine \emph{quartische Gleichung}\index{Quartische Gleichung} $x^4-10x^2-x+20=0$. Wie für quadratische Gleichungen gibt es auch für kubische und quartische Gleichungen (allerdings nicht für Gleichungen höherer Potenzen) Formeln zum Lösen, aber die Formeln sind recht kompliziert.
+Theorem~\ref{thm.roots-coefficients} kann auf Polynome höheren Grades verallgemeinert werden. Hier ist ein interessantes Beispiel für eine \emph{quartische Gleichung} $x^4-10x^2-x+20=0$. Wie für quadratische Gleichungen gibt es auch für kubische und quartische Gleichungen (allerdings nicht für Gleichungen höherer Potenzen) Formeln zum Lösen, aber die Formeln sind recht kompliziert.
 
 Kann dieses Polynom vierten Grades in zwei quadratische Polynome mit ganzzahligen Koeffizienten zerlegt werden? Wenn dies der Fall ist, müssen die Koeffizienten der $x$-Terme in den quadratischen Faktoren \emph{gleich und mit entgegengesetzten Vorzeichen} sein, da der Koeffizient des $x^3$-Terms im quartischen Polynom Null ist. Daher lautet die Form der quadratischen Faktoren:
 \[
@@ -221,7 +221,7 @@ x = \frac{1\pm\sqrt{21}}{2}  \;\;\textrm{or} \;\; x= \frac{-1\pm\sqrt{17}}{2} \,
 \end{example}
 
 \section{Ableitung der traditionellen Formel}\label{s.general}
-\index{Quadratische Gleichung!traditionelle Formel}
+
 Für ein beliebiges monisches Polynom $x^2+bx+c$ lauten die Lohschen Formeln:
 \begin{eqnarray*}
 c=r_1r_2&=&\left(\frac{-b}{2}+s\right)  \left(\frac{-b}{2}-s\right)=\left(\frac{b^2}{4}-s^2\right)\\
@@ -594,7 +594,7 @@ r&=&\sqrt[3]{2+11\sqrt{-1}} + \sqrt[3]{2-11\sqrt{-1}}\\
 
 \section{Die Lillsche Methode und der Carlyle'sche Kreis}\label{s.lill-quadratic}
 
-Die Lill-Methode kann zur Lösung quadratischer Gleichungen verwendet werden. Fußnote{Dieser Abschnitt setzt voraus, dass Sie die Lill-Methode in Kap.~\ref{c.origami-cube}.}\index{Lill-Methode!quadratische Gleichungen} gelesen haben. Als Beispiel dient die Gleichung ~\ref{eq.quadratic-lill}, die die Wurzeln einer quadratischen Gleichung durch Faktorisierung angibt:
+Die Lill-Methode kann zur Lösung quadratischer Gleichungen verwendet werden. Fußnote{Dieser Abschnitt setzt voraus, dass Sie die Lill-Methode in Kap.~\ref{c.origami-cube}.} gelesen haben. Als Beispiel dient die Gleichung ~\ref{eq.quadratic-lill}, die die Wurzeln einer quadratischen Gleichung durch Faktorisierung angibt:
 \[
 x^2+bx+c=x^2-4x+3= (x-1)(x-3)\,.
 \]
@@ -789,7 +789,7 @@ Wenn man im Beispiel $b=4,c=3$ und $y=0$ einsetzt, sieht man, dass $x=1$ und $x=
 \end{figure}
 
 \section{Numerische Berechnung der Wurzeln}\label{s.numerical}
-\index{Quadratic equation!numerical computation of the roots}
+
 
 Die Schüler lernen die symbolische Berechnung von Wurzeln, Ableitungen und so weiter. Heutzutage werden die meisten Berechnungen von Computern durchgeführt, so dass symbolische Berechnungen weniger wichtig sind. Die \emph{numerische Analyse} ist der Zweig der Mathematik und Informatik, der genaue und effiziente Berechnungsmethoden entwickelt. Die größte Herausforderung besteht darin, mit der Endlichkeit der im Speicher des Computers gespeicherten Werte umzugehen. Die Berechnung:
 \[0.12\times 0.14=0.0168\]
@@ -801,7 +801,7 @@ braucht achtzehn Ziffern, um genau dargestellt zu werden, und das kann nicht in 
 
 Ein noch schwerwiegenderes Problem tritt auf, wenn eine Fließkommaarithmetik durchgeführt wird. Das ist klar:
 \[(0,12\times 10^{-10})\times (0,14\times 10^{-8})\]
-würde nicht durch Ausschreiben aller Nullstellen berechnet werden. Stattdessen werden die Mantissen multipliziert und die Exponenten addiert, um $0,0168\times 10^{-18}$ zu erhalten, das auf $0,168\times 10^{-19}$ normiert wird, so dass die höchstwertige Ziffer nach dem Dezimalpunkt erscheint, was angesichts der festen Größe der Mantisse eine maximale Genauigkeit gewährleistet. Wenn der maximal darstellbare Exponent $-16$ beträgt, kann das Ergebnis gar nicht gespeichert werden. Dieser Fehler wird als \emph{Gleitkomma-Unterlauf} bezeichnet.\index{Gleitkomma-Unterlauf}
+würde nicht durch Ausschreiben aller Nullstellen berechnet werden. Stattdessen werden die Mantissen multipliziert und die Exponenten addiert, um $0,0168\times 10^{-18}$ zu erhalten, das auf $0,168\times 10^{-19}$ normiert wird, so dass die höchstwertige Ziffer nach dem Dezimalpunkt erscheint, was angesichts der festen Größe der Mantisse eine maximale Genauigkeit gewährleistet. Wenn der maximal darstellbare Exponent $-16$ beträgt, kann das Ergebnis gar nicht gespeichert werden. Dieser Fehler wird als \emph{Gleitkomma-Unterlauf} bezeichnet.
 
 Die Formel für die Suche nach den Wurzeln der quadratischen Gleichung $x^2+bx+c$ lautet:
 \begin{align}

@@ -5,13 +5,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Origami, die Kunst des Papierfaltens, wurde vor mehreren Jahrhunderten in Japan entwickelt und hat heute eine weltweite Anhängerschaft. Im späten zwanzigsten Jahrhundert wurde die mathematische Theorie des Origami entwickelt. Ihre Grundlage ist ein Satz von sieben Axiomen, die 
-\emph{Huzita-Hatori-Axiome}, benannt nach Humiaki Huzita\index{Huzita, Humiaki}, der die ersten sechs Axiome formalisierte, und Koshiro Hatori\index{Hatori, Koshiro}, der das siebte fand. Jacques Justin veröffentlichte alle sieben Axiome einige Jahre vor Huzita und Hatori, und Margherita P. Beloch\index{Beloch, Margherita P.} formulierte das sechste Axiom im Jahr 1936. Dennoch sind die Axiome als die Huzita-Hatori-Axiome bekannt.
+\emph{Huzita-Hatori-Axiome}, benannt nach Humiaki Huzita, der die ersten sechs Axiome formalisierte, und Koshiro Hatori, der das siebte fand. Jacques Justin veröffentlichte alle sieben Axiome einige Jahre vor Huzita und Hatori, und Margherita P. Beloch formulierte das sechste Axiom im Jahr 1936. Dennoch sind die Axiome als die Huzita-Hatori-Axiome bekannt.
 
 In einer Folge von drei Kapiteln werden wir die Mathematik des Origami erkunden. Dieses Kapitel stellt die Axiome vor, Kap.~\ref{c.origami-cube} verbindet Origami mit den Wurzeln von Polynomen und Kap.~\ref{c.origami-constructions} zeigt, dass Konstruktionen mit Origami Probleme lösen können, die mit Lineal und Zirkel unmöglich sind.
  
-Dieses Kapitel enthält einen Abschnitt für jedes der sieben Axiome. Im Anschluss an die Erklärung eines Axioms und ein Diagramm der von ihm spezifizierten \emph{fold} werden die Gleichungen der Falte und der Schnittpunkte mit Hilfe der analytischen Geometrie entwickelt. Eine Falte kann auch als \emph{geometrischer Ort}\index{geometrischer Ort} definiert werden, die Menge aller Punkte, die eine bestimmte Eigenschaft erfüllen. Der Begriff "Falten" stammt von der Origami-Operation, bei der ein Stück Papier gefaltet wird, aber hier wird er verwendet, um die geometrische Linie zu bezeichnen, die durch das Falten des Papiers entstehen würde.
+Dieses Kapitel enthält einen Abschnitt für jedes der sieben Axiome. Im Anschluss an die Erklärung eines Axioms und ein Diagramm der von ihm spezifizierten \emph{fold} werden die Gleichungen der Falte und der Schnittpunkte mit Hilfe der analytischen Geometrie entwickelt. Eine Falte kann auch als \emph{geometrischer Ort} definiert werden, die Menge aller Punkte, die eine bestimmte Eigenschaft erfüllen. Der Begriff "Falten" stammt von der Origami-Operation, bei der ein Stück Papier gefaltet wird, aber hier wird er verwendet, um die geometrische Linie zu bezeichnen, die durch das Falten des Papiers entstehen würde.
 
-Faltungen führen zu \emph{Reflexionen}\index{Origami!Reflexion}. Bei einem Punkt $p$ ergibt seine Spiegelung an einer Falte $l$ einen solchen Punkt $p'$, dass $l$ die Mittelsenkrechte des Liniensegments $\overline{pp'}$ ist (Abb.~\ref{f.origami-def}).
+Faltungen führen zu \emph{Reflexionen}. Bei einem Punkt $p$ ergibt seine Spiegelung an einer Falte $l$ einen solchen Punkt $p'$, dass $l$ die Mittelsenkrechte des Liniensegments $\overline{pp'}$ ist (Abb.~\ref{f.origami-def}).
 
 \begin{figure}[ht]
 \begin{center}
@@ -41,7 +41,7 @@ Faltungen führen zu \emph{Reflexionen}\index{Origami!Reflexion}. Bei einem Punk
 
 \section{Axiom 1}\label{s.ax1}
 
-\index{Origami!axiom 1}
+
 \begin{axiom}
 Bei zwei verschiedenen Punkten $p_1=(x_1,y_1)$, $p_2=(x_2,y_2)$ gibt es eine einzige Falte $l$, die durch beide Punkte verläuft (Abb.~\ref{f.origami-axiom1}).
 \end{axiom}
@@ -89,8 +89,8 @@ y&=&\frac{1}{2}x+1\,.
 
 \section{Axiom 2}\label{s.ax2}
 
-\index{Origami!axiom 2}
-\index{Origami!perpendicular bisector}
+
+
 \begin{axiom}
 Bei zwei verschiedenen Punkten $p_1=(x_1,y_1)$, $p_2=(x_2,y_2)$ gibt es eine eindeutige Faltung $l$, die $p_1$ auf $p_2$ legt (Abb.~\ref{f.origami-axiom2}).
 \end{axiom}
@@ -145,7 +145,7 @@ y&=&-2x+11\,.
 
 \section{Axiom 3}\label{s.ax3}
 
-\index{Origami!axiom 3}
+
 \begin{axiom}
 Bei zwei Linien $l_1,l_2$ gibt es eine Falte $l$, die $l_1$ auf $l_2$ legt (Abb.~\ref{f.origami-axiom3}).
 \end{axiom}
@@ -213,7 +213,7 @@ y_i &=& 2\cdot\frac{10}{3}-2=\frac{14}{3}\approx 4.67\,.
 \end{eqnarray*}
 \end{example}
 
-\index{Origami!angle bisector}
+
 Die Faltung ist die Winkelhalbierende des Winkels, den $l_1$ und $l_2$ in ihrem Schnittpunkt bilden. Es gibt zwei mögliche Faltungen, da es zwei Paare von vertikalen Winkeln gibt. Wir müssen die Steigungen der Winkelhalbierenden bestimmen. Ist der Winkel der Geraden $l_1$ zur $x$-Achse $\theta_1$ und der Winkel der Geraden $l_2$ zur $x$-Achse $\theta_2$, so ist die Faltung diejenige, die zur $x$-Achse einen Winkel von $\theta_b=(\theta_1+\theta_2)/2$ bildet.
 
 Es sei $m_1=\tan\theta_1, m_2=\tan \theta_2$. Nach Thm.~\ref{thm.tangent-sum} ist $m_s$, die Steigung der Geraden, die einen Winkel von $\theta_1+\theta_2$ relativ zur $x$-Achse bildet, gleich:
@@ -242,7 +242,7 @@ y&=& (-3+\sqrt{10})x + \frac{44-10\sqrt{10}}{3}\approx 0.162x+4.13\,.
 
 \section{Axiom 4}\label{s.ax4}
 
-\index{Origami!axiom 4}
+
 \begin{axiom}
 Bei einem Punkt $p_1$ und einer Linie $l_1$ gibt es eine einzige Falte $l$ senkrecht zu $l_1$, die durch den Punkt $p_1$ geht (Abb.~\ref{f.origami-axiom4}).
 \end{axiom}
@@ -293,7 +293,7 @@ y=-\frac{1}{2}x + \frac{2\cdot 6 + 2}{2}=-\frac{1}{2}x + 7\,.
 
 \section{Axiom 5}\label{s.ax5}
 
-\index{Origami!axiom 5}
+
 \begin{axiom}
 Bei zwei Punkten $p_1,p_2$ und einer Linie $l_1$ gibt es eine Falte $l$, die $p_1$ auf $l_1$ legt und durch $p_2$ geht (Abb.~\ref{f.origami-axiom5}).
 \end{axiom}
@@ -392,12 +392,12 @@ y&=&\frac{1}{2}x+2\,.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Axiom 6}\label{s.ax6}
-\index{Origami!axiom 6}
+
 \begin{axiom}
 Bei zwei Punkten $p_1,p_2$ und zwei Geraden $l_1,l_2$ gibt es eine Falte $l$, die $p_1$ auf $l_1$ und $p_2$ auf $l_2$ legt (Abb.~\ref{f.origami-axiom6}).
 \end{axiom}
 
-Eine Faltung, die $p_i$ auf $l_i$ legt, ist eine solche Linie $l_f$, dass der Abstand von $p_i$ zu $l_f$ gleich dem Abstand ihrer Spiegelung $p_i'$ von $l_f$ ist. Die geometrische Ortskurve der Punkte, die von einem Punkt $p_i$ und einer Geraden $l_i$ gleich weit entfernt sind, ist eine \emph{parabola}. $p_i$ heißt der \emph{focus}\index{Focus einer Parabel} und $l_1$ heißt der \emph{directrix}\index{Directrix einer Parabel}.\index{Parabola!locus@als locus einer Falte} Eine Falte ist eine beliebige Linie, die die Parabel tangiert (Sect.~\ref{s.parabola}).
+Eine Faltung, die $p_i$ auf $l_i$ legt, ist eine solche Linie $l_f$, dass der Abstand von $p_i$ zu $l_f$ gleich dem Abstand ihrer Spiegelung $p_i'$ von $l_f$ ist. Die geometrische Ortskurve der Punkte, die von einem Punkt $p_i$ und einer Geraden $l_i$ gleich weit entfernt sind, ist eine \emph{parabola}. $p_i$ heißt der \emph{focus} und $l_1$ heißt der \emph{directrix}. Eine Falte ist eine beliebige Linie, die die Parabel tangiert (Sect.~\ref{s.parabola}).
 
 \begin{figure}[ht]
 \begin{center}
@@ -453,7 +453,7 @@ Eine Faltung, die $p_i$ auf $l_i$ legt, ist eine solche Linie $l_f$, dass der Ab
 \caption{Axiom $6$}\label{f.origami-axiom6}
 \end{figure}
 
-Damit eine Falte gleichzeitig $p_1$ auf $l_1$ und $p_2$ auf $l_2$ legen kann, muss sie eine gemeinsame Tangente an die beiden Parabeln sein. Es kann null, eine, zwei oder drei gemeinsame Tangenten geben (Abb.~\ref{f.two-para-1-zero}, \ref{f.two-para-1-one}, \ref{f.two-para-1-two}, \ref{f.two-para-1-three}).\index{Parabel!gemeinsame Tangenten an zwei Parabeln}
+Damit eine Falte gleichzeitig $p_1$ auf $l_1$ und $p_2$ auf $l_2$ legen kann, muss sie eine gemeinsame Tangente an die beiden Parabeln sein. Es kann null, eine, zwei oder drei gemeinsame Tangenten geben (Abb.~\ref{f.two-para-1-zero}, \ref{f.two-para-1-one}, \ref{f.two-para-1-two}, \ref{f.two-para-1-three}).
 \begin{figure}[ht]
 \begin{minipage}{.45\textwidth}
 \begin{tikzpicture}[scale=.45]
@@ -676,7 +676,7 @@ Wenn wir versuchen, die beiden Gleichungen zu lösen:
 m^2+b-3&=&0\\
 -3m^2-mb+1&=&0\,,
 \end{eqnarray*}
-erhalten wir eine \emph{kubische} Gleichung mit der Variablen $m$:\index{Parabel!kubische Gleichung für die gemeinsamen Tangenten}
+erhalten wir eine \emph{kubische} Gleichung mit der Variablen $m$:
 \begin{align}
 m^3-3m^2-3m+1=0\,.\label{eq.cubic}
 \end{align}
@@ -729,7 +729,7 @@ y_1'&=&2y_t-y_1= 2\,.
 
 \subsection{Tangenten an eine Parabel}\label{s.parabola}
 
-Wir wollen beweisen, dass die Falten von Axiom~$6$ Tangenten an die Parabeln sind.\index{Parabel!falten von Axiom 6 sind Tangenten}
+Wir wollen beweisen, dass die Falten von Axiom~$6$ Tangenten an die Parabeln sind.
 Abbildung~\ref{f.parabola-locus} zeigt fünf Punkte
 $p_i$, $i=1,\ldots,5$, wobei jeder Punkt $p_i$ sowohl vom Brennpunkt als auch von der Leitlinie einen Abstand $a_i$ hat. Fallen Sie senkrechte Linien von $p_i$ zur Leitkurve und bezeichnen Sie die Schnittpunkte dieser Linien mit der Leitkurve mit $p_i'$. Nach Axiom~$2$ gibt es Falten $l_i$ durch $p_i$, die $p$ auf die Leitkurve legen. Die Punkte $p_i'$ sind die Spiegelungen von $p$ an den Falten. Die Abbildung zeigt die Faltung $l_1$ durch $p_1$ und die Spiegelung $p_1'$.
 
@@ -827,7 +827,7 @@ $\overline{pr}=\overline{p'r}=b$ also ist $r$ ein Punkt auf der Parabel. Wählen
 
 \section{Axiom 7}\label{s.ax7}
 
-\index{Origami!axiom 7}
+
 \begin{axiom}
 Bei einem Punkt $p_1$ und zwei Geraden $l_1$ und $l_2$ gibt es eine Falte $l$, die $p_1$ auf $l_1$ legt und senkrecht auf $l_2$ steht (Abb.~\ref{f.origami-axiom7}).
 \end{axiom}
