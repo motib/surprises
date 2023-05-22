@@ -6,8 +6,8 @@ This presents surprising results in mathematics that usually do not
 appear in textbooks although they are accessible with a good knowledge of
 secondary-school mathematics.
 
-The repository contains LaTeX / TikZ source code for four languages:
-English, French, German, Hebrew. (Compile Hebrew with XeLaTeX.) The PDF and printed books are available as follows:
+The repository contains LaTeX / TikZ source code for five languages:
+English, French, Spanish, German, Hebrew. (Compile Hebrew with XeLaTeX.) The PDF and printed books are available as follows:
 
 **English**
 
@@ -26,9 +26,9 @@ and order the printed book from
 [CoolLibri](https://www.coollibri.com/bibliotheque-en-ligne/mordechai-ben-ari/surprises-mathematiques_429665)
 or [Cassini](https://store.cassini.fr/fr/hors-collection/145-surprises-mathematiques.html).
 
-**German**
+**German and Spanish**
 
-There is a PDF of a *preliminary* draft of a translation and a directory of the LaTeX files. Please contact me if you are a native speaker who is willing to edit the draft!
+For these languages, there is a PDF of a *preliminary* draft of a translation and a directory of the LaTeX files. Please contact me if you are a native speaker who is willing to edit a draft!
 
 **Hebrew**
 

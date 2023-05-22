@@ -1,0 +1,157 @@
+% !TeX root = surprises.tex
+
+\author{Mordechai Ben-Ari}
+\title{Surprises mathématiques}
+\date{Traduction : Nicolas Bacaër}
+
+\pagestyle{empty}
+\begin{center}
+\textbf{\huge Sorpresas matemáticas}\\
+\vspace{3cm}
+\textbf{\Large Mordechai Ben-Ari}\\
+\vspace{1cm}
+\textbf{\large Traducción: Abraham Arcavi}
+\end{center}
+
+\vfill
+
+\begin{center}
+\copyright{} Moti Ben-Ari and Abraham Arcavi $2023$
+\end{center}
+ 
+\begin{small}
+\noindent{}This work is licensed under Attribution-ShareAlike 4.0 International. To view a copy of this license, visit \url{http://creativecommons.org/licenses/by-sa/4.0/}.
+\end{small}
+%
+
+\chapter*{Prólogo}
+
+\begin{flushright}
+\parbox{7cm}{
+\begin{footnotesize}
+\begin{flushright}
+Si todos estuviéramos expuestos a las matemáticas en su estado natural, con toda la diversión y las sorpresas que conllevan, creo que veríamos un cambio drástico tanto en la actitud de los estudiantes hacia las matemáticas como en nuestra concepción de lo que significa ser "bueno en matemáticas".\\
+Paul Lockhart\mbox{}\\\mbox{}\\
+Estoy ávido de sorpresas, porque cada una de ellas nos hace un poco más inteligentes.\\
+Tadashi Tokieda
+\end{flushright}
+\end{footnotesize}
+}
+\end{flushright}
+
+\medskip
+
+Cuando se abordan adecuadamente, las matemáticas pueden depararnos muchas sorpresas agradables. Así lo confirma una búsqueda en Google de "sorpresas matemáticas" que, sorprendentemente, arroja casi 500 millones de resultados. ¿Qué es una sorpresa? Los orígenes de la palabra se remontan al francés antiguo, con raíces latinas: ``sur'' (sobre) y ``prendre'' (tomar, agarrar, apoderarse). Literalmente, sorprender es adelantar. Como sustantivo, sorpresa es tanto un acontecimiento o circunstancia imprevista o desconcertante como la emoción que provoca.
+
+Consideremos, por ejemplo, un extracto de una conferencia de Maxim Bruckheimer\footnote{Maxim Bruckheimer fue un matemático que fue uno de los fundadores de la Open University UK y decano de su Facultad de Matemáticas. Fue Jefe del Departamento de Enseñanza de las Ciencias en el Instituto Weizmann de Ciencias.} sobre el círculo de Feuerbach: ``Dos puntos se encuentran en una y sólo una línea recta, esto no es ninguna sorpresa. Sin embargo, tres puntos no están necesariamente sobre una recta y si, durante una exploración geométrica, tres puntos `caen en' una recta, esto es una sorpresa y frecuentemente tenemos que referirnos a este hecho como un teorema a demostrar. Tres puntos cualesquiera que no estén en una recta se encuentran en una circunferencia. Sin embargo, si cuatro puntos se encuentran en el mismo círculo, es una sorpresa que debe formularse como un teorema. \ldots{} En la medida en que el número de puntos en una línea recta es mayor que $3$, por lo que es el teorema más sorprendente. Del mismo modo, en la medida en que el número de puntos situados sobre una circunferencia es mayor que $4$, el teorema es más sorprendente. Así, la afirmación de que para cualquier triángulo hay nueve puntos relacionados en el mismo círculo \ldots{} es muy sorprendente. Además, a pesar de la magnitud de la sorpresa, su demostración es elegante y fácil".
+
+En este libro, Mordechai Ben-Ari ofrece una rica colección de sorpresas matemáticas, la mayoría de ellas menos conocidas que el Círculo de Feuerbach y con sólidas razones para incluirlas. En primer lugar, a pesar de estar ausentes de los libros de texto, las joyas matemáticas de este libro son accesibles con sólo una formación de bachillerato (y paciencia, y papel y lápiz, ya que la diversión no sale gratis). En segundo lugar, cuando un resultado matemático desafía lo que damos por sentado, nos sorprendemos de verdad (Capítulos~\ref{c.collapse}, \ref{c.compass}). Del mismo modo, nos sorprende: la astucia de un argumento (Capítulos~\ref{c.trisect}, \ref{c.square}), la justificación de la posibilidad de una construcción geométrica por medios algebraicos (Cap.~\ref{c.heptadecagon}), una demostración basada en un tema aparentemente no relacionado (Cap.~\ref{c.five}, \ref{c.museum}), una extraña demostración por inducción (Cap.~\ref{c.induction}), nuevas formas de ver un resultado bien conocido (Cap. ~\ref{c.quadratic}), un teorema aparentemente menor que se convierte en el fundamento de todo un campo de las matemáticas (Cap.~\ref{c.ramsey}), fuentes inesperadas de inspiración (Cap.~\ref{c.langford}), ricas formalizaciones que surgen de actividades puramente recreativas como el origami (Cap. ~\ref{c.origami-axioms}--\ref{c.origami-constructions}). Todas estas son diferentes razones para la inclusión de agradables, bellas y memorables sorpresas matemáticas en este precioso libro.
+   
+Hasta ahora he abordado la relación del libro con la primera parte de la definición de sorpresa, las razones cognitivas racionales de lo inesperado. En cuanto al segundo aspecto, el emocional, este libro es una vívida ejemplificación de lo que muchos matemáticos afirman sobre la razón principal para hacer matemáticas: ¡son fascinantes! Además, afirman que las matemáticas estimulan tanto nuestra curiosidad intelectual como nuestra sensibilidad estética, y que resolver un problema o comprender un concepto proporciona una recompensa espiritual, que nos incita a seguir trabajando en más problemas y conceptos. 
+
+Se ha dicho que la función de un prólogo es decir a los lectores por qué deben leer el libro. He intentado lograrlo, pero creo que la respuesta más completa vendrá de usted, el lector, después de leerlo y experimentar lo que sugiere la etimología de la palabra sorpresa: ¡ser sobrecogido por ella!
+
+\bigskip
+
+\begin{flushright}
+\textit{Abraham Arcavi}
+\end{flushright}
+
+\chapter*{Prefacio}
+
+El artículo de Godfried Toussaint sobre la ``brújula colapsable'' \cite{toussaint} me causó una profunda impresión. Nunca se me habría ocurrido que la brújula moderna con junta de fricción no es la que se utilizaba en tiempos de Euclides. En este libro presento una selección de resultados matemáticos que no sólo son interesantes, sino que me sorprendieron cuando los encontré por primera vez.
+
+Las matemáticas necesarias para leer el libro son las de la enseñanza secundaria, pero eso no significa que el material sea sencillo. Algunas de las pruebas son bastante largas y requieren que el lector esté dispuesto a perseverar en el estudio del material. La recompensa es la comprensión de algunos de los resultados más bellos de las matemáticas. El libro no es un libro de texto, porque el amplio abanico de temas tratados no encaja perfectamente en un programa de estudios. Es apropiado para actividades de enriquecimiento para estudiantes de secundaria, para seminarios de nivel universitario y para profesores de matemáticas.
+
+Los capítulos pueden leerse independientemente. (Una excepción es que el capítulo~\ref{c.origami-axioms} sobre los axiomas del origami es un requisito previo para los capítulos~\ref{c.origami-cube},~\ref{c.origami-constructions}, los otros capítulos sobre origami). Las notas pertinentes a todos los capítulos figuran a continuación en la lista denominada Estilo.
+
+\subsection*{¿Qué es una sorpresa?}
+
+Había tres criterios para incluir un tema en el libro:
+\begin{itemize}
+\item Los teoremas me sorprendieron. Especialmente sorprendentes fueron los teoremas sobre la constructibilidad con regla y compás. Cuando una profesora de matemáticas me propuso un proyecto sobre origami, al principio lo rechacé porque dudaba de que pudiera haber matemáticas serias asociadas a esta forma de arte.
+Incluí otros temas porque, aunque conocía los resultados, sus demostraciones eran sorprendentes por su elegancia y accesibilidad, en particular, la demostración puramente algebraica de Gauss de que se puede construir un heptadecágono regular.
+
+\item El material no aparece en los libros de texto de secundaria y bachillerato, y sólo he encontrado estos teoremas y pruebas en libros de texto avanzados y en la literatura de investigación. Hay artículos en Wikipedia sobre la mayoría de los temas, pero hay que saber dónde buscar y los artículos suelen estar esquematizados.
+
+\item Los teoremas y las pruebas son accesibles con un buen conocimiento de las matemáticas de secundaria.
+\end{itemize}
+Cada capítulo concluye con un párrafo \textit{¿Cuál es la sorpresa?} que explica mi elección del tema.
+
+\subsection*{Resumen del contenido}
+
+El capítulo~\ref{c.collapse} presenta la prueba de Euclides de que cualquier construcción que sea posible con un compás fijo lo es también con un compás colapsable. Se han dado muchas pruebas, pero, como muestra Toussaint, la mayoría son incorrectas porque dependen de diagramas que no siempre representan correctamente la geometría. Para subrayar que no hay que fiarse de los diagramas, presento la famosa supuesta prueba de que todo triángulo es isóceles. 
+
+A lo largo de los siglos, los matemáticos intentaron sin éxito trisecar un ángulo arbitrario (dividirlo en tres partes iguales) utilizando únicamente una regla y un compás. Underwood Dudley realizó un estudio exhaustivo de los trisectores que encontró construcciones incorrectas; la mayoría de las construcciones son aproximaciones que se pretenden exactas. El capítulo~\ref{c.trisect} comienza presentando dos de estas construcciones y desarrollando las fórmulas trigonométricas que demuestran que sólo son aproximaciones. Para demostrar que la trisección con una regla y un compás no tiene importancia práctica, se presentan trisecciones con herramientas más complejas: El \emph{neusis} de Arquímedes y el \emph{cuadratrix} de Hipias. El capítulo termina con una demostración de que es imposible trisecar un ángulo arbitrario con una regla y un compás. 
+
+La cuadratura de un círculo (dado un círculo construir un cuadrado con la misma área) no se puede realizar utilizando una regla y un compás, porque el valor de $\pi$ no se puede construir. El capítulo presenta tres elegantes construcciones de aproximaciones cercanas a $\pi$, una de Kochašski y dos de Ramanujan. El capítulo concluye mostrando que se puede utilizar una cuadratriz para cuadrar un círculo.
+
+El teorema de los cuatro colores afirma que es posible colorear cualquier mapa plano con cuatro colores, de forma que ningún país con un límite común esté coloreado con el mismo color. La demostración de este teorema es extremadamente complicada, pero la demostración del teorema de los cinco colores es elemental y elegante, como se muestra en el capítulo~\ref{c.five}. El capítulo también presenta la demostración de Percy Heawood de que la "prueba" de Alfred Kempe del teorema de los cuatro colores es incorrecta.
+
+¿Cuántos guardias debe tener un museo de arte para que todas las paredes estén bajo la observación constante de al menos un guardia? La demostración en el capítulo~\ref{c.museum} es bastante ingeniosa, ya que utiliza la coloración de grafos para resolver lo que a primera vista parece un problema puramente geométrico.
+
+El capítulo~\ref{c.induction} presenta algunos resultados menos conocidos y sus pruebas por inducción: teoremas sobre los números de Fibonacci y los números de Fermat, la función $91$ de McCarthy y el problema de Josefo.
+
+El capítulo~\ref{c.quadratic} analiza el método de Po-Shen Loh para resolver ecuaciones cuadráticas. El método es un elemento crítico de la prueba algebraica de Gauss de que se puede construir un heptadecágono (Capítulo~\ref{c.heptadecagon}). El capítulo incluye la construcción geométrica de al-Khwarizmi para encontrar raíces de ecuaciones cuadráticas y una construcción geométrica utilizada por Cardano en el desarrollo de la fórmula para encontrar raíces de ecuaciones cúbicas.
+
+La teoría de Ramsey es un tema de la combinatoria que constituye un área activa de investigación. Busca patrones entre subconjuntos de grandes conjuntos. Capítulo~\ref{c.ramsey} presenta ejemplos sencillos de triples de Schur, triples pitagóricos, números de Ramsey y el problema de van der Waerden. La demostración del teorema de los triples pitagóricos se ha realizado recientemente con ayuda de un programa informático basado en la lógica matemática. El capítulo concluye con una digresión sobre los conocimientos de los antiguos babilonios sobre los triples pitagóricos.
+
+C. Dudley Langford observó a su hijo jugando con bloques de colores y se dio cuenta de que los había colocado en una secuencia interesante. En el capítulo~\ref{c.langford} presenta su teorema sobre las condiciones para que tal secuencia sea posible.
+
+El capítulo~\ref{c.origami-axioms} contiene los siete axiomas del origami, junto con los cálculos detallados de la geometría analítica de los axiomas, y las caracterizaciones de los pliegues como loci geométricos.
+
+El capítulo~\ref{c.origami-cube} presenta el método de Eduard Lill y el pliegue de origami propuesto por Margharita P. Beloch. Presento el método de Lill como un truco de magia, así que no lo estropearé dando detalles aquí.
+
+El capítulo~\ref{c.origami-constructions} muestra que el origami puede realizar construcciones que no son posibles con regla y compás: trisección de un ángulo, duplicación de un cubo y construcción de un nonágono (polígono regular de nueve lados).
+
+El capítulo~\ref{c.compass} presenta el teorema de Georg Mohr y Lorenzo Mascheroni de que cualquier construcción con regla y compás puede realizarse utilizando sólo un compás.
+
+La afirmación correspondiente de que sólo es suficiente una regla es incorrecta, porque una regla no puede calcular longitudes que sean raíces cuadradas. Jean-Victor Poncelet conjeturó y Jakob Steiner demostró que una regla es suficiente, siempre que exista un único círculo fijo en algún lugar del plano (Chap.~\ref{c.straightedge}).
+
+Si dos triángulos tienen el mismo perímetro y la misma área, ¿deben ser congruentes? Eso parece razonable, pero resulta que no es cierto, aunque se necesita un poco de álgebra y geometría para encontrar un par no congruente como se muestra en el Cap.~\ref{c.congruent}.
+
+El capítulo~\ref{c.heptadecagon} presenta el tour-de-force de Gauss: una prueba de que un heptadecágono (un polígono regular con diecisiete lados) puede construirse utilizando una regla y un compás. Mediante un ingenioso argumento sobre la simetría de las raíces de los polinomios, obtuvo una fórmula que sólo utiliza los cuatro operadores aritméticos y las raíces cuadradas. Gauss no dio una construcción explícita de un heptadecágono, por lo que se presenta la elegante construcción de James Callagy. El capítulo concluye con la construcción de un pentágono regular basado en el método de Gauss para la construcción de un heptadecágono.
+
+Para mantener el libro lo más autocontenido posible, el Apéndice~\ref{a.trig} recoge demostraciones de teoremas de geometría y trigonometría que pueden no resultar familiares al lector.
+
+\subsection*{Estilo}
+
+\begin{itemize}
+\item Se supone que el lector tiene un buen conocimiento de las matemáticas de secundaria, incluyendo:
+\begin{itemize}
+\item Álgebra: polinomios y división de polinomios, \emph{monic} polinomios--aquellos cuyo coeficiente de la mayor potencia es $1$, ecuaciones cuadráticas, multiplicación de expresiones con exponentes $a^m\cdot a^n=a^{m+n}$.
+\item Geometría euclídea: triángulos congruentes $\triangle ABC \cong \triangle DEF$ y los criterios de congruencia, triángulos semejantes $\triangle ABC \sim \triangle DEF$ y las razones de sus lados, circunferencias y sus ángulos inscritos y centrales.
+\item Geometría analítica: plano cartesiano, cálculo de longitudes y pendientes de segmentos de recta, fórmula de la circunferencia.
+\item Trigonometría: las funciones $\sin,\cos,\tan$ y las conversiones entre ellas, ángulos en el círculo unidad, las funciones trigonométricas de ángulos reflejados alrededor de un eje como $\cos (180^\circ-\theta)=-\cos\theta$.
+\end{itemize}
+\item Las afirmaciones que hay que demostrar se denominan \emph{teoremas} sin intentar distinguir entre teoremas, lemas y corolarios.
+\item Cuando un teorema sigue a una construcción, las variables que aparecen en el teorema se refieren a puntos, rectas y ángulos etiquetados en la figura que acompaña a la construcción.
+\item Se han dado los nombres completos de los matemáticos sin información biográfica que se puede encontrar fácilmente en Wikipedia.
+\item El libro está escrito de forma que sea lo más autocontenido posible, pero ocasionalmente la presentación depende de conceptos matemáticos avanzados y teoremas que se dan sin demostraciones. En tales casos, se presenta un resumen del material en recuadros que pueden omitirse.
+\item No hay ejercicios, pero se invita al lector ambicioso a demostrar cada teorema antes de leer la demostración.
+\item Las construcciones geométricas pueden estudiarse utilizando programas informáticos como Geogebra.
+\item $\overline{AB}$ se utiliza tanto para el nombre de un segmento de recta como para la longitud del segmento.
+\item $\triangle ABC$ se utiliza tanto para el nombre de un triángulo como para el área del triángulo.
+\end{itemize}
+
+
+\subsection*{Agradecimientos}
+
+Este libro nunca se habría escrito sin el aliento de Abraham Arcavi, que me acogió con agrado para que me adentrara en su terreno de la educación matemática. También escribió amablemente el prólogo. Avital Elbaum Cohen y Ronit Ben-Bassat Levy siempre estuvieron dispuestas a ayudarme a (re)aprender matemáticas de secundaria. Oriah Ben-Lulu me introdujo en las matemáticas del origami y colaboró en las pruebas. Agradezco a Michael Woltermann el permiso para utilizar varias secciones de su reelaboración del libro de Heinrich D'Orrie. Jason Cooper, Richard Kruel, Abraham Arcavi y los revisores anónimos han aportado comentarios muy útiles.
+
+Me gustaría dar las gracias al equipo de Springer por su apoyo y profesionalidad, en particular al editor Richard Kruel.
+
+El libro se publica bajo el programa Open Access y me gustaría dar las gracias al Instituto Weizmann de Ciencias por financiar la publicación.
+
+Los archivos fuente \LaTeX{} para el libro (que incluyen la fuente Ti\textit{k}Z para los diagramas) están disponibles en:
+\begin{center}
+\url{https://github.com/motib/surprises}
+\end{center}
+
+\medskip
+
+\begin{flushright}
+\textit{Mordechai (Moti) Ben-Ari}
+\end{flushright}
+
+\tableofcontents

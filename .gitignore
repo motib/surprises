@@ -2,9 +2,11 @@
 en/tikz/*
 he/tikz/*
 de/tikz/*
+es/tikz/*
 *.pdf
 !surprises-he*.pdf
 !surprises-de*.pdf
+!surprises-es*.pdf
 *.docx
 *.bat
 *.zip

@@ -1,0 +1,776 @@
+% !TeX root = surprises.tex
+
+\chapter{Geometric Constructions Using Origami}\label{c.origami-constructions}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Este capítulo muestra que las construcciones con origami son más poderosas que las construcciones con regla y compás. Damos dos construcciones para triseccionar un ángulo, una por Hisashi Abe (Secc.~\ref{s.abe-trisection}) y la otra por George E. Martin (Sect.~\ref{s.martin-trisection}), dos construcciones para duplicar un cubo, una de Peter Messer (Sect.~\ref{s.messer}) y la otra de Marghareta P. Beloch (Sect.~\ref{s.cube2}), y la construcción de un nonágono, un polinomio regular de nueve lados (Sect.~\ref{s.nonagon}).
+
+\section{Trisección de Abe de un ángulo}\label{s.abe-trisection}
+\index{Origami!trisection of an angle}
+\index{Trisection of an angle!origami@using origami}
+
+\noindent\textbf{Construcción:}
+Dado un ángulo agudo $\angle PQR$, construir $p$, la perpendicular a $\overline{QR}$ en $Q$. Construir $q$, la perpendicular a $p$ que corta a $\overline{PQ}$ en el punto $A$, y construir $r$, la perpendicular a $p$ en $B$ que está a mitad de camino entre $Q$ y $A$. Utilizando el axioma~6 construir el pliegue $l$ que sitúa $A$ en $A'$ sobre $\overline{PQ}$ y $Q$ en $Q'$ sobre $r$. Sea $B'$ el reflejo de $B$ alrededor de $l$. Construir rectas que pasen por $\overline{QB'}$ y $QQ'$ (Fig.~\ref{f.abe1}).
+\begin{figure}[ht]
+\begin{center}
+\begin{tikzpicture}[scale=.8]
+
+% Place points P, Q, R
+\coordinate (P) at (60:10cm); %(5,8.67);
+\coordinate (Q) at (0,0);
+\coordinate (R) at (10,0);
+\node[below right] at (P) {$P$};
+\node[left]  at (Q) {$Q$};
+\node[right] at (R) {$R$};
+
+% Draw PQR
+\draw (P)  -- (Q) -- (R);
+
+% Draw perpendicular to QR
+\draw (Q) -- node[left,very near end] {$p$} +(0,11);
+
+% Draw parallel to QR and parallel halfway
+\coordinate (A) at (0,5);
+\coordinate (B) at (0,2.5);
+\draw  (A) -- node[above,very near end] {$q$} +(10,0);
+\draw  (B) -- node[above,very near end] {$r$} +(10,0);
+\node[left] at (A) {$A$};
+\node[left] at (B) {$B$};
+\path (Q) -- node[left] {$a$} (B) -- node[left] {$a$} (A);
+\draw (A) rectangle +(8pt,8pt);
+\draw (B) rectangle +(8pt,8pt);
+\draw (Q) rectangle +(8pt,8pt);
+
+% Tangent line y = -2.75x + 10.69
+
+% Draw fold
+\coordinate (D) at (0,10.69);
+\coordinate (fold-x) at (3.89,0);
+\coordinate (AP) at (3.65,6.33);
+\coordinate (QP) at (6.87,2.5);
+\coordinate (BP) at (5.26,4.42);
+\node[left] at (D) {$D$};
+\node[above,yshift=6pt] at (AP) {$A'$};
+\node[above,yshift=6pt] at (QP) {$Q'$};
+\node[above,xshift=2pt,yshift=2pt] at (BP) {$B'$};
+\draw [very thick,dashed] (D) -- node[left,near start] {$l$} ($(D)!1.03!(fold-x)$);
+
+% Draw line of reflections
+\draw (D) -- (QP);
+
+% Draw trisecting lines
+\draw (Q) -- ($(Q)!1.3!(QP)$);
+\draw (Q) -- ($(Q)!1.3!(BP)$);
+
+% Complete triangle
+\draw (A) -- (QP);
+
+\draw[->,very thick,dotted,bend left=40] ($(A)+(.1,.1)$) to ($(AP)+(-.1,0)$);
+\draw[->,dotted,very thick,bend right=30] ($(Q)+(.1,-.1)$) to ($(QP)+(0,-.1)$);
+\end{tikzpicture}
+\end{center}
+\caption{Trisección de Abe de un ángulo}\label{f.abe1}
+\end{figure}
+
+\begin{theorem} $\angle PQB'=\angle B'QQ'=\angle Q'QR=\angle PQR/3$.
+\end{theorem}
+
+\begin{proof}
+\mbox{}\\
+(1)
+$A', B', Q'$ son reflexiones en torno a la recta $l$ de los puntos $A,B,Q$ sobre la recta $\overline{DQ}$, por lo que están sobre la recta $\overline{DQ'}$ reflejada. Por construcción $\overline{AB}=\overline{BQ}$, $\angle ABQ'=\angle QBQ'=90^\circ$ y $\overline{BQ'}$ es un lado común, por lo que $\triangle ABQ'\cong \triangle QBQ'$ por lado-ángulo-lado. Por lo tanto, $\angle AQQ'=\angle QAQ'=\alpha$ por lo que $\triangle AQ'Q$ es isoceles (Fig.~\ref{f.abe2}).
+
+\begin{figure}[ht]
+\begin{center}
+\begin{tikzpicture}[scale=.8]
+
+% Place points P, Q, R
+\coordinate (P) at (60:10cm);
+\coordinate (Q) at (0,0);
+\coordinate (R) at (10,0);
+\node[below right] at (P) {$P$};
+\node[left,xshift=-4pt] at (Q) {$Q$};
+\node[right] at (R) {$R$};
+
+% Draw PQR
+\draw (Q) -- (R);
+
+% Draw perpendicular to QR
+\draw (Q) -- node[left,very near end] {$p$} +(0,11);
+
+% Draw parallel to QR and parallel halfway
+\coordinate (A) at (0,5);
+\coordinate (B) at (0,2.5);
+\draw (A) -- node[above,very near end] {$q$} +(10,0);
+\draw[name path=Br] (B) -- node[above,very near end] {$r$} +(10,0);
+\node[left,xshift=-4pt] at (A) {$A$};
+\node[left,xshift=-4pt] at (B) {$B$};
+\path (Q) -- node[left,xshift=-4pt] {$a$} (B) -- node[left,xshift=-4pt] {$a$} (A);
+\draw (A) rectangle +(8pt,8pt);
+\draw (B) rectangle +(8pt,8pt);
+\draw (Q) rectangle +(8pt,8pt);
+
+% Tangent line y = -2.75x + 10.69
+
+% Draw fold
+\coordinate (D) at (0,10.69);
+\coordinate (fold-x) at (3.89,0);
+\coordinate (AP) at (3.65,6.33);
+\coordinate (QP) at (6.87,2.5);
+\coordinate (BP) at (5.26,4.42);
+\node[left] at (D) {$D$};
+\node[above,yshift=6pt] at (AP)  {$A'$};
+\node[above,xshift=2pt,yshift=6pt] at (QP) {$Q'$};
+\node[above,xshift=4pt,yshift=2pt] at (BP) {$B'$};
+\draw[name path=fold,very thick,dashed] (D) -- node[left,near start] {$l$}  ($(D)!1.03!(fold-x)$);
+	
+% Draw line of reflections
+\draw (D) -- (AP);
+
+% Draw trisecting lines
+\draw (Q) -- ($(Q)!1.3!(BP)$);
+
+\draw [very thick,loosely dash dot,red] (Q) -- (QP);
+\draw [very thick,loosely dash dot,red] (QP) -- (AP);
+\draw [very thick,loosely dash dot,red] (AP) -- (Q);
+\draw [very thick,loosely dash dot dot,blue] ($(Q)+(0,-4pt)$) -- ($(QP)+(0,-4pt)$);
+\draw [very thick,dash dot dot,blue] ($(QP)+(0,-4pt)$) -- ($(A)+(0,-4pt)$);
+\draw [very thick,dash dot dot,blue] ($(A)+(-4pt,0)$) -- ($(Q)+(-4pt,0)$);
+
+\draw (A) -- (AP);
+
+\node[left,xshift=-40pt,yshift=7pt] at (QP) {$\alpha$};
+\node[left,xshift=-40pt,yshift=-6pt] at (QP) {$\alpha$};
+\node[right,xshift=40pt,yshift=6pt] at (Q) {$\alpha$};
+\node[right,xshift=40pt,yshift=28pt] at (Q) {$\alpha$};
+\node[right,xshift=30pt,yshift=42pt] at (Q) {$\alpha$};
+
+\draw (AP) -- (P);
+
+\path[name path=Qr] (Q) -- (QP);
+\path[name intersections = {of = fold and Qr, by = {U}}];
+\node[above left,xshift=-2pt,yshift=-2pt] at (U) {$U$};
+\draw[rotate=20] (U) rectangle +(8pt,8pt);
+\path[name intersections = {of = fold and Br, by = {V}}];
+\node[above left,xshift=-2pt,yshift=-2pt] at (V)  {$V$};
+\end{tikzpicture}
+\end{center}
+\caption{Pruebas de la trisección de Abe ($U,V$ se utilizan en la prueba 2)}\label{f.abe2}
+\end{figure}
+
+Por reflexión $\triangle AQ'Q\cong \triangle A'QQ'$, por lo que $\triangle A'QQ'$ es también un triángulo isóceles.
+$\overline{QB'}$, el reflejo de $\overline{Q'B}$, es la mediatriz de un triángulo isóceles, por lo que $\angle A'QB'=\angle Q'QB'=\angle QQ'B=\alpha$.
+Alternando los ángulos interiores, $\angle Q'QR=\angle QQ'B=\alpha$.
+En conjunto tenemos:
+\[
+\triangle PQB'=\angle A'QB'=\angle B'QQ'=\angle Q'QR=\alpha\,.
+\]
+\end{proof}
+
+\begin{proof}
+\mbox{}\\
+(2)
+Como $l$ es un pliegue es la mediatriz de $\overline{QQ'}$. Denotemos la intersección de $l$ con $\overline{QQ'}$ por $U$ y su intersección con $\overline{QB'}$ por $V$ (Fig.~\ref{f.abe2}). Por tanto, $\triangle VUQ\cong \triangle VUQ'$ por lado-ángulo-lado ya que $\overline{VU}$ es un lado común, los ángulos en $U$ son ángulos rectos y $\overline{QU}=\overline{Q'U}$. Por tanto, $\angle VQU=\angle VQ'U=\angle alfa$ y $\angle Q'QR=\angle VQ'U=\angle alfa$ por alternancia de ángulos interiores.
+
+Como en la primera demostración $A', B', Q'$ son todas reflexiones alrededor de $l$, por lo que están sobre la recta $\overline{DQ'}$ y $\overline{A'B'}=\overline{AB}=\overline{BQ}=\overline{B'Q'}=a$. Entonces $\triangle A'B'Q\cong\triangle Q'B'Q$ por lado-ángulo-lado y $\angle A'QB'=\angle Q'QB'=\alpha$.
+\end{proof}
+
+\section{Trisección de un ángulo de Martin}\label{s.martin-trisection}
+\index{Origami!trisection of an angle}
+\index{Trisection of an angle!origami@using origami}
+
+\noindent\textbf{Construcción:}
+Dado un ángulo agudo $\angle PQR$, sea $M$ el punto medio de $\overline{PQ}$. Construir $p$ la perpendicular a $\overline{QR}$ por $M$ y construir $q$ la perpendicular a $p$ por $M$ de modo que $q\parallel\overline{QR}$. Utilizando el axioma 6 construir el pliegue $l$ que sitúe $P$ en $P'$ sobre $p$ y $Q$ en $Q'$ sobre $q$. Si más de un pliegue es posible elegir el que interseca $\overline{PM}$. Construir $\overline{PP'}$ y $\overline{QQ'}$  (Fig.~\ref{f.martin}).
+
+\begin{theorem}
+$\angle Q'QR=\angle PQR/3$.
+\end{theorem}
+\begin{proof}
+Denotemos la intersección de $\overline{QQ'}$ con $p$ por $U$ y su intersección con $l$ por $V$. Denotemos la intersección de $\overline{PQ}$ y $\overline{P'Q'}$ con $l$ por $W$. No es inmediato que $\overline{PQ}$ y $\overline{P'Q'}$ intersecan $l$ en el mismo punto. Pero $\triangle PWP' \sim \triangle QWQ'$ por lo que las altitudes bisecan ambos ángulos verticales $\angle PWP', \angle QWQ'$ y deben estar en la misma recta.
+
+Por lo tanto, $\triangle QMU\cong \triangle PMP'$ por ángulo-lado-ángulo ya que $\angle P'PM=\angle UQM=\beta$ por ángulos interiores alternos, $\overline{QM}=\overline{MP}=a$ porque $M$ es el punto medio de $\overline{PQ}$ y $\angle QMU=\angle PMP'=\gamma$ son ángulos verticales. Por tanto, $\overline{P'M}=\overline{MU}=b$.
+
+$\triangle P'MQ'\cong \triangle UMQ'$ por lado-ángulo-lado, ya que $\overline{P'M}=\overline{MU}=b$, los ángulos en $M$ son ángulos rectos y $\overline{MQ'}$ es un lado común. Como la altitud del triángulo isóceles $\triangle P'Q'U$ es la bisectriz de $\angle P'Q'U$, resulta que $\angle P'Q'M=\angle UQ'M=\alpha$. Además, $\angle UQ'M=\angle Q'QR=\angle alfa$ por ángulos interiores alternos. $\triangle QWV\cong\triangle Q'WV$ por lado-ángulo-lado ya que $\overline{QV}=\overline{VQ'}=c$, los ángulos en $V$ son ángulos rectos y $\overline{VW}$ es un lado común. Por tanto:
+\begin{eqnarray*}
+\angle WQV&=&\beta=\angle WQ'V=2\alpha\\
+\angle PQR &=& \beta + \alpha = 3\alpha\,.
+\end{eqnarray*}
+\end{proof}
+
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=.8]
+
+% Place points P, Q, R
+\coordinate (P) at (60:10cm); %(5,8.67);
+\coordinate (Q) at (0,0);
+\coordinate (R) at (10,0);
+\node[below right] at (P) {$P$};
+\node[above left] at (Q) {$Q$};
+\node[right] at (R) {$R$};
+
+% Draw PQR
+\draw (R)  -- (Q);
+\draw [name path=pq] (Q) -- (P);
+
+% M is the midpoint of PQ
+\coordinate (M) at (2.5, 4.33);
+\node[above left,xshift=2pt] at (M) {$M$};
+\draw [rotate=-90] (M) rectangle +(9pt,9pt);
+
+% Drop a perpendicular from M to QR and extend the line upwards
+% This is the given line p
+\coordinate (pQR) at (M |- Q);
+\draw [name path=p] (pQR) --
+   node[left, very near end,yshift=20pt] {$p$}
+   ($(pQR)!2!(M)$);
+\draw (pQR) rectangle +(9pt,9pt);
+
+% Construct q perpendicular to p through M
+\draw [name path=q] ($(M)+(-2,0)$) --
+   node[above, very near start,xshift=-30pt] {$q$}
+   ($(M)+(10,0)$);
+
+% Construct the fold line t
+% Its equation is y = -2.75x + 18.51, as obtained from Geogebra
+\coordinate (t1) at (6.7,.085);
+\coordinate (t2) at (3.5,8.89);
+\draw [very thick,dashed,name path=t] (t1) --
+   node[very near end,left] {$l$}
+   (t2);
+
+% Construct a perpendicular to t through P
+\coordinate (perp-p) at ($(t1)!(P)!(t2)$);
+\path [name path=perp-p] (P) -- ($(P)!2.5!(perp-p)$);
+
+% Get its intersection with t denoted Pt
+% and its intersection with p named PP
+\path [name intersections = {of = t and perp-p, by = {Pt}}];
+\path [name intersections = {of = p and perp-p, by = {PP}}];
+\node[left] at (PP) {$P'$};
+\draw [rotate=22] (Pt) rectangle +(9pt,9pt);
+
+% Draw PT
+\draw (P) -- (PP);
+
+% Construct a perpendicular to t through Q
+\coordinate (perp-q) at ($(t1)!(Q)!(t2)$);
+\path[name path=perp-q] (Q) -- ($(Q)!2.1!(perp-q)$);
+
+% Get its intersection with t denoted V
+% and its intersection with q denoted S=Q'
+\path [name intersections = {of = t and perp-q, by = {V}}];
+\path [name intersections = {of = q and perp-q, by = {QP}}];
+\node[above,yshift=4pt] at (QP) {$Q'$};
+\node[above left,xshift=-4pt,yshift=-2pt] at (V) {$V$};
+\draw [rotate=22] (V) rectangle +(9pt,9pt);
+
+% Draw Q QP
+\draw [name path=qs] (Q) -- (QP);
+
+% Get the intersection of QS with p denoted U
+\path [name intersections = {of = p and qs, by = {U}}];
+\node[above left] at (U) {$U$};
+
+% Draw PP QP
+\draw [name path=ts] (PP) -- (QP);
+
+% Get its intersection with QP denoted W
+\path [name intersections = {of = ts and pq, by = {W}}];
+\node[right,xshift=4pt,yshift=4pt] at (W) {$W$};
+
+% Label line segments
+\path (P) -- node[left] {$a$} (M);
+\path (M) -- node[left]  {$a$} (Q);
+\path (PP) -- node[left]  {$b$} (M);
+\path (M) -- node[right] {$b$} (U);
+\path (Q) -- node[below,near end] {$c$} (V);
+\path (V) -- node[below] {$c$} (QP);
+
+% Label angles
+\node [xshift=5pt,yshift=20pt]        at (M) {$\gamma$};
+\node [xshift=-5pt,yshift=-20pt]      at (M) {$\gamma$};
+\node [xshift=15pt,yshift=13pt]       at (Q) {$\beta$};
+\node [xshift=-10pt,yshift=-10pt]     at (P) {$\beta$};
+\node [left,xshift=-30pt,yshift=7pt]  at (QP) {$\alpha$};
+\node [left,xshift=-30pt,yshift=-7pt] at (QP) {$\alpha$};
+\node [right,xshift=25pt,yshift=5pt]  at (Q) {$\alpha$};
+\end{tikzpicture}
+\end{center}
+\caption{Trisección de Martin de un ángulo}\label{f.martin}
+\end{figure}
+
+\section{Duplicación de un cubo de Messer}\label{s.messer}
+\index{Doubling a cube!origami@using origami}
+\index{Origami!doubling a cube}
+
+Un cubo de volumen $V$ tiene lados de longitud $\sqrt[3]{V}$. Un cubo con el doble de volumen tiene caras de longitud $\sqrt[3]{2 V}=\sqrt[3]{2}\sqrt[3]{V}$, por lo que si podemos construir $\sqrt[3]{2}$ podemos multiplicar por la longitud dada $\sqrt[3]{V}$ para duplicar el cubo.
+
+\noindent\textbf{Construcción:}
+Divide el lado de un cuadrado unitario en tercios de la siguiente manera: Dobla el cuadrado por la mitad para localizar los puntos $I=(0,1/2)$ y $J=(1,1/2)$. A continuación se construyen las rectas $\overline{AC}$ y $\overline{BJ}$ (Fig.~\ref{f.messer1}). El punto de intersección $K=(2/3,1/3)$ se obtiene resolviendo las dos ecuaciones $y=1-x$ y $y=x/2$.
+
+Construimos $\overline{EF}$, la perpendicular a $\overline{AB}$ que pasa por $K$, y construimos la reflexión $\overline{GH}$ de $\overline{BC}$ alrededor de $\overline{EF}$. Ahora el lado del cuadrado se ha dividido en tercios.
+
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=.55]
+% Draw square
+\coordinate (A) at (0,12);
+\coordinate (B) at (0,0);
+\coordinate (C) at (12,0);
+\coordinate (D) at (12,12);
+
+\node[left]  at (A) {$A=(0,1)$};
+\node[left]  at (B) {$B=(0,0)$};
+\node[right] at (C) {$C=(1,0)$};
+\node[right] at (D) {$D=(1,1)$};
+
+\draw [thick] (A)  -- (B) -- (C) -- (D) -- cycle;
+
+% Divide a side in half
+
+\coordinate (M)  at (0,6);
+\coordinate (N) at (12,6);
+\node[left] at (M) {$I=(0,1/2)$};
+\node[right] at (N) {$J=(1,1/2)$};
+\draw [thick,dashed] (M) -- (N);
+
+
+\draw [very thick,dotted,name path=ac] (A) -- 
+   node[near start,above,xshift=24pt] {$y=1-x$} (C);
+\draw [very thick,dotted,name path=be2] (B) -- 
+   node[near start,above,xshift=-12pt] {$y=x/2$} (N);
+
+\path [name intersections = {of = ac and be2, by = {I}}];
+\node[below,xshift=-6pt,yshift=-8pt] at (I) {$K=$};
+\node[below,xshift=-6pt,yshift=-20pt] at (I) {$(2/3,1/3)$};
+
+\coordinate (E)  at (0,4);
+\coordinate (F) at (12,4);
+\node[left] at (E) {$E=(0,1/3)$};
+\node[right] at (F) {$F=(1,1/3)$};
+\draw [thick,dashed] (E) -- (F);
+
+\coordinate (G)  at (0,8);
+\coordinate (H) at (12,8);
+\node[left] at (G) {$G=(0,2/3)$};
+\node[right] at (H) {$H=(1,2/3)$};
+\draw (G) -- (H);
+\end{tikzpicture}
+\end{center}
+\caption{Dividir una longitud en tercios}\label{f.messer1}
+\end{figure}
+
+Utilizando el axioma~6 situar $C$ en $C'$ de $\overline{AB}$ y $F$ en $F'$ de $\overline{GH}$.  Denotemos por $L$ el punto de intersección del pliegue con $\overline{BC}$ y por $b$ la longitud de $\overline{BL}$. Renombrar la longitud del lado del cuadrado por $a+1$ donde $a=\overline{AC'}$. La longitud de $\overline{LC}$ es $(a+1)-b$.  (Fig.~\ref{f.messer3}).
+
+\begin{theorem}
+$\overline{AC'}=\sqrt[3]{2}$.
+\end{theorem}
+
+\begin{proof}
+Al realizar el pliegue el segmento de recta $\overline{LC}$ se refleja en el segmento de recta $\overline{LC'}$ y $\overline{CF}$ se pliega en el segmento de recta $\overline{C'F'}$. Por lo tanto:
+\begin{align}
+\overline{GC'}=a-\frac{a+1}{3}=\frac{2a-1}{3}\,.\label{eq.one-third}
+\end{align}
+Como $\angle FCL$ es un ángulo recto, también lo es $\angle F'C'L$.
+
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=.65]
+% Draw and label square
+\coordinate (A) at (0,12);
+\coordinate (B) at (0,0);
+\coordinate (C) at (12,0);
+\coordinate (D) at (12,12);
+\node[left]  at (A) {$A$};
+\node[left]  at (B) {$B$};
+\node[right] at (C) {$C$};
+\node[right] at (D) {$D$};
+\draw (B) rectangle +(9pt,9pt);
+\draw[rotate=90] (C) rectangle +(9pt,9pt);
+\draw [thick] (A)  -- (B) -- (C) -- (D) -- cycle;
+
+% Draw line one-third from botton
+\coordinate (E)  at (0,4);
+\coordinate (F) at (12,4);
+\node[left] at (E) {$E$};
+\node[right] at (F) {$F$};
+\draw [name path=ef] (E) -- (F);
+
+% Draw line two-thirds from bottom
+\coordinate (G)  at (0,8);
+\coordinate (H) at (12,8);
+\node[left] at (G) {$G$};
+\node[right] at (H) {$H$};
+\draw[rotate=-90] (G) rectangle +(9pt,9pt);
+\draw (G) -- (H);
+
+% Draw reflections of C and F
+\coordinate (CP) at (0,5.31);
+\coordinate (FP) at (2.96,8);
+\node[left] at (CP) {$C'$};
+\node[above right,yshift=8pt] at (CP) {$\alpha$};
+\node[below right,xshift=-2pt,yshift=-12pt] at (CP) {$\alpha'$};
+\node[above] at (FP) {$F'$};
+\node[below left,xshift=-8pt] at (FP) {$\alpha'$};
+\draw[rotate=-50] (CP) rectangle +(9pt,9pt);
+\draw (CP) -- (FP);
+
+% Draw fold and fold arrows
+% Tangent is y = 2.26x - 10.9
+% Crosses x axis at (4.83,0)
+\coordinate (J) at (4.83,0);
+\node[below] at (J) {$L$};
+\node[above left,xshift=-8pt] at (J) {$\alpha$};
+\draw [very thick,dashed,name path=jd] (J) -- node[very near end,left] {$l$} (10,12);
+\draw[thick,dotted,bend right=40,->] (C) to ($(CP)+(4pt,0)$);
+\draw[thick,dotted,bend right=40,->] (F) to ($(FP)+(4pt,4pt)$);
+
+% Draw hypotenuses of right triangles
+\draw (CP) -- (J);
+\path (J)  -- (C);
+
+% Labels on BC and hypotenuses
+\path (CP) -- node[right] {$(a+1)-b$} (J);
+\path (J)  -- node[below] {$(a+1)-b$} (C);
+\path (B)  -- node[below] {$b$} (J);
+\path (C)  -- node[right] {$\displaystyle\frac{a+1}{3}$} (F);
+\path (CP) -- node[right,xshift=10pt] {$\displaystyle\frac{a+1}{3}$} (FP);
+
+% Labels on AB
+\draw[<->] ($(A)+(-1,0)$)    --
+  node[fill=white] {$a$} ($(CP)+(-1,0)$);
+\draw[<->] ($(CP)+(-1,0)$)   --
+  node[fill=white] {$1$} ($(B)+(-1,0)$);
+\draw[<->] ($(CP)+(-2.5,0)$) --
+  node[fill=white] {$\displaystyle\frac{2a-1}{3}$} ($(G)+(-2.5,0)$);
+\draw[<->] ($(A)+(-2.5,0)$) --
+  node[fill=white] {$\displaystyle\frac{a+1}{3}$} ($(G)+(-2.5,0)$);
+\end{tikzpicture}
+\end{center}
+
+\caption{Construcción de $\sqrt[3]{2}$}\label{f.messer3}
+\end{figure}
+
+$\triangle C'BL$ es un triángulo rectángulo así que por el Teorema de Pitágoras:
+\begin{subeqnarray}
+1^2 + b^2 &=& ((a+1)-b)^2\\
+%&=& a^2+2a+1 - 2(a+1)b + b^2\\
+%a^2+2a - 2(a+1)b&=&0\\
+b&=&\frac{a^2+2a}{2(a+1)}\,.\slabel{eq.value-of-b}
+\end{subeqnarray}
+
+$\angle GC'F' + \angle F'C'L + \angle LC'B = 180^\circ$ ya que forman la recta $\overline{GB}$. Denotemos $\angle GC'F'$ por $\alpha$. Entonces:
+\[
+\angle LC'B=180^\circ - \angle F'C'L - \angle GC'F'= 180^\circ - 90^\circ - \alpha = 90^\circ -\alpha\,,
+\]
+que denotamos por $\alpha'$. Los triángulos $\triangle C'BL$, $\triangle F'GC'$ son triángulos rectángulos por lo que $\angle C'LB=\alpha$ y $\angle C'F'G=\alpha'$. Por lo tanto, $\triangle C'BL\sim\triangle F'GC'$ y:
+\[
+\frac{\overline{BL}}{\overline{C'L}}=\frac{\overline{GC'}}{\overline{C'F'}}\,.
+\]
+Usando la Ec.~\ref{eq.one-third} tenemos:
+\[
+\frac{b}{(a+1)-b}=\frac{\displaystyle\frac{2a-1}{3}}{\displaystyle\frac{a+1}{3}}\,.
+\]
+Sustituyendo por $b$ usando la Ec.~\ref{eq.value-of-b} da:
+\[
+\displaystyle\frac{\displaystyle\frac{a^2+2a}{2(a+1)}}{(a+1)-\displaystyle\frac{a^2+2a}{2(a+1)}}=\frac{2a-1}{a+1}\,.
+\]
+Simplifica la ecuación para obtener $a^3=2$ y $a=\sqrt[3]{2}$.
+\end{proof}
+
+\section{La duplicación de un cubo de Beloch}\label{s.cube2}
+\index{Doubling a cube!origami@using origami}
+\index{Origami!doubling a cube}
+
+Dado que el pliegue de Beloch (Axioma~6) puede resolver ecuaciones cúbicas, es razonable conjeturar que puede utilizarse para doblar un cubo. Aquí damos una construcción directa que utiliza el pliegue.
+
+\noindent\textbf{Construcción:}
+Sea $A=(-1,0)$, $B=(0,-2)$. Sea $p$ la recta $x=1$ y sea $q$ la recta $y=2$. Utilizar el pliegue de Beloch para construir el pliegue $l$ que sitúa $A$ en $A'$ sobre $p$ y $B$ en $B'$ sobre $q$. Denotemos la intersección del pliegue y el eje $y$ por $Y$ y la intersección del pliegue y el eje $x$ por $X$. (Fig.~\ref{f.beloch-doubling}).
+
+\begin{figure}[b]
+\begin{center}
+\begin{tikzpicture}[scale=.8]
+% Draw and label square
+\coordinate (O) at (0,0);
+\coordinate (A) at (-2,0);
+\coordinate (B) at (0,-4);
+\node[below left,xshift=-7pt] at (O) {$O$};
+\node[below left,yshift=-12pt] at (O) {$(0,0)$};
+\node[above left,xshift=-7pt] at (A) {$A$};
+\node[below left,xshift=2pt,yshift=0pt] at (A) {$(-1,0)$};
+\node[above right,xshift=10pt] at (A) {$\alpha$};
+\node[left,xshift=-12pt] at (B) {$B$};
+\node[left,yshift=-12pt] at (B) {$(0,-2)$};
+\node[above right,yshift=12pt] at (B) {$\alpha'$};
+
+\draw[thick] (0,-4.5) --  node[very near end,above left,yshift=12pt] {$y$-axis} +(0,10);
+\draw[thick] (-5,0)   -- node[very near start,above left] {$x$-axis} +(12,0);
+\draw[thick] (2,-4.5) -- node[very near start, right,yshift=-10pt] {$p\!:x=1$} +(0,10);
+\draw[thick] (-5,4) -- node[very near start, above,xshift=-16pt] {$q\!: y=2$} +(12,0);
+
+\coordinate (AP) at (2,5);
+\node[above right] at (AP) {$A'$};
+\coordinate (BP) at (6.34,4);
+\node[above right] at (BP) {$B'$};
+
+% Tangent y = -0.8x + 1.26
+
+% Exchanged X and Y 
+\coordinate (X) at (0,2.52);
+\coordinate (Y) at (3.15,0);
+\node[right,xshift=4pt,yshift=2pt] at (X) {$Y$};
+\node[below right,yshift=-14pt] at (X) {$\alpha$};
+\node[below left,xshift=2pt,yshift=-12pt] at (X) {$\alpha'$};
+\node[above right,xshift=10pt] at (Y) {$X$};
+\node[below left,xshift=-10pt] at (Y) {$\alpha$};
+\node[above left,xshift=-13pt] at (Y) {$\alpha'$};
+\draw [very thick,dashed] ($(X)!-1.1!(Y)$) -- node[very near end,right,xshift=8pt] {$l$} ($(X)!2!(Y)$);
+
+\draw [very thick,dotted] (A) -- (AP);
+\draw [very thick,dotted] (B) -- (BP);
+
+\draw[thick,dotted,bend left=40,->] (A) to ($(AP)+(-4pt,0)$);
+\draw[thick,dotted,bend left=40,->] (B) to ($(BP)+(-6pt,-3pt)$);
+
+\draw[rotate=-130] (X) rectangle +(10pt,10pt);
+\draw[rotate=-130] (Y) rectangle +(10pt,10pt);
+\end{tikzpicture}
+\end{center}
+\caption{La duplicación del cubo de Beloch}\label{f.beloch-doubling}
+\end{figure}
+
+\begin{theorem}
+$\overline{OY}=\sqrt[3]{2}$.
+\end{theorem}
+\begin{proof}
+El pliegue es la mediatriz de $\overline{AA'}$ y $\overline{BB'}$ por lo que $\overline{AA'}\parallel\overline{BB'}$. Por ángulos interiores alternos $\angle YAO =\angle BXO=\alpha$. El etiquetado de los otros ángulos en la figura se sigue de las propiedades de los triángulos rectángulos.
+
+$\triangle AOY\sim \triangle YOX \sim \triangle XOB$ y $\overline{OA}=1$, $\overline{OB}=2$ se dan así:
+\[
+\begin{array}{l}
+\displaystyle\frac{\overline{OY}}{\overline{OA}}=\displaystyle\frac{\overline{OX}}{\overline{OY}}=\displaystyle\frac{\overline{OB}}{\overline{OX}}\\
+\\
+\displaystyle\frac{\overline{OY}}{1}=\displaystyle\frac{\overline{OX}}{\overline{OY}}=\displaystyle\frac{2}{\overline{OX}}\,.
+\end{array}
+\]
+De la primera y segunda relaciones tenemos $\overline{OX}=\overline{OY}^2$ y de la primera y tercera relaciones tenemos $\overline{OY}\:\overline{OX}=2$.
+Sustituyendo por $\overline{OX}$ se obtiene $\overline{OY}^3=2$ y
+$\overline{OY}=\sqrt[3]{2}$.
+\end{proof}
+
+\section{Construcción de un nonágono regular}\label{s.nonagon}
+
+Se construye un nonágono (polígono regular de nueve lados) derivando la ecuación cúbica de su ángulo central y resolviendo la ecuación mediante el método de Lill y el pliegue de Beloch. El ángulo central es $\theta=360^\circ/9=40^\circ$. Por Thm.~\ref{thm.triple-angle}:
+\[
+\cos 3\theta=4\cos^3 \theta -3\cos\theta\,.
+\]
+Sea $x=\cos 40^{\circ}$. Entonces para el nonágono la ecuación es $4x^3-3x+(1/2)=0$ ya que $\cos 3\cdot 40^\circ=\cos 120^\circ=-(1/2)$. La figura~\ref{f.nonagon2} muestra las trayectorias para la ecuación construida según el método de Lill.
+
+\begin{figure}[ht]
+\begin{center}
+\begin{tikzpicture}[scale=.85]
+% Draw help lines and axes
+\draw[step=10mm,white!60!black] (-1,-4) grid (9,1);
+\draw[thick] (-1,0) -- (9,0);
+\draw[thick] (0,-4) -- (0,1);
+\foreach \x in {1,...,9}
+  \node at (\x-.3,.3) {\sm{\x}};
+\foreach \y in {-3,...,1}
+  \node at (-.3,\y-.3) {\sm{\y}};
+  
+% Points of first path
+\coordinate (A) at (0,0);
+\coordinate (B) at (4,0);
+\coordinate (C) at (7,0);
+\coordinate (D) at (7,-.5);
+\node[above left] at (A) {$P$};
+\node[below right,xshift=12pt] at (A) {$37.45^\circ$};
+\node[below right] at (D) {$Q$};
+
+% Draw first path
+\draw[very thick,-{Stealth[scale=1.4,inset=2pt]}] 
+  (A) -- node[below,xshift=6pt] {$a_3$} (B);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick]
+  (B) -- ($(B)+(0,.1)$);
+\draw[name path=c,very thick,{Stealth[scale=1.4,inset=2pt]}-]
+  (B) -- node[below] {$a_1$} (C);
+\draw[very thick,-{Stealth[scale=1.4,inset=2pt]}]
+  (C) -- node[right,yshift=-2pt] {$a_0$} (D);
+
+% Draw extension of second segment of first path
+\draw[thick,name path=b] 
+  ($(B)+(0,-4)$) -- node[right] {$a_2$} ($(B)+(0,1)$);
+
+% Draw second path
+\path[name path=one] (A) -- +(-37.45:6cm);
+\path [name intersections = {of = b and one, by = {R}}];
+\node[below left] at (R) {$R$};
+\draw[thick,dashed] (A) -- (R);
+
+\path[name path=two] (R) -- +(52.5463:6cm);
+\path [name intersections = {of = c and two, by = {S}}];
+\node[above] at (S) {$S$};
+\draw[thick,dashed] (R) -- (S);
+
+\draw[thick,dashed] (S) -- (D);
+
+% Draw right angle rectangles
+\draw[thick,rotate=52.5463] (R) rectangle +(9pt,9pt);
+\draw[thick,rotate=-127.4537] (S) rectangle +(9pt,9pt);
+\end{tikzpicture}
+\end{center}
+\caption{Método de Lill para un nonágono}\label{f.nonagon2}
+\end{figure}
+
+La segunda trayectoria parte de $P$ con un ángulo aproximado de $-37,45^\circ$. Giros de $90^\circ$ en $R$ y luego de $-90^\circ$ en $S$ hacen que la trayectoria intersecte a la primera en su punto final $Q$. Por tanto, $x=-\tan (-37,45^\circ)\approx 0,766$ es una raíz de $$4x^3-3x+(1/2)$$.
+
+La raíz se puede obtener utilizando el pliegue de Beloch. Construir la recta $a_2'$ paralela a $a_2$ a la misma distancia de $a_2$ que $a_2$ de $P$. Aunque la longitud de $a_2$ es cero, sigue teniendo dirección (hacia arriba), por lo que se puede construir la recta paralela. Análogamente, se construye la recta $a_1'$ paralela a $a_1$ a la misma distancia de $a_1$ que $a_1$ de $Q$. El pliegue de Beloch $\overline{RS}$ sitúa simultáneamente $P$ en $P'$ sobre $a_2'$ y $Q$ en $Q'$ sobre $a_1'$. Esto construye el ángulo $\angle SPR=-37.45^\circ$ (Fig.~\ref{f.nonagon3}).
+
+\begin{figure}[ht]
+\begin{center}
+\begin{tikzpicture}[scale=.85]
+% Draw help lines and axes
+\draw[step=10mm,white!60!black] (-1,-7) grid (9,1);
+\draw[thick] (-1,0) -- (9,0);
+\draw[thick] (0,-7) -- (0,1);
+\foreach \x in {1,...,9}
+  \node at (\x-.3,.3) {\sm{\x}};
+\foreach \y in {-6,...,1}
+  \node at (-.3,\y-.3) {\sm{\y}};
+  
+% Points of first path
+\coordinate (A) at (0,0);
+\coordinate (B) at (4,0);
+\coordinate (C) at (7,0);
+\coordinate (D) at (7,-.5);
+\node[above right] at (A) {$P$};
+\node[below right] at (D) {$Q$};
+
+% Draw first path
+\draw[very thick,-{Stealth[scale=1.4,inset=2pt]}] 
+  (A) -- node[below] {$a_3$} (B);
+\draw[{Stealth[scale=1.4,inset=2pt,reversed]}-,very thick]
+  (B) -- ($(B)+(0,.1)$);
+\draw[name path=c,very thick,{Stealth[scale=1.4,inset=2pt]}-]
+  (B) -- node[below] {$a_1$} (C);
+\draw[very thick,-{Stealth[scale=1.4,inset=2pt]}]
+  (C) -- node[right,yshift=-2pt] {$a_0$} (D);
+
+% Draw extension of second segment of first path
+\draw[very thick,loosely dotted,name path=b] 
+  ($(B)+(0,-7)$) -- node[right,near end] {$a_2$} ($(B)+(0,1)$);
+
+% Draw second path
+\path[name path=one] (A) -- +(-37.45:6cm);
+\path [name intersections = {of = b and one, by = {R}}];
+\node[below left] at (R) {$R$};
+\path[name path=two] (R) -- +(52.55:6cm);
+\path [name intersections = {of = c and two, by = {S}}];
+\node[above] at (S) {$S$};
+\draw[very thick,dashed] (R) -- (S);
+
+% Draw parallel lines
+\draw[thick,name path=para-2] 
+  (8,1) -- node[right,yshift=8pt] {$a_2'$} (8,-7);
+\draw[thick,name path=para-1] 
+  (-1,.5) -- node[right,xshift=44mm] {$a_1'$} (9,.5);
+
+% Draw second segments of the folds
+\path[name path=p-two] (A) -- +(-37.45:11cm);
+\path [name intersections = {of = para-2 and p-two, by = {PP}}];
+\node[below left] at (PP) {$P'$};
+\draw[very thick,dotted] (A) -- (PP);
+
+\path[name path=p-one] (D) -- +(142.55:2cm);
+\path [name intersections = {of = para-1 and p-one, by = {QP}}];
+\node[above] at (QP) {$Q'$};
+\draw[very thick,dotted] (D) -- (QP);
+
+% Draw right angle indications
+\draw[thick,rotate=-37.45] (R) rectangle +(9pt,9pt);
+\draw[thick,rotate=-127.4537] (S) rectangle +(9pt,9pt);
+\end{tikzpicture}
+\end{center}
+\caption{El pliegue de Beloch para resolver la ecuación del nonágono}\label{f.nonagon3}
+\end{figure}
+
+Por el método de Lill $-\tan (-37,45^\circ)\approx 0,766$ y por tanto $\cos \theta \approx 0,766$ es una raíz de la ecuación del ángulo central $\theta$. Terminamos la construcción del nonágono construyendo $\cos^{-1} 0,766\approx 40^\circ$.
+
+El triángulo rectángulo $\triangle ABC$ con $\angle CAB\approx 37,45^\circ$ y $\overline{AB}=1$ tiene lado opuesto $\overline{BC}\approx 0,766$ por definición de tangente (Fig.~\ref{f.nonagon5-eq}).
+Doblar $\overline{CB}$ sobre la $\overline{AB}$ de modo que el reflejo de $C$ sea $D$ y $\overline{DB}=0,766$. Extender $\overline{DB}$ y construir $E$ de modo que $\overline{DE}=1$.
+Doblar $\overline{DE}$ para reflejar $E$ en $F$ en la extensión de $\overline{BC}$ (Fig.~\ref{f.nonagon5-central}). Entonces:
+\[
+\angle BDF=\cos^{-1} \frac{0.766}{1}\approx 40^\circ\,.
+\]
+
+\begin{figure}[ht]
+\begin{minipage}{.45\textwidth}
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\draw (0,0) coordinate (A) -- (4,0) coordinate (B);
+\draw (B) -- node[right] {$0.766$} 
+  ($(B)+(0,0.766*4)$) coordinate (C);
+\draw (A) -- (C);
+\draw[rotate=90] (B) rectangle +(8pt,8pt);
+\node[above left] at (A) {$A$};
+\node[above right] at (B) {$B$};
+\node[right] at (C) {$C$};
+\coordinate (D) at (0.234*4,0);
+\node[below left] at (D)  {$D$};
+\coordinate (E) at ($(D)+(4,0)$);
+\draw (D) -- (B);
+\draw (B) -- (E);
+\node[above right] at (E) {$E$};
+\draw[very thick,dotted,->,bend right=50] ($(C)+(-.2,0)$) to ($(A)+(.94,.4)$);
+\draw[<->] ($(D)+(0,-1.2)$) -- node[fill=white] {$1$} ($(E)+(0,-1.2)$);
+\draw[<->] ($(A)+(0,-.8)$) -- node[fill=white] {$1$} ($(B)+(0,-.8)$);
+\node[above right,xshift=14pt] at (A) {$37.45^\circ$};
+\vertex{D};
+\vertex{E};
+\end{tikzpicture}
+\caption{La tangente que es la solución de la ecuación del nonágono}\label{f.nonagon5-eq}
+\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}{.50\textwidth}
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\coordinate (B) at (4,0);
+\draw (B) -- ($(B)+(0,0.766*4)$) coordinate (C);
+\draw[rotate=90] (B) rectangle +(8pt,8pt);
+\node[above right] at (B) {$B$};
+\node[right] at (C) {$C$};
+\coordinate (D) at (0.234*4,0);
+\node[above left] at (D) {$D$};
+\node[above right,xshift=8pt,yshift=4pt] at (D) {$40^\circ$};
+\coordinate (E) at ($(D)+(4,0)$);
+\draw (D) -- node[fill=white] {$0.766$} (B);
+\draw (B) -- (E);
+\node[above right,xshift=4pt] at (E) {$E$};
+\coordinate (F) at ($(B)+(0,4)$);
+\draw[very thick,dotted,->,bend right=50] ($(E)+(.1,.2)$) to ($(F)+(.2,0)$);
+\draw (B) -- (F);
+\node[left] at (F) {$F$};
+\draw (D) -- node[fill=white] {$1$} (F);
+\draw[<->] ($(D)+(0,-.8)$) -- node[fill=white] {$1$} ($(E)+(0,-.8)$);
+\vertex{C};
+\vertex{E};
+\coordinate (A) at (0,0) node [above left] {$A$};
+\draw (A) -- (D);
+\vertex{A};
+\vertex{D};
+\end{tikzpicture}
+\caption{El coseno del ángulo central del nonágono}\label{f.nonagon5-central}
+\end{center}
+\end{minipage}
+\end{figure}
+
+\subsection*{¿Cuál es la sorpresa?}
+
+Vimos en los capítulos~\ref{c.trisect} y~\ref{c.square} que herramientas como el neusis pueden realizar construcciones que no se pueden hacer con una regla y un compás. Es sorprendente que la trisección de un ángulo y la duplicación de un cubo puedan construirse utilizando sólo papel plegado. Roger C. Alperin\index{Alperin, Roger C.} ha desarrollado una jerarquía de cuatro métodos de construcción cada uno más potente que el anterior.
+
+\subsection*{Fuentes}
+
+Este capítulo se basa en \cite{alperin,lang,martin,newton}.

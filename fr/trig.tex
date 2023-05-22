@@ -1272,7 +1272,7 @@ Soit $\triangle ABC$ un triangle et $\overline{DBQ}$ une droite transversale qui
 \end{align}
 \end{theorem}
 
-
+% Fix bug: exchange B and P
 \begin{figure}[htbp]
 \centering
         \begin{tikzpicture}[scale=.6]
@@ -1281,8 +1281,8 @@ Soit $\triangle ABC$ un triangle et $\overline{DBQ}$ une droite transversale qui
 \draw (D) -- ++(60:6) coordinate (C) node[left] {$C$};
 \coordinate (A) at (60:3);
 \node[left] at (A) {$A$};
-\draw (A) -- ++(3,0) coordinate (B) -- (C);
-\node[below right] at (B) {$B$};
+\draw (A) -- ++(3,0) coordinate (B);% -- (C);
+\node[below right] at (B) {$P$};
 \path[name path=DQ] (D) -- ($(D)!1.7!(B)$);
 \path[name path=AP] (A) -- ($(A)!3!(B)$);
 % 3*(1+\sqrt[3]{2}) = 6.78
@@ -1291,7 +1291,7 @@ Soit $\triangle ABC$ un triangle et $\overline{DBQ}$ une droite transversale qui
 \draw[name path=CP] (C) -- (P);
 \path[name intersections={of=CP and DQ,by={Q}}];
 \node[above] at (Q) {$Q$};
-\node[right] at (P) {$P$};
+\node[right] at (P) {$B$};
 \draw (D) -- (Q);
 \draw (B) -- (P);
 \path[dashed,name path=CK] (C) -- ($(C)+(6.5,0)$);

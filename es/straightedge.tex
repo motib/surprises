@@ -1,0 +1,669 @@
+% !TeX root = surprises.tex
+
+\chapter{Una regla y un círculo son suficientes}\label{c.straightedge}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+¿Se pueden hacer todas las construcciones con regla y compás sólo con regla? La respuesta es no porque las rectas se definen por ecuaciones lineales y no pueden representar círculos que se definen por ecuaciones cuadráticas. En 1822 Jean-Victor Poncelet {index{Poncelet, Jean-Victor} conjeturó que una regla es suficiente siempre que exista una circunferencia en el plano. Esto fue demostrado en 1833 por Jakob Steiner.
+
+Después de explicar en la Secc.~\ref{s.se-what} lo que significa realizar una construcción con sólo una regla y un círculo, la prueba se presenta en etapas a partir de cinco construcciones auxiliares: la construcción de una línea paralela a una línea dada (Secc.~\ref{s.parallel}), construcción de una perpendicular a una recta dada (Secc.~\ref{s.perp}), copia de un segmento de recta en una dirección dada (Secc.~\ref{s.copy}), construcción de un segmento de recta como razón de segmentos (Secc.~\ref{s.relative}) y construcción de una raíz cuadrada (Secc.~\ref{s.root}). La sección~\ref{s.line-circle-straight} muestra cómo encontrar la(s) intersección(es) de una recta con un círculo y la sección~\ref{s.two-circles} muestra cómo encontrar la(s) intersección(es) de dos círculos.
+
+\section{¿Qué es una construcción sólo con regla?}\label{s.se-what}
+
+Una construcción utilizando una regla y un compás es una secuencia de tres operaciones:
+\begin{itemize}
+\item Encontrar el punto de intersección de una recta con un compás.
+\item Hallar el punto de intersección de dos rectas.
+\item Hallar el/los punto/s de intersección de una recta y una circunferencia.
+\item Hallar el punto o puntos de intersección de dos circunferencias.
+\end{itemize}
+La primera operación sólo se puede realizar con una regla.
+
+Una circunferencia está definida por un punto $O$, su \emph{centro}, y por un \emph{radio} $r$, un segmento de recta de longitud $r$ uno de cuyos extremos es el centro. Si podemos construir los puntos etiquetados $X$ y $Y$ en la Fig.~\ref{f.se-only-line-circle} podemos afirmar que hemos construido con éxito los puntos de intersección de un círculo dado con una recta dada. Del mismo modo, la construcción de $X,Y$ en la Fig.~\ref{f.se-only-two-circles} es la construcción de los puntos de intersección de dos círculos dados. Los círculos dibujados con líneas discontinuas en un diagrama no aparecen realmente en una construcción; sólo se utilizan para ayudar a entender la construcción.
+
+El único círculo dado utilizado en las construcciones, llamado \emph{círculo fijo}, puede aparecer en cualquier parte del plano y puede tener un radio arbitrario.
+
+\begin{figure}[t]
+\begin{minipage}{.45\textwidth}
+\begin{center}
+\begin{tikzpicture}[scale=.8]
+\coordinate (O) at (0,0);
+\node[above right] at (O) {$O$};
+\draw[thick,dashed,name path=circle] (0,0) circle[radius=2cm];
+\draw (0,0) -- node[left] {$r$} ++(-60:2cm);
+\draw[name path=line] (-3,-.5) -- ++(20:6cm);
+\path [name intersections={of=circle and line,by={X,Y}}];
+\node[above right,xshift=-2pt,yshift=4pt] at (X) {$X$};
+\node[above left] at (Y) {$Y$};
+\vertex{O};
+%\vertex{X};
+%\vertex{Y};
+\end{tikzpicture}
+\caption{$X,Y$ son los puntos de intersección de una recta y una circunferencia}\label{f.se-only-line-circle}
+\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}{.45\textwidth}
+\begin{center}
+\begin{tikzpicture}[scale=.8]
+\coordinate (O1) at (0,0);
+\coordinate (O2) at (3,0);
+\node[above right] at (O1) {$O_1$};
+\node[above right] at (O2) {$O_2$};
+\draw[thick,dashed,name path=circle1] (0,0) circle[radius=2cm];
+\draw[thick,dashed,name path=circle2] (3,0) circle[radius=1.7cm];
+\draw (0,0) -- node[left] {$r_1$} ++(-60:2cm);
+\draw (3,0) -- node[left,below] {$r_2$} ++(-20:1.7cm);
+\path [name intersections={of=circle1 and circle2,by={X,Y}}];
+\node[above,yshift=4pt] at (X) {$X$};
+\node[below,yshift=-4pt] at (Y) {$Y$};
+\vertex{O1};
+\vertex{O2};
+%\vertex{X};
+%\vertex{Y};
+\end{tikzpicture}
+\caption{$X,Y$ son los puntos de intersección de dos circunferencias}\label{f.se-only-two-circles}
+\end{center}
+\end{minipage}
+\end{figure}
+
+\section{Construcción de una recta paralela a una recta dada}\label{s.parallel}
+
+\begin{theorem}\label{thm.straight-parallel}
+Dada una recta $l$ definida por dos puntos $A,B$ y un punto $P$ que no está en la recta, es posible construir una recta que pase por $P$ y sea paralela a $\overline{AB}$.
+\end{theorem}
+
+\begin{proof}
+
+Hay dos casos para la prueba.
+
+\textit{Caso 1:}
+$\overline{AB}$ es un \emph{segmento de recta dirigida} si se da el punto medio $M$ de $\overline{AB}$.  Construir una semirrecta que prolongue $\overline{AP}$ y elegir un punto $S$ cualquiera de la semirrecta más allá de $P$. Construir las rectas $\overline{BP}, \overline{SM}, \overline{SB}$. La intersección de $\overline{BP}$ y $\overline{SM}$ se denota $O$. Construir una semirrecta que extienda $\overline{AO}$ y denotar por $Q$ la intersección de la semirrecta $\overline{AO}$ con $\overline{SB}$ (Fig.~\ref{f.se-parallel-directed}).
+
+Afirmamos que $\overline{PQ}\parallel \overline{AB}$. 
+
+\begin{figure}[ht]
+\begin{center}
+\begin{tikzpicture}
+\draw[name path=pq] (-4,0) -- (4,0);
+\draw (-2,-2) node[below left] {$A$} coordinate (A) -- (2,-2) node[below right] {$B$} coordinate (B);
+\draw[name path=as] (A) -- ++(50:4cm) node[above] {$S$} coordinate (S);
+\draw[name path=sb] (S) -- (B);
+\path [name intersections={of=pq and as,by={P}}];
+\path [name intersections={of=pq and sb,by={Q}}];
+\node[above left] at (P) {$P$};
+\node[above right] at (Q) {$Q$};
+\draw[name path=pb] (P) -- (B);
+\draw[name path=qa] (Q) -- (A);
+\path [name intersections={of=pb and qa,by={O}}];
+\node[right,xshift=2pt] at (O) {$O$};
+\coordinate (M) at (0,-2);
+\node[below right] at (M) {$M$};
+\draw (S) -- (M);
+%\vertex{O};
+%\vertex{P};
+%\vertex{A};
+%\vertex{B};
+\end{tikzpicture}
+\end{center}
+\caption{Construcción de una recta paralela en el caso de una recta dirigida}\label{f.se-parallel-directed}
+\end{figure}
+
+La prueba utiliza el teorema de Ceva.
+
+\textit{Teorema de Ceva  (Thm.~\ref{thm.ceva}):}
+Si los segmentos de recta desde los vértices de un triángulo a las aristas opuestas se cruzan en un punto $O$ (como en la Fig.~\ref{f.se-parallel-directed}), las longitudes de los segmentos satisfacen:
+\[
+\frac{\overline{AM}}{\overline{MB}}\cdot\frac{\overline{BQ}}{\overline{QS}}\cdot\frac{\overline{SP}}{\overline{PA}} = 1\,.
+\]
+En la Fig.~\ref{f.se-parallel-directed} $M$ es el punto medio de $\overline{AB}$ por lo que $\displaystyle\frac{\overline{AM}}{\overline{MB}}=1$ y la ecuación se convierte en:
+\begin{align}
+\frac{\overline{BQ}}{\overline{QS}}=\frac{\overline{PA}}{\overline{SP}}=\frac{\overline{AP}}{\overline{PS}}\,,\label{eq.ceva}
+\end{align}
+ya que el orden de los puntos extremos de un segmento de recta no es importante.
+
+Afirmamos que $\triangle ABS \sim \triangle PQS$:
+\begin{eqnarray*}
+\frac{\overline{BS}}{\overline{QS}}&=&\frac{\overline{BQ}}{\overline{QS}}+\frac{\overline{QS}}{\overline{QS}} = \frac{\overline{BQ}}{\overline{QS}}+1\\
+&&\\
+\frac{\overline{AS}}{\overline{PS}} &=& \frac{\overline{AP}}{\overline{PS}} + \frac{\overline{PS}}{\overline{PS}} = \frac{\overline{AP}}{\overline{PS}} + 1\,.
+\end{eqnarray*}
+Utilizando la Ec.~\ref{eq.ceva}:
+\[
+\frac{\overline{BS}}{\overline{QS}}=\frac{\overline{BQ}}{\overline{QS}}+1=\frac{\overline{AP}}{\overline{PS}}+1=\frac{\overline{AP}}{\overline{PS}}+\frac{\overline{PS}}{\overline{PS}}=\frac{\overline{AS}}{\overline{PS}}\,,
+\]
+y resulta que $\triangle ABS \sim \triangle PQS$ y por lo tanto $\overline{PQ}\parallel\overline{AB}$.
+
+\textit{Caso 2:}
+$\overline{AB}$ no es necesariamente un segmento de recta dirigido. La circunferencia fija $c$ tiene centro $O$ y radio $r$. $P$ es el punto no situado sobre la recta por el que hay que construir una recta paralela a $l$ (Fig.~\ref{f.se-parallel-other1}).
+
+Elegir $M$, un punto cualquiera de $l$, y construir una semirrecta que extienda $\overline{MO}$ y que corte a la circunferencia en $U,V$.
+$\overline{UV}$ es un segmento de recta dirigida porque $O$, el centro del círculo, biseca el diámetro $\overline{UV}$. Elegir un punto $A$ en $l$ y utilizar la construcción de un segmento rectilíneo dirigido (Caso 1) para construir una recta que pase por $A$ paralela a $\overline{UV}$ y que corte a la circunferencia en $X,Y$ (Fig.~\ref{f.se-parallel-other2}).
+
+\begin{figure}[t]
+\begin{minipage}{.45\textwidth}
+\begin{center}
+\begin{tikzpicture}[scale=.75]
+\coordinate (O) at (0,0);
+\node[below right] at (O) {$O$};
+\draw[name path=circle] (O) circle[radius=2cm];
+\draw[name path=l] (-4,-3) --
+  node[above, near end,xshift=24pt] {$l$} +(7,0);
+\path[name path=mo] (-2,-3) coordinate (M) -- 
+  ($(-2,-3)!1.65!(O)$);
+\node[below] at (M) {$M$};
+\path [name intersections={of=circle and mo,by={V,U}}];
+\node[below,xshift=2pt,yshift=-4pt] at (U) {$U$};
+\node[right,xshift=4pt] at (V) {$V$};
+\draw (M) -- (U) -- node[left] {$r$} (O) -- node[left] {$r$} (V);
+\node at (-1.6,1.6) {$c$};
+\coordinate (P) at (-4,1);
+\node[above left] at (P) {$P$};
+\vertex{O};
+\vertex{P};
+\end{tikzpicture}
+\caption{Construcción de una línea dirigida}\label{f.se-parallel-other1}
+\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}{.45\textwidth}
+\begin{center}
+\begin{tikzpicture}[scale=.75]
+\coordinate (O) at (0,0);
+\node[below right] at (O) {$O$};
+\draw[name path=circle] (O) circle[radius=2cm];
+\draw[name path=l] (-4,-3) --
+  node[above,near end,xshift=24pt] {$l$} +(7,0);
+\path[name path=mo] (-2,-3) coordinate (M) --
+  ($(-2,-3)!1.65!(O)$);
+\node[below] at (M) {$M$};
+\path [name intersections={of=circle and mo,by={V,U}}];
+\node[below,xshift=2pt,yshift=-4pt] at (U) {$U$};
+\node[right,xshift=4pt] at (V) {$V$};
+\draw (M) -- (V);
+\path[name path=ax] (-3,-3) coordinate (A) --
+  ($(-3,-3)!1.8!(-1,0)$);
+\node[below] at (A) {$A$};
+\path [name intersections={of=circle and ax,by={Y,X}}];
+\node[left] at (X) {$X$};
+\node[above] at (Y) {$Y$};
+\node at (-1.6,1.6) {$c$};
+\draw (A) -- (Y);
+\coordinate (P) at (-4,1);
+\node[above left] at (P) {$P$};
+\vertex{O};
+\vertex{P};
+\end{tikzpicture}
+\caption{Construcción de una línea paralela a la línea dirigida}\label{f.se-parallel-other2}
+\end{center}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[b]
+\begin{center}
+\begin{tikzpicture}[scale=.75]
+\coordinate (O) at (0,0);
+\node[below right] at (O) {$O$};
+\draw[name path=circle] (O) circle[radius=2cm];
+\draw[name path=l] (-5,-3) --
+  node[above,near end,xshift=40pt] {$l$} +(9,0);
+\path[name path=mo] (-2,-3) coordinate (M) -- 
+  ($(-2,-3)!1.65!(O)$);
+\node[below] at (M) {$M$};
+\path [name intersections={of=circle and mo,by={V,U}}];
+\node[below,xshift=2pt,yshift=-4pt] at (U) {$U$};
+\node[above right] at (V) {$V$};
+\draw (M) -- (V);
+\path[name path=ax] (-3,-3) coordinate (A) -- 
+  ($(-3,-3)!1.8!(-1,0)$);
+\node[below] at (A) {$A$};
+\path [name intersections={of=circle and ax,by={Y,X}}];
+\node[left] at (X) {$X$};
+\node[above] at (Y) {$Y$};
+\node at (-1.6,1.6) {$c$};
+\draw (A) -- (Y);
+\coordinate (P) at (-4,1);
+\node[above] at (P) {$P$};
+\path[name path=xo] (X) -- ($(X)!2.2!(O)$);
+\path[name intersections={of=circle and xo,by={Xp}}];
+\node[above right] at (Xp) {$X'$};
+\draw (X) -- (Xp);
+\path[name path=yo] (Y) -- ($(Y)!2.2!(O)$);
+\path[name intersections={of=circle and yo,by={y,Yp}}];
+\node[below right] at (Yp) {$Y'$};
+\draw (Y) -- (Yp);
+\path[name path=xy] (Xp) -- ($(Xp)!1.6!(Yp)$);
+\path[name intersections={of=l and xy,by={B}}];
+\node[below] at (B) {$B$};
+\draw (Xp) -- (B);
+\draw[thick,dotted,name path=z] (-5,0) -- 
+  (4,0) node[above,near end,xshift=40pt] {$l'$};
+\draw[thick,dashed] (-5,1) -- +(9,0);
+\path[name intersections={of=ax and z,by={Z}}];
+\path[name intersections={of=xy and z,by={Zp}}];
+\node[above left] at (Z) {$Z$};
+\node[below right] at (Zp) {$Z'$};
+\vertex{O};
+\vertex{P};
+\end{tikzpicture}
+\end{center}
+\caption{Prueba de que $l'$ es paralelo a $l$}\label{f.se-parallel-other3}
+\end{figure}
+
+Construir un diámetro desde $X$ hasta $O$ que corte al otro lado de la circunferencia en $X'$, y construir análogamente el diámetro $\overline{YY'}$. Construimos la semirrecta desde $X'$ pasando por $Y'$ y denotamos por $B$ su intersección con $l$. Afirmamos que $M$ es la bisectriz de $\overline{AB}$ de modo que $\overline{AB}$ es un segmento de recta dirigida y por tanto se puede construir una recta que pase por $P$ paralela a $l$ (Fig.~\ref{f.se-parallel-other3}).
+
+$\overline{OX}, \overline{OX'}, \overline{OY}, \overline{OY'}$ son todos radios del círculo y $\angle XOY = \angle X'OY'$ ya que son ángulos verticales, por lo que $\triangle XOY\cong\triangle X'OY'$ por lado-ángulo-lado. Definir\footnote{definir, no construir, porque estamos en medio de la prueba de que tal recta se puede construir.} $l'$ como una recta que pasa por $O$ paralela a $l$ y que interseca a $\overline{XY}$ en $Z$ y a $\overline{X'Y'}$ en $Z'$. $\angle XOZ=\angle X'OZ'$ son ángulos verticales, $\angle ZXO=\angle Z'X'O$ son ángulos interiores alternos y $\overline{XO}=\overline{XO'}$ son radios, por lo que $\triangle XOZ\cong\triangle X'OZ'$ por ángulo-lado-ángulo y $\overline{ZO}=\overline{OZ'}$. Por tanto, $\overline{AMOZ}$ y $\overline{BMOZ'}$ son paralelogramos y $\overline{AM}=\overline{ZO}=\overline{OZ'}=\overline{MB}$.
+\end{proof}
+
+\begin{theorem}\label{thm.parallel-equal}
+Dado un segmento de recta $\overline{AB}$ y un punto $P$ que no está en la recta, es posible construir un segmento de recta $\overline{PQ}$ que sea paralelo a $\overline{AB}$ y cuya longitud sea igual a la longitud de $\overline{AB}$, es decir, es posible copiar $\overline{AB}$ paralelo a sí mismo con $P$ como uno de sus puntos extremos.
+\end{theorem}
+
+\begin{proof}
+We have proved that it is possible to construct a line $m$ through $P$ parallel to $\overline{AB}$ and a line $n$ through $B$ to parallel to $\overline{AP}$. The quadrilateral $\overline{ABQP}$ is a parallelogram so opposite sides are equal $\overline{AB}=\overline{PQ}$ (Fig.~\ref{f.se-parallel-other4}).
+\end{proof}
+
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=.5]
+\coordinate (P) at (0,0);
+\coordinate (Q) at (3,0);
+\coordinate (A) at (-2,2.5);
+\coordinate (B) at (1,2.5);
+\draw ($(P)!-.6!(Q)$) -- node[above,near end,xshift=36pt,yshift=-5pt] {$m$} ($(P)!1.8!(Q)$);
+\node[below] at (P) {$P$};
+\node[below left] at (Q) {$Q$};
+\draw ($(A)!-.6!(B)$) -- node[above,near end,xshift=40pt,yshift=-5pt] {$l$} ($(A)!2.5!(B)$);
+\node[above left] at (A) {$A$};
+\node[above right] at (B) {$B$};
+\draw (A) -- (P);
+\draw ($(B)!-.3!(Q)$) -- node[above,near end,xshift=18pt,yshift=-18pt] {$n$} ($(B)!1.4!(Q)$);
+\end{tikzpicture}
+\end{center}
+\caption{Construcción de una copia de una línea paralela a una línea existente}\label{f.se-parallel-other4}
+\end{figure}
+
+\section{Construcción de una perpendicular a una recta dada}\label{s.perp}
+
+\begin{theorem}\label{thm.straight-perp}
+Dado un segmento de recta $l$ y un punto $P$ que no está en $l$, es posible construir una perpendicular a $l$ que pase por $P$.
+\end{theorem}
+
+\begin{proof}
+Por Thm.~\ref{thm.straight-parallel} construir una recta $l'$ paralela a $l$ que corte a la circunferencia fija en $U,V$. Construir el diámetro $\overline{UOU'}$ y la cuerda $\overline{VU'}$ (Fig.~\ref{f.se-perp}). El $\angle UVU'$ es un ángulo recto porque está subtendido por un diámetro. Por tanto $\overline{VU'}$ es perpendicular a $\overline{UV}$ y $l$. De nuevo por Thm.~\ref{thm.straight-parallel} construimos la paralela a $\overline{VU'}$ a través de $P$.
+\end{proof}
+
+\begin{figure}[htb]
+\begin{center}
+\begin{tikzpicture}[scale=.7]
+\coordinate (O) at (0,0);
+\coordinate (P) at (3.5,.6);
+\draw[name path=circle] (O) circle[radius=2cm];
+\draw[name path=l] (-4,-3) -- node[above,near end,xshift=45pt] {$l$} ++(9,0);
+\draw[name path=lp] (-3,-1) -- node[above,near end,xshift=40pt] {$l'$} ++(8,0);
+\node[above left] at (O) {$O$};
+\node[right] at (P) {$P$};
+\path[name intersections={of=circle and lp,by={U,V}}];
+\node[below left] at (U) {$U$};
+\node[below right] at (V) {$V$};
+\path[name path=d] (U) -- ($(U)!2.3!(O)$);
+\path[name intersections={of=circle and d,by={Up}}];
+\draw (U) -- (Up);
+\node[above right] at (Up) {$U'$};
+\draw (Up) -- (V);
+\path[name path=p] (P) -- ++(0,-4);
+\path[name intersections={of=p and l,by={X}}];
+\draw (X) rectangle +(9pt,9pt);
+\draw[rotate=90] (V) rectangle +(9pt,9pt);
+\vertex{O};
+\vertex{P};
+\draw (P) -- ++(0,1);
+\draw (P) -- (X);
+\end{tikzpicture}
+\end{center}
+\caption{Construcción de una línea perpendicular}\label{f.se-perp}
+\end{figure}
+
+\section{Copiar un segmento de línea en una dirección determinada}\label{s.copy}
+
+\begin{theorem}\label{thm.straight-direction}
+Es posible construir una copia de un segmento de recta dado en la dirección de otra recta.
+\end{theorem}
+
+El significado de ``dirección'' es que la línea definida por dos puntos $A',H'$ tiene un ángulo $\theta$ relativo a algún eje y el objetivo es construir $\overline{AS}=\overline{PQ}$ tal que $\overline{AS}$ tenga el mismo ángulo $\theta$ relativo a ese eje (Fig.~\ref{f.se-copy1}).
+
+\begin{proof}
+Por Thm.~\ref{thm.parallel-equal} es posible construir un segmento de recta $\overline{AH}$ tal que $\overline{AH}\parallel\overline{A'H'}$, y construir un segmento de recta $\overline{AK}$ tal que $\overline{AK}\parallel\overline{PQ}$ y $\overline{AK}=\overline{PQ}$.
+$\angle HAK=\theta$ por lo que queda por encontrar un punto $S$ en $\overline{AH}$ de modo que $\overline{AS}=\overline{PQ}$.
+
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=.7]
+\coordinate (A) at (0,0);
+\coordinate (P) at (3cm,2);
+\coordinate (Q) at (4.5cm,2);
+\draw (P) -- (Q);
+\node[left] at (P) {$P$};
+\node[right] at (Q) {$Q$};
+\coordinate (A1) at (-3,1);
+\draw (A1) -- ++(60:3cm) coordinate (H1);
+\draw (A1) -- ++(0:2cm);
+\node[left] at (A1) {$A'$};
+\node[left] at (H1) {$H'$};
+\draw (A) -- ++(60:1.5cm) coordinate (S);
+\node[left] at (S) {$S$};
+\draw (A) -- ++(1.5,0);
+\node[left] at (A) {$A$};
+\node[above right,xshift=4pt] at (A1) {$\theta$};
+\node[above right,xshift=4pt] at (A) {$\theta$};
+\draw (A) -- ++(60:3cm) coordinate (H);
+\node[left] at (H) {$H$};
+\draw (A) -- ++(1.5,0) coordinate (K);
+\node[right] at (K) {$K$};
+\vertex{P};
+\vertex{Q};
+\vertex{A};
+\vertex{S};
+\end{tikzpicture}
+\end{center}
+\caption{Copiar un segmento de línea en una dirección determinada}\label{f.se-copy1}
+\end{figure}
+
+Construir dos radios $\overline{OU}, \overline{OV}$ de la circunferencia fija que sean paralelos a $\overline{AH}, \overline{AK}$, respectivamente, y construir una semirrecta que pase por $K$ paralela a $\overline{UV}$. Denotemos su intersección con $\overline{AH}$ por $S$ (Fig.~\ref{f.se-copy3}). Por construcción, $\overline{AH}\parallel\overline{OU}$ y $\overline{AK}\parallel\overline{OV}$, por lo que $\angle SAK=\angle HAK=\angle UOV=\theta$. Si $\overline{SK}\parallel\overline{UV}$ y $\triangle SAK\sim\triangle UOV$ por ángulo-ángulo-ángulo, $\triangle UOV$ es isósceles porque $\overline{OU}, \overline{OV}$ son radios de la misma circunferencia. Por lo tanto, $\triangle SAK$ es isósceles y $\overline{AS}=\overline{AK}=\overline{PQ}$.
+\end{proof}
+
+\begin{figure}[b]
+\begin{center}
+\begin{tikzpicture}[scale=.7]
+\coordinate (A) at (0,0);
+\coordinate (P) at (3cm,2);
+\coordinate (Q) at (4.5cm,2);
+\draw (P) -- (Q);
+\node[left] at (P) {$P$};
+\node[right] at (Q) {$Q$};
+\coordinate (A1) at (-3,1);
+\draw (A1) -- ++(60:3cm) coordinate (H1);
+\node[left] at (A1) {$A'$};
+\node[left] at (H1) {$H'$};
+\node[left] at (A) {$A$};
+\draw (A) -- ++(60:3cm) coordinate (H);
+\node[left] at (H) {$H$};
+\draw (A) -- ++(1.5,0) coordinate (K);
+\node[right] at (K) {$K$};
+\draw (A) -- (K);
+\path (A) -- ++(60:1.5cm) coordinate (S);
+\node[right] at (S) {$S$};
+\draw (K) -- ($(K)!1.8!(S)$);
+\node[above right,xshift=4pt] at (A) {$\theta$};
+\node[above right,xshift=4pt] at (A1) {$\theta$};
+\draw (A1) -- ++(1.5,0);
+\vertex{P};
+\vertex{Q};
+\begin{scope}[xshift=3cm]
+\coordinate (O) at (6,1);
+\draw[name path=circle] (O) circle[radius=2.5cm];
+\node[above left] at (O) {$O$};
+\path[name path=u] (O) -- ++(60:2.5cm);
+\path[name path=v] (O) -- ++(2.5,0);
+\path[name intersections={of=circle and u,by={U}}];
+\path[name intersections={of=circle and v,by={V}}];
+\node[above right] at (U) {$U$};
+\node[right] at (V) {$V$};
+\draw (O) -- (U) -- (V) -- cycle;
+\node[above right,xshift=4pt] at (O) {$\theta$};
+\vertex{O};
+\end{scope}
+\end{tikzpicture}
+\end{center}
+\caption{Utilizar el círculo fijo para copiar el segmento de línea}\label{f.se-copy3}
+\end{figure}
+
+\section{Construcción de un segmento de línea como cociente de segmentos}\label{s.relative}
+
+\begin{theorem}\label{thm.straight-relative}
+Dados segmentos de recta de longitudes $n, m, s$, es posible construir un segmento de recta de longitud:
+\[x=\displaystyle\frac{n}{m}s\,.\]
+\end{theorem}
+
+\begin{proof}
+Elegir puntos $A,B,C$ que no estén en la misma recta y construir rayos $\overline{AB}, \overline{AC}$. Por Thm.~\ref{thm.straight-direction} se pueden construir puntos $M,N,S$ tales que $\overline{AM}= m$, $\overline{AN} =n$, $\overline{AS}=s$. Por Thm.~\ref{thm.straight-parallel} construir una recta que pase por $N$ paralela a $\overline{MS}$ que corte a $\overline{AC}$ en $X$ y etiquetar $\overline{AX}$ por $x$ (Fig.~\ref{f.se-three2}). $\triangle MAS\sim\triangle NAX$ por ángulo-ángulo-ángulo así $\displaystyle\frac{m}{n}=\displaystyle\frac{s}{x}$ y $x=\displaystyle\frac{n}{m}s$.
+\end{proof}
+
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=.8]
+\coordinate (A) at (0,0);
+\draw[name path=ac] (A) node[left] {$A$} -- ++(7,0) node[right] {$C$};
+\draw (A) -- ++(40:5cm) node[right] {$B$};
+\path (A) -- node[above,xshift=-2pt] {$m$} ++(40:3cm) coordinate (M) node[above left] {$M$};
+\path (A) -- ++(40:4cm) coordinate (N) node[above left] {$N$};
+\path[name path=ms] (M) -- ++(-50:3.5cm);
+\path[name path=nx] (N) -- ++(-50:4cm);
+\path[name intersections={of=ac and ms,by={S}}];
+\path[name intersections={of=ac and nx,by={X}}];
+\node[below] at (S) {$S$};
+\node[below] at (X) {$X$};
+\path (A) -- node[below] {$s$} (S);
+\draw (S) -- (M);
+\draw (X) -- (N);
+\draw[<->] ($(A)+(0,-.8)$) -- node[fill=white] {$x$} ($(X)+(0,-.8)$);
+\draw[<->] ($(A)+(-.6,.8)$) -- node[fill=white] {$n$} ++(40:3.9cm);
+\end{tikzpicture}
+\end{center}
+\caption{Triángulos semejantes para construir la relación de longitudes}\label{f.se-three2}
+\end{figure}
+
+\section{Construcción de una raíz cuadrada}\label{s.root}
+
+\begin{theorem}\label{thm.straight-sqrt}
+Dados segmentos de recta de longitudes $a,b$, es posible construir un segmento de recta de longitud $\sqrt{ab}$.
+\end{theorem}
+
+\begin{proof}
+Queremos expresar $x=qrt{ab}$ como $x=\displaystyle\frac{n}{m}s$ para usar Thm.~\ref{thm.straight-relative}.
+\begin{itemize}
+\setlength{\itemsep}{0pt}
+\item Para $n$ utilizamos $d$, el diámetro del círculo fijo.
+\item Para $m$ utilizamos $t=a+b$ que se puede construir a partir de $a,b$ mediante Thm.~\ref{thm.straight-direction}.
+\item Definimos $s=\sqrt{hk}$ donde $h,k$ se definen como expresiones sobre las longitudes $a,b,t,d$.
+\end{itemize}
+Definir $h=\displaystyle\frac{d}{t}a$ y $k=\displaystyle\frac{d}{t}b$ y luego calcular:
+\begin{eqnarray*}
+x&=&\sqrt{ab}=\sqrt{\frac{th}{d}\frac{tk}{d}}=\sqrt{\left(\frac{t}{d}\right)^2hk}=\frac{t}{d}\sqrt{hk}=\frac{t}{d}s\\
+h+k &=& \frac{d}{t}a + \frac{d}{t}b = \frac{d(a+b)}{t} = \frac{dt}{t} = d\,.
+\end{eqnarray*}
+
+Por Thm.~\ref{thm.straight-direction} construir $\overline{HA}= h$ en un diámetro $\overline{HK}$ del círculo fijo. De $h+k=d$ tenemos $\overline{AK}=k$ (Fig.~\ref{f.se-sqrt}). Por Thm.~\ref{thm.straight-perp} construimos una perpendicular a $\overline{HK}$ en $A$ y denotamos la intersección de esta recta con la circunferencia por $S$. $\overline{OS}=\overline{OK}=d/2$ y $\overline{OA}=(d/2)-k$. 
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=.7]
+\coordinate (O) at (0,0);
+\coordinate (H) at (-3,0);
+\coordinate (K) at (3,0);
+\node at (-2.4,2.4) {$c$};
+\draw (H) -- (K);
+\draw[name path=circle] (O) circle[radius=3cm];
+\node[below] at (O) {$O$};
+\node[left] at (H) {$H$};
+\node[right] at (K) {$K$};
+\path[name path=as] (1,0) coordinate (A) -- ++(0,3.2);
+\node[below] at (A) {$A$};
+\path[name intersections={of=circle and as,by={S}}];
+\node[above] at (S) {$S$};
+\draw (A) -- node[right] {$s$} (S);
+\path (H) -- node[above] {$h$} (A);
+\path (A) -- node[above] {$k$} (K);
+\draw (O) -- node[left,xshift=-2pt] {$\displaystyle\frac{d}{2}$} (S);
+\node at (.5,-1.5) {$\displaystyle\frac{d}{2}-k$};
+\draw[->] (.5, -1.2) -- ++(0,1);
+\draw[rotate=90] (A) rectangle +(8pt,8pt);
+\vertex{O};
+\end{tikzpicture}
+\end{center}
+\caption{Construcción de una raíz cuadrada}\label{f.se-sqrt}
+\end{figure}
+
+Por el Teorema de Pitágoras:
+\begin{eqnarray*}
+s^2&=& \left(\frac{d}{2}\right)^2 - \left(\frac{d}{2}-k\right)^2\\
+&=& \left(\frac{d}{2}\right)^2 - \left(\frac{d}{2}\right)^2 + 2\frac{dk}{2} - k^2\\
+&=& k(d-k) = kh\\
+s&=&\sqrt{hk}\,.
+\end{eqnarray*}
+
+Ahora $x=\displaystyle\frac{t}{d}s$ se puede construir por Thm.~\ref{thm.straight-relative}.
+\end{proof}
+
+\section{Construcción de la intersección de una recta y una circunferencia}\label{s.line-circle-straight}
+
+\begin{theorem}
+Dada una recta $l$ y una circunferencia $c(O,r)$, es posible construir sus puntos de intersección (Fig.~\ref{f.se-line-circle1}).
+\end{theorem}
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=.7]
+\coordinate (O) at (0,0);
+\node[below right] at (O) {$O$};
+\vertex{O};
+\draw[thick,dashed,name path=circle] (O) circle[radius=3cm];
+\draw (O) -- node[above] {$r$} ++(-130:3cm) coordinate (R);
+\draw[name path=l] (O) ++(170:4cm) --
+  node[below, near end,xshift=30pt,yshift=10pt] {$l$} ++(20:8cm);
+\path[name intersections={of=circle and l,by={Y,X}}];
+\node[above left] at (X) {$X$};
+\node[above right] at (Y) {$Y$};
+\end{tikzpicture}
+\end{center}
+\caption{Construcción de los puntos de intersección de una recta y una circunferencia (1)}\label{f.se-line-circle1}
+\end{figure}
+
+\begin{proof}
+Por Thm.~\ref{thm.straight-perp} es posible construir una perpendicular desde el centro del círculo $O$ a la recta $l$. La intersección de $l$ con la perpendicular se denota por $M$. $\overline{OM}$ biseca la cuerda $\overline{XY}$, donde $X, Y$ son las intersecciones de la recta con la circunferencia (Fig.~\ref{f.se-line-circle2}). Definir $\overline{XY}=2s$ y $\overline{OM}=t$. Tenga en cuenta que $s,X,Y$ son sólo definiciones no se han construido entidades.
+\begin{figure}[b]
+\begin{center}
+\begin{tikzpicture}[scale=.7]
+\coordinate (O) at (0,0);
+\draw[thick,dashed,name path=circle] (O) circle[radius=3cm];
+\node[below right] at (O) {$O$};
+\vertex{O};
+\path (O) --  ++(-130:3cm) coordinate (R);
+\node[below left,yshift=2pt,xshift=2pt] at (R) {$R$};
+\draw[name path=l] (O) ++(170:4cm) --
+  node[below, near end,xshift=30pt,yshift=10pt] {$l$} ++(20:8cm);
+\path[name intersections={of=circle and l,by={Y,X}}];
+\node[above left] at (X) {$X$};
+\node[above right] at (Y) {$Y$};
+\draw (O) -- node[below] {$r$} (X);
+\path (X) -- ($(X)!.5!(Y)$) coordinate (M);
+\node[above] at (M) {$M$};
+\draw (O) -- node[right] {$t$} (M);
+\path (X) -- node[above] {$s$} (M);
+\path (M) -- node[above] {$s$} (Y);
+\draw (O) ++(170:4cm) -- ++(20:3.1cm) -- ++(-70:10pt) -- ++(20:10pt);
+\draw (O) -- node[below] {$t$} +(50:2) coordinate (RTT);
+\draw (O) -- node[below] {$t$} +(-130:2) coordinate (RT);
+\vertex{RT};
+\draw (RT) -- node[right,yshift=-2pt] {$r-t$} ($(RT)+(-130:1cm)$);
+\vertex{RTT};
+\draw[<->] ($(RT)+(.5cm,-1.6cm)$) -- node[fill=white] {$r+t$}+(50:5);
+\end{tikzpicture}
+\end{center}
+\caption{Construcción de los puntos de intersección de una recta y una circunferencia (2)}\label{f.se-line-circle2}
+\end{figure}
+
+Por el Teorema de Pitágoras $s^2=r^2-t^2=(r+t)(r-t)$. Por Thm.~\ref{thm.straight-direction} es posible construir segmentos de recta de longitud $t$ a partir de $O$ en las dos direcciones $\overline{OR}$ y $\overline{RO}$. El resultado son dos segmentos de recta de longitud $r+t,r-t$.
+
+Por Thm.~\ref{thm.straight-sqrt} se puede construir un segmento de recta de longitud $s=\sqrt{(r+t)(r-t)}$, y por Thm.~\ref{thm.straight-direction} se pueden construir segmentos de línea de longitud $s$ desde $M$ a lo largo de $l$ en ambas direcciones. Sus otros extremos son los puntos de intersección de $l$ y $c$.
+\end{proof}
+
+\section{Construcción de la intersección de dos circunferencias}\label{s.two-circles}
+
+\begin{theorem}
+Dadas dos circunferencias $c(O_1,r_1), c(O_2,r_2)$, es posible construir sus puntos de intersección.
+\end{theorem}
+
+\begin{proof}
+Construye $\overline{O_1O_2}$ y marca su longitud $t$ (Fig.~\ref{f.se-circle-circle1}).
+Etiquetar por $A$ ser el punto de intersección de $\overline{O_1O_2}$ y $\overline{XY}$, y etiquetar $q=\overline{O_1A}$, $x=\overline{XA}$ (Fig.~\ref{f.se-circle-circle2}). $A$ aún no se ha construido, pero si $q,x$ se construyen entonces por Thm.~\ref{thm.straight-direction} se puede construir el punto $A$ a la longitud $q$ de $O_1$ en la dirección $\overline{O_1O_2}$.
+
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+\coordinate (O1) at (0,0);
+\coordinate (O2) at (2.5,0);
+\node[below left] at (O1) {$O_1$};
+\node[below right] at (O2) {$O_2$};
+\vertex{O1};
+\vertex{O2};
+\draw[thick,dashed,name path=circle1] (O1) circle[radius=2cm];
+\draw[thick,dashed,name path=circle2] (O2) circle[radius=1.6cm];
+\path [name intersections={of=circle1 and circle2,by={X,Y}}];
+\node[above,yshift=4pt] at (X) {$X$};
+\node[below,yshift=-4pt] at (Y) {$Y$};
+\draw (O1) -- node[above] {$r_1$} ++(160:2cm);
+\draw (O2) -- node[above] {$r_2$} ++(30:1.6cm);
+\draw (O1) -- (O2);
+\node at (-1.7,1.6) {$c_1$};
+\node at (3.8,1.4) {$c_2$};
+\draw[<->] (0,-.6) -- node[fill=white] {$t$} +(2.5,0);
+\end{tikzpicture}
+\end{center}
+\caption{Construcción de la intersección de dos circunferencias (1)}\label{f.se-circle-circle1}
+\end{figure}
+
+\begin{figure}[b]
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+\coordinate (O1) at (0,0);
+\coordinate (O2) at (2.5,0);
+\vertex{O1};
+\vertex{O2};
+\node[below left] at (O1) {$O_1$};
+\node[below right] at (O2) {$O_2$};
+\draw[thick,dashed,name path=circle1] (O1) circle[radius=2cm];
+\draw[thick,dashed,name path=circle2] (O2) circle[radius=1.6cm];
+\path [name intersections={of=circle1 and circle2,by={X,Y}}];
+\node[above,yshift=4pt] at (X) {$X$};
+\node[below,yshift=-4pt] at (Y) {$Y$};
+\draw (O1) -- node[above,xshift=-4pt] {$r_1$} (X);
+\draw (O2) -- node[above,xshift=4pt] {$r_2$} (X);
+\draw[name path=oo] (O1) -- (O2);
+\node at (-1.7,1.6) {$c_1$};
+\node at (3.8,1.4) {$c_2$};
+\draw[name path=xy] (X) -- (Y);
+\path[name intersections={of=xy and oo,by={A}}];
+\node[below left] at (A) {$A$};
+\draw (A) rectangle +(6pt,6pt);
+\path (O1) -- node[below,xshift=-2pt] {$q$} (A);
+\path (X) -- node[left,yshift=-2pt] {$x$} (A);
+\draw[<->] (0,-.6) -- node[fill=white] {$t$} +(2.5,0);
+\end{tikzpicture}
+\end{center}
+\caption{Construcción de la intersección de dos circunferencias (2)}\label{f.se-circle-circle2}
+\end{figure}
+
+Una vez construido $A$, por Thm.~\ref{thm.straight-perp} se puede construir una perpendicular a $\overline{O_1O_2}$ en $A$, y por Thm.~\ref{thm.straight-direction} es posible construir segmentos de recta de longitud $x$ desde $A$ en ambas direcciones a lo largo de la perpendicular. Sus otros puntos extremos son los puntos de intersección de las circunferencias.
+
+\noindent\textbf{Construcción de la longitud $q$:} Definir $d=\sqrt{r_1^2+t^2}$, la hipotenusa de un triángulo rectángulo, que se puede construir a partir de las longitudes conocidas $r_1,t$. Obsérvese que $\triangle O_1XO_2$ no es necesariamente un triángulo rectángulo; el triángulo rectángulo puede construirse en cualquier parte del plano. En el triángulo rectángulo $\triangle XAO_1$, $\cos\angle XO_1A=q/r_1$. Por la Ley de los Cosenos para $\triangle XO_1O_2$:
+\begin{eqnarray*}
+r_2^2 &=& t^2 + r_1^2 - 2r_1t\cos\angle XO_1O_2\\
+&=& t^2 + r_1^2 - 2tq\\
+2tq &=& (t^2+r_1^2) - r_2^2=d^2-r_2^2\\
+q&=&\frac{(d+r_2)(d-r_2)}{2t}\,.
+\end{eqnarray*}
+Por Thm.~\ref{thm.straight-direction} estas longitudes se pueden construir y por Thm.~\ref{thm.straight-relative} $q$ se puede construir a partir de $d+r_2,d-r_2,2t$.
+
+\noindent\textbf{Construcción de la longitud $x$:} Por el Teorema de Pitágoras:
+\[
+x=\sqrt{r_1^2-q^2}=\sqrt{(r_1+q)(r_1-q)}\,.
+\]
+Por Thm.~\ref{thm.straight-direction}, $h =r_1+ q,k= r_1 - q$ puede construirse, al igual que $x=\sqrt{hk}$ by Thm.~\ref{thm.straight-sqrt}.
+\end{proof}
+
+\subsection*{¿Cuál es la sorpresa?}
+
+El compás es necesario porque una regla sólo puede calcular las raíces de ecuaciones lineales y no valores como $\sqrt{2}$, la hipotenusa de un triángulo rectángulo isóceles con lados de longitud $1$. Sin embargo, es sorprendente que la existencia de una sola circunferencia, independientemente de la posición de su centro y de la longitud de su radio, sea suficiente para realizar cualquier construcción que sea posible con una regla y un compás.
+
+\subsection*{Fuentes}
+
+Este capítulo se basa en el problema $34$ de \cite{dorrie1} reelaborado por Michael Woltermann \cite{dorrie2}.
