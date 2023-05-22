@@ -348,37 +348,43 @@ Considere los números $1,\ldots,n\!+\!1$ dispuestos en un círculo. Suprima cad
 Sea $n+1=41$ y $q=3$. Ordena los números en un círculo:
 \[
 \begin{array}{rrrrrrrrrrrrrrrrrrrrrrr}
-\rightarrow&1&2&3&4&5&6&7&8&9&10&
-           11&12&13&14&15&16&17&18&19&20&21&
-\downarrow\\
-\uparrow\quad&41&40&39&38&37&36&35&34&33&
-32&31&30&29&28&27&26&25&24&23&22&
-&\leftarrow
+\rightarrow&1&2&3&4&5&6&7&8&9&10&11&12&13&14\\
+&\uparrow&&&&&&&&&&&&&15\\
+&41&&&&&&&&&&&&&16\\
+&40&&&&&&&&&&&&&17\\
+&39&&&&&&&&&&&&&18\\
+&38&&&&&&&&&&&&&19\\
+&37&&&&&&&&&&&&&20\\
+&36&&&&&&&&&&&&&21\\
+&35&34&33&32&31&30&29&28&27&26&25&24&23&22\\
 \end{array}
 \]
 La primera ronda de supresiones conduce a:
 \[
 \begin{array}{rrrrrrrrrrrrrrrrrrrrrrr}
-\rightarrow&1&2&\not\! 3&4&5&\not\! 6&7&8&\not\! 9&10&
-           11&\not\!\! 12&13&14&\not\!\! 15&16&17&\not\!\! 18&19&20&\not\!\! 21&
-\downarrow\\
-	\uparrow\quad&41&40&\not\!\! 39&38&37&\not\!\! 36&35&34&\not\!\! 33&
-32&31&\not\!\! 30&29&28&\not\!\! 27&26&25&\not\!\! 24&23&22&
-&\leftarrow
+\rightarrow&1&2&\not\! 3&4&5&\not\! 6&7&8&\not\! 9&10&11&\not\!\! 12&13&14\\
+&\uparrow&&&&&&&&&&&&&\not\!\! 15\\
+&41&&&&&&&&&&&&&16\\
+&40&&&&&&&&&&&&&17\\
+&\not 39&&&&&&&&&&&&&\not\!\! 18\\
+&38&&&&&&&&&&&&&19\\
+&37&&&&&&&&&&&&&20\\
+&\not 36&&&&&&&&&&&&&\not\!\! 21\\
+&35&34&\not\!\! 33&32&31&\not\!\! 30&29&28&\not\!\! 27&26&25&\not\!\! 24&23&22\\
 \end{array}
 \]
 Una vez eliminados los números suprimidos, se puede escribir como:
 \[
 \begin{array}{rrrrrrrrrrrrrrrrrrrrrrrrrrrr}
-1&2&4&5&7&8&10&11&13&14&16&17&19&20&
-22&23&25&26&28&29&31&32&34&35&37&38&40&41
+1&2&4&5&7&8&10&11&13&14&16&17&19&20&\\
+41&40&38&37&35&34&32&31&29&28&26&25&23&22&
 \end{array}
 \]
 La segunda ronda de supresiones (a partir de la última supresión de $39$) conduce a:
 \[
 \begin{array}{rrrrrrrrrrrrrrrrrrrrrrrrrrrr}
-\not\!\! 1&2&4&\not\!\! 5&7&8&\not\!\! 10&11&13&\not\!\! 14&16&17&\not\!\! 19&20&
-22&\not\!\! 23&25&26&\not\!\! 28&29&31&\not\!\! 32&34&35&\not\!\! 37&38&40&\not\!\! 41
+\not\!\! 1&2&4&\not\!\! 5&7&8&\not\!\! 10&11&13&\not\!\! 14&16&17&\not\!\! 19&20&\\
+\not\!\!41&40&38&\not\!\!37&35&34&\not\!\!32&31&29&\not\!\!28&26&25&23&\not\!\!22&
 \end{array}
 \]
 Seguimos borrando uno de cada tres números hasta que sólo quede uno:
@@ -418,9 +424,9 @@ El primer número eliminado en la primera ronda es el número $q$ y los números
 El conteo para encontrar la siguiente eliminación comienza con $q+1$. Mapeando $1,\ldots,n$ en esta secuencia obtenemos:
 \[
 \begin{array}{cccccccccc}
-1&\quad 2&\ldots& n-q&\quad n+1-q&\quad n+2-q&\ldots&n-1&\quad n& \!\!\!\!\!\!\pmod {n\!+\!1}\\
-\downarrow&\quad \downarrow&&\downarrow&\quad \downarrow&\quad \downarrow&&\downarrow&\quad \downarrow\\
-q+1&\quad q+2&\ldots&n&\quad n+1&\quad 1&\ldots&q-2&\quad q-1& \!\!\!\pmod {n\!+\!1}\,.
+1&\, 2&\ldots& n-q&\, n+1-q&\, n+2-q&\ldots&n-1&\, n&\\
+\downarrow&\, \downarrow&&\downarrow&\, \downarrow&\, \downarrow&&\downarrow&\, \downarrow\\
+q+1&\, q+2&\ldots&n&\, n+1&\, 1&\ldots&q-2&\, q-1\,.
 \end{array}
 \]
 Recuerda que los cálculos son módulo $n+1$:

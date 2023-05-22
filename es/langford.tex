@@ -120,7 +120,7 @@ Si $n$ es múltiplo de $4$, el producto es divisible por $4$.
 
 Para introducir la idea de la segunda prueba, considere cómo podría ser una solución para $n=4$. En las tablas siguientes las posiciones de las apariciones de 4 son 1 y 6, y las posiciones de las apariciones de 2 son 5 y 8. En ambos casos, una posición es impar y la otra par. En ambos casos, una posición es impar y la otra par. 
 \[
-\addtolength{\arraycolsep}{4pt}
+%\addtolength{\arraycolsep}{4pt}
 \begin{array}{|c|c|c|c|c|c|c|c|}
 \hline
 1&2&3&4&5&6&7&8\\
@@ -146,7 +146,7 @@ que es un número impar. Para que la suma de dos números sea impar, uno debe se
 
 Comprobemos ahora las posiciones de los números impares. Las posiciones de las apariciones de 1 son 2 y 4, ambos números pares, y las posiciones de las apariciones de 3 son 3 y 7, ambos números impares.
 \[
-\addtolength{\arraycolsep}{4pt}
+%\addtolength{\arraycolsep}{4pt}
 \begin{array}{|c|c|c|c|c|c|c|c|}
 \hline
 1&2&3&4&5&6&7&8\\
@@ -173,7 +173,7 @@ Las posiciones $1,2,\ldots,2n-1,2n$ contienen igual número de posiciones pares 
 
 Cuando se colocan dos ocurrencias de un número par, cubren una posición par y una impar, por lo que la paridad sigue siendo la misma:
 \[
-\addtolength{\arraycolsep}{4pt}
+%\addtolength{\arraycolsep}{4pt}
 \begin{array}{|c|c|c|c|c|c|c|c|}
 \hline
 1&2&3&4&5&6&7&8\\
@@ -192,7 +192,7 @@ Cuando se colocan dos ocurrencias de un número par, cubren una posición par y 
 \]
 Cuando se colocan dos ocurrencias de un número impar, la paridad se convierte en $+2$ o $-2$, por lo que debemos ser capaces de asociar este par con un par de ocurrencias de \emph{otro} número impar que se coloquen en posiciones que equilibren la paridad:
 \[
-\addtolength{\arraycolsep}{4pt}
+%\addtolength{\arraycolsep}{4pt}
 \begin{array}{|c|c|c|c|c|c|c|c|}
 \hline
 1&2&3&4&5&6&7&8\\
@@ -235,8 +235,6 @@ La hipótesis inductiva es que el teorema es cierto para $\{1,\ldots,4k-j\}$, $k
 \end{proof}
 
 %%%%%%%%%%%% Solution for L(4) %%%%%%%%%%%%%%%%%%
-
-
 
 \section{Solución para $L(4)$}\label{s.langford-four}
 

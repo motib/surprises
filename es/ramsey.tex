@@ -5,7 +5,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 La teoría de Ramsey es una rama de la combinatoria que plantea preguntas del tipo ¿Qué tamaño debe tener un conjunto para que, si se divide en subconjuntos, al menos uno de ellos tenga una determinada propiedad?
-Los resultados de la teoría de Ramsey son difíciles de demostrar y quedan muchos problemas abiertos. En este capítulo presentamos casos sencillos de cuatro problemas para dar una idea de este fascinante tema: Triples de Schur (Secc.~\ref{s.schur})---triplos de enteros tales que $a+b=c$, triples pitagóricos (Secc.~\ref{s.pyth})---triplos de enteros tales que $a^2+b^2=c^2$, problema de van der Waarden (Secc. El problema de van der Waarden (Sección ~\ref{s.van}) que se refiere a secuencias de números, y el teorema de Ramsey (Sección~\ref{s.ramsey}) sobre grafos coloreados. La sección~\ref{s.bounds} muestra cómo se puede utilizar el método probabilístico en combinatoria para desarrollar una cota inferior para los números de Ramsey.
+Los resultados de la teoría de Ramsey son difíciles de demostrar y quedan muchos problemas abiertos. En este capítulo presentamos casos sencillos de cuatro problemas para dar una idea de este fascinante tema: Triples de Schur (Secc.~\ref{s.schur})---triplos de enteros tales que $a+b=c$, triples pitagóricos (Secc.~\ref{s.pyth})---triplos de enteros tales que $a^2+b^2=c^2$, el problema de van der Waarden (Sección ~\ref{s.van}) que se refiere a secuencias de números, y el teorema de Ramsey (Sección~\ref{s.ramsey}) sobre grafos coloreados. La sección~\ref{s.bounds} muestra cómo se puede utilizar el método probabilístico en combinatoria para desarrollar una cota inferior para los números de Ramsey.
 
 El problema de los triples pitagóricos se ha resuelto recientemente con ayuda de ordenadores, utilizando un método relativamente nuevo llamado resolución SAT. Para los lectores familiarizados con la lógica proposicional, la sección~\ref{s.sat} ofrece una visión general de cómo se hace.
 
@@ -121,7 +121,7 @@ Para todo $n\leq 7824$, existe \emph{alguna} descomposición de $S(n)$ en dos su
 \begin{theorem}
 Para todo $n\geq 7825$, en \emph{todas} las descomposiciones de $S(n)$ en dos subconjuntos disjuntos al menos un subconjunto \emph{contiene} un triple pitagórico.
 \end{theorem}
-Es imposible comprobar todas las descomposiciones $2^{7825}$ de $S(7825)$. Si pudiéramos comprobar una descomposición cada microsegundo, $2^{7825}\$; \textrm{microsegundos}\$aproximadamente 10^{600}\$; \textrm{años}$, mientras que la edad estimada del universo es sólo de unos $10^{10}$ años.
+Es imposible comprobar todas las descomposiciones $2^{7825}$ de $S(7825)$. Si pudiéramos comprobar una descomposición cada microsegundo, $2^{7825}$; \textrm{microsegundos}$\;\approx 10^{600}\$; \textrm{años}$, mientras que la edad estimada del universo es sólo de unos $10^{10}$ años.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -174,7 +174,7 @@ Bartel L. van der Waerden planteó el siguiente problema: Para cualquier número
 
 \section{Teorema de Ramsey}\label{s.ramsey}
 
-Colorear las aristas de $K_5$, el grafo completo en $5$ vértices, con dos colores como se muestra en la Fig.~\ref{f.ramsey5}. No hay subgrafos monocromáticos $K_3$ (triángulos) en el gráfico. La figura~\ref{f.ramsey6} muestra una coloración de $K_6$ y es fácil ver que hay triángulos monocromáticos $\triangle ACE$ y $\triangle BDF$. En esta sección demostramos un caso sencillo de un teorema de Frank P. Ramseyindex{Ramsey, Frank P.} sobre la existencia de subconjuntos con cierta propiedad.
+Colorear las aristas de $K_5$, el grafo completo en $5$ vértices, con dos colores como se muestra en la Fig.~\ref{f.ramsey5}. No hay subgrafos monocromáticos $K_3$ (triángulos) en el gráfico. La figura~\ref{f.ramsey6} muestra una coloración de $K_6$ y es fácil ver que hay triángulos monocromáticos $\triangle ACE$ y $\triangle BDF$. En esta sección demostramos un caso sencillo de un teorema de Frank P. Ramsey sobre la existencia de subconjuntos con cierta propiedad.
 \begin{figure}[ht]
 \begin{minipage}{.45\textwidth}
 \begin{center}
@@ -385,7 +385,7 @@ Cuando el solucionador SAT se le da esta fórmula, responde que la fórmula es i
 
 \subsection{Triples pitagóricos}\index{Pythagorean triples}
 
-Heuleindex{Heule, Marijn J.H.} y Kullmannindex{Kullman, Oliver} resolvieron el problema de los triples pitagóricos utilizando un solucionador SAT altamente optimizado. Había una diferencia significativa en la eficiencia entre encontrar una descomposición que no tenga triples pitagóricos (sólo se necesita una descomposición), y demostrar que todas las descomposiciones tienen un triple pitagórico (hay que comprobarlas todas). Demostrar que para todas las $S(n)$, $1\leq n\leq 7824$, hay una descomposición sin triples llevó sólo un minuto de tiempo de cálculo, mientras que demostrar que cada descomposición de $S(7825)$ tiene un triple llevó unos dos días de tiempo de cálculo para un ordenador con $800$ \emph{cores} (procesadores) trabajando en paralelo, en total $40.000$ horas de tiempo de cálculo.
+Heule y Kullmann resolvieron el problema de los triples pitagóricos utilizando un solucionador SAT altamente optimizado. Había una diferencia significativa en la eficiencia entre encontrar una descomposición que no tenga triples pitagóricos (sólo se necesita una descomposición), y demostrar que todas las descomposiciones tienen un triple pitagórico (hay que comprobarlas todas). Demostrar que para todas las $S(n)$, $1\leq n\leq 7824$, hay una descomposición sin triples llevó sólo un minuto de tiempo de cálculo, mientras que demostrar que cada descomposición de $S(7825)$ tiene un triple llevó unos dos días de tiempo de cálculo para un ordenador con $800$ \emph{cores} (procesadores) trabajando en paralelo, en total $40.000$ horas de tiempo de cálculo.
 
 El uso de ordenadores en matemáticas plantea naturalmente la pregunta: ¿Podemos fiarnos de una prueba generada por un ordenador? Por supuesto, incluso las pruebas matemáticas ``ordinarias'' pueden ser incorrectas (Sect.~\ref{s.kempe}), pero nuestra experiencia con los frecuentes fallos informáticos, así como la opacidad de los grandes programas informáticos, nos hace más sensibles a los errores potenciales en las pruebas generadas por ordenador.
 

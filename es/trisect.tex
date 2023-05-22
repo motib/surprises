@@ -6,7 +6,7 @@
 
 Es imposible trisecar un ángulo arbitrario (dividir el ángulo en tres partes iguales) utilizando sólo una regla y un compás. La trisección requiere la construcción de raíces cúbicas, pero una regla y un compás sólo pueden construir longitudes que son expresiones construidas a partir de números enteros, los cuatro operadores aritméticos y raíces cuadradas. Esto fue demostrado por Pierre Wantzel en 1837. Sin embargo, innumerables aficionados siguen intentando trisecar un ángulo. Sus construcciones son aproximaciones aunque están convencidos de que son correctas. La sección~\ref{s.trisect-approx} presenta dos construcciones de este tipo, desarrolla fórmulas para los ángulos y muestra los errores en las aproximaciones.
 
-Los matemáticos griegos descubrieron que si se permiten otros instrumentos, los ángulos se pueden trisecar. La sección~\ref{s.neusis} explica una construcción de Arquímedesindex{Archimedes} utilizando un instrumento sencillo llamado \emph{neusis} y la sección~\ref{s.neusis-doubling} muestra cómo doblar un cubo utilizando el neusis. La sección~\ref{s.q} presenta una construcción para la trisección por Hipias utilizando un instrumento llamado \emph{cuadratriz}. El resto del capítulo contiene una prueba de la imposibilidad de trisección de un ángulo. La sección ~\ref{s.trisect-constructible} caracteriza los números construibles, la sección~\ref{s.trisect-poly} relaciona los números construibles con las raíces de los polinomios y la sección~\ref{s.trisect-impossible} utiliza esta teoría para demostrar que la trisección de un ángulo y la duplicación de un cubo son imposibles.
+Los matemáticos griegos descubrieron que si se permiten otros instrumentos, los ángulos se pueden trisecar. La sección~\ref{s.neusis} explica una construcción de Arquímedes utilizando un instrumento sencillo llamado \emph{neusis} y la sección~\ref{s.neusis-doubling} muestra cómo doblar un cubo utilizando el neusis. La sección~\ref{s.q} presenta una construcción para la trisección por Hipias utilizando un instrumento llamado \emph{cuadratriz}. El resto del capítulo contiene una prueba de la imposibilidad de trisección de un ángulo. La sección ~\ref{s.trisect-constructible} caracteriza los números construibles, la sección~\ref{s.trisect-poly} relaciona los números construibles con las raíces de los polinomios y la sección~\ref{s.trisect-impossible} utiliza esta teoría para demostrar que la trisección de un ángulo y la duplicación de un cubo son imposibles.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -797,7 +797,7 @@ La profundidad es $3$ porque a la derecha de la expresión tenemos $\sqrt{17}$ q
 Una expresión de profundidad $n$ puede expresarse como $a+b\sqrt{c}$ donde $a,b,c$ son expresiones de profundidad como máximo $n-1$.
 \end{theorem}
 \begin{proof}
-Cálculos sencillos muestran que las expresiones $(a_1+b_1\sqrt{c}),\mathit{op}\,(a_2+b_2sqrt{c})$ para los operadores $\mathit{op}=\{+,-,\times\}$ resultan en expresiones $a+b\sqrt{c}$ de profundidad $n-1$. Para la división el cálculo es un poco más complicado:
+Cálculos sencillos muestran que las expresiones $(a_1+b_1\sqrt{c}),\mathit{op}\,(a_2+b_2\sqrt{c})$ para los operadores $\mathit{op}=\{+,-,\times\}$ resultan en expresiones $a+b\sqrt{c}$ de profundidad $n-1$. Para la división el cálculo es un poco más complicado:
 \begin{eqnarray*}
 \frac{a_1+b_1\sqrt{c}}{a_2+b_2\sqrt{c}}&=&
 \frac{(a_1+b_1\sqrt{c})(a_2-b_2\sqrt{c_2})}{(a_2+b_2\sqrt{c})(a_2-b_2\sqrt{c})}\\
@@ -837,7 +837,7 @@ Si $r= r'$ entonces $0=r-r'=2b\sqrt{c}$, lo cual es cierto sólo si $b=0$ por lo
 
 \begin{theorem}
 Si un monic\index{polinomio mónico} polinomio cúbico con coeficientes racionales:
-\[p(x)=x^3+a_2x^2+a_1x+a_0\] has no rational roots then none of its roots is constructible.
+\[p(x)=x^3+a_2x^2+a_1x+a_0\] no tiene raíces racionales entonces ninguna de sus raíces es construible.
 \end{theorem}
 
 \begin{proof}

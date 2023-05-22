@@ -561,16 +561,16 @@ Sea $(0,f)$ el foco de una parábola con directriz $y=d$. Definir $p=f-d$, la lo
 \begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}[scale=.7]
-\draw (-6,0) -- node[very near start,below,xshift=-32pt] {$x$-\textrm{axis}}(6,0);
-\draw (0,-3) -- node[very near start,right,yshift=-20pt] {$y$-\textrm{axis}}(0,4.5);
-\draw (-6,-2) -- node[near start,below] {\textrm{directrix} $\quad y=-2$} (6,-2);
+\draw (-6,0) -- node[very near start,below,xshift=-32pt] {\textrm{eje}-$x$}(6,0);
+\draw (0,-3) -- node[very near start,right,yshift=-20pt] {\textrm{eje}-$y$}(0,4.5);
+\draw (-6,-2) -- node[near start,below] {\textrm{directriz} $\quad y=-2$} (6,-2);
 \draw[domain=-5:5,samples=50,very thick,dotted] plot (\x,{\x*\x/8+1});
 \coordinate (F) at (0,4);
 \coordinate (V) at (0,1);
 \coordinate (Y) at (0,-2);
 \vertex{F};
-\node[left,xshift=-2pt,yshift=0pt] at (F) {$(0,f)=(0,4)$}; \node[above left,xshift=-2pt,yshift=4pt] at (F) {\textrm{focus}};
-\node[below left,xshift=-4,yshift=3pt] at (V) {\textrm{vertex}};
+\node[left,xshift=-2pt,yshift=0pt] at (F) {$(0,f)=(0,4)$}; \node[above left,xshift=-2pt,yshift=4pt] at (F) {\textrm{enfoque}};
+\node[below left,xshift=-4,yshift=3pt] at (V) {\textrm{vértice}};
 \node[below left,xshift=-4,yshift=-6pt] at (V) {$(0,1)$};
 \draw[<->] (2.5,-1.9) -- node[fill=white] {$p=6$} +(0,5.8);
 \draw[<->] (.5,.05) -- +(0,.9);
@@ -637,7 +637,7 @@ y=\sqrt{3}x\,,\quad y=-\sqrt{3}x\,.
 \noindent\textbf{Parábola 1:}
 Sin cambios.
 
-\noindent\textbf{Parábola 2:} Focus $(0,-6)$, directrix $y=-2$, vertex $(0,-4)$.
+\noindent\textbf{Parábola 2:} Enfoque $(0,-6)$, directriz $y=-2$, vértice $(0,-4)$.
 
 \noindent{}$p=-4$, $a=2\cdot -4\cdot -4=32$. La ecuación de la parábola es:
 \[
@@ -749,9 +749,9 @@ $p_i$, $i=1,\ldots,5$, cada punto $p_i$ a una distancia $a_i$ tanto del foco com
 \begin{figure}[ht]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
-\draw (-6,0) -- node[very near start,below,xshift=-32pt] {$x$-axis} (6,0);
-\draw (0,-3) -- node[very near start,right,yshift=-15pt] {$y$-axis} (0,4.5);
-\draw[thick] (-6,-2) -- node[near end,below] {directrix $\quad y=-f$} (6,-2);
+\draw (-6,0) -- node[very near start,below,xshift=-32pt] {eje-$x$} (6,0);
+\draw (0,-3) -- node[very near start,right,yshift=-15pt] {eje-$y$} (0,4.5);
+\draw[thick] (-6,-2) -- node[near end,below] {directriz $\quad y=-f$} (6,-2);
 \draw[domain=-6:6,samples=50,very thick,dotted] plot (\x,{\x*\x/8});
 \coordinate (F) at (0,2);
 \vertex{F};
