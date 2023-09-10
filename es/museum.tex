@@ -4,7 +4,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-En 1973 Victor Klee se preguntó cuántos vigilantes son necesarios para observar todas las paredes de un museo. Si las paredes forman un polígono regular o incluso un polígono convexo, basta con un guardia (Fig.~\ref{f.museum.convex}).
+En 1973 Victor Klee se preguntó cuántos custodios son necesarios para vigilar todas las paredes de un museo. Si las paredes forman un polígono regular o incluso un polígono convexo, basta con un guardia (Fig.~\ref{f.museum.convex}).
 \begin{figure}[ht]
 \begin{center}
 \begin{tikzpicture}[scale=.6]
@@ -20,7 +20,7 @@ En 1973 Victor Klee se preguntó cuántos vigilantes son necesarios para observa
 \caption{Un museo cuyas paredes forman un polígono convexo}\label{f.museum.convex}
 \end{figure}
 
-Consideremos ahora un museo con paredes en forma de diente de sierra (Fig.~\ref{f.museum.nonconvex}). Verificar contando que el museo tiene $15$ paredes. Cada "diente" define un triángulo que está sombreado en gris en la Fig.~\ref{f.visibility-tooth}. Un guardia situado en cualquier lugar dentro de uno de los triángulos puede observar todas las paredes que limitan ese triángulo (flechas rojas).
+Consideremos ahora un museo con paredes en forma de sierra dentada (Fig.~\ref{f.museum.nonconvex}). Contando verificamos que el museo tiene $15$ paredes. Cada "diente" define un triángulo que está sombreado en gris en la Fig.~\ref{f.visibility-tooth}. Un guardia situado en cualquier lugar dentro de uno de los triángulos puede observar todas las paredes que limitan ese triángulo (flechas rojas).
 \begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
@@ -81,7 +81,7 @@ Consideremos ahora un museo con paredes en forma de diente de sierra (Fig.~\ref{
 \caption{Visibilidad dentro de cada ``diente''}\label{f.visibility-tooth}
 \end{figure}
 
-Si al menos uno de los guardias se coloca cerca de la pared superior que abarca todo el museo, podrá observar todas las paredes horizontales (flechas azules en la Fig.~\ref{f.museum.shaded}). Así pues, bastan $5=15/3$ guardias para observar todas las paredes del museo. Como los triángulos no se solapan, un vigilante de un triángulo no podrá observar todas las paredes de otro triángulo (flecha verde), por lo que se necesitan $5$ vigilantes.
+Si al menos uno de los guardias se coloca cerca de la pared superior que abarca todo el museo, podrá observar todas las paredes horizontales (flechas azules en la Fig.~\ref{f.museum.shaded}). Así pues, bastan $5=15/3$ guardias para observar todas las paredes del museo. Como los triángulos no se superponen, un vigilante de un triángulo no podrá observar todas las paredes de otro triángulo (flecha verde), por lo que se necesitan $5$ vigilantes.
 
 \begin{figure}[ht]
 \begin{center}
@@ -126,22 +126,22 @@ Si al menos uno de los guardias se coloca cerca de la pared superior que abarca 
 
 El ejemplo de la Fig.~\ref{f.museum.nonconvex} puede generalizarse a $n/3$ dientes con $n$ paredes, por lo que concluimos que \emph{al menos} $n/3$ guardas son necesarios. Queremos demostrar que $n/3$ guardianes son suficientes para vigilar cualquier museo.
 
-La sección ~\ref{s.museum-triangulating} demuestra que cualquier polígono triangulado puede ser tricolor. Esto se utiliza en la sección~\ref{s.museum-guard} para demostrar el teorema de que $n/3$ guardias son suficientes. Sección ~\ref{s.museum-triangulated} completa la prueba demostrando que cualquier polígono puede ser triangulado.
+La sección~\ref{s.museum-triangulating} demuestra que cualquier polígono triangulado puede ser tricolor. Esto se utiliza en la sección~\ref{s.museum-guard} para demostrar el teorema de que $n/3$ guardias son suficientes. La sección~\ref{s.museum-triangulated} completa la demostración demostrando que cualquier polígono puede ser triangulado.
 
 \section{Colorear polígonos triangulados}\label{s.museum-triangulating}
 
 \begin{definition}
-Una \emph{diagonal} a de polígono es una arista que une dos vértices y que no es una de las aristas (exteriores) del polígono.
+Una \emph{diagonal} a de un polígono es una segmento que une dos vértices y que no es una de los lados del polígono.
 \end{definition}
 
 \begin{definition}
-Un polígono puede ser \emph{triangulado} si se pueden construir diagonales no intersecantes de forma que el interior del polígono esté cubierto por triángulos.
+Un polígono puede ser \emph{triangulado} si se pueden construir diagonales no intersecantes de manera que el interior del polígono esté cubierto por triángulos.
 \end{definition}\index{Polygon!triangulated}
 
 \begin{theorem}
 Cualquier polígono puede triangularse.\label{thm.tri}
 \end{theorem}
-Aplazamos la prueba de Thm.~\ref{thm.tri}.
+Aplazamos la demostración de este Teorema.
 \begin{definition}
 Un vértice de un polígono es \emph{convexo}\index{Polígono!vértices convexos y cóncavos} si su ángulo interior es menor que $180^\circ$; un vértice es \emph{cóncavo} si su ángulo interior es mayor que $180^\circ$. 
 \end{definition}
@@ -172,20 +172,20 @@ En la Fig.~\ref{f.museum.arbitrary} el vértice $1$ es convexo y el vértice $2$
 \end{figure}
 
 \begin{definition}
-Un polígono con vértices $V$ puede ser \emph{tricolor} si existe un mapa:
+Un polígono con vértices $V$ puede ser \emph{coloreado con tres colores} si existe una correspondencia:
 \[c: V \mapsto \{\mathit{red},\mathit{blue},\mathit{green}\}\,,\]
-tal que ninguna arista tenga dos vértices con el mismo color.
+tal que ningun lado tenga dos vértices con el mismo color.
 \end{definition}
 
 \begin{theorem}
-Un polígono triangulado puede ser tricolor.\label{thm.colored}
+Un polígono triangulado puede ser coloreado con tres colores.\label{thm.colored}
 \end{theorem}\index{Coloring!polygon@of a polygon}
 
 \begin{proof}
-Por inducción sobre el número de vértices. Un triángulo puede ser tricolor. Un polígono triangulado con $n>3$ vértices debe tener una diagonal. Elegir una diagonal arbitraria $\overline{AB}$ (Fig.~\ref{f.museum.three-1}) y dividir el polígono a lo largo de esta diagonal en dos polígonos más pequeños (Fig.~\ref{f.museum.three-2}). Por inducción, cada uno de estos polígonos más pequeños puede ser de tres colores (Fig.~\ref{f.museum.three-3}).
+Por inducción sobre el número de vértices. Un triángulo puede ser coloreado con tres colores. Un polígono triangulado con $n>3$ vértices debe tener una diagonal. Elegimos una diagonal arbitraria $\overline{AB}$ (Fig.~\ref{f.museum.three-1}) y dividimos el polígono a lo largo de esta diagonal en dos polígonos más pequeños (Fig.~\ref{f.museum.three-2}). Por inducción, cada uno de estos polígonos más pequeños puede ser de tres colores (Fig.~\ref{f.museum.three-3}).
 
-Como los colores asignados son arbitrarios, si se asignan colores diferentes a $A,B$ en los dos polígonos, podemos renombrar los colores en uno de ellos para que los colores de $A,B$ sean los mismos en ambos polígonos. Por ejemplo, en la Fig.~\ref{f.museum.three-4} cambiar \emph{rojo} y \emph{verde} en el polígono inferior.
-Pegar los dos polígonos juntos para recuperar el polígono original con $ n $ vértices. Será de tres colores (Fig.~\ref{f.museum.three-5}).
+Como los colores asignados son arbitrarios, si se asignan colores diferentes a $A,B$ en los dos polígonos, podemos reasignar los colores en uno de ellos para que los colores de $A,B$ sean los mismos en ambos polígonos. Por ejemplo, en la Fig.~\ref{f.museum.three-4} intercambiamos \emph{rojo} y \emph{verde} en el polígono inferior.
+Adosamos los dos polígonos para recuperar el polígono original con $ n $ vértices. Este será de tres colores (Fig.~\ref{f.museum.three-5}).
 \end{proof}
 
 \begin{figure}[t]
@@ -277,7 +277,7 @@ Pegar los dos polígonos juntos para recuperar el polígono original con $ n $ v
 \draw[thick] (D2) -- (K2);
 \end{scope}
 \end{tikzpicture}
-\caption{Dividir el polígono}\label{f.museum.three-2}
+\caption{División del polígono}\label{f.museum.three-2}
 \end{center}
 \end{minipage}
 \end{figure}
@@ -347,7 +347,7 @@ Pegar los dos polígonos juntos para recuperar el polígono original con $ n $ v
 
 \end{scope}
 \end{tikzpicture}
-\caption{Tricolor de los dos polígonos más pequeños}\label{f.museum.three-3}
+\caption{Coloración con tres colores de los dos polígonos más pequeños}\label{f.museum.three-3}
 \end{center}
 \end{minipage}
 \hfill
@@ -415,7 +415,7 @@ Pegar los dos polígonos juntos para recuperar el polígono original con $ n $ v
 
 \end{scope}
 \end{tikzpicture}
-\caption{Cambia los colores de un polígono para que coincidan con los del otro}\label{f.museum.three-4}
+\caption{Cambio de los colores de un polígono para que coincidan con los del otro}\label{f.museum.three-4}
 \end{center}
 \end{minipage}
 \end{figure}
@@ -458,7 +458,7 @@ Pegar los dos polígonos juntos para recuperar el polígono original con $ n $ v
 Un museo con $n$ paredes puede estar vigilado por $n/3$ guardias.
 \end{theorem}\index{Museum!triangulated@and triangulated polygons}
 \begin{proof}
-Por Thm.~\ref{thm.tri} el polígono puede ser triangulado y por Thm.~\ref{thm.colored} el polígono puede ser tricolor. Los tres vértices de cada triángulo en la triangulación deben ser coloreados por colores diferentes con el fin de satisfacer la condición de ser de tres colores. Dado que el polígono es de tres colores, al menos un color, por ejemplo rojo, puede aparecer como máximo $n/3$ veces, y cada triángulo debe tener un vértice de color rojo. Coloca un guardia en cada vértice rojo; puede observar todas las paredes de los triángulos a los que pertenece el vértice. Como los triángulos de la triangulación incluyen todas las aristas del polígono, bastan $n/3$ guardias para observar todas las paredes del museo.
+Por el Teorema~\ref{thm.tri} el polígono puede ser triangulado y por el Teorema~\ref{thm.colored} el polígono puede ser coloreado con tres colores. Los tres vértices de cada triángulo en la triangulación deben ser coloreados por colores diferentes con el fin de satisfacer la condición de ser de tres colores. Dado que el polígono es de tres colores, al menos un color, por ejemplo rojo, puede aparecer como máximo $n/3$ veces, y cada triángulo debe tener un vértice de color rojo. Coloquemos un guardia en cada vértice rojo; o ella puede observar todas las paredes de los triángulos a los que pertenece el vértice. Como los triángulos de la triangulación incluyen todos los lados del polígono, $n/3$ guardias son suficientes para vigilar todas las paredes del museo.
 \end{proof}
 Si $n$ no es divisible por $3$ el número de vigilantes necesarios es $\lfloor n/3\rfloor$, el mayor número entero menor o igual que $n/3$. Por ejemplo, $4$ guardias son suficientes para museos con paredes de $12, 13, 14$ ya que $\lfloor 12/3\rfloor =\lfloor 13/3\rfloor=\lfloor 14/3\rfloor=4$. Para simplificar, ignoramos esta complicación.
  
@@ -469,8 +469,8 @@ La suma de los ángulos interiores de un polígono con $n$ vértices es:
 \[180^\circ(n-2)\,.\]
 \end{theorem}\index{Polygon!triangulated}
 \begin{proof}
-Considere un polígono convexo y denotar su \emph{ángulos exteriores} por $\theta_i$ (Fig.~\ref{f.museum.exterior}).
-Al pasar de una línea discontinua en secuencia a la siguiente línea discontinua, se completa una rotación alrededor de un círculo así:
+Consideremos un polígono convexo y denotemos su \emph{ángulos exteriores} por $\theta_i$ (Fig.~\ref{f.museum.exterior}).
+Al pasar de una línea discontinua a la siguiente, se completa una rotación alrededor de un círculo así:
 \[
 \sum_{i=1}^n \theta_i = 360^\circ\,.
 \]
@@ -508,7 +508,7 @@ Para cada ángulo exterior $\theta_i$ denotemos su correspondiente ángulo inter
 \displaystyle\sum_{i=1}^n \theta_i &=&\displaystyle\sum_{i=1}^n (180^\circ-\phi_i)= 360^\circ\\
 \displaystyle\sum_{i=1}^n \phi_i &=& n\cdot 180^\circ-360^\circ =180^\circ(n-2)\,.
 \end{eqnarray*}
-Si existe un vértice cóncavo ($B$ en la Fig.~\ref{f.museum.concave}), existe un triángulo formado por las dos aristas incidentes con el vértice cóncavo y la recta $\overline{AC}$ que une los otros dos vértices. Sumando los ángulos del triángulo obtenemos:
+Si existe un vértice cóncavo ($B$ en la Fig.~\ref{f.museum.concave}), existe un triángulo formado por los dos lados incidentes con el vértice cóncavo y la recta $\overline{AC}$ que une los otros dos vértices. Sumando los ángulos del triángulo obtenemos:
 \begin{eqnarray*}
 (180^\circ - \alpha) + (360^\circ - \beta) + (180^\circ - \gamma) &=& 180^\circ\\
 \alpha + \beta + \gamma &=& 3\cdot 180^\circ\,.
@@ -558,10 +558,10 @@ k&<&n-2\,.
 De ello se deduce que debe haber al menos tres vértices que sean convexos, no cóncavos.
 \end{proof}
 
-Ahora podemos demostrar el Teorema~ref{thm.tri}.
+\noindent{}Ahora podemos demostrar el Teorema~\ref{thm.tri}.
 
 \begin{proof}
-Por inducción en el número de vértices. Para $n=3$ no hay nada que demostrar. Si $n>3$, por Thm.~\ref{thm.convex} debe haber un vértice $C$ convexo. Etiquetar sus vértices adyacentes por $B,D$. Si $\overline{BD}$ está contenida en el polígono (Fig.~\ref{f.contained}), es una diagonal y el polígono se puede dividir en $\triangle BCD$ y otro polígono $\overline{ABDE}$ con $\overline{BD}$ como arista y que es más pequeño que el polígono original (Fig.~\ref{f.contained}). Por la hipótesis inductiva, el polígono se puede triangular y luego pegar de nuevo a $\triangle BCD$, triangulando el polígono original.
+Por inducción en el número de vértices. Para $n=3$ no hay nada que demostrar. Si $n>3$, por el Teorema~\ref{thm.convex} debe haber un vértice $C$ convexo. Denotamos sus vértices adyacentes por $B,D$. Si $\overline{BD}$ está contenida en el polígono (Fig.~\ref{f.contained}), es una diagonal y el polígono se puede dividir en $\triangle BCD$ y otro polígono $\overline{ABDE}$ con $\overline{BD}$ como lado y que es más pequeño que el polígono original (Fig.~\ref{f.contained}). Por la hipótesis inductiva, el polígono se puede triangular y luego adosar de nuevo a $\triangle BCD$, triangulando el polígono original.
 
 \begin{figure}[t]
 \begin{minipage}{.45\textwidth}
@@ -614,12 +614,12 @@ Por inducción en el número de vértices. Para $n=3$ no hay nada que demostrar.
 \end{minipage}
 \end{figure}
 
-Si $\overline{BD}$ no está contenido en el polígono, debe haber vértice cóncavo $F$ que es \emph{más cercano} a $C$ (Fig.~\ref{f.museum.concave-vertices}). $\overline{CF}$ es una diagonal y divide el polígono en dos polígonos más pequeños $\overline{CFED}$ y $\overline{CFAB}$. Por la hipótesis inductiva estos pueden ser triangulados y pegados juntos.
+Si $\overline{BD}$ no está contenido en el polígono, debe haber un vértice cóncavo $F$ que es \emph{más cercano} a $C$ (Fig.~\ref{f.museum.concave-vertices}). $\overline{CF}$ es una diagonal y divide el polígono en dos polígonos más pequeños $\overline{CFED}$ y $\overline{CFAB}$. Por la hipótesis inductiva estos pueden ser triangulados y adosadas.
 \end{proof}
 
 \subsection*{¿Cuál es la sorpresa?}
-El teorema del museo es sorprendente porque lo que parece un teorema de geometría se demuestra con bastante elegancia apelando a la coloración de un gráfico.
+El teorema del museo es sorprendente porque lo que parece un teorema de geometría se demuestra con bastante elegancia apelando a la coloración de un grafo.
 
 \subsection*{Fuentes}
 
-Este capítulo está basado en \cite[Cap.~39]{thebook}.
+Este capítulo está basado en \cite[Capítulo~39]{thebook}.

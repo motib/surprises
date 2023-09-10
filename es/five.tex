@@ -4,22 +4,22 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Los mapas utilizan colores para distinguir una región de otra, asegurándose de que las regiones adyacentes estén coloreadas con colores diferentes. En 1852, Francis Guthrie observó que un mapa de los condados de Inglaterra podía colorearse con sólo cuatro colores. La afirmación de que cuatro países bastan para colorear cualquier mapa plano se denomina teorema de los cuatro colores y no fue demostrada hasta 1976 por Kenneth Appel y Wolfgang Haken. Utilizaron sofisticados argumentos matemáticos para demostrar que si existe un contraejemplo (un mapa que necesite más de cuatro colores), tiene que estar asociado a una de las $1834$ configuraciones. A continuación, utilizaron un ordenador para comprobar estas configuraciones.
+Los mapas utilizan colores para distinguir una región de otra, asegurándose de que las regiones adyacentes estén coloreadas con colores diferentes. En 1852, Francis Guthrie observó que un mapa de los condados de Inglaterra podía colorearse con sólo cuatro colores. La afirmación de que cuatro países bastan para colorear cualquier mapa plano se denomina teorema de los cuatro colores y no fue demostrada hasta 1976 por Kenneth Appel y Wolfgang Haken. Ellos utilizaron sofisticados argumentos matemáticos para demostrar que si existe un contraejemplo (un mapa que necesite más de cuatro colores), tiene que estar asociado a una de las $1834$ configuraciones. A continuación, utilizaron un ordenador para comprobar estas configuraciones.
 
-Mientras que el teorema de los cuatro colores es extremadamente difícil de demostrar, las pruebas de los teoremas de los cinco y seis colores son relativamente sencillas (Secciones~\ref{s.six-color}, ~\ref{s.five-color}). En el camino hacia la demostración de estos teoremas, definimos mapas y grafos planares (Secc.~\ref{s.planar}), demostramos la fórmula de Euler (Secc.~\ref{s.euler}) y mostramos que un grafo planar debe tener vértices cuyo grado sea menor o igual que cinco. En la Sec. se utiliza la fórmula de Euler para demostrar que dos grafos no son planares.
+Mientras que el teorema de los cuatro colores es extremadamente difícil de demostrar, las demostraciones de los teoremas de los cinco y seis colores son relativamente sencillas (Secs.~\ref{s.six-color}, ~\ref{s.five-color}). Para demostrar de estos teoremas, definimos mapas y grafos planares (Sec.~\ref{s.planar}), demostramos la fórmula de Euler (Sec.~\ref{s.euler}) y mostramos que un grafo planar debe tener vértices cuyo grado sea menor o igual que cinco. En la Sección~\ref{s.nonplanar} se utiliza la fórmula de Euler para demostrar que dos grafos no son planares.
 
-En 1879 Alfred B. Kempe publicó una prueba del teorema de los cuatro colores, pero en 1890 Percy J. Heawood demostró que la prueba es incorrecta. En la sección~\ref{s.kempe} presentamos la prueba errónea de Kempe y la demostración de Heawood de que no es correcta.
+En 1879 Alfred B. Kempe publicó una demostración del teorema de los cuatro colores, pero en 1890 Percy J. Heawood demostró que la demostración es incorrecta. En la Sección~\ref{s.kempe} presentamos la demostración errónea de Kempe y la demostración de Heawood de que no es correcta.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Mapas y gráficos planos}\label{s.planar}
+\section{Mapas y grafos planos}\label{s.planar}
 
 \begin{definition}
-Un \textit{mapa plano} es un conjunto de regiones en el plano separadas por fronteras. Un \textit{coloring} de un mapa es una asignación de un color a cada región de tal manera que las regiones que comparten un límite se asignan diferentes colores.
-\end{definition}\index{Planar!map}\index{Coloring!planar graph@of a planar map}
+Un \textit{mapa plano} es un conjunto de regiones en el plano separadas por fronteras. Una \textit{coloración} de un mapa es una asignación de un color a cada región de tal manera que se asignan diferentes colores a las regiones que tienen una frontera en común.
+\end{definition}
 
-La figura~\ref{f.five-planar-map-five} muestra una coloración a cinco de un mapa planar con diez regiones.
-La figura~\ref{f.five-planar-map-four} muestra una coloración de cuatro del mismo mapa.
+La figura~\ref{f.five-planar-map-five} muestra una coloración con cinco colores de un mapa planar con diez regiones.
+La figura~\ref{f.five-planar-map-four} muestra una coloración con cuatro colores del mismo mapa.
 
 \begin{figure}[t]
 \begin{minipage}{.45\textwidth}
@@ -56,7 +56,7 @@ La figura~\ref{f.five-planar-map-four} muestra una coloración de cuatro del mis
       (180:2)  arc[start angle=180,  end angle=270, radius=2] --
       (270:1) arc[start angle=270, end angle=180,  radius=1];
 \end{tikzpicture}
-\caption{Cinco colores de un mapa plano}\label{f.five-planar-map-five}
+\caption{Coloración de un mapa con cinco colores}\label{f.five-planar-map-five}
 \end{center}
 \end{minipage}
 \hfill
@@ -94,27 +94,27 @@ La figura~\ref{f.five-planar-map-four} muestra una coloración de cuatro del mis
       (180:2)  arc[start angle=180,  end angle=270, radius=2] --
       (270:1) arc[start angle=270, end angle=180,  radius=1];
 \end{tikzpicture}
-\caption{Cuatricromía de un mapa plano}\label{f.five-planar-map-four}
+\caption{Coloración de un mapa con cuatro colores}\label{f.five-planar-map-four}
 \end{center}
 \end{minipage}
 \end{figure}
 
 \begin{definition}
-Un \emph{grafo} es un conjunto de \emph{vértices} $V$ y un conjunto de \emph{aristas} $E$, tal que cada arista es incidente con exactamente dos vértices.
+Un \emph{grafo} es un conjunto de \emph{vértices} $V$ y un conjunto de \emph{aristas} $E$, tal que cada arista es incidente a exactamente dos vértices.
 
-Un \emph{grafo plano} es un grafo en el que ninguna arista se cruza con otra. En un grafo plano, las zonas delimitadas por un conjunto de aristas se llaman \emph{caras}.
+Un \emph{grafo plano} es un grafo en el que ninguna arista se cruza con otra. En un grafo plano, las zonas delimitadas por un conjunto de aristas se llaman \emph{caras (o regiones)}.
 
 Una \emph{coloración} de un grafo plano es una asignación de colores a los vértices de tal manera que no hay dos vértices del mismo color conectados por una arista.
 \end{definition}
 
-Los mapas planos y los grafos planos son duales y es conveniente investigar los problemas de coloración en grafos en lugar de en mapas.
+Los mapas planos y los grafos planos son duales y, por lo tanto, es conveniente investigar los problemas de coloración en grafos en lugar de hacerlo directamente en mapas.
 
 \begin{theorem}
 Dado un mapa plano, se puede construir un grafo plano tal que para cada coloración de las regiones del mapa exista una coloración de los vértices del grafo, y a la inversa.
 \end{theorem}
 
 \begin{proof}
-Construye un vértice para cada región y construye una arista entre dos vértices si y sólo si las regiones correspondientes comparten un límite. 
+Construimos un vértice para cada región y una arista entre dos vértices si y sólo si las regiones correspondientes comparten un límite. 
 \end{proof}
 
 \begin{example}
@@ -166,7 +166,7 @@ La figura~\ref{f.five-planar-graph-map} muestra el mapa planar de la Fig.~\ref{f
   \fill (\x,\y) coordinate(\name) circle(4pt);
 }
 \end{tikzpicture}
-\caption{Asociar los vértices a las regiones de un mapa plano}\label{f.five-planar-graph-map}
+\caption{Asociación de los vértices con las regiones de un mapa plano}\label{f.five-planar-graph-map}
 \end{center}
 \end{minipage}
 \hfill
@@ -221,15 +221,15 @@ Un grafo es \emph{triangular} si todas sus caras están delimitadas por tres ari
 \end{definition}\index{Triangulated graph}
 
 \begin{example}
-Las caras del gráfico plano de la Fig.~\ref{f.five-planar-graph-graph} son triangulares ya que cada una está delimitada por tres aristas. Las aristas son curvas por lo que las caras no son triángulos, que son polígonos cuyos tres bordes son segmentos de línea recta.
+Las caras del grafo plano de la Fig.~\ref{f.five-planar-graph-graph} son triangulares ya que cada una está delimitada por tres aristas. Las aristas son curvas por lo que las caras no son triángulos, que son polígonos cuyos tres lados son segmentos de línea recta.
 \end{example}
 
 \begin{advanced}
-\textbf{Teorema de F\'{a}ry} establece que cualquier grafo plano triangular puede transformarse en un grafo plano equivalente cuyas aristas sean segmentos de recta. Por lo tanto, sin pérdida de generalidad, las pruebas se pueden restringir a grafos planos cuyas caras son triángulos.
+\textbf{El Teorema de F\'{a}ry} establece que cualquier grafo plano triangular puede transformarse en un grafo plano equivalente cuyas aristas sean segmentos de recta. Por lo tanto, sin pérdida de generalidad, las demostraciones se pueden restringir a grafos planos cuyas caras son triángulos.
 \end{advanced}
 
 \begin{example}
-Fig.~\ref{f.five-triangular-graph} (izquierda) muestra que un cuadrado puede ser bicolor, pero si está triangulado (centro), son necesarios cuatro colores. Nuestro objetivo es demostrar que los grafos pueden ser de color $n$ para algún $n$. Si el grafo triangulado está coloreado con $n$, también lo está el grafo original, porque eliminar las aristas sobrantes no invalida la coloración (derecha).
+Fig.~\ref{f.five-triangular-graph} (izquierda) muestra que un cuadrado puede ser bicolor, pero si está triangulado (centro), son necesarios cuatro colores. Nuestro objetivo es demostrar que los grafos pueden ser coloreados con $n$ colores para algún $n$. Si el grafo triangulado está coloreado con $n$, también lo está el grafo original, porque eliminar las aristas sobrantes no invalida la coloración (derecha).
 \end{example}
 
 \begin{figure}[h]
@@ -269,7 +269,7 @@ Fig.~\ref{f.five-triangular-graph} (izquierda) muestra que un cuadrado puede ser
 \end{theorem}\index{Euler's formula}
 
 \begin{proof}
-Por inducción sobre el número de aristas. Si el número de aristas en el grafo es cero, sólo hay un único vértice y una única cara, por lo que $1-0+1=2$. En caso contrario, hay al menos una arista $e$ y conecta dos vértices $v_1,v_2$. Eliminar la arista $e$.
+Por inducción sobre el número de aristas. Si el número de aristas en el grafo es cero, sólo hay un único vértice y una única cara, por lo que $1-0+1=2$. En caso contrario, hay al menos una arista $e$ que conecta dos vértices $v_1,v_2$. Eliminar la arista $e$.
 
 \textit{Caso 1:}
 El grafo se desconecta (Fig.~\ref{f.five-disconnected-removing}). Fusionar $v_1$ con $v_2$ (Fig.~\ref{f.five-disconnected-merge}). El grafo resultante $G'$ es un grafo plano conexo y tiene menos aristas que $G$, por lo que por la hipótesis de inducción $(V-1)-(E-1)+F=2$ ya que el número de vértices también se reduce en uno. Simplificando, obtenemos $V-E+F=2$ para $G$.
@@ -294,8 +294,8 @@ El grafo se desconecta (Fig.~\ref{f.five-disconnected-removing}). Fusionar $v_1$
 \end{minipage}
 \end{figure}
 
-\textit{caso 2:}
-El gráfico sigue siendo conectado (Fig.~\ref{f.five-connected-remains}). $G'$ tiene menos aristas que $G$ (Fig.~\ref{f.five-connected-fewer}), así que por la hipótesis de inducción $V-(E-1)+(F-1)=2$ ya que al eliminar la arista se unen dos caras en una. Simplificando, obtenemos $V-E+F=2$ para $G$.
+\textit{Caso 2:}
+El grafo sigue siendo conexo (Fig.~\ref{f.five-connected-remains}). $G'$ tiene menos aristas que $G$ (Fig.~\ref{f.five-connected-fewer}), así que por la hipótesis de inducción $V-(E-1)+(F-1)=2$ ya que al eliminar la arista se unen dos caras en una. Simplificando, obtenemos $V-E+F=2$ para $G$.
 \end{proof}
 
 \begin{figure}[ht]
@@ -342,7 +342,7 @@ Sea $G$ un grafo plano conexo. Entonces $E\leq 3V-6$.
 \end{theorem}
 
 \begin{proof}
-Triangular $G$ para obtener $G'$. $E'= 3V'-6$ por Thm.~\ref{thm.3v6}. Ahora quitar aristas de $G'$ para obtener $G$. El número de vértices no cambia por lo que $E\leq 3V-6$.
+Triangulamos $G$ para obtener $G'$. $E'= 3V'-6$ por el Teorema~\ref{thm.3v6}. Ahora quitamos aristas de $G'$ para obtener $G$. El número de vértices no cambia por lo que $E\leq 3V-6$.
 \end{proof}
 
 \begin{example}
@@ -377,13 +377,13 @@ La figura~\ref{f.five-upper-limit} muestra un grafo triangulado con $6$ vértice
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Gráficos no planos}\label{s.nonplanar}
+\section{Grafos no planos}\label{s.nonplanar}
 
-Vamos a tomar un pequeño desvío para mostrar cómo Thms.~\ref{thm.euler} y~\ref{thm.count} se puede utilizar para demostrar que ciertos gráficos no son planas.
+Vamos a tomar un pequeño desvío para mostrar cómo los Teoremas~\ref{thm.euler} y~\ref{thm.count} se pueden utilizar para demostrar que ciertos grafos no son planos.
 
 \begin{theorem}
 $K_5$, el grafo completo de cinco vértices, no es plano (Fig.~\ref{f.five-k5}).
-\end{theorem}\index{K5@$K_{5}$ is not planar}
+\end{theorem}
 
 \begin{figure}[t]
 \begin{minipage}{.48\textwidth}
@@ -401,7 +401,7 @@ $K_5$, el grafo completo de cinco vértices, no es plano (Fig.~\ref{f.five-k5}).
 \draw (pentagon.corner 2) -- (pentagon.corner 5);
 \draw (pentagon.corner 3) -- (pentagon.corner 5);
 \end{tikzpicture}
-\caption{$K_5$ no es plana}\label{f.five-k5}
+\caption{$K_5$ no es plano}\label{f.five-k5}
 \end{center}
 \end{minipage}
 \hfill
@@ -429,7 +429,7 @@ $K_5$, el grafo completo de cinco vértices, no es plano (Fig.~\ref{f.five-k5}).
 \end{figure}
 
 \begin{proof}
-Para $K_5$, $V=5$ y $E=10$. Por Thm.~\ref{thm.count} el número de aristas debe ser menor o igual a $3\cdot 5 -6=9$ por lo que el grafo no es planar.
+Para $K_5$, $V=5$ y $E=10$. Por Teorema~\ref{thm.count} el número de aristas debe ser menor o igual a $3\cdot 5 -6=9$ por lo que el grafo no es plano.
 \end{proof}
 
 \begin{theorem}
@@ -451,7 +451,7 @@ $K_{3,3}$, el grafo bipartito con tres vértices en cada lado, no es plano (Fig.
 \draw (0,4) -- (3,2);
 \path (0,-1) -- (3,-1);
 \end{tikzpicture}
-\caption{$K_{3,3}$ no es plana}\label{f.five-k33}
+\caption{$K_{3,3}$ no es plano}\label{f.five-k33}
 \end{center}
 \end{minipage}
 \hfill
@@ -484,7 +484,7 @@ En 1930 Kazimierz Kuratowski demostró la inversa de estos teoremas: si un grafo
 \section{Los grados de los vértices}\label{s.degrees}
 
 \begin{definition}
-$d(v)$, el \emph{grado} del vértice $v$, es el número de aristas incidentes con $v$.
+$d(v)$, el \emph{grado} del vértice $v$, es el número de aristas incidentes a $v$.
 \end{definition}\index{Degree of a vertex}
 
 \begin{example}
@@ -492,7 +492,7 @@ El grafo de la Fig.~\ref{f.five-planar-graph-graph} contiene $8$ vértices corre
 \[
 \sum_{v\in V} d(v) = 5\cdot 8 + 4\cdot 2=48\,.
 \]
-Para obtener el número total de aristas divide $48$ entre $2$ porque cada arista se ha contado dos veces, una por cada uno de los vértices con los que incide.
+Para obtener el número total de aristas dividimos $48$ entre $2$ porque cada arista se ha contado dos veces, una por cada uno de los vértices a los que incide.
 \end{example}
 
 Generalizando el argumento obtenemos:
@@ -510,7 +510,7 @@ Sea $G$ un grafo plano conexo con $E$ aristas y $V$ vértices, y sea $d_i$ para 
 \begin{proof}
 \mbox{}\\
 (1)
-Si hay $d_1$ vértices de grado $1$, $d_2$ vértices de grado $2$, \ldots, $d_k$ vértices de grado $k$, entonces $V=\sum_{i=1}^{k}d_i$.  De Thms.~\ref{thm.count} y \ref{thm.degrees}:
+Si hay $d_1$ vértices de grado $1$, $d_2$ vértices de grado $2$, \ldots, $d_k$ vértices de grado $k$, entonces $V=\sum_{i=1}^{k}d_i$.  Pos los Teoremas~\ref{thm.count} y \ref{thm.degrees}:
 \[
 \sum_{i=1}^{k} i\cdot d_i=2E\leq 2(3V-6) = 6V-12=6\sum_{i=1}^{k} d_i -12\,.
 \]
@@ -519,25 +519,25 @@ Por lo tanto:
 \sum_{i=1}^{k} i\cdot d_i &\leq& 6\sum_{i=1}^{k} d_i -12\\
 \sum_{i=1}^{k} (6-i)d_i&\geq& 12\,.
 \end{eqnarray*}
-Como $12>0$ y todos $d_i$ son positivos, para al menos un $i$, $6-i>0$ y para ese $i$, $i<6$.
+Como $12>0$ y todos los $d_i$ son positivos, para al menos un $i$, $6-i>0$ y para ese $i$, $i<6$.
 \end{proof}
 
 \begin{proof}
 \mbox{}\\
 (2)
-Calculemos el grado medio de los vértices, que es la suma de los grados dividida por el número de vértices:
+Calculemos el grado promedio de los vértices, que es la suma de los grados dividida por el número de vértices:
 \[
 d_{\textit{\footnotesize avg}}=\frac{\sum_{i=1}^{k} i\cdot d_i}{V}\,.
 \]
-Pero la suma de los grados es el doble del número de aristas que por Thm.~\ref{thm.count} da:
+Pero la suma de los grados es el doble del número de aristas que por Teorema~\ref{thm.count} da:
 \[
 d_{\textit{\footnotesize avg}}=\frac{2E}{V}\leq \frac{6V-12}{V}=6-\frac{6}{V}<6\,.
 \]
-Si la media es menor que seis debe haber un vértice de grado menor que seis.
+Si el promedio es menor que seis debe haber un vértice de grado menor que seis.
 \end{proof}
 
 \begin{example}
-En Fig.~\ref{f.five-planar-graph-graph} la suma de los grados es $8\cdot 5 + 2\cdot 4=48$. Hay $10$ vértices por lo que el grado medio es $48/10=4,8$ y debe haber un vértice de grado $4$ o menos.
+En Fig.~\ref{f.five-planar-graph-graph} la suma de los grados es $8\cdot 5 + 2\cdot 4=48$. Hay $10$ vértices por lo que el grado promedio es $48/10=4,8$ y debe haber un vértice de grado $4$ o menos.
 \end{example}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -545,11 +545,10 @@ En Fig.~\ref{f.five-planar-graph-graph} la suma de los grados es $8\cdot 5 + 2\c
 \section{El teorema de los seis colores}\label{s.six-color}
 
 \begin{theorem}\label{thm.sixcolor}
-Cualquier grafo plano $G$ puede ser de seis colores.
+Cualquier grafo plano $G$ puede ser coloreado con seis colores.
 \end{theorem}\index{Six-color theorem}
 \begin{proof}
-Por inducción sobre el número de vértices. Si $G$ tiene seis vértices o menos, basta con seis colores.
-Para el paso inductivo, por Thm.~\ref{thm.degree5} $G$ tiene un vértice $v$ con grado $5$ o menos. Se elimina el vértice $v$ para obtener el grafo $G'$. Por la hipótesis de inducción $G'$ puede ser de seis colores, pero $v$ tiene a lo sumo $5$ vecinos y a lo sumo $5$ colores se utilizan para colorearlos (Fig.~\ref{f.five-six-five}), por lo que $v$ se puede colorear utilizando el sexto color (Fig.~\ref{f.five-six-six}).
+Por inducción sobre el número de vértices. Si $G$ tiene seis vértices o menos, seis colores son suficientes. Para el paso inductivo, por el Teorema~\ref{thm.degree5} $G$ tiene un vértice $v$ con grado $5$ o menos. Se elimina el vértice $v$ para obtener el grafo $G'$. Por la hipótesis de inducción $G'$ puede ser de seis colores, pero $v$ tiene a lo sumo $5$ vecinos y a lo sumo $5$ colores se utilizan para colorearlos (Fig.~\ref{f.five-six-five}), por el que $v$ se puede colorear utilizando el sexto color (Fig.~\ref{f.five-six-six}).
 \end{proof}
 
 \begin{figure}[hbt]
@@ -567,7 +566,7 @@ Para el paso inductivo, por Thm.~\ref{thm.degree5} $G$ tiene un vértice $v$ con
   \draw (\i) -- (\j);
 \draw (B) .. controls (-5,1) .. (D);
 \end{tikzpicture}
-\caption{Para colorear los vecinos de $v$ bastan cinco colores}\label{f.five-six-five}
+\caption{Para colorear los vecinos de $v$ cinco colores son suficientes}\label{f.five-six-five}
 \end{center}
 \end{minipage}
 \hfill
@@ -585,7 +584,7 @@ Para el paso inductivo, por Thm.~\ref{thm.degree5} $G$ tiene un vértice $v$ con
   \draw (\i) -- (\j);
 \draw (B) .. controls (-5,1) .. (D);
 \end{tikzpicture}
-\caption{Colorea $v$ con el sexto color}\label{f.five-six-six}
+\caption{Coloreamos $v$ con el sexto color}\label{f.five-six-six}
 \end{center}
 \end{minipage}
 \end{figure}
@@ -600,12 +599,11 @@ Sea $G$ un grafo planar coloreado. Una cadena \emph{(Kempe)} $G'$ es un subgrafo
 
  
 \begin{theorem}\label{thm.fivecolor}
-Cualquier grafo plano $G$ puede ser de cinco colores.
+Cualquier grafo plano $G$ puede ser coloreado con cinco colores.
 \end{theorem}\index{Five-color theorem}
 
 \begin{proof}
-Por inducción sobre el número de vértices. Si $G$ cinco vértices o menos, cinco colores son suficientes.
-Para el paso inductivo, por Thm.~\ref{thm.degree5} $G$ tiene un vértice $v$ con grado $5$ o menos. Eliminar $v$ para obtener $G'$. Por la hipótesis de inducción, $G'$ puede ser de cinco colores. En $G$, si el grado de $v$ es menor que $5$, o si $v_1,\ldots,v_5$, los vecinos de $v$, están coloreados con cuatro colores o menos, $v$ se puede colorear con el quinto color.
+Por inducción sobre el número de vértices. Si $G$ tiene cinco vértices o menos, cinco colores son suficientes. Para el paso inductivo, por el Teorema~\ref{thm.degree5}, $G$ tiene un vértice $v$ con grado $5$ o menos. Eliminamos $v$ para obtener $G'$. Por la hipótesis de inducción, $G'$ puede ser oloreado con cinco colores. En $G$, si el grado de $v$ es menor que $5$, o si $v_1,\ldots,v_5$, los vecinos de $v$, están coloreados con cuatro colores o menos, $v$ se puede colorear con el quinto color.
 De lo contrario, $v_1,\ldots,v_5$ se colorean con diferentes colores en $G'$ (Fig.~\ref{f.five-color-proof}, arriba).
 
 \begin{figure}
@@ -800,10 +798,10 @@ De lo contrario, $v_1,\ldots,v_5$ se colorean con diferentes colores en $G'$ (Fi
 \caption{Demostración del teorema de los cinco colores}\label{f.five-color-proof}
 \end{figure}
 
-Consideremos el vértice $v_1$ que es de color azul y el vértice $v_3$ que es de color rojo. Si $v_1,v_3$ no están conectados por un camino azul-rojo (digamos si la arista $\overline{v_6v_7}$ no existiera), podemos intercambiar los colores a lo largo del camino de $v_1$ a $v_6$ y colorear $v$ de azul. De lo contrario, considere la cadena azul-rojo que contiene $v_1,v_3$. Sumando $v$ y las aristas $\overline{vv_1},\overline{vv_3}$ obtenemos un camino cerrado $P$ (línea doble) que divide el plano en una región ``interior'' y otra ``exterior'' (Fig~\ref{f.five-color-proof}, centro).
+Consideremos el vértice $v_1$ que es de color azul y el vértice $v_3$ que es de color rojo. Si $v_1,v_3$ no están conectados por un camino azul-rojo (digamos si la arista $\overline{v_6v_7}$ no existiera), podemos intercambiar los colores a lo largo del camino de $v_1$ a $v_6$ y colorear $v$ de azul. De lo contrario, consideremos la cadena azul-rojo que contiene $v_1,v_3$. Sumando $v$ y las aristas $\overline{vv_1},\overline{vv_3}$ obtenemos un camino cerrado $P$ (línea doble) que divide el plano en una región ``interior'' y otra ``exterior'' (Fig~\ref{f.five-color-proof}, centro).
 
-Considere $v_2$ que es de color verde y $v_4$ que es de color naranja. Estos vértices no pueden estar contenidos en una sola cadena verde-naranja, porque $v_2$ está dentro de $P$ y $v_4$ está fuera de $P$, por lo que cualquier camino que los conecte debe cruzar $P$, contradiciendo la suposición de que el grafo es plano. Por lo tanto, deben estar contenidas en dos cadenas verde-naranja (doble línea discontinua, en la Fig.~\ref{f.five-color-proof}, centro).
-Intercambiar los colores en la cadena que contiene $v_2$ y luego $v$ puede ser de color verde para obtener un cinco-coloración de $G$ (Fig.~\ref{f.five-color-proof}, abajo).
+Consideremos $v_2$ que es de color verde y $v_4$ que es de color naranja. Estos vértices no pueden estar contenidos en una sola cadena verde-naranja, porque $v_2$ está dentro de $P$ y $v_4$ está fuera de $P$, por lo que cualquier camino que los conecte debe cruzar $P$, contradiciendo la suposición de que el grafo es plano. Por lo tanto, deben estar contenidas en dos cadenas verde-naranja (doble línea discontinua, en la Fig.~\ref{f.five-color-proof}, centro).
+Intercambiamos los colores en la cadena que contiene $v_2$ y luego $v$ puede ser de color verde para obtener una coloración de G con cinco colores de $G$ (Fig.~\ref{f.five-color-proof}, abajo).
 \end{proof}
 
 \begin{advanced}
@@ -815,14 +813,14 @@ La afirmación de que un camino continuo desde el interior de una curva continua
 \section{Demostración incorrecta del teorema de los cuatro colores de Kempe}\label{s.kempe}
 
 \begin{theorem}\label{thm.fourcolor}
-Any planar graph $G$ can be four-colored.
+Todo grafo plano puede ser coloraedo con cuatro colores.
 \end{theorem}\index{Four-color theorem}
 
-\begin{proof} (Incorrect) El caso base de la inducción y la mayor parte de la demostración es el mismo que el del teorema de los cinco colores. El nuevo caso que hay que considerar es un vértice $v$ con cinco vecinos que, por la hipótesis inductiva, se puede colorear con cuatro colores después de quitar $v$.
+\begin{proof} (Incorrecta) El caso base de la inducción y la mayor parte de la demostración es son los mismos que los del teorema de los cinco colores. El nuevo caso que hay que considerar es un vértice $v$ con cinco vecinos que, por la hipótesis inductiva, se puede colorear con cuatro colores después de quitar $v$.
 
 En la Fig.~\ref{f.five-kempe1} hay dos vértices $v_2,v_5$ coloreados de azul. Consideremos la cadena azul-verde que contiene $v_2$ y la cadena azul-amarilla que contiene $v_5$. La cadena azul-verde está contenida dentro de la trayectoria cerrada definida por la cadena rojo-amarilla que contiene $v_1,v_3$ (línea doble) y la cadena azul-amarilla está contenida dentro de la trayectoria cerrada definida por la cadena rojo-verde que contiene $v_1,v_4$ (línea doble discontinua).
 
-Intercambiar los colores de la cadena azul-verde y la cadena azul-amarillo (Fig.~\ref{f.five-kempe1-exchange}). El resultado es que los vecinos de $v$ se colorean con los tres colores rojo, verde y amarillo, dejando libre el azul para colorear $v$.
+Intercambiamos los colores de la cadena azul-verde y la cadena azul-amarillo (Fig.~\ref{f.five-kempe1-exchange}). El resultado es que los vecinos de $v$ se colorean con los tres colores rojo, verde y amarillo, dejando libre el azul para colorear $v$.
 \end{proof}
 
 \begin{figure}[ht]
@@ -970,7 +968,7 @@ Heawood observó que los caminos cerrados definidos por la cadena rojo-amarillo 
 \node[below,yshift=-8pt] at (X1) {$v_7$};
 \node[left,xshift=-8pt] at (X2) {$v_8$};
 \end{tikzpicture}
-\caption{Las cadenas rojo-amarillo y rojo-verde comparten vértices rojos}\label{f.five-kempe2}
+\caption{Las cadenas rojo-amarillo\\y rojo-verde comparten vértices rojos}\label{f.five-kempe2}
 \end{center}
 \end{minipage}
 \hfill
@@ -1021,9 +1019,9 @@ Heawood observó que los caminos cerrados definidos por la cadena rojo-amarillo 
 
 \subsection*{¿Cuál es la sorpresa?}
 
-El teorema de los cuatro colores es famoso porque es muy fácil de enunciar pero extremadamente difícil de demostrar. Por lo tanto, es sorprendente que la demostración del teorema de los cinco colores sea elemental. La parte inteligente de la prueba es Thm.~\ref{thm.degree5} (un grafo plano debe tener un vértice de como máximo grado $5$), que es un teorema que no tiene nada que ver con la coloración. En su lugar, resulta simplemente de contar vértices y aristas.
+El teorema de los cuatro colores es famoso porque es muy fácil de enunciar pero extremadamente difícil de demostrar. Por lo tanto, es sorprendente que la demostración del teorema de los cinco colores sea elemental. La parte inteligente de la demostración es el Teorema~\ref{thm.degree5} (un grafo plano debe tener un vértice de como máximo grado $5$), que es un teorema que no tiene nada que ver con la coloración. Simplemente, resulta simplemente de contar vértices y aristas.
 
 \subsection*{Fuentes}
 
 Para el teorema de los cuatro colores, véase \cite{thomas,wiki:four}. La demostración del teorema de los cinco colores se basa en \cite{thebook,wiki:five}.
-\cite{eppstein} presenta numerosas pruebas de la fórmula de Euler. La prueba incorrecta de Kempe del teorema de los cuatro colores se describe en \cite{sipka}.
+\cite{eppstein} presenta numerosas demostraciones de la fórmula de Euler. La demostración incorrecta de Kempe del teorema de los cuatro colores se describe en \cite{sipka}.

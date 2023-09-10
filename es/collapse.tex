@@ -1,10 +1,10 @@
 % !TeX root = surprises.tex
 
-\chapter{La brújula se hunde}\label{c.collapse}
+\chapter{El compás plegable}\label{c.collapse}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Una brújula moderna es un compás fijo: la distancia entre las dos patas puede fijarse de modo que es posible copiar un segmento de línea o un círculo de una posición a otra (Fig.~\ref{fig.fixed-compass}). Euclides utilizó un \emph{brújula de colapso} cuando no se puede mantener una distancia fija (Fig.~\ref{fig.collapsing-compass}). Los profesores suelen utilizar un compás colapsable consistente en un rotulador atado a una cuerda que se utiliza para construir un círculo en una pizarra. Es imposible mantener una longitud fija cuando se retira el compás de la pizarra. 
+Un compás moderno es un compás fijo: la distancia entre los dos brazos puede fijarse de modo que sea posible copiar un segmento de línea o un círculo de una posición a otra (Fig.~\ref{fig.fixed-compass}). Euclides utilizó un \emph{un compás plegable} cuando no se puede mantener una distancia fija (Fig.~\ref{fig.collapsing-compass}). Los profesores suelen utilizar un compás plegable que consiste en un rotulador atado a una cuerda que se utiliza para construir un círculo en una pizarra. Es imposible mantener una longitud fija cuando se retira el compás de la pizarra. 
 
 \begin{figure}[htb]
 \begin{minipage}{.45\textwidth}
@@ -32,7 +32,7 @@ Una brújula moderna es un compás fijo: la distancia entre las dos patas puede 
 \fill[gray] (a) -- (0.2,-0.8) -- (b) -- cycle;
 \end{scope}
 \end{tikzpicture}
-\caption{Una brújula fija. Una pata tiene una aguja que se coloca en el centro del círculo. Un lápiz fijado a la otra pata sirve para dibujar el círculo. Las patas están unidas por una bisagra hermética, de modo que la distancia entre las patas (el radio del círculo) se mantiene incluso cuando el compás se levanta del papel.}\label{fig.fixed-compass}
+\caption{Un compás  fijo. Un brazo tiene una aguja que se coloca en el centro del círculo. Un lápiz fijado al otro brazo sirve para dibujar el círculo. Los brazos están unidos por una bisagra ajustada modo que la distancia entre los brazos (el radio del círculo) se mantiene incluso cuando el compás se levanta del papel.}\label{fig.fixed-compass}
 \end{minipage}
 \hfill
 \begin{minipage}{.45\textwidth}
@@ -66,12 +66,12 @@ Una brújula moderna es un compás fijo: la distancia entre las dos patas puede 
 \draw[dashed,thick,fill=white!70!gray] (0,3.5) -- ++(0,-.5) -- ++(.4,0) -- ++(0,.5);
 \end{scope}
 \end{tikzpicture}
-\caption{Un compás colapsable. El usuario sujeta un trozo de cuerda en el centro del círculo. El otro extremo de la cuerda se ata a un lápiz y se utiliza para dibujar el círculo. Cuando se levanta el compás del papel, los dedos (punteados) pueden deslizarse fácilmente hasta una nueva posición.}\label{fig.collapsing-compass}
+\caption{Un compás plegable. El usuario sujeta un trozo de cuerda en el centro del círculo. El otro extremo de la cuerda se ata a un lápiz y se utiliza para dibujar el círculo. Cuando se levanta el compás del papel, los dedos (punteados) pueden deslizarse fácilmente hasta una nueva posición.}\label{fig.collapsing-compass}
 \end{minipage}
 \end{figure}
 
-Este capítulo comienza con una discusión sobre la relevancia de estudiar la construcción con regla y compás (Secc.~\ref{s.relevance}).
-En el apartado~\ref{s.collapse} se comparan los dos tipos de compás en la construcción más elemental: una mediatriz. En el apartado~\ref{s.collapse-copy} se presenta el método de Euclides para copiar un segmento de recta utilizando un compás de colapso. Esto demuestra que cualquier construcción que se pueda hacer usando un compás fijo se puede realizar usando un compás colapsable. La sección~\ref{s.collapse-copy-incorrect} muestra una prueba de este teorema que parece correcta, pero no funciona para todas las configuraciones de rectas y puntos. Para enfatizar que no hay que fiarse de los diagramas, la sección ~\ref{s.collapse-isoceles} presenta una famosa supuesta prueba de que todos los triángulos son isoceles; la prueba parece correcta, pero no lo es porque se basa en un diagrama incorrecto.
+Este capítulo comienza con una discusión sobre la relevancia de estudiar la construcción con regla y compás (Sec.~\ref{s.relevance}).
+En el apartado~\ref{s.collapse} se comparan los dos tipos de compás en la construcción más elemental: una mediatriz. En el apartado~\ref{s.collapse-copy} se presenta el método de Euclides para copiar un segmento de recta utilizando un compás plegable. Esto demuestra que cualquier construcción que se pueda hacer usando un compás fijo se puede realizar usando un compás plegable. La sección~\ref{s.collapse-copy-incorrect} presenta una demostración de este teorema que parece correcta, pero no funciona para todas las configuraciones de rectas y puntos. Para enfatizar que no hay que fiarse de los diagramas, la sección~\ref{s.collapse-} presenta una famosa supuesta demostración de que todos los triángulos son ; la demostración parece correcta, pero no lo es porque se basa en un diagrama incorrecto.
 
 \section{Construcción con regla y compás}\label{s.relevance}
 
@@ -79,15 +79,15 @@ La construcción con regla y compás solía ser el concepto fundamental que se e
 
 No obstante, creo que estudiar las construcciones tiene sus ventajas:
 \begin{itemize}
-\item Es más divertido y desafiante aprender geometría a través de construcciones que simplemente leyendo teoremas y pruebas.
+\item Es más divertido y desafiante aprender geometría a través de construcciones que simplemente leyendo teoremas y demostraciones.
 \item Se han logrado avances significativos en matemáticas mediante intentos de encontrar construcciones. El capítulo~\ref{c.heptadecagon} presenta una construcción de Gauss que condujo al álgebra abstracta moderna, en particular, la teoría desarrollada por \'{E}variste Galois.
 \item Es algo contraintuitivo y por lo tanto muy interesante que se pueda demostrar que es imposible construir algunos objetos geométricos.
 \item Lamentablemente, hay muchas personas que pierden años de su vida intentando realizar construcciones imposibles. Los estudiantes deberían ser conscientes de la inutilidad de tales esfuerzos.
 \end{itemize}
 
-\section{Brújulas fijas y brújulas abatibles}\label{s.collapse}
+\section{Compases fijos y compases plegables}\label{s.collapse}
 
-Algunos libros de geometría presentan la construcción de una mediatriz de un segmento de recta construyendo dos circunferencias centradas en los extremos del segmento de recta de forma que los radios sean iguales y mayores que la mitad de la longitud del segmento (Fig.~\ref{f.collapse-perp-bisector-fixed}). Esto sólo se puede hacer con un compás fijo porque después de dibujar el círculo centrado en $A$, la distancia entre las patas del compás tiene que permanecer fija para dibujar el círculo centrado en $B$.
+Algunos libros de geometría presentan la construcción de la mediatriz de un segmento de recta construyendo dos circunferencias centradas en los extremos del segmento de forma que los radios sean iguales y mayores que la mitad de la longitud del segmento (Fig.~\ref{f.collapse-perp-bisector-fixed}). Esto sólo se puede hacer con un compás fijo porque después de dibujar el círculo centrado en $A$, la distancia entre los brazos del compás tiene que permanecer fija para dibujar el círculo centrado en $B$.
 
 \begin{figure}[t]
 \begin{minipage}{.45\textwidth}
@@ -124,23 +124,23 @@ Algunos libros de geometría presentan la construcción de una mediatriz de un s
 \node[below left,xshift=2pt,yshift=-3pt] at (b) {$D$};
 \draw ($ (b) ! 1.2 ! (t)$) -- ($ (t) ! 1.2 ! (b)$);
 \end{tikzpicture}
-\caption{Construcción de una mediatriz con compás fijo o de colapso}\label{f.collapse-perp-bisector-collapse}
+\caption{Construcción de una mediatriz con compás fijo o plegable}\label{f.collapse-perp-bisector-collapse}
 \end{center}
 \end{minipage}
 \end{figure}
 
-Figura~\ref{f.collapse-perp-bisector-collapse} muestra la construcción de una mediatriz con compás fijo o con compás abatible. Se construyen dos circunferencias: una centrada en $A$ con radio $\overline{AB}$ y otra centrada en $B$ con radio $\overline{BA}$. Esto se puede hacer con un compás de colapso porque (obviamente) $\overline{AB}=\overline{BA}$, por lo que el compás no tiene que ``recordar'' la longitud de $\overline{AB}$ para construir una circunferencia centrada en $B$ con el mismo radio.
-La demostración de que la recta construida mostrada en la Fig.~\ref{f.collapse-perp-bisector-fixed} es una mediatriz no es nada elemental porque hay que utilizar conceptos relativamente avanzados como triángulos congruentes. Sin embargo, la prueba de que la construcción de una mediatriz mostrada en la Fig.~\ref{f.collapse-perp-bisector-collapse} es correcta es sencilla y se basa en el hecho de que $\triangle ABC$ es un triángulo equilátero. De hecho, esta es la primera proposición en el \textit{Elementos} de Euclides.
+Figura~\ref{f.collapse-perp-bisector-collapse} muestra la construcción de una mediatriz con compás fijo o con compás plegable. Se construyen dos circunferencias: una centrada en $A$ con radio $\overline{AB}$ y otra centrada en $B$ con radio $\overline{BA}$. Esto se puede hacer con un compás plegable porque (obviamente) $\overline{AB}=\overline{BA}$, por lo que el compás no tiene que ``recordar'' la longitud de $\overline{AB}$ para construir una circunferencia centrada en $B$ con el mismo radio.
+La demostración de que la recta construida mostrada en la Fig.~\ref{f.collapse-perp-bisector-fixed} es una mediatriz no es nada elemental porque hay que utilizar conceptos relativamente avanzados como triángulos congruentes. Sin embargo, la demostración de que la construcción de una mediatriz mostrada en la Fig.~\ref{f.collapse-perp-bisector-collapse} es correcta es sencilla y se basa en el hecho de que $\triangle ABC$ es un triángulo equilátero. De hecho, esta es la primera proposición en los \textit{Elementos} de Euclides.
 $\overline{AC}=\overline{AB}$ ya que son radios del mismo círculo, análogamente, $\overline{BC}=\overline{BA}$. Tenemos: $\overline{AC}=\overline{AB}=\overline{BA}=\overline{BC}$.
 
 Figura~\ref{f.collapse-equilateral-fixed} muestra que para la construcción con compás fijo, el triángulo será un triángulo isósceles, no necesariamente equilátero (Fig.~\ref{f.collapse-equilateral-collapse}).
 
 \section{Construcción de Euclides para copiar un segmento de recta}\label{s.collapse-copy}
 
-La segunda proposición del \textit{Elementos} de Euclides describe cómo copiar un segmento de recta $\overline{AB}$ dado en un segmento de la misma longitud, uno de cuyos puntos extremos es un punto $C$ dado. Por lo tanto, un compás fijo no añade ninguna capacidad adicional y basta con un compás colapsable, aunque las construcciones son más fáciles con un compás fijo.
+La segunda proposición de los \textit{Elementos} de Euclides describe cómo copiar un segmento de recta $\overline{AB}$ dado un segmento de la misma longitud, uno de cuyos puntos extremos es un punto $C$ dado. Por lo tanto, un compás fijo no añade ninguna capacidad adicional y basta con un compás plegable, aunque las construcciones son más fáciles con un compás fijo.
 
 \begin{theorem}
-Dado un segmento de recta $\overline{AB}$ y un punto $C$, se puede construir un segmento de recta $\overline{CC'}$, uno de cuyos puntos extremos es $C$, utilizando un compás de colapso, tal que $\overline{AB}=\overline{CC'}$ (Fig.~\ref{f.collapse-copying-1}).
+Dado un segmento de recta $\overline{AB}$ y un punto $C$, se puede construir un segmento de recta $\overline{CC'}$, uno de cuyos puntos extremos es $C$, utilizando un compás plegable, tal que $\overline{AB}=\overline{CC'}$ (Fig.~\ref{f.collapse-copying-1}).
 \end{theorem}
 
 \begin{figure}[t]
@@ -184,7 +184,7 @@ Dado un segmento de recta $\overline{AB}$ y un punto $C$, se puede construir un 
 \draw (A) -- (t);
 \draw (B) -- (t);
 \end{tikzpicture}
-\caption{Construcción de un triángulo equilátero con un compás de derrumbe}\label{f.collapse-equilateral-collapse}
+\caption{Construcción de un triángulo equilátero con un compás plegable}\label{f.collapse-equilateral-collapse}
 \end{center}
 \end{minipage}
 \end{figure}
@@ -223,13 +223,13 @@ Dado un segmento de recta $\overline{AB}$ y un punto $C$, se puede construir un 
 \draw (A) -- (D);
 \draw (C) -- (D);
 \end{tikzpicture}
-\caption{Copiar un segmento de línea con un compás de colapso}\label{f.collapse-copying-2}
+\caption{Copiar un segmento de línea con un compás plegable}\label{f.collapse-copying-2}
 \end{center}
 \end{minipage}
 \end{figure}
 
 \begin{proof}
-Construir el segmento de recta $\overline{AC}$. Construir el triángulo equilátero $\triangle ACD$ cuya base es $\overline{AC}$ (Fig.~\ref{f.collapse-copying-2}). Por la primera proposición de Euclides, el triángulo se puede construir utilizando un compás de colapso. Construir la semirrecta que es prolongación de la recta segmento \emph{de $D$ a $A$}, y construir la semirrecta que es prolongación de la recta segmento \emph{de $D$ a $C$} (Fig.~\ref{f.collapse-copying-3}). Construimos la circunferencia centrada en $A$ con radio $\overline{AB}$ y denotamos la intersección de la circunferencia y la semirrecta que prolonga $\overline{DA}$ por $E$ (Fig.~\ref{f.collapse-copying-4}). Construimos la circunferencia centrada en $D$ con radio $\overline{DE}$ y denotamos por $F$ la intersección de la circunferencia y la semirrecta que prolonga $\overline{DC}$ (Fig.~\ref{f.collapse-copying-5}).
+Construimos el segmento de recta $\overline{AC}$. Construimos el triángulo equilátero $\triangle ACD$ cuya base es $\overline{AC}$ (Fig.~\ref{f.collapse-copying-2}). Por la primera proposición de Euclides, el triángulo se puede construir utilizando un compás plegable. Construimos la semirrecta que es prolongación del segmento \emph{de $D$ a $A$}, y construir la semirrecta que es prolongación de la recta segmento \emph{de $D$ a $C$} (Fig.~\ref{f.collapse-copying-3}). Construimos la circunferencia centrada en $A$ con radio $\overline{AB}$ y denotamos con E la intersección de la circunferencia y la semirrecta que prolonga $\overline{DA}$ (Fig.~\ref{f.collapse-copying-4}). Construimos la circunferencia centrada en $D$ con radio $\overline{DE}$ y denotamos con $F$ la intersección de la circunferencia y la semirrecta que prolonga $\overline{DC}$ (Fig.~\ref{f.collapse-copying-5}).
 
 \begin{figure}[t]
 \begin{minipage}{.45\textwidth}
@@ -249,7 +249,7 @@ Construir el segmento de recta $\overline{AC}$. Construir el triángulo equilát
 \draw[name path=ray2] (D) -- ($ (D) ! 3 ! (C) $);
 \draw[name path=ray1] (D) -- ($ (D) ! 3 ! (A) $);
 \end{tikzpicture}
-\caption{Construcción de rayos a partir de $D$}\label{f.collapse-copying-3}
+\caption{Construcción de semirrectas a partir de $D$}\label{f.collapse-copying-3}
 \end{center}
 \end{minipage}
 \hfill
@@ -273,12 +273,12 @@ Construir el segmento de recta $\overline{AC}$. Construir el triángulo equilát
 \path [name intersections={of=c1 and ray1,by={E,e}}];
 \node[right,xshift=2pt,yshift=-2pt] at (E) {$E$};
 \end{tikzpicture}
-\caption{Construir un círculo de radio $\overline{AB}$}\label{f.collapse-copying-4}
+\caption{Construimos un círculo de radio $\overline{AB}$}\label{f.collapse-copying-4}
 \end{center}
 \end{minipage}
 \end{figure}
 
-$\overline{DC}=\overline{DA}$ porque el $\triangle ACD$ es equilátero. $\overline{AE}=\overline{AB}$ son radios del mismo círculo, al igual que $\overline{DF}=\overline{DE}$. Por lo tanto:
+$\overline{DC}=\overline{DA}$ porque el $\triangle ACD$ es equilátero. $\overline{AE}=\overline{AB}$ son radios de lamisma circunferencia, al igual que $\overline{DF}=\overline{DE}$. Por lo tanto:
 \[
 \overline{CF}=\overline{DF}-\overline{DC}=\overline{DE}-\overline{DC}=\overline{DE}-\overline{DA}=\overline{AE}=\overline{AB}\,.
 \]
@@ -315,7 +315,7 @@ $\overline{DC}=\overline{DA}$ porque el $\triangle ACD$ es equilátero. $\overli
 \caption{Construcción de $\overline{CF}=\overline{AB}$}\label{f.collapse-copying-5}
 \end{figure}
 
-La especificación de las direcciones de los rayos es esencial. La demostración funciona para cualquier segmento de recta $\overline{AB}$ y cualquier punto $C$, independientemente de su posición respecto a $\overline{AB}$.  Especificando las direcciones el ``cono'' encerrado por los dos rayos intersecará los círculos aunque $\overline{AC}>\overline{AB}$ (Fig.~\ref{f.collapse-copying-6}).
+La especificación de las direcciones de las semirrectas es esencial. La demostración funciona para cualquier segmento de recta $\overline{AB}$ y cualquier punto $C$, independientemente de su posición respecto a $\overline{AB}$.  Especificando las direcciones, el ``cono'' encerrado por los dos rayos intersecará los círculos aunque $\overline{AC}>\overline{AB}$ (Fig.~\ref{f.collapse-copying-6}).
 
 \begin{figure}
 \begin{center}
@@ -350,10 +350,10 @@ La especificación de las direcciones de los rayos es esencial. La demostración
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Una construcción defectuosa para copiar un segmento de línea}\label{s.collapse-copy-incorrect}
+\section{Una construcción errónea para copiar un segmento de línea}\label{s.collapse-copy-incorrect}
 
 \begin{proof}
-Construir tres circunferencias: una centrada en $A$ con radio $\overline{AB}$, otra centrada en $A$ con radio $\overline{AC}$, y otra centrada en $C$ con radio $\overline{AC}=\overline{CA}$. Denotamos las intersecciones de las circunferencias centradas en $A$ y $C$ por $E$ y $F$, respectivamente, y denotamos una intersección de la circunferencia centrada en $C$ y la circunferencia centrada en $A$ con radio $\overline{AB}$ por $D$. Si $\overline{AC}>\overline{AB}$, la construcción es como se muestra en Fig.~\ref{f.collapse-incorrect-1}.
+Construimos tres circunferencias: una centrada en $A$ con radio $\overline{AB}$, otra centrada en $A$ con radio $\overline{AC}$, y otra centrada en $C$ con radio $\overline{AC}=\overline{CA}$. Denotamos las intersecciones de las circunferencias centradas en $A$ y $C$ con $E$ y $F$, respectivamente, y denotamos una intersección de la circunferencia centrada en $C$ y la circunferencia centrada en $A$ con radio $\overline{AB}$ con $D$. Si $\overline{AC}>\overline{AB}$, la construcción es como se muestra en Fig.~\ref{f.collapse-incorrect-1}.
 \begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
@@ -373,7 +373,7 @@ Construir tres circunferencias: una centrada en $A$ con radio $\overline{AB}$, o
 \vertex{C};
 \end{tikzpicture}
 \end{center}
-\caption{Construction for copying a line segment (1)}\label{f.collapse-incorrect-1}
+\caption{Construcción para copiar un segmento de recta (1)}\label{f.collapse-incorrect-1}
 \end{figure}
 
 \begin{figure}[t]
@@ -407,21 +407,21 @@ Construir tres circunferencias: una centrada en $A$ con radio $\overline{AB}$, o
 \caption{Construcción para copiar un segmento de recta (2)}\label{f.collapse-incorrect-2}
 \end{figure}
 
-Construir una circunferencia centrada en $E$ con radio $\overline{ED}$. Denotemos por $G$ la intersección de esta circunferencia con la circunferencia centrada en $A$ de radio $\overline{AC}$. Hay dos intersecciones, por lo que elegir la más cercana a $C$ (Fig.~\ref{f.collapse-incorrect-2}).
+Construimos una circunferencia centrada en $E$ con radio $\overline{ED}$. Denotemos por $G$ la intersección de esta circunferencia con la circunferencia centrada en $A$ de radio $\overline{AC}$. Hay dos intersecciones, por lo que elegir la más cercana a $C$ (Fig.~\ref{f.collapse-incorrect-2}).
 $\overline{CD}=\overline{CE}$ son radios de la misma circunferencia que $\overline{AE}=\overline{AG}$. Por construcción los radios $\overline{CE}$ y $\overline{AE}$ son iguales. Por tanto:
 \[
 \overline{CD} = \overline{CE} = \overline{AE} = \overline{AG}\,.
 \]
 $\overline{EG} = \overline{ED}$ son radios del mismo círculo, por lo que $\triangle EAG\cong \triangle DCE$ por lado-lado-lado y $\angle GEA = \angle DEC$.
 
-Desde entonces:
+Como:
 \[
 \angle GEC = \angle GEA \!-\!\angle CEA = \angle DEC\!-\!\angle CEA = \angle DEA\,,
 \]
 resulta que $\triangle ADE\cong\triangle CGE$ por lado-ángulo-lado. $\overline{AB}=\overline{AD}$ son radios del círculo menor centrado en $A$, por lo que $\overline{GC}=\overline{AD}=\overline{AB}$.
 \end{proof}
 
-La prueba sólo es correcta si $\overline{AC}>\overline{AB}$.  Figura~\ref{f.collapse-incorrect-4} muestra un diagrama donde $\overline{AC}<\overline{AB}$ y se puede ver que $\overline{AB}\neq\overline{GC}$.
+La demostración sólo es correcta si $\overline{AC}>\overline{AB}$.  Figura~\ref{f.collapse-incorrect-4} muestra un diagrama donde $\overline{AC}<\overline{AB}$ y se puede ver que $\overline{AB}\neq\overline{GC}$.
 
 \begin{figure}[b]
 \begin{center}
@@ -447,18 +447,18 @@ La prueba sólo es correcta si $\overline{AC}>\overline{AB}$.  Figura~\ref{f.col
 \draw[thick] (G) -- (C);
 \end{tikzpicture}
 \end{center}
-\caption{Un diagrama para el que la prueba no funciona}\label{f.collapse-incorrect-4}
+\caption{Un diagrama para el que la demostración no funciona}\label{f.collapse-incorrect-4}
 \end{figure}
 
 
-\section{No te fíes de un diagrama}\label{s.collapse-isoceles}
+\section{No te fíes de un diagrama}\label{s.collapse-}
 
 \begin{theorem}[Incorrecto, por supuesto]
 Todos los triángulos son isósceles.
-\end{theorem}\index{Triangle!isoceles@all are isoceles}
+\end{theorem}\index{Triangle!@all are }
 
 \begin{proof}
-Dado un triángulo arbitrario $\triangle ABC$, sea $P$ la intersección de la bisectriz del ángulo $\angle BAC$ y la mediatriz de $\overline{BC}$. Las intersecciones de las altitudes desde $P$ a los lados $\overline{AB}$, $\overline{AC}$ se denotan por $E,F$, respectivamente (Fig.~\ref{f.collapse-isoceles-1}). 
+Dado un triángulo arbitrario $\triangle ABC$, sea $P$ la intersección de la bisectriz del ángulo $\angle BAC$ y la mediatriz de $\overline{BC}$. Las intersecciones de las altitudes desde $P$ a los lados $\overline{AB}$, $\overline{AC}$ se denotan por $E,F$, respectivamente (Fig.~\ref{f.collapse--1}). 
 \begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=1]
@@ -494,15 +494,15 @@ Dado un triángulo arbitrario $\triangle ABC$, sea $P$ la intersección de la bi
 \vertex{P};
 \end{tikzpicture}
 \end{center}
-\caption{Una prueba incorrecta de que todos los triángulos son isóceles}\label{f.collapse-isoceles-1}
+\caption{Una demostración incorrecta de que todos los triángulos son isóceles}\label{f.collapse--1}
 \end{figure}
-$\triangle APE\cong \triangle APF$ porque son triángulos rectángulos con ángulos iguales $\alpha$ y lado común $\overline{AP}$. $\triangle DPB\cong \triangle DPC$ ya que son triángulos rectángulos, $\overline{PD}$ es un lado común y $\overline{BD}=\overline{CD}=a$. $\triangle EPB\cong \triangle FPC$ ya que son triángulos rectángulos, $\overline{EP}=\overline{PF}$ por la primera congruencia y $\overline{PB}=\overline{PC}$ por la segunda congruencia. Combinando las ecuaciones obtenemos que $\triangle ABC$ es isoceles:
+$\triangle APE\cong \triangle APF$ porque son triángulos rectángulos con ángulos iguales $\alpha$ y lado común $\overline{AP}$. $\triangle DPB\cong \triangle DPC$ ya que son triángulos rectángulos, $\overline{PD}$ es un lado común y $\overline{BD}=\overline{CD}=a$. $\triangle EPB\cong \triangle FPC$ ya que son triángulos rectángulos, $\overline{EP}=\overline{PF}$ por la primera congruencia y $\overline{PB}=\overline{PC}$ por la segunda congruencia. Combinando las ecuaciones obtenemos que $\triangle ABC$ es :
 \[
 \overline{AB}= \overline{AE}+\overline{EB}=\overline{AF}+\overline{FC} =\overline{AC}\,.
 \]
 \end{proof}
 
-La lógica de la prueba es correcta, pero el diagrama en el que se basa la prueba no es correcto porque el punto $P$ está fuera del triángulo. (Fig.~\ref{f.collapse-isoceles-2}).
+La lógica de la demostración es correcta, pero el diagrama en el que se basa la demostración no es correcto porque el punto $P$ está fuera del triángulo. (Fig.~\ref{f.collapse--2}).
 
 \begin{figure}[b]
 \begin{center}
@@ -526,13 +526,13 @@ La lógica de la prueba es correcta, pero el diagrama en el que se basa la prueb
 \draw (4,0) rectangle +(10pt,10pt);
 \node[right] at (X) {$P$};
 \end{tikzpicture}
-\caption{Por qué no funciona la construcción}\label{f.collapse-isoceles-2}
+\caption{Por qué no funciona la construcción}\label{f.collapse--2}
 \end{center}
 \end{figure}
 
 \subsection*{¿Cuál es la sorpresa?}
 
-De estudiante daba por sentado que un compás tiene una junta de fricción que mantiene la distancia entre la punta y el lápiz cuando se levanta del papel. Cuando el profesor utilizaba una brújula hecha con un trozo de cuerda y un trozo de tiza, nunca imaginé que se diferenciara de mi brújula. El artículo de Gotfried Toussaint fue una verdadera sorpresa, al igual que su demostración de que las pruebas posteriores a Euclides eran incorrectas porque dependían de diagramas que hacían suposiciones injustificadas. Recomiendo el artículo a los lectores que deseen profundizar en el conocimiento de las pruebas en matemáticas.
+De estudiante daba por sentado que un compás tiene una bisagra que mantiene la distancia entre la punta y el lápiz cuando se levanta del papel. Cuando el profesor utilizaba un compás hecho con un trozo de cuerda y un trozo de tiza, nunca imaginé que se diferenciara de mi compás. El artículo de Gotfried Toussaint fue una verdadera sorpresa, al igual que su demostración de que las demostraciones posteriores a Euclides eran incorrectas porque dependían de diagramas que hacían suposiciones injustificadas. Recomiendo el artículo a los lectores que deseen profundizar en el conocimiento de las demostraciones en matemáticas.
 
 \subsection*{Fuentes}
 

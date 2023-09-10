@@ -36,7 +36,7 @@ Hay un bloque entre los bloques rojos, dos bloques entre los bloques azules y tr
 
 Figura~\ref{f.langford} muestra que 312132 es una solución para $L(3)$.
 
-Sección~\ref{s.langford-covering} replantea el problema de Langford utilizando un formalismo matemático que facilita la resolución del problema. La sección~\ref{s.langford-theorem} caracteriza los valores de $n$ para los que $L(n)$ es resoluble y presenta dos pruebas del teorema. La primera, relativamente sencilla, utiliza la técnica del doble recuento: contar el mismo valor de dos formas distintas e igualar las fórmulas resultantes. La segunda prueba es una inducción inteligente, pero la "contabilidad" que implica requiere una cuidadosa atención a los detalles. Sección~\ref{s.langford-four} resuelve la solución para $L(4)$.
+Sección~\ref{s.langford-covering} replantea el problema de Langford utilizando un formalismo matemático que facilita la resolución del problema. La sección~\ref{s.langford-theorem} caracteriza los valores de $n$ para los que $L(n)$ es resoluble y presenta dos demostraciones del teorema. La primera, relativamente sencilla, utiliza la técnica del doble recuento: contar el mismo valor de dos formas distintas e igualar las fórmulas resultantes. La segunda demostración es una inducción inteligente, pero la "contabilidad" que implica requiere una cuidadosa atención a los detalles. Sección~\ref{s.langford-four} resuelve la solución para $L(4)$.
 
 \section{El problema de Langford como un problema de cobertura}\label{s.langford-covering}
 
@@ -87,7 +87,7 @@ El análisis ha demostrado que ésta es la única solución, salvo la solución 
 $L(n)$ tiene solución si y sólo si $n=4k$ o $n=4k+3$.
 \end{theorem}\index{Langford's problem!solvability, conditions for}
 
-Demostramos el sentido directo del teorema. La prueba~1 muestra que si $L(n)$ tiene solución entonces $n=4k$ o $n=4k+3$. La prueba~2 muestra el contrapositivo: si $n=4k+1$ o $n=4k+2$ entonces $L(n)$ no tiene solución.
+Demostramos el sentido directo del teorema. La demostración~1 muestra que si $L(n)$ tiene solución entonces $n=4k$ o $n=4k+3$. La demostración~2 muestra el contrapositivo: si $n=4k+1$ o $n=4k+2$ entonces $L(n)$ no tiene solución.
 
 \begin{proof}
 \mbox{}\\
@@ -118,7 +118,7 @@ Si $n$ es múltiplo de $4$, el producto es divisible por $4$.
 ¿Cuándo $3n-1$ es divisible por $4$? Cualquier número entero $n$ se puede expresar como $n=4i+j$ para $j=0,1,2,3$. Si $3n-1$ es divisible por $4$, entonces también lo es $3(4i+j)-1 = 12i+3j-1$. $12i$ es divisible por $4$. Para $j=\{0,1,2,3\}$, $3j-1=\{-1,2,5,8\}$ es divisible por $4$ si y sólo si $j=3$, es decir, $n=4i+3$.
 \end{proof}
 
-Para introducir la idea de la segunda prueba, considere cómo podría ser una solución para $n=4$. En las tablas siguientes las posiciones de las apariciones de 4 son 1 y 6, y las posiciones de las apariciones de 2 son 5 y 8. En ambos casos, una posición es impar y la otra par. En ambos casos, una posición es impar y la otra par. 
+Para introducir la idea de la segunda demostración, considere cómo podría ser una solución para $n=4$. En las tablas siguientes las posiciones de las apariciones de 4 son 1 y 6, y las posiciones de las apariciones de 2 son 5 y 8. En ambos casos, una posición es impar y la otra par. En ambos casos, una posición es impar y la otra par. 
 \[
 %\addtolength{\arraycolsep}{4pt}
 \begin{array}{|c|c|c|c|c|c|c|c|}
@@ -215,7 +215,7 @@ El teorema afirma que si esto es cierto entonces o $n=4k$ o $n=4k-1$, y si no en
 \begin{proof}
 \mbox{}\\
 (2)
-La prueba es por inducción.
+La demostración es por inducción.
 Hay cuatro casos base:
 \begin{itemize}
 \item $n=4k-3=1$. En $\{1\}$ hay un número impar de números impares y no hay solución.
@@ -341,7 +341,7 @@ $\not\! 1,\not\! 2,\not\! 3,\not\! 4,\not\! 5,\not\! 6,\not\! 7,\not\! 8,9,\not\
 
 \subsection*{Cuál es la sorpresa?}
 
-La fuente de inspiración de un teorema matemático puede ser sorprendente. Langford observó un patrón en los bloques de colores de su hijo que dio lugar al interesante Thm.~\ref{thm.langford}. Los estudiantes también deben ser introducidos al hecho de que un teorema puede tener muchas pruebas completamente diferentes.
+La fuente de inspiración de un teorema matemático puede ser sorprendente. Langford observó un patrón en los bloques de colores de su hijo que dio lugar al interesante Teorema~\ref{thm.langford}. Los estudiantes también deben ser introducidos al hecho de que un teorema puede tener muchas demostraciones completamente diferentes.
 
 \subsection*{Fuentes}
 Este capítulo se basa en \cite{miller}. \cite{davies} muestra cómo encontrar una solución para $n=4k$ y $n=4k+3$.

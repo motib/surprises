@@ -4,7 +4,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Este apéndice presenta teoremas de geometría y trigonometría que pueden no ser familiares para el lector, así como teoremas que pueden ser familiares pero cuyas pruebas no lo son.La sección~\ref{a.triangles} presenta tres fórmulas para calcular el área de un triangle. La sección~\ref{a.trig-identities} demuestra las identidades trigonométricas. Aunque las fórmulas y las identidades son en su mayoría familiares, los estudiantes a menudo aprenden estas identidades de memoria o las buscan sin ver nunca una demostración. Las siguientes secciones contienen demostraciones de teoremas avanzados de geometría: Secc.~\ref{a.bisector}---los teoremas de la bisectriz de angles, Secc.~\ref{a.ptolemy}---el teorema de Tolomeo que relaciona los lados y las diagonales de un cuadrilátero circunscrito por una circunferencia, Secc.~ref{a.ceva}---Teorema de Ceva que relaciona los tres segmentos de línea de un triangle, y Sección~\ref{a.menelaus}---Teorema de Menelao sobre los segmentos de una transversal en un triangle.
+Este apéndice presenta teoremas de geometría y trigonometría que pueden no ser familiares para el lector, así como teoremas que pueden ser familiares pero cuyas demostraciones no lo son.La sección~\ref{a.triangles} presenta tres fórmulas para calcular el área de un triangle. La sección~\ref{a.trig-identities} demuestra las identidades trigonométricas. Aunque las fórmulas y las identidades son en su mayoría familiares, los estudiantes a menudo aprenden estas identidades de memoria o las buscan sin ver nunca una demostración. Las siguientes secciones contienen demostraciones de teoremas avanzados de geometría: Sec.~\ref{a.bisector}---los teoremas de la bisectriz de angles, Sec.~\ref{a.ptolemy}---el teorema de Tolomeo que relaciona los lados y las diagonales de un cuadrilátero circunscrito por una circunferencia, Sec.~ref{a.ceva}---Teorema de Ceva que relaciona los tres segmentos de línea de un triangle, y Sección~\ref{a.menelaus}---Teorema de Menelao sobre los segmentos de una transversal en un triangle.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -90,7 +90,7 @@ Figura~\ref{f.area-base-height-2} muestra que ``cortando'' el triangle por la mi
 \triangle ABC = \frac{1}{2}bc\sin \theta\,.
 \end{align}
 \end{theorem}
-\begin{proof} De Thm.~\ref{eq.area-from-base} usando
+\begin{proof} De Teorema~\ref{eq.area-from-base} usando
 $h=c\sin \theta$.
 \end{proof}
 
@@ -106,7 +106,7 @@ donde $s$, el \emph{semi-perímetro} del triangle, es igual a  $\frac{1}{2}(a+b+
 \end{theorem}
 
 \begin{proof}
-El radio de una circunferencia y una tangente que corta al radio son perpendiculares. Además, las longitudes de los segmentos de línea de dos tangentes desde el mismo punto al círculo son iguales. Por lo tanto (Fig.~\ref{f.inscribed}):\footnote{Esto demuestra que el \emph{incentro} el centro de la circunferencia inscrita, es la intersección común de las tres bisectrices de los angles.}
+El radio de una circunferencia y una tangente que corta al radio son perpendiculares. Además, las longitudes de los segmentos de línea de dos tangentes desde el mismo punto al círculo son iguales. Por lo tanto (Fig.~\ref{f.inscribed})\footnote{Esto demuestra que el \emph{incentro} el centro de la circunferencia inscrita, es la intersección común de las tres bisectrices de los angles.}:
 \[
 \triangle AOB'\cong \triangle AOC',\quad
 \triangle BOA'\cong\triangle BOC',\quad
@@ -204,7 +204,7 @@ A partir de estas definiciones y $s=\frac{1}{2}(2u+2u+2w)$ obtenemos:
 \[
 s = u+v+w = r\left(\tan \frac{\alpha}{2}+\tan \frac{\beta}{2}+\tan \frac{\gamma}{2}\right)\,.
 \]
-Desde $\frac{\alpha}{2}+\frac{\alpha}{2}+\frac{\beta}{2}+\frac{\beta}{2}+\frac{\gamma}{2}+\frac{\gamma}{2}=360^\circ$ y así $\frac{\alpha}{2}+\frac{\beta}{2}+\frac{\gamma}{2}=180^\circ$, por Thm.~\ref{thm.tangent3}:
+Desde $\frac{\alpha}{2}+\frac{\alpha}{2}+\frac{\beta}{2}+\frac{\beta}{2}+\frac{\gamma}{2}+\frac{\gamma}{2}=360^\circ$ y así $\frac{\alpha}{2}+\frac{\beta}{2}+\frac{\gamma}{2}=180^\circ$, por Teorema~\ref{thm.tangent3}:
 \begin{eqnarray*}
 s&=&r\left(\tan \frac{\alpha}{2}\tan \frac{\beta}{2}\tan \frac{\gamma}{2}\right)\\
 &=&r\left(\frac{u}{r}\frac{v}{r}\frac{w}{r}\right)=\frac{1}{r^2}(u\,v\,w)\\
@@ -238,7 +238,7 @@ La fórmula de Heron se deduce de $u=s-a, v=s-b, w=s-c$.
 \end{theorem}
 Demostraremos la primera fórmula; las demás fórmulas pueden obtenerse utilizando los valores del seno y coseno para $-\alpha$ y $90^\circ-\alpha$.
 
-Dado un triangle rectangle $\triangle ABC$ con angle agudo $\alpha$ y un triangle rectangle $\triangle ACD$ con angle agudo $\beta$, podemos unirlos para obtener figuras geométricas con angle $\alpha+\beta$ (Fig.~\ref{f.sin-sum1}). El diagrama de la izquierda es el más utilizado en las demostraciones de las identidades. Aquí damos dos pruebas basadas en los diagramas central y derecho.
+Dado un triangle rectangle $\triangle ABC$ con angle agudo $\alpha$ y un triangle rectangle $\triangle ACD$ con angle agudo $\beta$, podemos unirlos para obtener figuras geométricas con angle $\alpha+\beta$ (Fig.~\ref{f.sin-sum1}). El diagrama de la izquierda es el más utilizado en las demostraciones de las identidades. Aquí damos dos demostraciones basadas en los diagramas central y derecho.
 \begin{figure}[h]
 \begin{center}
 \begin{tikzpicture}[scale=.85]
@@ -301,7 +301,7 @@ Dado un triangle rectangle $\triangle ABC$ con angle agudo $\alpha$ y un triangl
 \begin{proof}
 \mbox{}\\
 (1)
-Calculemos el área del $\triangle ABD$ de dos formas distintas: (1) utilizando la Ec.~\ref{eq.area-from-sine} sobre el $\triangle ABD$, y (2) utilizando la ecuación por separado sobre el $\triangle ABC$ y el $\triangle ADC$ (Fig.~\ref{f.sin-sum2}).
+Calculemos el área del $\triangle ABD$ de dos formas distintas: (1) utilizando la Ecuación~\ref{eq.area-from-sine} sobre el $\triangle ABD$, y (2) utilizando la ecuación por separado sobre el $\triangle ABC$ y el $\triangle ADC$ (Fig.~\ref{f.sin-sum2}).
 $h$ también se calcula dos veces utilizando la definición de las funciones trigonométricas:
 \begin{eqnarray*}
 \triangle ABD &=& \frac{1}{2}bc\sin(\alpha+\beta)\\
@@ -338,7 +338,7 @@ Igualando las dos fórmulas para $\triangle ABD$ y cancelando $\frac{1}{2}bc$, o
 \caption{Cálculo del área de un triangle de dos maneras}\label{f.sin-sum2}
 \end{figure}
 
-La segunda prueba utiliza el siguiente teorema:
+La segunda demostración utiliza el siguiente teorema:
 \begin{theorem}
 En un círculo de \emph{diámetro} $1$ la longitud de una cuerda que subtiende un angle inscrito es igual al seno del angle (Fig.~\ref{f.chord-angle}).
 \end{theorem}
@@ -380,9 +380,9 @@ Sea $\overline{AB}$ un diámetro y $\angle BAC=\alpha$. Sea $D$ cualquier otro p
 \begin{proof}
 \mbox{}\\
 (2)
-Esta prueba se basa en el diagrama de la derecha de la Fig.~\ref{f.sin-sum1} reproducido en la Fig.~\ref{f.trig-quad-circle}, donde el cuadrilátero $\overline{ABCD}$ ha sido inscrito en una circunferencia.
-Por Thm.~\ref{thm.quad-circum} un cuadrilátero puede ser circunscrito\index{Círculo circunscrito} por un círculo si y sólo si la suma de cada par de angles opuestos es $180^\circ$.
-$\angle ADC+\angle ABC=180^\circ$ ya que ambos angles son rectos. Por Thm.~\ref{thm.interior-angles-of-a-polygon} la suma de los angles interiores de un cuadrilátero es $360^\circ$, por lo que $\angle DAB+\angle DCB=180^\circ$. 
+Esta demostración se basa en el diagrama de la derecha de la Fig.~\ref{f.sin-sum1} reproducido en la Fig.~\ref{f.trig-quad-circle}, donde el cuadrilátero $\overline{ABCD}$ ha sido inscrito en una circunferencia.
+Por Teorema~\ref{thm.quad-circum} un cuadrilátero puede ser circunscrito\index{Círculo circunscrito} por un círculo si y sólo si la suma de cada par de angles opuestos es $180^\circ$.
+$\angle ADC+\angle ABC=180^\circ$ ya que ambos angles son rectos. Por Teorema~\ref{thm.interior-angles-of-a-polygon} la suma de los angles interiores de un cuadrilátero es $360^\circ$, por lo que $\angle DAB+\angle DCB=180^\circ$. 
 \begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
@@ -426,7 +426,7 @@ y sus diagonales son:
 \overline{BD}=\sin(\alpha + \beta),\quad \overline{CA}=\sin (\alpha+\gamma)\,.
 \]
 
-Por el Teorema de Ptolomeo (Thm.~\ref{thm.ptolemy}) el producto de las diagonales de un cuadrilátero circunscrito por una circunferencia es igual a la suma de los productos de los lados opuestos del cuadrilátero. Como $\angle ADC$ y $\angle ABC$ son angles rectos tenemos:
+Por el Teorema de Ptolomeo (Teorema~\ref{thm.ptolemy}) el producto de las diagonales de un cuadrilátero circunscrito por una circunferencia es igual a la suma de los productos de los lados opuestos del cuadrilátero. Como $\angle ADC$ y $\angle ABC$ son angles rectos tenemos:
 \[
 \renewcommand{\arraystretch}{1.3}
 \begin{array}{lcl}
@@ -449,7 +449,7 @@ Por el Teorema de Ptolomeo (Thm.~\ref{thm.ptolemy}) el producto de las diagonale
 \]
 \end{theorem}
 \begin{proof}
-La prueba utiliza las fórmulas en Thm.~\ref{thm.sum-of-trig} y la fórmula $\sin^2\alpha+\cos^2\alpha=1$:
+La demostración utiliza las fórmulas en Teorema~\ref{thm.sum-of-trig} y la fórmula $\sin^2\alpha+\cos^2\alpha=1$:
 \begin{eqnarray*}
 \cos 3\alpha &=& \cos (2\alpha +\alpha)\\
 &=& \cos 2\alpha\cos\alpha - \sin 2\alpha\sin\alpha\\
@@ -465,7 +465,7 @@ La prueba utiliza las fórmulas en Thm.~\ref{thm.sum-of-trig} y la fórmula $\si
 \subsection{El seno y el coseno de un semiangle}\label{s.sine-cosine-half}
 \index{Trigonometric identities!sine and cosine of a half-angle}
 \begin{theorem}\label{thm.sine-cosine-half}
-Si $\alpha$ es un angle en un \emph{triangle} entonces:\footnote{La fórmula general es más compleja porque las raíces cuadradas pueden ser positivas o negativas dependiendo del cuadrante en el que se encuentre $\alpha/2$. Para un triangle $0\!<\!\alpha\!<\!180^\circ$, entonces $0\!<\!\alpha/2\!<\!90^\circ$ está en el primer cuadrante y tanto el seno como el coseno son positivos.}
+Si $\alpha$ es un angle en un \emph{triangle} entonces\footnote{La fórmula general es más compleja porque las raíces cuadradas pueden ser positivas o negativas dependiendo del cuadrante en el que se encuentre $\alpha/2$. Para un triangle $0\!<\!\alpha\!<\!180^\circ$, entonces $0\!<\!\alpha/2\!<\!90^\circ$ está en el primer cuadrante y tanto el seno como el coseno son positivos.}:
 \begin{eqnarray*}
 \cos \left(\frac{\alpha}{2}\right)&=&\sqrt{\frac{1+\cos\alpha}{2}}\\
 \sin\left(\frac{\alpha}{2}\right)&=&\sqrt{\frac{1-\cos\alpha}{2}}\,.
@@ -473,7 +473,7 @@ Si $\alpha$ es un angle en un \emph{triangle} entonces:\footnote{La fórmula gen
 \end{theorem}
 
 \begin{proof}
-La prueba utiliza las fórmulas Thm.~\ref{thm.sum-of-trig} y la fórmula $\sin^2\alpha+\cos^2\alpha=1$:
+La demostración utiliza las fórmulas Teorema~\ref{thm.sum-of-trig} y la fórmula $\sin^2\alpha+\cos^2\alpha=1$:
 \begin{eqnarray*}
 \cos \alpha&=&\cos 2\left(\frac{\alpha}{2}\right)=\cos \left(\frac{\alpha}{2}\right)\cos\left(\frac{\alpha}{2}\right)-\sin \left(\frac{\alpha}{2}\right)\sin\left(\frac{\alpha}{2}\right)\\
 &=&2\cos^2 \left(\frac{\alpha}{2}\right)-1\\
@@ -508,7 +508,7 @@ a^2&=&ca\cos \beta + ba\cos \gamma\slabel{eq.lc2}\\
 b^2&=&cb\cos \alpha + ab\cos \gamma\,.\slabel{eq.lc3}
 \end{subeqnarray}
 
-Sumando las Ecs.~\ref{eq.lc2} y \ref{eq.lc3} y restando la Ec.~\ref{eq.lc1} se obtiene:
+Sumando las Ecs.~\ref{eq.lc2} y \ref{eq.lc3} y restando la Ecuación~\ref{eq.lc1} se obtiene:
 \begin{eqnarray*}
 a^2+b^2-c^2&=&ca\cos \beta + ba\cos \gamma\\
 &&\;\; +\,cb\cos \alpha + ab\cos \gamma \\
@@ -542,10 +542,10 @@ c^2&=&a^2+b^2-2ab\cos \gamma\,.
 \begin{proof}
 \mbox{}\\
 (2)
-La segunda prueba utiliza el teorema de Ptolomeo (Thm.~\ref{thm.ptolemy}).\footnote{¡La sección~\ref{a.ptolemy} utiliza la Ley de los Cosenos para demostrar el teorema de Ptolomeo! La primera prueba de la Ley de los Cosenos evita este razonamiento circular. Además, hay pruebas del teorema de Ptolomeo que no utilizan la Ley de los Cosenos.}
+La segunda demostración utiliza el teorema de Ptolomeo (Teorema~\ref{thm.ptolemy})\footnote{¡La sección~\ref{a.ptolemy} utiliza la Ley de los Cosenos para demostrar el teorema de Ptolomeo! La primera demostración de la Ley de los Cosenos evita este razonamiento circular. Además, hay demostraciones del teorema de Ptolomeo que no utilizan la Ley de los Cosenos.}.
 
 El triangle $\triangle ABC$ puede circunscribirse en una circunferencia. 
-Construir otro triangle $\triangle ABC'$ congruente con $\triangle ABC$ e inscrito en la misma circunferencia (Fig.~\ref{f.law-cosines3}). Esto se puede hacer mediante la construcción de un angle de $\overline{AB}$ igual a $\angle CAB$ que se cruza con el círculo en $C'$ y luego construir la línea $\overline{C'A}$.
+Construimos otro triangle $\triangle ABC'$ congruente con $\triangle ABC$ e inscrito en la misma circunferencia (Fig.~\ref{f.law-cosines3}). Esto se puede hacer mediante la construcción de un angle de $\overline{AB}$ igual a $\angle CAB$ que se cruza con el círculo en $C'$ y luego construir la línea $\overline{C'A}$.
 Como los angles subtendidos por la misma cuerda son iguales $\angle AC'B =\angle BCA$, entonces también $\angle CBA=\angle C'AB$ y así $\triangle ABC'\cong\triangle BAC$ por angle-lado-angle con el lado común $\overline{AB}$.
 
 Caen perpendiculares de $C$ a $D$ y de $C'$ a $D'$ sobre $\overline{AB}$ de modo que $x=a\cos \beta$. Por el teorema de Ptolomeo para el cuadrilátero $\overline{ABCC'}$:
@@ -830,7 +830,7 @@ En $\triangle ABC$ que la bisectriz del ángulo de $\angle BAC$ intersecan $\ove
 \caption{Teorema de la bisectriz interna del ángulo}\label{f.angle-bisector}
 \end{figure}
 \begin{proof}
-Demostramos el teorema calculando las áreas de dos triángulos utilizando tanto la base y la altura (Ec.~\ref{eq.area-from-base}), como la base, el ángulo y el lado (Ec.~\ref{eq.area-from-sine}):
+Demostramos el teorema calculando las áreas de dos triángulos utilizando tanto la base y la altura (Ecuación~\ref{eq.area-from-base}), como la base, el ángulo y el lado (Ecuación~\ref{eq.area-from-sine}):
 \begin{eqnarray*}
 \triangle ABD&=&\frac{1}{2}\overline{BD}h=\frac{1}{2}\overline{AB}\,\overline{AD}\sin \alpha\\
 \frac{\overline{BD}}{\overline{AB}}&=&\frac{\overline{AD}\sin \alpha}{h}\\
@@ -899,7 +899,7 @@ Antes de demostrar el teorema de Ptolomeo, demostraremos teoremas sobre cuadril�
 Un cuadrilátero puede ser circunscrito por una circunferencia si y sólo si los ángulos opuestos son suplementarios (suma a $180^\circ$).
 \end{theorem}\index{Circumscribed circle}
 
-Los libros de texto de geometría ofrecen una prueba sencilla de la dirección de avance, pero es difícil encontrar una prueba de la inversa, por lo que aquí se ofrecen ambas pruebas.
+Los libros de texto de geometría ofrecen una demostración sencilla de la dirección de avance, pero es difícil encontrar una demostración de la inversa, por lo que aquí se ofrecen ambas demostraciones.
 
 \begin{proof}
 \mbox{}\\
@@ -961,7 +961,7 @@ Un ángulo inscrito es igual a la mitad del arco que lo subtiende por lo que $\a
 (Dirección inversa)
 Cualquier triángulo puede ser circunscrito por una circunferencia. Circunscribimos $\triangle DAB$ por una circunferencia y supongamos que $C'$ es un punto tal que $\angle DAB + \angle DC'B = 180^\circ$, pero $C'$ está \emph{not} en la circunferencia del círculo. Sin pérdida de generalidad, que $C'$ esté dentro de la circunferencia (Fig.~\ref{f.trap-2}).
 
-Construir una semirrecta que prolongue $\overline{DC'}$ y que $C$ sea su intersección con la circunferencia. Entonces $\overline{ABCD}$ está circunscrita por una circunferencia:\index{Circumscribed circle}
+Construimos una semirrecta que prolongue $\overline{DC'}$ y que $C$ sea su intersección con la circunferencia. Entonces $\overline{ABCD}$ está circunscrita por una circunferencia:\index{Circumscribed circle}
 \begin{eqnarray*}
 \angle DAB + \angle DCB &=&  180^\circ = \angle DAB + \angle DC'B\\
 \angle DCB &=& \angle DC'B\,,
@@ -969,11 +969,11 @@ Construir una semirrecta que prolongue $\overline{DC'}$ y que $C$ sea su interse
 lo cual es imposible si $C$ está en el círculo y $C'$ está dentro del círculo.
 \end{proof}
 
-\begin{theorem}\label{thm.isoceles-trapezoid}
+\begin{theorem}\label{thm.-trapezoid}
 Los ángulos opuestos de un trapecio isósceles son suplementarios.
 \end{theorem}
 \begin{proof}
-Construir la recta $\overline{AB'}$ paralela a $\overline{CD}$ (Fig.~\ref{f.trap-3}). $\overline{AB'CD}$ es un paralelogramo y $\triangle ABB'$ es un triángulo isósceles, por lo que $\angle C= \angle ABB' = \angle AB'B = \angle B$. Análogamente, $\angle A = \angle D$. Como la suma de los ángulos internos de cualquier cuadrilátero es igual a $360^\circ$:
+Construimos la recta $\overline{AB'}$ paralela a $\overline{CD}$ (Fig.~\ref{f.trap-3}). $\overline{AB'CD}$ es un paralelogramo y $\triangle ABB'$ es un triángulo isósceles, por lo que $\angle C= \angle ABB' = \angle AB'B = \angle B$. Análogamente, $\angle A = \angle D$. Como la suma de los ángulos internos de cualquier cuadrilátero es igual a $360^\circ$:
 \begin{eqnarray*}
 \angle A + \angle B + \angle C + \angle D &=& 360^\circ\\
 2\angle A + 2 \angle C &=& 360^\circ\\
@@ -983,9 +983,9 @@ and similarly $\angle B +  \angle D = 180^\circ$.
 \end{proof}
 
 \begin{theorem}
-Un trapecio isoceles puede ser circunscrito por un círculo.
+Un trapecio  puede ser circunscrito por un círculo.
 \end{theorem}
-La prueba es inmediata por Thms.~\ref{thm.quad-circum}, \ref{thm.isoceles-trapezoid}.
+La demostración es inmediata por Teoremas.~\ref{thm.quad-circum}, \ref{thm.-trapezoid}.
 
 \begin{figure}[t]
 \begin{center}
@@ -1013,7 +1013,7 @@ La prueba es inmediata por Thms.~\ref{thm.quad-circum}, \ref{thm.isoceles-trapez
 \draw (A) -- node[left,xshift=-2pt] {$x$} (Bp);
 \end{tikzpicture}
 \end{center}
-\caption{Un trapecio isoceles}\label{f.trap-3}
+\caption{Un trapecio }\label{f.trap-3}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1254,7 +1254,7 @@ ya que el orden de los vértices en un triángulo no hace ninguna diferencia.
 \section{Teorema de Menelao}\label{a.menelaus}
 
 \begin{theorem}[Menelaus]\label{thm.menelaus}\index{Menelaus's theorem}
-Sea $\triangle ABC$ un triángulo y $\overline{DBQ}$ una \emph{línea transversal} que corta las tres aristas del triángulo o sus prolongaciones (Fig.~\ref{f.menelaus}). Entonces:\footnote{En función de la configuración del triángulo y de la recta transversal, el resultado de la multiplicación puede ser más o menos uno.}
+Sea $\triangle ABC$ un triángulo y $\overline{DBQ}$ una \emph{línea transversal} que corta las tres aristas del triángulo o sus prolongaciones (Fig.~\ref{f.menelaus}). Entonces\footnote{En función de la configuración del triángulo y de la recta transversal, el resultado de la multiplicación puede ser más o menos uno.}:
 \begin{align}
 \displaystyle\frac{\overline{AB}}{\overline{BP}}\cdot
 \displaystyle\frac{\overline{PQ}}{\overline{QC}}\cdot
@@ -1272,7 +1272,7 @@ Del $\triangle BQP\sim \triangle KQC$ se deduce que:
 \displaystyle\frac{\overline{QC}}{\overline{PQ}}=\displaystyle\frac{\overline{CK}}{\overline{BP}}\,.
 \end{equation*}
 Eliminando $\overline{CK}$ se obtiene
-$\overline{AB}\cdot\overline{CD}\cdot\overline{PQ}=\overline{QC}\cdot\overline{BP}\cdot\overline{AD}$ que puede reordenarse para obtener Ec.~\ref{eq.menelaus}.
+$\overline{AB}\cdot\overline{CD}\cdot\overline{PQ}=\overline{QC}\cdot\overline{BP}\cdot\overline{AD}$ que puede reordenarse para obtener Ecuación~\ref{eq.menelaus}.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

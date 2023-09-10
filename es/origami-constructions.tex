@@ -4,14 +4,14 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Este capítulo muestra que las construcciones con origami son más poderosas que las construcciones con regla y compás. Damos dos construcciones para triseccionar un ángulo, una por Hisashi Abe (Secc.~\ref{s.abe-trisection}) y la otra por George E. Martin (Sect.~\ref{s.martin-trisection}), dos construcciones para duplicar un cubo, una de Peter Messer (Sect.~\ref{s.messer}) y la otra de Marghareta P. Beloch (Sect.~\ref{s.cube2}), y la construcción de un nonágono, un polinomio regular de nueve lados (Sect.~\ref{s.nonagon}).
+Este capítulo muestra que las construcciones con origami son más poderosas que las construcciones con regla y compás. Damos dos construcciones para triseccionar un ángulo, una por Hisashi Abe (Sec.~\ref{s.abe-trisection}) y la otra por George E. Martin (Sect.~\ref{s.martin-trisection}), dos construcciones para duplicar un cubo, una de Peter Messer (Sect.~\ref{s.messer}) y la otra de Marghareta P. Beloch (Sect.~\ref{s.cube2}), y la construcción de un nonágono, un polinomio regular de nueve lados (Sect.~\ref{s.nonagon}).
 
 \section{Trisección de Abe de un ángulo}\label{s.abe-trisection}
 \index{Origami!trisection of an angle}
 \index{Trisection of an angle!origami@using origami}
 
 \noindent\textbf{Construcción:}
-Dado un ángulo agudo $\angle PQR$, construir $p$, la perpendicular a $\overline{QR}$ en $Q$. Construir $q$, la perpendicular a $p$ que corta a $\overline{PQ}$ en el punto $A$, y construir $r$, la perpendicular a $p$ en $B$ que está a mitad de camino entre $Q$ y $A$. Utilizando el axioma~6 construir el pliegue $l$ que sitúa $A$ en $A'$ sobre $\overline{PQ}$ y $Q$ en $Q'$ sobre $r$. Sea $B'$ el reflejo de $B$ alrededor de $l$. Construir rectas que pasen por $\overline{QB'}$ y $QQ'$ (Fig.~\ref{f.abe1}).
+Dado un ángulo agudo $\angle PQR$, construir $p$, la perpendicular a $\overline{QR}$ en $Q$. Construimos $q$, la perpendicular a $p$ que corta a $\overline{PQ}$ en el punto $A$, y construir $r$, la perpendicular a $p$ en $B$ que está a mitad de camino entre $Q$ y $A$. Utilizando el axioma~6 construir el pliegue $l$ que sitúa $A$ en $A'$ sobre $\overline{PQ}$ y $Q$ en $Q'$ sobre $r$. Sea $B'$ el reflejo de $B$ alrededor de $l$. Construimos rectas que pasen por $\overline{QB'}$ y $QQ'$ (Fig.~\ref{f.abe1}).
 \begin{figure}[ht]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
@@ -79,7 +79,7 @@ Dado un ángulo agudo $\angle PQR$, construir $p$, la perpendicular a $\overline
 \begin{proof}
 \mbox{}\\
 (1)
-$A', B', Q'$ son reflexiones en torno a la recta $l$ de los puntos $A,B,Q$ sobre la recta $\overline{DQ}$, por lo que están sobre la recta $\overline{DQ'}$ reflejada. Por construcción $\overline{AB}=\overline{BQ}$, $\angle ABQ'=\angle QBQ'=90^\circ$ y $\overline{BQ'}$ es un lado común, por lo que $\triangle ABQ'\cong \triangle QBQ'$ por lado-ángulo-lado. Por lo tanto, $\angle AQQ'=\angle QAQ'=\alpha$ por lo que $\triangle AQ'Q$ es isoceles (Fig.~\ref{f.abe2}).
+$A', B', Q'$ son reflexiones en torno a la recta $l$ de los puntos $A,B,Q$ sobre la recta $\overline{DQ}$, por lo que están sobre la recta $\overline{DQ'}$ reflejada. Por construcción $\overline{AB}=\overline{BQ}$, $\angle ABQ'=\angle QBQ'=90^\circ$ y $\overline{BQ'}$ es un lado común, por lo que $\triangle ABQ'\cong \triangle QBQ'$ por lado-ángulo-lado. Por lo tanto, $\angle AQQ'=\angle QAQ'=\alpha$ por lo que $\triangle AQ'Q$ es  (Fig.~\ref{f.abe2}).
 
 \begin{figure}[ht]
 \begin{center}
@@ -156,7 +156,7 @@ $A', B', Q'$ son reflexiones en torno a la recta $l$ de los puntos $A,B,Q$ sobre
 \node[above left,xshift=-2pt,yshift=-2pt] at (V)  {$V$};
 \end{tikzpicture}
 \end{center}
-\caption{Pruebas de la trisección de Abe ($U,V$ se utilizan en la prueba 2)}\label{f.abe2}
+\caption{Pruebas de la trisección de Abe ($U,V$ se utilizan en la demostración 2)}\label{f.abe2}
 \end{figure}
 
 Por reflexión $\triangle AQ'Q\cong \triangle A'QQ'$, por lo que $\triangle A'QQ'$ es también un triángulo isóceles.
@@ -181,7 +181,7 @@ Como en la primera demostración $A', B', Q'$ son todas reflexiones alrededor de
 \index{Trisection of an angle!origami@using origami}
 
 \noindent\textbf{Construcción:}
-Dado un ángulo agudo $\angle PQR$, sea $M$ el punto medio de $\overline{PQ}$. Construir $p$ la perpendicular a $\overline{QR}$ por $M$ y construir $q$ la perpendicular a $p$ por $M$ de modo que $q\parallel\overline{QR}$. Utilizando el axioma 6 construir el pliegue $l$ que sitúe $P$ en $P'$ sobre $p$ y $Q$ en $Q'$ sobre $q$. Si más de un pliegue es posible elegir el que interseca $\overline{PM}$. Construir $\overline{PP'}$ y $\overline{QQ'}$  (Fig.~\ref{f.martin}).
+Dado un ángulo agudo $\angle PQR$, sea $M$ el punto medio de $\overline{PQ}$. Construimos $p$ la perpendicular a $\overline{QR}$ por $M$ y construir $q$ la perpendicular a $p$ por $M$ de modo que $q\parallel\overline{QR}$. Utilizando el axioma 6 construir el pliegue $l$ que sitúe $P$ en $P'$ sobre $p$ y $Q$ en $Q'$ sobre $q$. Si más de un pliegue es posible elegir el que interseca $\overline{PM}$. Construimos $\overline{PP'}$ y $\overline{QQ'}$  (Fig.~\ref{f.martin}).
 
 \begin{theorem}
 $\angle Q'QR=\angle PQR/3$.
@@ -469,11 +469,11 @@ que denotamos por $\alpha'$. Los triángulos $\triangle C'BL$, $\triangle F'GC'$
 \[
 \frac{\overline{BL}}{\overline{C'L}}=\frac{\overline{GC'}}{\overline{C'F'}}\,.
 \]
-Usando la Ec.~\ref{eq.one-third} tenemos:
+Usando la Ecuación~\ref{eq.one-third} tenemos:
 \[
 \frac{b}{(a+1)-b}=\frac{\displaystyle\frac{2a-1}{3}}{\displaystyle\frac{a+1}{3}}\,.
 \]
-Sustituyendo por $b$ usando la Ec.~\ref{eq.value-of-b} da:
+Sustituyendo por $b$ usando la Ecuación~\ref{eq.value-of-b} da:
 \[
 \displaystyle\frac{\displaystyle\frac{a^2+2a}{2(a+1)}}{(a+1)-\displaystyle\frac{a^2+2a}{2(a+1)}}=\frac{2a-1}{a+1}\,.
 \]
@@ -562,7 +562,7 @@ $\overline{OY}=\sqrt[3]{2}$.
 
 \section{Construcción de un nonágono regular}\label{s.nonagon}
 
-Se construye un nonágono (polígono regular de nueve lados) derivando la ecuación cúbica de su ángulo central y resolviendo la ecuación mediante el método de Lill y el pliegue de Beloch. El ángulo central es $\theta=360^\circ/9=40^\circ$. Por Thm.~\ref{thm.triple-angle}:
+Se construye un nonágono (polígono regular de nueve lados) derivando la ecuación cúbica de su ángulo central y resolviendo la ecuación mediante el método de Lill y el pliegue de Beloch. El ángulo central es $\theta=360^\circ/9=40^\circ$. Por Teorema~\ref{thm.triple-angle}:
 \[
 \cos 3\theta=4\cos^3 \theta -3\cos\theta\,.
 \]
@@ -626,7 +626,7 @@ Sea $x=\cos 40^{\circ}$. Entonces para el nonágono la ecuación es $4x^3-3x+(1/
 
 La segunda trayectoria parte de $P$ con un ángulo aproximado de $-37,45^\circ$. Giros de $90^\circ$ en $R$ y luego de $-90^\circ$ en $S$ hacen que la trayectoria intersecte a la primera en su punto final $Q$. Por tanto, $x=-\tan (-37,45^\circ)\approx 0,766$ es una raíz de $$4x^3-3x+(1/2)$$.
 
-La raíz se puede obtener utilizando el pliegue de Beloch. Construir la recta $a_2'$ paralela a $a_2$ a la misma distancia de $a_2$ que $a_2$ de $P$. Aunque la longitud de $a_2$ es cero, sigue teniendo dirección (hacia arriba), por lo que se puede construir la recta paralela. Análogamente, se construye la recta $a_1'$ paralela a $a_1$ a la misma distancia de $a_1$ que $a_1$ de $Q$. El pliegue de Beloch $\overline{RS}$ sitúa simultáneamente $P$ en $P'$ sobre $a_2'$ y $Q$ en $Q'$ sobre $a_1'$. Esto construye el ángulo $\angle SPR=-37.45^\circ$ (Fig.~\ref{f.nonagon3}).
+La raíz se puede obtener utilizando el pliegue de Beloch. Construimos la recta $a_2'$ paralela a $a_2$ a la misma distancia de $a_2$ que $a_2$ de $P$. Aunque la longitud de $a_2$ es cero, sigue teniendo dirección (hacia arriba), por lo que se puede construir la recta paralela. Análogamente, se construye la recta $a_1'$ paralela a $a_1$ a la misma distancia de $a_1$ que $a_1$ de $Q$. El pliegue de Beloch $\overline{RS}$ sitúa simultáneamente $P$ en $P'$ sobre $a_2'$ y $Q$ en $Q'$ sobre $a_1'$. Esto construye el ángulo $\angle SPR=-37.45^\circ$ (Fig.~\ref{f.nonagon3}).
 
 \begin{figure}[ht]
 \begin{center}

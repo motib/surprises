@@ -218,11 +218,11 @@ y_i &=& 2\cdot\frac{10}{3}-2=\frac{14}{3}\approx 4.67\,.
 \index{Origami!angle bisector}
 El pliegue es la bisectriz del ángulo formado por $l_1$ y $l_2$ en su punto de intersección. Hay dos pliegues posibles ya que hay dos pares de ángulos verticales. Hay que determinar las pendientes de las bisectrices de los ángulos. Si el ángulo de la recta $l_1$ respecto al eje $x$ es $\theta_1$ y el ángulo de la recta $l_2$ respecto al eje $x$ es $\theta_2$, entonces el pliegue es la recta que forma un ángulo de $\theta_b=(\theta_1+\theta_2)/2$ respecto al eje $x$.
 
-Sea $m_1=\tan \theta_1, m_2=\tan \theta_2$. Por Thm.~\ref{thm.tangent-sum}, $m_s$, la pendiente de la recta que hace un ángulo de $\theta_1+\theta_2$ respecto del eje $x$, es:
+Sea $m_1=\tan \theta_1, m_2=\tan \theta_2$. Por Teorema~\ref{thm.tangent-sum}, $m_s$, la pendiente de la recta que hace un ángulo de $\theta_1+\theta_2$ respecto del eje $x$, es:
 \[
 m_s=\tan(\theta_1+\theta_2)= \frac{\tan\theta_1+\tan\theta_2}{1-\tan\theta_1\tan\theta_2}=\frac{m_1+m_2}{1-m_1m_2}\,.
 \]
-Por Thm.~\ref{thm.tangent-half}, $m_b$, la pendiente de la bisectriz del ángulo, es:
+Por Teorema~\ref{thm.tangent-half}, $m_b$, la pendiente de la bisectriz del ángulo, es:
 \[
 m_b= \tan\frac{\theta_1+\theta_2}{2}=\frac{-1\pm\sqrt{1+\tan^2(\theta_1+\theta_2)}}{\tan (\theta_1+\theta_2)}=\frac{-1\pm\sqrt{1+m_s^2}}{m_s}\,.
 \]
@@ -364,7 +364,7 @@ x^2(1+m_1^2) \,+\, 2(-x_2+m_1(b-y_2))x \,+\,(x_2^2 + (b_1^2 - 2b_1y_2+y_2^2)-r^2
 \end{align}
 Como una ecuación cuadrática tiene a lo sumo dos soluciones, para un par dado de puntos y una recta puede haber cero, uno o dos pliegues. A partir de las soluciones $x_1',x_1''$ podemos calcular $y_1',y_1''$ de $y=m_1x+b_1$. Los puntos reflejados son $p_1'=(x_1',y_1')$, $p_1''=(x_1'',y_1'')$.
 \begin{example}
-Sea $p_1=(2,8)$, $p_2=(4,4)$ y sea $l_1$ $y=-\frac{1}{2}x +3$. La ecuación de la circunferencia es $(x-4)^2 + (y-4)^2 = (4-2)^2+(4-8)^2=20$. Sustituye la ecuación de la recta en la ecuación de la circunferencia para obtener una ecuación cuadrática de las coordenadas $x$ de las intersecciones (o utiliza Ec.~\ref{eq.intersections}):
+Sea $p_1=(2,8)$, $p_2=(4,4)$ y sea $l_1$ $y=-\frac{1}{2}x +3$. La ecuación de la circunferencia es $(x-4)^2 + (y-4)^2 = (4-2)^2+(4-8)^2=20$. Sustituye la ecuación de la recta en la ecuación de la circunferencia para obtener una ecuación cuadrática de las coordenadas $x$ de las intersecciones (o utiliza Ecuación~\ref{eq.intersections}):
 \begin{eqnarray*}
 (x-4)^2 + \left(\left(-\frac{1}{2}x+3\right)-4\right)^2&=&20\\
 (x-4)^2 + (-1)^2\cdot\left(\frac{1}{2}x+1\right)^2-20&=&0\\
@@ -555,7 +555,7 @@ La fórmula para una parábola arbitraria es bastante compleja, por lo que limit
 
 \subsection{Derivación de la ecuación de un pliegue}
 
-Sea $(0,f)$ el foco de una parábola con directriz $y=d$. Definir $p=f-d$, la longitud con signo del segmento de recta entre el foco y la directriz.\footnote{Hemos estado utilizando la notación $p_i$ para los puntos; el uso de $p$ aquí puede ser confuso, pero es la notación estándar. El nombre formal de $p$ es la mitad del \emph{latus rectum}.} Si el vértice de la parábola está en el eje $x$ la ecuación de la parábola es $y=x^2/2p$. Para mover la parábola arriba o abajo del eje $y$ de forma que su vértice esté en $(0,h)$, se añade $h$ a la ecuación de la parábola (Fig.~\ref{f.elements-parabola}):
+Sea $(0,f)$ el foco de una parábola con directriz $y=d$. Definir $p=f-d$, la longitud con signo del segmento de recta entre el foco y la directriz\footnote{Hemos estado utilizando la notación $p_i$ para los puntos; el uso de $p$ aquí puede ser confuso, pero es la notación estándar. El nombre formal de $p$ es la mitad del \emph{latus rectum}.}. Si el vértice de la parábola está en el eje $x$ la ecuación de la parábola es $y=x^2/2p$. Para mover la parábola arriba o abajo del eje $y$ de forma que su vértice esté en $(0,h)$, se añade $h$ a la ecuación de la parábola (Fig.~\ref{f.elements-parabola}):
 \[y=\frac{x^2}{2p}+h\,.\]
 
 \begin{figure}[htb]
@@ -586,7 +586,7 @@ x^2-2py+a&=&0\,.\slabel{eq.eq-parabola}
 \end{subeqnarray}
 La ecuación de la parábola de la Fig.~\ref{f.elements-parabola} es $x^2-12y +12=0$.
 
-Sustituir la ecuación de una una línea \emph{arbitraria} $y=mx+b$ en la Ec.~\ref{eq.eq-parabola} para obtener una ecuación de los puntos de intersección de la recta y la parábola:
+Sustituir la ecuación de una una línea \emph{arbitraria} $y=mx+b$ en la Ecuación~\ref{eq.eq-parabola} para obtener una ecuación de los puntos de intersección de la recta y la parábola:
 \begin{eqnarray*}
 x^2-2p(mx+b)+a&=&0\\
 x^2+(-2mp)x+(-2pb+a)&=&0\,.
@@ -606,7 +606,7 @@ Se trata de una ecuación con variables $m,b$ para las tangentes a la parábola.
 \[
 x^2-4y +12=0\,.
 \]
-Sustituyendo $p$ y $a$ en la Ec.~\ref{eq.disc} y simplificando da:
+Sustituyendo $p$ y $a$ en la Ecuación~\ref{eq.disc} y simplificando da:
 \[
 m^2+b-3=0\,.
 \]
@@ -617,7 +617,7 @@ m^2+b-3=0\,.
 \[
 x^2+4y+12=0\,.
 \]
-Sustituyendo $p$ y $a$ en la Ec.~\ref{eq.disc} y simplificando da:
+Sustituyendo $p$ y $a$ en la Ecuación~\ref{eq.disc} y simplificando da:
 \[
 m^2-b-3=0\,.
 \]
@@ -643,7 +643,7 @@ Sin cambios.
 \[
 x^2+8y +32=0\,.
 \]
-Sustituyendo $p$ y $a$ en la Ec.~\ref{eq.disc} y simplificando da:
+Sustituyendo $p$ y $a$ en la Ecuación~\ref{eq.disc} y simplificando da:
 \[
 2m^2-b-4=0\,.
 \]
@@ -672,7 +672,7 @@ y=\sqrt{\frac{7}{3}}x+\frac{2}{3}\,,\quad y=-\sqrt{\frac{7}{3}}x+\frac{2}{3}\,.
 \begin{align}
 y^2-4x+12 = 0\,.\label{eq.x-symmetry-parabola}
 \end{align}
-Esta es una ecuación con $x$ y $y^2$ en lugar de $x^2$ e $y$, por lo que la Ec.~\ref{eq.disc} no se puede utilizar y debemos realizar la derivación de nuevo.
+Esta es una ecuación con $x$ y $y^2$ en lugar de $x^2$ e $y$, por lo que la Ecuación~\ref{eq.disc} no se puede utilizar y debemos realizar la derivación de nuevo.
 
 Sustituir la ecuación de una recta en Eq.~\ref{eq.x-symmetry-parabola}:
 \begin{eqnarray*}
@@ -697,12 +697,12 @@ Como una ecuación cúbica tiene como mínimo una y como máximo tres soluciones
 
 La fórmula para resolver ecuaciones cúbicas generales es bastante complicada, así que he utilizado una calculadora de Internet y he obtenido las tres soluciones:
 \[m=3.73,\:m=-1,\:m=0.27\,.\]
-A partir de la forma de la Ec.~\ref {eq.cubic} podríamos suponer que $m=1$ o $m=-1$ es una solución:
+A partir de la forma de la Ecuación~\ref {eq.cubic} podríamos suponer que $m=1$ o $m=-1$ es una solución:
 \begin{eqnarray*}
 1^3-3\cdot 1^2-3\cdot 1+1&=&-4\\
 (-1)^3-3\cdot (-1)^2-3\cdot(-1)+1&=&0\,.
 \end{eqnarray*}
-Dividir Ec.~\ref{eq.cubic} por $m-(-1)=m+1$ para obtener la ecuación cuadrática $m^2-4m+1$ cuyas raíces son las otras dos soluciones de la ecuación cúbica $m=2\pm\sqrt{3}\approx 3.73, 0.27$.
+Dividir Ecuación~\ref{eq.cubic} por $m-(-1)=m+1$ para obtener la ecuación cuadrática $m^2-4m+1$ cuyas raíces son las otras dos soluciones de la ecuación cúbica $m=2\pm\sqrt{3}\approx 3.73, 0.27$.
 \end{example}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -823,7 +823,7 @@ $p_i$, $i=1,\ldots,5$, cada punto $p_i$ a una distancia $a_i$ tanto del foco com
 \path (F) -- node[below] {$a$} (G) -- node[below] {$a$} (FP);
 \end{tikzpicture}
 \end{center}
-\caption{La prueba de que el pliegue es una tangente}\label{f.tangent-proof}
+\caption{La demostración de que el pliegue es una tangente}\label{f.tangent-proof}
 \end{figure}
 
 \begin{theorem}\label{thm.parabola-tangents}
@@ -939,6 +939,6 @@ El origami, el arte de plegar papel, se practica desde hace cientos de años, po
 \subsection*{Fuentes}
 
 Los axiomas del origami se presentan en \cite{wiki:hh-axioms}. Lang \cite{lang} ofrece descripciones de construcciones de origami. 
-\cite[Cap.~10]{martin} contiene la teoría detallada de las matemáticas del origami, incluyendo la prueba de que dos parábolas pueden tener cero, una, dos o tres tangentes comunes. La prueba de Thm.~\ref{thm.parabola-tangents} me fue mostrada por Oriah Ben-Lulu. He encontrado que el software geométrico como Geogebra es útil para entender la relación entre la geometría y el álgebra de los axiomas.
+\cite[Capítulo~10]{martin} contiene la teoría detallada de las matemáticas del origami, incluyendo la demostración de que dos parábolas pueden tener cero, una, dos o tres tangentes comunes. La demostración de Teorema~\ref{thm.parabola-tangents} me fue mostrada por Oriah Ben-Lulu. He encontrado que el software geométrico como Geogebra es útil para entender la relación entre la geometría y el álgebra de los axiomas.
 
 Una presentación clara de las ecuaciones cúbicas se puede encontrar en \cite[Capítulos~1,\ 2]{jorg}.

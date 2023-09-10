@@ -6,7 +6,7 @@
 
 ¿Se pueden hacer todas las construcciones con regla y compás sólo con regla? La respuesta es no porque las rectas se definen por ecuaciones lineales y no pueden representar círculos que se definen por ecuaciones cuadráticas. En 1822 Jean-Victor Poncelet conjeturó que una regla es suficiente siempre que exista una circunferencia en el plano. Esto fue demostrado en 1833 por Jakob Steiner.
 
-Después de explicar en la Secc.~\ref{s.se-what} lo que significa realizar una construcción con sólo una regla y un círculo, la prueba se presenta en etapas a partir de cinco construcciones auxiliares: la construcción de una línea paralela a una línea dada (Secc.~\ref{s.parallel}), construcción de una perpendicular a una recta dada (Secc.~\ref{s.perp}), copia de un segmento de recta en una dirección dada (Secc.~\ref{s.copy}), construcción de un segmento de recta como razón de segmentos (Secc.~\ref{s.relative}) y construcción de una raíz cuadrada (Secc.~\ref{s.root}). La sección~\ref{s.line-circle-straight} muestra cómo encontrar la(s) intersección(es) de una recta con un círculo y la sección~\ref{s.two-circles} muestra cómo encontrar la(s) intersección(es) de dos círculos.
+Después de explicar en la Sec.~\ref{s.se-what} lo que significa realizar una construcción con sólo una regla y un círculo, la demostración se presenta en etapas a partir de cinco construcciones auxiliares: la construcción de una línea paralela a una línea dada (Sec.~\ref{s.parallel}), construcción de una perpendicular a una recta dada (Sec.~\ref{s.perp}), copia de un segmento de recta en una dirección dada (Sec.~\ref{s.copy}), construcción de un segmento de recta como razón de segmentos (Sec.~\ref{s.relative}) y construcción de una raíz cuadrada (Sec.~\ref{s.root}). La sección~\ref{s.line-circle-straight} muestra cómo encontrar la(s) intersección(es) de una recta con un círculo y la sección~\ref{s.two-circles} muestra cómo encontrar la(s) intersección(es) de dos círculos.
 
 \section{¿Qué es una construcción sólo con regla?}\label{s.se-what}
 
@@ -75,10 +75,10 @@ Dada una recta $l$ definida por dos puntos $A,B$ y un punto $P$ que no está en 
 
 \begin{proof}
 
-Hay dos casos para la prueba.
+Hay dos casos para la demostración.
 
 \textit{Caso 1:}
-$\overline{AB}$ es un \emph{segmento de recta dirigida} si se da el punto medio $M$ de $\overline{AB}$.  Construir una semirrecta que prolongue $\overline{AP}$ y elegir un punto $S$ cualquiera de la semirrecta más allá de $P$. Construir las rectas $\overline{BP}, \overline{SM}, \overline{SB}$. La intersección de $\overline{BP}$ y $\overline{SM}$ se denota $O$. Construir una semirrecta que extienda $\overline{AO}$ y denotar por $Q$ la intersección de la semirrecta $\overline{AO}$ con $\overline{SB}$ (Fig.~\ref{f.se-parallel-directed}).
+$\overline{AB}$ es un \emph{segmento de recta dirigida} si se da el punto medio $M$ de $\overline{AB}$.  Construimos una semirrecta que prolongue $\overline{AP}$ y elegir un punto $S$ cualquiera de la semirrecta más allá de $P$. Construimos las rectas $\overline{BP}, \overline{SM}, \overline{SB}$. La intersección de $\overline{BP}$ y $\overline{SM}$ se denota $O$. Construimos una semirrecta que extienda $\overline{AO}$ y denotar por $Q$ la intersección de la semirrecta $\overline{AO}$ con $\overline{SB}$ (Fig.~\ref{f.se-parallel-directed}).
 
 Afirmamos que $\overline{PQ}\parallel \overline{AB}$. 
 
@@ -109,9 +109,9 @@ Afirmamos que $\overline{PQ}\parallel \overline{AB}$.
 \caption{Construcción de una recta paralela en el caso de una recta dirigida}\label{f.se-parallel-directed}
 \end{figure}
 
-La prueba utiliza el teorema de Ceva.
+La demostración utiliza el teorema de Ceva.
 
-\textit{Teorema de Ceva  (Thm.~\ref{thm.ceva}):}
+\textit{Teorema de Ceva  (Teorema~\ref{thm.ceva}):}
 Si los segmentos de recta desde los vértices de un triángulo a las aristas opuestas se cruzan en un punto $O$ (como en la Fig.~\ref{f.se-parallel-directed}), las longitudes de los segmentos satisfacen:
 \[
 \frac{\overline{AM}}{\overline{MB}}\cdot\frac{\overline{BQ}}{\overline{QS}}\cdot\frac{\overline{SP}}{\overline{PA}} = 1\,.
@@ -128,7 +128,7 @@ Afirmamos que $\triangle ABS \sim \triangle PQS$:
 &&\\
 \frac{\overline{AS}}{\overline{PS}} &=& \frac{\overline{AP}}{\overline{PS}} + \frac{\overline{PS}}{\overline{PS}} = \frac{\overline{AP}}{\overline{PS}} + 1\,.
 \end{eqnarray*}
-Utilizando la Ec.~\ref{eq.ceva}:
+Utilizando la Ecuación~\ref{eq.ceva}:
 \[
 \frac{\overline{BS}}{\overline{QS}}=\frac{\overline{BQ}}{\overline{QS}}+1=\frac{\overline{AP}}{\overline{PS}}+1=\frac{\overline{AP}}{\overline{PS}}+\frac{\overline{PS}}{\overline{PS}}=\frac{\overline{AS}}{\overline{PS}}\,,
 \]
@@ -250,9 +250,9 @@ $\overline{UV}$ es un segmento de recta dirigida porque $O$, el centro del círc
 \caption{Prueba de que $l'$ es paralelo a $l$}\label{f.se-parallel-other3}
 \end{figure}
 
-Construir un diámetro desde $X$ hasta $O$ que corte al otro lado de la circunferencia en $X'$, y construir análogamente el diámetro $\overline{YY'}$. Construimos la semirrecta desde $X'$ pasando por $Y'$ y denotamos por $B$ su intersección con $l$. Afirmamos que $M$ es la bisectriz de $\overline{AB}$ de modo que $\overline{AB}$ es un segmento de recta dirigida y por tanto se puede construir una recta que pase por $P$ paralela a $l$ (Fig.~\ref{f.se-parallel-other3}).
+Construimos un diámetro desde $X$ hasta $O$ que corte al otro lado de la circunferencia en $X'$, y construir análogamente el diámetro $\overline{YY'}$. Construimos la semirrecta desde $X'$ pasando por $Y'$ y denotamos por $B$ su intersección con $l$. Afirmamos que $M$ es la bisectriz de $\overline{AB}$ de modo que $\overline{AB}$ es un segmento de recta dirigida y por tanto se puede construir una recta que pase por $P$ paralela a $l$ (Fig.~\ref{f.se-parallel-other3}).
 
-$\overline{OX}, \overline{OX'}, \overline{OY}, \overline{OY'}$ son todos radios del círculo y $\angle XOY = \angle X'OY'$ ya que son ángulos verticales, por lo que $\triangle XOY\cong\triangle X'OY'$ por lado-ángulo-lado. Definir\footnote{definir, no construir, porque estamos en medio de la prueba de que tal recta se puede construir.} $l'$ como una recta que pasa por $O$ paralela a $l$ y que interseca a $\overline{XY}$ en $Z$ y a $\overline{X'Y'}$ en $Z'$. $\angle XOZ=\angle X'OZ'$ son ángulos verticales, $\angle ZXO=\angle Z'X'O$ son ángulos interiores alternos y $\overline{XO}=\overline{XO'}$ son radios, por lo que $\triangle XOZ\cong\triangle X'OZ'$ por ángulo-lado-ángulo y $\overline{ZO}=\overline{OZ'}$. Por tanto, $\overline{AMOZ}$ y $\overline{BMOZ'}$ son paralelogramos y $\overline{AM}=\overline{ZO}=\overline{OZ'}=\overline{MB}$.
+$\overline{OX}, \overline{OX'}, \overline{OY}, \overline{OY'}$ son todos radios del círculo y $\angle XOY = \angle X'OY'$ ya que son ángulos verticales, por lo que $\triangle XOY\cong\triangle X'OY'$ por lado-ángulo-lado. Definir\footnote{definir, no construir, porque estamos en medio de la demostración de que tal recta se puede construir.} $l'$ como una recta que pasa por $O$ paralela a $l$ y que interseca a $\overline{XY}$ en $Z$ y a $\overline{X'Y'}$ en $Z'$. $\angle XOZ=\angle X'OZ'$ son ángulos verticales, $\angle ZXO=\angle Z'X'O$ son ángulos interiores alternos y $\overline{XO}=\overline{XO'}$ son radios, por lo que $\triangle XOZ\cong\triangle X'OZ'$ por ángulo-lado-ángulo y $\overline{ZO}=\overline{OZ'}$. Por tanto, $\overline{AMOZ}$ y $\overline{BMOZ'}$ son paralelogramos y $\overline{AM}=\overline{ZO}=\overline{OZ'}=\overline{MB}$.
 \end{proof}
 
 \begin{theorem}\label{thm.parallel-equal}
@@ -290,7 +290,7 @@ Dado un segmento de recta $l$ y un punto $P$ que no está en $l$, es posible con
 \end{theorem}
 
 \begin{proof}
-Por Thm.~\ref{thm.straight-parallel} construir una recta $l'$ paralela a $l$ que corte a la circunferencia fija en $U,V$. Construir el diámetro $\overline{UOU'}$ y la cuerda $\overline{VU'}$ (Fig.~\ref{f.se-perp}). El $\angle UVU'$ es un ángulo recto porque está subtendido por un diámetro. Por tanto $\overline{VU'}$ es perpendicular a $\overline{UV}$ y $l$. De nuevo por Thm.~\ref{thm.straight-parallel} construimos la paralela a $\overline{VU'}$ a través de $P$.
+Por Teorema~\ref{thm.straight-parallel} construir una recta $l'$ paralela a $l$ que corte a la circunferencia fija en $U,V$. Construimos el diámetro $\overline{UOU'}$ y la cuerda $\overline{VU'}$ (Fig.~\ref{f.se-perp}). El $\angle UVU'$ es un ángulo recto porque está subtendido por un diámetro. Por tanto $\overline{VU'}$ es perpendicular a $\overline{UV}$ y $l$. De nuevo por Teorema~\ref{thm.straight-parallel} construimos la paralela a $\overline{VU'}$ a través de $P$.
 \end{proof}
 
 \begin{figure}[htb]
@@ -333,7 +333,7 @@ Es posible construir una copia de un segmento de recta dado en la dirección de 
 El significado de ``dirección'' es que la línea definida por dos puntos $A',H'$ tiene un ángulo $\theta$ relativo a algún eje y el objetivo es construir $\overline{AS}=\overline{PQ}$ tal que $\overline{AS}$ tenga el mismo ángulo $\theta$ relativo a ese eje (Fig.~\ref{f.se-copy1}).
 
 \begin{proof}
-Por Thm.~\ref{thm.parallel-equal} es posible construir un segmento de recta $\overline{AH}$ tal que $\overline{AH}\parallel\overline{A'H'}$, y construir un segmento de recta $\overline{AK}$ tal que $\overline{AK}\parallel\overline{PQ}$ y $\overline{AK}=\overline{PQ}$.
+Por Teorema~\ref{thm.parallel-equal} es posible construir un segmento de recta $\overline{AH}$ tal que $\overline{AH}\parallel\overline{A'H'}$, y construir un segmento de recta $\overline{AK}$ tal que $\overline{AK}\parallel\overline{PQ}$ y $\overline{AK}=\overline{PQ}$.
 $\angle HAK=\theta$ por lo que queda por encontrar un punto $S$ en $\overline{AH}$ de modo que $\overline{AS}=\overline{PQ}$.
 
 \begin{figure}[t]
@@ -369,7 +369,7 @@ $\angle HAK=\theta$ por lo que queda por encontrar un punto $S$ en $\overline{AH
 \caption{Copiar un segmento de línea en una dirección determinada}\label{f.se-copy1}
 \end{figure}
 
-Construir dos radios $\overline{OU}, \overline{OV}$ de la circunferencia fija que sean paralelos a $\overline{AH}, \overline{AK}$, respectivamente, y construir una semirrecta que pase por $K$ paralela a $\overline{UV}$. Denotemos su intersección con $\overline{AH}$ por $S$ (Fig.~\ref{f.se-copy3}). Por construcción, $\overline{AH}\parallel\overline{OU}$ y $\overline{AK}\parallel\overline{OV}$, por lo que $\angle SAK=\angle HAK=\angle UOV=\theta$. Si $\overline{SK}\parallel\overline{UV}$ y $\triangle SAK\sim\triangle UOV$ por ángulo-ángulo-ángulo, $\triangle UOV$ es isósceles porque $\overline{OU}, \overline{OV}$ son radios de la misma circunferencia. Por lo tanto, $\triangle SAK$ es isósceles y $\overline{AS}=\overline{AK}=\overline{PQ}$.
+Construimos dos radios $\overline{OU}, \overline{OV}$ de la circunferencia fija que sean paralelos a $\overline{AH}, \overline{AK}$, respectivamente, y construir una semirrecta que pase por $K$ paralela a $\overline{UV}$. Denotemos su intersección con $\overline{AH}$ por $S$ (Fig.~\ref{f.se-copy3}). Por construcción, $\overline{AH}\parallel\overline{OU}$ y $\overline{AK}\parallel\overline{OV}$, por lo que $\angle SAK=\angle HAK=\angle UOV=\theta$. Si $\overline{SK}\parallel\overline{UV}$ y $\triangle SAK\sim\triangle UOV$ por ángulo-ángulo-ángulo, $\triangle UOV$ es isósceles porque $\overline{OU}, \overline{OV}$ son radios de la misma circunferencia. Por lo tanto, $\triangle SAK$ es isósceles y $\overline{AS}=\overline{AK}=\overline{PQ}$.
 \end{proof}
 
 \begin{figure}[b]
@@ -426,7 +426,7 @@ Dados segmentos de recta de longitudes $n, m, s$, es posible construir un segmen
 \end{theorem}
 
 \begin{proof}
-Elegir puntos $A,B,C$ que no estén en la misma recta y construir rayos $\overline{AB}, \overline{AC}$. Por Thm.~\ref{thm.straight-direction} se pueden construir puntos $M,N,S$ tales que $\overline{AM}= m$, $\overline{AN} =n$, $\overline{AS}=s$. Por Thm.~\ref{thm.straight-parallel} construir una recta que pase por $N$ paralela a $\overline{MS}$ que corte a $\overline{AC}$ en $X$ y etiquetar $\overline{AX}$ por $x$ (Fig.~\ref{f.se-three2}). $\triangle MAS\sim\triangle NAX$ por ángulo-ángulo-ángulo así $\displaystyle\frac{m}{n}=\displaystyle\frac{s}{x}$ y $x=\displaystyle\frac{n}{m}s$.
+Elegir puntos $A,B,C$ que no estén en la misma recta y construir rayos $\overline{AB}, \overline{AC}$. Por Teorema~\ref{thm.straight-direction} se pueden construir puntos $M,N,S$ tales que $\overline{AM}= m$, $\overline{AN} =n$, $\overline{AS}=s$. Por Teorema~\ref{thm.straight-parallel} construir una recta que pase por $N$ paralela a $\overline{MS}$ que corte a $\overline{AC}$ en $X$ y etiquetar $\overline{AX}$ por $x$ (Fig.~\ref{f.se-three2}). $\triangle MAS\sim\triangle NAX$ por ángulo-ángulo-ángulo así $\displaystyle\frac{m}{n}=\displaystyle\frac{s}{x}$ y $x=\displaystyle\frac{n}{m}s$.
 \end{proof}
 
 \begin{figure}[t]
@@ -460,11 +460,11 @@ Dados segmentos de recta de longitudes $a,b$, es posible construir un segmento d
 \end{theorem}
 
 \begin{proof}
-Queremos expresar $x=qrt{ab}$ como $x=\displaystyle\frac{n}{m}s$ para usar Thm.~\ref{thm.straight-relative}.
+Queremos expresar $x=qrt{ab}$ como $x=\displaystyle\frac{n}{m}s$ para usar Teorema~\ref{thm.straight-relative}.
 \begin{itemize}
 \setlength{\itemsep}{0pt}
 \item Para $n$ utilizamos $d$, el diámetro del círculo fijo.
-\item Para $m$ utilizamos $t=a+b$ que se puede construir a partir de $a,b$ mediante Thm.~\ref{thm.straight-direction}.
+\item Para $m$ utilizamos $t=a+b$ que se puede construir a partir de $a,b$ mediante Teorema~\ref{thm.straight-direction}.
 \item Definimos $s=\sqrt{hk}$ donde $h,k$ se definen como expresiones sobre las longitudes $a,b,t,d$.
 \end{itemize}
 Definir $h=\displaystyle\frac{d}{t}a$ y $k=\displaystyle\frac{d}{t}b$ y luego calcular:
@@ -473,7 +473,7 @@ x&=&\sqrt{ab}=\sqrt{\frac{th}{d}\frac{tk}{d}}=\sqrt{\left(\frac{t}{d}\right)^2hk
 h+k &=& \frac{d}{t}a + \frac{d}{t}b = \frac{d(a+b)}{t} = \frac{dt}{t} = d\,.
 \end{eqnarray*}
 
-Por Thm.~\ref{thm.straight-direction} construir $\overline{HA}= h$ en un diámetro $\overline{HK}$ del círculo fijo. De $h+k=d$ tenemos $\overline{AK}=k$ (Fig.~\ref{f.se-sqrt}). Por Thm.~\ref{thm.straight-perp} construimos una perpendicular a $\overline{HK}$ en $A$ y denotamos la intersección de esta recta con la circunferencia por $S$. $\overline{OS}=\overline{OK}=d/2$ y $\overline{OA}=(d/2)-k$. 
+Por Teorema~\ref{thm.straight-direction} construir $\overline{HA}= h$ en un diámetro $\overline{HK}$ del círculo fijo. De $h+k=d$ tenemos $\overline{AK}=k$ (Fig.~\ref{f.se-sqrt}). Por Teorema~\ref{thm.straight-perp} construimos una perpendicular a $\overline{HK}$ en $A$ y denotamos la intersección de esta recta con la circunferencia por $S$. $\overline{OS}=\overline{OK}=d/2$ y $\overline{OA}=(d/2)-k$. 
 \begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.7]
@@ -511,7 +511,7 @@ s^2&=& \left(\frac{d}{2}\right)^2 - \left(\frac{d}{2}-k\right)^2\\
 s&=&\sqrt{hk}\,.
 \end{eqnarray*}
 
-Ahora $x=\displaystyle\frac{t}{d}s$ se puede construir por Thm.~\ref{thm.straight-relative}.
+Ahora $x=\displaystyle\frac{t}{d}s$ se puede construir por Teorema~\ref{thm.straight-relative}.
 \end{proof}
 
 \section{Construcción de la intersección de una recta y una circunferencia}\label{s.line-circle-straight}
@@ -538,7 +538,7 @@ Dada una recta $l$ y una circunferencia $c(O,r)$, es posible construir sus punto
 \end{figure}
 
 \begin{proof}
-Por Thm.~\ref{thm.straight-perp} es posible construir una perpendicular desde el centro del círculo $O$ a la recta $l$. La intersección de $l$ con la perpendicular se denota por $M$. $\overline{OM}$ biseca la cuerda $\overline{XY}$, donde $X, Y$ son las intersecciones de la recta con la circunferencia (Fig.~\ref{f.se-line-circle2}). Definir $\overline{XY}=2s$ y $\overline{OM}=t$. Tenga en cuenta que $s,X,Y$ son sólo definiciones no se han construido entidades.
+Por Teorema~\ref{thm.straight-perp} es posible construir una perpendicular desde el centro del círculo $O$ a la recta $l$. La intersección de $l$ con la perpendicular se denota por $M$. $\overline{OM}$ biseca la cuerda $\overline{XY}$, donde $X, Y$ son las intersecciones de la recta con la circunferencia (Fig.~\ref{f.se-line-circle2}). Definir $\overline{XY}=2s$ y $\overline{OM}=t$. Tenga en cuenta que $s,X,Y$ son sólo definiciones no se han construido entidades.
 \begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.7]
@@ -571,9 +571,9 @@ Por Thm.~\ref{thm.straight-perp} es posible construir una perpendicular desde el
 \caption{Construcción de los puntos de intersección de una recta y una circunferencia (2)}\label{f.se-line-circle2}
 \end{figure}
 
-Por el Teorema de Pitágoras $s^2=r^2-t^2=(r+t)(r-t)$. Por Thm.~\ref{thm.straight-direction} es posible construir segmentos de recta de longitud $t$ a partir de $O$ en las dos direcciones $\overline{OR}$ y $\overline{RO}$. El resultado son dos segmentos de recta de longitud $r+t,r-t$.
+Por el Teorema de Pitágoras $s^2=r^2-t^2=(r+t)(r-t)$. Por Teorema~\ref{thm.straight-direction} es posible construir segmentos de recta de longitud $t$ a partir de $O$ en las dos direcciones $\overline{OR}$ y $\overline{RO}$. El resultado son dos segmentos de recta de longitud $r+t,r-t$.
 
-Por Thm.~\ref{thm.straight-sqrt} se puede construir un segmento de recta de longitud $s=\sqrt{(r+t)(r-t)}$, y por Thm.~\ref{thm.straight-direction} se pueden construir segmentos de línea de longitud $s$ desde $M$ a lo largo de $l$ en ambas direcciones. Sus otros extremos son los puntos de intersección de $l$ y $c$.
+Por Teorema~\ref{thm.straight-sqrt} se puede construir un segmento de recta de longitud $s=\sqrt{(r+t)(r-t)}$, y por Teorema~\ref{thm.straight-direction} se pueden construir segmentos de línea de longitud $s$ desde $M$ a lo largo de $l$ en ambas direcciones. Sus otros extremos son los puntos de intersección de $l$ y $c$.
 \end{proof}
 
 \section{Construcción de la intersección de dos circunferencias}\label{s.two-circles}
@@ -584,7 +584,7 @@ Dadas dos circunferencias $c(O_1,r_1), c(O_2,r_2)$, es posible construir sus pun
 
 \begin{proof}
 Construye $\overline{O_1O_2}$ y marca su longitud $t$ (Fig.~\ref{f.se-circle-circle1}).
-Etiquetar por $A$ ser el punto de intersección de $\overline{O_1O_2}$ y $\overline{XY}$, y etiquetar $q=\overline{O_1A}$, $x=\overline{XA}$ (Fig.~\ref{f.se-circle-circle2}). $A$ aún no se ha construido, pero si $q,x$ se construyen entonces por Thm.~\ref{thm.straight-direction} se puede construir el punto $A$ a la longitud $q$ de $O_1$ en la dirección $\overline{O_1O_2}$.
+Etiquetar por $A$ ser el punto de intersección de $\overline{O_1O_2}$ y $\overline{XY}$, y etiquetar $q=\overline{O_1A}$, $x=\overline{XA}$ (Fig.~\ref{f.se-circle-circle2}). $A$ aún no se ha construido, pero si $q,x$ se construyen entonces por Teorema~\ref{thm.straight-direction} se puede construir el punto $A$ a la longitud $q$ de $O_1$ en la dirección $\overline{O_1O_2}$.
 
 \begin{figure}[t]
 \begin{center}
@@ -642,7 +642,7 @@ Etiquetar por $A$ ser el punto de intersección de $\overline{O_1O_2}$ y $\overl
 \caption{Construcción de la intersección de dos circunferencias (2)}\label{f.se-circle-circle2}
 \end{figure}
 
-Una vez construido $A$, por Thm.~\ref{thm.straight-perp} se puede construir una perpendicular a $\overline{O_1O_2}$ en $A$, y por Thm.~\ref{thm.straight-direction} es posible construir segmentos de recta de longitud $x$ desde $A$ en ambas direcciones a lo largo de la perpendicular. Sus otros puntos extremos son los puntos de intersección de las circunferencias.
+Una vez construido $A$, por Teorema~\ref{thm.straight-perp} se puede construir una perpendicular a $\overline{O_1O_2}$ en $A$, y por Teorema~\ref{thm.straight-direction} es posible construir segmentos de recta de longitud $x$ desde $A$ en ambas direcciones a lo largo de la perpendicular. Sus otros puntos extremos son los puntos de intersección de las circunferencias.
 
 \noindent\textbf{Construcción de la longitud $q$:} Definir $d=\sqrt{r_1^2+t^2}$, la hipotenusa de un triángulo rectángulo, que se puede construir a partir de las longitudes conocidas $r_1,t$. Obsérvese que $\triangle O_1XO_2$ no es necesariamente un triángulo rectángulo; el triángulo rectángulo puede construirse en cualquier parte del plano. En el triángulo rectángulo $\triangle XAO_1$, $\cos\angle XO_1A=q/r_1$. Por la Ley de los Cosenos para $\triangle XO_1O_2$:
 \begin{eqnarray*}
@@ -651,13 +651,13 @@ r_2^2 &=& t^2 + r_1^2 - 2r_1t\cos\angle XO_1O_2\\
 2tq &=& (t^2+r_1^2) - r_2^2=d^2-r_2^2\\
 q&=&\frac{(d+r_2)(d-r_2)}{2t}\,.
 \end{eqnarray*}
-Por Thm.~\ref{thm.straight-direction} estas longitudes se pueden construir y por Thm.~\ref{thm.straight-relative} $q$ se puede construir a partir de $d+r_2,d-r_2,2t$.
+Por Teorema~\ref{thm.straight-direction} estas longitudes se pueden construir y por Teorema~\ref{thm.straight-relative} $q$ se puede construir a partir de $d+r_2,d-r_2,2t$.
 
 \noindent\textbf{Construcción de la longitud $x$:} Por el Teorema de Pitágoras:
 \[
 x=\sqrt{r_1^2-q^2}=\sqrt{(r_1+q)(r_1-q)}\,.
 \]
-Por Thm.~\ref{thm.straight-direction}, $h =r_1+ q,k= r_1 - q$ puede construirse, al igual que $x=\sqrt{hk}$ by Thm.~\ref{thm.straight-sqrt}.
+Por Teorema~\ref{thm.straight-direction}, $h =r_1+ q,k= r_1 - q$ puede construirse, al igual que $x=\sqrt{hk}$ by Teorema~\ref{thm.straight-sqrt}.
 \end{proof}
 
 \subsection*{¿Cuál es la sorpresa?}

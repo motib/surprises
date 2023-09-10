@@ -4,7 +4,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-¿Son congruentes dos triángulos con la misma área y el mismo perímetro? No necesariamente: los triángulos con lados $(17,25,28)$ y $(20,21,29)$ tienen ambos perímetro $70$ y área $210$ pero no son congruentes (Fig.~\ref{f.congruent-first-example}). \footnote{Las áreas se calcularon mediante la fórmula de Herón (Thm.~\ref{thm.heron}) y los ángulos mediante la ley de los cosenos (Thm.~\ref{thm.law-of-cosines}).} Este capítulo muestra que dado un triángulo de lados racionales es posible construir un triángulo no congruente, también de lados racionales, que tenga la misma área y el mismo perímetro.
+¿Son congruentes dos triángulos con la misma área y el mismo perímetro? No necesariamente: los triángulos con lados $(17,25,28)$ y $(20,21,29)$ tienen ambos perímetro $70$ y área $210$ pero no son congruentes (Fig.~\ref{f.congruent-first-example})\footnote{Las áreas se calcularon mediante la fórmula de Herón (Teorema~\ref{thm.heron}) y los ángulos mediante la ley de los cosenos (Teorema~\ref{thm.law-of-cosines}).}. Este capítulo muestra que dado un triángulo de lados racionales es posible construir un triángulo no congruente, también de lados racionales, que tenga la misma área y el mismo perímetro.
 Llevamos a cabo la derivación utilizando un ejemplo, mostrando que el triángulo de lados $(3,4,5)$ y el triángulo de lados 
 $\left(\frac{156}{35}, \frac{101}{21}, \frac{41}{15}\right)$ tienen ambos perímetro $12$ y área $6$.
 
@@ -146,7 +146,7 @@ y por Eq.~\ref{eq.area1} el área es:
 \begin{align}
 A = sr = r^2\left(\tan \frac{\alpha}{2}+\tan \frac{\beta}{2}+\tan \frac{\gamma}{2}\right)\,.\label{eq.area2}
 \end{align}
-A partir de $r=A/s$, la Ec.~\ref{eq.area2} puede escribirse como:
+A partir de $r=A/s$, la Ecuación~\ref{eq.area2} puede escribirse como:
 \begin{align}
 \tan \frac{\alpha}{2}+\tan \frac{\beta}{2}+\tan \frac{\gamma}{2} = \frac{A}{r^2} = \frac{A}{(A/s)^2} = \frac{s^2}{A}\,.\label{eq.area3}
 \end{align}
@@ -157,7 +157,7 @@ Ya que la suma de los ángulos $\alpha,\beta,\gamma$ es $360^\circ$:
  &=& -\tan (\alpha/2 + \beta/2)\\
 &=& \frac{\tan\alpha/2 + \tan\beta/2}{\tan\alpha/2 \, \tan\beta/2-1}\,,\slabel{eq.tangent1}
 \end{subeqnarray}
-utilizando la fórmula de la tangente de la suma de dos ángulos (Thm.~\ref{thm.tangent-sum}).
+utilizando la fórmula de la tangente de la suma de dos ángulos (Teorema~\ref{thm.tangent-sum}).
 
 Simplifiquemos la notación definiendo variables para las tangentes:
 \begin{align}
@@ -165,11 +165,11 @@ x=\tan \frac{\alpha}{2},\quad
 y=\tan \frac{\beta}{2},\quad
 z=\tan \frac{\gamma}{2}\,.\label{eq.variables-for-tangents}
 \end{align}
-Por la Ec.~\ref{eq.tangent1} podemos expresar $z=\tan\gamma/2$ en términos de $x,y$:
+Por la Ecuación~\ref{eq.tangent1} podemos expresar $z=\tan\gamma/2$ en términos de $x,y$:
 \begin{align}
 z = \frac{x+y}{xy-1}\,.\label{eq.xy1}
 \end{align}
-Con esta notación, la Ec.~\ref{eq.area3} se convierte en:
+Con esta notación, la Ecuación~\ref{eq.area3} se convierte en:
 \begin{align}
 x+y+\frac{x+y}{xy-1}=\frac{s^2}{A}\,.\label{eq.xy2}
 \end{align}
@@ -180,7 +180,7 @@ Para el triángulo rectángulo $(3,4,5)$:
 \frac{s^2}{A} = \frac{\left(\frac{1}{2}(3+4+5)\right)^2}{\frac{1}{2}\cdot 3\cdot 4} = \frac{6^2}{6}=6\,.
 \end{align}
 
-\noindent{}Si hay otra solución Ec.~\ref{eq.xy2} con $s^2/A=6$, se puede escribir como:
+\noindent{}Si hay otra solución Ecuación~\ref{eq.xy2} con $s^2/A=6$, se puede escribir como:
 \begin{subeqnarray}
 x+y+\frac{x+y}{xy-1}&=&6\\
 x^2y + xy^2 -6xy + 6 &=& 0\,.\slabel{eq.elliptic}
@@ -189,9 +189,9 @@ Esta es una ecuación para una \emph{curva elíptica}.
 
 \section{Resolución de la ecuación de la curva elíptica}
 
-Una porción de la gráfica de la Ec.~\ref{eq.elliptic} se muestra Fig.~\ref{f.two-secants}. Cualquier punto de la curva cerrada en el primer cuadrante es una solución de la ecuación porque las longitudes de los lados del triángulo deben ser positivas. $A,B,D$ corresponden al triángulo $(3,4,5)$ como se muestra a continuación. Para encontrar soluciones racionales adicionales se utiliza el método de las dos secantes.
+Una porción de la gráfica de la Ecuación~\ref{eq.elliptic} se muestra Fig.~\ref{f.two-secants}. Cualquier punto de la curva cerrada en el primer cuadrante es una solución de la ecuación porque las longitudes de los lados del triángulo deben ser positivas. $A,B,D$ corresponden al triángulo $(3,4,5)$ como se muestra a continuación. Para encontrar soluciones racionales adicionales se utiliza el método de las dos secantes.
 
-Construir una secante a través de los puntos $ A = (2,3), B = (1,2) $. Corta la curva en $C=(-1,5,-0,5)$, pero no da solución porque los valores son negativos. Construir una segunda secante desde $C$ hasta $D=(3,2)$. La intersección con la curva en $E\approx (1,5,1,2)$ da una nueva solución cuyas coordenadas se calcularán a continuación.
+Construimos una secante a través de los puntos $ A = (2,3), B = (1,2) $. Corta la curva en $C=(-1,5,-0,5)$, pero no da solución porque los valores son negativos. Construimos una segunda secante desde $C$ hasta $D=(3,2)$. La intersección con la curva en $E\approx (1,5,1,2)$ da una nueva solución cuyas coordenadas se calcularán a continuación.
 
 \begin{figure}[b]
 \begin{center}
@@ -278,7 +278,7 @@ La ecuación de la recta (azul) que pasa por $C,D$ es:
 \begin{align}
 y = \frac{5}{9}x + \frac{1}{3}\,.\label{eq.second-secant}
 \end{align}
-Sustituir por $y$ en la Ec.~\ref{eq.elliptic}:
+Sustituir por $y$ en la Ecuación~\ref{eq.elliptic}:
 \begin{eqnarray*}
 x^2\left(\frac{5}{9}x + \frac{1}{3}\right) + x\left(\frac{5}{9}x + \frac{1}{3}\right)^2 -6x\left(\frac{5}{9}x + \frac{1}{3}\right) +6 &=&0\\
 \frac{70}{81}x^3 - \frac{71}{27}x^2 - \frac{17}{9}x +6 &=&0\,.
@@ -292,7 +292,7 @@ Igualando los coeficientes del término cúbico y los términos constantes se ob
 \frac{70}{81}x - \frac{4}{3}&=&0\\
 x&=& \frac{54}{35}\approx 1.543\,,
 \end{eqnarray*}
-y $y$ se puede calcular a partir de la Ec.~\ref{eq.second-secant}:
+y $y$ se puede calcular a partir de la Ecuación~\ref{eq.second-secant}:
 \[
 y=\frac{25}{21}\approx 1.190\,.
 \]
@@ -302,7 +302,7 @@ Las coordenadas de $E$ son:
 \]
 que se acercan a las aproximaciones $(1,5,1,2)$ obtenidas del gráfico.
 
-Por último, calcula $z$ a partir de la Ec.~\ref{eq.xy1}:
+Por último, calcula $z$ a partir de la Ecuación~\ref{eq.xy1}:
 \[
 z=\frac{x+y}{xy-1}=%
 \displaystyle\left(\frac{54}{35} + \frac{25}{21}\right)%
@@ -337,7 +337,7 @@ Comprobemos este resultado. El semiperímetro es:
 \[
 s=\frac{1}{2}\left(\frac{156}{35} + \frac{101}{21}+\frac{41}{15}\right) = \frac{1}{2}\left(\frac{468+505+287}{105}\right) = \frac{1}{2}\left(\frac{1260}{105}\right)= 6\,,
 \]
-y el área puede calcularse mediante la fórmula de Heron (Thm.~\ref{thm.heron}):
+y el área puede calcularse mediante la fórmula de Heron (Teorema~\ref{thm.heron}):
 \[
 A= \sqrt{6 \left(6-\frac{156}{35}\right) \left(6-\frac{101}{21}\right) \left(6-\frac{41}{15}\right)}=\sqrt{36} = 6\,.
 \]
@@ -372,4 +372,4 @@ La ley de los cosenos se puede utilizar para calcular los ángulos del triángul
 
 \subsection*{Fuentes}
 
-Este capítulo se basa en \cite{mccallum}. En \cite{marita} se demuestra que dado un triángulo isoceles hay triángulos no congruentes con la misma área y perímetro, pero la prueba no incluye una construcción explícita.
+Este capítulo se basa en \cite{mccallum}. En \cite{marita} se demuestra que dado un triángulo  hay triángulos no congruentes con la misma área y perímetro, pero la demostración no incluye una construcción explícita.

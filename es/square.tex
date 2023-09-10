@@ -11,7 +11,7 @@ Aproximaciones a $\pi\approx 3.14159265359$ se han conocido desde la antigüedad
 \displaystyle\frac{22}{7}\approx 3.142857,\quad \displaystyle\frac{333}{106}\approx 3.141509,\quad \displaystyle\frac{355}{113}\approx 3.141593\,.
 \]
 
-Presentamos tres construcciones mediante regla y compás de aproximaciones a $\pi$. Una es por Adam Kocha\'{n}ski (Sección.~\ref{s.square-kochanski}) y dos son de Ramanujan (Secciones.~\ref{s.square-ramanujan-first}, \ref{s.square-ramanujan-second}). Sección~\ref{s.square-quad} cómo cuadrar el círculo utilizando la cuadratriz.
+Presentamos tres construcciones mediante regla y compás de aproximaciones a $\pi$. Una es con Adam Kocha\'{n}ski (Sec.~\ref{s.square-kochanski}) y dos son de Ramanujan (Secs.~\ref{s.square-ramanujan-first}, \ref{s.square-ramanujan-second}). La sección~\ref{s.square-quad} trata de cómo cuadrar el círculo utilizando la cuadratriz.
 
 La siguiente tabla muestra las fórmulas de las longitudes que se construyen, sus valores aproximados, la diferencia entre estos valores y el valor de $\pi$ y el error en metros que resulta si se utiliza la aproximación para calcular la circunferencia de la tierra dado que su radio es de $6378$ km.
 \[
@@ -31,17 +31,15 @@ La siguiente tabla muestra las fórmulas de las longitudes que se construyen, su
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
 \section{Construcción de Kocha\'{n}ski}\label{s.square-kochanski}
 \index{Kocha\'{n}ski, Adam}\index{Squaring a circle!approximation}
 \textbf{Construcción (Fig.~\ref{f.square-kochansky}):}
 \begin{enumerate}
-\item Construir una circunferencia unitaria centrada en $O$, que $\overline{AB}$ sea un diámetro y construir una tangente a la circunferencia en $A$.
-\item Construir una circunferencia unitaria centrada en $A$ y denotar su intersección con la primera circunferencia por $C$. Construir una circunferencia unitaria centrada en $C$ y denotar su intersección con la segunda circunferencia por $D$. 
-\item Construir $\overline{OD}$ y denotar su intersección con la tangente por $E$.
-\item A partir de $E$ construir $F,G,H$, cada uno a distancia $1$ del punto anterior.
-\item Construir $\overline{BH}$.
+\item Construimos una circunferencia unitaria centrada en $O$, que $\overline{AB}$ sea un diámetro y construimos una tangente a la circunferencia en $A$.
+\item Construimos una circunferencia unitaria centrada en $A$ y denotemos con $C$ su intersección con la primera circunferencia. Construimos una circunferencia unitaria centrada en $C$ y denotemos con $D$ su intersección con la segunda circunferencia. 
+\item Construimos $\overline{OD}$ y denotemos con $E$ intersección con la tangente.
+\item A partir de $E$ construimos $F,G,H$, cada uno a distancia $1$ del punto anterior.
+\item Construimos $\overline{BH}$.
 \end{enumerate}
 
 \begin{figure}[h]
@@ -175,7 +173,7 @@ La siguiente tabla muestra las fórmulas de las longitudes que se construyen, su
 $\quad\overline{BH}=\sqrt{\displaystyle\frac{40}{3}-2\sqrt{3}}\approx \pi$.
 \end{theorem}
 \begin{proof}
-La figura ~\ref{f.square-kochansky-detail} es un extracto ampliado de la figura ~\ref{f.square-kochansky}, donde se han añadido segmentos de línea discontinua. Como todos los círculos son círculos unitarios, las longitudes de las líneas discontinuas son $1$. Se deduce que $\overline{AOCD}$ es un rombo por lo que sus diagonales son perpendiculares y se bisecan entre sí en el punto marcado con $K$. $\overline{AK}=1/2$.
+La figura~\ref{f.square-kochansky-detail} es un extracto ampliado de la figura~\ref{f.square-kochansky}, donde se han añadido segmentos de línea discontinua. Como todos los círculos son unitarios, las longitudes de las líneas discontinuas son $1$. Se deduce que $\overline{AOCD}$ es un rombo por lo que sus diagonales son perpendiculares y se bisecan entre sí en el punto marcado con $K$. $\overline{AK}=1/2$.
 
 La diagonal $\overline{AC}$ forma dos triángulos equiláteros $\triangle OAC, \triangle DAC$ por lo que $\angle OAC=60^\circ$. Como la tangente forma un ángulo recto con el radio $\overline{OA}$, $\angle KAE=30^\circ$. Ahora bien:
 \begin{displaymath}
@@ -202,35 +200,33 @@ $\triangle ABH$ es un triángulo rectángulo y $\overline{AH}=3-\overline{EA}$, 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
 \section{Primera construcción de Ramanujan}\label{s.square-ramanujan-first}
 \index{Ramanujan}\index{Squaring a circle!approximation}
 
 \textbf{Construcción (Fig.~\ref{f.square-rama1a}):}
 \begin{enumerate}
 
-\item Construir una circunferencia unitaria centrada en $O$ y que $\overline{PR}$ sea un diámetro.
+\item Construimos una circunferencia unitaria centrada en $O$ y que $\overline{PR}$ sea un diámetro.
 
-\item Construir el punto $H$ que biseca $\overline{PO}$ y el punto $T$ que triseca $\overline{RO}$ (Thm.~\ref{thm.trisect-constructible}).
+\item Construimos el punto $H$ que biseca $\overline{PO}$ y el punto $T$ que triseca $\overline{RO}$ (Teorema~\ref{thm.trisect-constructible}).
 
-\item Construir la perpendicular a $T$ que corta a la circunferencia en $Q$.
+\item Construimos la perpendicular a $T$ que corta a la circunferencia en $Q$.
 
-\item Construir las cuerdas $\overline{RS}=\overline{QT}$ y $\overline{PS}$.
+\item Construimos las cuerdas $\overline{RS}=\overline{QT}$ y $\overline{PS}$.
 
-\item Construir una recta paralela a $\overline{RS}$ desde $T$ que corte a $\overline{PS}$ en $N$.
+\item Construimos una recta paralela a $\overline{RS}$ desde $T$ que corte a $\overline{PS}$ en $N$.
 
-\item Construir una recta paralela a $\overline{RS}$ desde $O$ que corte a $\overline{PS}$ en $M$.
+\item Construimos una recta paralela a $\overline{RS}$ desde $O$ que corte a $\overline{PS}$ en $M$.
 
-\item Construir la cuerda $\overline{PK}=\overline{PM}$.
+\item Construimos la cuerda $\overline{PK}=\overline{PM}$.
 
-\item Construir la tangente a $P$ de longitud $\overline{PL}=\overline{MN}$.
+\item Construimos la tangente a $P$ de longitud $\overline{PL}=\overline{MN}$.
 
-\item Conectar los puntos $K,L,R$.
+\item Conectamos los puntos $K,L,R$.
 
 \item Encontrar el punto $C$ tal que $\overline{RC}$ sea igual a $\overline{RH}$.
 
-\item Construir $\overline{CD}$ paralela a $\overline{KL}$ que corte a $\overline{LR}$ en $D$. 
+\item Construimos $\overline{CD}$ paralela a $\overline{KL}$ que corte a $\overline{LR}$ en $D$. 
 \end{enumerate}
 
 \begin{figure}[b]
@@ -311,7 +307,6 @@ $\triangle ABH$ es un triángulo rectángulo y $\overline{AH}=3-\overline{EA}$, 
 $\quad\overline{RD}^2=\displaystyle\frac{355}{113}\approx \pi$.
 \end{theorem}
 
-
 \begin{proof}
 $\overline{RS}=\overline{QT}$ por construcción y por el Teorema de Pitágoras para $\triangle QOT$:
 \[
@@ -353,7 +348,7 @@ $\overline{RC}=\overline{RH}=3/2$ y $\overline{CD} \parallel \overline{LK}$. Por
 \overline{RD}&=&\sqrt{\frac{355}{113}}\\
 \overline{RD}^2&=&\frac{355}{113}\approx 3.14159292035\approx \pi\,.
 \end{eqnarray*}
-En la Fig.~\ref{f.square-rama1b} los segmentos de línea se etiquetan con sus longitudes.
+En la Fig.~\ref{f.square-rama1b} los segmentos de línea se rotulan con sus longitudes.
 \end{proof}
 
 \begin{figure}[ht]
@@ -422,7 +417,7 @@ En la Fig.~\ref{f.square-rama1b} los segmentos de línea se etiquetan con sus lo
 \draw[rotate=-90] (p) rectangle +(7pt,7pt);
 \end{tikzpicture}
 \end{center}
-\caption{Primera construcción de Ramanujan con segmentos de recta etiquetados}\label{f.square-rama1b}
+\caption{Primera construcción de Ramanujan con segmentos de recta rotulados}\label{f.square-rama1b}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -434,21 +429,21 @@ En la Fig.~\ref{f.square-rama1b} los segmentos de línea se etiquetan con sus lo
 \textbf{Construcción  (Fig.~\ref{f.square-ramanujan-2a}):}
 \begin{enumerate}
 
-\item Construir una circunferencia unitaria centrada en $O$ de diámetro $\overline{AB}$ y que $C$ sea la intersección de la perpendicular a $\overline{AB}$ en $O$ con la circunferencia.
+\item Construimos una circunferencia unitaria centrada en $O$ de diámetro $\overline{AB}$ y que $C$ sea la intersección de la perpendicular a $\overline{AB}$ en $O$ con la circunferencia.
 
-\item Trisecar el segmento de recta $\overline{AO}$ tal que $\overline{AT}=1/3$ y $\overline{TO}=2/3$ (Thm.~\ref{thm.trisect-constructible}).
+\item Trisecar el segmento de recta $\overline{AO}$ tal que $\overline{AT}=1/3$ y $\overline{TO}=2/3$ (Teorema~\ref{thm.trisect-constructible}).
 
-\item Construir $\overline{BC}$ y encontrar puntos $M,N$ tales que $\overline{CM}=\overline{MN}=\overline{AT}=1/3$.
+\item Construimos $\overline{BC}$ y encontrar puntos $M,N$ tales que $\overline{CM}=\overline{MN}=\overline{AT}=1/3$.
 
-\item Construir $\overline{AM}$, $\overline{AN}$ y que $P$ sea el punto sobre $\overline{AN}$ tal que $\overline{AP}=\overline{AM}$.
+\item Construimos $\overline{AM}$, $\overline{AN}$ y que $P$ sea el punto sobre $\overline{AN}$ tal que $\overline{AP}=\overline{AM}$.
 
-\item A partir de $P$ construir una recta paralela a $\overline{MN}$ que corte a $\overline{AM}$ en $Q$.
+\item A partir de $P$ Construimos una recta paralela a $\overline{MN}$ que corte a $\overline{AM}$ en $Q$.
 
-\item Construir $\overline{OQ}$ y a partir de $T$ construir una recta paralela a $\overline{OQ}$ que corte a $\overline{AM}$ en $R$.
+\item Construimos $\overline{OQ}$ y a partir de $T$ construimos una recta paralela a $\overline{OQ}$ que corte a $\overline{AM}$ en $R$.
 
-\item Construir $\overline{AS}$ tangente a $A$ tal que $\overline{AS}=\overline{AR}$.
+\item Construimos $\overline{AS}$ tangente a $A$ tal que $\overline{AS}=\overline{AR}$.
 
-\item Construir $\overline{SO}$.
+\item Construimos $\overline{SO}$.
 \end{enumerate}
 
 \begin{figure}[ht]
@@ -519,8 +514,6 @@ En la Fig.~\ref{f.square-rama1b} los segmentos de línea se etiquetan con sus lo
 \caption{Segunda construcción de Ramanujan}\label{f.square-ramanujan-2a}
 \end{figure}
 
-
-
 \begin{theorem}\label{thm.ramanujan2}
 $\quad 3\sqrt{\overline{SO}}=\left(9^2+\displaystyle\frac{19^2}{22}\right)^{1/4}\approx \pi$.
 \end{theorem}
@@ -529,7 +522,7 @@ $\triangle COB$ es un triángulo rectángulo así que por el Teorema de Pitágor
 \[
 \overline{NB}=\sqrt{2}-2/3\,.
 \]
-$\triangle COB$ es isoceles por lo que $\angle NBA =\angle MBA=45^\circ$. Por la Ley de los Cosenos\index{Law of cosines}:
+$\triangle COB$ es isósceles por lo que $\angle NBA =\angle MBA=45^\circ$. Por la Ley de los Cosenos\index{Law of cosines}:
 \begin{eqnarray*}
 \overline{AN}^2&=&\overline{BA}^2 + \overline{BN}^2-2\cdot\overline{BA}\cdot\overline{BN}\cdot\cos \angle NBA\\
 &=&2^2+\left(\sqrt{2}-\frac{2}{3}\right)^2-2\cdot 2 \cdot \left(\sqrt{2}-\frac{2}{3}\right)\cdot \frac{\sqrt{2}}{2}
@@ -537,7 +530,7 @@ $\triangle COB$ es isoceles por lo que $\angle NBA =\angle MBA=45^\circ$. Por la
 =\frac{22}{9}\\
 \overline{AN}&=&\sqrt{\frac{22}{9}}\,.
 \end{eqnarray*}
-De nuevo por la Ley de los Cosenos:
+Nuevamente por la Ley de los Cosenos:
 \begin{eqnarray*}
 \overline{AM}^2&=&\overline{BA}^2 + \overline{BM}^2-2\cdot\overline{BA}\cdot\overline{BM}\cdot\cos \angle MBA\\
 &=&2^2+\left(\sqrt{2}-\frac{1}{3}\right)^2-2\cdot 2 \cdot \left(\sqrt{2}-\frac{1}{3}\right)\cdot \frac{\sqrt{2}}{2}
@@ -557,9 +550,6 @@ $\triangle RAT\sim \triangle QAO$ y:
 \frac{\overline{AR}}{\overline{AQ}}&=&\frac{\overline{AT}}{\overline{AO}}\\
 \overline{AR}&=&\overline{AQ}\cdot\frac{\overline{AT}}{\overline{AO}}=\frac{19}{3\sqrt{22}}\cdot\frac{1/3}{1}=\frac{19}{9\sqrt{22}}\,.
 \end{eqnarray*}
-
-
-
 Por construcción $\overline{AS}=\overline{AR}$ y $\triangle OAS$ es un triángulo rectángulo porque $\overline{AS}$ es una tangente. Por el Teorema de Pitágoras:
 \begin{eqnarray*}
 \overline{SO}&=&\sqrt{1^2+\left(\frac{19}{9\sqrt{22}}\right)^2}\\
@@ -567,9 +557,8 @@ Por construcción $\overline{AS}=\overline{AR}$ y $\triangle OAS$ es un triángu
 \left(9^2+\frac{19^2}{22}\right)^{1/4}\approx 3.14159265258\approx\pi\,.
 \end{eqnarray*}
 
-En la Fig.~\ref{f.square-ramanujan-2b} los segmentos de línea están etiquetados con sus longitudes.
+En la Fig.~\ref{f.square-ramanujan-2b} los segmentos de línea están rotulados con sus longitudes.
 \end{proof}
-
 
 \begin{figure}[ht]
 \begin{center}
@@ -636,21 +625,18 @@ En la Fig.~\ref{f.square-ramanujan-2b} los segmentos de línea están etiquetado
 \node[above left] at (S) {$S$};
 \end{tikzpicture}
 \end{center}
-\caption{Segunda construcción de Ramanujan con segmentos de recta etiquetados}\label{f.square-ramanujan-2b}
+\caption{Segunda construcción de Ramanujan con segmentos de recta rotulados}\label{f.square-ramanujan-2b}
 \end{figure}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 
 \section{Cuadratura de un círculo con una cuadratriz}\label{s.square-quad}
 \index{Squaring a circle!quadratrix@with a quadratrix}
 \index{Quadratrix!squaring a circle}
 
-La cuadratriz se describe en la Secc.
+La cuadratriz se describe en la Sección~\ref{s.q}.
 
-Sea $t=\overline{DE}$ la distancia que se ha desplazado la recta horizontal por el eje $y$, y sea $\theta$ el ángulo correspondiente entre la recta giratoria y el eje $x$. Sea $P$ la posición de la unión de las dos rectas. El lugar geométrico de $P$ es la curva cuadratriz.
+Sea $t=\overline{DE}$ la distancia que se ha desplazado la recta horizontal por el eje $y$, y sea $\theta$ el ángulo correspondiente entre la recta giratoria y el eje $x$. Sea $P$ el punto de la unión de las dos rectas. El lugar geométrico de $P$ es la curva cuadratriz.
 
 Sea $F$ la proyección de $P$ sobre el eje $x$ y sea $G$ la posición de la unión cuando ambas rectas alcanzan el eje $x$, es decir, $G$ es la intersección de la curva cuadratriz y el eje $x$ (Fig.~\ref{f.square-quad}).
 \begin{figure}[ht]
@@ -690,21 +676,20 @@ x = \frac{y}{\tan\theta}=y\cot\theta=y\cot \frac{\pi}{2}(1-t)=y\cot \frac{\pi}{2
 \end{align}
 Normalmente expresamos una función como $y=f(x)$ pero también se puede expresar como $x=f(y)$. 
 
-Para obtener $x=\overline{AG}$ no podemos simplemente enchufar $y=0$ en la Ec.~\ref{eq.quad-square}, porque $\cot 0$ no está definido, así que vamos a calcular el límite de $x$ a medida que $y$ va a $0$. 
-En primer lugar realizar la sustitución $z=(\pi/2)y$ para obtener:
+Para obtener $x=\overline{AG}$ no podemos simplemente sustituir $y=0$ en la Ecuación~\ref{eq.quad-square}, porque $\cot 0$ no está definida, así que vamos a calcular el límite de $x$ a medida que $y$ tiende a $0$. En primer lugar, sustituimos $z=(\pi/2)y$ para obtener:
 \[
 x = y\cot \frac{\pi}{2}y = \frac{2}{\pi} \left(\frac{\pi}{2}y\cot \frac{\pi}{2}y\right)=\frac{2}{\pi}(z\cot z)\,,
 \]
-y luego tomar el límite:
+y luego calculamos el límite:
 \[
 \lim_{z\rightarrow 0} x=\frac{2}{\pi}\lim_{z\rightarrow 0} (z\cot z) = \frac{2}{\pi}\lim_{z\rightarrow 0} \left(\frac{z\cos z}{\sin z}\right) = \frac{2}{\pi}\lim_{z\rightarrow 0} \left(\frac{\cos z}{(\sin z)/z}\right) = \frac{2}{\pi}\frac{\cos 0}{1} = \frac{2}{\pi}\,,
 \]
-donde hemos utilizado $\lim_{z\rightarrow 0} (\sin z/z)=1$ (Thm.~\ref{thm.limit-sine-over}).
+donde hemos utilizado $\lim_{z\rightarrow 0} (\sin z/z)=1$ (Teorema~\ref{thm.limit-sine-over}).
 \end{proof}
 
 \subsection*{¿Cuál es la sorpresa?}
 
-Es sorprendente que se puedan construir aproximaciones tan exactas a $\pi$. Por supuesto, uno no puede dejar de asombrarse ante las ingeniosas construcciones de Ramanujan.
+Es sorprendente que se puedan construir aproximaciones tan exactas a $\pi$. Uno no puede dejar de asombrarse ante las ingeniosas construcciones de Ramanujan.
 
 \subsection*{Fuentes}
 

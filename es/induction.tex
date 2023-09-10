@@ -1,15 +1,15 @@
 % !TeX root = surprises.tex
 
-\chapter{Induction}\label{c.induction}
+\chapter{Inducción}\label{c.induction}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-El axioma de la inducción matemática se utiliza ampliamente como método de demostración en matemáticas. Este capítulo presenta demostraciones inductivas de resultados que pueden no ser conocidos por el lector. Comenzamos con una breve revisión de la inducción matemática (Secc.~\ref{s.induction-axiom}). La sección ~\ref{s.induction-fibonacci} demuestra resultados sobre los conocidos números de Fibonacci, mientras que la sección ~\ref{s.induction-fermat} demuestra resultados sobre los números de Fermat. La sección~\ref{s.induction-mccarthy} presenta la función $91$ descubierta por John McCarthy; la prueba es por inducción sobre una secuencia inusual: números enteros en un orden inverso. La prueba de la fórmula para el problema de Josephus (Sect.~\ref{s.josephus}) también es inusual debido a la doble inducción en dos partes diferentes de una expresión.
+El axioma de la inducción matemática se utiliza ampliamente como método de demostración en matemáticas. Este capítulo presenta demostraciones inductivas de resultados que pueden no ser conocidos por el lector. Comenzamos con una breve revisión de la inducción matemática (Sec.~\ref{s.induction-axiom}). La sección~\ref{s.induction-fibonacci} demuestra resultados sobre los conocidos números de Fibonacci, mientras que la sección~\ref{s.induction-fermat} demuestra resultados sobre los números de Fermat. La sección~\ref{s.induction-mccarthy} presenta la función $91$ descubierta por John McCarthy; la demostración es por inducción sobre una secuencia inusual: números enteros en un orden inverso. La demostración de la fórmula para el problema de Josephus (Sec.~\ref{s.josephus}) también es inusual debido a la doble inducción en dos partes diferentes de una expresión.
 
 \section{El axioma de la inducción matemática}\label{s.induction-axiom}
 \index{Mathematical induction}
 
-La inducción matemática es el método principal para demostrar que las afirmaciones son verdaderas para un conjunto ilimitado de números. Consideremos:
+La inducción matemática es el método principal para demostrar afirmaciones verdaderas para un conjunto ilimitado de números. Consideremos:
 \[
 1=1,\quad 1+2=3,\quad 1+2+3=6,\quad 1+2+3+4=10.
 \]
@@ -17,11 +17,11 @@ Podríamos darnos cuenta:
 \[
 1=(1\cdot 2)/2,\quad 3=(2\cdot 3)/2,\quad  6=(3\cdot 4)/2,\quad 10=(4\cdot 5)/2,
 \]
-y luego conjeturar que para \emph{todos} enteros $n\geq 1$:
+y luego conjeturar que para \emph{todos} los números enteros $n\geq 1$:
 \[
 \sum_{i=1}^n i = \frac{n(n+1)}{2}\,.
 \]
-Si se tiene suficiente paciencia, comprobar esta fórmula para cualquier valor específico de $n$ es fácil, pero ¿cómo se puede demostrar para \emph{todos} del número infinito de enteros positivos? Aquí es donde entra en juego la inducción matemática.
+Si se tiene suficiente paciencia, comprobar esta fórmula para cualquier valor específico de $n$ es fácil, pero ¿cómo se puede demostrar para del número infinito de enteros positivos? Aquí es donde entra en juego la inducción matemática.
 
 \begin{axiom}
 Sea $P(n)$ una propiedad (como una ecuación, una fórmula o un teorema), donde $n$ es un número entero positivo. Supongamos que se puede:
@@ -63,16 +63,16 @@ Por el principio de inducción matemática, para cualquier $n\geq 1$:
 
 La hipótesis inductiva puede ser confusa porque parece que estamos suponiendo lo que intentamos demostrar. El razonamiento \emph{no} es circular porque suponemos la verdad de una propiedad para algo \emph{pequeño} y luego usamos la suposición para demostrar la propiedad para algo más \emph{grande}.
 
-La inducción matemática es un axioma, por lo que no se puede demostrar la inducción. Sólo tienes que aceptar la inducción como aceptas otros axiomas de las matemáticas como $x+0=x$. Por supuesto, eres libre de rechazar la inducción matemática, pero entonces tendrás que rechazar gran parte de las matemáticas modernas.
+La inducción matemática es un axioma, por lo que no se puede demostrar la inducción. Sólo aceptamos la inducción como aceptamos otros axiomas de las matemáticas como $x+0=x$. Por supuesto, eres libre de rechazar la inducción matemática, pero entonces tendrás que rechazar gran parte de las matemáticas modernas.
 \begin{advanced}
-La inducción matemática es una regla de inferencia que es uno de los \emph{axiomas de Peano} para formalizar los números naturales. El \emph{axioma de ordenación bien puede} utilizarse para demostrar el axioma de inducción y, a la inversa, el axioma de inducción puede utilizarse para demostrar el axioma de ordenación bien. Sin embargo, el axioma de inducción no puede demostrarse a partir de los otros axiomas de Peano, más elementales.
+La inducción matemática es una regla de inferencia que es uno de los \emph{axiomas de Peano} para formalizar los números naturales. El \emph{axioma de ordenación puede} utilizarse para demostrar el axioma de inducción y, a la inversa, el axioma de inducción puede utilizarse para demostrar el axioma de ordenación bien. Sin embargo, el axioma de inducción no puede demostrarse a partir de los otros axiomas de Peano, más elementales.
 \end{advanced}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Números de Fibonacci}\label{s.induction-fibonacci}
 \index{Fibonacci numbers}
-Los números de Fibonacci son el ejemplo clásico de definición recursiva:
+Los números de Fibonacci son un ejemplo clásico de definición recursiva:
 \begin{eqnarray*}
 f_1 &=& 1\\
 f_2 &=& 1\\
@@ -117,7 +117,7 @@ f_{n+1}&=&f_n+f_{n-1}\\
 &<&\left(\frac{7}{4}\right)^{n-1}\cdot\left(\frac{7}{4}\right)^2\\
 &=&\left(\frac{7}{4}\right)^{n+1},
 \end{eqnarray*}
-desde entonces:
+entonces:
 \[
 \left(\frac{7}{4}+1\right) = \frac{11}{4} = \frac{44}{16}<\frac{49}{16}=\left(\frac{7}{4}\right)^2.
 \]
@@ -225,7 +225,7 @@ F_{n+1}&=&2^{2^{n+1}}+1=2^{2^{n}\cdot 2^1}+1=\left(2^{2^{n}}\right)^2+1\\
 &=&(10k_n+7-1)^2+1=(10k_n+6)^2+1\\
 &=&100k_n^2+120k_n+36+1\\
 &=&10(10k_n^2+12k_n+3)+6+1\\
-&=&10k_{n+1}+7,\quad \textrm{for some} \;\;k_{n+1}\geq 1\,.
+&=&10k_{n+1}+7,\quad \textrm{para algún} \;\;k_{n+1}\geq 1\,.
 \end{eqnarray*}
 \end{proof}
 
@@ -253,7 +253,7 @@ F_{n+1}&=&\prod_{k=0}^{n}F_k + 2\,.
 \section{La función $91$ de McCarthy}\label{s.induction-mccarthy}
 
 \index{McCarthy, John}
-Solemos asociar la inducción con pruebas de propiedades definidas en el conjunto de los números enteros positivos. Aquí traemos una prueba inductiva basada en una extraña ordenación en la que los números mayores son menores que los menores. La inducción funciona porque la única propiedad requerida del conjunto es que esté ordenado bajo algún operador relacional.
+Solemos asociar la inducción con demostraciones de propiedades definidas en el conjunto de los números enteros positivos. Aquí traemos una demostración inductiva basada en una extraña ordenación en la que los números mayores son menores que los menores. La inducción funciona porque la única propiedad requerida del conjunto es que esté ordenado bajo algún operador relacional.
 
 Consideremos la siguiente función recursiva definida sobre los números enteros:\index{McCarthy's $91$-function}
 \[
@@ -274,26 +274,26 @@ f(91) &=& f(f(91+11)) = f(f(102)) = f(92)\\
 f(90) &=& f(f(90+11)) = f(f(101)) = f(91) = 91\\
 f(89) &=& f(f(89+11)) = f(f(100)) = f(91) = 91\,.
 \end{eqnarray*}
-Definir la función $g$ como:
+Definimos la función $g$ como:
 \[
-g(x) = \textrm{if}\;\; x > 100 \;\;\textrm{then}\;\; x - 10 \;\;\textrm{else}\;\; 91\,.
+g(x) = \textrm{si}\;\; x > 100 \;\;\textrm{entonces}\;\; x - 10 \;\;\textrm{si no}\;\; 91\,.
 \]
 
 \begin{theorem}
-Para todos $x$, $f(x) = g(x)$.
+Para todo $x$, $f(x) = g(x)$.
 \end{theorem}
 
 \begin{proof}
-La prueba es por inducción sobre el conjunto de enteros $S=\{x\,|\,x\leq 101\}$ utilizando el operador relacional $\prec$ definido por:
+La demostración es por inducción sobre el conjunto de enteros $S=\{x\,|\,x\leq 101\}$ utilizando el operador relacional $\prec$ definido por:
 \[
-y \prec x \;\; \textrm{if and only if}\;\; x < y\,,
+y \prec x \;\; \textrm{si y solo si}\;\; x < y\,,
 \]
 donde en el lado derecho $<$ es el operador relacional habitual sobre los números enteros.
 Esta definición da como resultado la siguiente ordenación:
 \[
 101 \prec 100 \prec 99 \prec 98 \prec 97 \prec \cdots\,.
 \]
-Hay tres casos en la prueba. Utilizamos los resultados de los cálculos anteriores.
+Hay tres casos en la demostración. Utilizamos los resultados de los cálculos anteriores.
 
 \textit{Caso 1:}
 $x > 100$. Esto es trivial por las definiciones de $f$ y $g$.
@@ -305,7 +305,7 @@ f(100) =  91 = g(100)\,,
 \]
 ya que hemos demostrado que $f(100)=91$ y por definición $g(100)=91$.
 
-El supuesto inductivo es $f(y) = g(y)$ para $y\prec x$ y el paso inductivo es:
+La hipótesis inductiva es $f(y) = g(y)$ para $y\prec x$ y el paso inductivo es:
 \begin{subeqnarray}
 f(x) &=& f(f(x+11))\slabel{m91-1}\\
 &=& f(x+11-10)= f(x+1)\slabel{m91-3}\\
@@ -314,14 +314,14 @@ f(x) &=& f(f(x+11))\slabel{m91-1}\\
 &=& g(x)\slabel{m91-6}\,.
 \end{subeqnarray}
 La ecuación~\ref{m91-1} se cumple por definición de $f$ ya que $x\leq 100$.
-La igualdad de la Ec.~\ref{m91-1} y la Ec.~\ref{m91-3} se cumple por definición de $f$, ya que $x \geq 90$ por lo que $x+11 > 100$. La igualdad de la Ec.~\ref{m91-3} y la Ec.~\ref{m91-4} se sigue por la hipótesis inductiva $x\leq 100$, por lo que $x+1 \leq 101$ lo que implica que $x+1\in S$ y $x+1\prec x$. La igualdad de la Ec.~\ref{m91-4}, Ec.~\ref{m91-5} y Ec.~\ref{m91-6} se sigue por definición de $g$ y $x+1 \leq 101$, por lo que $x \leq 100$.
+La igualdad de la Ecuación~\ref{m91-1} y la Ecuación~\ref{m91-3} se cumple por definición de $f$, ya que $x \geq 90$ por lo que $x+11 > 100$. La igualdad de la Ecuación~\ref{m91-3} y la Ecuación~\ref{m91-4} se deriva de la hipótesis inductiva $x\leq 100$, por lo que $x+1 \leq 101$ lo que implica que $x+1\in S$ y $x+1\prec x$. La igualdad de la Ecuación~\ref{m91-4}, Ecuación~\ref{m91-5} y Ecuación~\ref{m91-6} se deriva de la definición de $g$ y $x+1 \leq 101$, por lo que $x \leq 100$.
 
 \textit{Caso 3:}
 $x< 90$. El caso base es:
 $f(89) = f(f(100)) = f(91) = 91 = g(89)$
 por definición de $g$ ya que $89<100$.
 
-El supuesto inductivo es $f(y) = g(y)$ para $y\prec x$ y el paso inductivo es:
+La hipótesis inductiva es $f(y) = g(y)$ para $y\prec x$ y el paso inductivo es:
 \begin{subeqnarray}
 f(x) &=& f(f(x+11))\slabel{m91a}\\
 &=& f(g(x+11))\slabel{m91b}\\
@@ -330,7 +330,7 @@ f(x) &=& f(f(x+11))\slabel{m91a}\\
 &=& g(x)\,.
 \end{subeqnarray}
 La ecuación~\ref{m91a} se cumple por definición de $f$ y $x<90\leq 100$.
-La igualdad de la Ec.~\ref{m91a} y la Ec~\ref{m91b} se sigue de la hipótesis inductiva $x < 90$, por lo que $x+11< 101$, lo que implica que $x+11\in S$ y $x+11\prec x$. La igualdad de la Ec.~\ref{m91b} y la Ec~\ref{m91c} se sigue por definición de $g$ y $x+11 < 101$. Por último, ya hemos demostrado que $f(91)=91$ y $g(x)=91$ para $x<90$ por definición.
+La igualdad de la Ecuación~\ref{m91a} y la Ec~\ref{m91b} se deriva de la hipótesis inductiva $x < 90$, por lo que $x+11< 101$, lo que implica que $x+11\in S$ y $x+11\prec x$. La igualdad de la Ecuación~\ref{m91b} y la Ec~\ref{m91c} se deriva de la definición de $g$ y $x+11 < 101$. Por último, ya hemos demostrado que $f(91)=91$ y $g(x)=91$ para $x<90$ por definición.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -338,7 +338,7 @@ La igualdad de la Ec.~\ref{m91a} y la Ec~\ref{m91b} se sigue de la hipótesis in
 \section{El problema de Josefo}\label{s.josephus}
 \index{Josephus problem}
 
-Josefo era el comandante de la ciudad de Yodfat durante la rebelión judía contra los romanos. La abrumadora fuerza del ejército romano acabó aplastando la resistencia de la ciudad y Josefo se refugió en una cueva con algunos de sus hombres. Prefirieron suicidarse antes que ser asesinados o capturados por los romanos. Según el relato de Josefo, se las arregló para salvarse, se convirtió en observador de los romanos y más tarde escribió una historia de la rebelión. Presentamos el problema como un problema matemático abstracto.
+Josefo era el comandante de la ciudad de Yodfat durante la rebelión judía contra los romanos. La abrumadora fuerza del ejército romano acabó aplastando la resistencia de la ciudad y Josefo se refugió en una cueva con algunos de sus hombres. Prefirieron suicidarse antes que ser asesinados o capturados por los romanos. Según el relato de Josefo, él se las arregló para salvarse, se convirtió en observador de los romanos y más tarde escribió una historia de la rebelión. Presentamos el problema como un problema matemático abstracto.
 
 \begin{definition}[El problema de Josefo]
 Considere los números $1,\ldots,n\!+\!1$ dispuestos en un círculo. Suprima cada número $q$ alrededor del círculo $q, 2q, 3q, \ldots$ (donde el cálculo se realiza modulo $n\!+\!1$) hasta que sólo quede un número $m$. $J(n+1,q)=m$ es el \emph{número de Josefo} para $n+1$ y $q$.
@@ -429,7 +429,7 @@ El conteo para encontrar la siguiente eliminación comienza con $q+1$. Mapeando 
 q+1&\, q+2&\ldots&n&\, n+1&\, 1&\ldots&q-2&\, q-1\,.
 \end{array}
 \]
-Recuerda que los cálculos son módulo $n+1$:
+Recordemos que los cálculos son módulo $n+1$:
 \[
 \begin{array}{lclcl}
 (n+2-q)+q&=& (n+1)+1&=& 1 \quad\;\;\pmod {n+1}\\
@@ -451,17 +451,17 @@ Esto se puede demostrar a partir de la aplicación repetida del algoritmo de div
 \begin{eqnarray*}
 n&=&2^a+b_{a-1}2^{a-1}+\cdots+b_{0}2^{0}\\
 n&=&2^a+(b_{a-1}2^{a-1}+\cdots+b_{0}2^{0})\\
-n&=&2^a+t,\quad \textrm{where}\; t\leq 2^a-1\,.
+n&=&2^a+t,\quad \textrm{donde}\; t\leq 2^a-1\,.
 \end{eqnarray*}
 \end{proof}
 
-Ahora probamos que existe una forma cerrada simple para $J(n,2)$. 
+Ahora demostramos que existe una forma cerrada simple para $J(n,2)$. 
 \begin{theorem}\label{thm.jo2}
 For $n=2^a+t$, $a\geq 0, 0\leq t < 2^a$, $J(n,2)=2t+1$.
 \end{theorem}
 
 \begin{proof}
-Por Thm.~\ref{lem.jo}, $n$ puede expresarse como se indica en el teorema. La demostración de que $J(n,2)=2t+1$ se hace por doble inducción, primero sobre $a$ y luego sobre $t$.
+Por el Teorema~\ref{lem.jo}, $n$ puede expresarse como se indica en el teorema. La demostración de que $J(n,2)=2t+1$ se hace por doble inducción, primero sobre $a$ y luego sobre $t$.
 
 \textit{Primera inducción:}
 
@@ -485,22 +485,26 @@ Por la hipótesis inductiva $J(2^{a+1},2)=J(2^a,2)=1$ así que por inducción $J
 
 Hemos demostrado $J(2^a+0,2)=2\cdot 0 +1$, el caso base de la segunda inducción.
 
-La hipótesis inductiva es $J(2^a+t,2)=2t+1$. Por Thm.~\ref{thm.jo1}:
+La hipótesis inductiva es $J(2^a+t,2)=2t+1$. Por el Teorema~\ref{thm.jo1}:
 \[
 J(2^a+(t+1),2)=J(2^a+t,2)+2=2t+1+2=2(t+1)+1\,.
 \]
 \end{proof}
 
-Los teoremas~\ref{lem.jo} y~\ref{thm.jo2} dan un algoritmo sencillo para calcular $J(n,2)$. De la prueba de Thm.~\ref{lem.jo}:
+Los teoremas~\ref{lem.jo} y~\ref{thm.jo2} dan un algoritmo sencillo para calcular $J(n,2)$. De la demostración de Teorema~\ref{lem.jo}:
 \[
 n=2^a+t=2^a+(b_{a-1}2^{a-1}+\cdots+b_{0}2^{0})\,,
 \]
-so $t=b_{a-1}2^{a-1}+\cdots+b_{0}2^{0}$. Simplemente multiplicamos por $$2$$ (desplazamos un dígito a la izquierda) y sumamos $$1$$. Por ejemplo, como $n=41=2^5+2^3+2^0=101001$, resulta que $J(41,2)=2t+1$, y en notación binaria:
-\begin{eqnarray*}
-41&=&101001\\
-9&=&01001\\
-2t+1&=&10011=16+2+1=19\,.
-\end{eqnarray*}
+etonces $t=b_{a-1}2^{a-1}+\cdots+b_{0}2^{0}$.
+
+Multiplicamos $t$ por $2$ desplazando los dígitos binarios de $t$ un dígito hacia la izquierda y sumamos $1$ a la derecha. Por ejemplo, como $n = 41 = 25  +  23  +  20  = 101001$,
+\[
+t = n - 2^5 = 9 = 23  +  20  = 01001\,,
+\]
+lo que implica que 
+\[
+J(41,2) = 2t + 1 = 2\cdot 9 + 1 =  1001\textrm{\textvisiblespace}1 = 24 + 21 + 20 = 19\,.
+\]
 El lector puede comprobar el resultado borrando uno de cada dos números de un círculo $1,\ldots,41$.
 
 Existe una forma cerrada para $J(n,3)$ pero es bastante complicada.
@@ -509,8 +513,8 @@ Existe una forma cerrada para $J(n,3)$ pero es bastante complicada.
 
 \subsection*{¿Cuál es la sorpresa?}
 
-La inducción es quizá la técnica de demostración más importante de las matemáticas modernas. Aunque los números de Fibonacci son muy conocidos y los de Fermat también son fáciles de entender, me sorprendió encontrar tantas fórmulas que no conocía (como Thms.~\ref{thm.fib-div3} y \ref{thm.seven-fourths}) que se pueden demostrar por inducción. La función $91$ de McCarthy se descubrió en el contexto de la informática, aunque es un resultado puramente matemático. Lo sorprendente no es la función en sí, sino la extraña inducción utilizada para demostrarla donde $98\prec 97$. La sorpresa del problema Josephus es la prueba inductiva bidireccional.
+La inducción es quizá la técnica de demostración más importante de las matemáticas modernas. Aunque los números de Fibonacci son muy conocidos y los de Fermat también son fáciles de entender, me sorprendió encontrar tantas fórmulas que no conocía (como los Teoremas~\ref{thm.fib-div3} y \ref{thm.seven-fourths}) que se pueden demostrar por inducción. La función $91$ de McCarthy se descubrió en el contexto de la informática, aunque es un resultado puramente matemático. Lo sorprendente no es la función en sí, sino la extraña inducción utilizada para demostrarla donde $98\prec 97$. La sorpresa del probelma de Josefo es la demostración inductiva bidireccional.
 
 \subsection*{Fuentes}
 
-Para una presentación completa de la inducción, véase \cite{gunderson}. La prueba de la función $91$ de McCarthy es de \cite{manna} donde se atribuye a Rod M. Burstall.\index{Burstall, Rod M.} La presentación del problema de Josefo se basa en \cite[Capítulo~17]{gunderson}, que también discute los antecedentes históricos. Ese capítulo contiene otros problemas interesantes con pruebas inductivas, como los niños embarrados, la moneda falsa y los peniques en una caja. Se puede encontrar material adicional sobre el problema de Josefo en \cite{schumer,wiki:josephus}.
+Para una presentación completa de la inducción, véase \cite{gunderson}. La demostración de la función $91$ de McCarthy es de \cite{manna} donde se atribuye a Rod M. Burstall.\index{Burstall, Rod M.} La presentación del problema de Josefo se basa en \cite[Capítulo~17]{gunderson}, que también discute los antecedentes históricos. Ese capítulo contiene otros problemas interesantes con demostraciones inductivas, como los niños embarrados, la moneda falsa y los peniques en una caja. Se puede encontrar material adicional sobre el problema de Josefo en \cite{schumer,wiki:josephus}.

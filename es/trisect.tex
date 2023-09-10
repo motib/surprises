@@ -1,12 +1,12 @@
 % !TeX root = surprises.tex
 
-\chapter{Trisection of an Angle}\label{c.trisect}
+\chapter{Trisección de un ángulo}\label{c.trisect}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Es imposible trisecar un ángulo arbitrario (dividir el ángulo en tres partes iguales) utilizando sólo una regla y un compás. La trisección requiere la construcción de raíces cúbicas, pero una regla y un compás sólo pueden construir longitudes que son expresiones construidas a partir de números enteros, los cuatro operadores aritméticos y raíces cuadradas. Esto fue demostrado por Pierre Wantzel en 1837. Sin embargo, innumerables aficionados siguen intentando trisecar un ángulo. Sus construcciones son aproximaciones aunque están convencidos de que son correctas. La sección~\ref{s.trisect-approx} presenta dos construcciones de este tipo, desarrolla fórmulas para los ángulos y muestra los errores en las aproximaciones.
+Es imposible trisecar un ángulo arbitrario (dividir el ángulo en tres partes iguales) utilizando sólo una regla y un compás. La trisección requiere la construcción de raíces cúbicas, pero una regla y un compás sólo pueden construir longitudes que son expresiones construidas a partir de números enteros, las cuatro operaciones aritméticas y raíces cuadradas. Esto fue demostrado por Pierre Wantzel en 1837. Sin embargo, innumerables aficionados siguen intentando trisecar un ángulo. Sus construcciones son aproximaciones aunque están convencidos de que son correctas. La sección~\ref{s.trisect-approx} presenta dos construcciones de este tipo, desarrolla fórmulas para los ángulos y muestra los errores en las aproximaciones.
 
-Los matemáticos griegos descubrieron que si se permiten otros instrumentos, los ángulos se pueden trisecar. La sección~\ref{s.neusis} explica una construcción de Arquímedes utilizando un instrumento sencillo llamado \emph{neusis} y la sección~\ref{s.neusis-doubling} muestra cómo doblar un cubo utilizando el neusis. La sección~\ref{s.q} presenta una construcción para la trisección por Hipias utilizando un instrumento llamado \emph{cuadratriz}. El resto del capítulo contiene una prueba de la imposibilidad de trisección de un ángulo. La sección ~\ref{s.trisect-constructible} caracteriza los números construibles, la sección~\ref{s.trisect-poly} relaciona los números construibles con las raíces de los polinomios y la sección~\ref{s.trisect-impossible} utiliza esta teoría para demostrar que la trisección de un ángulo y la duplicación de un cubo son imposibles.
+Los matemáticos griegos descubrieron que si se permiten otros instrumentos, los ángulos se pueden trisecar. La sección~\ref{s.neusis} explica una construcción de Arquímedes utilizando un instrumento sencillo llamado \emph{neusis} y la sección~\ref{s.neusis-doubling} muestra cómo duplicar el volumen de un cubo utilizando el neusis. La sección~\ref{s.q} presenta una construcción para la trisección de Hipias utilizando un instrumento llamado \emph{cuadratriz}. El resto del capítulo contiene una demostración de la imposibilidad de la trisección de un ángulo. La sección ~\ref{s.trisect-constructible} caracteriza los números construibles, la sección~\ref{s.trisect-poly} relaciona los números construibles con las raíces de los polinomios y la sección~\ref{s.trisect-impossible} utiliza esta teoría para demostrar que la trisección de un ángulo y la duplicación de un cubo son imposibles.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -112,7 +112,7 @@ $T$ es el punto medio de $\overline{DC}$ por lo que $\overline{DT}=\overline{TC}
 \[
 \overline{OE}=\frac{1}{2} + \frac{1}{2}\left(\cos \frac{\theta}{2}-\frac{1}{2}\right)\,.
 \]
-Calcular la longitud $2a=\overline{CD}$ utilizando el Teorema de Pitágoras en $\triangle DCF$:
+Calculemos la longitud $2a=\overline{CD}$ utilizando el Teorema de Pitágoras en $\triangle DCF$:
 \begin{eqnarray*}
 (2a)^2 &=&  \left(\cos \frac{\theta}{2}-\frac{1}{2}\right)^2+\sin^2\frac{\theta}{2}\,.
 \end{eqnarray*}
@@ -133,7 +133,7 @@ Esta es una aproximación a una trisección $\phi=\theta/3$. Para $\theta=60^\ci
 \tan^{-1}0.366\approx 20.1^\circ\approx 20^\circ\,.
 \]
 
-Tabla~\ref{t.trisect-first} muestra los errores para un rango de ángulos agudos. El error es relativamente pequeño para ángulos pequeños, aumentando a $1\%$ a $85^\circ$.
+Tabla~\ref{t.trisect-first} muestra los errores para un rango de ángulos agudos. El error es relativamente pequeño para ángulos pequeños, aumentando a $1\!\!$\% a $85^\circ$.
 
 \begin{table}[t]
 \caption{Errores en la primera trisección aproximada}\label{t.trisect-first}
@@ -170,7 +170,7 @@ Tabla~\ref{t.trisect-first} muestra los errores para un rango de ángulos agudos
 \subsection{Segunda trisección aproximada}\index{Trisection of an angle!approximation}
 
 \noindent\textbf{Construcción:}
-Sea $\theta=\angle AOB$ un ángulo arbitrario y sin pérdida de generalidad supongamos que $A,B$ están en una circunferencia unitaria cuyo centro es $O$. Construir una circunferencia de radio $1/3$ con centro $O$ y que $D$ sea su intersección con $\overline{OA}$. Bisecamos $\angle AOB$ y sea $C$ la intersección de la bisectriz con la circunferencia de radio $1/3$. Construir la cuerda $\overline{CD}$ y las cuerdas $\overline{AE}=\overline{ET}=\overline{CD}$. Como cuerdas iguales subtienden ángulos centrales iguales $\angle TOE=\angle EOA=\phi$ (Fig.~\ref{f.trisect-second-approx}).
+Sea $\theta=\angle AOB$ un ángulo arbitrario y sin pérdida de generalidad supongamos que $A,B$ están en una circunferencia unitaria cuyo centro es $O$. Construimos una circunferencia de radio $1/3$ con centro $O$ y que $D$ sea su intersección con $\overline{OA}$. Bisecamos $\angle AOB$ y sea $C$ la intersección de la bisectriz con la circunferencia de radio $1/3$. Construimos la cuerda $\overline{CD}$ y las cuerdas $\overline{AE}=\overline{ET}=\overline{CD}$. Como cuerdas iguales subtienden ángulos centrales iguales $\angle TOE=\angle EOA=\phi$ (Fig.~\ref{f.trisect-second-approx}).
 
 \begin{figure}[ht]
 \begin{center}
@@ -247,7 +247,7 @@ Esta es una aproximación a una trisección $2\phi=\theta/3$. Para $\theta=60^\c
 2\cos^{-1}\left(1 - \frac{1}{9}(1-\cos 30^\circ)\right)\approx 19.8^\circ\approx 20^\circ\,.
 \]
 
-La tabla~\ref{t.trisect-second-approx} muestra los errores para un rango de ángulos agudos. Esta construcción es mucho menos precisa que la de la Secc.~\ref{sub.trisect-approx1}.
+La tabla~\ref{t.trisect-second-approx} muestra los errores para un rango de ángulos agudos. Esta construcción es mucho menos precisa que la de la Sección~\ref{sub.trisect-approx1}.
 
 \begin{table}[t]
 \caption{Errores en la segunda trisección aproximada}\label{t.trisect-second-approx}
@@ -286,7 +286,7 @@ La tabla~\ref{t.trisect-second-approx} muestra los errores para un rango de áng
 \section{Trisección con Neusis}\label{s.neusis}\index{Trisection of an angle!neusis@with a neusis}
 \index{Neusis!trisection of an angle}
 
-El término "regla" se utiliza en lugar de "regla" porque una regla no tiene marcas. Sólo puede utilizarse para construir una línea recta entre dos puntos dados. Arquímedes demostró que una regla con dos marcas a una distancia fija puede utilizarse para trisecar un ángulo (Fig.~\ref{f.neusis}). Definimos la distancia entre las marcas como $1$.
+Usamos el vocablo regla (a secas) para indicar un instrumento que no tiene graduación (medidas) y solo puede utilizarse para construir una línea recta entre dos puntos dados. La regla con unidades de medida se denomina "regla graduada". Arquímedes demostró que neusis, una regla con dos marcas a una distancia fija, puede utilizarse para trisecar un ángulo (Fig.~\ref{f.neusis}). Definimos la distancia entre las marcas como $1$.
 
 \begin{figure}[b]
 \begin{center}
@@ -326,13 +326,13 @@ El término "regla" se utiliza en lugar de "regla" porque una regla no tiene mar
 \end{figure}
 
 \noindent\textbf{Construcción:}
-Sea $\alpha=\angle ABE$ un ángulo arbitrario en una circunferencia unitaria con centro $B$, donde el radio de la circunferencia es igual a la distancia entre las marcas del neusis. Extender el radio $\overline{EB}$ más allá del círculo. Colocar una arista de la neusis sobre $A$ y moverla hasta que intersecte la prolongación de $\overline{EB}$ en $D$ y la circunferencia en $C$, utilizando las marcas de forma que la longitud del segmento de recta $\overline{CD}$ sea $1$.\footnote{Esta operación se denomina \emph{verging}.}. Construir la recta $\overline{AD}$. Denotemos $\angle CDB=\beta$ (Fig.~\ref{f.trisect-neusis-1}).
+Sea $\alpha=\angle ABE$ un ángulo arbitrario en una circunferencia unitaria con centro $B$, donde el radio de la circunferencia es igual a la distancia entre las marcas del neusis. Extendemos el radio $\overline{EB}$ más allá del círculo. Colocamos una arista de la neusis sobre $A$ y la movemos hasta que intersecte la prolongación de $\overline{EB}$ en $D$ y la circunferencia en $C$, utilizando las marcas de forma que la longitud del segmento de recta $\overline{CD}$ sea $1$. Construyamos la recta $\overline{AD}$. Denotemos $\angle CDB=\beta$ (Fig.~\ref{f.trisect-neusis-1}).
 
 \begin{theorem} $\beta=\alpha/3$.
 \end{theorem}
 \begin{proof}
-Construye $\overline{BC}$ y denota los ángulos y segmentos de recta como se muestra en Fig.~\ref{f.trisect-neusis-2}.
-$\triangle ABC$ y $\triangle BCD$ son triángulos isóceles: $\overline{AB} = \overline{BC}$ son radios de la misma circunferencia y $\overline{BC} = \overline{CD}$ por construcción mediante la neusis. Como la suma de los ángulos de un triángulo es igual a $180^\circ$ y la suma de los ángulos suplementarios también es igual a $180^\circ$, tenemos:
+Construye $\overline{BC}$ y denotemos los ángulos y segmentos de recta como se muestra en Fig.~\ref{f.trisect-neusis-2}.
+$\triangle ABC$ y $\triangle BCD$ son triángulos isóceles: $\overline{AB} = \overline{BC}$ son radios de la misma circunferencia y $\overline{BC} = \overline{CD}$ por construcción mediante el neusis. Como la suma de los ángulos de un triángulo es igual a $180^\circ$ y la suma de los ángulos suplementarios también es igual a $180^\circ$, tenemos:
 \begin{eqnarray*}
 \epsilon &=& 180^\circ - 2\beta\\
 \gamma &=& 180^\circ - \epsilon = 2\beta\\
@@ -366,17 +366,17 @@ $\triangle ABC$ y $\triangle BCD$ son triángulos isóceles: $\overline{AB} = \o
 \path (c) -- node[fill=white,near start] {$1$} (d);
 \end{tikzpicture}
 \end{center}
-\caption{La construcción de neusis para trisecar un ángulo (2)}\label{f.trisect-neusis-2}
+\caption{La construcción con neusis para trisecar un ángulo (2)}\label{f.trisect-neusis-2}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Duplicar el cubo con un Neusis}\label{s.neusis-doubling}
 
-Dado un cubo $C$ construir otro cubo con el doble de su volumen. Si el volumen de $C$ es $V$ sus lados son de longitud $\sqrt[3]{V}$. Las caras de un cubo con el doble de volumen son $\sqrt[3]{2 V}=\sqrt[3]{2}\cdot\sqrt[3]{V}$, por lo que si podemos construir $\sqrt[3]{2}$ podemos duplicar el cubo.
+Dado un cubo $C$ construir otro cubo con el doble de su volumen. Si el volumen de $C$ es $V$ sus lados son de longitud $\sqrt[3]{V}$. Las caras de un cubo con el doble de volumen son $\sqrt[3]{2 V}=\sqrt[3]{2}\cdot\sqrt[3]{V}$, por lo que si podríamos construir $\sqrt[3]{2}$ podríamos duplicar el cubo.
 
 \noindent\textbf{Construcción:}
-Construir el triángulo equilátero unitario $\triangle ABC$ y prolongar $\overline{CA}$ con otro segmento de recta unitario hasta $D$. Construir los rayos que prolongan $\overline{AB}$ y $\overline{DB}$. Colocar la neusis en el punto $C$ y moverla hasta que una marca de la neusis se sitúe en la semirrecta $\overline{AB}$ en $P$ y la otra marca se sitúe en la semirrecta $\overline{DB}$ en $Q$. Denotemos $\overline{CQ}=x$ y $\overline{BP}=y$ (Fig.~\ref{f.double-neusis}).
+Construymos el triángulo equilátero unitario $\triangle ABC$ y prolonguemos $\overline{CA}$ con otro segmento de recta unitario hasta $D$. Construyamos los rayos que prolongan $\overline{AB}$ y $\overline{DB}$. Coloquemos la neusis en el punto $C$ y movámoslo hasta que una marca del neusis se sitúe en la semirrecta $\overline{AB}$ en $P$ y la otra marca se sitúe en la semirrecta $\overline{DB}$ en $Q$. Denotemos $\overline{CQ}=x$ y $\overline{BP}=y$ (Fig.~\ref{f.double-neusis}).
 
 \begin{figure}[b]
 \begin{center}
@@ -420,7 +420,7 @@ Como el triángulo $ABC$ es equilátero, $\cos \angle CAP=\cos 60^\circ=\frac{1}
 (x+1)^2&=&1^2+(y+1)^2-2\cdot 1\cdot (y+1)\cdot \frac{1}{2}\\
 x^2+2x&=&y^2+y\slabel{eq.eq-cube-double}\,.
 \end{subeqnarray}
-Por el teorema de Menelao (Thm.~\ref{thm.menelaus}):
+Por el teorema de Menelao (Teorema~\ref{thm.menelaus}):
 \[
 \displaystyle\frac{\overline{AB}}{\overline{BP}}\cdot
 \displaystyle\frac{\overline{PQ}}{\overline{QC}}\cdot
@@ -433,7 +433,7 @@ Por lo tanto:
 \displaystyle\frac{2}{1}&=&1\\
 xy&=&2\,.\slabel{eq.menelaus-xy2}
 \end{subeqnarray}
-Sustituyendo la Ec.~\ref {eq.menelaus-xy2} en la Ec.~\ref {eq.eq-cube-double} da:
+Sustituyendo la ecuación~\ref {eq.menelaus-xy2} en la ecuación~\ref {eq.eq-cube-double} da:
 \begin{eqnarray*}
 x^2+2x&=&\frac{4}{x^2}+\frac{2}{x}\\
 x^4+2x^3&=&4+2x\\
@@ -441,6 +441,7 @@ x^3(x+2)&=&2(x+2)\\
 %x^3&=&2\\
 x&=&\sqrt[3]{2}\,.
 \end{eqnarray*}
+\vspace*{-4ex}
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -448,7 +449,7 @@ x&=&\sqrt[3]{2}\,.
 
 \index{Trisection of an angle!quadratrix@with a quadratrix}
 
-Sea $\overline{ABCD}$ un cuadrado. Sea $l_1$ un segmento de recta situado inicialmente en $\overline{DC}$ y sea $l_2$ un segmento de recta situado inicialmente en $\overline{AD}$. Mover $l_1$ con velocidad lineal constante hasta alcanzar $\overline{AB}$ y girar $l_2$ con velocidad angular constante en sentido horario sobre $A$ hasta alcanzar también $\overline{AB}$. Supongamos que alcanzan $\overline{AB}$ juntos. Por ejemplo, si $l_2$ gira a $1^\circ$/segundo y el lado del cuadrado es de $9$ centímetros, $l_1$ debe moverse a $0,1$ cm/segundo. La traza de su punto de intersección $P$ se denomina \emph{curva cuadrática}\index{cuadrática} o simplemente \emph{cuadrática} (Fig.~\ref{f.trisect-quad-curve}). Su definición se atribuye al matemático Hipias.
+Sea $\overline{ABCD}$ un cuadrado. Sea $l_1$ un segmento de recta situado inicialmente en $\overline{DC}$ y sea $l_2$ un segmento de recta situado inicialmente en $\overline{AD}$. Movamos $l_1$ con velocidad lineal constante hasta alcanzar $\overline{AB}$ y giremos $l_2$ con velocidad angular constante en sentido horario sobre $A$ hasta alcanzar también $\overline{AB}$. Supongamos que alcanzan $\overline{AB}$ juntos. Por ejemplo, si $l_2$ gira a $1^\circ$/segundo y el lado del cuadrado es de $9$ centímetros, $l_1$ debe moverse a $0,1$ cm/segundo. La huella que deja su punto de intersección $P$ se denomina \emph{cuadratiz} (Fig.~\ref{f.trisect-quad-curve}). Su definición se atribuye al matemático Hipias.
 
 \begin{figure}[b]
 \begin{minipage}{.48\textwidth}
@@ -469,7 +470,7 @@ Sea $\overline{ABCD}$ un cuadrado. Sea $l_1$ un segmento de recta situado inicia
 \vertex{A};
 \draw[thick] plot (4.6*.637*\x,{12.2*.637*\x*cot(\x r)});
 \end{tikzpicture}
-\caption{Una curva cuadrática}\label{f.trisect-quad-curve}
+\caption{Una cuadratriz}\label{f.trisect-quad-curve}
 \end{center}
 \end{minipage}
 \hfill
@@ -482,12 +483,12 @@ Sea $\overline{ABCD}$ un cuadrado. Sea $l_1$ un segmento de recta situado inicia
 \fill (2.9,5) circle [radius=2.5pt];
 \draw[thick] plot (4.6*.637*\x,{12.2*.637*\x*cot(\x r)});
 \end{tikzpicture}
-\caption{Un compás de cuadratura}\label{f.trisect-quad-compass}
+\caption{Un compás de cuadraturiz}\label{f.trisect-quad-compass}
 \end{center}
 \end{minipage}
 \end{figure}
 
-Se puede construir una cuadratriz utilizando un compás de cuadratriz como se muestra en la Fig.~\ref{f.trisect-quad-compass}. Consiste en dos rectas (no marcadas) que se mueven como se ha descrito anteriormente. Una articulación les obliga a moverse juntos y traza la curva.
+Se puede construir una cuadratriz utilizando un compás de cuadratriz como se muestra en la Fig.~\ref{f.trisect-quad-compass}. Consiste en dos rectas (no marcadas) que se mueven como se ha descrito anteriormente. Una articulación las obliga a moverse simultáneamente y trazar la curva.
 \begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.8,domain=.03:1.562,samples=100]
@@ -534,13 +535,13 @@ Se puede construir una cuadratriz utilizando un compás de cuadratriz como se mu
 Se puede utilizar una cuadratriz para trisecar un ángulo.
 
 \noindent\textbf{Construcción:}
-Sea $\angle CDP_1=\alpha$ un ángulo arbitrario, donde $P_1$ es la intersección de la recta que define el ángulo $\alpha$ relativo a $\overline{DC}$ y la cuadratriz. Construir una recta que pase por $P_1$ paralela a $\overline{DC}$ y denotar su intersección con $\overline{AD}$ por $E$. Denotemos el segmento de recta $\overline{DE}$ por $t$ y trisecémoslo (Sect.~\ref{s.trisect-constructible}) para obtener el punto $F$ que está a $t/3$ de $\overline{DC}$. Sea $P_2$ la intersección de una recta desde $F$ paralela a $\overline{DC}$ y la cuadratriz, y denotemos por $\theta$ el ángulo entre $\overline{DC}$ y $\overline{DP_2}$ (Fig.~\ref{f.trisect-quad-trisect}).
+Sea $\angle CDP_1=\alpha$ un ángulo arbitrario, donde $P_1$ es la intersección de la recta que define el ángulo $\alpha$ relativo a $\overline{DC}$ y la cuadratriz. Construyamos una recta que pase por $P_1$ paralela a $\overline{DC}$ y denotemos con $E$ su intersección con $\overline{AD}$. Denotemos $t$ el segmento de recta $\overline{DE}$ por $t$ y trisequémoslo (Sect.~\ref{s.trisect-constructible}) para obtener el punto $F$ que está a $t/3$ de $\overline{DC}$. Sea $P_2$ la intersección de una recta desde $F$ paralela a $\overline{DC}$ y la cuadratriz, y denotemos por $\theta$ el ángulo entre $\overline{DC}$ y $\overline{DP_2}$ (Fig.~\ref{f.trisect-quad-trisect}).
 
 \begin{theorem}
 $\theta = \alpha/3$.
 \end{theorem}
 \begin{proof}
-$E$ tiene coordenada $y$ $1-t$ por lo que por construcción $F$ tiene coordenada $y$ $1-(t/3)$. Puesto que la velocidad lineal constante de la línea horizontal es proporcional a la velocidad angular constante de la línea giratoria $\theta/\alpha = (t/3)/t$ y $\theta = \alpha/3$.
+La coordenada $y$ de $E$ es $1-t$ por lo que por construcción la coordenada de $F$ es $y$ $1-(t/3)$. Puesto que la velocidad lineal constante de la línea horizontal es proporcional a la velocidad angular constante de la línea giratoria $\theta/\alpha = (t/3)/t$ y $\theta = \alpha/3$.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -556,7 +557,7 @@ Un número $a$ es \emph{constructible} si y sólo si se puede construir un segme
 Dado un segmento de recta $l=\overline{AB}$, construir una recta que contenga a $\overline{AB}$ y utilizar el compás para encontrar un punto $C$ de la recta que esté a una distancia de $1$ de $B$. Entonces $\overline{AC}$ tiene una longitud $2$ por lo que el número $2$ es construible. Se puede construir un segmento de recta $\overline{BD}$ de longitud $1$ perpendicular a $\overline{AB}$ en $B$. La hipotenusa del triángulo $\triangle ABD$ es de longitud $\sqrt{2}$ por lo que el número $\sqrt{2}$ es construible.
 
 \begin{theorem}\label{thm.trisect-constructible}
-Un número es \emph{construible} si y sólo si es el valor de una expresión construida a partir de los números enteros, las cuatro operaciones aritméticas $\{+,-,\times,/\}$ y la operación de sacar raíz cuadrada $\\surd$.
+Un número es \emph{construible} si y sólo si es el valor de una expresión construida a partir de los números enteros, las cuatro operaciones aritméticas $\{+,-,\times,/\}$ y la operación de sacar raíz cuadrada $\surd$.
 \end{theorem}
 
 \begin{proof} Primero demostramos que los valores de estas expresiones son construibles.
@@ -595,7 +596,7 @@ Un número es \emph{construible} si y sólo si es el valor de una expresión con
 \end{figure}
 
 \noindent\textbf{Suma y resta:}
-Dados los segmentos de recta $\overline{PQ}=a$ y $\overline{RS}=b$, construir una circunferencia centrada en $Q$ con radio $b$ (Fig.~\ref{f.trisect-add-subtract}). Extender $\overline{PQ}$ hasta que se cruza con el círculo en $U$. Entonces $\overline{PTQU}$ es un segmento de recta, donde $\overline{PT}=a-b$ y $\overline{PU}=a+b$.
+Dados los segmentos de recta $\overline{PQ}=a$ y $\overline{RS}=b$, construir una circunferencia centrada en $Q$ con radio $b$ (Fig.~\ref{f.trisect-add-subtract}). Extender $\overline{PQ}$ hasta que se cruza con la circunferencia en $U$. Entonces $\overline{PTQU}$ es un segmento de recta, donde $\overline{PT}=a-b$ y $\overline{PU}=a+b$.
 
 \noindent\textbf{Multiplicación:}
 Por triángulos similares en Fig.~\ref{f.trisect-multiplication},
@@ -660,7 +661,7 @@ $(1/b)=(\overline{OD}/a)$, así que $\overline{OD}=(a/b)$.
 \end{figure}
 
 \noindent\textbf{Raíces cuadradas:}
-Dado un segmento de recta $\overline{BC}=a$, construir $\overline{AB} =1+a$ y una semicircunferencia con $\overline{AB}$ como diámetro. Se construye una perpendicular en $C$ y se deja que $D$ sea la intersección de la perpendicular y la circunferencia (Fig.~\ref{f.trisect-square-root}). El $\angle ADB$ es un ángulo recto porque está subtendido por un diámetro. Por triángulos semejantes $(h/1)=(a/h)$, por lo que $h^2=a$ y $h=\sqrt{a}$.
+Dado un segmento de recta $\overline{BC}=a$, construyamos $\overline{AB} =1+a$ y una semicircunferencia con $\overline{AB}$ como diámetro. Construyamos una perpendicular en $C$ y sea $D$ la intersección de la perpendicular y la circunferencia (Fig.~\ref{f.trisect-square-root}). El $\angle ADB$ es un ángulo recto porque está subtendido por un diámetro. Por triángulos semejantes $(h/1)=(a/h)$, por lo que $h^2=a$ y $h=\sqrt{a}$.
 
 \begin{figure}[b]
 \begin{center}
@@ -690,11 +691,10 @@ Dado un segmento de recta $\overline{BC}=a$, construir $\overline{AB} =1+a$ y un
 \label{f.trisect-square-root}
 \end{figure}
 
-Para demostrar la inversa del teorema, necesitamos determinar qué expresiones se pueden construir con una regla y un compás. Hay tres construcciones:\footnote{Para mayor claridad se ilustran para valores específicos en lugar de las ecuaciones más generales.}
+Para demostrar la inversa del teorema, necesitamos determinar qué expresiones se pueden construir con una regla y un compás. Hay tres construcciones\footnote{Para mayor claridad se ilustran para valores específicos en lugar de las ecuaciones más generales.}:
 
 \begin{enumerate}
-\item Dos rectas se intersecan en un punto (Fig.~\ref{f.constructible-two-lines}). Las coordenadas de la intersección pueden deducirse de las ecuaciones de las dos rectas
-$y=x$ y $y=4x-2$. El punto de intersección es $P= (2/3, 2/3)$.
+\item Dos rectas se intersecan en un punto (Fig.~\ref{f.constructible-two-lines}). Las coordenadas de la intersección pueden deducirse de las ecuaciones de las dos rectas $y=x$ y $y=4x-2$. El punto de intersección es $P= (2/3, 2/3)$.
 
 \item Una recta interseca a una circunferencia en cero, uno o dos puntos (Fig.~\ref{f.constructible-line-circle}). Las coordenadas de las intersecciones pueden deducirse de las ecuaciones de la recta $y=x$ y la circunferencia $x^2+y^2=4$. Los puntos de intersección son
 $P=(\sqrt{2}, \sqrt{2})$ y $Q=(-\sqrt{2}, -\sqrt{2})$.
@@ -743,7 +743,7 @@ $P=(\sqrt{2}, \sqrt{2})$ y $Q=(-\sqrt{2}, -\sqrt{2})$.
 \node[right] at (P) {$P$};
 \node[left] at (Q) {$Q$};
 \end{tikzpicture}
-\caption{Los puntos de intersección de una recta y un círculo}\label{f.constructible-line-circle}
+\caption{Los puntos de intersección de una recta y una circunferencia}\label{f.constructible-line-circle}
 \end{minipage}
 \end{figure}
 
@@ -785,12 +785,15 @@ El \emph{profundidad} de una expresión construida a partir de los enteros y los
 \end{definition}\index{Constructible number!depth of square roots}
 
 \begin{example}
-Considera la siguiente expresión:
+Consideremos la siguiente expresión:
 \[
 \sqrt{17+3\sqrt{17} - \sqrt{34-2\sqrt{17}}
   -2\sqrt{34+2\sqrt{17}} }\,.
 \]
-La profundidad es $3$ porque a la derecha de la expresión tenemos $\sqrt{17}$ que está anidado dentro de $\sqrt{34+2\sqrt{17}}$, que a su vez está anidado dentro de $\sqrt{17+\cdots-\cdots-2\sqrt{34+2\sqrt{17}}}$.
+La profundidad es $3$ porque a la derecha de la expresión tenemos $\sqrt{17}$ que está anidado dentro de $\sqrt{34+2\sqrt{17}}$, que a su vez está anidado dentro de:
+\[
+\sqrt{17+\cdots-\cdots-2\sqrt{34+2\sqrt{17}}}\,.
+\]
 \end{example}
 
 \begin{theorem}
@@ -808,7 +811,7 @@ Por último, la raíz cuadrada de una expresión de profundidad $n-1$ es una exp
 \end{proof}
 
 \begin{theorem}\label{thm.trisect.conjugate}
-Sea $p(x)$ un polinomio cúbico monicónico con coeficientes racionales:
+Sea $p(x)$ un polinomio cúbico mónico con coeficientes racionales:
 \[
 p(x)=x^3+a_2x^2+a_1x+a_0\,,
 \]
@@ -828,7 +831,7 @@ Calculemos $p(r)$ que es igual a $0$ ya que $r$ es una raíz:
 d+e\sqrt{c}&=&0\,.
 \end{array}
 \]
-donde $d,e$ son expresiones de profundidad $n-1$ formadas a partir de los coeficientes racionales y $a,b,c$. Entonces $\sqrt{c}=-d/e$, por lo que $a+b\sqrt{c}$ se puede expresar como una expresión de profundidad $n-1$, contrayendo la suposición de que $a+b\sqrt{c}$ es de profundidad mínima $n$. Como $\sqrt{c}\neq 0$ y es de profundidad $n$, para que $d+e\sqrt{c}$ sea cero debe ser que $d=e=0$.
+donde $d,e$ son expresiones de profundidad $n-1$ formadas a partir de los coeficientes racionales y $a,b,c$. Entonces $\sqrt{c}=-d/e$, por lo que $a+b\sqrt{c}$ se puede expresar como una expresión de profundidad $n-1$, contradiciendo la suposición de que $a+b\sqrt{c}$ es de profundidad mínima $n$. Como $\sqrt{c}\neq 0$ y es de profundidad $n$, para que $d+e\sqrt{c}$ sea cero debe ser que $d=e=0$.
 
 Consideremos ahora $r'=a-b\sqrt{c}$. Examinando el cálculo anterior vemos que $p(r')=d-e\sqrt{c}=0+0\cdot\sqrt{c}=0$, por lo que $r'$ también es una raíz de $p$.
 
@@ -836,12 +839,12 @@ Si $r= r'$ entonces $0=r-r'=2b\sqrt{c}$, lo cual es cierto sólo si $b=0$ por lo
 \end{proof}                                
 
 \begin{theorem}
-Si un monic\index{polinomio mónico} polinomio cúbico con coeficientes racionales:
+Si un polinomio mónico cúbico con coeficientes racionales:
 \[p(x)=x^3+a_2x^2+a_1x+a_0\] no tiene raíces racionales entonces ninguna de sus raíces es construible.
 \end{theorem}
 
 \begin{proof}
-Por el Teorema Fundamental del Álgebra  (Thm.~\ref{thm.fundamental}) $p(x)$ tiene tres raíces $r_1,r_2,r_3$. Sea $r_1=a+b\sqrt{c}$ una raíz de profundidad mínima $n$. Por la suposición de que no hay raíces racionales, $n\geq 1$, y por tanto $b\neq 0$ y $c\neq 0$. Por Thm.~\ref{thm.trisect.conjugate}, $r_2=a-b\sqrt{c}$ también es una raíz. Realizar la siguiente multiplicación:
+Por el Teorema Fundamental del Álgebra  (Teorema~\ref{thm.fundamental}) $p(x)$ tiene tres raíces $r_1,r_2,r_3$. Sea $r_1=a+b\sqrt{c}$ una raíz de profundidad mínima $n$. Por la suposición de que no hay raíces racionales, $n\geq 1$, y por tanto $b\neq 0$ y $c\neq 0$. Por Teorema~\ref{thm.trisect.conjugate}, $r_2=a-b\sqrt{c}$ también es una raíz. Realicemos la siguiente multiplicación:
 \begin{subeqnarray}
 (x-r_1)(x-r_2)(x-r_3)&=&x^3 -(r_1+r_2+r_3)x^2\\
 &&\quad\; +\, (r_1r_2+r_1r_3+r_2r_3)x + r_1r_2r_3\slabel{eq.viete3}\\
@@ -856,7 +859,7 @@ contradiciendo la suposición.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Impossibility of the Classical Constructions}\label{s.trisect-impossible}
+\section{Imposibilidad de las Construcciones Clásicas}\label{s.trisect-impossible}
 
 \begin{theorem}\label{thm.trisect.cube-root-irrational}
 $\sqrt[3]{2}$ es irracional.
@@ -876,19 +879,17 @@ por lo que $q$ es divisible por $2$, contradiciendo la suposición de que $p,q$ 
 \end{proof}
 
 \begin{theorem}
-$x^3-2$ no tiene raíces racionales por lo que es imposible doblar un cubo con una regla y un compás.
+$x^3-2$ no tiene raíces racionales por lo que es imposible duplicar el volumen de un cubo con una regla y un compás.
 \end{theorem}
 \begin{proof}
-Una de sus raíces es $\sqrt[3]{2}$ que por Thm.~\ref{thm.trisect.cube-root-irrational} es irracional. Las otras raíces son las raíces de la ecuación cuadrática $x^2+\sqrt[3]{2}x+(\sqrt[3]{2})^2$ que se obtiene dividiendo $x^3-2$ entre $x-\sqrt[3]{2}$. Es fácil comprobar que sus raíces no son racionales (de hecho, ni siquiera reales).
+Una de sus raíces es $\sqrt[3]{2}$ que por Teorema~\ref{thm.trisect.cube-root-irrational} es irracional. Las otras raíces son las raíces de la ecuación cuadrática $x^2+\sqrt[3]{2}x+(\sqrt[3]{2})^2$ que se obtiene dividiendo $x^3-2$ entre $x-\sqrt[3]{2}$. Es fácil comprobar que sus raíces no son racionales (de hecho, ni siquiera reales).
 \end{proof}
 
 \begin{theorem}
 Es imposible trisecar un ángulo arbitrario con una regla y un compás.
 \end{theorem}
 \begin{proof}
-Basta con demostrar la imposibilidad para un ángulo. Intentemos trisecar $60^\circ$ para obtener $20^\circ$.
-\index{Trisection of an angle!impossibility of}
-Por Thm.~\ref{thm.triple-angle}:
+Basta con demostrar la imposibilidad para un ángulo. Intentemos trisecar $60^\circ$ para obtener $20^\circ$. Por el Teorema~\ref{thm.triple-angle}:
 \begin{eqnarray*}
 \cos 3\alpha&=&4\cos^3\alpha -3\cos\alpha\\
 \cos 60^\circ&=&4\cos^3 20^\circ -3\cos 20^\circ\,.
@@ -907,13 +908,13 @@ a^3-3ab^2&=&b^3\\
 a(a-3b^2)&=&b^3\slabel{eq.trisect1}\\
 a^3&=&b(b^2+3ab)\slabel{eq.trisect2}\,.
 \end{subeqnarray}
-Por la Ec.~\ref{eq.trisect1}, $b$ debe ser divisible por $a$, y por la Ec.~\ref{eq.trisect2}, $a$ debe ser divisible por $b$, lo que sólo es posible si $a=b=\pm 1$ y $a/b=\pm 1$. Por cálculo, $y=a/b=1$ y $y=a/b=-1$ no son raíces del polinomio.
+Por la ecuación~\ref{eq.trisect1}, $b$ debe ser divisible por $a$, y por la ecuación~\ref{eq.trisect2}, $a$ debe ser divisible por $b$, lo que sólo es posible si $a=b=\pm 1$ y $a/b=\pm 1$. Por cálculo, $y=a/b=1$ y $y=a/b=-1$ no son raíces del polinomio.
 \end{proof}
 
-Una forma alternativa de demostrar la imposibilidad de las construcciones es utilizar el siguiente teorema que presentamos sin pruebas.
+Una forma alternativa de demostrar la imposibilidad de las construcciones es utilizar el siguiente teorema que presentamos sin demostración.
 
 \begin{theorem}\label{thm.factor}
-Si un polinomio monicónico $p(x)=x^n+a_{n-1}x^{n-1}+\cdots+a_0$ con coeficientes enteros tiene raíces racionales entonces tiene raíces enteras.
+Si un polinomio mónico $p(x)=x^n+a_{n-1}x^{n-1}+\cdots+a_0$ con coeficientes enteros tiene raíces racionales entonces tiene raíces enteras.
 \end{theorem}
 
 Para demostrar la imposibilidad de duplicar un cubo necesitamos demostrar que:
@@ -926,17 +927,13 @@ Para demostrar la imposibilidad de trisecar un ángulo hay que demostrar que $y^
 
 \subsection*{¿Cuál es la sorpresa?}
 
-Underwood Dudley ha realizado un extenso estudio de lo que él llama "gruñones", que malgastan años de su vida intentando trisecar ángulos con una regla y un compás. No sólo se engañan a sí mismos pensando que esto es posible, sino que, lo que es peor, piensan que una solución sería importante. Por supuesto, una solución no tendría ninguna utilidad práctica, ya que herramientas como el neusis y la cuadratriz pueden resolver el problema con exactitud. El número de construcciones de este tipo es sorprendente, sobre todo porque muchas de ellas son ingeniosas y consiguen buenas aproximaciones. Calcular las fórmulas asociadas a las construcciones es un excelente ejercicio de trigonometría.
+Underwood Dudley ha realizado un extenso estudio de lo que él llama "gruñones", que malgastan años de sus vidas intentando trisecar ángulos con una regla y un compás. No sólo se engañan a sí mismos pensando que esto es posible, sino que, lo que es peor, piensan que una solución sería importante. Por supuesto, una solución no tendría ninguna utilidad práctica, ya que herramientas como el neusis y la cuadratriz pueden resolver el problema con exactitud. El número de construcciones de este tipo es sorprendente, sobre todo porque muchas de ellas son ingeniosas y consiguen buenas aproximaciones. Calcular las fórmulas asociadas a las construcciones es un excelente ejercicio de trigonometría.
 
-También es sorprendente que las pruebas de la imposibilidad de estas construcciones geométricas sean puramente algebraicas, utilizando propiedades de raíces de polinomios.
+También es sorprendente que las demostraciones de la imposibilidad de estas construcciones geométricas sean puramente algebraicas, utilizando propiedades de raíces de polinomios.
 
 \subsection*{Fuentes}
 
-Wikipedia \cite{wiki:tri, wiki:neu, wiki:quad} es una buena fuente para las construcciones de este capítulo.
-Las dos trisecciones aproximadas proceden de \cite[pp.
-~67--68, 95--96]{dudley-budget}. El segundo ejemplo se atribuye al famoso filósofo Thomas Hobbes. Tanto \cite[pp.~48--49]{martin} como \cite[pp.~6--7]{dudley-budget} discuten la trisección usando la cuadratriz.
+Wikipedia \cite{wiki:tri, wiki:neu, wiki:quad} es una buena fuente para las construcciones de este capítulo. Las dos trisecciones aproximadas proceden de \cite[pp.~67--68, 95--96]{dudley-budget}. El segundo ejemplo se atribuye al famoso filósofo Thomas Hobbes. Tanto \cite[pp.~48--49]{martin} como \cite[pp.~6--7]{dudley-budget} discuten la trisección usando la cuadratriz.
 La duplicación del cubo usando un neusis está tomada de \cite{dorrie2}.
 
-Un tratamiento riguroso de la constructibilidad se puede encontrar en los libros de texto sobre álgebra abstracta como \cite{fraleigh}, que contiene una prueba general de la inversa de Thm~\ref{thm.trisect-constructible} en Sect.~32.
-Teorema~\ref{thm.factor} es Thm.~23.11 de \cite{fraleigh}.
-Una presentación relativamente accesible de la prueba de Wantzel se puede encontrar en \cite{suzuki}. Mi presentación de la constructibilidad se basa en las presentaciones en \cite[Cap.~III]{courant} y \cite{laugwitz}.
+Un tratamiento riguroso de la constructibilidad se puede encontrar en los libros de texto sobre álgebra abstracta como \cite{fraleigh}, que contiene una demostración general de la inversa de Teorema~\ref{thm.trisect-constructible} en Sect.~32. Teorema~\ref{thm.factor} es Teorema~23.11 de \cite{fraleigh}. Una presentación relativamente accesible de la demostración de Wantzel se puede encontrar en \cite{suzuki}. Mi presentación de la constructibilidad se basa en las presentaciones en \cite[Capítulo~III]{courant} y \cite{laugwitz}.
