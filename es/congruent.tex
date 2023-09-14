@@ -4,9 +4,9 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-¿Son congruentes dos triángulos con la misma área y el mismo perímetro? No necesariamente: los triángulos con lados $(17,25,28)$ y $(20,21,29)$ tienen ambos perímetro $70$ y área $210$ pero no son congruentes (Fig.~\ref{f.congruent-first-example})\footnote{Las áreas se calcularon mediante la fórmula de Herón (Teorema~\ref{thm.heron}) y los ángulos mediante la ley de los cosenos (Teorema~\ref{thm.law-of-cosines}).}. Este capítulo muestra que dado un triángulo de lados racionales es posible construir un triángulo no congruente, también de lados racionales, que tenga la misma área y el mismo perímetro.
+¿Son congruentes dos triángulos con el mismo área y el mismo perímetro? No necesariamente: los triángulos con lados $(17,25,28)$ y $(20,21,29)$ tienen ambos perímetro $70$ y área $210$ pero no son congruentes (Fig.~\ref{f.congruent-first-example})\footnote{Las áreas se calcularon mediante la fórmula de Herón (Teorema~\ref{thm.heron}) y los ángulos mediante la ley de los cosenos (Teorema~\ref{thm.law-of-cosines}).}. Este capítulo muestra que dado un triángulo de lados racionales es posible construir un triángulo no congruente, también de lados racionales, que tenga el mismo área y el mismo perímetro.
 Llevamos a cabo la derivación utilizando un ejemplo, mostrando que el triángulo de lados $(3,4,5)$ y el triángulo de lados 
-$\left(\frac{156}{35}, \frac{101}{21}, \frac{41}{15}\right)$ tienen ambos perímetro $12$ y área $6$.
+$\left(\frac{156}{35}, \frac{101}{21}, \frac{41}{15}\right)$ ambos tienen  perímetro $12$ y área $6$.
 
 \begin{figure}[b]
 \begin{center}
@@ -26,14 +26,14 @@ $\left(\frac{156}{35}, \frac{101}{21}, \frac{41}{15}\right)$ tienen ambos perím
 \end{scope}
 \end{tikzpicture}
 \end{center}
-\caption{Triángulos no congruentes con la misma área y el mismo perímetro}\label{f.congruent-first-example}
+\caption{Triángulos no congruentes con el mismo área y el mismo perímetro}\label{f.congruent-first-example}
 \end{figure}
 
 \section{De un triángulo a una curva elíptica}\label{s.elliptic}
 
-Las tres bisectrices de los ángulos de un triángulo se intersecan en un punto llamado \emph{éncentro} del triángulo. El incentro es el centro de una circunferencia inscrita en el triángulo (Fig.~\ref{f.congruent1}). 
+Las tres bisectrices de los ángulos de un triángulo se intersecan en un punto llamado \emph{incentro} del triángulo. El incentro es el centro de una circunferencia inscrita en el triángulo (Fig.~\ref{f.congruent1}). 
 
-Deja caer altitudes desde el centro $O$ a los lados. Las altitudes tienen longitud $r$, el radio de la circunferencia inscrita. Las altitudes y las bisectrices de los ángulos crean tres pares de triángulos rectángulos congruentes:
+Tracemos las perpendiculares a los lados desde el centro $O$. Las altitudes tienen longitud $r$, el radio de la circunferencia inscrita. Las perpendiculars y las bisectrices de los ángulos crean tres pares de triángulos rectángulos congruentes:
 \[
 \triangle AOB'\cong \triangle AOC',\quad \triangle BOA'\cong \triangle BOC',\quad \triangle COA'\cong \triangle COB'\,.
 \]
@@ -122,10 +122,10 @@ Deja caer altitudes desde el centro $O$ a los lados. Las altitudes tienen longit
 \node[draw,circle through=(ap)] at (center) {};
 \end{tikzpicture}
 \end{center}
-\caption{Un círculo inscrito en un triángulo}\label{f.congruent1}
+\caption{Una circunferencia inscrito en un triángulo}\label{f.congruent1}
 \end{figure}
 
-Las altitudes dividen los lados $a,b,c$ en segmentos $u,v,w$. El área del $\triangle ABC$ es la suma de las áreas del $\triangle BOC, \triangle AOB, \triangle AOC$:
+Las perpendiculares dividen los lados $a,b,c$ en segmentos $u,v,w$. El área del $\triangle ABC$ es la suma de las áreas del $\triangle BOC, \triangle AOB, \triangle AOC$:
 \begin{subeqnarray}
 A &=& \frac{1}{2}(w+v)r + \frac{1}{2}(v+u)r + \frac{1}{2}(u+w)r\\
 &=&\frac{1}{2}\cdot 2(u+v+w)r\\
@@ -142,7 +142,7 @@ El semiperímetro puede expresarse ahora en términos de las tangentes:
 \[
 s = u+v+w = r\tan \frac{\alpha}{2}+r\tan \frac{\beta}{2}+r\tan \frac{\gamma}{2} = r\left(\tan \frac{\alpha}{2}+\tan \frac{\beta}{2}+\tan \frac{\gamma}{2}\right)\,,
 \]
-y por Eq.~\ref{eq.area1} el área es:
+y por la Ecuación~\ref{eq.area1} el área es:
 \begin{align}
 A = sr = r^2\left(\tan \frac{\alpha}{2}+\tan \frac{\beta}{2}+\tan \frac{\gamma}{2}\right)\,.\label{eq.area2}
 \end{align}
@@ -173,25 +173,26 @@ Con esta notación, la Ecuación~\ref{eq.area3} se convierte en:
 \begin{align}
 x+y+\frac{x+y}{xy-1}=\frac{s^2}{A}\,.\label{eq.xy2}
 \end{align}
-Dados valores fijos de $A$ y $s$ ¿existen múltiples soluciones de Eq.~\ref{eq.xy2}?
+Dados valores fijos de $A$ y $s$ ¿existen múltiples soluciones de la Ecuación~\ref{eq.xy2}?
 
 Para el triángulo rectángulo $(3,4,5)$:
 \begin{align}
 \frac{s^2}{A} = \frac{\left(\frac{1}{2}(3+4+5)\right)^2}{\frac{1}{2}\cdot 3\cdot 4} = \frac{6^2}{6}=6\,.
 \end{align}
 
-\noindent{}Si hay otra solución Ecuación~\ref{eq.xy2} con $s^2/A=6$, se puede escribir como:
+\noindent{}Si hay otra solución de la Ecuación~\ref{eq.xy2} con $s^2/A=6$, se puede escribir como:
 \begin{subeqnarray}
 x+y+\frac{x+y}{xy-1}&=&6\\
 x^2y + xy^2 -6xy + 6 &=& 0\,.\slabel{eq.elliptic}
 \end{subeqnarray}
-Esta es una ecuación para una \emph{curva elíptica}.
+Esta es una ecuación de una \emph{curva elíptica}.
 
 \section{Resolución de la ecuación de la curva elíptica}
 
-Una porción de la gráfica de la Ecuación~\ref{eq.elliptic} se muestra Fig.~\ref{f.two-secants}. Cualquier punto de la curva cerrada en el primer cuadrante es una solución de la ecuación porque las longitudes de los lados del triángulo deben ser positivas. $A,B,D$ corresponden al triángulo $(3,4,5)$ como se muestra a continuación. Para encontrar soluciones racionales adicionales se utiliza el método de las dos secantes.
+La figura~\ref{f.two-secants} muestra una parte de la gráfica de la ecuación~\ref{eq.elliptic}.
+Cualquier punto de la curva cerrada en el primer cuadrante es una solución de la ecuación porque las longitudes de los lados del triángulo deben ser positivas. $A,B,D$ corresponden al triángulo $(3,4,5)$ como se muestra a continuación. Para encontrar soluciones racionales adicionales se utiliza el método de las dos secantes.
 
-Construimos una secante a través de los puntos $ A = (2,3), B = (1,2) $. Corta la curva en $C=(-1,5,-0,5)$, pero no da solución porque los valores son negativos. Construimos una segunda secante desde $C$ hasta $D=(3,2)$. La intersección con la curva en $E\approx (1,5,1,2)$ da una nueva solución cuyas coordenadas se calcularán a continuación.
+Construimos una recta secante a través de los puntos $ A = (2,3), B = (1,2) $. Corta la curva en $C=(-1,5,-0,5)$, pero no da solución porque los valores son negativos. Construimos una segunda secante desde $C$ hasta $D=(3,2)$. La intersección con la curva en $E\approx (1,5,1,2)$ da una nueva solución cuyas coordenadas se calcularán a continuación.
 
 \begin{figure}[b]
 \begin{center}
@@ -263,7 +264,7 @@ Construimos una secante a través de los puntos $ A = (2,3), B = (1,2) $. Corta 
 \caption{El método de las dos secantes}\label{f.two-secants}
 \end{figure}
 
-La ecuación de la recta (roja) que pasa por $A,B$ es $y=x+1$. En Eq.~\ref{eq.elliptic}:
+La ecuación de la recta (roja) que pasa por $A,B$ es $y=x+1$. En la ecuación~\ref{eq.elliptic}:
 \begin{eqnarray*}
 x^2(x+1) + x(x+1)^2 -6x(x+1) +6 &=&0\\
 2x^3 -3x^2 -5x +6 &=&0\,.
@@ -278,12 +279,12 @@ La ecuación de la recta (azul) que pasa por $C,D$ es:
 \begin{align}
 y = \frac{5}{9}x + \frac{1}{3}\,.\label{eq.second-secant}
 \end{align}
-Sustituir por $y$ en la Ecuación~\ref{eq.elliptic}:
+Sustituimos por $y$ en la Ecuación~\ref{eq.elliptic}:
 \begin{eqnarray*}
 x^2\left(\frac{5}{9}x + \frac{1}{3}\right) + x\left(\frac{5}{9}x + \frac{1}{3}\right)^2 -6x\left(\frac{5}{9}x + \frac{1}{3}\right) +6 &=&0\\
 \frac{70}{81}x^3 - \frac{71}{27}x^2 - \frac{17}{9}x +6 &=&0\,.
 \end{eqnarray*}
-De $C,D$ sabemos dos raíces $x=3,x=-\frac{3}{2}$ por lo que podemos factorizar el polinomio cúbico:
+De $C,D$ conocemos dos raíces $x=3,x=-\frac{3}{2}$ por lo que podemos factorizar el polinomio cúbico:
 \[
 (x-3)\left(x+\frac{3}{2}\right)(ax+b)=0\,.
 \]
@@ -292,7 +293,7 @@ Igualando los coeficientes del término cúbico y los términos constantes se ob
 \frac{70}{81}x - \frac{4}{3}&=&0\\
 x&=& \frac{54}{35}\approx 1.543\,,
 \end{eqnarray*}
-y $y$ se puede calcular a partir de la Ecuación~\ref{eq.second-secant}:
+etonces $y$ se puede calcular a partir de la Ecuación~\ref{eq.second-secant}:
 \[
 y=\frac{25}{21}\approx 1.190\,.
 \]
@@ -302,7 +303,7 @@ Las coordenadas de $E$ son:
 \]
 que se acercan a las aproximaciones $(1,5,1,2)$ obtenidas del gráfico.
 
-Por último, calcula $z$ a partir de la Ecuación~\ref{eq.xy1}:
+Por último, calculamos $z$ a partir de la Ecuación~\ref{eq.xy1}:
 \[
 z=\frac{x+y}{xy-1}=%
 \displaystyle\left(\frac{54}{35} + \frac{25}{21}\right)%
@@ -313,7 +314,7 @@ z=\frac{x+y}{xy-1}=%
 
 \section{Derivación de un triángulo a partir de la curva elíptica}
 
-Usando las Ecs.~\ref{eq.uvw}, \ref{eq.variables-for-tangents}, $a,b,c$, los lados del triángulo $\triangle ABC$, se pueden calcular a partir de $x,y,z$ y $r=A/s=6/6=1$:
+Usando las Ecuacións~\ref{eq.uvw}, \ref{eq.variables-for-tangents}, $a,b,c$, los lados del triángulo $\triangle ABC$, se pueden calcular a partir de $x,y,z$ y $r=A/s=6/6=1$:
 \begin{eqnarray*}
 a&=&w+v = r(z+y)=(z+y)\\
 b&=&u+w= r(x+z)=(x+z)\\
@@ -347,7 +348,7 @@ A= \sqrt{6 \left(6-\frac{156}{35}\right) \left(6-\frac{101}{21}\right) \left(6-\
 \]
 por lo que no es un triángulo rectángulo y no es congruente con $(3,4,5)$.
 
-La ley de los cosenos se puede utilizar para calcular los ángulos del triángulo como se muestra en Fig.~\ref{f.not-a-right-triangle}.
+La ley de los cosenos se puede utilizar para calcular los ángulos del triángulo como se muestra en la figura~\ref{f.not-a-right-triangle}.
 
 
 \begin{figure}[t]
@@ -368,8 +369,8 @@ La ley de los cosenos se puede utilizar para calcular los ángulos del triángul
 
 \subsection*{¿Cuál es la sorpresa?}
 
-¿Son congruentes los triángulos que tienen la misma área y el mismo perímetro? Mi primera impresión fue decir ``sí'' porque no es fácil encontrar contraejemplos. Lo sorprendente es que dado un triángulo arbitrario de lados racionales, es posible construir un triángulo no congruente de lados racionales que tenga la misma área y perímetro, aunque el resultado puede ser extraño como en el caso de los triángulos $(3,4,5)$ y $\left(\frac{156}{35}, \frac{101}{21}, \frac{41}{15}\right)$.
+¿Son congruentes los triángulos que tienen el mismo área y el mismo perímetro? Mi primera impresión fue decir <<sí>> porque no es fácil encontrar contraejemplos. Lo sorprendente es que dado un triángulo arbitrario de lados racionales, es posible construir un triángulo no congruente de lados racionales que tenga el misamo área y perímetro, aunque el resultado puede ser extraño como en el caso de los triángulos $(3,4,5)$ y $\left(\frac{156}{35}, \frac{101}{21}, \frac{41}{15}\right)$.
 
 \subsection*{Fuentes}
 
-Este capítulo se basa en \cite{mccallum}. En \cite{marita} se demuestra que dado un triángulo  hay triángulos no congruentes con la misma área y perímetro, pero la demostración no incluye una construcción explícita.
+Este capítulo se basa en \cite{mccallum}. En \cite{marita} se demuestra que dado un triángulo  hay triángulos no congruentes con el mismo área y perímetro, pero la demostración no incluye una construcción explícita.

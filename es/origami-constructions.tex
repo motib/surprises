@@ -4,14 +4,14 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Este capítulo muestra que las construcciones con origami son más poderosas que las construcciones con regla y compás. Damos dos construcciones para triseccionar un ángulo, una por Hisashi Abe (Sec.~\ref{s.abe-trisection}) y la otra por George E. Martin (Sect.~\ref{s.martin-trisection}), dos construcciones para duplicar un cubo, una de Peter Messer (Sect.~\ref{s.messer}) y la otra de Marghareta P. Beloch (Sect.~\ref{s.cube2}), y la construcción de un nonágono, un polinomio regular de nueve lados (Sect.~\ref{s.nonagon}).
+Este capítulo muestra que las construcciones con origami son más poderosas que las construcciones con regla y compás. Damos dos construcciones para triseccionar un ángulo, una de Hisashi Abe (Sec.~\ref{s.abe-trisection}) y la otra de George E. Martin (Sec.~\ref{s.martin-trisection}), dos construcciones para duplicar un cubo, una de Peter Messer (Sec.~\ref{s.messer}) y la otra de Marghareta P. Beloch (Sec.~\ref{s.cube2}), y la construcción de un nonágono, un polinomio regular de nueve lados (Sec.~\ref{s.nonagon}).
 
 \section{Trisección de Abe de un ángulo}\label{s.abe-trisection}
 \index{Origami!trisection of an angle}
 \index{Trisection of an angle!origami@using origami}
 
 \noindent\textbf{Construcción:}
-Dado un ángulo agudo $\angle PQR$, construir $p$, la perpendicular a $\overline{QR}$ en $Q$. Construimos $q$, la perpendicular a $p$ que corta a $\overline{PQ}$ en el punto $A$, y construir $r$, la perpendicular a $p$ en $B$ que está a mitad de camino entre $Q$ y $A$. Utilizando el axioma~6 construir el pliegue $l$ que sitúa $A$ en $A'$ sobre $\overline{PQ}$ y $Q$ en $Q'$ sobre $r$. Sea $B'$ el reflejo de $B$ alrededor de $l$. Construimos rectas que pasen por $\overline{QB'}$ y $QQ'$ (Fig.~\ref{f.abe1}).
+Dado un ángulo agudo $\angle PQR$, construimos $p$, la perpendicular a $\overline{QR}$ en $Q$. Construimos $q$, la perpendicular a $p$ que corta a $\overline{PQ}$ en el punto $A$, y construimos $r$, la perpendicular a $p$ en $B$ que está a mitad de camino entre $Q$ y $A$. Utilizando el axioma~6 construimos el pliegue $l$ que sitúa $A$ en $A'$ sobre $\overline{PQ}$ y $Q$ en $Q'$ sobre $r$. Sea $B'$ el simétrico de $B$ alrededor de $l$. Construimos rectas que pasen por $\overline{QB'}$ y $QQ'$ (Fig.~\ref{f.abe1}).
 \begin{figure}[ht]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
@@ -70,7 +70,7 @@ Dado un ángulo agudo $\angle PQR$, construir $p$, la perpendicular a $\overline
 \draw[->,dotted,very thick,bend right=30] ($(Q)+(.1,-.1)$) to ($(QP)+(0,-.1)$);
 \end{tikzpicture}
 \end{center}
-\caption{Trisección de Abe de un ángulo}\label{f.abe1}
+\caption{Trisección de Abe}\label{f.abe1}
 \end{figure}
 
 \begin{theorem} $\angle PQB'=\angle B'QQ'=\angle Q'QR=\angle PQR/3$.
@@ -79,7 +79,7 @@ Dado un ángulo agudo $\angle PQR$, construir $p$, la perpendicular a $\overline
 \begin{proof}
 \mbox{}\\
 (1)
-$A', B', Q'$ son reflexiones en torno a la recta $l$ de los puntos $A,B,Q$ sobre la recta $\overline{DQ}$, por lo que están sobre la recta $\overline{DQ'}$ reflejada. Por construcción $\overline{AB}=\overline{BQ}$, $\angle ABQ'=\angle QBQ'=90^\circ$ y $\overline{BQ'}$ es un lado común, por lo que $\triangle ABQ'\cong \triangle QBQ'$ por lado-ángulo-lado. Por lo tanto, $\angle AQQ'=\angle QAQ'=\alpha$ por lo que $\triangle AQ'Q$ es  (Fig.~\ref{f.abe2}).
+$A', B', Q'$ son reflexiones en torno a la recta $l$ de los puntos $A,B,Q$ sobre la recta $\overline{DQ}$, por lo que están sobre la recta $\overline{DQ'}$ reflejada. Por construcción $\overline{AB}=\overline{BQ}$, $\angle ABQ'=\angle QBQ'=90^\circ$ y $\overline{BQ'}$ es un lado común, por lo que $\triangle ABQ'\cong \triangle QBQ'$ por lado-ángulo-lado. Por lo tanto, $\angle AQQ'=\angle QAQ'=\alpha$ por lo que $\triangle AQ'Q$ es isósceles (Fig.~\ref{f.abe2}).
 
 \begin{figure}[ht]
 \begin{center}
@@ -159,8 +159,8 @@ $A', B', Q'$ son reflexiones en torno a la recta $l$ de los puntos $A,B,Q$ sobre
 \caption{Pruebas de la trisección de Abe ($U,V$ se utilizan en la demostración 2)}\label{f.abe2}
 \end{figure}
 
-Por reflexión $\triangle AQ'Q\cong \triangle A'QQ'$, por lo que $\triangle A'QQ'$ es también un triángulo isóceles.
-$\overline{QB'}$, el reflejo de $\overline{Q'B}$, es la mediatriz de un triángulo isóceles, por lo que $\angle A'QB'=\angle Q'QB'=\angle QQ'B=\alpha$.
+Por reflexión $\triangle AQ'Q\cong \triangle A'QQ'$, por lo que $\triangle A'QQ'$ es también un triángulo isósceles.
+$\overline{QB'}$, el reflejo de $\overline{Q'B}$, es la mediatriz de un triángulo isósceles, por lo que $\angle A'QB'=\angle Q'QB'=\angle QQ'B=\alpha$.
 Alternando los ángulos interiores, $\angle Q'QR=\angle QQ'B=\alpha$.
 En conjunto tenemos:
 \[
@@ -171,27 +171,27 @@ En conjunto tenemos:
 \begin{proof}
 \mbox{}\\
 (2)
-Como $l$ es un pliegue es la mediatriz de $\overline{QQ'}$. Denotemos la intersección de $l$ con $\overline{QQ'}$ por $U$ y su intersección con $\overline{QB'}$ por $V$ (Fig.~\ref{f.abe2}). Por tanto, $\triangle VUQ\cong \triangle VUQ'$ por lado-ángulo-lado ya que $\overline{VU}$ es un lado común, los ángulos en $U$ son ángulos rectos y $\overline{QU}=\overline{Q'U}$. Por tanto, $\angle VQU=\angle VQ'U=\angle alfa$ y $\angle Q'QR=\angle VQ'U=\angle alfa$ por alternancia de ángulos interiores.
+Como $l$ es un pliegue es la mediatriz de $\overline{QQ'}$. Denotemos la intersección de $l$ con $\overline{QQ'}$ con $U$ y su intersección con $\overline{QB'}$ por $V$ (Fig.~\ref{f.abe2}). Por tanto, $\triangle VUQ\cong \triangle VUQ'$ por lado-ángulo-lado ya que $\overline{VU}$ es un lado común, los ángulos en $U$ son ángulos rectos y $\overline{QU}=\overline{Q'U}$. Por tanto, $\angle VQU=\angle VQ'U=\angle \alpha$ y $\angle Q'QR=\angle VQ'U=\angle alfa$ por alternancia de ángulos interiores.
 
 Como en la primera demostración $A', B', Q'$ son todas reflexiones alrededor de $l$, por lo que están sobre la recta $\overline{DQ'}$ y $\overline{A'B'}=\overline{AB}=\overline{BQ}=\overline{B'Q'}=a$. Entonces $\triangle A'B'Q\cong\triangle Q'B'Q$ por lado-ángulo-lado y $\angle A'QB'=\angle Q'QB'=\alpha$.
 \end{proof}
 
-\section{Trisección de un ángulo de Martin}\label{s.martin-trisection}
+\section{Trisección de Martin}\label{s.martin-trisection}
 \index{Origami!trisection of an angle}
 \index{Trisection of an angle!origami@using origami}
 
 \noindent\textbf{Construcción:}
-Dado un ángulo agudo $\angle PQR$, sea $M$ el punto medio de $\overline{PQ}$. Construimos $p$ la perpendicular a $\overline{QR}$ por $M$ y construir $q$ la perpendicular a $p$ por $M$ de modo que $q\parallel\overline{QR}$. Utilizando el axioma 6 construir el pliegue $l$ que sitúe $P$ en $P'$ sobre $p$ y $Q$ en $Q'$ sobre $q$. Si más de un pliegue es posible elegir el que interseca $\overline{PM}$. Construimos $\overline{PP'}$ y $\overline{QQ'}$  (Fig.~\ref{f.martin}).
+Dado un ángulo agudo $\angle PQR$, sea $M$ el punto medio de $\overline{PQ}$. Construimos $p$ la perpendicular a $\overline{QR}$ por $M$ y construimos $q$ la perpendicular a $p$ por $M$ de modo que $q\parallel\overline{QR}$. Utilizando el axioma 6 construimos el pliegue $l$ que sitúe $P$ en $P'$ sobre $p$ y $Q$ en $Q'$ sobre $q$. Si más de un pliegue es posible, elegimos el que interseca $\overline{PM}$. Construimos $\overline{PP'}$ y $\overline{QQ'}$  (Fig.~\ref{f.martin}).
 
 \begin{theorem}
 $\angle Q'QR=\angle PQR/3$.
 \end{theorem}
 \begin{proof}
-Denotemos la intersección de $\overline{QQ'}$ con $p$ por $U$ y su intersección con $l$ por $V$. Denotemos la intersección de $\overline{PQ}$ y $\overline{P'Q'}$ con $l$ por $W$. No es inmediato que $\overline{PQ}$ y $\overline{P'Q'}$ intersecan $l$ en el mismo punto. Pero $\triangle PWP' \sim \triangle QWQ'$ por lo que las altitudes bisecan ambos ángulos verticales $\angle PWP', \angle QWQ'$ y deben estar en la misma recta.
+Denotemos con $U$ y $V$ la intersección de $\overline{QQ'}$ con $p$ y su intersección con $l$. Denotemos la intersección de $\overline{PQ}$ y $\overline{P'Q'}$ con $l$ por $W$. No es inmediato que $\overline{PQ}$ y $\overline{P'Q'}$ intersecan $l$ en el mismo punto. Pero $\triangle PWP' \sim \triangle QWQ'$ por lo que las altitudes bisecan ambos ángulos verticales $\angle PWP', \angle QWQ'$ y deben estar en la misma recta.
 
 Por lo tanto, $\triangle QMU\cong \triangle PMP'$ por ángulo-lado-ángulo ya que $\angle P'PM=\angle UQM=\beta$ por ángulos interiores alternos, $\overline{QM}=\overline{MP}=a$ porque $M$ es el punto medio de $\overline{PQ}$ y $\angle QMU=\angle PMP'=\gamma$ son ángulos verticales. Por tanto, $\overline{P'M}=\overline{MU}=b$.
 
-$\triangle P'MQ'\cong \triangle UMQ'$ por lado-ángulo-lado, ya que $\overline{P'M}=\overline{MU}=b$, los ángulos en $M$ son ángulos rectos y $\overline{MQ'}$ es un lado común. Como la altitud del triángulo isóceles $\triangle P'Q'U$ es la bisectriz de $\angle P'Q'U$, resulta que $\angle P'Q'M=\angle UQ'M=\alpha$. Además, $\angle UQ'M=\angle Q'QR=\angle alfa$ por ángulos interiores alternos. $\triangle QWV\cong\triangle Q'WV$ por lado-ángulo-lado ya que $\overline{QV}=\overline{VQ'}=c$, los ángulos en $V$ son ángulos rectos y $\overline{VW}$ es un lado común. Por tanto:
+$\triangle P'MQ'\cong \triangle UMQ'$ por lado-ángulo-lado, ya que $\overline{P'M}=\overline{MU}=b$, los ángulos en $M$ son ángulos rectos y $\overline{MQ'}$ es un lado común. Como la altitud del triángulo isósceles $\triangle P'Q'U$ es la bisectriz de $\angle P'Q'U$, resulta que $\angle P'Q'M=\angle UQ'M=\alpha$. Además, $\angle UQ'M=\angle Q'QR=\angle \alpha$ por ángulos interiores alternos. $\triangle QWV\cong\triangle Q'WV$ por lado-ángulo-lado ya que $\overline{QV}=\overline{VQ'}=c$, los ángulos en $V$ son ángulos rectos y $\overline{VW}$ es un lado común. Por tanto:
 \begin{eqnarray*}
 \angle WQV&=&\beta=\angle WQ'V=2\alpha\\
 \angle PQR &=& \beta + \alpha = 3\alpha\,.
@@ -298,17 +298,17 @@ $\triangle P'MQ'\cong \triangle UMQ'$ por lado-ángulo-lado, ya que $\overline{P
 \node [right,xshift=25pt,yshift=5pt]  at (Q) {$\alpha$};
 \end{tikzpicture}
 \end{center}
-\caption{Trisección de Martin de un ángulo}\label{f.martin}
+\caption{Trisección de Martin}\label{f.martin}
 \end{figure}
 
 \section{Duplicación de un cubo de Messer}\label{s.messer}
 \index{Doubling a cube!origami@using origami}
 \index{Origami!doubling a cube}
 
-Un cubo de volumen $V$ tiene lados de longitud $\sqrt[3]{V}$. Un cubo con el doble de volumen tiene caras de longitud $\sqrt[3]{2 V}=\sqrt[3]{2}\sqrt[3]{V}$, por lo que si podemos construir $\sqrt[3]{2}$ podemos multiplicar por la longitud dada $\sqrt[3]{V}$ para duplicar el cubo.
+Un cubo de volumen $V$ tiene lados de longitud $\sqrt[3]{V}$. Un cubo con el doble de volumen tiene caras de longitud $\sqrt[3]{2 V}=\sqrt[3]{2}\sqrt[3]{V}$, por lo que si pudiéramos construir $\sqrt[3]{2}$ pudiéramos multiplicar por la longitud dada $\sqrt[3]{V}$ para duplicar el cubo.
 
 \noindent\textbf{Construcción:}
-Divide el lado de un cuadrado unitario en tercios de la siguiente manera: Dobla el cuadrado por la mitad para localizar los puntos $I=(0,1/2)$ y $J=(1,1/2)$. A continuación se construyen las rectas $\overline{AC}$ y $\overline{BJ}$ (Fig.~\ref{f.messer1}). El punto de intersección $K=(2/3,1/3)$ se obtiene resolviendo las dos ecuaciones $y=1-x$ y $y=x/2$.
+Dividimos el lado de un cuadrado unitario en tercios de la siguiente manera: Doblamos el cuadrado por la mitad para localizar los puntos $I=(0,1/2)$ y $J=(1,1/2)$. A continuación construimos las rectas $\overline{AC}$ y $\overline{BJ}$ (Fig.~\ref{f.messer1}). El punto de intersección $K=(2/3,1/3)$ se obtiene resolviendo las dos ecuaciones $y=1-x$ y $y=x/2$.
 
 Construimos $\overline{EF}$, la perpendicular a $\overline{AB}$ que pasa por $K$, y construimos la reflexión $\overline{GH}$ de $\overline{BC}$ alrededor de $\overline{EF}$. Ahora el lado del cuadrado se ha dividido en tercios.
 
@@ -359,17 +359,17 @@ Construimos $\overline{EF}$, la perpendicular a $\overline{AB}$ que pasa por $K$
 \draw (G) -- (H);
 \end{tikzpicture}
 \end{center}
-\caption{Dividir una longitud en tercios}\label{f.messer1}
+\caption{División una longitud en tercios}\label{f.messer1}
 \end{figure}
 
-Utilizando el axioma~6 situar $C$ en $C'$ de $\overline{AB}$ y $F$ en $F'$ de $\overline{GH}$.  Denotemos por $L$ el punto de intersección del pliegue con $\overline{BC}$ y por $b$ la longitud de $\overline{BL}$. Renombrar la longitud del lado del cuadrado por $a+1$ donde $a=\overline{AC'}$. La longitud de $\overline{LC}$ es $(a+1)-b$.  (Fig.~\ref{f.messer3}).
+Utilizando el axioma~6 situamos $C$ en $C'$ de $\overline{AB}$ y $F$ en $F'$ de $\overline{GH}$.  Denotemos por $L$ el punto de intersección del pliegue con $\overline{BC}$ y con $b$ la longitud de $\overline{BL}$. Renombramos $a+1$ la longitud del lado del cuadrado donde $a=\overline{AC'}$. La longitud de $\overline{LC}$ es $(a+1)-b$.  (Fig.~\ref{f.messer3}).
 
 \begin{theorem}
 $\overline{AC'}=\sqrt[3]{2}$.
 \end{theorem}
 
 \begin{proof}
-Al realizar el pliegue el segmento de recta $\overline{LC}$ se refleja en el segmento de recta $\overline{LC'}$ y $\overline{CF}$ se pliega en el segmento de recta $\overline{C'F'}$. Por lo tanto:
+Al realizar el pliegue, el segmento $\overline{LC}$ se refleja en el segmento $\overline{LC'}$ y $\overline{CF}$ se refleja en el segmento $\overline{C'F'}$. Por lo tanto:
 \begin{align}
 \overline{GC'}=a-\frac{a+1}{3}=\frac{2a-1}{3}\,.\label{eq.one-third}
 \end{align}
@@ -461,11 +461,11 @@ $\triangle C'BL$ es un triángulo rectángulo así que por el Teorema de Pitágo
 b&=&\frac{a^2+2a}{2(a+1)}\,.\slabel{eq.value-of-b}
 \end{subeqnarray}
 
-$\angle GC'F' + \angle F'C'L + \angle LC'B = 180^\circ$ ya que forman la recta $\overline{GB}$. Denotemos $\angle GC'F'$ por $\alpha$. Entonces:
+$\angle GC'F' + \angle F'C'L + \angle LC'B = 180^\circ$ ya que forman la recta $\overline{GB}$. Denotemos $\angle GC'F'$ con $\alpha$. Entonces:
 \[
 \angle LC'B=180^\circ - \angle F'C'L - \angle GC'F'= 180^\circ - 90^\circ - \alpha = 90^\circ -\alpha\,,
 \]
-que denotamos por $\alpha'$. Los triángulos $\triangle C'BL$, $\triangle F'GC'$ son triángulos rectángulos por lo que $\angle C'LB=\alpha$ y $\angle C'F'G=\alpha'$. Por lo tanto, $\triangle C'BL\sim\triangle F'GC'$ y:
+que denotamos con $\alpha'$. Los triángulos $\triangle C'BL$, $\triangle F'GC'$ son triángulos rectángulos por lo que $\angle C'LB=\alpha$ y $\angle C'F'G=\alpha'$. Por lo tanto, $\triangle C'BL\sim\triangle F'GC'$ y:
 \[
 \frac{\overline{BL}}{\overline{C'L}}=\frac{\overline{GC'}}{\overline{C'F'}}\,.
 \]
@@ -473,11 +473,11 @@ Usando la Ecuación~\ref{eq.one-third} tenemos:
 \[
 \frac{b}{(a+1)-b}=\frac{\displaystyle\frac{2a-1}{3}}{\displaystyle\frac{a+1}{3}}\,.
 \]
-Sustituyendo por $b$ usando la Ecuación~\ref{eq.value-of-b} da:
+Sustituimos $b$ usando la Ecuación~\ref{eq.value-of-b} da:
 \[
 \displaystyle\frac{\displaystyle\frac{a^2+2a}{2(a+1)}}{(a+1)-\displaystyle\frac{a^2+2a}{2(a+1)}}=\frac{2a-1}{a+1}\,.
 \]
-Simplifica la ecuación para obtener $a^3=2$ y $a=\sqrt[3]{2}$.
+Simplificamos la ecuación obteniedo $a^3=2$ y $a=\sqrt[3]{2}$.
 \end{proof}
 
 \section{La duplicación de un cubo de Beloch}\label{s.cube2}
@@ -487,7 +487,7 @@ Simplifica la ecuación para obtener $a^3=2$ y $a=\sqrt[3]{2}$.
 Dado que el pliegue de Beloch (Axioma~6) puede resolver ecuaciones cúbicas, es razonable conjeturar que puede utilizarse para doblar un cubo. Aquí damos una construcción directa que utiliza el pliegue.
 
 \noindent\textbf{Construcción:}
-Sea $A=(-1,0)$, $B=(0,-2)$. Sea $p$ la recta $x=1$ y sea $q$ la recta $y=2$. Utilizar el pliegue de Beloch para construir el pliegue $l$ que sitúa $A$ en $A'$ sobre $p$ y $B$ en $B'$ sobre $q$. Denotemos la intersección del pliegue y el eje $y$ por $Y$ y la intersección del pliegue y el eje $x$ por $X$. (Fig.~\ref{f.beloch-doubling}).
+Sea $A=(-1,0)$, $B=(0,-2)$. Sea $p$ la recta $x=1$ y sea $q$ la recta $y=2$. Utilizar el pliegue de Beloch para construir el pliegue $l$ que sitúa $A$ en $A'$ sobre $p$ y $B$ en $B'$ sobre $q$. Denotemos con $y$ la intersección del pliegue y el eje $y$ y con $X$ la intersección del pliegue y el eje $x$. (Fig.~\ref{f.beloch-doubling}).
 
 \begin{figure}[b]
 \begin{center}
@@ -545,7 +545,7 @@ Sea $A=(-1,0)$, $B=(0,-2)$. Sea $p$ la recta $x=1$ y sea $q$ la recta $y=2$. Uti
 $\overline{OY}=\sqrt[3]{2}$.
 \end{theorem}
 \begin{proof}
-El pliegue es la mediatriz de $\overline{AA'}$ y $\overline{BB'}$ por lo que $\overline{AA'}\parallel\overline{BB'}$. Por ángulos interiores alternos $\angle YAO =\angle BXO=\alpha$. El etiquetado de los otros ángulos en la figura se sigue de las propiedades de los triángulos rectángulos.
+El pliegue es la mediatriz de $\overline{AA'}$ y $\overline{BB'}$ por lo que $\overline{AA'}\parallel\overline{BB'}$. Por ángulos interiores alternos $\angle YAO =\angle BXO=\alpha$. Los nombres de los otros ángulos en la figura son de acuerdo a las propiedades de los triángulos rectángulos.
 
 $\triangle AOY\sim \triangle YOX \sim \triangle XOB$ y $\overline{OA}=1$, $\overline{OB}=2$ se dan así:
 \[
@@ -555,14 +555,14 @@ $\triangle AOY\sim \triangle YOX \sim \triangle XOB$ y $\overline{OA}=1$, $\over
 \displaystyle\frac{\overline{OY}}{1}=\displaystyle\frac{\overline{OX}}{\overline{OY}}=\displaystyle\frac{2}{\overline{OX}}\,.
 \end{array}
 \]
-De la primera y segunda relaciones tenemos $\overline{OX}=\overline{OY}^2$ y de la primera y tercera relaciones tenemos $\overline{OY}\:\overline{OX}=2$.
+De la primera y de la segunda relaciones tenemos $\overline{OX}=\overline{OY}^2$ y de la primera y de la tercera relaciones tenemos $\overline{OY}\:\overline{OX}=2$.
 Sustituyendo por $\overline{OX}$ se obtiene $\overline{OY}^3=2$ y
 $\overline{OY}=\sqrt[3]{2}$.
 \end{proof}
 
 \section{Construcción de un nonágono regular}\label{s.nonagon}
 
-Se construye un nonágono (polígono regular de nueve lados) derivando la ecuación cúbica de su ángulo central y resolviendo la ecuación mediante el método de Lill y el pliegue de Beloch. El ángulo central es $\theta=360^\circ/9=40^\circ$. Por Teorema~\ref{thm.triple-angle}:
+Se construye un nonágono o eneágono (polígono regular de nueve lados) derivando la ecuación cúbica de su ángulo central y resolviendo la ecuación mediante el método de Lill y el pliegue de Beloch. El ángulo central es $\theta=360^\circ/9=40^\circ$. Por el Teorema~\ref{thm.triple-angle}:
 \[
 \cos 3\theta=4\cos^3 \theta -3\cos\theta\,.
 \]
@@ -624,7 +624,7 @@ Sea $x=\cos 40^{\circ}$. Entonces para el nonágono la ecuación es $4x^3-3x+(1/
 \caption{Método de Lill para un nonágono}\label{f.nonagon2}
 \end{figure}
 
-La segunda trayectoria parte de $P$ con un ángulo aproximado de $-37,45^\circ$. Giros de $90^\circ$ en $R$ y luego de $-90^\circ$ en $S$ hacen que la trayectoria intersecte a la primera en su punto final $Q$. Por tanto, $x=-\tan (-37,45^\circ)\approx 0,766$ es una raíz de $$4x^3-3x+(1/2)$$.
+La segunda trayectoria parte de $P$ con un ángulo aproximado de $-37,45^\circ$. Giros de $90^\circ$ en $R$ y luego de $-90^\circ$ en $S$ hacen que la trayectoria intersecte a la primera en su punto final $Q$. Por lo tanto, $x=-\tan (-37,45^\circ)\approx 0,766$ es una raíz de $$4x^3-3x+(1/2)$$.
 
 La raíz se puede obtener utilizando el pliegue de Beloch. Construimos la recta $a_2'$ paralela a $a_2$ a la misma distancia de $a_2$ que $a_2$ de $P$. Aunque la longitud de $a_2$ es cero, sigue teniendo dirección (hacia arriba), por lo que se puede construir la recta paralela. Análogamente, se construye la recta $a_1'$ paralela a $a_1$ a la misma distancia de $a_1$ que $a_1$ de $Q$. El pliegue de Beloch $\overline{RS}$ sitúa simultáneamente $P$ en $P'$ sobre $a_2'$ y $Q$ en $Q'$ sobre $a_1'$. Esto construye el ángulo $\angle SPR=-37.45^\circ$ (Fig.~\ref{f.nonagon3}).
 
@@ -696,11 +696,11 @@ La raíz se puede obtener utilizando el pliegue de Beloch. Construimos la recta 
 \caption{El pliegue de Beloch para resolver la ecuación del nonágono}\label{f.nonagon3}
 \end{figure}
 
-Por el método de Lill $-\tan (-37,45^\circ)\approx 0,766$ y por tanto $\cos \theta \approx 0,766$ es una raíz de la ecuación del ángulo central $\theta$. Terminamos la construcción del nonágono construyendo $\cos^{-1} 0,766\approx 40^\circ$.
+Por el método de Lill, $-\tan (-37,45^\circ)\approx 0,766$ y por tanto $\cos \theta \approx 0,766$ es una raíz de la ecuación del ángulo central $\theta$. Concluimos la construcción del nonágono construyendo $\cos^{-1} 0,766\approx 40^\circ$.
 
 El triángulo rectángulo $\triangle ABC$ con $\angle CAB\approx 37,45^\circ$ y $\overline{AB}=1$ tiene lado opuesto $\overline{BC}\approx 0,766$ por definición de tangente (Fig.~\ref{f.nonagon5-eq}).
-Doblar $\overline{CB}$ sobre la $\overline{AB}$ de modo que el reflejo de $C$ sea $D$ y $\overline{DB}=0,766$. Extender $\overline{DB}$ y construir $E$ de modo que $\overline{DE}=1$.
-Doblar $\overline{DE}$ para reflejar $E$ en $F$ en la extensión de $\overline{BC}$ (Fig.~\ref{f.nonagon5-central}). Entonces:
+Plegamos $\overline{CB}$ sobre la $\overline{AB}$ de modo que el reflejo de $C$ sea $D$ y $\overline{DB}=0,766$. Extendemos $\overline{DB}$ y construimos $E$ de modo que $\overline{DE}=1$.
+Plegamos $\overline{DE}$ para reflejar $E$ en $F$ en la extensión de $\overline{BC}$ (Fig.~\ref{f.nonagon5-central}). Entonces:
 \[
 \angle BDF=\cos^{-1} \frac{0.766}{1}\approx 40^\circ\,.
 \]

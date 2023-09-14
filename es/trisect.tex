@@ -51,12 +51,12 @@ Sea $\theta=\angle AOB$ un ángulo arbitrario y sin pérdida de generalidad supo
 \end{figure}
 
 \begin{theorem}
-\[\tan\phi =\frac{2\sin(\theta/2)}{1+2\cos(\theta/2)}\,.\]
+\[\tan\phi =\frac{2\sen(\theta/2)}{1+2\cos(\theta/2)}\,.\]
 \end{theorem}
 
-\begin{proof} Figura~\ref{f.trisect-first-approx-2} se extrae de Fig.~\ref{f.trisect-first-approx-1} y contiene anotaciones adicionales.
+\begin{proof} Figura~\ref{f.trisect-first-approx-2} se extrae de la figura~\ref{f.trisect-first-approx-1} y contiene anotaciones adicionales.
 
-Sea $\overline{CF}$ la perpendicular a $\overline{OA}$ que corta a $\overline{OA}$ en $F$. Dado que $\overline{OC}=1$, $\overline{CF}=\sin(\theta/2)$ y $\overline{OF}=\cos(\theta/2)$. Sea $\overline{TE}$ la perpendicular a $\overline{OA}$ que interseca $\overline{OA}$ en $E$.
+Sea $\overline{CF}$ la perpendicular a $\overline{OA}$ que corta a $\overline{OA}$ en $F$. Dado que $\overline{OC}=1$, $\overline{CF}=\sen(\theta/2)$ y $\overline{OF}=\cos(\theta/2)$. Sea $\overline{TE}$ la perpendicular a $\overline{OA}$ que interseca $\overline{OA}$ en $E$.
 
 $T$ es el punto medio de $\overline{DC}$ por lo que $\overline{DT}=\overline{TC}=a$. Pero $\overline{FT}$ es la mediana de la hipotenusa de un triángulo rectángulo, por lo que $\overline{FT}=a$ y por tanto $\triangle DTF$ es isóceles. Se deduce que $\overline{TE}$ es tanto la mediana como la altitud de $\overline{DF}$. A partir del diagrama es fácil ver que:
 
@@ -89,7 +89,7 @@ $T$ es el punto medio de $\overline{DC}$ por lo que $\overline{DT}=\overline{TC}
 
 \coordinate (F) at (C |- A);
 \draw[thick,dashed] (C) --
-  node[right] {$\sin (\theta/2)$} (F) node[below] {$F$};
+  node[right] {$\sen (\theta/2)$} (F) node[below] {$F$};
 \draw[rotate=90] (F) rectangle +(7pt,7pt);
 
 \draw[thick,dashed] (T) -- node[right] {$a$} (F);
@@ -114,22 +114,22 @@ $T$ es el punto medio de $\overline{DC}$ por lo que $\overline{DT}=\overline{TC}
 \]
 Calculemos la longitud $2a=\overline{CD}$ utilizando el Teorema de Pitágoras en $\triangle DCF$:
 \begin{eqnarray*}
-(2a)^2 &=&  \left(\cos \frac{\theta}{2}-\frac{1}{2}\right)^2+\sin^2\frac{\theta}{2}\,.
+(2a)^2 &=&  \left(\cos \frac{\theta}{2}-\frac{1}{2}\right)^2+\frac{\sen^2\theta}{2}\,.
 \end{eqnarray*}
 La longitud $h=\overline{TE}$ puede calcularse a partir del Teorema de Pitágoras en $\triangle DTE$:
 \begin{eqnarray*}
 a^2 &=& h^2 + \left[\frac{1}{2}\left(\cos \frac{\theta}{2}-\frac{1}{2}\right)\right]^2\\
-h^2&=&\frac{1}{4}\left(\cos \frac{\theta}{2}-\frac{1}{2}\right)^2+\frac{1}{4}\sin^2\frac{\theta}{2}-\left[\frac{1}{2}\left(\cos \frac{\theta}{2}-\frac{1}{2}\right)\right]^2=
-\frac{1}{4}\sin^2\frac{\theta}{2}\\
-h&=&\frac{1}{2}\sin\frac{\theta}{2}\\
-\tan\phi &=&\frac{h}{\overline{OE}}=\displaystyle\frac{\displaystyle\frac{1}{2}\sin\frac{\theta}{2}}{\displaystyle\frac{1}{2}+\frac{1}{2}\left(\cos \frac{\theta}{2}\! -\! \frac{1}{2}\right)}
-=\frac{\displaystyle2\sin\frac{\theta}{2}}{\displaystyle 1+2\cos\frac{\theta}{2}}\,.
+h^2&=&\frac{1}{4}\left(\cos \frac{\theta}{2}-\frac{1}{2}\right)\sen^2+\frac{1}{4}\sen^2\frac{\theta}{2}-\left[\frac{1}{2}\left(\cos \frac{\theta}{2}-\frac{1}{2}\right)\right]^2=
+\frac{1}{4}\sen^2\frac{\theta}{2}\\
+h&=&\frac{1}{2}\sen\frac{\theta}{2}\\
+\tan\phi &=&\frac{h}{\overline{OE}}=\displaystyle\frac{\displaystyle\frac{1}{2}\sen\frac{\theta}{2}}{\displaystyle\frac{1}{2}+\frac{1}{2}\left(\cos \frac{\theta}{2}\! -\! \frac{1}{2}\right)}
+=\frac{\displaystyle2\sen\frac{\theta}{2}}{\displaystyle 1+2\cos\frac{\theta}{2}}\,.
 \end{eqnarray*}                  
 \end{proof}
 
 Esta es una aproximación a una trisección $\phi=\theta/3$. Para $\theta=60^\circ$:
 \[
-\tan^{-1}\left(\frac{2\sin 30^\circ}{1+2\cos 30^\circ}\right)=
+\tan^{-1}\left(\frac{2\sen 30^\circ}{1+2\cos 30^\circ}\right)=
 \tan^{-1}0.366\approx 20.1^\circ\approx 20^\circ\,.
 \]
 
@@ -221,7 +221,7 @@ Sea $\theta=\angle AOB$ un ángulo arbitrario y sin pérdida de generalidad supo
 
 \begin{theorem}
 \[
-\cos\phi=1 - \frac{1}{9}(1-\cos(\theta/2))=1 - \frac{2}{9}\sin^2(\theta/4)\,.
+\cos\phi=1 - \frac{1}{9}(1-\cos(\theta/2))=1 - \frac{2}{9}\sen^2(\theta/4)\,.
 \]
 \end{theorem}
 \begin{proof} Por la Ley de los Cosenos en $\triangle DOC$:
@@ -236,9 +236,9 @@ Igualando las dos expresiones para $\overline{CD}=\overline{AE}$ y simplificando
 \[
 \cos \phi = 1 - \frac{1}{9}(1-\cos(\theta/2))\,.
 \]
-Como $\cos 2\alpha= \cos^2 \alpha-\sin^2\alpha=1-2\sin^2\alpha$, y por tanto $1-\cos 2\alpha=2\sin^2\alpha$, tenemos la fórmula alternativa:
+Como $\cos 2\alpha= \cos^2 \alpha-\sen^2\alpha=1-2\sen^2\alpha$, y por tanto $1-\cos 2\alpha=2\sen^2\alpha$, tenemos la fórmula alternativa:
 \[
-\cos \phi = 1 - \frac{2}{9}\sin^2(\theta/4)\,.
+\cos \phi = 1 - \frac{2}{9}\sen^2(\theta/4)\,.
 \]
 \end{proof}
 
@@ -286,7 +286,7 @@ La tabla~\ref{t.trisect-second-approx} muestra los errores para un rango de áng
 \section{Trisección con Neusis}\label{s.neusis}\index{Trisection of an angle!neusis@with a neusis}
 \index{Neusis!trisection of an angle}
 
-Usamos el vocablo regla (a secas) para indicar un instrumento que no tiene graduación (medidas) y solo puede utilizarse para construir una línea recta entre dos puntos dados. La regla con unidades de medida se denomina "regla graduada". Arquímedes demostró que neusis, una regla con dos marcas a una distancia fija, puede utilizarse para trisecar un ángulo (Fig.~\ref{f.neusis}). Definimos la distancia entre las marcas como $1$.
+Usamos el vocablo regla (a secas) para indicar un instrumento que no tiene graduación (medidas) y solo puede utilizarse para construir una línea recta entre dos puntos dados. La regla con unidades de medida se denomina <<regla graduada>>. Arquímedes demostró que neusis, una regla con dos marcas a una distancia fija, puede utilizarse para trisecar un ángulo (Fig.~\ref{f.neusis}). Definimos la distancia entre las marcas como $1$.
 
 \begin{figure}[b]
 \begin{center}
@@ -326,12 +326,12 @@ Usamos el vocablo regla (a secas) para indicar un instrumento que no tiene gradu
 \end{figure}
 
 \noindent\textbf{Construcción:}
-Sea $\alpha=\angle ABE$ un ángulo arbitrario en una circunferencia unitaria con centro $B$, donde el radio de la circunferencia es igual a la distancia entre las marcas del neusis. Extendemos el radio $\overline{EB}$ más allá del círculo. Colocamos una arista de la neusis sobre $A$ y la movemos hasta que intersecte la prolongación de $\overline{EB}$ en $D$ y la circunferencia en $C$, utilizando las marcas de forma que la longitud del segmento de recta $\overline{CD}$ sea $1$. Construyamos la recta $\overline{AD}$. Denotemos $\angle CDB=\beta$ (Fig.~\ref{f.trisect-neusis-1}).
+Sea $\alpha=\angle ABE$ un ángulo arbitrario en una circunferencia unitaria con centro $B$, donde el radio de la circunferencia es igual a la distancia entre las marcas del neusis. Extendemos el radio $\overline{EB}$ más allá del círculo. Colocamos una arista de la neusis sobre $A$ y la movemos hasta que intersecte la prolongación de $\overline{EB}$ en $D$ y la circunferencia en $C$, utilizando las marcas de forma que la longitud del segmento $\overline{CD}$ sea $1$. Construyamos la recta $\overline{AD}$. Denotemos $\angle CDB=\beta$ (Fig.~\ref{f.trisect-neusis-1}).
 
 \begin{theorem} $\beta=\alpha/3$.
 \end{theorem}
 \begin{proof}
-Construye $\overline{BC}$ y denotemos los ángulos y segmentos de recta como se muestra en Fig.~\ref{f.trisect-neusis-2}.
+Construye $\overline{BC}$ y denotemos los ángulos y segmentos como se muestra en la figura~\ref{f.trisect-neusis-2}.
 $\triangle ABC$ y $\triangle BCD$ son triángulos isóceles: $\overline{AB} = \overline{BC}$ son radios de la misma circunferencia y $\overline{BC} = \overline{CD}$ por construcción mediante el neusis. Como la suma de los ángulos de un triángulo es igual a $180^\circ$ y la suma de los ángulos suplementarios también es igual a $180^\circ$, tenemos:
 \begin{eqnarray*}
 \epsilon &=& 180^\circ - 2\beta\\
@@ -376,7 +376,7 @@ $\triangle ABC$ y $\triangle BCD$ son triángulos isóceles: $\overline{AB} = \o
 Dado un cubo $C$ construir otro cubo con el doble de su volumen. Si el volumen de $C$ es $V$ sus lados son de longitud $\sqrt[3]{V}$. Las caras de un cubo con el doble de volumen son $\sqrt[3]{2 V}=\sqrt[3]{2}\cdot\sqrt[3]{V}$, por lo que si podríamos construir $\sqrt[3]{2}$ podríamos duplicar el cubo.
 
 \noindent\textbf{Construcción:}
-Construymos el triángulo equilátero unitario $\triangle ABC$ y prolonguemos $\overline{CA}$ con otro segmento de recta unitario hasta $D$. Construyamos los rayos que prolongan $\overline{AB}$ y $\overline{DB}$. Coloquemos la neusis en el punto $C$ y movámoslo hasta que una marca del neusis se sitúe en la semirrecta $\overline{AB}$ en $P$ y la otra marca se sitúe en la semirrecta $\overline{DB}$ en $Q$. Denotemos $\overline{CQ}=x$ y $\overline{BP}=y$ (Fig.~\ref{f.double-neusis}).
+Construymos el triángulo equilátero unitario $\triangle ABC$ y prolonguemos $\overline{CA}$ con otro segmento unitario hasta $D$. Construyamos los rayos que prolongan $\overline{AB}$ y $\overline{DB}$. Coloquemos la neusis en el punto $C$ y movámoslo hasta que una marca del neusis se sitúe en la semirrecta $\overline{AB}$ en $P$ y la otra marca se sitúe en la semirrecta $\overline{DB}$ en $Q$. Denotemos $\overline{CQ}=x$ y $\overline{BP}=y$ (Fig.~\ref{f.double-neusis}).
 
 \begin{figure}[b]
 \begin{center}
@@ -449,7 +449,7 @@ x&=&\sqrt[3]{2}\,.
 
 \index{Trisection of an angle!quadratrix@with a quadratrix}
 
-Sea $\overline{ABCD}$ un cuadrado. Sea $l_1$ un segmento de recta situado inicialmente en $\overline{DC}$ y sea $l_2$ un segmento de recta situado inicialmente en $\overline{AD}$. Movamos $l_1$ con velocidad lineal constante hasta alcanzar $\overline{AB}$ y giremos $l_2$ con velocidad angular constante en sentido horario sobre $A$ hasta alcanzar también $\overline{AB}$. Supongamos que alcanzan $\overline{AB}$ juntos. Por ejemplo, si $l_2$ gira a $1^\circ$/segundo y el lado del cuadrado es de $9$ centímetros, $l_1$ debe moverse a $0,1$ cm/segundo. La huella que deja su punto de intersección $P$ se denomina \emph{cuadratiz} (Fig.~\ref{f.trisect-quad-curve}). Su definición se atribuye al matemático Hipias.
+Sea $\overline{ABCD}$ un cuadrado. Sea $l_1$ un segmento situado inicialmente en $\overline{DC}$ y sea $l_2$ un segmento situado inicialmente en $\overline{AD}$. Movamos $l_1$ con velocidad lineal constante hasta alcanzar $\overline{AB}$ y giremos $l_2$ con velocidad angular constante en sentido horario sobre $A$ hasta alcanzar también $\overline{AB}$. Supongamos que alcanzan $\overline{AB}$ juntos. Por ejemplo, si $l_2$ gira a $1^\circ$/segundo y el lado del cuadrado es de $9$ centímetros, $l_1$ debe moverse a $0,1$ cm/segundo. La huella que deja su punto de intersección $P$ se denomina \emph{cuadratiz} (Fig.~\ref{f.trisect-quad-curve}). Su definición se atribuye al matemático Hipias.
 
 \begin{figure}[b]
 \begin{minipage}{.48\textwidth}
@@ -488,7 +488,7 @@ Sea $\overline{ABCD}$ un cuadrado. Sea $l_1$ un segmento de recta situado inicia
 \end{minipage}
 \end{figure}
 
-Se puede construir una cuadratriz utilizando un compás de cuadratriz como se muestra en la Fig.~\ref{f.trisect-quad-compass}. Consiste en dos rectas (no marcadas) que se mueven como se ha descrito anteriormente. Una articulación las obliga a moverse simultáneamente y trazar la curva.
+Se puede construir una cuadratriz utilizando un compás de cuadratriz como se muestra en la figura~\ref{f.trisect-quad-compass}. Consiste en dos rectas (no marcadas) que se mueven como se ha descrito anteriormente. Una articulación las obliga a moverse simultáneamente y trazar la curva.
 \begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.8,domain=.03:1.562,samples=100]
@@ -535,7 +535,7 @@ Se puede construir una cuadratriz utilizando un compás de cuadratriz como se mu
 Se puede utilizar una cuadratriz para trisecar un ángulo.
 
 \noindent\textbf{Construcción:}
-Sea $\angle CDP_1=\alpha$ un ángulo arbitrario, donde $P_1$ es la intersección de la recta que define el ángulo $\alpha$ relativo a $\overline{DC}$ y la cuadratriz. Construyamos una recta que pase por $P_1$ paralela a $\overline{DC}$ y denotemos con $E$ su intersección con $\overline{AD}$. Denotemos $t$ el segmento de recta $\overline{DE}$ por $t$ y trisequémoslo (Sect.~\ref{s.trisect-constructible}) para obtener el punto $F$ que está a $t/3$ de $\overline{DC}$. Sea $P_2$ la intersección de una recta desde $F$ paralela a $\overline{DC}$ y la cuadratriz, y denotemos por $\theta$ el ángulo entre $\overline{DC}$ y $\overline{DP_2}$ (Fig.~\ref{f.trisect-quad-trisect}).
+Sea $\angle CDP_1=\alpha$ un ángulo arbitrario, donde $P_1$ es la intersección de la recta que define el ángulo $\alpha$ relativo a $\overline{DC}$ y la cuadratriz. Construyamos una recta que pase por $P_1$ paralela a $\overline{DC}$ y denotemos con $E$ su intersección con $\overline{AD}$. Denotemos $t$ el segmento $\overline{DE}$ por $t$ y trisequémoslo (Sec.~\ref{s.trisect-constructible}) para obtener el punto $F$ que está a $t/3$ de $\overline{DC}$. Sea $P_2$ la intersección de una recta desde $F$ paralela a $\overline{DC}$ y la cuadratriz, y denotemos por $\theta$ el ángulo entre $\overline{DC}$ y $\overline{DP_2}$ (Fig.~\ref{f.trisect-quad-trisect}).
 
 \begin{theorem}
 $\theta = \alpha/3$.
@@ -549,12 +549,12 @@ La coordenada $y$ de $E$ es $1-t$ por lo que por construcción la coordenada de 
 \section{Números construibles}\label{s.trisect-constructible}
 \index{Constructible number}
 
-Sea $l$ un segmento de recta definido de longitud $1$.
+Sea $l$ un segmento definido de longitud $1$.
 \begin{definition}
-Un número $a$ es \emph{constructible} si y sólo si se puede construir un segmento de recta de longitud $a$ con regla y compás partiendo de $l$.
+Un número $a$ es \emph{constructible} si y sólo si se puede construir un segmento de longitud $a$ con regla y compás partiendo de $l$.
 \end{definition}
 
-Dado un segmento de recta $l=\overline{AB}$, construir una recta que contenga a $\overline{AB}$ y utilizar el compás para encontrar un punto $C$ de la recta que esté a una distancia de $1$ de $B$. Entonces $\overline{AC}$ tiene una longitud $2$ por lo que el número $2$ es construible. Se puede construir un segmento de recta $\overline{BD}$ de longitud $1$ perpendicular a $\overline{AB}$ en $B$. La hipotenusa del triángulo $\triangle ABD$ es de longitud $\sqrt{2}$ por lo que el número $\sqrt{2}$ es construible.
+Dado un segmento $l=\overline{AB}$, construir una recta que contenga a $\overline{AB}$ y utilizar el compás para encontrar un punto $C$ de la recta que esté a una distancia de $1$ de $B$. Entonces $\overline{AC}$ tiene una longitud $2$ por lo que el número $2$ es construible. Se puede construir un segmento $\overline{BD}$ de longitud $1$ perpendicular a $\overline{AB}$ en $B$. La hipotenusa del triángulo $\triangle ABD$ es de longitud $\sqrt{2}$ por lo que el número $\sqrt{2}$ es construible.
 
 \begin{theorem}\label{thm.trisect-constructible}
 Un número es \emph{construible} si y sólo si es el valor de una expresión construida a partir de los números enteros, las cuatro operaciones aritméticas $\{+,-,\times,/\}$ y la operación de sacar raíz cuadrada $\surd$.
@@ -596,14 +596,14 @@ Un número es \emph{construible} si y sólo si es el valor de una expresión con
 \end{figure}
 
 \noindent\textbf{Suma y resta:}
-Dados los segmentos de recta $\overline{PQ}=a$ y $\overline{RS}=b$, construir una circunferencia centrada en $Q$ con radio $b$ (Fig.~\ref{f.trisect-add-subtract}). Extender $\overline{PQ}$ hasta que se cruza con la circunferencia en $U$. Entonces $\overline{PTQU}$ es un segmento de recta, donde $\overline{PT}=a-b$ y $\overline{PU}=a+b$.
+Dados los segmentos $\overline{PQ}=a$ y $\overline{RS}=b$, construir una circunferencia centrada en $Q$ con radio $b$ (Fig.~\ref{f.trisect-add-subtract}). Extender $\overline{PQ}$ hasta que se cruza con la circunferencia en $U$. Entonces $\overline{PTQU}$ es un segmento, donde $\overline{PT}=a-b$ y $\overline{PU}=a+b$.
 
 \noindent\textbf{Multiplicación:}
-Por triángulos similares en Fig.~\ref{f.trisect-multiplication},
+Por triángulos similares en la figura~\ref{f.trisect-multiplication},
 $(1/b)=(a/\overline{OA})$, así que $\overline{OA}=ab$.
 
 \noindent\textbf{División:}
-Por triángulos similares en Fig.~\ref{f.trisect-division},
+Por triángulos similares en la figura~\ref{f.trisect-division},
 $(1/b)=(\overline{OD}/a)$, así que $\overline{OD}=(a/b)$.
 
 \begin{figure}[t]
@@ -661,7 +661,7 @@ $(1/b)=(\overline{OD}/a)$, así que $\overline{OD}=(a/b)$.
 \end{figure}
 
 \noindent\textbf{Raíces cuadradas:}
-Dado un segmento de recta $\overline{BC}=a$, construyamos $\overline{AB} =1+a$ y una semicircunferencia con $\overline{AB}$ como diámetro. Construyamos una perpendicular en $C$ y sea $D$ la intersección de la perpendicular y la circunferencia (Fig.~\ref{f.trisect-square-root}). El $\angle ADB$ es un ángulo recto porque está subtendido por un diámetro. Por triángulos semejantes $(h/1)=(a/h)$, por lo que $h^2=a$ y $h=\sqrt{a}$.
+Dado un segmento $\overline{BC}=a$, construyamos $\overline{AB} =1+a$ y una semicircunferencia con $\overline{AB}$ como diámetro. Construyamos una perpendicular en $C$ y sea $D$ la intersección de la perpendicular y la circunferencia (Fig.~\ref{f.trisect-square-root}). El $\angle ADB$ es un ángulo recto porque está subtendido por un diámetro. Por triángulos semejantes $(h/1)=(a/h)$, por lo que $h^2=a$ y $h=\sqrt{a}$.
 
 \begin{figure}[b]
 \begin{center}
@@ -927,7 +927,7 @@ Para demostrar la imposibilidad de trisecar un ángulo hay que demostrar que $y^
 
 \subsection*{¿Cuál es la sorpresa?}
 
-Underwood Dudley ha realizado un extenso estudio de lo que él llama "gruñones", que malgastan años de sus vidas intentando trisecar ángulos con una regla y un compás. No sólo se engañan a sí mismos pensando que esto es posible, sino que, lo que es peor, piensan que una solución sería importante. Por supuesto, una solución no tendría ninguna utilidad práctica, ya que herramientas como el neusis y la cuadratriz pueden resolver el problema con exactitud. El número de construcciones de este tipo es sorprendente, sobre todo porque muchas de ellas son ingeniosas y consiguen buenas aproximaciones. Calcular las fórmulas asociadas a las construcciones es un excelente ejercicio de trigonometría.
+Underwood Dudley ha realizado un extenso estudio de lo que él llama <<gruñones>>, que malgastan años de sus vidas intentando trisecar ángulos con una regla y un compás. No sólo se engañan a sí mismos pensando que esto es posible, sino que, lo que es peor, piensan que una solución sería importante. Por supuesto, una solución no tendría ninguna utilidad práctica, ya que herramientas como el neusis y la cuadratriz pueden resolver el problema con exactitud. El número de construcciones de este tipo es sorprendente, sobre todo porque muchas de ellas son ingeniosas y consiguen buenas aproximaciones. Calcular las fórmulas asociadas a las construcciones es un excelente ejercicio de trigonometría.
 
 También es sorprendente que las demostraciones de la imposibilidad de estas construcciones geométricas sean puramente algebraicas, utilizando propiedades de raíces de polinomios.
 
@@ -936,4 +936,4 @@ También es sorprendente que las demostraciones de la imposibilidad de estas con
 Wikipedia \cite{wiki:tri, wiki:neu, wiki:quad} es una buena fuente para las construcciones de este capítulo. Las dos trisecciones aproximadas proceden de \cite[pp.~67--68, 95--96]{dudley-budget}. El segundo ejemplo se atribuye al famoso filósofo Thomas Hobbes. Tanto \cite[pp.~48--49]{martin} como \cite[pp.~6--7]{dudley-budget} discuten la trisección usando la cuadratriz.
 La duplicación del cubo usando un neusis está tomada de \cite{dorrie2}.
 
-Un tratamiento riguroso de la constructibilidad se puede encontrar en los libros de texto sobre álgebra abstracta como \cite{fraleigh}, que contiene una demostración general de la inversa de Teorema~\ref{thm.trisect-constructible} en Sect.~32. Teorema~\ref{thm.factor} es Teorema~23.11 de \cite{fraleigh}. Una presentación relativamente accesible de la demostración de Wantzel se puede encontrar en \cite{suzuki}. Mi presentación de la constructibilidad se basa en las presentaciones en \cite[Capítulo~III]{courant} y \cite{laugwitz}.
+Un tratamiento riguroso de la constructibilidad se puede encontrar en los libros de texto sobre álgebra abstracta como \cite{fraleigh}, que contiene una demostración general de la inversa de Teorema~\ref{thm.trisect-constructible} en Sec.~32. Teorema~\ref{thm.factor} es Teorema~23.11 de \cite{fraleigh}. Una presentación relativamente accesible de la demostración de Wantzel se puede encontrar en \cite{suzuki}. Mi presentación de la constructibilidad se basa en las presentaciones en \cite[Capítulo~III]{courant} y \cite{laugwitz}.

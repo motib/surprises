@@ -7,7 +7,7 @@
 \section{Un truco de magia}\label{s.magic}
 \index{Lill's method}
 
-Construimos una trayectoria formada por cuatro segmentos de recta $\{a_3=1,a_2=6,a_1=11,a_0=6\}$, partiendo del origen en la dirección positiva del eje $x$ y girando $90^\circ$ en sentido contrario a las agujas del reloj entre segmento y segmento. Construimos una segunda trayectoria de la siguiente forma: construir una recta desde el origen con un ángulo de $63,4^\circ$ y marcar su intersección con $a_2$ por $P$. Girar a la izquierda $90^\circ$, construir una recta y marcar su intersección con $a_1$ con $Q$. Girar de nuevo $90^\circ$ a la izquierda, construir una recta y señalar que interseca el final del primer camino en $(-10,0)$ (Fig.~\ref{f.magic}).
+Construimos una trayectoria formada por cuatro segmentos $\{a_3=1,a_2=6,a_1=11,a_0=6\}$, partiendo del origen en la dirección positiva del eje $x$ y girando $90^\circ$ en sentido contrario a las agujas del reloj entre segmento y segmento. Construimos una segunda trayectoria de la siguiente manera: trazamos una recta desde el origen con un ángulo de $63,4^\circ$ y denotamos con $P$ su intersección con $a_2$. Giramos a la izquierda $90^\circ$, trazamos una recta y marcar su intersección con $a_1$ con $Q$. Giramos de nuevo $90^\circ$ a la izquierda, trazamos una recta y señalamos que interseca el final de la trayectoria en $(-10,0)$ (Fig.~\ref{f.magic}).
 
 \begin{figure}[b]
 \begin{center}
@@ -61,7 +61,7 @@ Construimos una trayectoria formada por cuatro segmentos de recta $\{a_3=1,a_2=6
 \caption{Un truco de magia}\label{f.magic}
 \end{figure}
 
-Calcular la negación de la tangente del ángulo al inicio del segundo camino: $-\tan 63,4^\circ=-2$. Sustituye este valor en el polinomio cuyos coeficientes son las longitudes de los segmentos del primer camino:
+Calcular el valor negativo de la tangente del ángulo al inicio del segundo del trayecto: $-\tan 63,4^\circ=-2$. Sustituimos este valor en el polinomio cuyos coeficientes son las longitudes de los segmentos del primer camino:
 \begin{eqnarray*}
 p(x)&=&a_3x^3+a_2x^2+a_1x+a_0\\
 &=&x^3+6x^2+11x+6\\
@@ -69,13 +69,13 @@ p(-\tan 63.4^\circ)&=&(-2)^3+6(-2)^2+11(-2)+6=0\,.
 \end{eqnarray*}
 ¡Hemos encontrado una raíz del polinomio cúbico $x^3+6x^2+11x+6$!
 
-Continuemos con el ejemplo. El polinomio $p(x)=x^3+6x^2+11x+6$ tiene tres raíces $-1,-2,-3$. Calcula el arco tangente de la negación de las raíces:
+Continuemos con el ejemplo. El polinomio $p(x)=x^3+6x^2+11x+6$ tiene tres raíces $-1,-2,-3$. Calculamos el arcotangente de los valores negativos de las raíces  :
 \[
 \alpha=-\tan^{-1} (-1) = 45^\circ,\quad \beta=-\tan^{-1}(-2) \approx 63.4^\circ,\quad \gamma=-\tan^{-1}(-3)\approx 71.6^\circ\,.
 \]
 Para cada ángulo la segunda trayectoria interseca el final de la primera trayectoria (Fig.~\ref{f.cube-multiple}).
 
-El valor $-\tan 56,3\approx -1,5$ no es una raíz de la ecuación. Fig.~\ref{f.noroots} muestra el resultado de la aplicación del método para este ángulo. El segundo camino no se cruza con el segmento de línea para el coeficiente $a_0$ en $(-10,0)$.
+El valor $-\tan 56,3\approx -1,5$ no es una raíz de la ecuación. La figura~\ref{f.noroots} muestra el resultado de la aplicación del método para este ángulo. Esta trayectoria no se cruza con el segmento de línea para el coeficiente $a_0$ en $(-10,0)$.
 
 \begin{figure}[b]
 \begin{center}
@@ -223,39 +223,39 @@ El valor $-\tan 56,3\approx -1,5$ no es una raíz de la ecuación. Fig.~\ref{f.n
 \draw[very thick,dashed] (B2) -- (C2);
 \end{tikzpicture}
 \end{center}
-\caption{Un camino que no conduce a una raíz}\label{f.noroots}
+\caption{Una trayectoria que no ilustra una raíz}\label{f.noroots}
 \end{figure}
 
 Este ejemplo muestra un método descubierto por Eduard Lill en 1867 para hallar gráficamente las raíces reales de cualquier polinomio. En realidad no estamos encontrando las raíces, sino verificando que un valor dado es una raíz.
 
-La sección~\ref{s.method} presenta una especificación formal del método de Lill (limitado a polinomios cúbicos) y da ejemplos de cómo funciona en casos especiales. Una demostración de la corrección del método de Lill se da en Sect.~\ref{s.proof}. La sección~\ref{s.beloch-fold} muestra cómo se puede implementar el método utilizando el axioma de origami~6. Esto se llama el pliegue de Beloch y precedió a la formalización de los axiomas de origami durante muchos años.
+La sección~\ref{s.method} presenta una especificación formal del método de Lill (limitado a polinomios cúbicos) y da ejemplos de cómo funciona en casos especiales. Una demostración de la corrección del método de Lill se da en la sección~\ref{s.proof}. La sección~\ref{s.beloch-fold} muestra cómo se puede implementar el método utilizando el axioma~6 de origami. Esto se llama el pliegue de Beloch y precedió a la formalización de los axiomas de origami durante muchos años.
 
 \section{Especificación del método de Lill}\label{s.method}
 
 \subsection{El método de Lill como algoritmo}
 \index{Lill's method!algorithm}
 \begin{itemize}
-\item Empezar con un polinomio cúbico arbitrario $p(x)=a_3x^3+a_2x^2+a_1x+a_0$.
-\item Construimos el primer camino:
+\item Comenzamos a partir de con un polinomio cúbico arbitrario $p(x)=a_3x^3+a_2x^2+a_1x+a_0$.
+\item Construimos la primer trayectoria:
 \begin{itemize}
-\item Para cada coeficiente $a_3,a_2,a_1,a_0$ (en ese orden) construye un segmento de recta de esa longitud, partiendo del origen $O=(0,0)$ en la dirección positiva del eje $x$. Gira $90^\circ$ en sentido contrario a las agujas del reloj entre cada segmento.
+\item Para cada coeficiente $a_3,a_2,a_1,a_0$ (en ese orden) construye un segmento de las respectivas longitudes, partiendo del origen $O=(0,0)$ en la dirección positiva del eje $x$. Giramos $90^\circ$ en sentido contrario a las agujas del reloj entre cada segmento.
 \end{itemize}
 \item Construimos el segundo camino:
 \begin{itemize}
 \item Construimos una recta desde $O$ formando un ángulo de $\theta$ con el eje $x$ positivo que intersecte a $a_2$ en el punto $P$.
-\item Girar $\pm 90^\circ$ y construir una recta desde $P$ que corte a $a_1$ en $Q$.
-\item Girar $\pm 90^\circ$ y construir una recta desde $Q$ que intersecte a $a_0$ en $R$.
-\item Si $R$ es el punto final del primer camino entonces $-\tan\theta$ es una raíz de $p(x)$.
+\item Giramos $\pm 90^\circ$ y trazamos una recta desde $P$ que corte a $a_1$ en $Q$.
+\item Giramos $\pm 90^\circ$ y construimos una recta desde $Q$ que intersecte a $a_0$ en $R$.
+\item Si $R$ es el punto final de la primera trayectoria entonces $-\tan\theta$ es una raíz de $p(x)$.
 \end{itemize}
 \item Casos especiales:
 \begin{itemize}
-\item Al construir los segmentos de línea de la primera trayectoria, si un coeficiente es negativo, construir el segmento de línea \emph{hacia atrás}.
-\item Al construir los segmentos de línea de la primera trayectoria, si un coeficiente es cero, no construir un segmento de línea, sino continuar con la siguiente $\pm 90^\circ$ vuelta.
+\item Al construir los segmentos de la primera trayectoria, si un coeficiente es negativo, construimos el segmento  \emph{hacia atrás}.
+\item Al construir los segmentos de línea de la primera trayectoria, si un coeficiente es cero, no construimos un segmento, sino constinuamos con el siguiente giro de $\pm 90^\circ$.
 \end{itemize}
 \item Notes:
 \begin{itemize}
 \item La frase \emph{se cruza con $a_i$} significa \emph{interseca el segmento de línea $a_i$ o cualquier extensión de $a_i$}.
-\item Al construir el segundo camino elegir a la izquierda oa la derecha por $90^\circ$ para que haya una intersección con el siguiente segmento de la primera ruta o su extensión.
+\item Al construir la segunda trayectoria, elegimos gira $90^\circ$ a la izquierda oa la derecha por $90^\circ$ para que haya una intersección con el siguiente segmento de la primera trayectoria o su extensión.
 \end{itemize}
 \end{itemize}
 
@@ -320,15 +320,15 @@ La sección~\ref{s.method} presenta una especificación formal del método de Li
 
 \subsection{Coeficientes negativos}\label{s.negative}
 
-Vamos a demostrar el método de Lill en el polinomio $p(x)=x^3-3x^2-3x+1$ con coeficientes negativos (Sect.~\ref{s.ax6}). Comience por construir un segmento de longitud $1$ a la derecha. A continuación, girar $90^\circ$ hacia arriba, pero como el coeficiente es negativo, construir un segmento de longitud $3$ hacia abajo, es decir, en dirección opuesta a la flecha. Tras girar $90^\circ$ hacia la izquierda, el coeficiente vuelve a ser negativo, así que construye un segmento de longitud $3$ hacia la derecha. Por último, gire hacia abajo y construir un segmento de longitud $ 1 $ (Fig.~\ref{f.negative}, las líneas de trazos sueltos será discutido en Sect.~\ref{s.noninteger}).
+Vamos a demostrar el método de Lill para el polinomio $p(x)=x^3-3x^2-3x+1$ con coeficientes negativos (Sec.~\ref{s.ax6}). Comenzamos construyendo un segmento de longitud $1$ a la derecha. A continuación, giramos $90^\circ$ hacia arriba, pero como el coeficiente es negativo, construimos un segmento de longitud $3$ hacia abajo, es decir, en dirección opuesta a la flecha. Tras girar $90^\circ$ hacia la izquierda, el coeficiente vuelve a ser negativo, así que construimos un segmento de longitud $3$ hacia la derecha. Por último, giramos hacia abajo y construimos un segmento de longitud $ 1 $ (Fig.~\ref{f.negative}, las líneas de trazos sueltos será discutido en Sec.~\ref{s.noninteger}).
 
-Comience el segundo camino con una línea en $ 45^\circ$ con el eje $x$ positivo. Se cruza con la extensión del segmento de línea para $a_2$ en $(1,1)$. Girando $-90^\circ$ (hacia la derecha), la recta interseca la prolongación de la recta segmento por $a_1$ en $(5,-3)$. Girando de nuevo $-90^\circ$, la recta interseca al final de la primera trayectoria en $(4,-4)$. Como $-\tan 45^\circ=-1$, hemos encontrado una raíz del polinomio:
+Comencemos el segundo camino con una línea a $ 45^\circ$ con el eje $x$ positivo. Se cruza con la extensión del segmento de línea para $a_2$ en $(1,1)$. Girando $-90^\circ$ (hacia la derecha), la recta interseca  interseca la prolongacion de $a_1$ en $(5,-3)$. Girando nuevamente $-90^\circ$, la recta interseca el final de la primera trayectoria en $(4,-4)$. Como $-\tan 45^\circ=-1$, hemos encontrado una raíz del polinomio:
 \[p(-1)=(-1)^3-3(-1)^2-3(-1)+6=0\,.\]
 
 
 \subsection{Coeficientes cero}\label{s.zero}
 \index{Lill's method!zero coefficients}
-$a_2$, el coeficiente del término $x^2$ del polinomio $x^3-7x-6=0$, es cero. Construimos un segmento de recta de longitud $0$, es decir, no construir una recta, pero sí hacer el giro $\pm 90^\circ$ como indica la flecha que apunta hacia arriba en $(1,0)$ en la Fig.~\ref{f.zero}. Gira de nuevo y construye un segmento de recta de longitud $-7$, es decir, de longitud $7$ hacia atrás, hasta $(8,0)$. Por último, gire una vez más y construir un segmento de línea de longitud $-6 $ a $(8,6)$.
+$a_2$, el coeficiente del término $x^2$ del polinomio $x^3-7x-6=0$, es cero. Trazamos un segmento de longitud $0$, es decir, no trazamos una recta, pero sí giramos $\pm 90^\circ$ como indica la flecha que apunta hacia arriba en $(1,0)$ en la figura~\ref{f.zero}. Giramos nuevamente y trazamos un segmento de longitud $-7$, es decir, de longitud $7$ hacia atrás, hasta $(8,0)$. Por último, giramos una vez más y trazamos un segmento de longitud $-6 $ a $(8,6)$.
 
 \begin{figure}[t]
 \begin{center}
@@ -387,7 +387,7 @@ $a_2$, el coeficiente del término $x^2$ del polinomio $x^3-7x-6=0$, es cero. Co
 \end{center}
 \caption{Método de Lill con polinomios de coeficientes nulos}\label{f.zero}
 \end{figure}
-Las segundas trayectorias con los siguientes ángulos intersecan el final de la primera trayectoria:
+Los segundos trayectos con los siguientes ángulos intersecan el final de la primera trayectoria:
 \[
 -\tan^{-1} (-1)= 45^\circ,\quad -\tan^{-1} (-2)\approx 63.4^\circ,\quad -\tan^{-1} 3\approx -71.6^\circ\,.
 \]
@@ -399,15 +399,15 @@ Compruébalo:
 
 \subsection{Raíces no enteras}\label{s.noninteger}
 \index{Lill's method!non-integer roots}
-Figura~\ref{f.noninteger} muestra el método de Lill para $p(x)=x^3-2x+1$. La primera trayectoria va de $(0,0)$ a $(1,0)$ y luego gira hacia arriba. El coeficiente de $x^2$ es cero por lo que no se construye ningún segmento de recta y el camino gira a la izquierda. El siguiente segmento de recta es de longitud $-2$ por lo que va hacia atrás desde $(1,0)$ hasta $(3,0)$. Finalmente, el camino gira hacia abajo y se construye un segmento de recta de longitud $1$ desde $(3,0)$ hasta $(3,-1)$.
+La figura~\ref{f.noninteger} muestra el método de Lill para $p(x)=x^3-2x+1$. La primera trayectoria va de $(0,0)$ a $(1,0)$ y luego gira hacia arriba. El coeficiente de $x^2$ es cero por lo que no se construye ningún segmento y el trayecto gira a la izquierda. El siguiente segmento es de longitud $-2$ por lo que va hacia atrás desde $(1,0)$ hasta $(3,0)$. Finalmente, el trayecto gira hacia abajo y se construye un segmento de longitud $1$ desde $(3,0)$ hasta $(3,-1)$.
 
-Es fácil ver que si el segundo camino comienza en un ángulo de $ 45^circ $ se cruzará con el primer camino en $ (3,-1) $. Por lo tanto, $-\tan^{-1} (-45)^\circ=1$ es una raíz. Si dividimos $p(x)$ entre $x-1$, obtenemos el polinomio cuadrático $x^2+x-1$ cuyas raíces son:
+Es fácil ver que si la segunda trayectoria comienza en un ángulo de $ 45^\circ $ se cruzará con la primer trayectoria en $ (3,-1) $. Por lo tanto, $-\tan^{-1} (-45)^\circ=1$ es una raíz. Si dividimos $p(x)$ entre $x-1$, obtenemos el polinomio cuadrático $x^2+x-1$ cuyas raíces son:
 \[
 \frac{-1\pm\sqrt{5}}{2} \approx 0.62,\; -1.62\,.
 \]
 Hay dos segundas trayectorias adicionales: una que empieza en $-\tan^{-1} 0,62\approx -31,8^\circ$, y otra que empieza en $-\tan^{-1}(-1,62)\approx 58,3^\circ$.
 
-El polinomio $p(x)=x^3-3x^2-3x+1$ (Sect.~\ref{s.negative}) tiene raíces $ 2\pm\sqrt{3}\approx 3,73, 0,27$. Los ángulos correspondientes son $-\tan^{-1} 3,73 \approx -75^\circ$ y $-\tan^{-1} 0,27 \approx -15^\circ$ como muestran las líneas discontinuas de la Fig.~\ref{f.negative}.
+El polinomio $p(x)=x^3-3x^2-3x+1$ (Sec.~\ref{s.negative}) tiene raíces $ 2\pm\sqrt{3}\approx 3,73, 0,27$. Los ángulos correspondientes son $-\tan^{-1} 3,73 \approx -75^\circ$ y $-\tan^{-1} 0,27 \approx -15^\circ$ como muestran las líneas discontinuas de la figura~\ref{f.negative}.
 
 
 \begin{figure}[t]
@@ -494,7 +494,7 @@ El polinomio $p(x)=x^3-3x^2-3x+1$ (Sect.~\ref{s.negative}) tiene raíces $ 2\pm\
 
 \subsection{La raíz cúbica de dos}\label{s.cube}
 \index{Lill's method!cube root of two}
-Para doblar un cubo, calcula $\sqrt[3]{2}$, una raíz del polinomio cúbico $x^3-2$. En la construcción del primer camino, gira dos veces a la izquierda sin construir ningún segmento de recta, porque $a_2$ y $a_1$ son ambos cero. Luego se vuelve a girar a la izquierda (para mirar hacia abajo) y se construye hacia atrás (hacia arriba) porque $a_0=-2$ es negativo. El primer segmento de la segunda trayectoria se construye con un ángulo de $-\tan^{-1} \sqrt[3]{2}\approx -51.6^\circ$ (Fig.~\ref{f.cube-two}).
+Para duplicar un cubo, calculamos $\sqrt[3]{2}$, una raíz del polinomio cúbico $x^3-2$. En la construcción de la primera trayectoria, giramos dos veces a la izquierda sin construir ningún segmento, porque $a_2$ y $a_1$ son ambos cero. Luego se vuelve a girar a la izquierda (para mirar hacia abajo) y se construye hacia atrás (hacia arriba) porque $a_0=-2$ es negativo. El primer segmento de la segunda trayectoria se construye con un ángulo de $-\tan^{-1} \sqrt[3]{2}\approx -51.6^\circ$ (Fig.~\ref{f.cube-two}).
 
 \begin{figure}[t]
 \begin{center}
@@ -554,13 +554,13 @@ Para doblar un cubo, calcula $\sqrt[3]{2}$, una raíz del polinomio cúbico $x^3
 \section{Prueba del método de Lill}\label{s.proof}
 \index{Lill's method!proof of}
 
-La demostración es para polinomios cúbicos monicónicos $p(x)=x^3+a_2x^2+a_1x+a_0$. Si el polinomio no es mónico, se divide por $a_3$ y el polinomio resultante tiene las mismas raíces. En la Fig.~\ref{f.lill-proof} los segmentos de recta del primer camino están etiquetados con los coeficientes y con $b_2,b_1,a_2-b_2,a_1-b_1$. En un triángulo rectángulo si un ángulo agudo es $\theta$ el otro ángulo es $90^\circ-\theta$. Por tanto, el ángulo sobre $P$ y el ángulo a la izquierda de $Q$ son iguales a $\theta$. He aquí las fórmulas de $\tan \theta$ calculadas a partir de los tres triángulos:
+La demostración es para polinomios cúbicos mónicos $p(x)=x^3+a_2x^2+a_1x+a_0$. Si el polinomio no es mónico, se divide por $a_3$ y el polinomio resultante tiene las mismas raíces. En la figura~\ref{f.lill-proof} los segmentos de la primera trayectoria están denotados con los coeficientes y con $b_2,b_1,a_2-b_2,a_1-b_1$. En un triángulo rectángulo si un ángulo agudo es $\theta$ el otro ángulo es $90^\circ-\theta$. Por tanto, el ángulo sobre $P$ y el ángulo a la izquierda de $Q$ son iguales a $\theta$. He aquí las fórmulas de $\tan \theta$ calculadas a partir de los tres triángulos:
 \begin{eqnarray*}
 \tan \theta &=& \frac{b_2}{1}=b_2\\
 \tan \theta &=& \frac{b_1}{a_2-b_2}=\frac{b_1}{a_2-\tan\theta}\\
 \tan \theta &=& \frac{a_0}{a_1-b_1}=\frac{a_0}{a_1-\tan\theta(a_2-\tan\theta)}\,.
 \end{eqnarray*}
-Simplifica la última ecuación, multiplica por $-1$ y absorbe $-1$ en las potencias:
+Simplificamos la última ecuación, multiplicamos por $-1$ e incluimos $-1$ en las potencias:
 \begin{eqnarray*}
 (\tan\theta)^3-a_2(\tan\theta)^2+a_1(\tan\theta)-a_0&=&0\\
 (-\tan\theta)^3+a_2(-\tan\theta)^2+a_1(-\tan\theta)+a_0&=&0\,.
@@ -645,9 +645,9 @@ Se deduce que $-\tan\theta$ es una raíz real de $p(x)=x^3+a_2x^2+a_1x+a_0$.
 
 \section{El pliegue de Beloch}\label{s.beloch-fold}
 
-Margharita P. Beloch descubrió una notable conexión entre el plegado y el método de Lill: una aplicación de la operación más tarde conocida como axioma del origami~6 genera una raíz real de un polinomio cúbico. La operación se denomina a menudo "pliegue de belloch".
+Margharita P. Beloch descubrió una notable conexión entre el plegado y el método de Lill: una aplicación de la operación más tarde conocida como el sexto axioma del origami genera una raíz real de un polinomio cúbico. La operación se denomina a menudo \emph{pliegue de belloch}.
 
-Consideremos el polinomio $p(x)=x^3+6x^2+11x+6$ (Sect.~\ref{s.magic}). Recordemos que un pliegue es la mediatriz del segmento de recta entre un punto cualquiera y su reflexión alrededor del pliegue. Queremos que $\overline{RS}$ en Fig.~\ref{f.beloch-fold2} sea la mediatriz de $\overline{QQ'}$ y $\overline{PP'}$, donde $Q',P'$ son las reflexiones de $Q,P$ alrededor de $\overline{RS}$, respectivamente.
+Consideremos el polinomio $p(x)=x^3+6x^2+11x+6$ (Sec.~\ref{s.magic}). Recordemos que un pliegue es la mediatriz del segmento entre un punto cualquiera y su reflexión alrededor del pliegue. Queremos que $\overline{RS}$ en la figura~\ref{f.beloch-fold2} sea la mediatriz de $\overline{QQ'}$ y $\overline{PP'}$, donde $Q',P'$ son las reflexiones de $Q,P$ alrededor de $\overline{RS}$, respectivamente.
 
 \begin{figure}[ht]
 \begin{center}
@@ -713,9 +713,9 @@ Consideremos el polinomio $p(x)=x^3+6x^2+11x+6$ (Sect.~\ref{s.magic}). Recordemo
 \caption{El pliegue de Beloch para encontrar una raíz de $x^3+6x^2+11x+6$}\label{f.beloch-fold2}
 \end{figure}
 
-Construimos una recta $a_2'$ paralela a $a_2$ a la misma distancia de $a_2$ que $a_2$ de $P$, y construir una recta $a_1'$ paralela a $a_1$ a la misma distancia de $a_1$ que $a_1$ de $Q$. Aplicar el axioma~6 para situar simultáneamente $P$ en $P'$ sobre $a_2'$ y para situar $Q$ en $Q'$ sobre $a_1'$. El pliegue $\overline{RS}$ es la mediatriz de las rectas $\overline{PP'}$ y $\overline{QQ'}$ por lo que los ángulos en $R$ y $S$ son ambos ángulos rectos como exige el método de Lill.
+Construimos una recta $a_2'$ paralela a $a_2$ a la misma distancia de $a_2$ que $a_2$ de $P$, y construimos una recta $a_1'$ paralela a $a_1$ a la misma distancia de $a_1$ que $a_1$ de $Q$. Aplicamos el axioma~6 para situar simultáneamente $P$ en $P'$ sobre $a_2'$ y para situar $Q$ en $Q'$ sobre $a_1'$. El pliegue $\overline{RS}$ es la mediatriz de las rectas $\overline{PP'}$ y $\overline{QQ'}$ por lo que los ángulos en $R$ y $S$ son ambos rectos como lo exige el método de Lill.
 
-La figura ~\ref{f.beloch-fold3} muestra el pliegue de Beloch para el polinomio $x^3-3x^2-3x+1$ (Sec.~\ref{s.negative}). $a_2$ es el segmento de recta vertical de longitud $3$ cuya ecuación es $x=1$, y su recta paralela es $a_2'$ cuya ecuación es $x=2$, porque $P$ está a una distancia de $1$ de $a_2$. $a_1$ es el segmento de recta horizontal de longitud $3$ cuya ecuación es $y=-3$, y su recta paralela es $a_1'$ cuya ecuación es $y=-2$ porque $Q$ está a una distancia de $1$ de $a_1$. El pliegue $\overline{RS}$ es la mediatriz tanto de $\overline{PP'}$ como de $\overline{QQ'}$, y la recta $\overline{PRSQ}$ es la misma que la segunda trayectoria de la Fig.~\ref{f.negative}.
+La figura ~\ref{f.beloch-fold3} muestra el pliegue de Beloch para el polinomio $x^3-3x^2-3x+1$ (Sec.~\ref{s.negative}). $a_2$ es el segmento vertical de longitud $3$ cuya ecuación es $x=1$, y su recta paralela es $a_2'$ cuya ecuación es $x=2$, porque $P$ está a una distancia de $1$ de $a_2$. $a_1$ es el segmento horizontal de longitud $3$ cuya ecuación es $y=-3$, y su recta paralela es $a_1'$ cuya ecuación es $y=-2$ porque $Q$ está a una distancia de $1$ de $a_1$. El pliegue $\overline{RS}$ es la mediatriz tanto de $\overline{PP'}$ como de $\overline{QQ'}$, y la recta $\overline{PRSQ}$ es la misma que la segunda trayectoria de la figura~\ref{f.negative}.
 
 \begin{figure}[t]
 \begin{center}
@@ -781,7 +781,7 @@ La figura ~\ref{f.beloch-fold3} muestra el pliegue de Beloch para el polinomio $
 
 \subsection*{¿Cuál es la sorpresa?}
 
-Ejecutar el método de Lill como un truco de magia nunca deja de sorprender. Puede realizarse durante una conferencia utilizando un programa de gráficos como GeoGebra. También sorprende que el método de Lill, publicado en $1867$, y el pliegue de Beloch, publicado en $1936$, precedieran en muchos años a la axiomatización del origami.
+Ejecutar el método de Lill como un truco de magia nunca deja de sorprender. Puede realizarse durante una presentación utilizando un programa de gráficos como GeoGebra. También sorprende que el método de Lill, publicado en $1867$, y el pliegue de Beloch, publicado en $1936$, precedieran en muchos años a la axiomatización del origami.
 
 \subsection*{Fuentes}
 

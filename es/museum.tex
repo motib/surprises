@@ -20,7 +20,7 @@ En 1973 Victor Klee se preguntó cuántos custodios son necesarios para vigilar 
 \caption{Un museo cuyas paredes forman un polígono convexo}\label{f.museum.convex}
 \end{figure}
 
-Consideremos ahora un museo con paredes en forma de sierra dentada (Fig.~\ref{f.museum.nonconvex}). Contando verificamos que el museo tiene $15$ paredes. Cada "diente" define un triángulo que está sombreado en gris en la Fig.~\ref{f.visibility-tooth}. Un guardia situado en cualquier lugar dentro de uno de los triángulos puede observar todas las paredes que limitan ese triángulo (flechas rojas).
+Consideremos ahora un museo con paredes en forma de sierra dentada (Fig.~\ref{f.museum.nonconvex}). Contando verificamos que el museo tiene $15$ paredes. Cada <<diente>> define un triángulo que está sombreado en gris en la figura~\ref{f.visibility-tooth}. Un guardia situado en cualquier lugar dentro de uno de los triángulos puede observar todas las paredes que limitan ese triángulo (flechas rojas).
 \begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
@@ -78,10 +78,10 @@ Consideremos ahora un museo con paredes en forma de sierra dentada (Fig.~\ref{f.
 \vertexcolor{G2}{red};
 \end{tikzpicture}
 \end{center}
-\caption{Visibilidad dentro de cada ``diente''}\label{f.visibility-tooth}
+\caption{Visibilidad dentro de cada <<diente>>}\label{f.visibility-tooth}
 \end{figure}
 
-Si al menos uno de los guardias se coloca cerca de la pared superior que abarca todo el museo, podrá observar todas las paredes horizontales (flechas azules en la Fig.~\ref{f.museum.shaded}). Así pues, bastan $5=15/3$ guardias para observar todas las paredes del museo. Como los triángulos no se superponen, un vigilante de un triángulo no podrá observar todas las paredes de otro triángulo (flecha verde), por lo que se necesitan $5$ vigilantes.
+Si al menos uno de los guardias se coloca cerca de la pared superior que abarca todo el museo, podrá observar todas las paredes horizontales (flechas azules en la figura~\ref{f.museum.shaded}). Así pues, bastan $5=15/3$ guardias para observar todas las paredes del museo. Como los triángulos no se superponen, un vigilante de un triángulo no podrá observar todas las paredes de otro triángulo (flecha verde), por lo que se necesitan $5$ vigilantes.
 
 \begin{figure}[ht]
 \begin{center}
@@ -124,7 +124,7 @@ Si al menos uno de los guardias se coloca cerca de la pared superior que abarca 
 \caption{Visibilidad de las paredes del museo}\label{f.museum.shaded}
 \end{figure}
 
-El ejemplo de la Fig.~\ref{f.museum.nonconvex} puede generalizarse a $n/3$ dientes con $n$ paredes, por lo que concluimos que \emph{al menos} $n/3$ guardas son necesarios. Queremos demostrar que $n/3$ guardianes son suficientes para vigilar cualquier museo.
+El ejemplo de la figura~\ref{f.museum.nonconvex} puede generalizarse a $n/3$ dientes con $n$ paredes, por lo que concluimos que \emph{al menos} $n/3$ guardas son necesarios. Queremos demostrar que $n/3$ guardianes son suficientes para vigilar cualquier museo.
 
 La sección~\ref{s.museum-triangulating} demuestra que cualquier polígono triangulado puede ser tricolor. Esto se utiliza en la sección~\ref{s.museum-guard} para demostrar el teorema de que $n/3$ guardias son suficientes. La sección~\ref{s.museum-triangulated} completa la demostración demostrando que cualquier polígono puede ser triangulado.
 
@@ -145,7 +145,7 @@ Aplazamos la demostración de este Teorema.
 \begin{definition}
 Un vértice de un polígono es \emph{convexo}\index{Polígono!vértices convexos y cóncavos} si su ángulo interior es menor que $180^\circ$; un vértice es \emph{cóncavo} si su ángulo interior es mayor que $180^\circ$. 
 \end{definition}
-En la Fig.~\ref{f.museum.arbitrary} el vértice $1$ es convexo y el vértice $2$ es cóncavo.
+En la figura~\ref{f.museum.arbitrary} el vértice $1$ es convexo y el vértice $2$ es cóncavo.
 
 \begin{figure}[ht]
 \begin{center}
@@ -184,7 +184,7 @@ Un polígono triangulado puede ser coloreado con tres colores.\label{thm.colored
 \begin{proof}
 Por inducción sobre el número de vértices. Un triángulo puede ser coloreado con tres colores. Un polígono triangulado con $n>3$ vértices debe tener una diagonal. Elegimos una diagonal arbitraria $\overline{AB}$ (Fig.~\ref{f.museum.three-1}) y dividimos el polígono a lo largo de esta diagonal en dos polígonos más pequeños (Fig.~\ref{f.museum.three-2}). Por inducción, cada uno de estos polígonos más pequeños puede ser de tres colores (Fig.~\ref{f.museum.three-3}).
 
-Como los colores asignados son arbitrarios, si se asignan colores diferentes a $A,B$ en los dos polígonos, podemos reasignar los colores en uno de ellos para que los colores de $A,B$ sean los mismos en ambos polígonos. Por ejemplo, en la Fig.~\ref{f.museum.three-4} intercambiamos \emph{rojo} y \emph{verde} en el polígono inferior.
+Como los colores asignados son arbitrarios, si se asignan colores diferentes a $A,B$ en los dos polígonos, podemos reasignar los colores en uno de ellos para que los colores de $A,B$ sean los mismos en ambos polígonos. Por ejemplo, en la figura~\ref{f.museum.three-4} intercambiamos \emph{rojo} y \emph{verde} en el polígono inferior.
 Adosamos los dos polígonos para recuperar el polígono original con $ n $ vértices. Este será de tres colores (Fig.~\ref{f.museum.three-5}).
 \end{proof}
 
@@ -508,7 +508,7 @@ Para cada ángulo exterior $\theta_i$ denotemos su correspondiente ángulo inter
 \displaystyle\sum_{i=1}^n \theta_i &=&\displaystyle\sum_{i=1}^n (180^\circ-\phi_i)= 360^\circ\\
 \displaystyle\sum_{i=1}^n \phi_i &=& n\cdot 180^\circ-360^\circ =180^\circ(n-2)\,.
 \end{eqnarray*}
-Si existe un vértice cóncavo ($B$ en la Fig.~\ref{f.museum.concave}), existe un triángulo formado por los dos lados incidentes con el vértice cóncavo y la recta $\overline{AC}$ que une los otros dos vértices. Sumando los ángulos del triángulo obtenemos:
+Si existe un vértice cóncavo ($B$ en la figura~\ref{f.museum.concave}), existe un triángulo formado por los dos lados incidentes con el vértice cóncavo y la recta $\overline{AC}$ que une los otros dos vértices. Sumando los ángulos del triángulo obtenemos:
 \begin{eqnarray*}
 (180^\circ - \alpha) + (360^\circ - \beta) + (180^\circ - \gamma) &=& 180^\circ\\
 \alpha + \beta + \gamma &=& 3\cdot 180^\circ\,.

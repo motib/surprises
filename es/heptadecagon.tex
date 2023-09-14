@@ -1,14 +1,14 @@
 % !TeX root = surprises.tex
 
-\chapter{Construction of a Regular Heptadecagon}\label{c.heptadecagon}
+\chapter{Construcción de un Heptadecágono regular}\label{c.heptadecagon}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Los únicos polígonos regulares que los griegos sabían construir con regla y compás eran el triángulo, el cuadrado, el pentágono y el polígono regular de $15$ lados. Dado un polígono regular de $n$ lados, se puede construir un polígono de $2n$ lados circunscribiendo el polígono con un círculo y bisecando el ángulo central (Fig.~\ref{f.hept-double}). No se hicieron más progresos hasta 1796, cuando Carl Friedrich Gauss se despertó una mañana, justo antes de cumplir 19 años, y mediante "pensamiento concentrado" descubrió cómo construir un \emph{heptadecágono} regular, un polígono regular con $17$ lados. Este logro le inspiró para convertirse en matemático.
+Los únicos polígonos regulares que los griegos sabían construir con regla y compás eran el triángulo, el cuadrado, el pentágono y el polígono regular de $15$ lados. Dado un polígono regular de $n$ lados, se puede construir un polígono de $2n$ lados circunscribiendo el polígono en una circunferencia y bisecando el ángulo central (Fig.~\ref{f.hept-double}). No se hicieron más progresos hasta 1796, cuando Carl Friedrich Gauss se despertó una mañana, justo antes de cumplir 19 años, y mediante <<pensamiento concentrado>> descubrió cómo construir un \emph{heptadecágono} regular, un polígono regular con $17$ lados. Este logro le inspiró para convertirse en matemático.
 
-En la sección~\ref{s.hept-regular} se analiza la relación entre el lado de un polígono inscrito en una circunferencia y el ángulo central que subtiende. En la sección~\ref{s.fundamental} se expone sin demostraciones el Teorema Fundamental del Álgebra. Sección~\ref{s.roots} presenta las raíces de la unidad, las raíces del polinomio $x^n-1$, que son fundamentales para la demostración de Gauss. Las secciones~\ref{s.gauss} y~\ref{s.derivation} presentan la demostración de Gauss que se basa en simetrías de raíces de polinomios. Gauss derivó una fórmula que demuestra que el heptadecágono es construible, pero no se dio una construcción geométrica hasta casi un siglo después. La sección "Construcción" ofrece una elegante construcción de James J. Callagy. La sección~\ref{s.hept-pentagon} muestra cómo las construcciones de un pentágono regular se pueden derivar utilizando tanto la geometría como la trigonometría.
+En la sección~\ref{s.hept-regular} se analiza la relación entre el lado de un polígono inscrito en una circunferencia y el ángulo central que subtiende. En la sección~\ref{s.fundamental} se expone sin demostraciones el Teorema Fundamental del Álgebra. Sección~\ref{s.roots} presenta las raíces de la unidad, las raíces del polinomio $x^n-1$, que son fundamentales para la demostración de Gauss. Las secciones~\ref{s.gauss} y~\ref{s.derivation} presentan la demostración de Gauss que se basa en simetrías de raíces de polinomios. Gauss derivó una fórmula que demuestra que el heptadecágono es construible, pero no se dio una construcción geométrica hasta casi un siglo después. La sección~\ref{s.construction} ofrece una elegante construcción de James J. Callagy. La sección~\ref{s.hept-pentagon} muestra cómo las construcciones de un pentágono regular se pueden derivar utilizando tanto la geometría como la trigonometría.
 
-Parte del material es más sencillo si se presenta utilizando números complejos. Este material se establece en las cajas que se pueden saltar.
+Parte del material es más sencillo si se presenta utilizando números complejos. Este material se establece en /los recuadros que se pueden omitir.
 \begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.4]
@@ -28,13 +28,13 @@ Parte del material es más sencillo si se presenta utilizando números complejos
 
 \section{Construcción de polígonos regulares}\label{s.hept-regular}
 
-La construcción del heptadecágono regular condujo al teorema de Gauss-Wantzel, que afirma que un polígono regular con $n$ lados se puede construir con una regla y un compás si y sólo si $n$ es el producto de una potencia de $2$ y cero o más números de Fermat que sean primos. números de Fermat $2^{2^k}+1$ que son primos. Los números primos de Fermat conocidos son:
+La construcción del heptadecágono regular condujo al teorema de Gauss-Wantzel, que afirma que un polígono regular con $n$ lados se puede construir con una regla y un compás si y sólo si $n$ es el producto de una potencia de $2$ y cero o más números de Fermat $2^{2^k}+1$ que son primos. Los números primos de Fermat conocidos son:
 \[
-F_0=3,\quad F_1=5,\quad F_2=17,\quad F_3=257,\quad F_4=65537\,.
+F_0=3,\quad F_1=5,\quad F_2=17,\quad F_3=257,\quad F_4=65,537\,.
 \]
-Un polígono regular con $257$ lados fue construido por Magnus Georg Paucker en $1822$ y por Friedrich Julius Richelot en $1832$. En $1894$ Johann Gustav Hermes afirmó haber construido un polígono regular con $65537$ lados.
+Un polígono regular con $257$ lados fue construido por Magnus Georg Paucker en $1822$ y por Friedrich Julius Richelot en $1832$. En $1894$ Johann Gustav Hermes afirmó haber construido un polígono regular con $65,537$ lados.
 
-Para construir un polígono regular basta con construir un segmento de recta de longitud $\cos \theta$, donde $\theta$ es el ángulo central subtendido por una cuerda que es un lado del polígono inscrito en un círculo unitario.Dado el segmento de recta $\overline{OB}=\cos\theta$, construir una perpendicular en $B$ y señalar su intersección con la circunferencia unitaria por $C$. Entonces:
+Para construir un polígono regular basta con construir un segmento de longitud $\cos \theta$, donde $\theta$ es el ángulo central subtendido por una cuerda que es un lado del polígono inscrito en un círculo unitario. Dado el segmento $\overline{OB}=\cos\theta$, construimos una perpendicular en $B$ y denotamos con $C$ su intersección con la circunferencia unitaria. Entonces:
 \begin{eqnarray*}
 \cos \theta&=&\displaystyle\frac{\overline{OB}}{\overline{OC}}=\overline{OB}\\
 \theta &=& \cos^{-1} (\overline{OB})\,.
@@ -61,7 +61,7 @@ La cuerda $\overline{AC}$ es un lado del polígono regular (Fig.~\ref{f.hept-cen
 \caption{El coseno del ángulo central de un polígono regular}\label{f.hept-central1}
 \end{figure}
 
-Dado un segmento de recta definido con longitud $1$, las longitudes que son construibles son las que se pueden obtener a partir de segmentos de recta de longitud conocida mediante las operaciones $\{+,-,\times,/,\surd\}$ (Sect.~\ref{s.trisect-constructible}). Gauss demostró que $\cos(360^\circ/17)$, el coseno del ángulo central de un heptadecágono, es construible ya que se puede expresar utilizando sólo estas operaciones:\index{Heptadecagon!cosine of the central angle}
+Dado un segmento definido como de longitud $1$, las longitudes que son construibles son las que se pueden obtener a partir de segmentos de longitud conocida mediante las operaciones $\{+,-,\times,/,\surd\}$ (Sec.~\ref{s.trisect-constructible}). Gauss demostró que $\cos(360^\circ/17)$, el coseno del ángulo central de un heptadecágono, es construible ya que se puede expresar utilizando sólo estas operaciones:\index{Heptadecagon!cosine of the central angle}
 \begin{eqnarray*}
 \cos\left(\frac{360^\circ}{17}\right) &=& 
 -\frac{1}{16}+\frac{1}{16}\sqrt{17} + 
@@ -86,15 +86,15 @@ El siguiente teorema se utilizará sin demostración.
 El enunciado del teorema se ha simplificado porque todo lo que necesitaremos saber es que $n$ raíces \emph{existen}.
 
 \begin{advanced}
-\textbf{El Teorema Fundamental del Álgebra} afirma que todo polinomio no constante de grado $n$ en una sola variable con \emph{complex} coeficientes tiene exactamente $n$ \emph{complex} raíces. 
+\textbf{El Teorema Fundamental del Álgebra} afirma que todo polinomio no constante de grado $n$ en una sola variable con coeficientes \emph{complejos}  tiene exactamente $n$ raíces \emph{complejos}.
 Si hay varias raíces con el mismo valor, se cuentan todas: $x^2-4x+4=(x-2)(x-2)$ tiene dos raíces ambas iguales a $2$.
 El polinomio $x^2+1$ con coeficientes enteros tiene dos raíces complejas $\pm\sqrt{-1}$.
 Curiosamente, aunque el teorema se refiere a entidades algebraicas finitas -polinomios de grado $n$ con $n$ raíces- se necesitan métodos de análisis, normalmente análisis complejo, para demostrar el teorema.
 \end{advanced}
 
-\section{Raíces de unidad}\label{s.roots}
+\section{Raíces de la unidad}\label{s.roots}
 
-Por el Teorema Fundamental del Álgebra (Teorema~\ref{thm.fundamental}) el polinomio $x^{n}-1$ tiene $n$ raíces para cualquier entero $n> 1$. Una raíz es $x=1$ por lo que hay $n-1$ otras raíces. Denotemos una de estas raíces por $r$. Desde $r^{n}=1$ se llama un \emph{$n$-ésima raíz de la unidad}. ¿Y $r^2$?
+Por el Teorema Fundamental del Álgebra (Teorema~\ref{thm.fundamental}) el polinomio $x^{n}-1$ tiene $n$ raíces para cualquier entero $n> 1$. Una raíz es $x=1$ por lo que hay otras $n-1$ raíces. Denotemos una de estas raíces con $r$. Como $r^{n}=1$ se llama una \emph{enésima raíz de la unidad}. ¿Y $r^2$?
 \[
 (r^{2})^n=(r^{n})^2=1^2=1\,.
 \]
@@ -105,31 +105,31 @@ Se deduce que los números $n$:
 son $n$-ésimas raíces de la unidad.
 
 \begin{advanced}
-Let $r=\cos \left(\frac{2\pi}{n}\right) + i\sin  \left(\frac{2\pi}{n}\right)$.
+Sea $r=\cos \left(\frac{2\pi}{n}\right) + i\sen  \left(\frac{2\pi}{n}\right)$.
 Por la fórmula de Moivre:\index{fórmula de Moivre}
 \[
-\left[\cos \left(\frac{2\pi}{n}\right) + i\sin  \left(\frac{2\pi}{n}\right)\right]^{n}=
-\cos \left(\frac{2 n\pi}{n}\right) + i\sin  \left(\frac{2 n\pi}{n}\right)= 1\,.
+\left[\cos \left(\frac{2\pi}{n}\right) + i\sen  \left(\frac{2\pi}{n}\right)\right]^{n}=
+\cos \left(\frac{2 n\pi}{n}\right) + i\sen  \left(\frac{2 n\pi}{n}\right)= 1\,.
 \]
 \end{advanced}
 
 \begin{theorem}
-Sea $n$ un \emph{número primo} y sea $r$ una raíz $n$-ésima de la unidad. Entonces:
+Sea $n$ un \emph{número primo} y sea $r$ una raíz enésima de la unidad. Entonces:
 \[
 \{1,r,r^2,\ldots,r^{n-2},r^{n-1}\}
 \]
-son distintos por lo que son \emph{all} la $n$-ésima raíces de la unidad.
+son distintos por lo que son \emph{todas} las enésimas raíces de la unidad.
 \end{theorem}
 
 \begin{proof}
-Supongamos que las potencias no son distintas de modo que $r^i=r^j$ para algún $0\leq i<j\leq n-1$. Entonces $r^j/r^i=r^{j-i}=1$ por lo que existe al menos un entero positivo $i'$ menor que $n$ tal que $r^{i'}=1$. Sea $m$ el menor de dichos enteros positivos. Por el algoritmo de división de enteros $n=ml+k$ para algún $0<l<n$ y $0\leq k<m$. De:
+Supongamos que las potencias no son distintas de modo que $r^i=r^j$ para algún $0\leq i<j\leq n-1$. Entonces $r^j/r^i=r^{j-i}=1$ por lo que existe al menos un entero positivo $i'$ menor que $n$ tal que $r^{i'}=1$. Sea $m$ el menor de dichos enteros positivos. Por el algoritmo de la división de enteros $n=ml+k$ para algún $0<l<n$ y $0\leq k<m$. De:
 \[
 1=r^n=r^{ml+k}=(r^m)^l\cdot r^k=1^l\cdot r^k=r^k\,,
 \]
 tenemos $0\leq k<m$ y $r^k=1$. Dado que $m$ se definió como el menor entero positivo $k=0$ y $n=ml$ no es primo.
 \end{proof}
 
-\begin{theorem} Sean $\{a_1,a_2,\ldots,a_{n-1},a_n\}$ las raíces de un polinomio de grado $n$-ésimo $f(x)$. Entonces:
+\begin{theorem} Sean $\{a_1,a_2,\ldots,a_{n-1},a_n\}$ las raíces de un polinomio de enésimo grado $f(x)$. Entonces:
 \begin{align}\label{eq.viete}
 f(x) =(x-a_1) (x-a_2)\cdots (x-a_{n-1})(x-a_n)\,.
 \end{align}
@@ -141,7 +141,7 @@ Si $a_i$ es una raíz de $f(x)$ por definición $f(a_i)=0$ pero:
 f(a_i)&=&(a_i-a_1) (a_i-a_2)\cdots (a_i-a_{n-1})(a_i-a_n)\\
 &=&\cdots (a_i-a_i) \cdots =0\,.
 \end{eqnarray*}
-Por tanto, $f(x)=(x-a_i)g_i(x)$ para algún $g_i(x)$ y por inducción esto vale para todas las raíces.
+Por lo tanto, $f(x)=(x-a_i)g_i(x)$ para algún $g_i(x)$ y por inducción esto vale para todas las raíces.
 \end{proof}
 
 A partir de la Ecuación~\ref{eq.viete} es fácil ver que el coeficiente de $x^{n-1}$ es:
@@ -172,11 +172,11 @@ donde las raíces han sido reducidas modulo $17$:
 \[
 r^{17m+k}=(r^{17})^m\cdot r^k=1^m\cdot r^k=r^k\,.
 \]
-Comdemostración que la lista contiene todas las raíces (excepto $1$) exactamente una vez:
+Corroboramos que la lista contiene todas las raíces (excepto $1$) exactamente una vez:
 \begin{align}\label{eq.roots}
 r^1, r^3, r^9, r^{10}, r^{13}, r^5, r^{15}, r^{11}, r^{16}, r^{14}, r^8, r^7, r^4, r^{12}, r^2, r^6\,.
 \end{align}
-Dado un polinomio cuadrático monicónico cuyas raíces son $a,b$:
+Dado un polinomio cuadrático monicó cuyas raíces son $a,b$:
 \[
 y^2+py+q=(y-a)(y-b)=0\,,
 \]
@@ -198,7 +198,7 @@ Para obtener $a_0,a_1$ como raíces de una ecuación cuadrática primero se calc
 \[
 a_0+a_1=r + r^2 + \cdots +r^{16}=-1\,.
 \]
-Ahora tenemos que trabajar mucho para calcular su producto. La figura muestra el cálculo donde los valores de $r^ir^j=r^{i+j}$ se escriben después de reducir los exponentes modulo $17$. Compruebe que cada raíz se produce exactamente cuatro veces para que - de nuevo utilizando Ecuación~\ref{eq.minus-one} - el valor del producto es $-4$.
+Ahora tenemos que trabajar mucho para calcular su producto. La figura muestra el cálculo donde los valores de $r^ir^j=r^{i+j}$ se escriben después de reducir los exponentes modulo $17$. Comprobamos que cada raíz se produce exactamente cuatro veces para que - de nuevo utilizando Ecuación~\ref{eq.minus-one} - el valor del producto es $-4$.
 
 \begin{figure}[t]
 \[
@@ -231,7 +231,7 @@ b_1&=& r^3+ r^{5} + r^{14} + r^{12}\\
 b_2&=& r^9+ r^{15} + r^{8} + r^2\\
 b_3&=& r^{10}+ r^{11} + r^{7} + r^6\,.
 \end{eqnarray*}
-Comdemostración que $b_0+b_2=a_0, b_1+b_3=a_1$ y calcula los productos correspondientes:
+Corroboramos que $b_0+b_2=a_0, b_1+b_3=a_1$ y calcula los productos correspondientes:
 \begin{eqnarray*}
 b_0b_2&=&(r + r^{13} + r^{16} +r^4)\;\;\times\;(r^9 + r^{15} + r^{8} +r^{2})\\
 &=&(r^{10}+r^{16}+r^9+r^3)\,+\;\,(r^{5}+r^{11}+r^4+r^{15})+\\
@@ -395,8 +395,8 @@ El coseno del ángulo central de un heptadecágono es construible con regla y co
 
 \begin{advanced}
 \begin{eqnarray*}
-r_1+r_{16}&=&\cos\left(\frac{2\pi}{17}\right)+i\sin\left(\frac{2\pi}{17}\right)+\cos\left(\frac{2\cdot 16\pi}{17}\right)+i\sin\left(\frac{2\cdot 16\pi}{17}\right)\\
-&=&\cos\left(\frac{2\pi}{17}\right)+i\sin\left(\frac{2\pi}{17}\right)+\cos\left(\frac{-2\pi}{17}\right)+i\sin\left(\frac{-2\pi}{17}\right)\\
+r_1+r_{16}&=&\cos\left(\frac{2\pi}{17}\right)+i\sen\left(\frac{2\pi}{17}\right)+\cos\left(\frac{2\cdot 16\pi}{17}\right)+i\sen\left(\frac{2\cdot 16\pi}{17}\right)\\
+&=&\cos\left(\frac{2\pi}{17}\right)+i\sen\left(\frac{2\pi}{17}\right)+\cos\left(\frac{-2\pi}{17}\right)+i\sen\left(\frac{-2\pi}{17}\right)\\
 &=&2\cos\left(\frac{2\pi}{17}\right)\,.
 \end{eqnarray*}
 \end{advanced}
@@ -493,11 +493,11 @@ Construimos una circunferencia unitaria centrada en $O$ con diámetros perpendic
 \end{figure}
 Construimos $A$ de modo que $\overline{OA}=(1/4)\overline{OR}$.
 
-By Pythagoras's Theorem:
+Por el Teorema de Pitágoras:
 \[
 \overline{AP}=\sqrt{\overline{OA}^2+\overline{OP}^2}=\sqrt{(1/4)^2+1^2}=\sqrt{17}/4\,.
 \]
-Sea $B$ la intersección de la bisectriz interna del $\angle OAP$ y el segmento de recta $\overline{OP}$ y sea $C$ la intersección de la bisectriz externa del $\angle OAP$ y el segmento de recta $\overline{QO}$. Por el teorema de la bisectriz interna del ángulo (Teorema~\ref{thm.angle-bisector}):
+Sea $B$ la intersección de la bisectriz interna del $\angle OAP$ y el segmento $\overline{OP}$ y sea $C$ la intersección de la bisectriz externa del $\angle OAP$ y el segmento $\overline{QO}$. Por el teorema de la bisectriz interna del ángulo (Teorema~\ref{thm.angle-bisector}):
 \begin{eqnarray*}
 \frac{\overline{OB}}{\overline{BP}}&=&\frac{\overline{AO}}{\overline{AP}}\\
 \frac{\overline{OB}}{1-\overline{OB}}&=&\frac{1/4}{\sqrt{17}/{4}}\\
@@ -562,14 +562,13 @@ Construimos $D$ sobre $\overline{OP}$ tal que $\overline{CD}=\overline{CA}=a$ (F
 \end{center}
 \caption{Construcción de un heptadecágono (2)}\label{f.hept-construction2}
 \end{figure}
-
-Construimos $E$ en $\overline{OP}$ tal que $\overline{BE}=\overline{BA}=b$; de nuevo por el Teorema de Pitágoras:
+Construimos $E$ en $\overline{OP}$ tal que $\overline{BE}=\overline{BA}=b$; nuevamente por el Teorema de Pitágoras:
 \begin{eqnarray*}
 \overline{BE}=\overline{BA}&=&\sqrt{\overline{OA}^2+\overline{OB}^2}\\
 &=&\sqrt{\left(\frac{1}{4}\right)^2+\left(\frac{-1+\sqrt{17}}{16}\right)^2}=\frac{1}{16}\sqrt{16+1+17-2\sqrt{17}}\\
 &=&\frac{1}{16}\sqrt{34-2\sqrt{17}}\,.
 \end{eqnarray*}
-Construimos $M$ como punto medio de $\overline{QD}$ y construir $F$ en $\overline{OS}$ tal que $\overline{MF}=\overline{MQ}=f$:
+Construimos $M$ como punto medio de $\overline{QD}$ y construimos $F$ en $\overline{OS}$ tal que $\overline{MF}=\overline{MQ}=f$:
 \begin{eqnarray*}
 \overline{MF}=\overline{MQ}&=&\frac{1}{2}\overline{QD}=\frac{1}{2}(\overline{QC}+\overline{CD})=\frac{1}{2}((1-\overline{OC})+\overline{CD})\\
 &=&\frac{1}{2}\left[1-\left(\frac{1+\sqrt{17}}{16}\right)+\frac{\sqrt{34+2\sqrt{17}}}{16}\right]\\
@@ -638,14 +637,14 @@ Nótese que $\overline{MO}=1-\overline{MQ}=1-\overline{MF}$.
 \caption{Construcción de un heptadecágono (3)}\label{f.hept-construction3}
 \end{figure}
 
-Construimos una semicircunferencia cuyo diámetro sea $\overline{OE}$. Construimos una cuerda $\overline{OG}=\overline{OF}=g$ (Fig.~\ref{f.hept-construction3}). Mediante Pythagoras's Theorem:
+Construimos una semicircunferencia cuyo diámetro sea $\overline{OE}$. Construimos una cuerda $\overline{OG}=\overline{OF}=g$ (Fig.~\ref{f.hept-construction3}). Mediante el Teorema de Pitágoras:
 \begin{eqnarray*}
 \overline{OG}=\overline{OF}&=&\sqrt{\overline{MF}^2-\overline{MO}^2}=\sqrt{\overline{MF}^2-(1-\overline{MF})^2}\\
 &=&\sqrt{2\overline{MF}-1}\\
 &=&\sqrt{\frac{1}{16}\left(15-\sqrt{17}+\sqrt{34+2\sqrt{17}}\right)-1}\\
 &=&\frac{1}{4}\sqrt{-1-\sqrt{17}+\sqrt{34+2\sqrt{17}}}\,.
 \end{eqnarray*}
-$\angle OGE$ es un ángulo recto, ya que es subtendida por un diámetro del círculo. Construimos $H$ sobre $\overline{OP}$ tal que $\overline{EH}=\overline{EG}=e$; de nuevo por el Teorema de Pitágoras:
+$\angle OGE$ es un ángulo recto, ya que es subtendido por un diámetro del círculo. Construimos $H$ sobre $\overline{OP}$ tal que $\overline{EH}=\overline{EG}=e$; nuevamente por el Teorema de Pitágoras:
 \begin{eqnarray*}
 \overline{EH}=\overline{EG}&=&\sqrt{\overline{OE}^2-\overline{OG}^2}=\sqrt{(\overline{OB}+\overline{BE})^2-\overline{OG}^2}\\
 &=&\sqrt{\left(\frac{-1+\sqrt{17}}{16}+\frac{\sqrt{34-2\sqrt{17}}}{16}\right)^2-
@@ -661,14 +660,14 @@ $\angle OGE$ es un ángulo recto, ya que es subtendida por un diámetro del cír
 }\,.
 \end{eqnarray*}
 
-Compute $\overline{OE}$:
+Calculamos $\overline{OE}$:
 \begin{eqnarray*}
 \overline{OE}=\overline{OB}+\overline{BE}&=&\frac{-1+\sqrt{17}}{16}+\frac{1}{16}\sqrt{34-2\sqrt{17}}\\
 &=&\frac{1}{16}\left(-1+\sqrt{17}+\sqrt{34-2\sqrt{17}}\right)\,.
 \end{eqnarray*}
 Finalmente, $\overline{OH}=\overline{OE}+\overline{EH}$ que es la fórmula de Gauss para $\cos (360^\circ/17)$.
 
-\section{Construction of a Regular Pentagon}\label{s.hept-pentagon}
+\section{Construcción de un Pentágono Regular}\label{s.hept-pentagon}
 \index{Construction!pent@of a regular pentagon}
 
 \begin{advanced}
@@ -681,8 +680,8 @@ Las quintas raíces complejas de la unidad son:
 \subsection{Trigonometría}
 El ángulo central de un pentágono regular es $360^\circ/5=72^\circ$. Calculemos $\cos 36^\circ$ utilizando las identidades trigonométricas para $2\theta$ y $\theta/2$ (Teoremas.~\ref{s.sum-of-trig}, \ref{thm.sine-cosine-half}):
 \begin{eqnarray*}
-0=\cos 90^\circ &=& \cos(72^\circ+18^\circ)=\cos 2\cdot 36^\circ\cos 36^\circ/2 - \sin 2\cdot 36^\circ\sin 36^\circ/2\\
-&=&(2\cos^2 36^\circ-1)\sqrt{\frac{1+\cos 36^\circ}{2}}-2\sin 36^\circ\cos 36^\circ\sqrt{\frac{1-\cos 36^\circ}{2}}\,.
+0=\cos 90^\circ &=& \cos(72^\circ+18^\circ)=\cos 2\cdot 36^\circ\cos 36^\circ/2 - \sen 2\cdot 36^\circ\sen 36^\circ/2\\
+&=&(2\cos^2 36^\circ-1)\sqrt{\frac{1+\cos 36^\circ}{2}}-2\sen 36^\circ\cos 36^\circ\sqrt{\frac{1-\cos 36^\circ}{2}}\,.
 \end{eqnarray*}
 Ahora sólo hay un ángulo en la fórmula; sea $x=\cos 36^\circ$. Entonces:
 \begin{eqnarray*}
@@ -727,11 +726,11 @@ Sea $\overline{ABCDE}$ un pentágono regular (Fig.~\ref{f.hept-pentagon2}). Por 
 \end{center}
 \caption{Construcción de un pentágono regular (1)}\label{f.hept-pentagon2}
 \end{figure}
-$\triangle ACE\cong \triangle CAD$ por lado-lado por lo que $\angle ACE=\angle CAD=\theta$. $\triangle AED\cong\triangle CDE$ por lado-lado por lo que $\angle ADE=\angle CED=\phi$. $\angle AFC=\angle EFD=\psi$ son ángulos verticales. En ambos triángulos la suma de los ángulos es $180^\circ$ por lo que
+$\triangle ACE\cong \triangle CAD$ por lado-lado por lo que $\angle ACE=\angle CAD=\theta$. $\triangle AED\cong\triangle CDE$ por lado-lado-lado por lo que $\angle ADE=\angle CED=\phi$. $\angle AFC=\angle EFD=\psi$ son ángulos opuestos por el vértice. En ambos triángulos la suma de los ángulos es $180^\circ$ por lo que
 $\psi+2\theta=\psi+ 2\phi$ y $\theta=\phi$.
 Por alternancia de ángulos interiores concluimos que $\overline{AC}\parallel \overline{DE}$.
 
-Construimos una recta que pase por $E$ paralela a $\overline{DC}$ y sea $F$ su intersección con $\overline{AC}$ (Fig.~\ref{f.hept-pentagon3}). $\overline{CDEF}$ es un rombo por lo que $\overline{EF}=\overline{CD}=\overline{AE}=1$. $\triangle ACE$ es un triángulo isóceles con ángulos de base $\alpha$. $\triangle AEF$ también es isóceles y $\angle AFE=\angle FAE=\alpha$ por lo que $\triangle ACE\sim\triangle AEF$. Tomando cocientes de los lados da:
+Construimos una recta que pase por $E$ paralela a $\overline{DC}$ y sea $F$ su intersección con $\overline{AC}$ (Fig.~\ref{f.hept-pentagon3}). $\overline{CDEF}$ es un rombo por lo que $\overline{EF}=\overline{CD}=\overline{AE}=1$. $\triangle ACE$ es un triángulo isósceles con ángulos de base $\alpha$. $\triangle AEF$ también es isósceles y $\angle AFE=\angle FAE=\alpha$ por lo que $\triangle ACE\sim\triangle AEF$. Tomando cocientes de los lados da:
 \[
 \frac{x}{1}=\frac{1}{x-1}\,.
 \]

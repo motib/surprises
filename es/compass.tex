@@ -1,19 +1,19 @@
 % !TeX root = surprises.tex
 
-\chapter{Basta con una brújula}\label{c.compass}
+\chapter{Un compás es suficiente}\label{c.compass}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \index{Construction!compass@with only a compass|(}
-En 1797 Lorenzo Mascheroni demostró que cualquier construcción realizada con regla y compás puede realizarse sólo con compás. Más tarde se supo que este teorema ya había sido demostrado por Georg Mohr en 1672.\index{Teorema Mohr-Mascheroni}.
-Después de explicar en Sect.~\ref{s.compass-what} lo que se entiende por la realización de una construcción con sólo un compás, la demostración se presenta en etapas a partir de cuatro construcciones auxiliares: la reflexión de un punto (Sect.~\ref{s.reflection}), construcción de un círculo con un radio dado (Sec.~\ref{s.circle}), suma y resta de segmentos de recta (Sec.~\ref{s.add-subtract}) y construcción de un segmento de recta como cociente de segmentos (Sec.~\ref{s.three}). La sección ~\ref{s.two-lines} muestra cómo encontrar la intersección de dos líneas y la sección ~\ref{s.line-circle} muestra cómo encontrar la intersección de una línea y un círculo.
+En 1797 Lorenzo Mascheroni demostró que cualquier construcción realizada con regla y compás puede realizarse sólo con compás. Más tarde se supo que este teorema ya había sido demostrado por Georg Mohr en 1672.
+Después de explicar en Sec.~\ref{s.compass-what} lo que se entiende por la realización de una construcción con sólo un compás, la demostración se presenta en etapas a partir de cuatro construcciones auxiliares: la reflexión de un punto (Sec.~\ref{s.reflection}), la construcción de un círculo con un radio dado (Sec.~\ref{s.circle}), suma y resta de segmentos (Sec.~\ref{s.add-subtract}) y construcción de un segmento como cociente de segmentos (Sec.~\ref{s.three}). La sección~\ref{s.two-lines} muestra cómo encontrar la intersección de dos líneas y la sección~\ref{s.line-circle} muestra cómo encontrar la intersección de una línea y un círculo.
 
 \section{¿Qué es una construcción con sólo un compás?}\label{s.compass-what}
 
-Figura~\ref{f.compass-equi} muestra la construcción de un triángulo equilátero utilizando una regla y un compás. ¿Cómo podemos construir un triángulo sin los segmentos de recta $\overline{AB}, \overline{AC}, \overline{BC}$? Un segmento de recta está definido por dos puntos, por lo que basta con construir estos puntos para obtener una construcción equivalente a la realizada con regla (Fig.~\ref{f.compass-equi-only}). No es necesario \emph{ver} realmente los segmentos de recta.
+Figura~\ref{f.compass-equi} muestra la construcción de un triángulo equilátero utilizando una regla y un compás. ¿Cómo podemos construir un triángulo sin los segmentos $\overline{AB}, \overline{AC}, \overline{BC}$? Un segmento está definido por dos puntos, por lo que basta con construir estos puntos para obtener una construcción equivalente a la realizada con regla (Fig.~\ref{f.compass-equi-only}). No es necesario \emph{ver} realmente los segmentos.
 Habrá líneas en las figuras de este capítulo, pero se utilizan sólo para entender la construcción y la demostración de su exactitud. Es importante convencerse de que la construcción en sí utiliza sólo un compás.
 
-\begin{figure}[ht]
+\begin{figure}[b]
 \begin{minipage}{.45\textwidth}
 \begin{center}
 \begin{tikzpicture}[scale=0.6]
@@ -55,7 +55,6 @@ Habrá líneas en las figuras de este capítulo, pero se utilizan sólo para ent
 
 Una construcción con regla y compás es una secuencia de tres operaciones:
 \begin{itemize}
-\item Encontrar el punto de intersección de dos rectas.
 \item Hallar el punto de intersección de dos rectas.
 \item Hallar el punto o puntos de intersección de una recta y una circunferencia.
 \item Hallar el punto o puntos de intersección de dos circunferencias.
@@ -65,9 +64,8 @@ La tercera operación se puede hacer sólo con un compás. Tenemos que demostrar
 \noindent{}Notation:
 \begin{itemize}
 \item $c(O,A)$: la circunferencia con centro $O$ que pasa por el punto $A$.
-\item $c(O,A)$: la circunferencia con centro $O$ que pasa por el punto $A$.
 \item $c(O,r)$: la circunferencia con centro $O$ y radio $r$.
-\item $c(O,\overline{AB})$: la circunferencia con centro $O$ y radio la longitud del segmento de recta $\overline{AB}$.
+\item $c(O,\overline{AB})$: la circunferencia con centro $O$ y radio la longitud del segmento $\overline{AB}$.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -75,7 +73,7 @@ La tercera operación se puede hacer sólo con un compás. Tenemos que demostrar
 \section{Reflexión de un punto}\label{s.reflection}
 
 \begin{definition}
-Un punto $C'$ es un \emph{reflejo} del punto $C$ alrededor de un segmento de recta $\overline{AB}$ si y sólo si $\overline{AB}$ (o la recta que contiene a $\overline{AB}$) es la mediatriz del segmento de recta $\overline{CC'}$.
+Un punto $C'$ es un \emph{reflejo} del punto $C$ alrededor de un segmento $\overline{AB}$ si y sólo si $\overline{AB}$ (o la recta que contiene a $\overline{AB}$) es la mediatriz del segmento $\overline{CC'}$.
 \end{definition}
 
 \begin{theorem}\label{thm.compass-reflection}
@@ -84,7 +82,7 @@ Dada una recta $\overline{AB}$ y un punto $C$ que no está en $\overline{AB}$, e
 
 \begin{proof} 
 Construimos una circunferencia centrada en $A$ que pase por $C$ y una circunferencia centrada en $B$ que pase por $C$. La otra intersección de las dos circunferencias es el punto $C'$ que es la reflexión de $C$ (Fig.~\ref{f.compass-reflection}).
-$\triangle ABC \cong \triangle ABC'$ por lado-lado ya que $\overline{AC}, \overline{AC'}$ son radios de la misma circunferencia, al igual que $\overline{BC}, \overline{BC'}$ y $\overline{AB}$ es un lado común. Por tanto, $\angle CAB = \angle C'AB$ por lo que $\overline{AB}$ es el ángulo bisectriz del $\angle CAC'$. Pero $\triangle CAC'$ es un triángulo isósceles y el ángulo bisectriz $\overline{AB}$ es también la mediatriz de $\overline{CC'}$, la base de $\triangle CAC'$. Por definición $C'$ es la reflexión de $C$ alrededor de $\overline{AB}$.
+$\triangle ABC \cong \triangle ABC'$ por lado-lado ya que $\overline{AC}, \overline{AC'}$ son radios de la misma circunferencia, al igual que $\overline{BC}, \overline{BC'}$ y $\overline{AB}$ es un lado común. Por lo tanto, $\angle CAB = \angle C'AB$ por lo que $\overline{AB}$ es la bisectriz del ángulo $\angle CAC'$. Pero $\triangle CAC'$ es un triángulo isósceles y la bisectriz del ángulo $\overline{AB}$ es también la mediatriz de $\overline{CC'}$, la base de $\triangle CAC'$. Por definición $C'$ es la reflexión de $C$ alrededor de $\overline{AB}$.
 \end{proof}
 
 \begin{figure}[t]
@@ -124,7 +122,7 @@ Dados los puntos $A,B,C$ es posible construir $c(A,\overline{BC})$, la circunfer
 \end{theorem}
 
 \begin{proof}
-Construimos $c(A,B)$ y $c(B,A)$ y dejamos que $X,Y$ sean sus puntos de intersección (Fig.~\ref{f.compass-circle1}). $A$ es el reflejo de $B$ alrededor de $\overline{XY}$ ya que $\triangle YAX\cong \triangle YBX$ por lado-lateral. Por Teorema~\ref{thm.compass-reflection} construimos $C'$, el reflejo de $C$ alrededor de $\overline{XY}$ y luego construimos $c(A,\overline{AC'})$ (Fig.~\ref{f.compass-circle3}).
+Construimos $c(A,B)$ y $c(B,A)$ y tal que $X$, $Y$ son sus puntos de intersección (Fig.~\ref{f.compass-circle1}). $A$ es el reflejo de $B$ alrededor de $\overline{XY}$ ya que $\triangle YAX\cong \triangle YBX$ porque tienen sus tres lados correspondientes iguales. Por el Teorema~\ref{thm.compass-reflection} construimos $C'$, el reflejo de $C$ alrededor de $\overline{XY}$ y luego construimos $c(A,\overline{AC'})$ (Fig.~\ref{f.compass-circle3}).
 
 \begin{figure}[b]
 \begin{center}
@@ -156,7 +154,7 @@ Construimos $c(A,B)$ y $c(B,A)$ y dejamos que $X,Y$ sean sus puntos de intersecc
 \caption{Construcción de un círculo de radio determinado (1)}\label{f.compass-circle1}
 \end{figure}
 
-$\overline{XY}$ es la mediatriz de $\overline{CC'}$ y $\overline{AB}$. Denotemos la intersección de $\overline{XY}$ y $\overline{AB}$ por $D$ y la intersección de $\overline{XY}$ y $\overline{CC'}$ por $E$. Entonces $\overline{C'E}=\overline{EC}$, $\overline{AD}=\overline{DB}$ y $\\angle DEC=\angle DEC'$ es un ángulo recto, por lo que $\triangle DEC\cong\triangle DEC'$ por lado-ángulo-lado. Por tanto, $\overline{DC}=\overline{DC'}$ y $\angle ADC'=\angle BDC$ (son complementarios de $\angle EDC'=\angle EDC$). Se deduce que $\triangle ADC'\cong\triangle BDC$ por lado-ángulo-lado por lo que $\overline{AC'}=\overline{BC}$.
+$\overline{XY}$ es la mediatriz de $\overline{CC'}$ y $\overline{AB}$. Denotemos con $D$ a la intersección de $\overline{XY}$ y $\overline{AB}$ y con $E$ la intersección de $\overline{XY}$ y $\overline{CC'}$. Entonces $\overline{C'E}=\overline{EC}$, $\overline{AD}=\overline{DB}$ y $\angle DEC=\angle DEC'$ es un ángulo recto, por lo que $\triangle DEC\cong\triangle DEC'$ por lado-ángulo-lado. Por tanto, $\overline{DC}=\overline{DC'}$ y $\angle ADC'=\angle BDC$ (son complementarios de $\angle EDC'=\angle EDC$). Se deduce que $\triangle ADC'\cong\triangle BDC$ por lado-ángulo-lado por lo que $\overline{AC'}=\overline{BC}$.
 \end{proof}
 
 \begin{figure}[ht]
@@ -201,10 +199,10 @@ $\overline{XY}$ es la mediatriz de $\overline{CC'}$ y $\overline{AB}$. Denotemos
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Suma y resta de segmentos de línea}\label{s.add-subtract}
+\section{Suma y resta de segmentos}\label{s.add-subtract}
 
 \begin{theorem}\label{thm.add-subtract-mm}
-Dado un segmento de recta $\overline{PQ}$ de longitud $a$ y un segmento de recta $\overline{RS}$ de longitud $b$, es posible construir segmentos de recta $\overline{QT}, \overline{QU}$ tales que $\overline{PTQU}$ es un segmento de recta, la longitud de $\overline{PT}$ es $a-b$ y la longitud de $\overline{PU}$ es $a+b$ (Fig.~\ref{f.compass-add1}).
+Dado un segmento $\overline{PQ}$ de longitud $a$ y un segmento $\overline{RS}$ de longitud $b$, es posible construir segmentos $\overline{QT}, \overline{QU}$ tales que $\overline{PTQU}$ es un segmento, la longitud de $\overline{PT}$ es $a-b$ y la longitud de $\overline{PU}$ es $a+b$ (Fig.~\ref{f.compass-add1}).
 \end{theorem}
 \begin{figure}[ht]
 \begin{center}
@@ -233,18 +231,14 @@ Dado un segmento de recta $\overline{PQ}$ de longitud $a$ y un segmento de recta
 \draw[<->] (0,-1.5) -- node[fill=white] {$a+b$} (7,-1.5);
 \end{tikzpicture}
 \end{center}
-\caption{Suma y resta de segmentos de recta}\label{f.compass-add1}
+\caption{Suma y resta de segmentos}\label{f.compass-add1}
 \end{figure}
 
 La demostración es bastante larga y se presentará como una secuencia de construcciones.
 
-\index{Trapezoid, }
 \begin{theorem}\label{thm.compass-trapezoid}
-Se puede construir un trapecio .
+Se puede construir un trapecio isósceles.
 \end{theorem}
-
-\begin{proof}
-Sea $H$ un punto cualquiera sobre $c(Q,b)$. Construimos $H'$ su reflexión en torno a $\overline{PQ}$. Denotemos la longitud de $\overline{HH'}$ por $h$  (Fig.~\ref{f.compass--trap1}).
 
 \begin{figure}[ht]
 \begin{center}
@@ -268,10 +262,9 @@ Sea $H$ un punto cualquiera sobre $c(Q,b)$. Construimos $H'$ su reflexión en to
 \vertex{Q};
 \end{tikzpicture}
 \end{center}
-\caption{Construcción de un trapecio  (1)}\label{f.compass--trap1}
+\caption{Construcción de un trapecio isósceles (1)}\label{f.compass--trap1}
 \end{figure}
 
-Construimos las circunferencias $c(H,b)$, $c(Q,h)$. Sea $K$ un punto de intersección de las circunferencias y construyamos $K'$ la reflexión de $K$ en torno a $\overline{PQ}$ (Fig.~\ref{f.compass--trap2}).
 \begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.5]
@@ -321,9 +314,11 @@ in
 \draw[dashed] (Kp) -- (Hp) -- (Q);
 \end{tikzpicture}
 \end{center}
-\caption{Construcción de un trapecio  (2)}\label{f.compass--trap2}
+\caption{Construcción de un trapecio isósceles (2)}\label{f.compass--trap2}
 \end{figure}
-La recta que contiene $\overline{PQ}$ es la mediatriz de $\overline{HH'}$ y $\overline{KK'}$ por lo que $\overline{HH'}\parallel\overline{KK'}$. $\overline{KH}=b$ ya que es el radio de la circunferencia centrada en $H$, y $K',H'$ son reflexiones de $K,H$. $\triangle QQ'H\cong \triangle QQ'H'$ por lado-lateral y $\triangle KQH\cong \triangle K'QH'$ por lado-lateral, por lo que $\overline{K'H'}=\overline{KH}=b$. Resulta que $\overline{KHH'K'}$ es un trapecio isósceles cuyas bases son $\overline{HH'}=h$, $\overline{KK'}=2h$ (Fig.~\ref{f.compass--trap3}). Denotemos por $d$ la longitud de las diagonales $\overline{K'H}=\overline{KH'}$.
+\begin{proof}
+Sea $H$ un punto cualquiera sobre $c(Q,b)$. Construimos $H'$ su reflexión en torno a $\overline{PQ}$. Denotemos la longitud de $\overline{HH'}$ por $h$  (Fig.~\ref{f.compass--trap1}). Construimos las circunferencias $c(H,b)$, $c(Q,h)$. Sea $K$ un punto de intersección de las circunferencias y construyamos $K'$ la reflexión de $K$ en torno a $\overline{PQ}$ (Fig.~\ref{f.compass--trap2}).
+La recta que contiene $\overline{PQ}$ es la mediatriz de $\overline{HH'}$ y $\overline{KK'}$ por lo que $\overline{HH'}\parallel\overline{KK'}$. $\overline{KH}=b$ ya que es el radio de la circunferencia centrada en $H$, y $K',H'$ son reflexiones de $K,H$. $\triangle QQ'H\cong \triangle QQ'H'$ por lado-ángulo-lado y $\triangle KQH\cong \triangle K'QH'$ por lado-lado-lado, por lo que $\overline{K'H'}=\overline{KH}=b$. Resulta que $\overline{KHH'K'}$ es un trapecio isósceles cuyas bases son $\overline{HH'}=h$, $\overline{KK'}=2h$ (Fig.~\ref{f.compass--trap3}). Denotemos por $d$ la longitud de las diagonales $\overline{K'H}=\overline{KH'}$.
 \end{proof}
 
 \begin{figure}[ht]
@@ -367,11 +362,11 @@ in
 \draw (Kp) -- node[left] {$d$} (H);
 \end{tikzpicture}
 \end{center}
-\caption{Construcción de un trapecio  (3)}\label{f.compass--trap3}
+\caption{Construcción de un trapecio isósceles (3)}\label{f.compass--trap3}
 \end{figure}
 
 \begin{theorem}
-Un trapecio  puede estar circunscrito por un círculo.
+Un trapecio  puede estar inscrito en una circunferencia.
 \end{theorem}
 
 \begin{proof}
@@ -379,22 +374,22 @@ El teorema se deduce inmediatamente de Teoremas.~\ref{thm.quad-circum} y ~\ref{t
 \end{proof}
 
 \begin{theorem}\label{thm.ptolemy-trap}
-Para $d,b,h$ mostrados en Fig.~\ref{f.compass--trap3}, $d^2=b^2+2h^2$.
+Para $d,b,h$ mostrados en la figura~\ref{f.compass--trap3}, $d^2=b^2+2h^2$.
 \end{theorem}
 
 \begin{proof}
-El teorema se deduce del teorema de Ptolomeo (Teorema~\ref{thm.ptolemy}) que dice que en un cuadrilátero circunscrito por una circunferencia el producto de las diagonales es igual a la suma de los productos de los lados opuestos.
+El teorema se deduce del teorema de Ptolomeo (Teorema~\ref{thm.ptolemy}) que dice que en un cuadrilátero inscrito en una circunferencia el producto de las diagonales es igual a la suma de los productos de los lados opuestos.
 \end{proof}
 
 Ahora se puede dar la demostración de Teorema~\ref{thm.add-subtract-mm}.
 \begin{proof}
-Sea $X$ el punto de la recta $\overline{PQ}$ que prolonga $\overline{PQ}$ por $b$. (Eventualmente construiremos $X$.) Definir $x = \overline{K'X}$. En Teorema~\ref{thm.ptolemy-trap}:
+Sea $X$ el punto de la recta $\overline{PQ}$ que prolonga $\overline{PQ}$ por $b$. (Eventualmente construiremos $X$.) Definir $x = \overline{K'X}$. En el Teorema~\ref{thm.ptolemy-trap}:
 \[
 d^2=b^2 + 2h^2 = (x^2-h^2)+2h^2 =x^2+h^2\,.
 \]
 Dado que $\triangle QK'X$ es un triángulo rectángulo $x^2 = b^2 + h^2$ (Fig.~\ref{f.compass--trap4}).
 
-\begin{figure}[h]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.5]
 \coordinate (Q) at (0,0);
@@ -497,10 +492,10 @@ in
 \node[above left] at (K) {$K$};
 \end{tikzpicture}
 \end{center}
-\caption{Construcción del punto para sumar y restar (1)}\label{f.compass-two-circles}
+\caption{Construcción del punto para sumar y restar  segmentos (1)}\label{f.compass-two-circles}
 \end{figure}
 
-Construimos $X$ como la intersección de $c(K,x)$, $c(K',x)$ (Fig.~\ref{f.compass--trap6}). Como la longitud de $\overline{QX}$ es $\sqrt{x^2-h^2}=b$ la longitud de $\overline{PX}$ es $a+b$ y la longitud de $\overline{PX'}$ es $a-b$.
+Construimos $X$ como la intersección de $c(K,x)$, $c(K',x)$ (Fig.~\ref{f.compass--trap6}). Como la longitud de $\overline{QX}$ es $\sqrt{x^2-h^2}=b$, la longitud de $\overline{PX}$ es $a+b$ y la longitud de $\overline{PX'}$ es $a-b$.
 \end{proof}
 
 \begin{figure}[b]
@@ -571,22 +566,23 @@ in
 \draw[<->] ($(P)+(0,10mm)$) -- node[fill=white] {$a$} ($(Q)+(0,10mm)$);
 \end{tikzpicture}
 \end{center}
-\caption{Construcción del punto para sumar y restar (2)}\label{f.compass--trap6}
+\caption{Construcción del punto para sumar y restar segmentos
+ (2)}\label{f.compass--trap6}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Construcción de un segmento de línea como cociente de segmentos}\label{s.three}
+\section{Construcción de un segmento como cociente de segmentos}\label{s.three}
 
 \begin{theorem}\label{thm.compass-ratio}
-Dados segmentos de recta de longitud $n,m,s$, es posible construir un segmento de recta de longitud:
+Dados segmentos de longitud $n,m,s$, es posible construir un segmento de longitud:
 \[
 x = \frac{n}{m}s\,.
 \]
 \end{theorem}
 
 \begin{proof}
-Construimos dos circunferencias concéntricas $c_1 = c(Z,m)$ y $c_2 = c(Z,n)$\footnote{Suponemos que $m>n$; si no, cambiar la notación.}, y elegir un punto arbitrario $A$ en $c_1$. Por Teorema~\ref{thm.compass-radius} construir una cuerda $\overline{AB}$ de longitud $s$ sobre $c_1$ (Fig.~\ref{f.compass-relative1}). Si $\overline{AB}$ interseca $c_2$, por Teorema~\ref{thm.add-subtract-mm} multiplicar $m,n$ por un número $k$ para que la cuerda no interseca el círculo. Tenga en cuenta que esto no cambia el valor que estamos tratando de construir desde $x=\displaystyle\frac{kn}{km}s=\displaystyle\frac{n}{m}s$.
+Construimos dos circunferencias concéntricas $c_1 = c(Z,m)$ y $c_2 = c(Z,n)$\footnote{Suponemos que $m>n$; si no, cambiamos la notación.}, y elegimos un punto arbitrario $A$ en $c_1$. Por el Teorema~\ref{thm.compass-radius} construimos una cuerda $\overline{AB}$ de longitud $s$ sobre $c_1$ (Fig.~\ref{f.compass-relative1}). Si $\overline{AB}$ interseca $c_2$, por Teorema~\ref{thm.add-subtract-mm} multiplicamos $m,n$ por un número $k$ para que la cuerda no interseca el círculo. Notemos que esto no cambia el valor que estamos tratando de construir pues $x=\displaystyle\frac{kn}{km}s=\displaystyle\frac{n}{m}s$.
 
 \begin{figure}[b]
 \begin{minipage}{.45\textwidth}
@@ -642,7 +638,7 @@ Construimos dos circunferencias concéntricas $c_1 = c(Z,m)$ y $c_2 = c(Z,n)$\fo
 \end{minipage}
 \end{figure}
 
-Elegir un punto $H$ en $c_2$ y denotar la longitud de $\overline{AH}$ por $w$. Construimos $K$ sobre $c_2$ tal que la longitud de $\overline{BK}$ sea $w$ (Fig.~\ref{f.compass-relative2}). De $\triangle AHZ\cong\triangle BZK$ por lado-lado ya que $\overline{ZA}=\overline{ZB}=m$ son los radios del mismo círculo, como lo son $\overline{ZH}=\overline{ZK}=n$, y $\overline{AH}=\overline{BK}=w$ por construcción (Fig.~\ref{f.compass-relative3}). Del $\triangle AHZ\cong\triangle BZK$ se deduce $\angle AZH = \angle BZK$ y entonces $\angle AZB = \angle HZK$. Es difícil ver esta igualdad desde el diagrama, pero Fig.~\ref{f.compass-relative4} debería aclarar la relación entre los ángulos. 
+Elegimos un punto $H$ en $c_2$ y denotamos con $w$ la longitud de $\overline{AH}$. Construimos $K$ sobre $c_2$ tal que la longitud de $\overline{BK}$ sea $w$ (Fig.~\ref{f.compass-relative2}). De $\triangle AHZ\cong\triangle BZK$ por lado-lado-lado ya que $\overline{ZA}=\overline{ZB}=m$ son los radios del mismo círculo, como lo son $\overline{ZH}=\overline{ZK}=n$, y $\overline{AH}=\overline{BK}=w$ por construcción (Fig.~\ref{f.compass-relative3}). De $\triangle AHZ\cong\triangle BZK$ se deduce $\angle AZH = \angle BZK$ y entonces $\angle AZB = \angle HZK$. Es difícil ver esta igualdad desde el diagrama, pero la figura~\ref{f.compass-relative4} debería aclarar la relación entre los ángulos. 
 
 \begin{figure}[t]
 \begin{minipage}{.45\textwidth}
@@ -704,7 +700,7 @@ Elegir un punto $H$ en $c_2$ y denotar la longitud de $\overline{AH}$ por $w$. C
 \end{minipage}
 \end{figure}
 
-$\triangle ZAB\sim\triangle ZHK$ ya que ambos son triángulos isósceles y hemos demostrado que tienen el mismo ángulo vértice. Rótulo $\overline{HK}$ por $x$. Entonces:
+$\triangle ZAB\sim\triangle ZHK$ ya que ambos son triángulos isósceles y hemos demostrado que tienen el mismo ángulo vértice. Si denoto $\overline{HK}$ con $x$, entonces:
 \begin{eqnarray*}
 \frac{m}{s} &=& \frac{n}{x}\\
 x&=&\frac{n}{m}s\,.
@@ -716,12 +712,12 @@ x&=&\frac{n}{m}s\,.
 \section{Construcción de la intersección de dos líneas}\label{s.two-lines}
 
 \begin{theorem}
-Dadas dos rectas que contienen los segmentos de recta $\overline{AB}, \overline{CD}$, es posible construir su intersección $S$.
+Dadas dos rectas que contienen los segmentos $\overline{AB}, \overline{CD}$, es posible construir su intersección $S$.
 \end{theorem}
 
 \begin{proof}
 Sean $C',D'$ las reflexiones de $C,D$ alrededor de $\overline{AB}$.
-Hay dos casos dependiendo de si $C,D$ se encuentran en el mismo lado de $\overline{AB}$ o en lados diferentes. Etiquete $x=\overline{CS}, c=\overline{CC'}, d=\overline{DD'}, e=\overline{CD}$ como se muestra en las Figs.~\ref{f.compass-intersection1}, \ref{f.compass-intersection2}. Calculamos el valor de $x$ para cada caso.
+Hay dos casos dependiendo de si $C,D$ se encuentran en el mismo lado de $\overline{AB}$ o en lados diferentes. Denominamos $x=\overline{CS}, c=\overline{CC'}, d=\overline{DD'}, e=\overline{CD}$ como se muestra en las Figs.~\ref{f.compass-intersection1}, \ref{f.compass-intersection2}. Calculamos el valor de $x$ para cada caso.
 
 \textit{Caso 1:}
 $C,D$ están en lados distintos de $\overline{AB}$.
@@ -767,7 +763,7 @@ $S$ está en $\overline{AB}$ porque $\triangle CZS\cong \triangle C'ZS$ por lado
 \end{figure}
 
 \textit{Caso 2:}
-$C,D$ están en el mismo lado de $\overline{AB}$. El $\triangle CSC'\sim\triangle DSD'$ da $\displaystyle\frac{x}{x-e}=\frac{c}{d}\displaystyle$ y resolviendo la ecuación se obtiene $x=\displaystyle\frac{c}{c-d}e$.
+$C,D$ están en el mismo lado de $\overline{AB}$. $\triangle CSC'\sim\triangle DSD'$ da $\displaystyle\frac{x}{x-e}=\frac{c}{d}\displaystyle$ y resolviendo la ecuación se obtiene $x=\displaystyle\frac{c}{c-d}e$.
 
 \begin{figure}[t]
 \begin{center}
@@ -809,7 +805,7 @@ $C,D$ están en el mismo lado de $\overline{AB}$. El $\triangle CSC'\sim\triangl
 \caption{Construcción de la intersección de dos líneas (2)}\label{f.compass-intersection2}
 \end{figure}
 
-Construimos las circunferencias $c(C',d), c(D,e)$ y denotar su intersección por $H$ (Fig.~\ref{f.compass-intersection3}). La suma de los segmentos de recta $\overline{CC'}, \overline{C'H}$ es $c + d$. Hay que demostrar que $H$ está en la prolongación de $\overline{CC'}$ para que $\overline{CH}$ sea un segmento de recta de longitud $c+d$. $\overline{CH} = c - d$ en el caso de que $D$ esté en el mismo lado de $\overline{AB}$ que $C$ (no se muestra en el diagrama).
+Construimos las circunferencias $c(C',d), c(D,e)$ y denotamos su intersección con $H$ (Fig.~\ref{f.compass-intersection3}). La suma de los segmentos $\overline{CC'}, \overline{C'H}$ es $c + d$. Hay que demostrar que $H$ está en la prolongación de $\overline{CC'}$ para que $\overline{CH}$ sea un segmento de longitud $c+d$. $\overline{CH} = c - d$ en el caso de que $D$ esté en el mismo lado de $\overline{AB}$ que $C$ (no se muestra en el diagrama).
 \begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
@@ -864,7 +860,7 @@ in
 
 $H$ es la intersección de $c(C',d), c(D,e)$ por lo que $\overline{DH}=e$, $\overline{C'H}=d$. Por construcción $\overline{C'D'} = e$, $\overline{D'D}=d$ por lo que el cuadrilátero $\overline{C'D'DH}$ es un paralelogramo. 
 
-Por construcción $\overline{DD'}\parallel\overline{CC'}$ entonces $\overline{C'H}\parallel \overline{DD'}$ y por tanto $\overline{C'H}\parallel\overline{CC'}$. Como uno de sus extremos es $C'$ debe estar en la recta que contiene a $\overline{CC'}$. Por Teorema~\ref{thm.add-subtract-mm}, a partir de las longitudes $c,d,e$ se puede construir un segmento de recta de longitud $c+d$ y por Teorema~\ref{thm.compass-ratio} se puede construir un segmento de recta de longitud $x=\displaystyle\frac{c}{c+d}e$. $S$, la intersección de $c(C',x)$ y $c(C,x)$, es también la intersección de $\overline{AB}, \overline{CD}$ (Fig.~\ref{f.compass-intersection4}).
+Por construcción $\overline{DD'}\parallel\overline{CC'}$ entonces $\overline{C'H}\parallel \overline{DD'}$ y por tanto $\overline{C'H}\parallel\overline{CC'}$. Como uno de sus extremos es $C'$ debe estar en la recta que contiene a $\overline{CC'}$. Por el Teorema~\ref{thm.add-subtract-mm}, a partir de las longitudes $c,d,e$ se puede construir un segmento de longitud $c+d$ y por el Teorema~\ref{thm.compass-ratio} se puede construir un segmento de longitud $x=\displaystyle\frac{c}{c+d}e$. $S$, la intersección de $c(C',x)$ y $c(C,x)$, es también la intersección de $\overline{AB}, \overline{CD}$ (Fig.~\ref{f.compass-intersection4}).
 \end{proof}
 
 \begin{figure}[t]
@@ -923,7 +919,7 @@ Dada una circunferencia $k=C(M,r)$ y una recta $l$ es posible construir las inte
 \end{theorem}
 
 \begin{proof}
-Construimos $M'$, ser la reflexión de $M$ alrededor de $l$ y construir la circunferencia $k'=c(M',r)$. Como $\triangle MYM'\cong\triangle MXM'$, $X,Y$, los puntos de intersección de $k,k'$, son los puntos de intersección de $l$ y $k$. (Fig.~\ref{f.compass-circle4}).
+Construimos $M'$, la reflexión de $M$ alrededor de $l$ y construimos la circunferencia $k'=c(M',r)$. Como $\triangle MYM'\cong\triangle MXM'$, $X,Y$, los puntos de intersección de $k,k'$, son los puntos de intersección de $l$ y $k$. (Fig.~\ref{f.compass-circle4}).
 \begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.5]
@@ -955,7 +951,7 @@ Construimos $M'$, ser la reflexión de $M$ alrededor de $l$ y construir la circu
 \caption{Construcción de la intersección de una recta y una circunferencia (1)}\label{f.compass-circle4}
 \end{figure}
 
-Esta construcción no puede hacerse si $M$ está sobre la recta $l$. En ese caso se elige un punto arbitrario $A$ sobre $l$ que esté a una distancia mayor que $r$ de $M$. Usando Thm~\ref{thm.add-subtract-mm} acortar y alargar $\overline{AM}$ en $r$. $X,Y$, los puntos extremos de estos segmentos, son las intersecciones de $k$ y $l$ (Fig.~\ref{f.compass-circle5}).
+Esta construcción no puede hacerse si $M$ está sobre la recta $l$. En ese caso se elige un punto arbitrario $A$ sobre $l$ que esté a una distancia mayor que $r$ de $M$. Usando el teorema~\ref{thm.add-subtract-mm} acortamos y alargamos $\overline{AM}$ en $r$. $X,Y$, los puntos extremos de estos segmentos, son las intersecciones de $k$ y $l$ (Fig.~\ref{f.compass-circle5}).
 \end{proof}
 
 \begin{figure}[b]

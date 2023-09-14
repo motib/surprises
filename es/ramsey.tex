@@ -126,7 +126,7 @@ Es imposible comprobar todas las descomposiciones $2^{7825}$ de $S(7825)$. Si pu
 
 \section{El problema de Van der Waerden}\label{s.van}
 
-Consideremos las secuencias de ocho puntos de colores en la Fig.~\ref{f.vdw1}. En la secuencia superior hay puntos rojos en las posiciones $(1,2,3)$ y puntos azules en las posiciones $(4,5,6)$. En cada caso, las posiciones forman una progresión aritmética. Del mismo modo, en la secuencia del medio, los puntos rojos en las posiciones $(1,3,5)$ forman una progresión aritmética. Sin embargo, en la secuencia inferior no hay ningún conjunto de tres puntos monocromáticos cuyas posiciones formen una progresión aritmética. 
+Consideremos las secuencias de ocho puntos de colores en la figura~\ref{f.vdw1}. En la secuencia superior hay puntos rojos en las posiciones $(1,2,3)$ y puntos azules en las posiciones $(4,5,6)$. En cada caso, las posiciones forman una progresión aritmética. Del mismo modo, en la secuencia del medio, los puntos rojos en las posiciones $(1,3,5)$ forman una progresión aritmética. Sin embargo, en la secuencia inferior no hay ningún conjunto de tres puntos monocromáticos cuyas posiciones formen una progresión aritmética. 
 Las ternas de puntos rojos están en las posiciones $(1,2,5)$, $(1,2,6)$, $(2,5,6)$, ninguna de las cuales forma progresiones aritméticas, y lo mismo para los puntos azules.
 
 \begin{figure}[htb]
@@ -149,7 +149,7 @@ Las ternas de puntos rojos están en las posiciones $(1,2,5)$, $(1,2,6)$, $(2,5,
 \caption{Problema de van der Waerden para ocho puntos de color}\label{f.vdw1}
 \end{figure}
 
-Con nueve puntos \emph{cualquier} coloración \emph{debe} contener una secuencia de tres puntos monocromáticos que formen una progresión aritmética. Por ejemplo, añadamos un punto rojo o un punto azul al final de la secuencia inferior de la Fig.~\ref{f.vdw1} para obtener las secuencias de la Fig.~\ref{f.vdw2}. En la secuencia superior hay puntos rojos en las posiciones $(1,5,9)$, una progresión aritmética, y en la secuencia inferior hay puntos azules en las posiciones $(7,8,9)$, también una progresión aritmética.
+Con nueve puntos \emph{cualquier} coloración \emph{debe} contener una secuencia de tres puntos monocromáticos que formen una progresión aritmética. Por ejemplo, añadamos un punto rojo o un punto azul al final de la secuencia inferior de la figura~\ref{f.vdw1} para obtener las secuencias de la figura~\ref{f.vdw2}. En la secuencia superior hay puntos rojos en las posiciones $(1,5,9)$, una progresión aritmética, y en la secuencia inferior hay puntos azules en las posiciones $(7,8,9)$, también una progresión aritmética.
 \begin{figure}[htb]
 \begin{center}
 \begin{tikzpicture}
@@ -173,7 +173,7 @@ Bartel L. van der Waerden planteó el siguiente problema: Para cualquier número
 
 \section{Teorema de Ramsey}\label{s.ramsey}
 
-Colorear las aristas de $K_5$, el grafo completo en $5$ vértices, con dos colores como se muestra en la Fig.~\ref{f.ramsey5}. No hay subgrafos monocromáticos $K_3$ (triángulos) en el grafo. La figura~\ref{f.ramsey6} muestra una coloración de $K_6$ y es fácil ver que hay triángulos monocromáticos $\triangle ACE$ y $\triangle BDF$. En esta sección demostramos un caso sencillo de un teorema de Frank P. Ramsey sobre la existencia de subconjuntos con cierta propiedad.
+Colorear las aristas de $K_5$, el grafo completo en $5$ vértices, con dos colores como se muestra en la figura~\ref{f.ramsey5}. No hay subgrafos monocromáticos $K_3$ (triángulos) en el grafo. La figura~\ref{f.ramsey6} muestra una coloración de $K_6$ y es fácil ver que hay triángulos monocromáticos $\triangle ACE$ y $\triangle BDF$. En esta sección demostramos un caso sencillo de un teorema de Frank P. Ramsey sobre la existencia de subconjuntos con cierta propiedad.
 \begin{figure}[ht]
 \begin{minipage}{.45\textwidth}
 \begin{center}
@@ -326,7 +326,7 @@ La resolución SAT es un método de resolución de problemas que consiste en cod
 
 \begin{definition}\label{def.sat}\mbox{}\\
 \begin{itemize}
-\item Una \emph{fórmula} está compuesta de \emph{fórmulas atómicas} o \emph{átomos} conectados por los operadores proposicionales $\vee$ (disyunción, ``o''), $\wedge$ (conjunción, ``y''), $\neg$ (negación, ``no'').
+\item Una \emph{fórmula} está compuesta de \emph{fórmulas atómicas} o \emph{átomos} conectados por los operadores proposicionales $\vee$ (disyunción, <<o>>), $\wedge$ (conjunción, <<y>>), $\neg$ (negación, <<no>>).
 \item Una fórmula recibe un \emph{interpretación} mediante una asignación de $T$ o $F$ a cada átomo. La evaluación de una fórmula en una interpretación da como resultado su valor de verdad $T$ o $F$. 
 \item Una fórmula es \emph{satisfacible} si y sólo si existe una interpretación que hace que su valor de verdad sea $T$. En caso contrario, la fórmula es insatisfactible.
 \item Una fórmula está en \emph{forma normal conjuntiva (FNC)} si y sólo si se compone de una conjunción de subfórmulas cada una de las cuales es una disyunción de \emph{literales} (átomos o negaciones de átomos).
@@ -386,7 +386,7 @@ Para $S(9)$, se añaden cuatro pares de subfórmulas para las posibles triplas a
 
 Heule y Kullmann resolvieron el problema de las ternas pitagóricas utilizando un solucionador SAT altamente optimizado. Hubo una diferencia significativa entre la eficiencia para encontrar una descomposición que no tenga ternas pitagóricas (sólo se necesita una descomposición), y demostrar que todas las descomposiciones tienen una terna pitagórica (hay que comprobarlas todas). Demostrar que para todas las $S(n)$, $1\leq n\leq 7824$, hay una descomposición sin ternas llevó sólo un minuto de tiempo de cálculo, mientras que demostrar que cada descomposición de $S(7825)$ tiene una terna llevó unos dos días de tiempo de cálculo para un ordenador con $800$ \emph{cores} (procesadores) trabajando en paralelo, en total $40.000$ horas de tiempo de cálculo.
 
-El uso de ordenadores en matemáticas plantea naturalmente la pregunta: ¿Podemos fiarnos de una demostración generada por un ordenador? Por supuesto, incluso las demostraciones matemáticas ``ordinarias'' pueden ser incorrectas (Sec.~\ref{s.kempe}), pero nuestra experiencia con los frecuentes fallos informáticos, así como la opacidad de los grandes programas informáticos, nos hace más sensibles a los errores potenciales en las demostraciones generadas por ordenador.
+El uso de ordenadores en matemáticas plantea naturalmente la pregunta: ¿Podemos fiarnos de una demostración generada por un ordenador? Por supuesto, incluso las demostraciones matemáticas <<ordinarias>> pueden ser incorrectas (Sec.~\ref{s.kempe}), pero nuestra experiencia con los frecuentes fallos informáticos, así como la opacidad de los grandes programas informáticos, nos hace más sensibles a los errores potenciales en las demostraciones generadas por ordenador.
 
 Una forma de aumentar la confianza en la corrección de una demostración generada por ordenador es utilizar dos o más programas, escritos independientemente por dos o más investigadores. Si los múltiples programas están escritos en diferentes lenguajes de programación y para diferentes ordenadores y sistemas operativos, se reduce la posibilidad de un error en el hardware y el software del ordenador.
 
@@ -488,7 +488,7 @@ Una \emph{terna babilónica} es una terna pitagórica primitivo tal que los úni
 \end{definition}
 La razón por la que los babilonios se limitaban a estos factores es que utilizaban el sistema numérico \emph{sexagesimal} o de base $60=2\cdot 2\cdot 3\cdot 5$ cuyos factores primos son $2,3$ y $5$.
 
-Para los lectores que no estén familiarizados con los sistemas numéricos no decimales, he aquí un breve resumen del concepto. El ``número'' $12345$ es una abreviatura del número:
+Para los lectores que no estén familiarizados con los sistemas numéricos no decimales, he aquí un breve resumen del concepto. El <<número>> $12345$ es una abreviatura del número:
 \[
 (1\times 10^4) + (2\times 10^3) + (3\times 10^2) + (4\times 10^1) + (5\times 10^0)\,.
 \]
@@ -501,11 +501,11 @@ El número también podría representarse en el sistema numérico binario o de b
 \]
 La notación binaria utiliza dos dígitos $0,1$ para los coeficientes y las potencias de dos se indican mediante los lugares de los coeficientes.
 
-Otro sistema numérico popular es el \emph{hexadecimal} o sistema numérico de base $16$ que se utiliza en informática. Para este sistema numérico necesitamos $16$ ``dígitos'' y la convención es utilizar $0,1,2,\ldots,8,9,A,B,C,D,E,F$.
+Otro sistema numérico popular es el \emph{hexadecimal} o sistema numérico de base $16$ que se utiliza en informática. Para este sistema numérico necesitamos $16$ <<dígitos>> y la convención es utilizar $0,1,2,\ldots,8,9,A,B,C,D,E,F$.
 
 El sistema numérico de base $60$ no es tan desconocido como puede parecer, porque representamos el tiempo, las coordenadas geográficas y los ángulos en ese sistema. Nos sentimos cómodos realizando cálculos como ($1$ hora $40$ minutos) más ($1$ hora $30$ minutos) igual a ($3$ horas $10$ minutos).
 
-La tabla~\ref{t.sexagesimal} muestra los valores de $a,c$ que aparecen en la tabla en notación de base $60$ donde $\langle d\rangle$ representa el el ``dígito'' en la posición $d$ para $0\leq d<60$.
+La tabla~\ref{t.sexagesimal} muestra los valores de $a,c$ que aparecen en la tabla en notación de base $60$ donde $\langle d\rangle$ representa el el <<dígito>> en la posición $d$ para $0\leq d<60$.
 \begin{table}[t]
 \caption{Ternas babilónicas en base $60$}\label{t.sexagesimal}
 \[

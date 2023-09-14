@@ -118,7 +118,7 @@ Construimos un vértice para cada región y una arista entre dos vértices si y 
 \end{proof}
 
 \begin{example}
-La figura~\ref{f.five-planar-graph-map} muestra el mapa planar de la Fig.~\ref{f.five-planar-map-four} y los vértices asociados a las regiones. La figura~\ref{f.five-planar-graph-graph} muestra el grafo plano que corresponde al mapa.
+La figura~\ref{f.five-planar-graph-map} muestra el mapa planar de la figura~\ref{f.five-planar-map-four} y los vértices asociados a las regiones. La figura~\ref{f.five-planar-graph-graph} muestra el grafo plano que corresponde al mapa.
 \end{example}
 
 \begin{figure}[t]
@@ -221,11 +221,11 @@ Un grafo es \emph{triangular} si todas sus caras están delimitadas por tres ari
 \end{definition}\index{Triangulated graph}
 
 \begin{example}
-Las caras del grafo plano de la Fig.~\ref{f.five-planar-graph-graph} son triangulares ya que cada una está delimitada por tres aristas. Las aristas son curvas por lo que las caras no son triángulos, que son polígonos cuyos tres lados son segmentos de línea recta.
+Las caras del grafo plano de la figura~\ref{f.five-planar-graph-graph} son triangulares ya que cada una está delimitada por tres aristas. Las aristas son curvas por lo que las caras no son triángulos, que son polígonos cuyos tres lados son segmentos de línea recta.
 \end{example}
 
 \begin{advanced}
-\textbf{El Teorema de F\'{a}ry} establece que cualquier grafo plano triangular puede transformarse en un grafo plano equivalente cuyas aristas sean segmentos de recta. Por lo tanto, sin pérdida de generalidad, las demostraciones se pueden restringir a grafos planos cuyas caras son triángulos.
+\textbf{El Teorema de F\'{a}ry} establece que cualquier grafo plano triangular puede transformarse en un grafo plano equivalente cuyas aristas sean segmentos. Por lo tanto, sin pérdida de generalidad, las demostraciones se pueden restringir a grafos planos cuyas caras son triángulos.
 \end{advanced}
 
 \begin{example}
@@ -334,7 +334,7 @@ E&=&V+F-2\\
 \end{proof}
 
 \begin{example}
-El grafo plano de la Fig.~\ref{f.five-planar-graph-graph} tiene $10$ vértices y $3\cdot 10-6=24$ aristas.
+El grafo plano de la figura~\ref{f.five-planar-graph-graph} tiene $10$ vértices y $3\cdot 10-6=24$ aristas.
 \end{example}
 
 \begin{theorem}\label{thm.count}
@@ -346,7 +346,7 @@ Triangulamos $G$ para obtener $G'$. $E'= 3V'-6$ por el Teorema~\ref{thm.3v6}. Ah
 \end{proof}
 
 \begin{example}
-El grafo de la Fig.~\ref{f.five-fewer} tiene $8$ aristas y $6$ vértices y $8< 3\cdot 6 - 6= 12$.
+El grafo de la figura~\ref{f.five-fewer} tiene $8$ aristas y $6$ vértices y $8< 3\cdot 6 - 6= 12$.
 La figura~\ref{f.five-upper-limit} muestra un grafo triangulado con $6$ vértices y $3\cdot 6 - 6= 12$ aristas.
 \end{example}
 
@@ -488,7 +488,7 @@ $d(v)$, el \emph{grado} del vértice $v$, es el número de aristas incidentes a 
 \end{definition}\index{Degree of a vertex}
 
 \begin{example}
-El grafo de la Fig.~\ref{f.five-planar-graph-graph} contiene $8$ vértices correspondientes a los dos anillos y cada vértice es de grado $5$. El vértice correspondiente a la cara exterior es de grado $4$ al igual que el vértice correspondiente a la cara interior. Por tanto:
+El grafo de la figura~\ref{f.five-planar-graph-graph} contiene $8$ vértices correspondientes a los dos anillos y cada vértice es de grado $5$. El vértice correspondiente a la cara exterior es de grado $4$ al igual que el vértice correspondiente a la cara interior. Por tanto:
 \[
 \sum_{v\in V} d(v) = 5\cdot 8 + 4\cdot 2=48\,.
 \]
@@ -537,7 +537,7 @@ Si el promedio es menor que seis debe haber un vértice de grado menor que seis.
 \end{proof}
 
 \begin{example}
-En Fig.~\ref{f.five-planar-graph-graph} la suma de los grados es $8\cdot 5 + 2\cdot 4=48$. Hay $10$ vértices por lo que el grado promedio es $48/10=4,8$ y debe haber un vértice de grado $4$ o menos.
+En la figura~\ref{f.five-planar-graph-graph} la suma de los grados es $8\cdot 5 + 2\cdot 4=48$. Hay $10$ vértices por lo que el grado promedio es $48/10=4,8$ y debe haber un vértice de grado $4$ o menos.
 \end{example}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -798,9 +798,9 @@ De lo contrario, $v_1,\ldots,v_5$ se colorean con diferentes colores en $G'$ (Fi
 \caption{Demostración del teorema de los cinco colores}\label{f.five-color-proof}
 \end{figure}
 
-Consideremos el vértice $v_1$ que es de color azul y el vértice $v_3$ que es de color rojo. Si $v_1,v_3$ no están conectados por un camino azul-rojo (digamos si la arista $\overline{v_6v_7}$ no existiera), podemos intercambiar los colores a lo largo del camino de $v_1$ a $v_6$ y colorear $v$ de azul. De lo contrario, consideremos la cadena azul-rojo que contiene $v_1,v_3$. Sumando $v$ y las aristas $\overline{vv_1},\overline{vv_3}$ obtenemos un camino cerrado $P$ (línea doble) que divide el plano en una región ``interior'' y otra ``exterior'' (Fig~\ref{f.five-color-proof}, centro).
+Consideremos el vértice $v_1$ que es de color azul y el vértice $v_3$ que es de color rojo. Si $v_1,v_3$ no están conectados por un camino azul-rojo (digamos si la arista $\overline{v_6v_7}$ no existiera), podemos intercambiar los colores a lo largo del camino de $v_1$ a $v_6$ y colorear $v$ de azul. De lo contrario, consideremos la cadena azul-rojo que contiene $v_1,v_3$. Sumando $v$ y las aristas $\overline{vv_1},\overline{vv_3}$ obtenemos un camino cerrado $P$ (línea doble) que divide el plano en una región <<interior>> y otra <<exterior>> (Fig~\ref{f.five-color-proof}, centro).
 
-Consideremos $v_2$ que es de color verde y $v_4$ que es de color naranja. Estos vértices no pueden estar contenidos en una sola cadena verde-naranja, porque $v_2$ está dentro de $P$ y $v_4$ está fuera de $P$, por lo que cualquier camino que los conecte debe cruzar $P$, contradiciendo la suposición de que el grafo es plano. Por lo tanto, deben estar contenidas en dos cadenas verde-naranja (doble línea discontinua, en la Fig.~\ref{f.five-color-proof}, centro).
+Consideremos $v_2$ que es de color verde y $v_4$ que es de color naranja. Estos vértices no pueden estar contenidos en una sola cadena verde-naranja, porque $v_2$ está dentro de $P$ y $v_4$ está fuera de $P$, por lo que cualquier camino que los conecte debe cruzar $P$, contradiciendo la suposición de que el grafo es plano. Por lo tanto, deben estar contenidas en dos cadenas verde-naranja (doble línea discontinua, en la figura~\ref{f.five-color-proof}, centro).
 Intercambiamos los colores en la cadena que contiene $v_2$ y luego $v$ puede ser de color verde para obtener una coloración de G con cinco colores de $G$ (Fig.~\ref{f.five-color-proof}, abajo).
 \end{proof}
 
@@ -818,7 +818,7 @@ Todo grafo plano puede ser coloraedo con cuatro colores.
 
 \begin{proof} (Incorrecta) El caso base de la inducción y la mayor parte de la demostración es son los mismos que los del teorema de los cinco colores. El nuevo caso que hay que considerar es un vértice $v$ con cinco vecinos que, por la hipótesis inductiva, se puede colorear con cuatro colores después de quitar $v$.
 
-En la Fig.~\ref{f.five-kempe1} hay dos vértices $v_2,v_5$ coloreados de azul. Consideremos la cadena azul-verde que contiene $v_2$ y la cadena azul-amarilla que contiene $v_5$. La cadena azul-verde está contenida dentro de la trayectoria cerrada definida por la cadena rojo-amarilla que contiene $v_1,v_3$ (línea doble) y la cadena azul-amarilla está contenida dentro de la trayectoria cerrada definida por la cadena rojo-verde que contiene $v_1,v_4$ (línea doble discontinua).
+En la figura~\ref{f.five-kempe1} hay dos vértices $v_2,v_5$ coloreados de azul. Consideremos la cadena azul-verde que contiene $v_2$ y la cadena azul-amarilla que contiene $v_5$. La cadena azul-verde está contenida dentro de la trayectoria cerrada definida por la cadena rojo-amarilla que contiene $v_1,v_3$ (línea doble) y la cadena azul-amarilla está contenida dentro de la trayectoria cerrada definida por la cadena rojo-verde que contiene $v_1,v_4$ (línea doble discontinua).
 
 Intercambiamos los colores de la cadena azul-verde y la cadena azul-amarillo (Fig.~\ref{f.five-kempe1-exchange}). El resultado es que los vecinos de $v$ se colorean con los tres colores rojo, verde y amarillo, dejando libre el azul para colorear $v$.
 \end{proof}
@@ -925,7 +925,7 @@ Intercambiamos los colores de la cadena azul-verde y la cadena azul-amarillo (Fi
 \end{minipage}
 \end{figure}
 
-Heawood observó que los caminos cerrados definidos por la cadena rojo-amarillo y la cadena rojo-verde pueden compartir vértices rojos ($v_1,v_8$ en Fig.~\ref{f.five-kempe2}). Cuando se intercambian los colores en las cadenas azul-verde y azul-amarillo, es posible que los vértices azules $v_6,v_7$ estén conectados (Fig.~\ref{f.five-kempe2-share}) y la coloración ya no es correcta.
+Heawood observó que los caminos cerrados definidos por la cadena rojo-amarillo y la cadena rojo-verde pueden compartir vértices rojos ($v_1,v_8$ en la figura~\ref{f.five-kempe2}). Cuando se intercambian los colores en las cadenas azul-verde y azul-amarillo, es posible que los vértices azules $v_6,v_7$ estén conectados (Fig.~\ref{f.five-kempe2-share}) y la coloración ya no es correcta.
 
 \begin{figure}[ht]
 \begin{minipage}{.50\textwidth}

@@ -71,7 +71,7 @@ Un compás moderno es un compás fijo: la distancia entre los dos brazos puede f
 \end{figure}
 
 Este capítulo comienza con una discusión sobre la relevancia de estudiar la construcción con regla y compás (Sec.~\ref{s.relevance}).
-En el apartado~\ref{s.collapse} se comparan los dos tipos de compás en la construcción más elemental: una mediatriz. En el apartado~\ref{s.collapse-copy} se presenta el método de Euclides para copiar un segmento de recta utilizando un compás plegable. Esto demuestra que cualquier construcción que se pueda hacer usando un compás fijo se puede realizar usando un compás plegable. La sección~\ref{s.collapse-copy-incorrect} presenta una demostración de este teorema que parece correcta, pero no funciona para todas las configuraciones de rectas y puntos. Para enfatizar que no hay que fiarse de los diagramas, la sección~\ref{s.collapse-} presenta una famosa supuesta demostración de que todos los triángulos son ; la demostración parece correcta, pero no lo es porque se basa en un diagrama incorrecto.
+En el apartado~\ref{s.collapse} se comparan los dos tipos de compás en la construcción más elemental: una mediatriz. En el apartado~\ref{s.collapse-copy} se presenta el método de Euclides para copiar un segmento utilizando un compás plegable. Esto demuestra que cualquier construcción que se pueda hacer usando un compás fijo se puede realizar usando un compás plegable. La sección~\ref{s.collapse-copy-incorrect} presenta una demostración de este teorema que parece correcta, pero no funciona para todas las configuracioness y puntos. Para enfatizar que no hay que fiarse de los diagramas, la sección~\ref{s.collapse-} presenta una famosa supuesta demostración de que todos los triángulos son ; la demostración parece correcta, pero no lo es porque se basa en un diagrama incorrecto.
 
 \section{Construcción con regla y compás}\label{s.relevance}
 
@@ -87,7 +87,7 @@ No obstante, creo que estudiar las construcciones tiene sus ventajas:
 
 \section{Compases fijos y compases plegables}\label{s.collapse}
 
-Algunos libros de geometría presentan la construcción de la mediatriz de un segmento de recta construyendo dos circunferencias centradas en los extremos del segmento de forma que los radios sean iguales y mayores que la mitad de la longitud del segmento (Fig.~\ref{f.collapse-perp-bisector-fixed}). Esto sólo se puede hacer con un compás fijo porque después de dibujar el círculo centrado en $A$, la distancia entre los brazos del compás tiene que permanecer fija para dibujar el círculo centrado en $B$.
+Algunos libros de geometría presentan la construcción de la mediatriz de un segmento construyendo dos circunferencias centradas en los extremos del segmento de forma que los radios sean iguales y mayores que la mitad de la longitud del segmento (Fig.~\ref{f.collapse-perp-bisector-fixed}). Esto sólo se puede hacer con un compás fijo porque después de dibujar el círculo centrado en $A$, la distancia entre los brazos del compás tiene que permanecer fija para dibujar el círculo centrado en $B$.
 
 \begin{figure}[t]
 \begin{minipage}{.45\textwidth}
@@ -129,18 +129,18 @@ Algunos libros de geometría presentan la construcción de la mediatriz de un se
 \end{minipage}
 \end{figure}
 
-Figura~\ref{f.collapse-perp-bisector-collapse} muestra la construcción de una mediatriz con compás fijo o con compás plegable. Se construyen dos circunferencias: una centrada en $A$ con radio $\overline{AB}$ y otra centrada en $B$ con radio $\overline{BA}$. Esto se puede hacer con un compás plegable porque (obviamente) $\overline{AB}=\overline{BA}$, por lo que el compás no tiene que ``recordar'' la longitud de $\overline{AB}$ para construir una circunferencia centrada en $B$ con el mismo radio.
-La demostración de que la recta construida mostrada en la Fig.~\ref{f.collapse-perp-bisector-fixed} es una mediatriz no es nada elemental porque hay que utilizar conceptos relativamente avanzados como triángulos congruentes. Sin embargo, la demostración de que la construcción de una mediatriz mostrada en la Fig.~\ref{f.collapse-perp-bisector-collapse} es correcta es sencilla y se basa en el hecho de que $\triangle ABC$ es un triángulo equilátero. De hecho, esta es la primera proposición en los \textit{Elementos} de Euclides.
+Figura~\ref{f.collapse-perp-bisector-collapse} muestra la construcción de una mediatriz con compás fijo o con compás plegable. Se construyen dos circunferencias: una centrada en $A$ con radio $\overline{AB}$ y otra centrada en $B$ con radio $\overline{BA}$. Esto se puede hacer con un compás plegable porque (obviamente) $\overline{AB}=\overline{BA}$, por lo que el compás no tiene que <<recordar>> la longitud de $\overline{AB}$ para construir una circunferencia centrada en $B$ con el mismo radio.
+La demostración de que la recta construida mostrada en la figura~\ref{f.collapse-perp-bisector-fixed} es una mediatriz no es nada elemental porque hay que utilizar conceptos relativamente avanzados como triángulos congruentes. Sin embargo, la demostración de que la construcción de una mediatriz mostrada en la figura~\ref{f.collapse-perp-bisector-collapse} es correcta es sencilla y se basa en el hecho de que $\triangle ABC$ es un triángulo equilátero. De hecho, esta es la primera proposición en los \textit{Elementos} de Euclides.
 $\overline{AC}=\overline{AB}$ ya que son radios del mismo círculo, análogamente, $\overline{BC}=\overline{BA}$. Tenemos: $\overline{AC}=\overline{AB}=\overline{BA}=\overline{BC}$.
 
 Figura~\ref{f.collapse-equilateral-fixed} muestra que para la construcción con compás fijo, el triángulo será un triángulo isósceles, no necesariamente equilátero (Fig.~\ref{f.collapse-equilateral-collapse}).
 
-\section{Construcción de Euclides para copiar un segmento de recta}\label{s.collapse-copy}
+\section{Construcción de Euclides para copiar un segmento}\label{s.collapse-copy}
 
-La segunda proposición de los \textit{Elementos} de Euclides describe cómo copiar un segmento de recta $\overline{AB}$ dado un segmento de la misma longitud, uno de cuyos puntos extremos es un punto $C$ dado. Por lo tanto, un compás fijo no añade ninguna capacidad adicional y basta con un compás plegable, aunque las construcciones son más fáciles con un compás fijo.
+La segunda proposición de los \textit{Elementos} de Euclides describe cómo copiar un segmento $\overline{AB}$ dado un segmento de la misma longitud, uno de cuyos puntos extremos es un punto $C$ dado. Por lo tanto, un compás fijo no añade ninguna capacidad adicional y basta con un compás plegable, aunque las construcciones son más fáciles con un compás fijo.
 
 \begin{theorem}
-Dado un segmento de recta $\overline{AB}$ y un punto $C$, se puede construir un segmento de recta $\overline{CC'}$, uno de cuyos puntos extremos es $C$, utilizando un compás plegable, tal que $\overline{AB}=\overline{CC'}$ (Fig.~\ref{f.collapse-copying-1}).
+Dado un segmento $\overline{AB}$ y un punto $C$, se puede construir un segmento $\overline{CC'}$, uno de cuyos puntos extremos es $C$, utilizando un compás plegable, tal que $\overline{AB}=\overline{CC'}$ (Fig.~\ref{f.collapse-copying-1}).
 \end{theorem}
 
 \begin{figure}[t]
@@ -203,7 +203,7 @@ Dado un segmento de recta $\overline{AB}$ y un punto $C$, se puede construir un 
 \draw[thick,dashed] (C) -- +(160:4) coordinate (D) node[below] {$C'$};
 \vertex{D};
 \end{tikzpicture}
-\caption{Copiar el segmento de recta $\overline{AB}$. La orientación de $\overline{CC'}$ no es importante.}\label{f.collapse-copying-1}
+\caption{Copiar el segmento $\overline{AB}$. La orientación de $\overline{CC'}$ no es importante.}\label{f.collapse-copying-1}
 \end{center}
 \end{minipage}
 \hfill
@@ -229,7 +229,7 @@ Dado un segmento de recta $\overline{AB}$ y un punto $C$, se puede construir un 
 \end{figure}
 
 \begin{proof}
-Construimos el segmento de recta $\overline{AC}$. Construimos el triángulo equilátero $\triangle ACD$ cuya base es $\overline{AC}$ (Fig.~\ref{f.collapse-copying-2}). Por la primera proposición de Euclides, el triángulo se puede construir utilizando un compás plegable. Construimos la semirrecta que es prolongación del segmento \emph{de $D$ a $A$}, y construir la semirrecta que es prolongación de la recta segmento \emph{de $D$ a $C$} (Fig.~\ref{f.collapse-copying-3}). Construimos la circunferencia centrada en $A$ con radio $\overline{AB}$ y denotamos con E la intersección de la circunferencia y la semirrecta que prolonga $\overline{DA}$ (Fig.~\ref{f.collapse-copying-4}). Construimos la circunferencia centrada en $D$ con radio $\overline{DE}$ y denotamos con $F$ la intersección de la circunferencia y la semirrecta que prolonga $\overline{DC}$ (Fig.~\ref{f.collapse-copying-5}).
+Construimos el segmento $\overline{AC}$. Construimos el triángulo equilátero $\triangle ACD$ cuya base es $\overline{AC}$ (Fig.~\ref{f.collapse-copying-2}). Por la primera proposición de Euclides, el triángulo se puede construir utilizando un compás plegable. Construimos la semirrecta que es prolongación del segmento \emph{de $D$ a $A$}, y construir la semirrecta que es prolongación de la recta segmento \emph{de $D$ a $C$} (Fig.~\ref{f.collapse-copying-3}). Construimos la circunferencia centrada en $A$ con radio $\overline{AB}$ y denotamos con E la intersección de la circunferencia y la semirrecta que prolonga $\overline{DA}$ (Fig.~\ref{f.collapse-copying-4}). Construimos la circunferencia centrada en $D$ con radio $\overline{DE}$ y denotamos con $F$ la intersección de la circunferencia y la semirrecta que prolonga $\overline{DC}$ (Fig.~\ref{f.collapse-copying-5}).
 
 \begin{figure}[t]
 \begin{minipage}{.45\textwidth}
@@ -315,7 +315,7 @@ $\overline{DC}=\overline{DA}$ porque el $\triangle ACD$ es equilátero. $\overli
 \caption{Construcción de $\overline{CF}=\overline{AB}$}\label{f.collapse-copying-5}
 \end{figure}
 
-La especificación de las direcciones de las semirrectas es esencial. La demostración funciona para cualquier segmento de recta $\overline{AB}$ y cualquier punto $C$, independientemente de su posición respecto a $\overline{AB}$.  Especificando las direcciones, el ``cono'' encerrado por los dos rayos intersecará los círculos aunque $\overline{AC}>\overline{AB}$ (Fig.~\ref{f.collapse-copying-6}).
+La especificación de las direcciones de las semirrectas es esencial. La demostración funciona para cualquier segmento $\overline{AB}$ y cualquier punto $C$, independientemente de su posición respecto a $\overline{AB}$.  Especificando las direcciones, el <<cono>> encerrado por los dos rayos intersecará los círculos aunque $\overline{AC}>\overline{AB}$ (Fig.~\ref{f.collapse-copying-6}).
 
 \begin{figure}
 \begin{center}
@@ -353,7 +353,7 @@ La especificación de las direcciones de las semirrectas es esencial. La demostr
 \section{Una construcción errónea para copiar un segmento de línea}\label{s.collapse-copy-incorrect}
 
 \begin{proof}
-Construimos tres circunferencias: una centrada en $A$ con radio $\overline{AB}$, otra centrada en $A$ con radio $\overline{AC}$, y otra centrada en $C$ con radio $\overline{AC}=\overline{CA}$. Denotamos las intersecciones de las circunferencias centradas en $A$ y $C$ con $E$ y $F$, respectivamente, y denotamos una intersección de la circunferencia centrada en $C$ y la circunferencia centrada en $A$ con radio $\overline{AB}$ con $D$. Si $\overline{AC}>\overline{AB}$, la construcción es como se muestra en Fig.~\ref{f.collapse-incorrect-1}.
+Construimos tres circunferencias: una centrada en $A$ con radio $\overline{AB}$, otra centrada en $A$ con radio $\overline{AC}$, y otra centrada en $C$ con radio $\overline{AC}=\overline{CA}$. Denotamos las intersecciones de las circunferencias centradas en $A$ y $C$ con $E$ y $F$, respectivamente, y denotamos una intersección de la circunferencia centrada en $C$ y la circunferencia centrada en $A$ con radio $\overline{AB}$ con $D$. Si $\overline{AC}>\overline{AB}$, la construcción es como se muestra en la figura~\ref{f.collapse-incorrect-1}.
 \begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
@@ -373,7 +373,7 @@ Construimos tres circunferencias: una centrada en $A$ con radio $\overline{AB}$,
 \vertex{C};
 \end{tikzpicture}
 \end{center}
-\caption{Construcción para copiar un segmento de recta (1)}\label{f.collapse-incorrect-1}
+\caption{Construcción para copiar un segmento (1)}\label{f.collapse-incorrect-1}
 \end{figure}
 
 \begin{figure}[t]
@@ -404,7 +404,7 @@ Construimos tres circunferencias: una centrada en $A$ con radio $\overline{AB}$,
 \draw (A) -- (D) -- (E) -- cycle;
 \end{tikzpicture}
 \end{center}
-\caption{Construcción para copiar un segmento de recta (2)}\label{f.collapse-incorrect-2}
+\caption{Construcción para copiar un segmento (2)}\label{f.collapse-incorrect-2}
 \end{figure}
 
 Construimos una circunferencia centrada en $E$ con radio $\overline{ED}$. Denotemos por $G$ la intersección de esta circunferencia con la circunferencia centrada en $A$ de radio $\overline{AC}$. Hay dos intersecciones, por lo que elegir la más cercana a $C$ (Fig.~\ref{f.collapse-incorrect-2}).
@@ -536,4 +536,4 @@ De estudiante daba por sentado que un compás tiene una bisagra que mantiene la 
 
 \subsection*{Fuentes}
 
-Este capítulo se basa en \cite{toussaint}. La construcción incorrecta de la equivalencia de los dos compases en Sect.~\ref{s.collapse-copy-incorrect} es de \cite{rusty}. Thomas L. Heath, uno de los mayores expertos en matemáticas griegas, ha escrito una exhaustiva traducción al inglés de los \textit{Elements} de Euclides junto con un extenso comentario \cite{euclid}.
+Este capítulo se basa en \cite{toussaint}. La construcción incorrecta de la equivalencia de los dos compases en Sec.~\ref{s.collapse-copy-incorrect} es de \cite{rusty}. Thomas L. Heath, uno de los mayores expertos en matemáticas griegas, ha escrito una exhaustiva traducción al inglés de los \textit{Elements} de Euclides junto con un extenso comentario \cite{euclid}.

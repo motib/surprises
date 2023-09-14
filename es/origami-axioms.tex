@@ -4,13 +4,13 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-El origami, arte del plegado de papel, se desarrolló hace varios siglos en Japón y hoy cuenta con seguidores en todo el mundo. A finales del siglo XX se desarrolló la teoría matemática del origami. Su fundamento es un conjunto de siete axiomas, los \emph{axiomas Huzita-Hatori}, llamados así por Humiaki Huzita, quien formalizó los primeros seis axiomas, y Koshiro Hatori, quien encontró el séptimo. Jacques Justin publicó los siete axiomas varios años antes que Huzita y Hatori, y Margherita P. Beloch formuló el sexto axioma en 1936. No obstante, los axiomas se conocen como axiomas de Huzita-Hatori.
+Origami, el arte del plegado de papel, se desarrolló hace varios siglos en Japón y hoy cuenta con seguidores en todo el mundo. A finales del siglo XX se desarrolló la teoría matemática del origami. Su fundamento es un conjunto de siete axiomas, los \emph{axiomas Huzita-Hatori}, llamados así por Humiaki Huzita, quien formalizó los primeros seis axiomas, y Koshiro Hatori, quien encontró el séptimo. Jacques Justin publicó los siete axiomas varios años antes que Huzita y Hatori, y Margherita P. Beloch formuló el sexto axioma en 1936. No obstante, los axiomas se conocen como axiomas de Huzita-Hatori.
 
 En una secuencia de tres capítulos exploraremos las matemáticas del origami. En este capítulo se presentan los axiomas, en el capítulo~\ref{c.origami-cube} se relaciona el origami con las raíces de los polinomios y en el capítulo~\ref{c.origami-constructions} se muestra que las construcciones con origami pueden resolver problemas que son imposibles utilizando una regla y un compás.
  
-Este capítulo contiene una sección para cada uno de los siete axiomas. Tras el enunciado de un axioma y un diagrama del pliegue que especifica, se desarrollan las ecuaciones del pliegue y los puntos de intersección mediante geometría analítica. Un pliegue también puede definirse como un "lugar geométrico", el conjunto de todos los puntos que satisfacen alguna propiedad. El término pliegue proviene de la operación de origami de doblar un trozo de papel, pero aquí se utiliza para referirse a la línea geométrica que se crearía al doblar el papel.
+Este capítulo contiene una sección para cada uno de los siete axiomas. Tras el enunciado de un axioma y un diagrama del pliegue que especifica, se desarrollan las ecuaciones del pliegue y los puntos de intersección mediante geometría analítica. Un pliegue también puede definirse como un <<lugar geométrico>>, el conjunto de todos los puntos que satisfacen alguna propiedad. El término pliegue proviene de la operación de origami de doblar un trozo de papel, pero aquí se utiliza para referirse a la línea geométrica que se crearía al doblar el papel.
 
-Los pliegues dan lugar a \emph{reflexiones}. Dado un punto $p$, su reflexión alrededor de un pliegue $l$ da como resultado un punto $p'$ tal que $l$ es la mediatriz del segmento de recta $\overline{pp'}$ (Fig.~\ref{f.origami-def}).
+Los pliegues dan lugar a \emph{reflexiones}. Dado un punto $p$, su reflexión alrededor de un pliegue $l$ da como resultado un punto $p'$ tal que $l$ es la mediatriz del segmento $\overline{pp'}$ (Fig.~\ref{f.origami-def}).
 
 \begin{figure}[h]
 \begin{center}
@@ -71,7 +71,7 @@ Dados dos puntos distintos $p_1=(x_1,y_1)$, $p_2=(x_2,y_2)$, existe un único pl
 \end{figure}
 
 \noindent\textbf{Derivación de la ecuación del pliegue:}
-La ecuación del pliegue $l$ se obtiene a partir de las coordenadas de $p_1$ y $p_2$. La pendiente es el cociente de las diferencias de las coordenadas y el intercepto se obtiene de $p_1$:
+La ecuación del pliegue $l$ se obtiene a partir de las coordenadas de $p_1$ y $p_2$. La pendiente es el cociente de las diferencias de las coordenadas y el intercepto (con el eje $y$) se obtiene de $p_1$:
 \begin{align}
 y - y_1 = \frac{y_2-y_1}{x_2-x_1}(x-x_1)\,.
 \end{align}
@@ -92,7 +92,7 @@ y&=&\frac{1}{2}x+1\,.
 \index{Origami!axiom 2}
 \index{Origami!perpendicular bisector}
 \begin{axiom}
-Dados dos puntos distintos $p_1=(x_1,y_1)$, $p_2=(x_2,y_2)$, existe un pliegue único $l$ que sitúa $p_1$ en $p_2$ (Fig.~\ref{f.origami-axiom2}).
+Dados dos puntos distintos $p_1=(x_1,y_1)$, $p_2=(x_2,y_2)$, existe un pliegue único $l$ que refleja $p_1$ en $p_2$ (Fig.~\ref{f.origami-axiom2}).
 \end{axiom}
 
 El pliegue es el lugar geométrico de todos los puntos equidistantes de $p_1$ y $p_2$.
@@ -151,7 +151,7 @@ y&=&-2x+11\,.
 Dadas dos rectas $l_1,l_2$, existe un pliegue $l$ que coloca $l_1$ sobre $l_2$ (Fig.~\ref{f.origami-axiom3}).
 \end{axiom}
 
-El pliegue es el lugar geométrico de los puntos que equidistan de $l_1$ y $l_2$, donde la distancia de un punto a una recta es la longitud del segmento de recta que pasa por el punto y es perpendicular a la recta. Utilizando triángulos congruentes es fácil demostrar que el pliegue es bisectriz del ángulo formado por $l_1$ y $l_2$.
+El pliegue es el lugar geométrico de los puntos que equidistan de $l_1$ y $l_2$, donde la distancia de un punto a una recta es la longitud del segmento que pasa por el punto y es perpendicular a la recta. Utilizando triángulos congruentes es fácil demostrar que el pliegue es bisectriz del ángulo formado por $l_1$ y $l_2$.
 
 \begin{figure}[ht]
 \begin{center}
@@ -200,7 +200,7 @@ El pliegue es el lugar geométrico de los puntos que equidistan de $l_1$ y $l_2$
 \[
 y=mx+\frac{b_1+b_2}{2}\,.
 \]
-\noindent\textit{$l_1,l_2$ intersecar:} Sea $l_1$ $y=m_1x+b_1$ y sea $l_2$ $y=m_2x+b_2$. $p_i=(x_i,y_i)$, el punto de intersección de las dos rectas, es:
+\noindent\textit{$l_1,l_2$ se intersectan:} Sea $l_1$ $y=m_1x+b_1$ y sea $l_2$ $y=m_2x+b_2$. $p_i=(x_i,y_i)$, el punto de intersección de las dos rectas, es:
 \begin{eqnarray*}
 m_1x_i+b_1&=&m_2x_i+b_2\\
 x_i &=& \frac{b_2-b_1}{m_1-m_2}\\
@@ -216,13 +216,13 @@ y_i &=& 2\cdot\frac{10}{3}-2=\frac{14}{3}\approx 4.67\,.
 \end{example}
 
 \index{Origami!angle bisector}
-El pliegue es la bisectriz del ángulo formado por $l_1$ y $l_2$ en su punto de intersección. Hay dos pliegues posibles ya que hay dos pares de ángulos verticales. Hay que determinar las pendientes de las bisectrices de los ángulos. Si el ángulo de la recta $l_1$ respecto al eje $x$ es $\theta_1$ y el ángulo de la recta $l_2$ respecto al eje $x$ es $\theta_2$, entonces el pliegue es la recta que forma un ángulo de $\theta_b=(\theta_1+\theta_2)/2$ respecto al eje $x$.
+El pliegue es la bisectriz del ángulo formado por $l_1$ y $l_2$ en su punto de intersección. Hay dos pliegues posibles ya que hay dos pares de ángulos verticales. Determinemos las pendientes de las bisectrices de los ángulos. Si el ángulo de la recta $l_1$ respecto al eje $x$ es $\theta_1$ y el ángulo de la recta $l_2$ respecto al eje $x$ es $\theta_2$, entonces el pliegue es la recta que forma un ángulo de $\theta_b=(\theta_1+\theta_2)/2$ respecto al eje $x$.
 
-Sea $m_1=\tan \theta_1, m_2=\tan \theta_2$. Por Teorema~\ref{thm.tangent-sum}, $m_s$, la pendiente de la recta que hace un ángulo de $\theta_1+\theta_2$ respecto del eje $x$, es:
+Sea $m_1=\tan \theta_1, m_2=\tan \theta_2$. Por el Teorema~\ref{thm.tangent-sum}, $m_s$, la pendiente de la recta que hace un ángulo de $\theta_1+\theta_2$ respecto del eje $x$, es:
 \[
 m_s=\tan(\theta_1+\theta_2)= \frac{\tan\theta_1+\tan\theta_2}{1-\tan\theta_1\tan\theta_2}=\frac{m_1+m_2}{1-m_1m_2}\,.
 \]
-Por Teorema~\ref{thm.tangent-half}, $m_b$, la pendiente de la bisectriz del ángulo, es:
+Por el Teorema~\ref{thm.tangent-half}, $m_b$, la pendiente de la bisectriz del ángulo, es:
 \[
 m_b= \tan\frac{\theta_1+\theta_2}{2}=\frac{-1\pm\sqrt{1+\tan^2(\theta_1+\theta_2)}}{\tan (\theta_1+\theta_2)}=\frac{-1\pm\sqrt{1+m_s^2}}{m_s}\,.
 \]
@@ -349,7 +349,7 @@ Como el pliegue pasa por $p_2$ y $p_2$ está en la mediatriz de $\overline{p_1p_
 \noindent\textbf{Derivación de las ecuaciones de los pliegues:}
 Sea $l_1$ $y=m_1x + b_1$ y sean $p_1=(x_1,y_1)$, $p_2=(x_2,y_2)$. La ecuación de la circunferencia centrada en $p_2$ con radio $\overline{p_1p_2}$ es:
 \begin{eqnarray*}
-(x-x_2)^2 + (y-y_2)^2 = r^2\,,\quad \textrm{where}\\
+(x-x_2)^2 + (y-y_2)^2 = r^2\,,\quad \textrm{donde}\\
 r^2= (x_2-x_1)^2 + (y_2-y_1)^2\,.
 \end{eqnarray*}
 
@@ -364,7 +364,7 @@ x^2(1+m_1^2) \,+\, 2(-x_2+m_1(b-y_2))x \,+\,(x_2^2 + (b_1^2 - 2b_1y_2+y_2^2)-r^2
 \end{align}
 Como una ecuación cuadrática tiene a lo sumo dos soluciones, para un par dado de puntos y una recta puede haber cero, uno o dos pliegues. A partir de las soluciones $x_1',x_1''$ podemos calcular $y_1',y_1''$ de $y=m_1x+b_1$. Los puntos reflejados son $p_1'=(x_1',y_1')$, $p_1''=(x_1'',y_1'')$.
 \begin{example}
-Sea $p_1=(2,8)$, $p_2=(4,4)$ y sea $l_1$ $y=-\frac{1}{2}x +3$. La ecuación de la circunferencia es $(x-4)^2 + (y-4)^2 = (4-2)^2+(4-8)^2=20$. Sustituye la ecuación de la recta en la ecuación de la circunferencia para obtener una ecuación cuadrática de las coordenadas $x$ de las intersecciones (o utiliza Ecuación~\ref{eq.intersections}):
+Sea $p_1=(2,8)$, $p_2=(4,4)$ y sea $l_1$ $y=-\frac{1}{2}x +3$. La ecuación de la circunferencia es $(x-4)^2 + (y-4)^2 = (4-2)^2+(4-8)^2=20$. Sustituimos la ecuación de la recta en la ecuación de la circunferencia para obtener una ecuación cuadrática de las coordenadas $x$ de las intersecciones (o utilizamos la Ecuación~\ref{eq.intersections}):
 \begin{eqnarray*}
 (x-4)^2 + \left(\left(-\frac{1}{2}x+3\right)-4\right)^2&=&20\\
 (x-4)^2 + (-1)^2\cdot\left(\frac{1}{2}x+1\right)^2-20&=&0\\
@@ -401,7 +401,7 @@ y&=&\frac{1}{2}x+2\,.
 Dados dos puntos $p_1,p_2$ y dos rectas $l_1,l_2$, existe un pliegue $l$ que sitúa $p_1$ en $l_1$ y sitúa $p_2$ en $l_2$ (Fig.~\ref{f.origami-axiom6}).
 \end{axiom}
 
-Un pliegue que sitúa $p_i$ sobre $l_i$ es una recta $l_f$ tal que la distancia de $p_i$ a $l_f$ es igual a la distancia de su reflexión $p_i'$ a $l_f$. El lugar geométrico de los puntos que equidistan de un punto $p_i$ y una recta $l_i$ es una \emph{parábola}. A $p_i$ se le llama \emph{foco} de una parábola y a $l_1$ \emph{directriz} de una parábola. Un pliegue es cualquier recta tangente a la parábola (Sect.~\ref{s.parabola}).
+Un pliegue que sitúa $p_i$ sobre $l_i$ es una recta $l_f$ tal que la distancia de $p_i$ a $l_f$ es igual a la distancia de su reflexión $p_i'$ a $l_f$. El lugar geométrico de los puntos que equidistan de un punto $p_i$ y una recta $l_i$ es una \emph{parábola}. A $p_i$ se le llama \emph{foco} de la parábola y a $l_1$ \emph{directriz} de la parábola. Un pliegue es cualquier recta tangente a la parábola (Sec.~\ref{s.parabola}).
 
 \begin{figure}[ht]
 \begin{center}
@@ -476,7 +476,7 @@ Para que un pliegue sitúe simultáneamente $p_1$ en $l_1$ y $p_2$ en $l_2$, deb
 \draw[domain=-3.1:3.1,samples=50,very thick,dotted] plot (\x,{.25*\x*\x+4.5});
 \draw[domain=-4.5:4.5,samples=50,very thick,dotted] plot (\x,{.25*\x*\x+1.5});
 \end{tikzpicture}
-\caption{No common tangents}\label{f.two-para-1-zero}
+\caption{No hay tangentes comunes}\label{f.two-para-1-zero}
 \end{center}
 \end{minipage}
 \hfill
@@ -497,7 +497,7 @@ Para que un pliegue sitúe simultáneamente $p_1$ en $l_1$ y $p_2$ en $l_2$, deb
 \draw[domain=-1.8:6,samples=50,very thick,dotted] plot (\x,{.25*(\x-3)*(\x-3)+1.5});
 \draw[very thick,dashed] (-5,5.85) -- (6,-.9);
 \end{tikzpicture}
-\caption{Una tangente común}\label{f.two-para-1-one}
+\caption{Una tangente en común}\label{f.two-para-1-one}
 \end{center}
 \end{minipage}
 \end{figure}
@@ -521,7 +521,7 @@ Para que un pliegue sitúe simultáneamente $p_1$ en $l_1$ y $p_2$ en $l_2$, deb
 \draw[very thick,dashed] (-5,-7) -- (2.95,5);
 \draw[very thick,dashed] (-3,5) -- (4.95,-7);
 \end{tikzpicture}
-\caption{Dos tangentes comunes}\label{f.two-para-1-two}
+\caption{Dos tangentes en comunes}\label{f.two-para-1-two}
 \end{center}
 \end{minipage}
 \hfill
@@ -546,16 +546,16 @@ Para que un pliegue sitúe simultáneamente $p_1$ en $l_1$ y $p_2$ en $l_2$, deb
 \draw[thick,dashed,domain=-4:7] plot (\x,.27*\x+2.93);
 \draw[thick,dashed,domain=2:4.8] plot (\x,3.73*\x-10.9);
 \end{tikzpicture}
-\caption{Tres tangentes comunes}\label{f.two-para-1-three}
+\caption{Tres tangentes en comunes}\label{f.two-para-1-three}
 \end{center}
 \end{minipage}
 \end{figure}
 
-La fórmula para una parábola arbitraria es bastante compleja, por lo que limitamos la presentación a las parábolas cuyo eje de simetría es el eje $x$ o $y$.
+La fórmula de una parábola arbitraria es bastante compleja, por lo que limitamos la presentación a las parábolas cuyo eje de simetría es el eje $x$ o $y$.
 
 \subsection{Derivación de la ecuación de un pliegue}
 
-Sea $(0,f)$ el foco de una parábola con directriz $y=d$. Definir $p=f-d$, la longitud con signo del segmento de recta entre el foco y la directriz\footnote{Hemos estado utilizando la notación $p_i$ para los puntos; el uso de $p$ aquí puede ser confuso, pero es la notación estándar. El nombre formal de $p$ es la mitad del \emph{latus rectum}.}. Si el vértice de la parábola está en el eje $x$ la ecuación de la parábola es $y=x^2/2p$. Para mover la parábola arriba o abajo del eje $y$ de forma que su vértice esté en $(0,h)$, se añade $h$ a la ecuación de la parábola (Fig.~\ref{f.elements-parabola}):
+Sea $(0,f)$ el foco de una parábola con directriz $y=d$. Definimos $p=f-d$, la longitud con signo del segmento entre el foco y la directriz\footnote{Hemos estado utilizando la notación $p_i$ para los puntos; el uso de $p$ aquí puede ser confuso, pero es la notación estándar. El nombre formal de $p$ es la mitad del \emph{latus rectum}.}. Si el vértice de la parábola está en el eje $x$ la ecuación de la parábola es $y=x^2/2p$. Para mover la parábola arriba o abajo del eje $y$ de forma que su vértice esté en $(0,h)$, se añade $h$ a la ecuación de la parábola (Fig.~\ref{f.elements-parabola}):
 \[y=\frac{x^2}{2p}+h\,.\]
 
 \begin{figure}[htb]
@@ -579,14 +579,14 @@ Sea $(0,f)$ el foco de una parábola con directriz $y=d$. Definir $p=f-d$, la lo
 \end{center}
 \caption{Los elementos de la definición de una parábola}\label{f.elements-parabola}
 \end{figure}
-Definir $a=2ph$ para que la ecuación de la parábola sea:
+Definimos $a=2ph$ para que la ecuación de la parábola sea:
 \begin{subeqnarray}
 y&=&\frac{x^2}{2p}+\frac{a}{2p}\\
 x^2-2py+a&=&0\,.\slabel{eq.eq-parabola}
 \end{subeqnarray}
-La ecuación de la parábola de la Fig.~\ref{f.elements-parabola} es $x^2-12y +12=0$.
+La ecuación de la parábola de la figuar~\ref{f.elements-parabola} es $x^2-12y +12=0$.
 
-Sustituir la ecuación de una una línea \emph{arbitraria} $y=mx+b$ en la Ecuación~\ref{eq.eq-parabola} para obtener una ecuación de los puntos de intersección de la recta y la parábola:
+Sustituimos la ecuación de una una línea \emph{arbitraria} $y=mx+b$ en la Ecuación~\ref{eq.eq-parabola} para obtener una ecuación de los puntos de intersección de la recta y la parábola:
 \begin{eqnarray*}
 x^2-2p(mx+b)+a&=&0\\
 x^2+(-2mp)x+(-2pb+a)&=&0\,.
@@ -674,12 +674,12 @@ y^2-4x+12 = 0\,.\label{eq.x-symmetry-parabola}
 \end{align}
 Esta es una ecuación con $x$ y $y^2$ en lugar de $x^2$ e $y$, por lo que la Ecuación~\ref{eq.disc} no se puede utilizar y debemos realizar la derivación de nuevo.
 
-Sustituir la ecuación de una recta en Eq.~\ref{eq.x-symmetry-parabola}:
+Sustituir la ecuación de una recta en la Ecuación~\ref{eq.x-symmetry-parabola}:
 \begin{eqnarray*}
 (mx+b)^2-4x+12&=&0\\
 m^2x^2+(2mb-4)x+(b^2+12)&=&0\,.
 \end{eqnarray*}
-Establece el discriminante igual a cero y simplifica:
+Igualamos el discriminante a cero y simplificamos:
 \begin{eqnarray*}
 (2mb-4)^2\:-\:4m^2(b^2+12)&=&0\\
 -3m^2-mb+1&=&0\,.
@@ -702,14 +702,14 @@ A partir de la forma de la Ecuación~\ref {eq.cubic} podríamos suponer que $m=1
 1^3-3\cdot 1^2-3\cdot 1+1&=&-4\\
 (-1)^3-3\cdot (-1)^2-3\cdot(-1)+1&=&0\,.
 \end{eqnarray*}
-Dividir Ecuación~\ref{eq.cubic} por $m-(-1)=m+1$ para obtener la ecuación cuadrática $m^2-4m+1$ cuyas raíces son las otras dos soluciones de la ecuación cúbica $m=2\pm\sqrt{3}\approx 3.73, 0.27$.
+Dividimos Ecuación~\ref{eq.cubic} por $m-(-1)=m+1$ para obtener la ecuación cuadrática $m^2-4m+1$ cuyas raíces son las otras dos soluciones de la ecuación cúbica $m=2\pm\sqrt{3}\approx 3.73, 0.27$.
 \end{example}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Derivación de las ecuaciones de las reflexiones}
 
-Derivamos la posición de la reflexión $p_1'=(x_1',y_1')$ de $p_1=(x_1,y_1)$ alrededor de una recta tangente $l_t$ cuya ecuación es $y=m_tx+b_t$. Primero, hallar la recta $l_p$ de ecuación $y=m_px+b_p$ que es perpendicular a $l_t$ y pasa por $p_1$:
+Derivamos la posición de la reflexión $p_1'=(x_1',y_1')$ de $p_1=(x_1,y_1)$ alrededor de una recta tangente $l_t$ cuya ecuación es $y=m_tx+b_t$. Primero, hallamos la recta $l_p$ de ecuación $y=m_px+b_p$ que es perpendicular a $l_t$ y pasa por $p_1$:
 \begin{eqnarray*}
 y&=&-\frac{1}{m_t}x+b_p\\
 y_1&=&-\frac{1}{m_t}x_1+b_p\\
@@ -827,10 +827,10 @@ $p_i$, $i=1,\ldots,5$, cada punto $p_i$ a una distancia $a_i$ tanto del foco com
 \end{figure}
 
 \begin{theorem}\label{thm.parabola-tangents}
-Los pliegues del axioma~$6$ son las tangentes a las parábolas que son los loci de los puntos equidistantes a los puntos $p_1,p_2$ y $l_l,l_2$, respectivamente.
+Los pliegues del axioma~$6$ son las tangentes a las parábolas que son los lugares geométricos de los puntos equidistantes a los puntos $p_1,p_2$ y $l_l,l_2$, respectivamente.
 \end{theorem}
 \begin{proof}
-En la Fig.~\ref{f.tangent-proof}, el foco es $p$ y la directriz es $d$. $p'$ es un punto de la directriz y $l$ es el pliegue que refleja $p$ en $p'$. Sea $s$ la intersección de $\overline{pp'}$ y $l$. Entonces $\overline{ps}=\overline{p's}=a$ y $l\perp \overline{pp'}$ ya que $l$ es la mediatriz de $\overline{pp'}$.
+En la figura~\ref{f.tangent-proof}, el foco es $p$ y la directriz es $d$. $p'$ es un punto de la directriz y $l$ es el pliegue que refleja $p$ en $p'$. Sea $s$ la intersección de $\overline{pp'}$ y $l$. Entonces $\overline{ps}=\overline{p's}=a$ y $l\perp \overline{pp'}$ ya que $l$ es la mediatriz de $\overline{pp'}$.
 
 Sea $r$ la intersección de la recta perpendicular a $d$ que pasa por $p'$ y el pliegue $l$. Entonces $\triangle psr\cong \triangle p'sr$ por lado-ángulo-lado. Se deduce que 
 $\overline{pr}=\overline{p'r}=b$ por lo que $r$ es un punto de la parábola. Elegimos un punto $p''$ sobre la directriz que sea distinto de $p'$ y suponemos que el pliegue $l$ también refleja $p$ sobre $p''$. Sea $q$ la intersección de la perpendicular a $d$ que pasa por $p''$ y el pliegue $l$. $\triangle psq\cong \triangle p'sq$ por lo que $\overline{pq}=\overline{p'q}=c$. Denotemos $\overline{qp''}=e$. Si $q$ es un punto de la parábola entonces $e=\overline{qp''}=\overline{qp}=c$, pero $c$ es la hipotenusa del triángulo rectángulo $\triangle qp''p'$ y no es posible que la hipotenusa sea igual a uno de los otros lados del triángulo rectángulo. Por lo tanto el pliegue $l$ sólo tiene una intersección con la parábola y debe ser una tangente.
@@ -912,8 +912,7 @@ y=-\frac{1}{m_2}x+b_m,
 \]
 donde $b_m$ puede calcularse a partir de $y=-\displaystyle\frac{1}{m_2}x+b_m$:
 \[b_m=y_m+\frac{x_m}{m_2}\,.\]
-
-La ecuación del pliegue $l$ es por tanto:
+Por lo tanto, la ecuación del pliegue $l$ es:
 \[
 y=-\frac{1}{m_2}x+\left(y_m+\displaystyle\frac{x_m}{m_2}\right)\,.
 \]
