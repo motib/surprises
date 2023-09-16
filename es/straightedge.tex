@@ -23,7 +23,7 @@ Una circunferencia está definida por un punto $O$, su \emph{centro}, y por un \
 
 La única circunferencia dada, utilizada en las construcciones, llamada \emph{circunferencia fija}, puede aparecer en cualquier parte del plano y puede tener un radio arbitrario.
 
-\begin{figure}[t]
+\begin{figure}%[t]
 \begin{minipage}{.45\textwidth}
 \begin{center}
 \begin{tikzpicture}[scale=.8]
@@ -82,7 +82,7 @@ $\overline{AB}$ es un \emph{segmento dirigida} si se da el punto medio $M$ de $\
 
 Afirmamos que $\overline{PQ}\parallel \overline{AB}$. 
 
-\begin{figure}[ht]
+\begin{figure}%[b]
 \begin{center}
 \begin{tikzpicture}
 \draw[name path=pq] (-4,0) -- (4,0);
@@ -134,13 +134,7 @@ Utilizando la Ecuación~\ref{eq.ceva}:
 \]
 y resulta que $\triangle ABS \sim \triangle PQS$ y por lo tanto $\overline{PQ}\parallel\overline{AB}$.
 
-\textit{Caso 2:}
-$\overline{AB}$ no es necesariamente un segmento dirigido. La circunferencia fija $c$ tiene centro $O$ y radio $r$. $P$ es el punto no situado sobre la recta por el que hay que construir una recta paralela a $l$ (Fig.~\ref{f.se-parallel-other1}).
-
-Elegimos $M$, un punto cualquiera de $l$, y construimos una semirrecta que extienda $\overline{MO}$ y que corte a la circunferencia en $U,V$.
-$\overline{UV}$ es un segmento dirigido porque $O$, el centro de la circunferencia, biseca el diámetro $\overline{UV}$. Elegir un punto $A$ en $l$ y utilizamos la construcción de un segmento rectilíneo dirigido (Caso 1) para construir una recta que pase por $A$ paralela a $\overline{UV}$ y que corte a la circunferencia en $X,Y$ (Fig.~\ref{f.se-parallel-other2}).
-
-\begin{figure}[t]
+\begin{figure}%[b]
 \begin{minipage}{.45\textwidth}
 \begin{center}
 \begin{tikzpicture}[scale=.75]
@@ -199,7 +193,14 @@ $\overline{UV}$ es un segmento dirigido porque $O$, el centro de la circunferenc
 \end{minipage}
 \end{figure}
 
-\begin{figure}[b]
+\textit{Caso 2:}
+$\overline{AB}$ no es necesariamente un segmento dirigido. La circunferencia fija $c$ tiene centro $O$ y radio $r$. $P$ es el punto no situado sobre la recta por el que hay que construir una recta paralela a $l$ (Fig.~\ref{f.se-parallel-other1}).
+
+Elegimos $M$, un punto cualquiera de $l$, y construimos una semirrecta que extienda $\overline{MO}$ y que corte a la circunferencia en $U,V$.
+$\overline{UV}$ es un segmento dirigido porque $O$, el centro de la circunferencia, biseca el diámetro $\overline{UV}$. Elegir un punto $A$ en $l$ y utilizamos la construcción de un segmento rectilíneo dirigido (Caso 1) para construir una recta que pase por $A$ paralela a $\overline{UV}$ y que corte a la circunferencia en $X,Y$ (Fig.~\ref{f.se-parallel-other2}).
+
+
+\begin{figure}%[t]
 \begin{center}
 \begin{tikzpicture}[scale=.75]
 \coordinate (O) at (0,0);
@@ -259,11 +260,13 @@ $\overline{OX}, \overline{OX'}, \overline{OY}, \overline{OY'}$ son todos radios 
 Dado un segmento $\overline{AB}$ y un punto $P$ que no está en la recta, es posible construir un segmento $\overline{PQ}$ que sea paralelo a $\overline{AB}$ y cuya longitud sea igual a la longitud de $\overline{AB}$, es decir, es posible copiar $\overline{AB}$ paralelo a sí mismo con $P$ como uno de sus puntos extremos.
 \end{theorem}
 
+\newpage
+
 \begin{proof}
 Hemos demostrado que es posible construir una recta $m$ por $P$ paralela a $\overline{AB}$ y una recta $n$ por $B$ paralela a $\overline{AP}$. El cuadrilátero $\overline{ABQP}$ es un paralelogramo con lados opuestos iguales $\overline{AB}=\overline{PQ}$ (Fig.~\ref{f.se-parallel-other4}).
 \end{proof}
 
-\begin{figure}[t]
+\begin{figure}%[t]
 \begin{center}
 \begin{tikzpicture}[scale=.5]
 \coordinate (P) at (0,0);
@@ -293,7 +296,7 @@ Dado un segmento $l$ y un punto $P$ que no está en $l$, es posible construir un
 Por el Teorema~\ref{thm.straight-parallel} construimos una recta $l'$ paralela a $l$ que corte a la circunferencia fija en $U,V$. Construimos el diámetro $\overline{UOU'}$ y la cuerda $\overline{VU'}$ (Fig.~\ref{f.se-perp}). El $\angle UVU'$ es un ángulo recto porque está subtendido por un diámetro. Por lo tanto $\overline{VU'}$ es perpendicular a $\overline{UV}$ y $l$. De nuevo por el Teorema~\ref{thm.straight-parallel} construimos la paralela a $\overline{VU'}$ a través de $P$.
 \end{proof}
 
-\begin{figure}[htb]
+\begin{figure}%[tb]
 \begin{center}
 \begin{tikzpicture}[scale=.7]
 \coordinate (O) at (0,0);
@@ -331,12 +334,11 @@ Es posible construir una copia de un segmento dado en la dirección de otra rect
 \end{theorem}
 
 El significado de <<dirección>> es que la línea definida por dos puntos $A',H'$ tiene un ángulo $\theta$ relativo a algún eje y el objetivo es construir $\overline{AS}=\overline{PQ}$ tal que $\overline{AS}$ tenga el mismo ángulo $\theta$ relativo a ese eje (Fig.~\ref{f.se-copy1}).
-
 \begin{proof}
 Por el Teorema~\ref{thm.parallel-equal} es posible construir un segmento $\overline{AH}$ tal que $\overline{AH}\parallel\overline{A'H'}$, y construir un segmento $\overline{AK}$ tal que $\overline{AK}\parallel\overline{PQ}$ y $\overline{AK}=\overline{PQ}$.
 $\angle HAK=\theta$ por lo que queda por encontrar es un punto $S$ en $\overline{AH}$ de modo que $\overline{AS}=\overline{PQ}$.
 
-\begin{figure}[t]
+\begin{figure}%[t]
 \begin{center}
 \begin{tikzpicture}[scale=.7]
 \coordinate (A) at (0,0);
@@ -372,9 +374,10 @@ $\angle HAK=\theta$ por lo que queda por encontrar es un punto $S$ en $\overline
 Construimos dos radios $\overline{OU}, \overline{OV}$ de la circunferencia fija que sean paralelos a $\overline{AH}, \overline{AK}$, respectivamente, y construimos una semirrecta que pase por $K$ paralela a $\overline{UV}$. Denotemos con $S$ su intersección con $\overline{AH}$ (Fig.~\ref{f.se-copy3}). Por construcción, $\overline{AH}\parallel\overline{OU}$ y $\overline{AK}\parallel\overline{OV}$, por lo que $\angle SAK=\angle HAK=\angle UOV=\theta$. Si $\overline{SK}\parallel\overline{UV}$ y $\triangle SAK\sim\triangle UOV$ por ángulo-ángulo-ángulo, $\triangle UOV$ es isósceles porque $\overline{OU}, \overline{OV}$ son radios de la misma circunferencia. Por lo tanto, $\triangle SAK$ es isósceles y $\overline{AS}=\overline{AK}=\overline{PQ}$.
 \end{proof}
 
-\begin{figure}[b]
+\begin{figure}%[b]
 \begin{center}
 \begin{tikzpicture}[scale=.7]
+\clip (-4,-1.6) rectangle +(17,5.5);
 \coordinate (A) at (0,0);
 \coordinate (P) at (3cm,2);
 \coordinate (Q) at (4.5cm,2);
@@ -418,7 +421,8 @@ Construimos dos radios $\overline{OU}, \overline{OV}$ de la circunferencia fija 
 \caption{Utilizar la circunferencia fija para copiar el segmento de línea}\label{f.se-copy3}
 \end{figure}
 
-\section{Construcción de un segmento de línea como cociente de segmentos}\label{s.relative}
+\section[Un segmento de línea como cociente de segmentos]
+{Construcción de un segmento de línea como cociente de segmentos}\label{s.relative}
 
 \begin{theorem}\label{thm.straight-relative}
 Dados segmentos de longitudes $n, m, s$, es posible construir un segmento de longitud:
@@ -429,7 +433,7 @@ Dados segmentos de longitudes $n, m, s$, es posible construir un segmento de lon
 Elegimos puntos $A,B,C$ que no estén en la misma recta y construimos semirrectas $\overline{AB}, \overline{AC}$. Por el Teorema~\ref{thm.straight-direction} se pueden construir puntos $M,N,S$ tales que $\overline{AM}= m$, $\overline{AN} =n$, $\overline{AS}=s$. Por el Teorema~\ref{thm.straight-parallel} construir una recta que pase por $N$ paralela a $\overline{MS}$ que corte a $\overline{AC}$ en $X$ y etiquetar $\overline{AX}$ (Fig.~\ref{f.se-three2}). $\triangle MAS\sim\triangle NAX$ por ángulo-ángulo-ángulo entonces $\displaystyle\frac{m}{n}=\displaystyle\frac{s}{x}$ y $x=\displaystyle\frac{n}{m}s$.
 \end{proof}
 
-\begin{figure}[t]
+\begin{figure}%[t]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
 \coordinate (A) at (0,0);
@@ -474,7 +478,7 @@ h+k &=& \frac{d}{t}a + \frac{d}{t}b = \frac{d(a+b)}{t} = \frac{dt}{t} = d\,.
 \end{eqnarray*}
 
 Por el Teorema~\ref{thm.straight-direction} construimos $\overline{HA}= h$ en un diámetro $\overline{HK}$ de la circunferencia fija. De $h+k=d$ tenemos $\overline{AK}=k$ (Fig.~\ref{f.se-sqrt}). Por el Teorema~\ref{thm.straight-perp} construimos una perpendicular a $\overline{HK}$ en $A$ y denotamos con $S$ la intersección de esta recta con la circunferencia. $\overline{OS}=\overline{OK}=d/2$ y $\overline{OA}=(d/2)-k$. 
-\begin{figure}[t]
+\begin{figure}%[t]
 \begin{center}
 \begin{tikzpicture}[scale=.7]
 \coordinate (O) at (0,0);
@@ -509,8 +513,7 @@ s^2&=& \left(\frac{d}{2}\right)^2 - \left(\frac{d}{2}-k\right)^2\\
 &=& \left(\frac{d}{2}\right)^2 - \left(\frac{d}{2}\right)^2 + 2\frac{dk}{2} - k^2\\
 &=& k(d-k) = kh\\
 s&=&\sqrt{hk}\,.
-\end{eqnarray*}
-
+\end{eqnarray*}%
 Ahora $x=\displaystyle\frac{t}{d}s$ se puede construir por el Teorema~\ref{thm.straight-relative}.
 \end{proof}
 
@@ -519,7 +522,7 @@ Ahora $x=\displaystyle\frac{t}{d}s$ se puede construir por el Teorema~\ref{thm.s
 \begin{theorem}
 Dada una recta $l$ y una circunferencia $c(O,r)$, es posible construir sus puntos de intersección (Fig.~\ref{f.se-line-circle1}).
 \end{theorem}
-\begin{figure}[t]
+\begin{figure}%[t]
 \begin{center}
 \begin{tikzpicture}[scale=.7]
 \coordinate (O) at (0,0);
@@ -539,7 +542,7 @@ Dada una recta $l$ y una circunferencia $c(O,r)$, es posible construir sus punto
 
 \begin{proof}
 Por el Teorema~\ref{thm.straight-perp} es posible construir una perpendicular desde el centro del círculo $O$ a la recta $l$. La intersección de $l$ con la perpendicular se denota con $M$. $\overline{OM}$ biseca la cuerda $\overline{XY}$, donde $X, Y$ son las intersecciones de la recta con la circunferencia (Fig.~\ref{f.se-line-circle2}). Definimos $\overline{XY}=2s$ y $\overline{OM}=t$. Tengamos en cuenta que $s,X,Y$ son sólo definiciones para las cuales no se ha efectuado una construcción.
-\begin{figure}[b]
+\begin{figure}%
 \begin{center}
 \begin{tikzpicture}[scale=.7]
 \coordinate (O) at (0,0);
@@ -586,7 +589,7 @@ Dadas dos circunferencias $c(O_1,r_1), c(O_2,r_2)$, es posible construir sus pun
 Construimos $\overline{O_1O_2}$ y denotamos su longitud con $t$ (Fig.~\ref{f.se-circle-circle1}).
 Denotamos con $A$ ser el punto de intersección de $\overline{O_1O_2}$ y $\overline{XY}$, y Denotamos $q=\overline{O_1A}$, $x=\overline{XA}$ (Fig.~\ref{f.se-circle-circle2}). $A$ aún no se ha construido, pero si $q,x$ se construyen entonces por el Teorema~\ref{thm.straight-direction} se puede construir el punto $A$ a la longitud $q$ de $O_1$ en la dirección $\overline{O_1O_2}$.
 
-\begin{figure}[t]
+\begin{figure}%[t]
 \begin{center}
 \begin{tikzpicture}[scale=.9]
 \coordinate (O1) at (0,0);
@@ -611,7 +614,7 @@ Denotamos con $A$ ser el punto de intersección de $\overline{O_1O_2}$ y $\overl
 \caption{Construcción de la intersección de dos circunferencias (1)}\label{f.se-circle-circle1}
 \end{figure}
 
-\begin{figure}[b]
+\begin{figure}%[b]
 \begin{center}
 \begin{tikzpicture}[scale=.9]
 \coordinate (O1) at (0,0);

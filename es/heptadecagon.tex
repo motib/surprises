@@ -111,6 +111,7 @@ Por la fórmula de Moivre:\index{fórmula de Moivre}
 \left[\cos \left(\frac{2\pi}{n}\right) + i\sen  \left(\frac{2\pi}{n}\right)\right]^{n}=
 \cos \left(\frac{2 n\pi}{n}\right) + i\sen  \left(\frac{2 n\pi}{n}\right)= 1\,.
 \]
+\vspace*{-3ex}
 \end{advanced}
 
 \begin{theorem}
@@ -202,7 +203,7 @@ Ahora tenemos que trabajar mucho para calcular su producto. La figura muestra el
 
 \begin{figure}[t]
 \[
-\renewcommand{\arraystretch}{1.8}
+\renewcommand{\arraystretch}{1.6}
 \begin{array}{lcl}
 a_0a_1&=&(r + r^9 + r^{13} +r^{15} +r^{16} + r^8+r^4+r^2)\;\;\times\\
 &&(r^3 + r^{10} + r^{5} +r^{11} +r^{14} + r^7+r^{12}+r^6)\\
@@ -230,28 +231,30 @@ b_0&=& r^1+ r^{13} + r^{16} + r^4\\
 b_1&=& r^3+ r^{5} + r^{14} + r^{12}\\
 b_2&=& r^9+ r^{15} + r^{8} + r^2\\
 b_3&=& r^{10}+ r^{11} + r^{7} + r^6\,.
-\end{eqnarray*}
-Corroboramos que $b_0+b_2=a_0, b_1+b_3=a_1$ y calcula los productos correspondientes:
+\end{eqnarray*}%
+Corroboramos que $b_0+b_2=a_0, b_1+b_3=a_1$ y calcula los productos correspondientes (Fig.~\ref{f.b0213}).
+\begin{figure}[t]
 \begin{eqnarray*}
 b_0b_2&=&(r + r^{13} + r^{16} +r^4)\;\;\times\;(r^9 + r^{15} + r^{8} +r^{2})\\
 &=&(r^{10}+r^{16}+r^9+r^3)\,+\;\,(r^{5}+r^{11}+r^4+r^{15})+\\
 &&(r^{8}+r^{14}+r^7+r^1)\,\;\,+\;\,(r^{13}+r^{2}+r^{12}+r^6)\\
-&=&-1\,.
-\end{eqnarray*}
-
-\begin{eqnarray*}
+&=&-1\\
+%\end{eqnarray*}%
+%\begin{eqnarray*}
 b_1b_3&=&(r^3 + r^{5} + r^{14} +r^{12})\;\;\times\;(r^{10} + r^{11} + r^{7} +r^{6})\\
 &=&(r^{13}+r^{14}+r^{10}+r^9)\;+\;(r^{15}+r^{16}+r^{12}+r^{11})+\\
 &&(r^{7}+r^{8}+r^4+r^3)\quad\;\, +\;(r^{5}+r^{6}+r^{2}+r^1)\\
 &=&-1\,.
-\end{eqnarray*}
+\end{eqnarray*}%
+\caption{Cálculo de $b_0b_2,b_1b_3$}\label{f.b0213}
+\end{figure}
 Para resumir estos cálculos:
 \begin{eqnarray*}
 b_0+b_2&=&a_0\\
 b_0b_2&=&-1\\
 b_1+b_3&=&a_1\\
 b_1b_3&=&-1\,,
-\end{eqnarray*}
+\end{eqnarray*}%
 por lo que $b_0,b_2$ son las soluciones de $y^2-a_0y-1= 0$, y $b_1,b_3$ son las soluciones de $y^2-a_1y-1 =0$. Utilizando los valores calculados anteriormente para $a_0,a_1$ podemos calcular las raíces $b_0,b_1$ (Fig.~\ref{f.b0b1}).
 \begin{figure}[t]
 \begin{eqnarray*}
@@ -285,7 +288,7 @@ b_1&=&\frac{a_1+\sqrt{a_1^2+4}}{2}\\
 \caption{Cálculo de $b_0$ y $b_1$}\label{f.b0b1}
 \end{figure}
 
-Por último, sean $c_0,c_4$ las sumas de cada raíz octava a partir de $r^1,r^{13}$:
+\noindent{}Por último, sean $c_0,c_4$ las sumas de cada raíz octava a partir de $r^1,r^{13}$:
 \begin{eqnarray*}
 c_0&=&r^1+r^{16}\\
 c_4&=&r^{13}+r^4\\
@@ -392,13 +395,14 @@ El coseno del ángulo central de un heptadecágono es construible con regla y co
      \sqrt{34+2\sqrt{17}}
    }\,.\label{eq.not-gauss2}
 \end{flalign}
-
 \begin{advanced}
+\vspace{-2ex}
 \begin{eqnarray*}
 r_1+r_{16}&=&\cos\left(\frac{2\pi}{17}\right)+i\sen\left(\frac{2\pi}{17}\right)+\cos\left(\frac{2\cdot 16\pi}{17}\right)+i\sen\left(\frac{2\cdot 16\pi}{17}\right)\\
 &=&\cos\left(\frac{2\pi}{17}\right)+i\sen\left(\frac{2\pi}{17}\right)+\cos\left(\frac{-2\pi}{17}\right)+i\sen\left(\frac{-2\pi}{17}\right)\\
 &=&2\cos\left(\frac{2\pi}{17}\right)\,.
 \end{eqnarray*}
+\vspace{-4ex}
 \end{advanced}
 
 \section{Derivación de la fórmula de Gauss}\label{s.derivation}
@@ -510,14 +514,13 @@ y por el teorema de la bisectriz externa del ángulo (Teorema~\ref{thm.external-
 \frac{\overline{OC}}{1+\overline{OC}}&=&\frac{1/4}{\sqrt{17}/{4}}\\
 \overline{OC}&=&\frac{1}{-1+\sqrt{17}}=\frac{1}{-1+\sqrt{17}}\cdot \frac{1+\sqrt{17}}{1+\sqrt{17}}\\
 &=&\frac{1+\sqrt{17}}{16}\,.
-\end{eqnarray*}
+\end{eqnarray*}%
 Construimos $D$ sobre $\overline{OP}$ tal que $\overline{CD}=\overline{CA}=a$ (Fig.~\ref{f.hept-construction2}). Por el Teorema de Pitágoras:
 \begin{eqnarray*}
 \overline{CD}=\overline{CA}&=&\sqrt{\overline{OA}^2+\overline{OC}^2}\\
 &=&\sqrt{\left(\frac{1}{4}\right)^2+\left(\frac{1+\sqrt{17}}{16}\right)^2}=\frac{1}{16}\sqrt{16+1+17+2\sqrt{17}}\\
 &=&\frac{1}{16}\sqrt{34+2\sqrt{17}}\,.
-\end{eqnarray*}
-
+\end{eqnarray*}%
 \begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=1.2]
@@ -675,6 +678,7 @@ Las quintas raíces complejas de la unidad son:
 \[
 1+i\cdot 0,\quad\frac{\sqrt{5}-1}{4}\pm i \frac{\sqrt{10+2\sqrt{5}}}{4},\quad\frac{-\sqrt{5}-1}{4}\pm i \frac{\sqrt{10-2\sqrt{5}}}{4}\,.
 \]
+\vspace{-5ex}
 \end{advanced}
 
 \subsection{Trigonometría}

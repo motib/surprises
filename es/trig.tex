@@ -44,7 +44,7 @@ Figura~\ref{f.area-base-height-2} muestra que ``cortando'' el triángulo por la 
 \node[right] at (C) {$C$};
 \draw (B) -- node[right,yshift=-4pt] {$h=c\sen\theta$} 
   (B|-A) coordinate (H);
-\draw[rotate=90] (H) rectángulo +(8pt,8pt);
+\draw[rotate=90] (H) rectangle +(8pt,8pt);
 \end{tikzpicture}
 \caption{Cálculo del área de un triángulo a partir de la base y la altura}\label{f.area-base-height-1}
 \end{center}
@@ -62,7 +62,7 @@ Figura~\ref{f.area-base-height-2} muestra que ``cortando'' el triángulo por la 
 \node[above] at (B) {$B$};
 \node[right] at (C) {$C$};
 \path (B) -- node[right,near end] {$h/2$} (B|-A) coordinate (H);
-\draw[rotate=90] (H) rectángulo +(8pt,8pt);
+\draw[rotate=90] (H) rectangle +(8pt,8pt);
 \coordinate (K) at ($(H)!.5!(B)$);
 \draw (A) -- node[below] {$b$} (C);
 \draw (H) -- (K);
@@ -98,7 +98,7 @@ $h=c\sen \theta$.
 
 
 \index{Triangle!Heron's formula}
-\begin{theorem}[Heron] El área del triángulo $\triangle ABC$ viene dada por:\label{thm.heron} 
+\begin{theorem}[eron] El área del triángulo $\triangle ABC$ viene dada por:\label{thm.heron} 
 \[
 \triangle ABC = \sqrt{s(s-a)(s-b)(s-c)}\,,
 \]
@@ -112,7 +112,7 @@ El radio de una circunferencia y una tangente que interseca al radio son perpend
 \triangle BOA'\cong\triangle BOC',\quad
 \triangle COA'\cong \triangle COB'\,.
 \]
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=1.8]
 % Draw base and path two lines at known angles
@@ -239,7 +239,7 @@ La fórmula de Heron se deduce de $u=s-a, v=s-b, w=s-c$.
 Demostraremos la primera fórmula; las demás pueden obtenerse utilizando los valores del seno y coseno para $-\alpha$ y $90^\circ-\alpha$.
 
 Dado un triángulo rectángulo $\triangle ABC$ con ángulo agudo $\alpha$ y un triángulo rectángulo $\triangle ACD$ con ángulo agudo $\beta$, podemos unirlos para obtener figuras geométricas con ángulo $\alpha+\beta$ (Fig.~\ref{f.sin-sum1}). El diagrama de la izquierda es el más utilizado en las demostraciones de las identidades. Aquí damos dos demostraciones basadas en los diagramas central y derecho.
-\begin{figure}[h]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.85]
 \coordinate (A) at (0,0);
@@ -255,8 +255,8 @@ Dado un triángulo rectángulo $\triangle ABC$ con ángulo agudo $\alpha$ y un t
 \draw (A) -- (B) -- (C) -- cycle;
 \draw (C) -- ($(C)!2cm!-90:(A)$) coordinate (D) -- (A);
 \node[above] at (D) {$D$};
-\draw[rotate=90] (B) rectángulo +(7pt,7pt);
-\draw[rotate=128] (C) rectángulo +(7pt,7pt);
+\draw[rotate=90] (B) rectangle +(7pt,7pt);
+\draw[rotate=128] (C) rectangle +(7pt,7pt);
 
 \begin{scope}[xshift=4.3cm]
 \coordinate (B) at (0,0);
@@ -271,8 +271,8 @@ Dado un triángulo rectángulo $\triangle ABC$ con ángulo agudo $\alpha$ y un t
 \node[below] at (C) {$C$};
 \node[below left,xshift=2pt,yshift=-18pt] at (A) {$\alpha$};
 \node[below right,xshift=0pt,yshift=-14pt] at (A) {$\beta$};
-\draw[rotate=90] (C) rectángulo +(7pt,7pt);
-\draw (C) rectángulo +(7pt,7pt);
+\draw[rotate=90] (C) rectangle +(7pt,7pt);
+\draw (C) rectangle +(7pt,7pt);
 \end{scope}
 
 \begin{scope}[xshift=9.75cm]
@@ -288,8 +288,8 @@ Dado un triángulo rectángulo $\triangle ABC$ con ángulo agudo $\alpha$ y un t
 \path[name path=bc1] (B) -- +(90:4);
 \path[name intersections={of=dc1 and bc1,by={C}}];
 \node[above] at (C) {$C$};
-\draw[rotate=90] (B) rectángulo +(7pt,7pt);
-\draw[rotate=-110] (D) rectángulo +(7pt,7pt);
+\draw[rotate=90] (B) rectangle +(7pt,7pt);
+\draw[rotate=-110] (D) rectangle +(7pt,7pt);
 \draw (A) -- (B) -- (C) -- (D) -- cycle;
 \draw (A) -- (C);
 \end{scope}
@@ -330,20 +330,22 @@ Igualando las dos fórmulas para $\triangle ABD$ y cancelando $\frac{1}{2}bc$, o
 \node[below] at (C) {$C$};
 \node[below left,xshift=2pt,yshift=-18pt] at (A) {$\alpha$};
 \node[below right,xshift=1pt,yshift=-14pt] at (A) {$\beta$};
-\draw[rotate=90] (C) rectángulo +(7pt,7pt);
-\draw (C) rectángulo +(7pt,7pt);
+\draw[rotate=90] (C) rectangle +(7pt,7pt);
+\draw (C) rectangle +(7pt,7pt);
 \path (B) -- node[below] {$a_1$} (C) -- node[below] {$a_2$} (D);
 \end{tikzpicture}
 \end{center}
 \caption{Cálculo del área de un triángulo de dos maneras}\label{f.sin-sum2}
 \end{figure}
 
+\newpage
+
 La segunda demostración utiliza el siguiente teorema:
 \begin{theorem}
 En una circunferencia de \emph{diámetro} $1$ la longitud de una cuerda que subtiende un ángulo inscrito es igual al seno del ángulo (Fig.~\ref{f.chord-angle}).
 \end{theorem}
 
-\begin{figure}[b]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.7]
 
@@ -356,7 +358,7 @@ En una circunferencia de \emph{diámetro} $1$ la longitud de una cuerda que subt
 \node[draw,circle through=(A),name path=circle] at (O) {};
 \coordinate (B) at ($(O)+(10:2.5)$);
 \draw (A) -- (B) -- node[left] {$a$} (C);
-\draw[rotate=120] (B) rectángulo +(8pt,8pt);
+\draw[rotate=120] (B) rectangle +(8pt,8pt);
 \coordinate (D) at ($(O)+(160:2.5)$);
 \draw(C) -- (D) -- (B);
 \node[above right,xshift=12pt,yshift=12pt] at (A) {$\alpha$};
@@ -376,6 +378,8 @@ Sea $\overline{AB}$ un diámetro y $\angle BAC=\alpha$. Sea $D$ cualquier otro p
 \sen \alpha = \frac{\overline{BC}}{\overline{AB}}=\frac{\overline{BC}}{1}=\overline{BC}\,.
 \]
 \end{proof}
+
+\newpage
 
 \begin{proof}
 \mbox{}\\
@@ -398,8 +402,8 @@ $\angle ADC+\angle ABC=180^\circ$ ya que ambos ángulos son rectos. Por Teorema~
 \path[name path=bc1] (B) -- +(90:4);
 \path[name intersections={of=dc1 and bc1,by={C}}];
 \node[above right] at (C) {$C$};
-\draw[rotate=90] (B) rectángulo +(9pt,9pt);
-\draw[rotate=-110] (D) rectángulo +(9pt,9pt);
+\draw[rotate=90] (B) rectangle +(9pt,9pt);
+\draw[rotate=-110] (D) rectangle +(9pt,9pt);
 \draw (A) -- (B) -- (C) -- (D) -- cycle;
 \draw (A) -- (C);
 \draw (D) -- (B);
@@ -440,6 +444,7 @@ Por el Teorema de Ptolomeo (Teorema~\ref{thm.ptolemy}) el producto de las diagon
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 
 \subsection{Coseno de un ángulo triple}\label{s.cosine}
 \index{Trigonometric identities!cosine of a triple angle}
@@ -520,7 +525,7 @@ c^2&=&a^2+b^2-2ab\cos \gamma\,.
 
 \begin{figure}[b]
 \begin{center}
-\begin{tikzpicture}[scale=.65]
+\begin{tikzpicture}[scale=1]
   \coordinate[label = left:$A$] (A) at (0,0);
   \coordinate[label = right:$B$] (B) at (6,0);
   \draw (A) -- (40:5) coordinate (C) node[above] {$C$};
@@ -530,7 +535,7 @@ c^2&=&a^2+b^2-2ab\cos \gamma\,.
 \node[above left,xshift=-8pt] at (B) {$\beta$};
 \coordinate (D) at (A-|C);
 \draw (C) -- (D);  
-\draw (D) rectángulo +(10pt,10pt);
+\draw (D) rectangle +(10pt,10pt);
 \draw[<->] (0,-.5) -- node[fill=white] {$c$} (6,-0.5);
 \draw[<->] (0,-1) -- node[fill=white] {$c-x$} ($(D)+(0,-1)$);
 \draw[<->] ($(D)+(0,-1)$) -- node[fill=white] {$x$} (6,-1);
@@ -577,9 +582,9 @@ b^2&=&a^2+c(c-2x)\\
 \coordinate (D) at (C|-B);
 \coordinate (Dp) at (Cp|-B);
 \draw (C) -- (D);
-\draw[rotate=90] (D) rectángulo +(8pt,8pt);
+\draw[rotate=90] (D) rectangle +(8pt,8pt);
 \draw (Cp) -- (Dp);
-\draw (Dp) rectángulo +(8pt,8pt);
+\draw (Dp) rectangle +(8pt,8pt);
 \draw[<->] ($(A)+(0,-.8)$) -- node[fill=white] {$x$} ($(Dp)+(0,-.8)$);
 \draw[<->] ($(Dp)+(0,-.8)$) -- node[fill=white] {$c-2x$} ($(D)+(0,-.8)$);
 \draw[<->] ($(D)+(0,-.8)$) -- node[fill=white] {$x$} ($(B)+(0,-.8)$);
@@ -664,10 +669,8 @@ If $\alpha+\beta+\gamma=180^\circ$ then:
 \tan\alpha\tan\beta\tan\gamma &=&\tan\alpha+\tan\beta+\tan\gamma\,.
 \end{eqnarray*}
 \end{proof}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{figure}[b]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.7]
 \coordinate (o1) at (0,0);
@@ -708,7 +711,6 @@ If $\alpha+\beta+\gamma=180^\circ$ then:
 \caption{Polígonos regulares con lados de $3$, $8$ y $16$ inscritos en un círculo}\label{fig.regular-polygons}
 \end{center}
 \end{figure}
-
 \subsection{El límite de $\sen\alpha/\alpha$}\label{s.sin-over-x}
 \index{Trigonometric identities!limit@limit of $\sen \alpha/\alpha$}
 
@@ -744,24 +746,8 @@ Dado que $a=b=1$ la longitud de la cuerda $c$ que subtiende a $\alpha$ puede cal
 \caption{La longitud de una cuerda correspondiente a un arco de tamaño $\alpha$}\label{fig.length-of-a-chord}
 \end{center}
 \end{figure}
-\begin{eqnarray*}
-c^2&=&a^2+b^2-2ab\cos \alpha\\
-c&=&\sqrt{2-2\cos \alpha}\\
-\lim_{\alpha\rightarrow 0} c&=& \sqrt{2-2\cdot 1}=0\,.
-\end{eqnarray*}
-En referencia a la figura~\ref{fig.ratio-of-sine-to-x}:
-\[
-\lim_{\alpha \rightarrow 0} \frac{\sen \alpha}{\alpha} = \lim_{\alpha \rightarrow 0} \frac{2\sen \alpha}{2\alpha}\,.
-\]
-Esta es la razón entre la longitud de la cuerda $\overline{PQ}$ y la longitud del arco $\widehat{PQ}$.
-Pero hemos visto que esta razón converge a $1$ como el ángulo subtendido $2\alpha$ tiende a $0$, así:
-\[
-\lim_{\alpha \rightarrow 0} \frac{\sen \alpha}{\alpha} = 1\,.
-\]
-\end{proof}
-\index{Trigonometric identities|)}
 
-\begin{figure}[h]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.9]
   \draw[thin] (-2,0) -- (2,0);
@@ -793,17 +779,28 @@ Pero hemos visto que esta razón converge a $1$ como el ángulo subtendido $2\al
 \end{center}
 \end{figure}
 
+
+\begin{eqnarray*}
+c^2&=&a^2+b^2-2ab\cos \alpha\\
+c&=&\sqrt{2-2\cos \alpha}\\
+\lim_{\alpha\rightarrow 0} c&=& \sqrt{2-2\cdot 1}=0\,.
+\end{eqnarray*}
+En referencia a la figura~\ref{fig.ratio-of-sine-to-x}:
+\[
+\lim_{\alpha \rightarrow 0} \frac{\sen \alpha}{\alpha} = \lim_{\alpha \rightarrow 0} \frac{2\sen \alpha}{2\alpha}\,.
+\]
+
+Esta es la razón entre la longitud de la cuerda $\overline{PQ}$ y la longitud del arco $\widehat{PQ}$.
+Pero hemos visto que esta razón converge a $1$ como el ángulo subtendido $2\alpha$ tiende a $0$, así:
+\[
+\lim_{\alpha \rightarrow 0} \frac{\sen \alpha}{\alpha} = 1\,.
+\]
+\end{proof}
+\index{Trigonometric identities|)}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Teoremas de la bisectriz del ángulo}\label{a.bisector}
-\index{Triangle!angle bisector theorem}
-
-\begin{theorem}\label{thm.angle-bisector}
-En $\triangle ABC$ la bisectriz del ángulo de $\angle BAC$ interseca $\overline{BC}$ en $D$ (Fig.~\ref{f.angle-bisector}). Entonces:
-\[
-\frac {\overline{BD}}{\overline{CD}}=\frac {\overline{AB}}{\overline{AC}}\,.
-\]
-\end{theorem}
 
 \begin{figure}[b]
 \begin{center}
@@ -824,11 +821,21 @@ En $\triangle ABC$ la bisectriz del ángulo de $\angle BAC$ interseca $\overline
 \node[below left,xshift=2pt,yshift=-8pt] at (a) {$\alpha$};
 \node[below right,xshift=2pt,yshift=-8pt] at (a) {$\alpha$};
 \draw (a) -- node[left] {$h$} (a |- b);
-\draw (a|-b) rectángulo +(7pt,7pt);
+\draw (a|-b) rectangle +(7pt,7pt);
 \end{tikzpicture}
 \end{center}
 \caption{Teorema de la bisectriz interna del ángulo}\label{f.angle-bisector}
 \end{figure}
+
+\section{Teoremas de la bisectriz del ángulo}\label{a.bisector}
+\index{Triangle!angle bisector theorem}
+
+\begin{theorem}\label{thm.angle-bisector}
+En $\triangle ABC$ la bisectriz del ángulo de $\angle BAC$ interseca $\overline{BC}$ en $D$ (Fig.~\ref{f.angle-bisector}). Entonces:
+\[
+\frac {\overline{BD}}{\overline{CD}}=\frac {\overline{AB}}{\overline{AC}}\,.
+\]
+\end{theorem}
 \begin{proof}
 Demostramos el teorema calculando las áreas de dos triángulos utilizando tanto la base y la altura (Ecuación~\ref{eq.area-from-base}), como la base, el ángulo y el lado (Ecuación~\ref{eq.area-from-sine}):
 \begin{eqnarray*}
@@ -837,10 +844,10 @@ Demostramos el teorema calculando las áreas de dos triángulos utilizando tanto
 \triangle ACD&=&\frac{1}{2}\overline{CD}h=\frac{1}{2}\overline{AC}\,\overline{AD}\sen \alpha\\
 \frac{\overline{CD}}{\overline{AC}}&=&\frac{\overline{AD}\sen \alpha}{h}\\
 \frac{\overline{BD}}{\overline{CD}}&=&\frac{\overline{AB}}{\overline{AC}}\,.
-\end{eqnarray*}
+\end{eqnarray*}%
 \end{proof}
 
-También existe un teorema de la bisectriz del ángulo para la \emph{bisectriz externa}:
+\noindent{}También existe un teorema de la bisectriz del ángulo para la \emph{bisectriz externa}:
 \index{Triangle!angle bisector theorem}
 \begin{theorem}\label{thm.external-angle-bisector}
 In $\triangle ABC$ sea $\overline{AE}$ la bisectriz del ángulo suplementario al ángulo $\triangle BAC$ (Fig.~\ref{f.angle-bisector-external}) y que la bisectriz interseque a $\overline{BC}$ en $E$ (Fig.~\ref{f.angle-bisector-external}). Entonces:
@@ -869,7 +876,7 @@ In $\triangle ABC$ sea $\overline{AE}$ la bisectriz del ángulo suplementario al
 \draw (a) -- (e) node[below] {$E$};
 \coordinate (d) at (a |- b);
 \draw (a) -- node[right] {$h$} (d);
-\draw (d) rectángulo +(6pt,6pt);
+\draw (d) rectangle +(6pt,6pt);
 \end{tikzpicture}
 \end{center}
 \caption{Teorema de la bisectriz del ángulo exterior}\label{f.angle-bisector-external}
@@ -1078,7 +1085,7 @@ Dados segmentos desde los vértices de un triángulo hasta los lados opuestos qu
 \]
 \end{theorem}
 
-\begin{figure}[b]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}
 \path[name path=pq] (-4,0) -- (4,0);
@@ -1101,19 +1108,10 @@ Dados segmentos desde los vértices de un triángulo hasta los lados opuestos qu
 \caption{Teorema de Ceva}\label{f.ceva1}
 \end{figure}
 
-\begin{proof} Si las altitudes de dos triángulos son iguales, sus áreas son proporcionales a las bases. En ambos diagramas de la figura~\ref{f.ceva2}, las altitudes de los triángulos grises son iguales, por lo que:
-\[
-\frac{\triangle BQO}{\triangle SQO} = \frac{\overline{BQ}}{\overline{QS}}\;,\quad\quad \frac{\triangle BQA}{\triangle SQA} = \frac{\overline{BQ}}{\overline{QS}}\;.
-\]
-Restando las áreas de los triángulos indicados, obtenemos la proporción entre los triángulos grises mostrados en la figura~\ref{f.ceva3}:
-\[
-\frac{\triangle BOA}{\triangle SOA}=\frac{\triangle BQA - \triangle BQO}{\triangle SQA-\triangle SQO} = \frac{\overline{BQ}}{\overline{QS}}\,.
-\]
-
 \begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}
-\clip (-2.2,-2.4) rectángulo +(10.4,4);
+\clip (-2.2,-2.4) rectangle +(10.4,4);
 \path[name path=pq] (-4,0) -- (4,0);
 \draw (-2,-2) node[below] {$A$} coordinate (A) -- (2,-2) node[below] {$B$} coordinate (B);
 \coordinate (M) at (0,-2);
@@ -1136,7 +1134,7 @@ Restando las áreas de los triángulos indicados, obtenemos la proporción entre
 \path[name path=al1] (O) -- ($(Q)!(O)!(B)$);
 \path [name intersections={of=al1 and sb,by={A1}}];
 \draw (O) -- (A1);
-\draw[rotate=-156] (A1) rectángulo +(7pt,7pt);
+\draw[rotate=-156] (A1) rectangle +(7pt,7pt);
 \begin{scope}[xshift=6cm]
 \path[name path=pq] (-4,0) -- (4,0);
 \draw (-2,-2) node[below] {$A$} coordinate (A) -- (2,-2) node[below] {$B$} coordinate (B);
@@ -1160,40 +1158,21 @@ Restando las áreas de los triángulos indicados, obtenemos la proporción entre
 \path[name path=al2] (A) -- ($(Q)!(A)!(B)$);
 \path [name intersections={of=al2 and sb,by={A2}}];
 \draw (A) -- (A2);
-\draw[rotate=-156] (A2) rectángulo +(7pt,7pt);
+\draw[rotate=-156] (A2) rectangle +(7pt,7pt);
 \end{scope}
 \end{tikzpicture}
 \end{center}
 \caption{Triángulos en el teorema de Ceva}\label{f.ceva2}
 \end{figure}
 
-\begin{figure}[b]
-\begin{center}
-\begin{tikzpicture}
-\path[name path=pq] (-4,0) -- (4,0);
-\draw (-2,-2) node[below left] {$A$} coordinate (A) -- (2,-2) node[below right] {$B$} coordinate (B);
-\coordinate (M) at (0,-2);
-\draw[name path=as] (A) -- ++(50:4cm) node[above] {$S$} coordinate (S);
-\draw[name path=sb] (S) -- (B);
-\path [name intersections={of=pq and as,by={P}}];
-\path [name intersections={of=pq and sb,by={Q}}];
-\path[name path=pb] (P) -- (B);
-\draw[thick,name path=qa] (Q) -- (A);
-\path [name intersections={of=pb and qa,by={O}}];
-\draw[fill=gray!50] (B) -- (O) -- (A);
-\draw[fill=gray!70] (S) -- (O) -- (A);
-\draw (B) -- (O) -- (A);
-\draw (S) -- (O) -- (A);
-\draw (A) -- (B) -- (S) -- cycle;
-\draw (S) -- (O);
-\draw (B) -- (O);
-\node[above right] at (Q) {$Q$};
-\node[right,xshift=2pt] at (O) {$O$};
-\end{tikzpicture}
-\end{center}
-\caption{Restar áreas en el teorema de Ceva}\label{f.ceva3}
-\end{figure}
-
+\begin{proof} Si las altitudes de dos triángulos son iguales, sus áreas son proporcionales a las bases. En ambos diagramas de la figura~\ref{f.ceva2}, las altitudes de los triángulos grises son iguales, por lo que:
+\[
+\frac{\triangle BQO}{\triangle SQO} = \frac{\overline{BQ}}{\overline{QS}}\;,\quad\quad \frac{\triangle BQA}{\triangle SQA} = \frac{\overline{BQ}}{\overline{QS}}\;.
+\]
+Restando las áreas de los triángulos indicados, obtenemos la proporción entre los triángulos grises mostrados en la figura~\ref{f.ceva3}:
+\[
+\frac{\triangle BOA}{\triangle SOA}=\frac{\triangle BQA - \triangle BQO}{\triangle SQA-\triangle SQO} = \frac{\overline{BQ}}{\overline{QS}}\,.
+\]
 Esto puede parecer extraño al principio, así que lo explicaremos utilizando una notación más sencilla:
 \begin{eqnarray*}
  \frac{c}{d} &=&\frac{a}{b}\\
@@ -1212,39 +1191,6 @@ Así que:
 \]
 ya que el orden de los vértices en un triángulo no hace ninguna diferencia.
 \end{proof}
-
-\begin{figure}[b]
-\begin{center}
-\begin{tikzpicture}[scale=.6]
-\clip (-.8,-.4) rectángulo +(11.2,6.5);
-\coordinate (D) at (0,0) node[left] {$D$};
-\draw (D) -- ++(60:6) coordinate (C) node[left] {$C$};
-\coordinate (A) at (60:3);
-\node[left] at (A) {$A$};
-\draw (A) -- ++(3,0) coordinate (B);% -- (C);
-\node[below right] at (B) {$P$};
-\path[name path=DQ] (D) -- ($(D)!1.7!(B)$);
-\path[name path=AP] (A) -- ($(A)!3!(B)$);
-% 3*(1+\sqrt[3]{2}) = 6.78
-\path[name path=CP] (C) circle (6.78cm);
-\path[name intersections={of=CP and AP,by={P}}];
-\draw[name path=CP] (C) -- (P);
-\path[name intersections={of=CP and DQ,by={Q}}];
-\node[above] at (Q) {$Q$};
-\node[right] at (P) {$B$};
-\draw (D) -- (Q);
-\draw (B) -- (P);
-\path[dashed,name path=CK] (C) -- ($(C)+(6.5,0)$);
-\path[name path=DK] (D) -- ($(D)!2!(Q)$);
-\path[name intersections={of=DK and CK,by={K}}];
-\draw[dashed] (Q) -- (K) node[right] {$K$} -- (C);
-\draw[very thick] (Q) -- (D);
-\draw[dashed] (C) -- (K) -- (Q);
-\draw (B) -- (P) -- (C);
-\end{tikzpicture}
-\end{center}
-\caption{Teorema de Menelao}\label{f.menelaus}
-\end{figure}
 
 \section{Teorema de Menelao}\label{a.menelaus}
 
@@ -1272,6 +1218,70 @@ $\overline{AB}\cdot\overline{CD}\cdot\overline{PQ}=\overline{QC}\cdot\overline{B
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{figure}[h]
+\begin{minipage}{.45\textwidth}
+\begin{center}
+\begin{tikzpicture}
+\clip (-2.5,-2.5) rectangle +(5,4);
+\path[name path=pq] (-4,0) -- (4,0);
+\draw (-2,-2) node[below left] {$A$} coordinate (A) -- (2,-2) node[below right] {$B$} coordinate (B);
+\coordinate (M) at (0,-2);
+\draw[name path=as] (A) -- ++(50:4cm) node[above] {$S$} coordinate (S);
+\draw[name path=sb] (S) -- (B);
+\path [name intersections={of=pq and as,by={P}}];
+\path [name intersections={of=pq and sb,by={Q}}];
+\path[name path=pb] (P) -- (B);
+\draw[thick,name path=qa] (Q) -- (A);
+\path [name intersections={of=pb and qa,by={O}}];
+\draw[fill=gray!50] (B) -- (O) -- (A);
+\draw[fill=gray!70] (S) -- (O) -- (A);
+\draw (B) -- (O) -- (A);
+\draw (S) -- (O) -- (A);
+\draw (A) -- (B) -- (S) -- cycle;
+\draw (S) -- (O);
+\draw (B) -- (O);
+\node[above right] at (Q) {$Q$};
+\node[right,xshift=2pt] at (O) {$O$};
+\end{tikzpicture}
+\caption{Restar áreas en el teorema de Ceva}\label{f.ceva3}
+\end{center}
+\end{minipage}
+\begin{minipage}{.45\textwidth}
+\begin{center}
+\begin{tikzpicture}[scale=.6]
+\clip (-.8,-.4) rectangle +(11.2,6.5);
+\coordinate (D) at (0,0) node[left] {$D$};
+\draw (D) -- ++(60:6) coordinate (C) node[left] {$C$};
+\coordinate (A) at (60:3);
+\node[left] at (A) {$A$};
+\draw (A) -- ++(3,0) coordinate (B);% -- (C);
+\node[below right] at (B) {$P$};
+\path[name path=DQ] (D) -- ($(D)!1.7!(B)$);
+\path[name path=AP] (A) -- ($(A)!3!(B)$);
+% 3*(1+\sqrt[3]{2}) = 6.78
+\path[name path=CP] (C) circle (6.78cm);
+\path[name intersections={of=CP and AP,by={P}}];
+\draw[name path=CP] (C) -- (P);
+\path[name intersections={of=CP and DQ,by={Q}}];
+\node[above] at (Q) {$Q$};
+\node[right] at (P) {$B$};
+\draw (D) -- (Q);
+\draw (B) -- (P);
+\path[dashed,name path=CK] (C) -- ($(C)+(6.5,0)$);
+\path[name path=DK] (D) -- ($(D)!2!(Q)$);
+\path[name intersections={of=DK and CK,by={K}}];
+\draw[dashed] (Q) -- (K) node[right] {$K$} -- (C);
+\draw[very thick] (Q) -- (D);
+\draw[dashed] (C) -- (K) -- (Q);
+\draw (B) -- (P) -- (C);
+\end{tikzpicture}
+\caption{Teorema de Menelao}\label{f.menelaus}
+\end{center}
+\end{minipage}
+\end{figure}
+
 \subsection*{Fuentes}
 
 El apéndice se basa principalmente en \cite{gelfand}. El teorema de Ceva y el teorema de Menelao pueden demostrarse entre sí \cite{silvester}.
+
+

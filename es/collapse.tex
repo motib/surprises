@@ -135,15 +135,7 @@ $\overline{AC}=\overline{AB}$ ya que son radios del mismo círculo, análogament
 
 Figura~\ref{f.collapse-equilateral-fixed} muestra que para la construcción con compás fijo, el triángulo será un triángulo isósceles, no necesariamente equilátero (Fig.~\ref{f.collapse-equilateral-collapse}).
 
-\section{Construcción de Euclides para copiar un segmento}\label{s.collapse-copy}
-
-La segunda proposición de los \textit{Elementos} de Euclides describe cómo copiar un segmento $\overline{AB}$ dado un segmento de la misma longitud, uno de cuyos puntos extremos es un punto $C$ dado. Por lo tanto, un compás fijo no añade ninguna capacidad adicional y basta con un compás plegable, aunque las construcciones son más fáciles con un compás fijo.
-
-\begin{theorem}
-Dado un segmento $\overline{AB}$ y un punto $C$, se puede construir un segmento $\overline{CC'}$, uno de cuyos puntos extremos es $C$, utilizando un compás plegable, tal que $\overline{AB}=\overline{CC'}$ (Fig.~\ref{f.collapse-copying-1}).
-\end{theorem}
-
-\begin{figure}[t]
+\begin{figure}[b]
 \begin{minipage}{.45\textwidth}
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
@@ -189,7 +181,11 @@ Dado un segmento $\overline{AB}$ y un punto $C$, se puede construir un segmento 
 \end{minipage}
 \end{figure}
 
-\begin{figure}[b]
+\section{Construcción de Euclides para copiar un segmento}\label{s.collapse-copy}
+
+La segunda proposición de los \textit{Elementos} de Euclides describe cómo copiar un segmento $\overline{AB}$ dado un segmento de la misma longitud, uno de cuyos puntos extremos es un punto $C$ dado. Por lo tanto, un compás fijo no añade ninguna capacidad adicional y basta con un compás plegable, aunque las construcciones son más fáciles con un compás fijo.
+
+\begin{figure}[t]
 \begin{minipage}{.45\textwidth}
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
@@ -228,10 +224,15 @@ Dado un segmento $\overline{AB}$ y un punto $C$, se puede construir un segmento 
 \end{minipage}
 \end{figure}
 
+\begin{theorem}
+Dado un segmento $\overline{AB}$ y un punto $C$, se puede construir un segmento $\overline{CC'}$, uno de cuyos puntos extremos es $C$, utilizando un compás plegable, tal que $\overline{AB}=\overline{CC'}$ (Fig.~\ref{f.collapse-copying-1}).
+\end{theorem}
+
+
 \begin{proof}
 Construimos el segmento $\overline{AC}$. Construimos el triángulo equilátero $\triangle ACD$ cuya base es $\overline{AC}$ (Fig.~\ref{f.collapse-copying-2}). Por la primera proposición de Euclides, el triángulo se puede construir utilizando un compás plegable. Construimos la semirrecta que es prolongación del segmento \emph{de $D$ a $A$}, y construir la semirrecta que es prolongación de la recta segmento \emph{de $D$ a $C$} (Fig.~\ref{f.collapse-copying-3}). Construimos la circunferencia centrada en $A$ con radio $\overline{AB}$ y denotamos con E la intersección de la circunferencia y la semirrecta que prolonga $\overline{DA}$ (Fig.~\ref{f.collapse-copying-4}). Construimos la circunferencia centrada en $D$ con radio $\overline{DE}$ y denotamos con $F$ la intersección de la circunferencia y la semirrecta que prolonga $\overline{DC}$ (Fig.~\ref{f.collapse-copying-5}).
 
-\begin{figure}[t]
+\begin{figure}[b]
 \begin{minipage}{.45\textwidth}
 \begin{center}
 \begin{tikzpicture}[scale=0.4]
@@ -284,7 +285,7 @@ $\overline{DC}=\overline{DA}$ porque el $\triangle ACD$ es equilátero. $\overli
 \]
 \end{proof}
 
-\begin{figure}[b]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=0.4]
 \clip (-5,-4.5) rectangle (8,6);
@@ -320,7 +321,7 @@ La especificación de las direcciones de las semirrectas es esencial. La demostr
 \begin{figure}
 \begin{center}
 \begin{tikzpicture}[scale=0.4]
-\clip (-12,-6) rectangle (11,10);
+\clip (-12,-6) rectangle (11,7);
 \coordinate (C) at (-4,0);
 \coordinate (A) at (3,0);
 \draw (A) node[below,xshift=-2pt,yshift=-2pt] {$A$} -- +(40:4) coordinate (B) node[right] {$B$};
@@ -354,7 +355,7 @@ La especificación de las direcciones de las semirrectas es esencial. La demostr
 
 \begin{proof}
 Construimos tres circunferencias: una centrada en $A$ con radio $\overline{AB}$, otra centrada en $A$ con radio $\overline{AC}$, y otra centrada en $C$ con radio $\overline{AC}=\overline{CA}$. Denotamos las intersecciones de las circunferencias centradas en $A$ y $C$ con $E$ y $F$, respectivamente, y denotamos una intersección de la circunferencia centrada en $C$ y la circunferencia centrada en $A$ con radio $\overline{AB}$ con $D$. Si $\overline{AC}>\overline{AB}$, la construcción es como se muestra en la figura~\ref{f.collapse-incorrect-1}.
-\begin{figure}[b]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
 \coordinate (C) at (-2,0);
@@ -376,7 +377,7 @@ Construimos tres circunferencias: una centrada en $A$ con radio $\overline{AB}$,
 \caption{Construcción para copiar un segmento (1)}\label{f.collapse-incorrect-1}
 \end{figure}
 
-\begin{figure}[t]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
 \clip (-8,-1) rectangle (9,5);
@@ -407,6 +408,8 @@ Construimos tres circunferencias: una centrada en $A$ con radio $\overline{AB}$,
 \caption{Construcción para copiar un segmento (2)}\label{f.collapse-incorrect-2}
 \end{figure}
 
+\enlargethispage{\baselineskip}
+
 Construimos una circunferencia centrada en $E$ con radio $\overline{ED}$. Denotemos por $G$ la intersección de esta circunferencia con la circunferencia centrada en $A$ de radio $\overline{AC}$. Hay dos intersecciones, por lo que elegir la más cercana a $C$ (Fig.~\ref{f.collapse-incorrect-2}).
 $\overline{CD}=\overline{CE}$ son radios de la misma circunferencia que $\overline{AE}=\overline{AG}$. Por construcción los radios $\overline{CE}$ y $\overline{AE}$ son iguales. Por tanto:
 \[
@@ -423,7 +426,7 @@ resulta que $\triangle ADE\cong\triangle CGE$ por lado-ángulo-lado. $\overline{
 
 La demostración sólo es correcta si $\overline{AC}>\overline{AB}$.  Figura~\ref{f.collapse-incorrect-4} muestra un diagrama donde $\overline{AC}<\overline{AB}$ y se puede ver que $\overline{AB}\neq\overline{GC}$.
 
-\begin{figure}[b]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
 \coordinate (C) at (-1,0);
@@ -450,16 +453,7 @@ La demostración sólo es correcta si $\overline{AC}>\overline{AB}$.  Figura~\re
 \caption{Un diagrama para el que la demostración no funciona}\label{f.collapse-incorrect-4}
 \end{figure}
 
-
-\section{No te fíes de un diagrama}\label{s.collapse-}
-
-\begin{theorem}[Incorrecto, por supuesto]
-Todos los triángulos son isósceles.
-\end{theorem}\index{Triangle!@all are }
-
-\begin{proof}
-Dado un triángulo arbitrario $\triangle ABC$, sea $P$ la intersección de la bisectriz del ángulo $\angle BAC$ y la mediatriz de $\overline{BC}$. Las intersecciones de las altitudes desde $P$ a los lados $\overline{AB}$, $\overline{AC}$ se denotan por $E,F$, respectivamente (Fig.~\ref{f.collapse--1}). 
-\begin{figure}[t]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=1]
 \coordinate (P) at (0,0);
@@ -496,17 +490,29 @@ Dado un triángulo arbitrario $\triangle ABC$, sea $P$ la intersección de la bi
 \end{center}
 \caption{Una demostración incorrecta de que todos los triángulos son isóceles}\label{f.collapse--1}
 \end{figure}
+
+
+\section{No te fíes de un diagrama}\label{s.collapse-}
+
+\begin{theorem}[Incorrecto, por supuesto]
+Todos los triángulos son isósceles.
+\end{theorem}\index{Triangle!@all are }
+
+\begin{proof}
+Dado un triángulo arbitrario $\triangle ABC$, sea $P$ la intersección de la bisectriz del ángulo $\angle BAC$ y la mediatriz de $\overline{BC}$. Las intersecciones de las altitudes desde $P$ a los lados $\overline{AB}$, $\overline{AC}$ se denotan por $E,F$, respectivamente (Fig.~\ref{f.collapse--1}). 
+
 $\triangle APE\cong \triangle APF$ porque son triángulos rectángulos con ángulos iguales $\alpha$ y lado común $\overline{AP}$. $\triangle DPB\cong \triangle DPC$ ya que son triángulos rectángulos, $\overline{PD}$ es un lado común y $\overline{BD}=\overline{CD}=a$. $\triangle EPB\cong \triangle FPC$ ya que son triángulos rectángulos, $\overline{EP}=\overline{PF}$ por la primera congruencia y $\overline{PB}=\overline{PC}$ por la segunda congruencia. Combinando las ecuaciones obtenemos que $\triangle ABC$ es :
 \[
 \overline{AB}= \overline{AE}+\overline{EB}=\overline{AF}+\overline{FC} =\overline{AC}\,.
 \]
 \end{proof}
-
+\vspace{-2.5ex}
 La lógica de la demostración es correcta, pero el diagrama en el que se basa la demostración no es correcto porque el punto $P$ está fuera del triángulo. (Fig.~\ref{f.collapse--2}).
 
 \begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.5]
+\clip (-2,-3.2) rectangle +(11,9.1);
 \coordinate (B) at (0,0);
 \coordinate (C) at (8,0);
 \path[name path=ba] (B) -- +(70:6);
@@ -529,6 +535,8 @@ La lógica de la demostración es correcta, pero el diagrama en el que se basa l
 \caption{Por qué no funciona la construcción}\label{f.collapse--2}
 \end{center}
 \end{figure}
+
+\enlargethispage{2\baselineskip}
 
 \subsection*{¿Cuál es la sorpresa?}
 

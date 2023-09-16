@@ -232,7 +232,7 @@ Las caras del grafo plano de la figura~\ref{f.five-planar-graph-graph} son trian
 Fig.~\ref{f.five-triangular-graph} (izquierda) muestra que un cuadrado puede ser bicolor, pero si está triangulado (centro), son necesarios cuatro colores. Nuestro objetivo es demostrar que los grafos pueden ser coloreados con $n$ colores para algún $n$. Si el grafo triangulado está coloreado con $n$, también lo está el grafo original, porque eliminar las aristas sobrantes no invalida la coloración (derecha).
 \end{example}
 
-\begin{figure}[h]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.33]
 \draw (-3.5,-3.5) rectangle +(7,7);
@@ -274,7 +274,7 @@ Por inducción sobre el número de aristas. Si el número de aristas en el grafo
 \textit{Caso 1:}
 El grafo se desconecta (Fig.~\ref{f.five-disconnected-removing}). Fusionar $v_1$ con $v_2$ (Fig.~\ref{f.five-disconnected-merge}). El grafo resultante $G'$ es un grafo plano conexo y tiene menos aristas que $G$, por lo que por la hipótesis de inducción $(V-1)-(E-1)+F=2$ ya que el número de vértices también se reduce en uno. Simplificando, obtenemos $V-E+F=2$ para $G$.
 
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{minipage}{.45\textwidth}
 \begin{center}
 \begin{tikzpicture}[scale=.95]
@@ -298,7 +298,7 @@ El grafo se desconecta (Fig.~\ref{f.five-disconnected-removing}). Fusionar $v_1$
 El grafo sigue siendo conexo (Fig.~\ref{f.five-connected-remains}). $G'$ tiene menos aristas que $G$ (Fig.~\ref{f.five-connected-fewer}), así que por la hipótesis de inducción $V-(E-1)+(F-1)=2$ ya que al eliminar la arista se unen dos caras en una. Simplificando, obtenemos $V-E+F=2$ para $G$.
 \end{proof}
 
-\begin{figure}[ht]
+\begin{figure}[b]
 \begin{minipage}{.45\textwidth}
 \begin{center}
 \begin{tikzpicture}[scale=.8]
@@ -385,7 +385,7 @@ Vamos a tomar un pequeño desvío para mostrar cómo los Teoremas~\ref{thm.euler
 $K_5$, el grafo completo de cinco vértices, no es plano (Fig.~\ref{f.five-k5}).
 \end{theorem}
 
-\begin{figure}[t]
+\begin{figure}[b]
 \begin{minipage}{.48\textwidth}
 \begin{center}
 \begin{tikzpicture}[scale=.8]
@@ -431,12 +431,11 @@ $K_5$, el grafo completo de cinco vértices, no es plano (Fig.~\ref{f.five-k5}).
 \begin{proof}
 Para $K_5$, $V=5$ y $E=10$. Por Teorema~\ref{thm.count} el número de aristas debe ser menor o igual a $3\cdot 5 -6=9$ por lo que el grafo no es plano.
 \end{proof}
-
 \begin{theorem}
 $K_{3,3}$, el grafo bipartito con tres vértices en cada lado, no es plano (Fig.~\ref{f.five-k33}).
 \end{theorem}\index{K33@$K_{3,3}$ is not planar}
 
-\begin{figure}[b]
+\begin{figure}[t]
 \begin{minipage}{.45\textwidth}
 \begin{center}
 \begin{tikzpicture}[scale=.8]
@@ -472,7 +471,6 @@ $K_{3,3}$, el grafo bipartito con tres vértices en cada lado, no es plano (Fig.
 \end{center}
 \end{minipage}
 \end{figure}
-
 \begin{proof}
 $V=6$ y $E=9$. Por Thm~\ref{thm.euler} si $K_{3,3}$ es plano, $F=E-V+2=9-6+2=5$. Pero cada cara está limitada por cuatro aristas (Fig.~\ref{f.five-k33-failed}), por lo que $E=4F/2=10\neq 9$.
 \end{proof}
@@ -494,7 +492,6 @@ El grafo de la figura~\ref{f.five-planar-graph-graph} contiene $8$ vértices cor
 \]
 Para obtener el número total de aristas dividimos $48$ entre $2$ porque cada arista se ha contado dos veces, una por cada uno de los vértices a los que incide.
 \end{example}
-
 Generalizando el argumento obtenemos:
 \begin{theorem}\label{thm.degrees}
 Sea $d_i$ para $i$ en $\{1,2,3,\ldots,k\}$ el número de vértices de grado $i$ en un grafo plano conexo $G$ con $V$ vértices y $E$ aristas, donde $k$ es el mayor grado de un vértice en $V$. Entonces:
@@ -551,7 +548,7 @@ Cualquier grafo plano $G$ puede ser coloreado con seis colores.
 Por inducción sobre el número de vértices. Si $G$ tiene seis vértices o menos, seis colores son suficientes. Para el paso inductivo, por el Teorema~\ref{thm.degree5} $G$ tiene un vértice $v$ con grado $5$ o menos. Se elimina el vértice $v$ para obtener el grafo $G'$. Por la hipótesis de inducción $G'$ puede ser de seis colores, pero $v$ tiene a lo sumo $5$ vecinos y a lo sumo $5$ colores se utilizan para colorearlos (Fig.~\ref{f.five-six-five}), por el que $v$ se puede colorear utilizando el sexto color (Fig.~\ref{f.five-six-six}).
 \end{proof}
 
-\begin{figure}[hbt]
+\begin{figure}[bt]
 \begin{minipage}{.45\textwidth}
 \begin{center}
 \begin{tikzpicture}[scale=.5,minimum size=5mm,inner sep=0pt]
@@ -810,7 +807,8 @@ La afirmación de que un camino continuo desde el interior de una curva continua
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Demostración incorrecta del teorema de los cuatro colores de Kempe}\label{s.kempe}
+\section[Demostración incorrecta del teorema de los cuatro colores]
+{Demostración incorrecta del teorema de los cuatro colores de Kempe}\label{s.kempe}
 
 \begin{theorem}\label{thm.fourcolor}
 Todo grafo plano puede ser coloraedo con cuatro colores.
@@ -818,12 +816,8 @@ Todo grafo plano puede ser coloraedo con cuatro colores.
 
 \begin{proof} (Incorrecta) El caso base de la inducción y la mayor parte de la demostración es son los mismos que los del teorema de los cinco colores. El nuevo caso que hay que considerar es un vértice $v$ con cinco vecinos que, por la hipótesis inductiva, se puede colorear con cuatro colores después de quitar $v$.
 
-En la figura~\ref{f.five-kempe1} hay dos vértices $v_2,v_5$ coloreados de azul. Consideremos la cadena azul-verde que contiene $v_2$ y la cadena azul-amarilla que contiene $v_5$. La cadena azul-verde está contenida dentro de la trayectoria cerrada definida por la cadena rojo-amarilla que contiene $v_1,v_3$ (línea doble) y la cadena azul-amarilla está contenida dentro de la trayectoria cerrada definida por la cadena rojo-verde que contiene $v_1,v_4$ (línea doble discontinua).
 
-Intercambiamos los colores de la cadena azul-verde y la cadena azul-amarillo (Fig.~\ref{f.five-kempe1-exchange}). El resultado es que los vecinos de $v$ se colorean con los tres colores rojo, verde y amarillo, dejando libre el azul para colorear $v$.
-\end{proof}
-
-\begin{figure}[ht]
+\begin{figure}[b]
 \begin{minipage}{.45\textwidth}
 \begin{center}
 \begin{tikzpicture}[scale=.5,minimum size=5mm,inner sep=0pt]
@@ -924,10 +918,14 @@ Intercambiamos los colores de la cadena azul-verde y la cadena azul-amarillo (Fi
 \end{center}
 \end{minipage}
 \end{figure}
+En la figura~\ref{f.five-kempe1} hay dos vértices $v_2,v_5$ coloreados de azul. Consideremos la cadena azul-verde que contiene $v_2$ y la cadena azul-amarilla que contiene $v_5$. La cadena azul-verde está contenida dentro de la trayectoria cerrada definida por la cadena rojo-amarilla que contiene $v_1,v_3$ (línea doble) y la cadena azul-amarilla está contenida dentro de la trayectoria cerrada definida por la cadena rojo-verde que contiene $v_1,v_4$ (línea doble discontinua).
+
+Intercambiamos los colores de la cadena azul-verde y la cadena azul-amarillo (Fig.~\ref{f.five-kempe1-exchange}). El resultado es que los vecinos de $v$ se colorean con los tres colores rojo, verde y amarillo, dejando libre el azul para colorear $v$.
+\end{proof}
 
 Heawood observó que los caminos cerrados definidos por la cadena rojo-amarillo y la cadena rojo-verde pueden compartir vértices rojos ($v_1,v_8$ en la figura~\ref{f.five-kempe2}). Cuando se intercambian los colores en las cadenas azul-verde y azul-amarillo, es posible que los vértices azules $v_6,v_7$ estén conectados (Fig.~\ref{f.five-kempe2-share}) y la coloración ya no es correcta.
 
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{minipage}{.50\textwidth}
 \begin{center}
 \begin{tikzpicture}[scale=.5,minimum size=5mm,inner sep=0pt]

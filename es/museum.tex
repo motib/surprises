@@ -83,7 +83,7 @@ Consideremos ahora un museo con paredes en forma de sierra dentada (Fig.~\ref{f.
 
 Si al menos uno de los guardias se coloca cerca de la pared superior que abarca todo el museo, podrá observar todas las paredes horizontales (flechas azules en la figura~\ref{f.museum.shaded}). Así pues, bastan $5=15/3$ guardias para observar todas las paredes del museo. Como los triángulos no se superponen, un vigilante de un triángulo no podrá observar todas las paredes de otro triángulo (flecha verde), por lo que se necesitan $5$ vigilantes.
 
-\begin{figure}[ht]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
 \coordinate (O) at (0,0);
@@ -147,7 +147,7 @@ Un vértice de un polígono es \emph{convexo}\index{Polígono!vértices convexos
 \end{definition}
 En la figura~\ref{f.museum.arbitrary} el vértice $1$ es convexo y el vértice $2$ es cóncavo.
 
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.7]
 \draw
@@ -188,7 +188,7 @@ Como los colores asignados son arbitrarios, si se asignan colores diferentes a $
 Adosamos los dos polígonos para recuperar el polígono original con $ n $ vértices. Este será de tres colores (Fig.~\ref{f.museum.three-5}).
 \end{proof}
 
-\begin{figure}[t]
+\begin{figure}[b]
 \begin{minipage}{.45\textwidth}
 \begin{center}
 \begin{tikzpicture}[scale=.6]
@@ -420,7 +420,7 @@ Adosamos los dos polígonos para recuperar el polígono original con $ n $ vért
 \end{minipage}
 \end{figure}
 
-\begin{figure}[t]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.7]
 \draw
@@ -477,6 +477,7 @@ Al pasar de una línea discontinua a la siguiente, se completa una rotación alr
 \begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.5]
+\clip (-4,-3,2) rectangle +(9,8.1);
 \coordinate (O) at (0,0);
 \foreach \x/\name/\n/\po in {0/a/A/right,.6/b/B/above,1.6/c/C/left,2.4/d/D/below left,3.9/e/E/below right} {
   \coordinate (\name) at ($(O)+(\x*72+18:3cm)$);
@@ -503,25 +504,8 @@ Al pasar de una línea discontinua a la siguiente, se completa una rotación alr
 \end{center}
 \caption{Los ángulos exteriores de un polígono convexo}\label{f.museum.exterior}
 \end{figure}
-Para cada ángulo exterior $\theta_i$ denotemos su correspondiente ángulo interior por $\phi_i$. Entonces:
-\begin{eqnarray*}
-\displaystyle\sum_{i=1}^n \theta_i &=&\displaystyle\sum_{i=1}^n (180^\circ-\phi_i)= 360^\circ\\
-\displaystyle\sum_{i=1}^n \phi_i &=& n\cdot 180^\circ-360^\circ =180^\circ(n-2)\,.
-\end{eqnarray*}
-Si existe un vértice cóncavo ($B$ en la figura~\ref{f.museum.concave}), existe un triángulo formado por los dos lados incidentes con el vértice cóncavo y la recta $\overline{AC}$ que une los otros dos vértices. Sumando los ángulos del triángulo obtenemos:
-\begin{eqnarray*}
-(180^\circ - \alpha) + (360^\circ - \beta) + (180^\circ - \gamma) &=& 180^\circ\\
-\alpha + \beta + \gamma &=& 3\cdot 180^\circ\,.
-\end{eqnarray*}
 
-La suma de los ángulos interiores aumenta en $\alpha+\beta+\gamma$ mientras que el número de vértices aumenta en tres conservando la ecuación del teorema:
-\begin{eqnarray*}
-\displaystyle\sum_{i=1}^n \phi_i + (\alpha + \beta + \gamma) &=& 180^\circ(n-2)+3\cdot 180^\circ\\
-&=& 180^\circ((n+3)-2)\,.
-\end{eqnarray*}
-\end{proof}
-
-\begin{figure}[t]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
 \draw[thick] (0,0) -- 
@@ -542,6 +526,24 @@ La suma de los ángulos interiores aumenta en $\alpha+\beta+\gamma$ mientras que
 \end{center}
 \caption{Un vértice cóncavo}\label{f.museum.concave}
 \end{figure}
+
+Para cada ángulo exterior $\theta_i$ denotemos su correspondiente ángulo interior por $\phi_i$. Entonces:
+\begin{eqnarray*}
+\displaystyle\sum_{i=1}^n \theta_i &=&\displaystyle\sum_{i=1}^n (180^\circ-\phi_i)= 360^\circ\\
+\displaystyle\sum_{i=1}^n \phi_i &=& n\cdot 180^\circ-360^\circ =180^\circ(n-2)\,.
+\end{eqnarray*}
+Si existe un vértice cóncavo ($B$ en la figura~\ref{f.museum.concave}), existe un triángulo formado por los dos lados incidentes con el vértice cóncavo y la recta $\overline{AC}$ que une los otros dos vértices. Sumando los ángulos del triángulo obtenemos:
+\begin{eqnarray*}
+(180^\circ - \alpha) + (360^\circ - \beta) + (180^\circ - \gamma) &=& 180^\circ\\
+\alpha + \beta + \gamma &=& 3\cdot 180^\circ\,.
+\end{eqnarray*}
+
+La suma de los ángulos interiores aumenta en $\alpha+\beta+\gamma$ mientras que el número de vértices aumenta en tres conservando la ecuación del teorema:
+\begin{eqnarray*}
+\displaystyle\sum_{i=1}^n \phi_i + (\alpha + \beta + \gamma) &=& 180^\circ(n-2)+3\cdot 180^\circ\\
+&=& 180^\circ((n+3)-2)\,.
+\end{eqnarray*}
+\end{proof}
 
 \begin{theorem}\label{thm.convex}
 En un polígono debe haber al menos tres vértices convexos.

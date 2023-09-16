@@ -129,7 +129,7 @@ Es imposible comprobar todas las descomposiciones $2^{7825}$ de $S(7825)$. Si pu
 Consideremos las secuencias de ocho puntos de colores en la figura~\ref{f.vdw1}. En la secuencia superior hay puntos rojos en las posiciones $(1,2,3)$ y puntos azules en las posiciones $(4,5,6)$. En cada caso, las posiciones forman una progresión aritmética. Del mismo modo, en la secuencia del medio, los puntos rojos en las posiciones $(1,3,5)$ forman una progresión aritmética. Sin embargo, en la secuencia inferior no hay ningún conjunto de tres puntos monocromáticos cuyas posiciones formen una progresión aritmética. 
 Las ternas de puntos rojos están en las posiciones $(1,2,5)$, $(1,2,6)$, $(2,5,6)$, ninguna de las cuales forma progresiones aritméticas, y lo mismo para los puntos azules.
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
 \begin{tikzpicture}
 \foreach \x in {1,2,3,4,5,6,7,8} {
@@ -149,8 +149,7 @@ Las ternas de puntos rojos están en las posiciones $(1,2,5)$, $(1,2,6)$, $(2,5,
 \caption{Problema de van der Waerden para ocho puntos de color}\label{f.vdw1}
 \end{figure}
 
-Con nueve puntos \emph{cualquier} coloración \emph{debe} contener una secuencia de tres puntos monocromáticos que formen una progresión aritmética. Por ejemplo, añadamos un punto rojo o un punto azul al final de la secuencia inferior de la figura~\ref{f.vdw1} para obtener las secuencias de la figura~\ref{f.vdw2}. En la secuencia superior hay puntos rojos en las posiciones $(1,5,9)$, una progresión aritmética, y en la secuencia inferior hay puntos azules en las posiciones $(7,8,9)$, también una progresión aritmética.
-\begin{figure}[htb]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}
 \foreach \x in {1,2,3,4,5,6,7,8,9} {
@@ -167,6 +166,8 @@ Con nueve puntos \emph{cualquier} coloración \emph{debe} contener una secuencia
 \caption{Problema de van der Waerden para nueve puntos de color}\label{f.vdw2}
 \end{figure}
 
+Con nueve puntos \emph{cualquier} coloración \emph{debe} contener una secuencia de tres puntos monocromáticos que formen una progresión aritmética. Por ejemplo, añadamos un punto rojo o un punto azul al final de la secuencia inferior de la figura~\ref{f.vdw1} para obtener las secuencias de la figura~\ref{f.vdw2}. En la secuencia superior hay puntos rojos en las posiciones $(1,5,9)$, una progresión aritmética, y en la secuencia inferior hay puntos azules en las posiciones $(7,8,9)$, también una progresión aritmética.
+
 Bartel L. van der Waerden planteó el siguiente problema: Para cualquier número entero positivo $k$, ¿cuál es el menor número $n$ tal que \emph{cualquier} secuencia de $n$ puntos coloreados \emph{debe} contener una secuencia de $k$ puntos monocromáticos que formen una progresión aritmética? Para $k=3$, $n=9$, como se ha demostrado anteriormente para una descomposición. El siguiente resultado es más difícil de demostrar: para $k=4$, $n=35$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -174,7 +175,7 @@ Bartel L. van der Waerden planteó el siguiente problema: Para cualquier número
 \section{Teorema de Ramsey}\label{s.ramsey}
 
 Colorear las aristas de $K_5$, el grafo completo en $5$ vértices, con dos colores como se muestra en la figura~\ref{f.ramsey5}. No hay subgrafos monocromáticos $K_3$ (triángulos) en el grafo. La figura~\ref{f.ramsey6} muestra una coloración de $K_6$ y es fácil ver que hay triángulos monocromáticos $\triangle ACE$ y $\triangle BDF$. En esta sección demostramos un caso sencillo de un teorema de Frank P. Ramsey sobre la existencia de subconjuntos con cierta propiedad.
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{minipage}{.45\textwidth}
 \begin{center}
 \begin{tikzpicture}
@@ -531,7 +532,7 @@ El lector puede comprobar que estos valores coinciden con los valores decimales 
 \end{array}
 \]
 
-Los babilonios no tenían símbolos distintos de $60$ para los dígitos. En su lugar, utilizaban un sistema híbrido en el que los coeficientes se representaban con dos símbolos: uno para el coeficiente de las decenas y otro para el coeficiente de las unidades, y los lugares de los coeficientes indicaban las potencias de $60$. Utilizando $\heartsuit$ para el coeficiente de las decenas y $\diamondsuit$ para el coeficiente de las unidades, el número decimal $(38 veces 60)+(16 veces 60^0)=2296$ se representaría como:
+Los babilonios no tenían símbolos distintos de $60$ para los dígitos. En su lugar, utilizaban un sistema híbrido en el que los coeficientes se representaban con dos símbolos: uno para el coeficiente de las decenas y otro para el coeficiente de las unidades, y los lugares de los coeficientes indicaban las potencias de $60$. Utilizando $\heartsuit$ para el coeficiente de las decenas y $\diamondsuit$ para el coeficiente de las unidades, el número decimal $(38 \times 60)+(16 \times 60^0)=2296$ se representaría como:
 \[
 \heartsuit\heartsuit\heartsuit \; \stackrel{\displaystyle\diamondsuit\diamondsuit\diamondsuit\diamondsuit}{\diamondsuit\diamondsuit\diamondsuit\diamondsuit}
 \quad

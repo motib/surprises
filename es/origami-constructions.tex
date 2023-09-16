@@ -12,7 +12,7 @@ Este capítulo muestra que las construcciones con origami son más poderosas que
 
 \noindent\textbf{Construcción:}
 Dado un ángulo agudo $\angle PQR$, construimos $p$, la perpendicular a $\overline{QR}$ en $Q$. Construimos $q$, la perpendicular a $p$ que corta a $\overline{PQ}$ en el punto $A$, y construimos $r$, la perpendicular a $p$ en $B$ que está a mitad de camino entre $Q$ y $A$. Utilizando el axioma~6 construimos el pliegue $l$ que sitúa $A$ en $A'$ sobre $\overline{PQ}$ y $Q$ en $Q'$ sobre $r$. Sea $B'$ el simétrico de $B$ alrededor de $l$. Construimos rectas que pasen por $\overline{QB'}$ y $QQ'$ (Fig.~\ref{f.abe1}).
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
 
@@ -81,7 +81,7 @@ Dado un ángulo agudo $\angle PQR$, construimos $p$, la perpendicular a $\overli
 (1)
 $A', B', Q'$ son reflexiones en torno a la recta $l$ de los puntos $A,B,Q$ sobre la recta $\overline{DQ}$, por lo que están sobre la recta $\overline{DQ'}$ reflejada. Por construcción $\overline{AB}=\overline{BQ}$, $\angle ABQ'=\angle QBQ'=90^\circ$ y $\overline{BQ'}$ es un lado común, por lo que $\triangle ABQ'\cong \triangle QBQ'$ por lado-ángulo-lado. Por lo tanto, $\angle AQQ'=\angle QAQ'=\alpha$ por lo que $\triangle AQ'Q$ es isósceles (Fig.~\ref{f.abe2}).
 
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
 
@@ -364,6 +364,8 @@ Construimos $\overline{EF}$, la perpendicular a $\overline{AB}$ que pasa por $K$
 
 Utilizando el axioma~6 situamos $C$ en $C'$ de $\overline{AB}$ y $F$ en $F'$ de $\overline{GH}$.  Denotemos por $L$ el punto de intersección del pliegue con $\overline{BC}$ y con $b$ la longitud de $\overline{BL}$. Renombramos $a+1$ la longitud del lado del cuadrado donde $a=\overline{AC'}$. La longitud de $\overline{LC}$ es $(a+1)-b$.  (Fig.~\ref{f.messer3}).
 
+\newpage
+
 \begin{theorem}
 $\overline{AC'}=\sqrt[3]{2}$.
 \end{theorem}
@@ -568,7 +570,7 @@ Se construye un nonágono o eneágono (polígono regular de nueve lados) derivan
 \]
 Sea $x=\cos 40^{\circ}$. Entonces para el nonágono la ecuación es $4x^3-3x+(1/2)=0$ ya que $\cos 3\cdot 40^\circ=\cos 120^\circ=-(1/2)$. La figura~\ref{f.nonagon2} muestra las trayectorias para la ecuación construida según el método de Lill.
 
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.85]
 % Draw help lines and axes
@@ -628,7 +630,7 @@ La segunda trayectoria parte de $P$ con un ángulo aproximado de $-37,45^\circ$.
 
 La raíz se puede obtener utilizando el pliegue de Beloch. Construimos la recta $a_2'$ paralela a $a_2$ a la misma distancia de $a_2$ que $a_2$ de $P$. Aunque la longitud de $a_2$ es cero, sigue teniendo dirección (hacia arriba), por lo que se puede construir la recta paralela. Análogamente, se construye la recta $a_1'$ paralela a $a_1$ a la misma distancia de $a_1$ que $a_1$ de $Q$. El pliegue de Beloch $\overline{RS}$ sitúa simultáneamente $P$ en $P'$ sobre $a_2'$ y $Q$ en $Q'$ sobre $a_1'$. Esto construye el ángulo $\angle SPR=-37.45^\circ$ (Fig.~\ref{f.nonagon3}).
 
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.85]
 % Draw help lines and axes
@@ -704,8 +706,15 @@ Plegamos $\overline{DE}$ para reflejar $E$ en $F$ en la extensión de $\overline
 \[
 \angle BDF=\cos^{-1} \frac{0.766}{1}\approx 40^\circ\,.
 \]
+\subsection*{¿Cuál es la sorpresa?}
 
-\begin{figure}[ht]
+Vimos en los capítulos~\ref{c.trisect} y~\ref{c.square} que herramientas como el neusis pueden realizar construcciones que no se pueden hacer con una regla y un compás. Es sorprendente que la trisección de un ángulo y la duplicación de un cubo puedan construirse utilizando sólo papel plegado. Roger C. Alperin\index{Alperin, Roger C.} ha desarrollado una jerarquía de cuatro métodos de construcción cada uno más potente que el anterior.
+
+\subsection*{Fuentes}
+
+Este capítulo se basa en \cite{alperin,lang,martin,newton}.
+
+\begin{figure}[t]
 \begin{minipage}{.45\textwidth}
 \begin{center}
 \begin{tikzpicture}[scale=1]
@@ -766,11 +775,3 @@ Plegamos $\overline{DE}$ para reflejar $E$ en $F$ en la extensión de $\overline
 \end{center}
 \end{minipage}
 \end{figure}
-
-\subsection*{¿Cuál es la sorpresa?}
-
-Vimos en los capítulos~\ref{c.trisect} y~\ref{c.square} que herramientas como el neusis pueden realizar construcciones que no se pueden hacer con una regla y un compás. Es sorprendente que la trisección de un ángulo y la duplicación de un cubo puedan construirse utilizando sólo papel plegado. Roger C. Alperin\index{Alperin, Roger C.} ha desarrollado una jerarquía de cuatro métodos de construcción cada uno más potente que el anterior.
-
-\subsection*{Fuentes}
-
-Este capítulo se basa en \cite{alperin,lang,martin,newton}.

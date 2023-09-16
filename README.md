@@ -26,14 +26,17 @@ and order the printed book from
 [CoolLibri](https://www.coollibri.com/bibliotheque-en-ligne/mordechai-ben-ari/surprises-mathematiques_429665)
 or [Cassini](https://store.cassini.fr/fr/hors-collection/145-surprises-mathematiques.html).
 
-**German and Spanish**
+**Spanish**
 
-For these languages, there is a PDF of a *preliminary* draft of a translation and a directory of the LaTeX files. Please contact me if you are a native speaker who is willing to edit a draft!
+The translation was prepared using DeepL and edited by Abraham Arcavi. You can download the PDF from the repository.
+
+**German**
+
+The translation was prepared using DeepL but has not yet been edited. Please contact me if you are a native speaker who is willing to edit a draft! You can download the PDF from the repository. 
 
 **Hebrew**
 
-Download PDF from this repository. You have to print books yourself.
-
+I wrote the translation and it is in the process of editing. You can download the PDF from the repository.
 
 ## Contents
 

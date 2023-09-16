@@ -12,7 +12,7 @@ Este capítulo contiene una sección para cada uno de los siete axiomas. Tras el
 
 Los pliegues dan lugar a \emph{reflexiones}. Dado un punto $p$, su reflexión alrededor de un pliegue $l$ da como resultado un punto $p'$ tal que $l$ es la mediatriz del segmento $\overline{pp'}$ (Fig.~\ref{f.origami-def}).
 
-\begin{figure}[h]
+\begin{figure}[]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
 \coordinate (P1) at (2,2);
@@ -46,7 +46,7 @@ Los pliegues dan lugar a \emph{reflexiones}. Dado un punto $p$, su reflexión al
 Dados dos puntos distintos $p_1=(x_1,y_1)$, $p_2=(x_2,y_2)$, existe un único pliegue $l$ que pasa por ambos (Fig.~\ref{f.origami-axiom1}).
 \end{axiom}
 
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=1]
 \draw[step=10mm,white!50!black,thin] (-1,-1) grid (8,6);
@@ -97,7 +97,7 @@ Dados dos puntos distintos $p_1=(x_1,y_1)$, $p_2=(x_2,y_2)$, existe un pliegue �
 
 El pliegue es el lugar geométrico de todos los puntos equidistantes de $p_1$ y $p_2$.
 
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=1]
 \draw[step=10mm,white!50!black,thin] (-1,-1) grid (8,6);
@@ -153,7 +153,7 @@ Dadas dos rectas $l_1,l_2$, existe un pliegue $l$ que coloca $l_1$ sobre $l_2$ (
 
 El pliegue es el lugar geométrico de los puntos que equidistan de $l_1$ y $l_2$, donde la distancia de un punto a una recta es la longitud del segmento que pasa por el punto y es perpendicular a la recta. Utilizando triángulos congruentes es fácil demostrar que el pliegue es bisectriz del ángulo formado por $l_1$ y $l_2$.
 
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=1]
 \draw[step=10mm,white!50!black,thin] (-1,-1) grid (8,7);
@@ -252,7 +252,7 @@ Dado un punto $p_1$ y una recta $l_1$, existe un único pliegue $l$ perpendicula
 
 El pliegue es el lugar geométrico de todos los puntos de la recta perpendicular a $l_1$ que pasa por $p_1$.
 
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=1]
 \draw[step=10mm,white!50!black,thin] (-1,-1) grid (8,7);
@@ -303,7 +303,7 @@ Dados dos puntos $p_1,p_2$ y una recta $l_1$, existe un pliegue $l$ que sitúa $
 
 Como el pliegue pasa por $p_2$ y $p_2$ está en la mediatriz de $\overline{p_1p_1'}$, el lugar geométrico de la reflexión de $p_1$ es la circunferencia centrada en $p_2$ de radio $\overline{p_1p_2}$. El pliegue se constriñe de modo que la reflexión $p_1'$ esté sobre la recta dada $l_1$.
 
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=1]
 \draw[step=10mm,white!50!black,thin] (-1,-1) grid (9,9);
@@ -403,7 +403,7 @@ Dados dos puntos $p_1,p_2$ y dos rectas $l_1,l_2$, existe un pliegue $l$ que sit
 
 Un pliegue que sitúa $p_i$ sobre $l_i$ es una recta $l_f$ tal que la distancia de $p_i$ a $l_f$ es igual a la distancia de su reflexión $p_i'$ a $l_f$. El lugar geométrico de los puntos que equidistan de un punto $p_i$ y una recta $l_i$ es una \emph{parábola}. A $p_i$ se le llama \emph{foco} de la parábola y a $l_1$ \emph{directriz} de la parábola. Un pliegue es cualquier recta tangente a la parábola (Sec.~\ref{s.parabola}).
 
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
 \draw[step=10mm,white!50!black,thin] (-7,-7) grid (7,5);
@@ -459,7 +459,7 @@ Un pliegue que sitúa $p_i$ sobre $l_i$ es una recta $l_f$ tal que la distancia 
 
 Para que un pliegue sitúe simultáneamente $p_1$ en $l_1$ y $p_2$ en $l_2$, debe ser una tangente común a las dos parábolas. Puede haber cero, una, dos o tres tangentes comunes (Figs.~\ref{f.two-para-1-zero}, \ref{f.two-para-1-one}, \ref{f.two-para-1-two}, \ref{f.two-para-1-three}).\index{Parabola!common tangents to two parabolas}
 
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{minipage}{.45\textwidth}
 \begin{center}
 \begin{tikzpicture}[scale=.45]
@@ -500,9 +500,9 @@ Para que un pliegue sitúe simultáneamente $p_1$ en $l_1$ y $p_2$ en $l_2$, deb
 \caption{Una tangente en común}\label{f.two-para-1-one}
 \end{center}
 \end{minipage}
-\end{figure}
-
-\begin{figure}[ht]
+%\end{figure}
+%
+%\begin{figure}[t]
 \begin{minipage}{.45\textwidth}
 \begin{center}
 \begin{tikzpicture}[scale=.45]
@@ -558,7 +558,7 @@ La fórmula de una parábola arbitraria es bastante compleja, por lo que limitam
 Sea $(0,f)$ el foco de una parábola con directriz $y=d$. Definimos $p=f-d$, la longitud con signo del segmento entre el foco y la directriz\footnote{Hemos estado utilizando la notación $p_i$ para los puntos; el uso de $p$ aquí puede ser confuso, pero es la notación estándar. El nombre formal de $p$ es la mitad del \emph{latus rectum}.}. Si el vértice de la parábola está en el eje $x$ la ecuación de la parábola es $y=x^2/2p$. Para mover la parábola arriba o abajo del eje $y$ de forma que su vértice esté en $(0,h)$, se añade $h$ a la ecuación de la parábola (Fig.~\ref{f.elements-parabola}):
 \[y=\frac{x^2}{2p}+h\,.\]
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \begin{center}
 \begin{tikzpicture}[scale=.7]
 \draw (-6,0) -- node[very near start,below,xshift=-32pt] {\textrm{eje}-$x$}(6,0);
@@ -584,7 +584,7 @@ Definimos $a=2ph$ para que la ecuación de la parábola sea:
 y&=&\frac{x^2}{2p}+\frac{a}{2p}\\
 x^2-2py+a&=&0\,.\slabel{eq.eq-parabola}
 \end{subeqnarray}
-La ecuación de la parábola de la figuar~\ref{f.elements-parabola} es $x^2-12y +12=0$.
+La ecuación de la parábola de la figura~\ref{f.elements-parabola} es $x^2-12y +12=0$.
 
 Sustituimos la ecuación de una una línea \emph{arbitraria} $y=mx+b$ en la Ecuación~\ref{eq.eq-parabola} para obtener una ecuación de los puntos de intersección de la recta y la parábola:
 \begin{eqnarray*}
@@ -746,7 +746,7 @@ Queremos demostrar que los pliegues del axioma 6 son tangentes a las parábolas.
 La figura~\ref{f.parabola-locus} muestra cinco puntos
 $p_i$, $i=1,\ldots,5$, cada punto $p_i$ a una distancia $a_i$ tanto del foco como de la directriz. Se trazan rectas perpendiculares desde $p_i$ a la directriz y se denotan las intersecciones de estas rectas con la directriz por $p_i'$. Por Axioma~$2$ existen pliegues $l_i$ que pasan por $p_i$ y sitúan $p$ en la directriz. Los puntos $p_i'$ son las reflexiones de $p$ alrededor de los pliegues. La figura muestra el pliegue $l_1$ que atraviesa $p_1$ y la reflexión $p_1'$.
 
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
 \draw (-6,0) -- node[very near start,below,xshift=-32pt] {eje-$x$} (6,0);
@@ -852,7 +852,7 @@ El pliegue es el lugar geométrico de todos los puntos de la recta perpendicular
 \noindent\textbf{Derivación de la ecuación del pliegue:}
 Sea $p_1=(x_1,y_1)$, sea $l_1$ $y = m_1x + b_1$ y sea $l_2$ $y=m_2x+b_2$. Sea $l_p$ la recta que contiene a $\overline{p_1p_1'}$. Como $l\perp l_2,l_p\perp l$, resulta que $l_p\parallel l_2$ y la ecuación de $l_p$ es $y=m_2x+b_p$.
 
-\begin{figure}[tbh]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
 \draw[step=10mm,white!50!black,thin] (-1,-1) grid (9,8);

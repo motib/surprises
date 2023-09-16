@@ -42,7 +42,7 @@ La siguiente tabla muestra las fórmulas de las longitudes que se construyen, su
 \item Construimos $\overline{BH}$.
 \end{enumerate}
 
-\begin{figure}[h]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.55]
 % Scale at 4
@@ -203,33 +203,7 @@ $\triangle ABH$ es un triángulo rectángulo y $\overline{AH}=3-\overline{EA}$, 
 \section{Primera construcción de Ramanujan}\label{s.square-ramanujan-first}
 \index{Ramanujan}\index{Squaring a circle!approximation}
 
-\textbf{Construcción (Fig.~\ref{f.square-rama1a}):}
-\begin{enumerate}
-
-\item Construimos una circunferencia unitaria centrada en $O$ y que $\overline{PR}$ sea un diámetro.
-
-\item Construimos el punto $H$ que biseca $\overline{PO}$ y el punto $T$ que triseca $\overline{RO}$ (Teorema~\ref{thm.trisect-constructible}).
-
-\item Construimos la perpendicular a $T$ que corta a la circunferencia en $Q$.
-
-\item Construimos las cuerdas $\overline{RS}=\overline{QT}$ y $\overline{PS}$.
-
-\item Construimos una recta paralela a $\overline{RS}$ desde $T$ que corte a $\overline{PS}$ en $N$.
-
-\item Construimos una recta paralela a $\overline{RS}$ desde $O$ que corte a $\overline{PS}$ en $M$.
-
-\item Construimos la cuerda $\overline{PK}=\overline{PM}$.
-
-\item Construimos la tangente a $P$ de longitud $\overline{PL}=\overline{MN}$.
-
-\item Conectamos los puntos $K,L,R$.
-
-\item Encontrar el punto $C$ tal que $\overline{RC}$ sea igual a $\overline{RH}$.
-
-\item Construimos $\overline{CD}$ paralela a $\overline{KL}$ que corte a $\overline{LR}$ en $D$. 
-\end{enumerate}
-
-\begin{figure}[b]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.95,align=left]
 \clip (-6,-5.1) rectangle +(11.5,10.2);
@@ -303,6 +277,33 @@ $\triangle ABH$ es un triángulo rectángulo y $\overline{AH}=3-\overline{EA}$, 
 \caption{Primera construcción de Ramanujan}\label{f.square-rama1a}
 \end{figure}
 
+\textbf{Construcción (Fig.~\ref{f.square-rama1a}):}
+\begin{enumerate}
+
+\item Construimos una circunferencia unitaria centrada en $O$ y que $\overline{PR}$ sea un diámetro.
+
+\item Construimos el punto $H$ que biseca $\overline{PO}$ y el punto $T$ que triseca $\overline{RO}$ (Teorema~\ref{thm.trisect-constructible}).
+
+\item Construimos la perpendicular a $T$ que corta a la circunferencia en $Q$.
+
+\item Construimos las cuerdas $\overline{RS}=\overline{QT}$ y $\overline{PS}$.
+
+\item Construimos una recta paralela a $\overline{RS}$ desde $T$ que corte a $\overline{PS}$ en $N$.
+
+\item Construimos una recta paralela a $\overline{RS}$ desde $O$ que corte a $\overline{PS}$ en $M$.
+
+\item Construimos la cuerda $\overline{PK}=\overline{PM}$.
+
+\item Construimos la tangente a $P$ de longitud $\overline{PL}=\overline{MN}$.
+
+\item Conectamos los puntos $K,L,R$.
+
+\item Encontrar el punto $C$ tal que $\overline{RC}$ sea igual a $\overline{RH}$.
+
+\item Construimos $\overline{CD}$ paralela a $\overline{KL}$ que corte a $\overline{LR}$ en $D$. 
+\end{enumerate}
+
+
 \begin{theorem}
 $\quad\overline{RD}^2=\displaystyle\frac{355}{113}\approx \pi$.
 \end{theorem}
@@ -351,7 +352,7 @@ $\overline{RC}=\overline{RH}=3/2$ y $\overline{CD} \parallel \overline{LK}$. Por
 En la figura~\ref{f.square-rama1b} los segmentos de línea se rotulan con sus longitudes.
 \end{proof}
 
-\begin{figure}[ht]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.95,align=left]
 \clip (-6,-5.1) rectangle +(11.5,10.2);
@@ -422,6 +423,7 @@ En la figura~\ref{f.square-rama1b} los segmentos de línea se rotulan con sus lo
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newpage
 
 \section{Segunda construcción de Ramanujan}\label{s.square-ramanujan-second}
 \index{Ramanujan}\index{Squaring a circle!approximation}
@@ -446,7 +448,7 @@ En la figura~\ref{f.square-rama1b} los segmentos de línea se rotulan con sus lo
 \item Construimos $\overline{SO}$.
 \end{enumerate}
 
-\begin{figure}[ht]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=1]
 \clip (-4.4,-4.2) rectangle +(8.8,8.6);
@@ -560,7 +562,7 @@ Por construcción $\overline{AS}=\overline{AR}$ y $\triangle OAS$ es un triángu
 En la figura~\ref{f.square-ramanujan-2b} los segmentos de línea están rotulados con sus longitudes.
 \end{proof}
 
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=1]
 \clip (-5,-4.2) rectangle +(10,8.6);
@@ -631,15 +633,12 @@ En la figura~\ref{f.square-ramanujan-2b} los segmentos de línea están rotulado
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Cuadratura de un círculo con una cuadratriz}\label{s.square-quad}
-\index{Squaring a circle!quadratrix@with a quadratrix}
-\index{Quadratrix!squaring a circle}
 
 La cuadratriz se describe en la Sección~\ref{s.q}.
 
 Sea $t=\overline{DE}$ la distancia que se ha desplazado la recta horizontal por el eje $y$, y sea $\theta$ el ángulo correspondiente entre la recta giratoria y el eje $x$. Sea $P$ el punto de la unión de las dos rectas. El lugar geométrico de $P$ es la curva cuadratriz.
 
-Sea $F$ la proyección de $P$ sobre el eje $x$ y sea $G$ la posición de la unión cuando ambas rectas alcanzan el eje $x$, es decir, $G$ es la intersección de la curva cuadratriz y el eje $x$ (Fig.~\ref{f.square-quad}).
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.7,domain=.01:1.57,samples=100]
 \draw (0,0) node[below left] {$A$} node [above right,xshift=6pt] {$\theta$} -- (8,0) node[below right] {$B$} -- (8,8) node[above right] {$C$} -- (0,8) node[above left] {$D$} -- cycle;
@@ -658,6 +657,10 @@ Sea $F$ la proyección de $P$ sobre el eje $x$ y sea $G$ la posición de la uni�
 \end{center}
 \caption{Cuadratura del círculo con una cuadratriz}\label{f.square-quad}
 \end{figure}
+
+Sea $F$ la proyección de $P$ sobre el eje $x$ y sea $G$ la posición de la unión cuando ambas rectas alcanzan el eje $x$, es decir, $G$ es la intersección de la curva cuadratriz y el eje $x$ (Fig.~\ref{f.square-quad}).
+
+\newpage
 
 \begin{theorem}
 $\quad\overline{AG}=2/\pi$.

@@ -171,7 +171,7 @@ El valor $-\tan 56,3\approx -1,5$ no es una raíz de la ecuación. La figura~\re
 \end{figure}
 
 
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.85]
 % Draw help lines and axes
@@ -259,7 +259,7 @@ La sección~\ref{s.method} presenta una especificación formal del método de Li
 \end{itemize}
 \end{itemize}
 
-\begin{figure}[t]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.85]
 % Draw help lines and axes
@@ -322,15 +322,7 @@ La sección~\ref{s.method} presenta una especificación formal del método de Li
 
 Vamos a demostrar el método de Lill para el polinomio $p(x)=x^3-3x^2-3x+1$ con coeficientes negativos (Sec.~\ref{s.ax6}). Comenzamos construyendo un segmento de longitud $1$ a la derecha. A continuación, giramos $90^\circ$ hacia arriba, pero como el coeficiente es negativo, construimos un segmento de longitud $3$ hacia abajo, es decir, en dirección opuesta a la flecha. Tras girar $90^\circ$ hacia la izquierda, el coeficiente vuelve a ser negativo, así que construimos un segmento de longitud $3$ hacia la derecha. Por último, giramos hacia abajo y construimos un segmento de longitud $ 1 $ (Fig.~\ref{f.negative}, las líneas de trazos sueltos será discutido en Sec.~\ref{s.noninteger}).
 
-Comencemos el segundo camino con una línea a $ 45^\circ$ con el eje $x$ positivo. Se cruza con la extensión del segmento de línea para $a_2$ en $(1,1)$. Girando $-90^\circ$ (hacia la derecha), la recta interseca  interseca la prolongacion de $a_1$ en $(5,-3)$. Girando nuevamente $-90^\circ$, la recta interseca el final de la primera trayectoria en $(4,-4)$. Como $-\tan 45^\circ=-1$, hemos encontrado una raíz del polinomio:
-\[p(-1)=(-1)^3-3(-1)^2-3(-1)+6=0\,.\]
-
-
-\subsection{Coeficientes cero}\label{s.zero}
-\index{Lill's method!zero coefficients}
-$a_2$, el coeficiente del término $x^2$ del polinomio $x^3-7x-6=0$, es cero. Trazamos un segmento de longitud $0$, es decir, no trazamos una recta, pero sí giramos $\pm 90^\circ$ como indica la flecha que apunta hacia arriba en $(1,0)$ en la figura~\ref{f.zero}. Giramos nuevamente y trazamos un segmento de longitud $-7$, es decir, de longitud $7$ hacia atrás, hasta $(8,0)$. Por último, giramos una vez más y trazamos un segmento de longitud $-6 $ a $(8,6)$.
-
-\begin{figure}[t]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.7]
 % Draw help lines and axes
@@ -387,6 +379,10 @@ $a_2$, el coeficiente del término $x^2$ del polinomio $x^3-7x-6=0$, es cero. Tr
 \end{center}
 \caption{Método de Lill con polinomios de coeficientes nulos}\label{f.zero}
 \end{figure}
+
+Comencemos el segundo camino con una línea a $ 45^\circ$ con el eje $x$ positivo. Se cruza con la extensión del segmento de línea para $a_2$ en $(1,1)$. Girando $-90^\circ$ (hacia la derecha), la recta interseca  interseca la prolongacion de $a_1$ en $(5,-3)$. Girando nuevamente $-90^\circ$, la recta interseca el final de la primera trayectoria en $(4,-4)$. Como $-\tan 45^\circ=-1$, hemos encontrado una raíz del polinomio:
+\[p(-1)=(-1)^3-3(-1)^2-3(-1)+6=0\,.\]
+
 Los segundos trayectos con los siguientes ángulos intersecan el final de la primera trayectoria:
 \[
 -\tan^{-1} (-1)= 45^\circ,\quad -\tan^{-1} (-2)\approx 63.4^\circ,\quad -\tan^{-1} 3\approx -71.6^\circ\,.
@@ -397,18 +393,9 @@ Compruébalo:
 (x+1)(x+2)(x-3)=(x^2+3x+2)(x-3) =x^3-7x-6\,.
 \]
 
-\subsection{Raíces no enteras}\label{s.noninteger}
-\index{Lill's method!non-integer roots}
-La figura~\ref{f.noninteger} muestra el método de Lill para $p(x)=x^3-2x+1$. La primera trayectoria va de $(0,0)$ a $(1,0)$ y luego gira hacia arriba. El coeficiente de $x^2$ es cero por lo que no se construye ningún segmento y el trayecto gira a la izquierda. El siguiente segmento es de longitud $-2$ por lo que va hacia atrás desde $(1,0)$ hasta $(3,0)$. Finalmente, el trayecto gira hacia abajo y se construye un segmento de longitud $1$ desde $(3,0)$ hasta $(3,-1)$.
-
-Es fácil ver que si la segunda trayectoria comienza en un ángulo de $ 45^\circ $ se cruzará con la primer trayectoria en $ (3,-1) $. Por lo tanto, $-\tan^{-1} (-45)^\circ=1$ es una raíz. Si dividimos $p(x)$ entre $x-1$, obtenemos el polinomio cuadrático $x^2+x-1$ cuyas raíces son:
-\[
-\frac{-1\pm\sqrt{5}}{2} \approx 0.62,\; -1.62\,.
-\]
-Hay dos segundas trayectorias adicionales: una que empieza en $-\tan^{-1} 0,62\approx -31,8^\circ$, y otra que empieza en $-\tan^{-1}(-1,62)\approx 58,3^\circ$.
-
-El polinomio $p(x)=x^3-3x^2-3x+1$ (Sec.~\ref{s.negative}) tiene raíces $ 2\pm\sqrt{3}\approx 3,73, 0,27$. Los ángulos correspondientes son $-\tan^{-1} 3,73 \approx -75^\circ$ y $-\tan^{-1} 0,27 \approx -15^\circ$ como muestran las líneas discontinuas de la figura~\ref{f.negative}.
-
+\subsection{Coeficientes cero}\label{s.zero}
+\index{Lill's method!zero coefficients}
+$a_2$, el coeficiente del término $x^2$ del polinomio $x^3-7x-6=0$, es cero. Trazamos un segmento de longitud $0$, es decir, no trazamos una recta, pero sí giramos $\pm 90^\circ$ como indica la flecha que apunta hacia arriba en $(1,0)$ en la figura~\ref{f.zero}. Giramos nuevamente y trazamos un segmento de longitud $-7$, es decir, de longitud $7$ hacia atrás, hasta $(8,0)$. Por último, giramos una vez más y trazamos un segmento de longitud $-6 $ a $(8,6)$.
 
 \begin{figure}[t]
 \begin{center}
@@ -492,6 +479,19 @@ El polinomio $p(x)=x^3-3x^2-3x+1$ (Sec.~\ref{s.negative}) tiene raíces $ 2\pm\s
 \caption{Método de Lill con raíces no enteras}\label{f.noninteger}
 \end{figure}
 
+\subsection{Raíces no enteras}\label{s.noninteger}
+\index{Lill's method!non-integer roots}
+La figura~\ref{f.noninteger} muestra el método de Lill para $p(x)=x^3-2x+1$. La primera trayectoria va de $(0,0)$ a $(1,0)$ y luego gira hacia arriba. El coeficiente de $x^2$ es cero por lo que no se construye ningún segmento y el trayecto gira a la izquierda. El siguiente segmento es de longitud $-2$ por lo que va hacia atrás desde $(1,0)$ hasta $(3,0)$. Finalmente, el trayecto gira hacia abajo y se construye un segmento de longitud $1$ desde $(3,0)$ hasta $(3,-1)$.
+
+
+Es fácil ver que si la segunda trayectoria comienza en un ángulo de $ 45^\circ $ se cruzará con la primer trayectoria en $ (3,-1) $. Por lo tanto, $-\tan^{-1} (-45)^\circ=1$ es una raíz. Si dividimos $p(x)$ entre $x-1$, obtenemos el polinomio cuadrático $x^2+x-1$ cuyas raíces son:
+\[
+\frac{-1\pm\sqrt{5}}{2} \approx 0.62,\; -1.62\,.
+\]
+Hay dos segundas trayectorias adicionales: una que empieza en $-\tan^{-1} 0,62\approx -31,8^\circ$, y otra que empieza en $-\tan^{-1}(-1,62)\approx 58,3^\circ$.
+
+El polinomio $p(x)=x^3-3x^2-3x+1$ (Sec.~\ref{s.negative}) tiene raíces $ 2\pm\sqrt{3}\approx 3,73, 0,27$. Los ángulos correspondientes son $-\tan^{-1} 3,73 \approx -75^\circ$ y $-\tan^{-1} 0,27 \approx -15^\circ$ como muestran las líneas discontinuas de la figura~\ref{f.negative}.
+
 \subsection{La raíz cúbica de dos}\label{s.cube}
 \index{Lill's method!cube root of two}
 Para duplicar un cubo, calculamos $\sqrt[3]{2}$, una raíz del polinomio cúbico $x^3-2$. En la construcción de la primera trayectoria, giramos dos veces a la izquierda sin construir ningún segmento, porque $a_2$ y $a_1$ son ambos cero. Luego se vuelve a girar a la izquierda (para mirar hacia abajo) y se construye hacia atrás (hacia arriba) porque $a_0=-2$ es negativo. El primer segmento de la segunda trayectoria se construye con un ángulo de $-\tan^{-1} \sqrt[3]{2}\approx -51.6^\circ$ (Fig.~\ref{f.cube-two}).
@@ -551,21 +551,6 @@ Para duplicar un cubo, calculamos $\sqrt[3]{2}$, una raíz del polinomio cúbico
 \caption{La raíz cúbica de dos}\label{f.cube-two}
 \end{figure}
 
-\section{Prueba del método de Lill}\label{s.proof}
-\index{Lill's method!proof of}
-
-La demostración es para polinomios cúbicos mónicos $p(x)=x^3+a_2x^2+a_1x+a_0$. Si el polinomio no es mónico, se divide por $a_3$ y el polinomio resultante tiene las mismas raíces. En la figura~\ref{f.lill-proof} los segmentos de la primera trayectoria están denotados con los coeficientes y con $b_2,b_1,a_2-b_2,a_1-b_1$. En un triángulo rectángulo si un ángulo agudo es $\theta$ el otro ángulo es $90^\circ-\theta$. Por tanto, el ángulo sobre $P$ y el ángulo a la izquierda de $Q$ son iguales a $\theta$. He aquí las fórmulas de $\tan \theta$ calculadas a partir de los tres triángulos:
-\begin{eqnarray*}
-\tan \theta &=& \frac{b_2}{1}=b_2\\
-\tan \theta &=& \frac{b_1}{a_2-b_2}=\frac{b_1}{a_2-\tan\theta}\\
-\tan \theta &=& \frac{a_0}{a_1-b_1}=\frac{a_0}{a_1-\tan\theta(a_2-\tan\theta)}\,.
-\end{eqnarray*}
-Simplificamos la última ecuación, multiplicamos por $-1$ e incluimos $-1$ en las potencias:
-\begin{eqnarray*}
-(\tan\theta)^3-a_2(\tan\theta)^2+a_1(\tan\theta)-a_0&=&0\\
-(-\tan\theta)^3+a_2(-\tan\theta)^2+a_1(-\tan\theta)+a_0&=&0\,.
-\end{eqnarray*}
-Se deduce que $-\tan\theta$ es una raíz real de $p(x)=x^3+a_2x^2+a_1x+a_0$.
 
 \begin{figure}[t]
 \begin{center}
@@ -643,13 +628,23 @@ Se deduce que $-\tan\theta$ es una raíz real de $p(x)=x^3+a_2x^2+a_1x+a_0$.
 \caption{Prueba del método de Lill}\label{f.lill-proof}
 \end{figure}
 
-\section{El pliegue de Beloch}\label{s.beloch-fold}
+\section{Prueba del método de Lill}\label{s.proof}
+\index{Lill's method!proof of}
 
-Margharita P. Beloch descubrió una notable conexión entre el plegado y el método de Lill: una aplicación de la operación más tarde conocida como el sexto axioma del origami genera una raíz real de un polinomio cúbico. La operación se denomina a menudo \emph{pliegue de belloch}.
+La demostración es para polinomios cúbicos mónicos $p(x)=x^3+a_2x^2+a_1x+a_0$. Si el polinomio no es mónico, se divide por $a_3$ y el polinomio resultante tiene las mismas raíces. En la figura~\ref{f.lill-proof} los segmentos de la primera trayectoria están denotados con los coeficientes y con $b_2,b_1,a_2-b_2,a_1-b_1$. En un triángulo rectángulo si un ángulo agudo es $\theta$ el otro ángulo es $90^\circ-\theta$. Por tanto, el ángulo sobre $P$ y el ángulo a la izquierda de $Q$ son iguales a $\theta$. He aquí las fórmulas de $\tan \theta$ calculadas a partir de los tres triángulos:
+\begin{eqnarray*}
+\tan \theta &=& \frac{b_2}{1}=b_2\\
+\tan \theta &=& \frac{b_1}{a_2-b_2}=\frac{b_1}{a_2-\tan\theta}\\
+\tan \theta &=& \frac{a_0}{a_1-b_1}=\frac{a_0}{a_1-\tan\theta(a_2-\tan\theta)}\,.
+\end{eqnarray*}
+Simplificamos la última ecuación, multiplicamos por $-1$ e incluimos $-1$ en las potencias:
+\begin{eqnarray*}
+(\tan\theta)^3-a_2(\tan\theta)^2+a_1(\tan\theta)-a_0&=&0\\
+(-\tan\theta)^3+a_2(-\tan\theta)^2+a_1(-\tan\theta)+a_0&=&0\,.
+\end{eqnarray*}
+Se deduce que $-\tan\theta$ es una raíz real de $p(x)=x^3+a_2x^2+a_1x+a_0$.
 
-Consideremos el polinomio $p(x)=x^3+6x^2+11x+6$ (Sec.~\ref{s.magic}). Recordemos que un pliegue es la mediatriz del segmento entre un punto cualquiera y su reflexión alrededor del pliegue. Queremos que $\overline{RS}$ en la figura~\ref{f.beloch-fold2} sea la mediatriz de $\overline{QQ'}$ y $\overline{PP'}$, donde $Q',P'$ son las reflexiones de $Q,P$ alrededor de $\overline{RS}$, respectivamente.
-
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.6]
 % Draw help lines and axes
@@ -713,10 +708,6 @@ Consideremos el polinomio $p(x)=x^3+6x^2+11x+6$ (Sec.~\ref{s.magic}). Recordemos
 \caption{El pliegue de Beloch para encontrar una raíz de $x^3+6x^2+11x+6$}\label{f.beloch-fold2}
 \end{figure}
 
-Construimos una recta $a_2'$ paralela a $a_2$ a la misma distancia de $a_2$ que $a_2$ de $P$, y construimos una recta $a_1'$ paralela a $a_1$ a la misma distancia de $a_1$ que $a_1$ de $Q$. Aplicamos el axioma~6 para situar simultáneamente $P$ en $P'$ sobre $a_2'$ y para situar $Q$ en $Q'$ sobre $a_1'$. El pliegue $\overline{RS}$ es la mediatriz de las rectas $\overline{PP'}$ y $\overline{QQ'}$ por lo que los ángulos en $R$ y $S$ son ambos rectos como lo exige el método de Lill.
-
-La figura ~\ref{f.beloch-fold3} muestra el pliegue de Beloch para el polinomio $x^3-3x^2-3x+1$ (Sec.~\ref{s.negative}). $a_2$ es el segmento vertical de longitud $3$ cuya ecuación es $x=1$, y su recta paralela es $a_2'$ cuya ecuación es $x=2$, porque $P$ está a una distancia de $1$ de $a_2$. $a_1$ es el segmento horizontal de longitud $3$ cuya ecuación es $y=-3$, y su recta paralela es $a_1'$ cuya ecuación es $y=-2$ porque $Q$ está a una distancia de $1$ de $a_1$. El pliegue $\overline{RS}$ es la mediatriz tanto de $\overline{PP'}$ como de $\overline{QQ'}$, y la recta $\overline{PRSQ}$ es la misma que la segunda trayectoria de la figura~\ref{f.negative}.
-
 \begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
@@ -778,6 +769,19 @@ La figura ~\ref{f.beloch-fold3} muestra el pliegue de Beloch para el polinomio $
 \end{center}
 \caption{El pliegue de Beloch para encontrar una raíz de $x^3-3x^2-3x+1$}\label{f.beloch-fold3}
 \end{figure}
+
+\section{El pliegue de Beloch}\label{s.beloch-fold}
+
+Margharita P. Beloch descubrió una notable conexión entre el plegado y el método de Lill: una aplicación de la operación más tarde conocida como el sexto axioma del origami genera una raíz real de un polinomio cúbico. La operación se denomina a menudo \emph{pliegue de belloch}.
+
+
+Consideremos el polinomio $p(x)=x^3+6x^2+11x+6$ (Sec.~\ref{s.magic}). Recordemos que un pliegue es la mediatriz del segmento entre un punto cualquiera y su reflexión alrededor del pliegue. Queremos que $\overline{RS}$ en la figura~\ref{f.beloch-fold2} sea la mediatriz de $\overline{QQ'}$ y $\overline{PP'}$, donde $Q',P'$ son las reflexiones de $Q,P$ alrededor de $\overline{RS}$, respectivamente.
+
+Construimos una recta $a_2'$ paralela a $a_2$ a la misma distancia de $a_2$ que $a_2$ de $P$, y construimos una recta $a_1'$ paralela a $a_1$ a la misma distancia de $a_1$ que $a_1$ de $Q$. Aplicamos el axioma~6 para situar simultáneamente $P$ en $P'$ sobre $a_2'$ y para situar $Q$ en $Q'$ sobre $a_1'$. El pliegue $\overline{RS}$ es la mediatriz de las rectas $\overline{PP'}$ y $\overline{QQ'}$ por lo que los ángulos en $R$ y $S$ son ambos rectos como lo exige el método de Lill.
+
+La figura ~\ref{f.beloch-fold3} muestra el pliegue de Beloch para el polinomio $x^3-3x^2-3x+1$ (Sec.~\ref{s.negative}). $a_2$ es el segmento vertical de longitud $3$ cuya ecuación es $x=1$, y su recta paralela es $a_2'$ cuya ecuación es $x=2$, porque $P$ está a una distancia de $1$ de $a_2$. $a_1$ es el segmento horizontal de longitud $3$ cuya ecuación es $y=-3$, y su recta paralela es $a_1'$ cuya ecuación es $y=-2$ porque $Q$ está a una distancia de $1$ de $a_1$. El pliegue $\overline{RS}$ es la mediatriz tanto de $\overline{PP'}$ como de $\overline{QQ'}$, y la recta $\overline{PRSQ}$ es la misma que la segunda trayectoria de la figura~\ref{f.negative}.
+
+\newpage
 
 \subsection*{¿Cuál es la sorpresa?}
 

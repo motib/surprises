@@ -17,13 +17,14 @@ Los matemáticos griegos descubrieron que si se permiten otros instrumentos, los
 \noindent\textbf{Construcción:}
 Sea $\theta=\angle AOB$ un ángulo arbitrario y sin pérdida de generalidad supongamos que $A,B$ están en una circunferencia unitaria cuyo centro es $O$. Bisecamos $\angle AOB$ y sea $C$ la intersección de la bisectriz con la circunferencia unitaria. Sea $D$ el punto medio de la $\overline{OA}$ y sea $T$ el punto medio de la $\overline{DC}$. Denotemos el ángulo $\angle DOT$ por $\phi$ (Fig.~\ref{f.trisect-first-approx-1}).
 
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{center}
-\begin{tikzpicture}[scale=.6]
+\begin{tikzpicture}[scale=.55]
+\clip (-1,-1.8) rectangle +(11,10.3);
 \coordinate (O) at (0,0)
   node[left] {$O$}
   node[above right,xshift=14pt,yshift=16pt] {\sm{\theta/2}}
-  node[right,xshift=18pt,yshift=4pt] {\sm{\theta/2}};
+  node[right,xshift=14pt,yshift=4pt] {\sm{\theta/2}};
 \coordinate (A) at (9cm,0);
 \node[right] at (A) {$A$};
 \coordinate (B) at (60:9);
@@ -43,8 +44,8 @@ Sea $\theta=\angle AOB$ un ángulo arbitrario y sin pérdida de generalidad supo
 \draw (30:.8) arc (30:60:.8);
 \draw (2,0) arc (0:20:2);
 \node[above right] at (2.1,0.1) {\sm{\phi}}; 
-\draw[<->] (0,-1) -- node[fill=white] {$1/2$} +(4.5,0);
-\draw[<->] (4.5,-1) -- node[fill=white] {$1/2$} +(4.5,0);
+\draw[<->] (0,-1) -- node[fill=white] {\sm{1/2}} +(4.5,0);
+\draw[<->] (4.5,-1) -- node[fill=white] {\sm{1/2}} +(4.5,0);
 \end{tikzpicture}
 \end{center}
 \caption{Primera trisección aproximada (1)}\label{f.trisect-first-approx-1}
@@ -55,14 +56,9 @@ Sea $\theta=\angle AOB$ un ángulo arbitrario y sin pérdida de generalidad supo
 \end{theorem}
 
 \begin{proof} Figura~\ref{f.trisect-first-approx-2} se extrae de la figura~\ref{f.trisect-first-approx-1} y contiene anotaciones adicionales.
-
-Sea $\overline{CF}$ la perpendicular a $\overline{OA}$ que corta a $\overline{OA}$ en $F$. Dado que $\overline{OC}=1$, $\overline{CF}=\sen(\theta/2)$ y $\overline{OF}=\cos(\theta/2)$. Sea $\overline{TE}$ la perpendicular a $\overline{OA}$ que interseca $\overline{OA}$ en $E$.
-
-$T$ es el punto medio de $\overline{DC}$ por lo que $\overline{DT}=\overline{TC}=a$. Pero $\overline{FT}$ es la mediana de la hipotenusa de un triángulo rectángulo, por lo que $\overline{FT}=a$ y por tanto $\triangle DTF$ es isóceles. Se deduce que $\overline{TE}$ es tanto la mediana como la altitud de $\overline{DF}$. A partir del diagrama es fácil ver que:
-
-\begin{figure}[ht]
+\begin{figure}[t]
 \begin{center}
-\begin{tikzpicture}[scale=1]
+\begin{tikzpicture}[scale=.8]
 \coordinate (O) at (0,0)
   node[left] {$O$}
   node[right,xshift=24pt,yshift=5pt] {\sm{\theta/2}};
@@ -95,20 +91,22 @@ $T$ es el punto medio de $\overline{DC}$ por lo que $\overline{DT}=\overline{TC}
 \draw[thick,dashed] (T) -- node[right] {$a$} (F);
 
 \draw[<->] ($(O)+(0,-1)$) --
-  node[fill=white] {$1/2$} +(4.5,0);
-\draw[<->] ($(O)+(0,-1.8)$) --
-  node[fill=white] {$\cos (\theta/2)$} ($(F)+(0,-1.8)$);
-\draw[<->] ($(D)+(0,-2.6)$) --
-  node[fill=white] {$\left(\cos (\theta/2)\!-\! (1/2)\right)$} 
-  ($(F)+(0,-2.6)$);
-\draw[<->] ($(O)+(0,-3.4)$) --
-  node[fill=white] {$(1/2)+(1/2)\left(\cos (\theta/2)\! -\! (1/2)\right)$} 
-  ($(E)+(0,-3.4)$);
+  node[fill=white] {\sm{1/2}} +(4.5,0);
+\draw[<->] ($(O)+(0,-1.6)$) --
+  node[fill=white] {\sm{\cos (\theta/2)}} ($(F)+(0,-1.6)$);
+\draw[<->] ($(D)+(0,-2.2)$) --
+  node[fill=white] {\sm{\left(\cos (\theta/2)\!-\! (1/2)\right)}} 
+  ($(F)+(0,-2.2)$);
+\draw[<->] ($(O)+(0,-3)$) --
+  node[fill=white] {\sm{(1/2)+(1/2)\left(\cos (\theta/2)\! -\! (1/2)\right)}} 
+  ($(E)+(0,-3)$);
 \end{tikzpicture}
 \end{center}
 \caption{Primera trisección aproximada (2)}\label{f.trisect-first-approx-2}
 \end{figure}
+Sea $\overline{CF}$ la perpendicular a $\overline{OA}$ que corta a $\overline{OA}$ en $F$. Dado que $\overline{OC}=1$, $\overline{CF}=\sen(\theta/2)$ y $\overline{OF}=\cos(\theta/2)$. Sea $\overline{TE}$ la perpendicular a $\overline{OA}$ que interseca $\overline{OA}$ en $E$.
 
+$T$ es el punto medio de $\overline{DC}$ por lo que $\overline{DT}=\overline{TC}=a$. Pero $\overline{FT}$ es la mediana de la hipotenusa de un triángulo rectángulo, por lo que $\overline{FT}=a$ y por tanto $\triangle DTF$ es isóceles. Se deduce que $\overline{TE}$ es tanto la mediana como la altitud de $\overline{DF}$. A partir del diagrama es fácil ver que:
 \[
 \overline{OE}=\frac{1}{2} + \frac{1}{2}\left(\cos \frac{\theta}{2}-\frac{1}{2}\right)\,.
 \]
@@ -132,6 +130,53 @@ Esta es una aproximación a una trisección $\phi=\theta/3$. Para $\theta=60^\ci
 \tan^{-1}\left(\frac{2\sen 30^\circ}{1+2\cos 30^\circ}\right)=
 \tan^{-1}0.366\approx 20.1^\circ\approx 20^\circ\,.
 \]
+\begin{figure}[t]
+\begin{center}
+\begin{tikzpicture}[scale=.75]
+\coordinate (O) at (0,0)
+  node[left] {$O$}
+  node[above right,xshift=10pt,yshift=12pt] {\sm{\theta/2}};
+
+\coordinate (A) at (9cm,0);
+\node[right] at (A) {$A$};
+\coordinate (B) at (60:9);
+\node[above] at (B) {$B$};
+\draw (A) arc(0:60:9);
+\draw (B) -- (O) -- (A);
+\coordinate (D) at (3,0);
+\node[below] at (D) {$D$};
+\draw[name path=third] (D) arc(0:60:3);
+\coordinate (C) at (30:3);
+\node[right] at (C) {$C$};
+\draw (O) -- node[above,near end] {\sm{1/3}} (C);
+\draw[thick] (D) -- (C);
+\coordinate (E) at (10:9);
+\node[right] at (E) {$E$};
+\draw[thick] (A) -- node[right] {\sm{1/3}} (E);
+\coordinate (T) at (20:9);
+\node[right] at (T) {$T$};
+\draw[thick] (E) -- node[right] {\sm{1/3}} (T);
+\draw (O) -- node[above,near end] {$1$} (T);
+
+\draw (	1,0) arc (0:30:1);
+\draw (30:.8) arc (30:60:.8);
+\draw (4,0) arc (0:20:4);
+\node at (4.2,0.35) {$\phi$}; 
+\node at (4.1,1.1) {$\phi$}; 
+
+\draw[dashed] (O) --
+  node[fill=white,inner sep=0pt,very near start,
+       xshift=7pt,yshift=1pt] {\sm{\theta/2}} 
+  node[fill=white,near end] {$1$} (E);
+
+\draw[<->] (3,-.8) -- node[fill=white] {\sm{2/3}} +(6,0);
+\draw[<->] (0,-.8) -- node[fill=white] {\sm{1/3}} +(3,0);
+\end{tikzpicture}
+\end{center}
+\caption{Segunda trisección aproximada}
+\label{f.trisect-second-approx}
+\end{figure}
+
 
 Tabla~\ref{t.trisect-first} muestra los errores para un rango de ángulos agudos. El error es relativamente pequeño para ángulos pequeños, aumentando a $1\!\!$\% a $85^\circ$.
 
@@ -171,53 +216,6 @@ Tabla~\ref{t.trisect-first} muestra los errores para un rango de ángulos agudos
 
 \noindent\textbf{Construcción:}
 Sea $\theta=\angle AOB$ un ángulo arbitrario y sin pérdida de generalidad supongamos que $A,B$ están en una circunferencia unitaria cuyo centro es $O$. Construimos una circunferencia de radio $1/3$ con centro $O$ y que $D$ sea su intersección con $\overline{OA}$. Bisecamos $\angle AOB$ y sea $C$ la intersección de la bisectriz con la circunferencia de radio $1/3$. Construimos la cuerda $\overline{CD}$ y las cuerdas $\overline{AE}=\overline{ET}=\overline{CD}$. Como cuerdas iguales subtienden ángulos centrales iguales $\angle TOE=\angle EOA=\phi$ (Fig.~\ref{f.trisect-second-approx}).
-
-\begin{figure}[ht]
-\begin{center}
-\begin{tikzpicture}[scale=.75]
-\coordinate (O) at (0,0)
-  node[left] {$O$}
-  node[above right,xshift=10pt,yshift=12pt] {\sm{\theta/2}};
-
-\coordinate (A) at (9cm,0);
-\node[right] at (A) {$A$};
-\coordinate (B) at (60:9);
-\node[above] at (B) {$B$};
-\draw (A) arc(0:60:9);
-\draw (B) -- (O) -- (A);
-\coordinate (D) at (3,0);
-\node[below] at (D) {$D$};
-\draw[name path=third] (D) arc(0:60:3);
-\coordinate (C) at (30:3);
-\node[right] at (C) {$C$};
-\draw (O) -- node[above,near end] {\sm{1/3}} (C);
-\draw[thick] (D) -- (C);
-\coordinate (E) at (10:9);
-\node[right] at (E) {$E$};
-\draw[thick] (A) -- node[right] {\sm{1/3}} (E);
-\coordinate (T) at (20:9);
-\node[right] at (T) {$T$};
-\draw[thick] (E) -- node[right] {\sm{1/3}} (T);
-\draw (O) -- node[above,near end] {$1$} (T);
-
-\draw (	1,0) arc (0:30:1);
-\draw (30:.8) arc (30:60:.8);
-\draw (4,0) arc (0:20:4);
-\node at (4.2,0.35) {$\phi$}; 
-\node at (4.1,1.1) {$\phi$}; 
-
-\draw[dashed] (O) --
-  node[fill=white,inner sep=0pt,very near start,
-       xshift=7pt,yshift=1pt] {\sm{\theta/2}} 
-  node[fill=white,near end] {$1$} (E);
-
-\draw[<->] (3,-.8) -- node[fill=white] {$2/3$} +(6,0);
-\draw[<->] (0,-.8) -- node[fill=white] {$1/3$} +(3,0);
-\end{tikzpicture}
-\end{center}
-\caption{Segunda trisección aproximada}
-\label{f.trisect-second-approx}
-\end{figure}
 
 \begin{theorem}
 \[
@@ -341,7 +339,7 @@ $\triangle ABC$ y $\triangle BCD$ son triángulos isóceles: $\overline{AB} = \o
 \end{eqnarray*}
 \end{proof}
 
-\begin{figure}[tbh]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=2.1]
 \coordinate (origin) at (0,0) node[below] {$B$} ;
@@ -378,7 +376,7 @@ Dado un cubo $C$ construir otro cubo con el doble de su volumen. Si el volumen d
 \noindent\textbf{Construcción:}
 Construymos el triángulo equilátero unitario $\triangle ABC$ y prolonguemos $\overline{CA}$ con otro segmento unitario hasta $D$. Construyamos los rayos que prolongan $\overline{AB}$ y $\overline{DB}$. Coloquemos la neusis en el punto $C$ y movámoslo hasta que una marca del neusis se sitúe en la semirrecta $\overline{AB}$ en $P$ y la otra marca se sitúe en la semirrecta $\overline{DB}$ en $Q$. Denotemos $\overline{CQ}=x$ y $\overline{BP}=y$ (Fig.~\ref{f.double-neusis}).
 
-\begin{figure}[b]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.7]
 \clip (-.5,-.4) rectangle +(11,6.5);
@@ -407,6 +405,8 @@ Construymos el triángulo equilátero unitario $\triangle ABC$ y prolonguemos $\
 \end{center}
 \caption{Doblar el cubo con un neusis}\label{f.double-neusis}
 \end{figure}
+
+\newpage
 
 \begin{theorem}\index{Doubling a cube!neusis@with a neusis}
 \index{Neusis!doubling of a cube}
@@ -445,13 +445,8 @@ x&=&\sqrt[3]{2}\,.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Trisección mediante una cuadratriz}\label{s.q}
 
-\index{Trisection of an angle!quadratrix@with a quadratrix}
-
-Sea $\overline{ABCD}$ un cuadrado. Sea $l_1$ un segmento situado inicialmente en $\overline{DC}$ y sea $l_2$ un segmento situado inicialmente en $\overline{AD}$. Movamos $l_1$ con velocidad lineal constante hasta alcanzar $\overline{AB}$ y giremos $l_2$ con velocidad angular constante en sentido horario sobre $A$ hasta alcanzar también $\overline{AB}$. Supongamos que alcanzan $\overline{AB}$ juntos. Por ejemplo, si $l_2$ gira a $1^\circ$/segundo y el lado del cuadrado es de $9$ centímetros, $l_1$ debe moverse a $0,1$ cm/segundo. La huella que deja su punto de intersección $P$ se denomina \emph{cuadratiz} (Fig.~\ref{f.trisect-quad-curve}). Su definición se atribuye al matemático Hipias.
-
-\begin{figure}[b]
+\begin{figure}[t]
 \begin{minipage}{.48\textwidth}
 \begin{center}
 \begin{tikzpicture}[scale=.6,domain=.03:1.555,samples=100]
@@ -488,8 +483,7 @@ Sea $\overline{ABCD}$ un cuadrado. Sea $l_1$ un segmento situado inicialmente en
 \end{minipage}
 \end{figure}
 
-Se puede construir una cuadratriz utilizando un compás de cuadratriz como se muestra en la figura~\ref{f.trisect-quad-compass}. Consiste en dos rectas (no marcadas) que se mueven como se ha descrito anteriormente. Una articulación las obliga a moverse simultáneamente y trazar la curva.
-\begin{figure}[b]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.8,domain=.03:1.562,samples=100]
 \draw (.1,7.8) coordinate (start)
@@ -531,6 +525,11 @@ Se puede construir una cuadratriz utilizando un compás de cuadratriz como se mu
 \end{center}
 \caption{Trisección de un ángulo mediante una cuadratriz}\label{f.trisect-quad-trisect}
 \end{figure}
+\section{Trisección mediante una cuadratriz}\label{s.q}
+
+Sea $\overline{ABCD}$ un cuadrado. Sea $l_1$ un segmento situado inicialmente en $\overline{DC}$ y sea $l_2$ un segmento situado inicialmente en $\overline{AD}$. Movamos $l_1$ con velocidad lineal constante hasta alcanzar $\overline{AB}$ y giremos $l_2$ con velocidad angular constante en sentido horario sobre $A$ hasta alcanzar también $\overline{AB}$. Supongamos que alcanzan $\overline{AB}$ juntos. Por ejemplo, si $l_2$ gira a $1^\circ$/segundo y el lado del cuadrado es de $9$ centímetros, $l_1$ debe moverse a $0,1$ cm/segundo. La huella que deja su punto de intersección $P$ se denomina \emph{cuadratiz} (Fig.~\ref{f.trisect-quad-curve}). Su definición se atribuye al matemático Hipias.
+
+Se puede construir una cuadratriz utilizando un compás de cuadratriz como se muestra en la figura~\ref{f.trisect-quad-compass}. Consiste en dos rectas (no marcadas) que se mueven como se ha descrito anteriormente. Una articulación las obliga a moverse simultáneamente y trazar la curva.
 
 Se puede utilizar una cuadratriz para trisecar un ángulo.
 
@@ -546,24 +545,7 @@ La coordenada $y$ de $E$ es $1-t$ por lo que por construcción la coordenada de 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Números construibles}\label{s.trisect-constructible}
-\index{Constructible number}
-
-Sea $l$ un segmento definido de longitud $1$.
-\begin{definition}
-Un número $a$ es \emph{constructible} si y sólo si se puede construir un segmento de longitud $a$ con regla y compás partiendo de $l$.
-\end{definition}
-
-Dado un segmento $l=\overline{AB}$, construir una recta que contenga a $\overline{AB}$ y utilizar el compás para encontrar un punto $C$ de la recta que esté a una distancia de $1$ de $B$. Entonces $\overline{AC}$ tiene una longitud $2$ por lo que el número $2$ es construible. Se puede construir un segmento $\overline{BD}$ de longitud $1$ perpendicular a $\overline{AB}$ en $B$. La hipotenusa del triángulo $\triangle ABD$ es de longitud $\sqrt{2}$ por lo que el número $\sqrt{2}$ es construible.
-
-\begin{theorem}\label{thm.trisect-constructible}
-Un número es \emph{construible} si y sólo si es el valor de una expresión construida a partir de los números enteros, las cuatro operaciones aritméticas $\{+,-,\times,/\}$ y la operación de sacar raíz cuadrada $\surd$.
-\end{theorem}
-
-\begin{proof} Primero demostramos que los valores de estas expresiones son construibles.
-\index{Constructible number!arithmetic operation}
-
-\begin{figure}[b]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
 \coordinate (P) at (0,0);
@@ -595,6 +577,25 @@ Un número es \emph{construible} si y sólo si es el valor de una expresión con
 \caption{Construcción de sumas y restas}\label{f.trisect-add-subtract}
 \end{figure}
 
+\section{Números construibles}\label{s.trisect-constructible}
+\index{Constructible number}
+
+Sea $l$ un segmento definido de longitud $1$.
+\begin{definition}
+Un número $a$ es \emph{constructible} si y sólo si se puede construir un segmento de longitud $a$ con regla y compás partiendo de $l$.
+\end{definition}
+
+Dado un segmento $l=\overline{AB}$, construir una recta que contenga a $\overline{AB}$ y utilizar el compás para encontrar un punto $C$ de la recta que esté a una distancia de $1$ de $B$. Entonces $\overline{AC}$ tiene una longitud $2$ por lo que el número $2$ es construible. Se puede construir un segmento $\overline{BD}$ de longitud $1$ perpendicular a $\overline{AB}$ en $B$. La hipotenusa del triángulo $\triangle ABD$ es de longitud $\sqrt{2}$ por lo que el número $\sqrt{2}$ es construible.
+
+
+
+\begin{theorem}\label{thm.trisect-constructible}
+Un número es \emph{construible} si y sólo si es el valor de una expresión construida a partir de los números enteros, las cuatro operaciones aritméticas $\{+,-,\times,/\}$ y la operación de sacar raíz cuadrada $\surd$.
+\end{theorem}
+
+\begin{proof} Primero demostramos que los valores de estas expresiones son construibles.
+\index{Constructible number!arithmetic operation}
+
 \noindent\textbf{Suma y resta:}
 Dados los segmentos $\overline{PQ}=a$ y $\overline{RS}=b$, construir una circunferencia centrada en $Q$ con radio $b$ (Fig.~\ref{f.trisect-add-subtract}). Extender $\overline{PQ}$ hasta que se cruza con la circunferencia en $U$. Entonces $\overline{PTQU}$ es un segmento, donde $\overline{PT}=a-b$ y $\overline{PU}=a+b$.
 
@@ -606,7 +607,7 @@ $(1/b)=(a/\overline{OA})$, así que $\overline{OA}=ab$.
 Por triángulos similares en la figura~\ref{f.trisect-division},
 $(1/b)=(\overline{OD}/a)$, así que $\overline{OD}=(a/b)$.
 
-\begin{figure}[t]
+\begin{figure}[b]
 \begin{minipage}{.48\textwidth}
 \begin{center}
 \begin{tikzpicture}[scale=.8]
@@ -660,10 +661,8 @@ $(1/b)=(\overline{OD}/a)$, así que $\overline{OD}=(a/b)$.
 \end{minipage}
 \end{figure}
 
-\noindent\textbf{Raíces cuadradas:}
-Dado un segmento $\overline{BC}=a$, construyamos $\overline{AB} =1+a$ y una semicircunferencia con $\overline{AB}$ como diámetro. Construyamos una perpendicular en $C$ y sea $D$ la intersección de la perpendicular y la circunferencia (Fig.~\ref{f.trisect-square-root}). El $\angle ADB$ es un ángulo recto porque está subtendido por un diámetro. Por triángulos semejantes $(h/1)=(a/h)$, por lo que $h^2=a$ y $h=\sqrt{a}$.
 
-\begin{figure}[b]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=1]
 \draw[name path=horz] (0,0) coordinate (a) -- (6,0);
@@ -691,19 +690,13 @@ Dado un segmento $\overline{BC}=a$, construyamos $\overline{AB} =1+a$ y una semi
 \label{f.trisect-square-root}
 \end{figure}
 
+\noindent\textbf{Raíces cuadradas:}
+Dado un segmento $\overline{BC}=a$, construyamos $\overline{AB} =1+a$ y una semicircunferencia con $\overline{AB}$ como diámetro. Construyamos una perpendicular en $C$ y sea $D$ la intersección de la perpendicular y la circunferencia (Fig.~\ref{f.trisect-square-root}). El $\angle ADB$ es un ángulo recto porque está subtendido por un diámetro. Por triángulos semejantes $(h/1)=(a/h)$, por lo que $h^2=a$ y $h=\sqrt{a}$.
+
 Para demostrar la inversa del teorema, necesitamos determinar qué expresiones se pueden construir con una regla y un compás. Hay tres construcciones\footnote{Para mayor claridad se ilustran para valores específicos en lugar de las ecuaciones más generales.}:
 
-\begin{enumerate}
-\item Dos rectas se intersecan en un punto (Fig.~\ref{f.constructible-two-lines}). Las coordenadas de la intersección pueden deducirse de las ecuaciones de las dos rectas $y=x$ y $y=4x-2$. El punto de intersección es $P= (2/3, 2/3)$.
 
-\item Una recta interseca a una circunferencia en cero, uno o dos puntos (Fig.~\ref{f.constructible-line-circle}). Las coordenadas de las intersecciones pueden deducirse de las ecuaciones de la recta $y=x$ y la circunferencia $x^2+y^2=4$. Los puntos de intersección son
-$P=(\sqrt{2}, \sqrt{2})$ y $Q=(-\sqrt{2}, -\sqrt{2})$.
-
-\item Dos circunferencias se intersecan en cero, uno o dos puntos (Fig.~\ref{f.constructible-two-circles}). Las coordenadas de las intersecciones pueden deducirse de las ecuaciones de las dos circunferencias $(x-1)^2+y^2=4$, $(x+1)^2+y^2=4$. Los puntos de intersección son $P=(0,\sqrt{2}),Q=(0,-\sqrt{2})$.
-\end{enumerate}
-\end{proof}
-
-\begin{figure}[t]
+\begin{figure}[b]
 \begin{minipage}{.45\textwidth}
 \begin{tikzpicture}[scale=.66]
 \draw[step=10mm,white!50!black,very thin] (-4,-4) grid (4,4);
@@ -747,7 +740,7 @@ $P=(\sqrt{2}, \sqrt{2})$ y $Q=(-\sqrt{2}, -\sqrt{2})$.
 \end{minipage}
 \end{figure}
 
-\begin{figure}[b]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.66]
 \coordinate (O) at (0,0);
@@ -771,6 +764,16 @@ $P=(\sqrt{2}, \sqrt{2})$ y $Q=(-\sqrt{2}, -\sqrt{2})$.
 \caption{Los puntos de intersección de dos círculos}\label{f.constructible-two-circles}
 \end{center}
 \end{figure}
+
+\begin{enumerate}
+\item Dos rectas se intersecan en un punto (Fig.~\ref{f.constructible-two-lines}). Las coordenadas de la intersección pueden deducirse de las ecuaciones de las dos rectas $y=x$ y $y=4x-2$. El punto de intersección es $P= (2/3, 2/3)$.
+
+\item Una recta interseca a una circunferencia en cero, uno o dos puntos (Fig.~\ref{f.constructible-line-circle}). Las coordenadas de las intersecciones pueden deducirse de las ecuaciones de la recta $y=x$ y la circunferencia $x^2+y^2=4$. Los puntos de intersección son
+$P=(\sqrt{2}, \sqrt{2})$ y $Q=(-\sqrt{2}, -\sqrt{2})$.
+
+\item Dos circunferencias se intersecan en cero, uno o dos puntos (Fig.~\ref{f.constructible-two-circles}). Las coordenadas de las intersecciones pueden deducirse de las ecuaciones de las dos circunferencias $(x-1)^2+y^2=4$, $(x+1)^2+y^2=4$. Los puntos de intersección son $P=(0,\sqrt{2}),Q=(0,-\sqrt{2})$.
+\end{enumerate}
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -884,6 +887,8 @@ $x^3-2$ no tiene raíces racionales por lo que es imposible duplicar el volumen 
 \begin{proof}
 Una de sus raíces es $\sqrt[3]{2}$ que por Teorema~\ref{thm.trisect.cube-root-irrational} es irracional. Las otras raíces son las raíces de la ecuación cuadrática $x^2+\sqrt[3]{2}x+(\sqrt[3]{2})^2$ que se obtiene dividiendo $x^3-2$ entre $x-\sqrt[3]{2}$. Es fácil comprobar que sus raíces no son racionales (de hecho, ni siquiera reales).
 \end{proof}
+
+\newpage
 
 \begin{theorem}
 Es imposible trisecar un ángulo arbitrario con una regla y un compás.

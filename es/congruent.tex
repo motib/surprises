@@ -1,6 +1,7 @@
 % !TeX root = surprises.tex
 
-\chapter{¿Son congruentes los triángulos con áreas y perímetros iguales?}\label{c.congruent}
+\chapter[Los triángulos con áreas y perímetros iguales?]
+{¿Son congruentes los triángulos con áreas y perímetros iguales?}\label{c.congruent}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -194,7 +195,7 @@ Cualquier punto de la curva cerrada en el primer cuadrante es una solución de l
 
 Construimos una recta secante a través de los puntos $ A = (2,3), B = (1,2) $. Corta la curva en $C=(-1,5,-0,5)$, pero no da solución porque los valores son negativos. Construimos una segunda secante desde $C$ hasta $D=(3,2)$. La intersección con la curva en $E\approx (1,5,1,2)$ da una nueva solución cuyas coordenadas se calcularán a continuación.
 
-\begin{figure}[b]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=1]
 \draw[very thin,step=10mm] (-4,-4) grid (4,4);
@@ -353,13 +354,13 @@ La ley de los cosenos se puede utilizar para calcular los ángulos del triángul
 
 \begin{figure}[t]
 \begin{center}
-\begin{tikzpicture}[scale=1.2]
+\begin{tikzpicture}[scale=1.3]
 \coordinate (A1) at (0,0);
 \coordinate (B1) at (4.48cm,0);
 \coordinate (C1) at (79.67:2.73cm);
 \node[above right] at (A1) {$79.67^\circ$};
-\node[above left,xshift=-11pt] at (B1) {$33.94^\circ$};
-\node[below,yshift=-12pt,xshift=10pt] at (C1) {$66.39^\circ$};
+\node[above left,xshift=-14pt] at (B1) {$33.94^\circ$};
+\node[below,yshift=-14pt,xshift=11pt] at (C1) {$66.39^\circ$};
 \draw (B1) -- node[below] {$4.48$} (A1) --
   node[left] {$2.73$} (C1) -- node[right,xshift=2pt] {$4.81$} cycle;
 \end{tikzpicture}
