@@ -18,6 +18,8 @@
 % Fixed size of circle in vertex
 \newcommand*{\vertex}[1]
   {\fill[shift only] (#1) circle (1.5pt)}
+\newcommand*{\vertexcolor}[2]
+  {\fill[shift only,#2] (#1) circle (1.5pt)}
 
 % QED symbol at end of proofs
 \newcommand\qed{\hfill\hbox{\rlap{$\sqcap$}$\sqcup$}}

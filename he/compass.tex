@@ -9,42 +9,42 @@
 
 בשנת
 $1797$
+הוכיח לורנצו מסקרוני 
 \L{Lorenzo Mascheroni}
-הוכיח שכל בנייה גיאומטרית באמצעות סרגל ומחוגה ניתנת לבנייה עם מחוגה בלבד. במאה העשרים התגלה שהמשפט הוכח בשנת
+שכל בנייה גיאומטרית באמצעות סרגל ומחוגה ניתנת לבנייה במחוגה בלבד. במאה ה-20 התגלה שהמשפט הוכח בשנת
 $1672$
-על ידי
-\L{Georg Mohr}.
-המשפט נקרא היום משפט
-\L{Mohr-Mascheroni}.
+על ידי גיאורג מור
+\L{(Georg Mohr)}.
+המשפט נקרא היום משפט מור-מסקרוני
 לאחר שנסביר בסעיף%
 ~\ref{s.compass-what}
-מה המשמעות של בניית ללא מחוגה, נביא את ההוכחה בשלבים, תחילה עם ארבע בניות עזרה: שיקוף של נקודה (סעיף%
+מה המשמעות של בניות ללא מחוגה, נביא את ההוכחה בשלבים, תחילה עם ארבע בניות עזר: שיקוף של נקודה (סעיף%
 ~\ref{s.reflection}),
 בניית מעגל עם רדיוס נתון (סעיף%
 ~\ref{s.circle}),
-חיבור וחיסור של קטעי קו (סעיף%
+חיבור וחיסור קטעים (סעיף%
 ~\ref{s.add-subtract})
-ובניית קטע קו כיחס בין קטעים אחרים (סעיף%
+ובניית קטע כיחס בין קטעים אחרים (סעיף%
 ~\ref{s.three}).
 סעיף%
 ~\ref{s.two-lines}
-מראה איך למצוא את החיתוך בין שני קווים וסעיף%
+מראה איך למצוא את החיתוך בין שני ישרים וסעיף%
 ~\ref{s.line-circle}
-מראה איך למצוא את החיתוך בין קו ומעגל.
+מראה איך למצוא את החיתוך בין ישר ומעגל.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{מהי בנייה רק עם מחוגה?}\label{s.compass-what}
+\section{מהי בנייה במחוגה בלבד?}\label{s.compass-what}
 
 איור%
 ~\ref{f.compass-equi}
-מראה את הבנייה הרגילה של משולש שווה צלעות עם סרגל ומחוגה. איך אפשר לבנות משולש ללא קטעי הקווים
+מראה את הבנייה הרגילה של משולש שווה צלעות בסרגל ומחוגה. איך אפשר לבנות משולש ללא הקטעים
 $\overline{AB},\overline{AC},\overline{BC}$?
 למעשה, אין כל צורך
 \textbf{לראות}
-את הקווים. קו מוגדר על ידי שתי נקודות, ומספיק שבנו את הנקודות 
+את הקטעים. קטע מוגדר על ידי שתי נקודות, ומספיק לבנות את הנקודות 
 $A,B,C$
- כדי לקבל בנייה שקולה לבנייה עם סרגל 
+ כדי לקבל בנייה שקולה לבנייה בסרגל 
 (איור%
 ~\ref{f.compass-equi-only}).
 באיורים נצייר בכל זאת קווים, אולם הקווים משמשים אך ורק להבנת הבנייה ולהוכחת נכונותה. חשוב להשתכנע שהבנייה עצמה משתמשת רק במחוגה.
@@ -63,7 +63,7 @@ $A,B,C$
 \path [name intersections={of=larc and rarc,by={t}}];
 \fill (t) node[above right,xshift=-2pt,yshift=3pt] {$C$} circle[radius=2pt];
 \end{tikzpicture}
-\caption{בניית משולש שווה צלעות עם סרגל ומחוגה}\label{f.compass-equi}
+\caption{בניית משולש שווה צלעות בסרגל ומחוגה}\label{f.compass-equi}
 \end{subfigure}
 \hspace{3em}
 \begin{subfigure}{.4\textwidth}
@@ -80,37 +80,37 @@ $A,B,C$
 \draw (A) -- (t);
 \draw (B) -- (t);
 \end{tikzpicture}
-\caption{בניית משולש שווה צלעות רק עם מחוגה}\label{f.compass-equi-only}
+\caption{בניית משולש שווה צלעות במחוגה בלבד}\label{f.compass-equi-only}
 \end{subfigure}
 \end{center}
 \end{figure}
-כל צעד בבנייה באמצעות סרגל ומחוגה הוא אחת משלושת הפעולות הבאות:
+כל צעד בבנייה באמצעות סרגל ומחוגה הוא אחת משלוש הפעולות הבאות:
 \begin{itemize}
 \item
-מציאת נקודת החיתוך של שני קווים.
+מציאת נקודת החיתוך של שני ישרים.
 \item
-מציאת נקודות החיתוך בין קו ומעגל.
+מציאת נקודות החיתוך של ישר ומעגל.
 \item
-מציאת נקודות החיתוך בין שני מעגלים.
+מציאת נקודות החיתוך של שני מעגלים.
 \end{itemize}
-ניתן לבצע את הפעולה השלישית רק עם מחוגה. עלינו להראות שעבור שתי הפעולות הראשונות ניתן למצוא בנייה שקולה שמשתמשת רק במחוגה.
+ניתן לבצע את הפעולה השלישית במחוגה בלבד. עלינו להראות שעבור שתי הפעולות הראשונות ניתן למצוא בנייה שקולה שמשתמשת במחוגה בלבד.
 
 נשתמש בסימונים:
 \begin{itemize}
-\item $C(O,A)$: 
-המעגל שמרכזו
+\item $c(O,A)$: 
+מעגל שמרכזו
 $O$
-העובר דרך הנקודה
+ועובר דרך הנקודה
 $A$.
-\item $C(O,r)$:
-המעגל שמרכזו
+\item $c(O,r)$:
+מעגל שמרכזו
 $O$
-עם רדיוס
+ורדיוסו
 $r$.
-\item $C(O,\overline{AB})$:
-המעגל שמרכזו
+\item $c(O,\overline{AB})$:
+מעגל שמרכזו
 $O$
-עם רדיוס שהוא אורך קטע הקו
+ורדיוס באורך הקטע
 $\overline{AB}$.
 \end{itemize}
 
@@ -127,15 +127,15 @@ $C'$
 }
 של הנקודה
 $C$
-מסביב לקטע הקו
+ביחס לקטע 
 $\overline{AB}$,
 אם 
 $\overline{AB}$
-(או הקו המכיל אותו) הוא האנך האמצעי של
+(או הישר המכיל אותו) הוא האנך האמצעי של
 $\overline{CC'}$.
 \end{definition}
 \begin{theorem}\label{thm.reflection}
-נתון קטע קו
+נתון קטע 
 $\overline{AB}$
 ונקודה 
 $C$
@@ -145,7 +145,7 @@ $\overline{AB}$,
 $C'$
 שהיא השיקוף של
 $C$
-מסביב ל-%
+ביחס ל-%
 $\overline{AB}$.
 \end{theorem}
 
@@ -167,31 +167,31 @@ $C$
 (איור%
 ~\ref{f.compass-reflection}).
 $\triangle ABC\cong\triangle ABC'$
-חופפים לפי צלע-צלע-צלע:
+חופפים לפי צלע, צלע, צלע:
 $\overline{AC},\overline{AC'}$
-הם רדיוסים של אותו מעגל כמו גם
+הם רדיוסים באותו מעגל כמו גם
 $\overline{BC},\overline{BC'}$,
 ו-%
 $\overline{AB}$
-הוא צלע משותף. מכאן ש-%
+צלע משותפת. מכאן ש-%
 $\angle CAB = \angle C'AB$,
 ולכן
 $\overline{AB}$
-הוא חוצה הזווית של
+הוא חוצה הזווית 
 $\angle CAC'$.
 אבל
 $\triangle CAC'$
-הוא משולש שווה-שוקיים וחוצה הזווית
+הוא משולש שווה-שוקיים, וחוצה הזווית
 $\overline{AB}$
-הוא גם האנך האמצעי של
-$\overline{CC'}$
+הוא גם האנך האמצעי לקטע
+$\overline{CC'}$,
 בסיס המשולש
 $\triangle CAC'$.
 לפי ההגדרה, 
 $C'$
 היא השיקוף של
 $C$
-מסביב ל-%
+ביחס ל-%
 $\overline{AB}$.
 \end{proof}
 
@@ -231,13 +231,13 @@ $A,B,C$,
 $c(A,\overline{BC})$,
 המעגל שמרכזו 
 $A$
-שווה לאורך של 
+ורדיוסו באורך 
 $\overline{BC}$.
 \end{theorem}
 \begin{proof}
 נבנה את המעגלים 
 $c(A,B)$, $c(B,A)$,
-ונסמן את נקודות החיתוך
+ונסמן את נקודות החיתוך שלהם
 $X,Y$
 (איור%
 ~\ref{f.compass-circle1}).
@@ -245,18 +245,18 @@ $X,Y$
 $A$
 היא השיקוף של 
 $B$
-סביב 
+ביחס ל- 
 $\overline{XY}$
 כי
 $\triangle YAX\cong \triangle YBX$
-לפי צלע-צלע-צלע. לפי משפט%
+לפי צלע, צלע, צלע. לפי משפט%
 ~\ref{thm.reflection}
 נבנה את
 $C'$,
 השיקוף של
 $C$
-מסביב לקו
-$\overline{XY}$
+ביחס לישר
+$\overline{XY}$,
 ואז נבנה את
 $c(A,C')$
 (איור%
@@ -331,7 +331,7 @@ $c(A,C')$
 \caption{בניית מעגל עם רדיוס נתון (2)}\label{f.compass-circle3}
 \end{figure}
 $\overline{XY}$
-הוא האנך האמצעי לקטעי הקו 
+הוא האנך האמצעי לקטעים
 $\overline{AB},\overline{CC}'$.
 נסמן ב-%
 $D$
@@ -345,43 +345,44 @@ $E$
 $\overline{XY}$
 ו-%
 $\overline{CC'}$.
-אזי
+אז
 $\overline{C'E}=\overline{EC}$,
-$\overline{AD}=\overline{DB}$,
+$\overline{DE}$
+הוא צלע משותף,
 ו-%
 $\angle DEC=\angle DEC'=$
 הן זוויות ישרות. מכאן ש-%
 $\triangle DEC\cong\triangle DEC'$
-לפי צלע-זווית-צלע, ולכן
+לפי צלע, זווית, צלע, ולכן
 $\overline{DC}=\overline{DC'}$
 ו-%
 $\angle ADC'=\angle BDC$
-כן הן זוויות משלימות ל-%
+כי הן זוויות משלימות ל-%
 $\angle EDC'= \angle EDC$.
 נסיק ש-%
 $\triangle ADC'\cong\triangle BDC$
-לפי צלע-זווית-צלע ו-%
+לפי צלע, זווית, צלע ו-%
 $\overline{AC'}=\overline{BC}$.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{חיבור וחיסור קטעי קו}\label{s.add-subtract}
+\section{חיבור וחיסור קטעים}\label{s.add-subtract}
 
 \begin{theorem}\label{thm.add-subtract-mm}
-נתון קטע קו
+נתונים קטע 
 $\overline{PQ}$
 באורך
 $a$
-וקטע קו
+וקטע 
 $\overline{RS}$
 באורך
 $b$,
-ניתן לבנות קטעי קו
+ניתן לבנות קטעים
 $\overline{QT},\overline{QU}$
 כך ש-%
 $\overline{PUQT}$
-הוא קטע קו, האורך של
+הוא קטע, האורך של
 $\overline{PU}$
 הוא
 $a-b$
@@ -421,7 +422,7 @@ $a+b$
 \draw[<->] (0,-1.5) -- node[fill=white] {$a+b$} (7,-1.5);
 \end{tikzpicture}
 \end{center}
-\caption{חיבור וחיסור של קטעי קו}\label{f.compass-add1}
+\caption{חיבור וחיסור  קטעים}\label{f.compass-add1}
 \end{figure}
 \begin{theorem}
 ניתן לבנות טרפז שווה-שוקיים.
@@ -433,7 +434,7 @@ $H$,
 $c(Q,b)$.
 נבנה 
 $H'$,
-השיקוף שלה סביב
+השיקוף שלה ביחס ל-
 $\overline{PQ}$,
 ונסמן ב-%
 $h$
@@ -469,11 +470,11 @@ $\overline{HH'}$
 $c(Q,h)$, $c(H,b)$.
 תהי
 $K$
-נקודת חיתוך בין המעגלים, ונבנה את
+נקודת חיתוך של שני המעגלים, ונבנה את
 $K'$
 כשיקוף של
 $K$
-מסביב ל-%
+ביחס ל-%
 $\overline{PQ}$
 (איור%
 ~\ref{f.compass-isoceles-trap2}).
@@ -529,11 +530,11 @@ in
 \end{center}
 \caption{בניית טרפז שווה-שוקיים (2)}\label{f.compass-isoceles-trap2}
 \end{figure}
-הקו המכיל את
+הישר המכיל את
 $\overline{PQ}$
 הוא האנך האמצעי של
 $\overline{HH'}$
-ו-%
+ושל
 $\overline{KK'}$,
 לכן
 $\overline{HH'}\|\overline{KK'}$. 
@@ -545,20 +546,20 @@ $K',H'$
 הן שיקופים של
 $K,H$.
 $\triangle QQ'H \cong \triangle QQ'H'$
-לפי צלע-צלע-צעל
+לפי צלע, צלע, צלע
 ו-%
 $\triangle KQH \cong \triangle K'QH'$
-לפי צלע-זווית-צלע, כך ש-%
-$\overline{K'H'} =\overline{KH}=B$.
-נסיק א-%
+לפי צלע, זווית, צלע, כך ש-%
+$\overline{K'H'} =\overline{KH}=b$.
+נסיק ש
 $\overline{KHH'K'}$
-מוא טרפז שווה-שוקיים בשסיסיו
+הוא טרפז שווה-שוקיים שבסיסיו
 $\overline{KK'} = 2h$, $\overline{HH'}=h$
 (איור%
 ~\ref{f.compass-isoceles-trap3}).
 נסמן ב-%
 $d$
-את אורך האלכסונים
+את אורכי האלכסונים
 $\overline{K'H}=\overline{KH'}$.
 \end{proof}
 
@@ -610,9 +611,9 @@ in
 ניתן לחסום טרפז שווה-שוקיים במעגל.
 \end{theorem}
 \begin{proof}
-מייד ממשפט%
+מיידי ממשפט%
 ~\ref{thm.quad-circum}
-ומשפט%
+וממשפט%
 ~\ref{thm.isoceles-trapezoid}.
 \end{proof}
 
@@ -623,25 +624,26 @@ $d,b,h$
 ~\ref{f.compass-isoceles-trap3}, $d^2=b^2+2h^2$.
 \end{theorem}
 \begin{proof}
-המשפט הוא מסקנה ממשפט
-\L{Ptolemy}
+המשפט הוא מסקנה ממשפט תלמי
+\L{(Ptolemy)}
 (משפט%
 ~\ref{thm.ptolemy})
-שאומר שבמרובע שחסום על ידי מעגל, מכפלת האלכסונים שווה לסכום  מכפלות שני הזוגות של הצלעות הנגדיים.
+שאומר שבמרובע החסום במעגל, מכפלת האלכסונים שווה לסכום המכפלות של שני זוגות הצלעות הנגדיות.
 \end{proof}
+
 כעת ניתן להוכיח את משפט%
 ~\ref{thm.add-subtract-mm}.
 
 \begin{proof}
 תהי
 $X$
-נקודה על הקו
+נקודה על הישר 
 $\overline{PQ}$
-המאריך את
+המאריכה את הקטע 
 $\overline{PQ}$
 ב-%
 $b$.
-(בהמשך נבנה את נקודה
+(בהמשך נבנה את הנקודה
 $X$.)
 נגדיר 
 $x = \overline{K'X}$.
@@ -772,7 +774,7 @@ in
 
 נבנה את הנקודה
 $X$
-כנקודות החיתוך בין המעגלים
+כנקודות החיתוך של המעגלים
 $c(K,x)$
 ו-%
 $c(K',x)$
@@ -856,11 +858,11 @@ in
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{בניית קטע קו כיחס בין קטעי קו אחרים}
+\section{בניית קטע כיחס קטעים}
 \label{s.three}
 
 \begin{theorem}\label{thm.ratio}
-נתונים שלושה קטעי קו באורכים 
+נתונים שלושה קטעים באורכים 
 $n,m,s$,
 ניתן לבנות קטע קו שאורכו:
 \[
@@ -868,13 +870,12 @@ x = \disfrac{n}{m}s\,.
 \]
 \end{theorem}
 \begin{proof}
-נבנה שני מעגלים עם מרכז משותף:
-$c_1 = c(Z,m), c_2 = c(Z,n)$.%
-\footnote{%
+נבנה שני מעגלים בעלי מרכז משותף:
+$c_1 = c(Z,m), c_2 = c(Z,n)$.
 נניח ש-%
 $m>n$,
 אחרת נחליף את הסימונים של
-$m,n$.}%
+$m,n$.
 נבחר נקודה שרירותית
 $A$
 על 
@@ -893,14 +894,14 @@ $s$
 $c_2$,
 לפי%
 ~\ref{thm.add-subtract-mm}
-נכפיל את
+נכפול את
 $m,n$
 במספר שלם
 $k$
-עד שהמיתר לא חותך את
+עד שהמיתר אינו חותך את
 $c_2$.
 הכפלת הערכים אינה משנה את הערך שאנו בונים כי
-$x = \disfrac{kn}{km}s = \disfrac{n}{m}s$.
+\[x = \disfrac{kn}{km}s = \disfrac{n}{m}s\,.\]
 
 \begin{figure}[tb]
 \begin{center}
@@ -957,8 +958,10 @@ $x = \disfrac{kn}{km}s = \disfrac{n}{m}s$.
 \end{figure}
 נבחר נקודה
 $H$
-כלשהי על המעגל
-$c_2$,
+על המעגל
+$c_2$
+(שאינה נמצאת על הקו 
+$\overline{AZ}$),
 ונסמן את אורך הקטע
 $\overline{AH}$
 ב-%
@@ -974,10 +977,10 @@ $w$
 (איור%
 ~\ref{f.compass-relative2}).
 $\triangle AHZ\cong\triangle BZK$
-לפי צלע-צלע-צלע כי
+לפי צלע' צלע' צלע כי
 $\overline{ZA}=\overline{ZB}=m$
-הם רדיוסים של אותו מעגל, כמו גם
-$\overline{ZH}=\overline{ZK}=n$
+הם רדיוסים באותו מעגל כמו גם
+$\overline{ZH}=\overline{ZK}=n$,
 ו-%
 $\overline{AH}=\overline{BK}=w$
 לפי הבנייה
@@ -994,7 +997,7 @@ $\angle AZB = \angle HZK$.
 מבהיר את היחסים בין הזוויות. 
 
 $\triangle ZAB\sim \triangle ZHK$
-כי שניהם משולשים שווה-שוקיים עם אותו זווית קודקוד. נסמן ב-%
+כי שניהם משולשים שווי-שוקיים עם שזוויות הראש שלהן שוות. נסמן ב-%
 $x$
 את
 $\overline{HK}$
@@ -1067,46 +1070,50 @@ x&=&\frac{n}{m}s\,.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{מציאת נקודת החיתוך של שני קווים}
+\section{מציאת נקודת החיתוך של שני ישרים}
 \label{s.two-lines}
 
 \begin{theorem}
-נתונים שני קווים המכילים את קטעי הקו
+נתונים שני ישרים (שאינם מקבילים) המכילים את הקטעים
 $\overline{AB},\overline{CD}$,
-ניתן לבנות את נקודת החיתוך שלהם
-$S$.
+ניתן לבנות את
+$S$,
+נקודת החיתוך של הישרים.
 \end{theorem}
 \begin{proof}
 נבנה את
 $C',D'$,
 השיקופים של
 $C,D$
-מסביב ל-%
+ביחס ל-%
 $\overline{AB}$.
-יש שני מקרים תלוי אם 
+ישנם שני מקרים, תלוי אם 
 $C,D$ 
-נמצאות בשני הצדדים של
+נמצאות משני צדדיו של
 $\overline{AB}$
-או באותו צד כפי שניתן לראות באיורים%
+או באותו צד, כפי שניתן לראות באיורים%
 ~\ref{f.compass-intersection1}, \ref{f.compass-intersection2}.
+נסמן את קטעי הקו 
+$c,d,e,x$
+לפני האיורים.
 
 \textbf{מקרה $1$:}
 $C,D$ 
-נמצאות בשני הצדדים של
+נמצאות בצדדים שונים של
 $\overline{AB}$.
 נקודת החיתוך
 $S$
-נמצאת על הקו
+נמצאת על 
 $\overline{AB}$
 כי
 $\triangle CZS\cong \triangle C'ZS$
-לפי צלע-זווית-צלע:
+לפי צלע, זווית, צלע:
 $\overline{CZ}=\overline{C'Z}$,
 $\angle CZS = \angle C'ZS = 90^\circ$
 ו-%
 $\overline{ZS}$
-צלע משותף. מכאן ש-%
-$\overline{C'S}=\overline{CS}$,
+צלע משותפת. מכאן ש-%
+$\overline{C'S}=\overline{CS}$
 ובאופן דומה
 $\overline{D'S}=\overline{DS}$.
 $\triangle CSC'\sim\triangle DSD'$
@@ -1152,7 +1159,7 @@ $x=\disfrac{c}{c+d}e$.
 \draw[rotate=90] ($(D)!.5!(Dp)$) rectangle +(6pt,6pt);
 \end{tikzpicture}
 \end{center}
-\caption{בניית החיתוך של שני קווים (1)}\label{f.compass-intersection1}
+\caption{בניית החיתוך של שני ישרים (1)}\label{f.compass-intersection1}
 \end{figure}
 
 \textbf{מקרה $2$:}
@@ -1162,7 +1169,7 @@ $\overline{AB}$.
 $\triangle CSC'\sim\triangle DSD'$,
 ולכן
 $\disfrac{x}{x-e}=\disfrac{c}{d}$
-ו-%
+ונקבל 
 $x=\disfrac{c}{c-d}e$.
 
 \begin{figure}[tb]
@@ -1202,12 +1209,14 @@ $x=\disfrac{c}{c-d}e$.
 \draw[rotate=90] ($(D)!.5!(Dp)$) rectangle +(6pt,6pt);
 \end{tikzpicture}
 \end{center}
-\caption{בניית החיתוך של שני קווים (2)}\label{f.compass-intersection2}
+\caption{בניית החיתוך של שני ישרים (2)}\label{f.compass-intersection2}
 \end{figure}
 נבנה את המעגלים
 $c(C',d)$,
 $c(D,e)$
-ונסמן את נקודת החיתוך שלהם ב-%
+ונסמן את נקודת החיתוך שלהם על הקו 
+$\overline{CC'}$
+ב-%
 $H$
 (איור%
 ~\ref{f.compass-intersection3}).
@@ -1215,17 +1224,17 @@ $H$
 $\overline{CC'},\overline{C'H}$
 הוא
 $c + d$.
-אנחנו צריכים להראות ש-%
+עלינו להראות ש-%
 $H$
-נמצאת בהמשך הקו של
+נמצאת על המשך 
 $\overline{CC'}$,
 כך ש-%
 $\overline{CH}$
-הוא קטע קו באורך
+הוא קטע באורך
 $c+d$.
 במקרה ש-%
 $C,D$
-נמצאות על אותו צד של
+נמצאות באותו צד של
 $\overline{AB}$, 
 $\overline{CH} = c - d$
 (לא מופיע באיור).
@@ -1279,7 +1288,7 @@ in
 \path (Cp) -- node[below] {$x$} (S);
 \end{tikzpicture}
 \end{center}
-\caption{בניית החיתוך של שני קווים (3)}\label{f.compass-intersection3}
+\caption{בניית החיתוך של שני ישרים (3)}\label{f.compass-intersection3}
 \end{figure}
 
 
@@ -1289,7 +1298,7 @@ $c(C',d),c(D,e)$,
 ולכן
 $\overline{C'H}=d,\overline{DH}=e$.
 לפי הבנייה 
-$\overline{C'D'}=e, \overline{DD'}=e$,
+$\overline{C'D'}=e, \overline{DD'}=d$,
 ולכן המרובע
 $C'D'DH$
 הוא מקבילית. 
@@ -1337,7 +1346,7 @@ in
 \vertex{Dp};
 \end{tikzpicture}
 \end{center}
-\caption{בניית החיתוך של שני קווים (4)}\label{f.compass-intersection4}
+\caption{בניית החיתוך של שני ישרים (4)}\label{f.compass-intersection4}
 \end{figure}
 
 לפי הבנייה
@@ -1346,20 +1355,14 @@ $\overline{DD'}\|\overline{CC'}$,
 $\overline{C'H}\|\overline{DD'}$
 וגם
 $\overline{C'H}\|\overline{CC'}$.
-אחת מנקודות הקצה של הקטע היא
-$C'$
-והקטע חייב להיות על ההמשך של הקטע
-$\overline{CC'}$.
-בגלל שאחת מנקודות הקצה היא
-$C'$
-היא חייבת להיות על הקו המכיל את
+מכיוון שאחת מנקודות הקצה של הקטע היא
+$C'$ת
+היא חייבת להיות על הישר המכיל את
 $\overline{CC'}$.
 לפי משפט%
-~\ref{thm.add-subtract-mm}
-מהאורכים
+~\ref{thm.add-subtract-mm},
+מהאורכים הנתונים
 $c,d,e$
-נתונים ולפי משפט
-~\ref{thm.add-subtract-mm}
 ניתן לבנות קטע באורך
 $c+d$,
 ולפי משפט
@@ -1379,30 +1382,30 @@ $\overline{AB}, \overline{CD}$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{מציאת נקודת החיתוך של קו עם מעגל}\label{s.line-circle}
+\section{מציאת נקודת החיתוך של ישר ומעגל}\label{s.line-circle}
 
 \begin{theorem}
-נתון מעגל
+נתונים מעגל
 $k=C(M,r)$
-וקו
+וישר
 $l$,
-ניתן לבנות את נקודות החיתוך של 
+ניתן לבנות את 
+$X,Y$,
+נקודות החיתוך של 
 $k,l$.
 \end{theorem}
 \begin{proof}
-נבנה 
+נבנה את
 $M'$,
 השיקוף של
 $M$
-מסביב ל-%
+ביחס ל-%
 $l$,
-והמעגל
+ואת המעגל
 $k'=c(M',r)$.
-$MYM'\cong\triangle MXM'$, $X,Y$,
+$MYM'\cong\triangle MXM'$, 
 ולכן 
 $X,Y$,
-נקודות החיתוך של
-$k,k'$
 הן נקודות החיתוך של
 $l$
 ו-%
@@ -1410,7 +1413,7 @@ $k$
 (איור%
 ~\ref{f.compass-circle4}).
 
-\begin{figure}[b]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.5]
 \coordinate (A) at (-7,0);
@@ -1438,36 +1441,37 @@ $k$
 \node at (-3.5,3) {$k'$};
 \end{tikzpicture}
 \end{center}
-\caption{בניית החיתוך של קו מעגל (1)}\label{f.compass-circle4}
+\caption{בניית החיתוך של ישר ומעגל (1)}\label{f.compass-circle4}
 \end{figure}
 
 בנייה זו אינה אפשרית אם מרכז המעגל
 $M$
 נמצא על הקו
 $l$.
-במקרה זה, נבחר נקודה שרירויתי 
+במקרה זה, נבחר נקודה שרירותית 
 $A$
 על
 $l$
-שהוא במרחק גדול מ-%
-$r$
-מ-%
-$M$.
+שמרחקה
+ מ-%
+$M$
+גדול מ-%
+$r$.
 לפי משפט~%
 ~\ref{thm.add-subtract-mm}
 נאריך או נקצר את
-$\overline{AB}$
+$\overline{AM}$
 ב-%
 $r$.
 $X,Y$
-נקודות הקצה של הקטעים הללו, הן נקודות החיתוך של
+נקודות הקצה של קטעים אלו, הן נקודות החיתוך של
 $k$
 ו-%
 $l$
 (איור%
 ~\ref{f.compass-circle5}).
 \end{proof}
-\begin{figure}[t]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.5]
 \coordinate (A) at (-7,0);
@@ -1496,9 +1500,11 @@ $l$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newpage
+
 \subsection*{מהי ההפתעה?}
 
-כאשר לומדים על בנייה עם סרגל ומחוגה, ברור מאליו ששני הכלים נחוצים, ולכן מפתיע מאוד לגלות שמחוגה בלבד מספיקה. ההוכחה די ארוכה כך שלא נשאיר את הסרגל בבית, אבל המשפט מראה שאין להניח שאין חלופות למושגים מתמטיים ידועים.
+כאשר לומדים על בנייה בסרגל ובמחוגה, ברור מאליו ששני הכלים נחוצים, ולכן מפתיע מאוד לגלות שמחוגה בלבד מספיקה. ההוכחה די ארוכה כך שלא נשאיר את הסרגל בבית, אבל המשפט מראה שאין להניח שאין חלופות למושגים מתמטיים ידועים.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1507,8 +1513,8 @@ $l$
 פרק זה מבוסס על בעיה מספר 33
 ב-%
 \cite{dorrie1}
-ועל העיבוד שלה על ידי
-\L{Michael Woltermann} 
+ועל העיבוד שלה על ידי מיכאל וולטרמן
+\L{(Michael Woltermann)} 
 \cite{dorrie2}.
-הוכחה נוספת ניתן למוצא ב-%
+הוכחה נוספת ניתן למצוא ב-%
 \cite{mm}.

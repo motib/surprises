@@ -38,7 +38,14 @@ p. 86 line -7: r_2=c/b -> r_2\approx -c/b
 
 p. 121 line 4-5: should be: "such that the distance from p_i to l_f is equal to the distance of its reflection p_i' from l_f"
 
+p. 135 line 6: 6 should be 1
+
 p. 137 line 6: is construct at -> is constructed at
+
+p. 141 line -6: $\angle AQQ'=\angle QAQ'=\alpha$ should be $\angle AQ'B=\angle BQQ'=\alpha$.
+
+p. 153 line -4: $\overline{AD}=\overline{DB}$ should be 
+$\overline{DE}$ is a common side.
 
 p. 161 line -6: $MYM'$ should be $\triangle MYM'$
 

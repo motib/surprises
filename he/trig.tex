@@ -1,28 +1,29 @@
+% !TeX Program=XeLaTeX
 % !TeX root = surprises.tex
 
 \selectlanguage{hebrew}
 
-\chapter{משפטים מגיאומטריה וטריגונומטרה}\label{a.trig}
+\chapter{משפטים בגיאומטריה ובטריגונומטריה}\label{a.trig}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-נספח זה מביא משפטים מגיאומטריה וטריגונומטרה שייתכן שהם לא מוכרים לקורא וכן משפטים מוכרים שהוכחותיהם לא מוכרות. סעיף%
+נספח זה מביא משפטים בגיאומטריה ובטריגונומטריה שייתכן שאינם מוכרים לקורא וכן משפטים מוכרים שהוכחותיהם אינן מוכרות. סעיף%
 ~\ref{a.triangles}
-מציג שלוש נוסחאות לחישוב השטח של משולש. סעיף%
+מציג שלוש נוסחאות לחישוב שטח משולש. סעיף%
 ~\ref{a.trig-identities}
-מוכיח זהיות טריגונומטריות. למרות שהנוסחאות והשוויונות מוכרות ברובן, לעתים תלמידים זוכרים אותן בעל-פה או מחפשים אותן בספרים בלי שאי-פעם ראו את ההוכחות. בסעיפים הבאים נמצאות הוכחות של משפטים מתקדמים בגיאומטריה: משפטים על חוצי זוויות (סעיף%
+מוכיח זהויות טריגונומטריות. למרות שהנוסחאות והשוויונות מוכרוים ברובם, לעתים תלמידים זוכרים אותם בעל-פה או מחפשים אותם בספרים בלי שאי-פעם ראו את ההוכחות. בסעיפים הבאים נמצאות הוכחות של משפטים מתקדמים בגיאומטריה: משפטים על חוצי זוויות (סעיף%
 ~\ref{a.bisector}),
-המשפט של
-\L{Ptolemy}
+משפט תלמי
+\L{(Ptolemy)}
 על הקשר בין הצלעות והאלכסונים של מרובע חסום במעגל (סעיף%
 ~\ref{a.ptolemy}),
-המשפט של
-\L{Ceva}
-על הקשר בין שלושה קטעי קו של משולש (סעיף%
+משפט צ'בה
+\L{(Ceva)}
+על הקשר בין שלושה קטעים במשולש (סעיף%
 ~\ref{a.ceva}),
-והמשפט של
-\L{Menelaus}
-על קטעי הקו של חותך מעגל (סעיף%
+ומשפט מנלאוס
+\L{(Menelaus)}
+על קטעי ישר החותך מעגל (סעיף%
 ~\ref{a.menelaus}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -32,10 +33,10 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{חישוב השטח של משולש}
+\subsection{חישוב שטח משולש}
 \index{Triangle!computing the area|(}
 
-הנוסחה הסנדרטית לחישוב השטח של משולש מהבסיס והגובה ידועה היטב. ניתן להוכיח אותה בדרכים גיאומטרייות שונות.
+הנוסחה הסנדרטית לחישוב שטח משולש בעזרת הבסיס והגובה מוכרת היטב. ניתן להוכיח אותה בדרכים גיאומטריות שונות.
 
 \begin{theorem} 
 השטח של משולש 
@@ -68,7 +69,7 @@ $h/2$.
 \centering
 \selectlanguage{hebrew}
 \subcaptionbox{%
-חישוב שטח משולש מהבסיס והגובה
+חישוב שטח משולש לפי בסיס וגובה
 \label{f.area-base-height-1}}
 [.45\textwidth]
 {
@@ -91,7 +92,7 @@ $h/2$.
 }
 \hspace{3em}
 \subcaptionbox{%
-חישוב שטח משולש מהבסיס והגובה
+חישוב שטח משולש לפי בסיס וגובה
 \label{f.area-base-height-2}}
 [.45\textwidth]
 {
@@ -132,8 +133,12 @@ $h/2$.
 $\triangle ABC$
 ניתן על ידי:
 \begin{equation}\label{eq.area-from-sine}
-\triangle ABC = \frac{1}{2}bc\sin \theta\,.
+\triangle ABC = \frac{1}{2}bc\sin \theta\,,
 \end{equation}
+כאשר 
+$\theta$
+היא הזווית בין הצלעות
+$b,c$.
 \end{theorem}
 \begin{proof}
 ממשפט%
@@ -145,7 +150,7 @@ $h=c\sin \theta$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \index{Triangle!Heron's formula}
-\begin{theorem}[Heron]\label{thm.heron}
+\begin{theorem}[(Heron) הרון]\label{thm.heron}
 השטח של משולש 
 $\triangle ABC$
 ניתן על ידי:
@@ -159,14 +164,14 @@ $\frac{1}{2}(a+b+c)$.
 \end{theorem}
 
 \begin{proof}
-רדיוס של מעגל ומשיק החותך את רדיוס ניצבים אחד לשני. בנוסף, האורכים של קטעי הקו של שני משיקים מאותה נקודה למעגל שווים. לכן
+רדיוס המעגל ומשיק החותך את הרדיוס ניצבים זה לזה. בנוסף, אורכי הקטעים של שני משיקים למעגל היוצאים מאותה נקודה שווים. לכן
 (איור%
 ~\ref{f.inscribed-trig}):%
 \footnote{%
 זה מראה שה-%
 \L{incenter}%
 \index{Triangle!incenter}\index{Triangle!inscribed circle}
-מרכז המעגל החסום הוא נקודת החיתןך המשותפת לשלושת חוצי הזווית.}
+מרכז המעגל החסום הוא נקודת החיתוך המשותפת לשלושת חוצי הזוויות.}
 \[
 \triangle AOB'\cong \triangle AOC',\quad
 \triangle BOA'\cong\triangle BOC',\quad
@@ -260,7 +265,7 @@ $r$,
 \triangle ABC&=&\frac{1}{2}r(a+b+c)\\
 \triangle ABC&=&rs \label{eq.area-heron}\,.
 \end{eqnlabels}
-נגדיר עכשיו את הצלעות מהטנגסים של הזוויות המרכזיות:
+נגדיר עכשיו את הצלעות באמצעות הטנגנסים של הזוויות המרכזיות:
 \begin{displaymath}
 \tan \frac{\alpha}{2} = \frac{u}{r},\quad
 \tan \frac{\beta}{2} = \frac{v}{r},\quad
@@ -283,13 +288,12 @@ s&=&r\left(\tan \frac{\alpha}{2}\tan \frac{\beta}{2}\tan \frac{\gamma}{2}\right)
 &=&r\left(\frac{u}{r}\frac{v}{r}\frac{w}{r}\right)=\frac{1}{r^2}(u\,v\,w)\\
 r&=&\sqrt{\displaystyle\frac{u\,v\,w}{s}}\,.
 \end{eqn}
-מנוסחה%
+ממשוואה%
 ~\ref{eq.area-heron}:
 \[
 \triangle ABC=rs=s\sqrt{\displaystyle\frac{u\,v\,w}{s}}=\sqrt{s\,u\,v\,w}\,.
 \]
-הנוסחה של 
-\L{Heron}
+נוסחת הרון 
 מתקבלת מ-%
 $u=s-a, v=s-b, w=s-c$.
 \end{proof}
@@ -303,7 +307,7 @@ $u=s-a, v=s-b, w=s-c$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{הסינוס והקוסינוס של הסכום וההפרש של שתי זוויות} \label{s.sum-of-trig}
+\subsection{הסינוס והקוסינוס של סכום ושל ההפרש של שתי זוויות} \label{s.sum-of-trig}
 
 \begin{theorem}\label{thm.sum-of-trig}
 \begin{eqn}
@@ -321,7 +325,7 @@ $90^\circ-\alpha$.
 $\triangle ABC$
 עם זווית חדה
 $\alpha$,
-ומשלוש ישר-זווית 
+ומשולש ישר-זווית 
 $\triangle ACD$
 עם זווית חדה
 $\beta$,
@@ -384,20 +388,22 @@ $\alpha+\beta$ (איור.~\ref{f.sin-sum1}).
 \end{scope}
 \end{tikzpicture}
 \end{center}
-\caption{איורים להכוחת הזהות לסינוס של הסכום של זוויות}\label{f.sin-sum1}
+\caption{איורים להוכחת הזהות לסינוס של סכום זוויות}\label{f.sin-sum1}
 \end{figure}
 
-\begin{proof}(1)
+\begin{proof} (1)
 נחשב את השטח של 
 $\triangle ABD$
 בשתי דרכים שונות: (1) על ידי שימוש בנוסחה%
 ~\ref{eq.area-from-sine}
 על 
 $\triangle ABD$,
-ו-(2) על ידי שימוש בנוסחה בנפרד על 
+ו-(2) על ידי שימוש בנוסחה על 
 $\triangle ABC$
-ו-%
-$\triangle ADC$ (איור~\ref{f.sin-sum2}).
+ועל
+$\triangle ADC$
+בנפרד
+ .(איור~\ref{f.sin-sum2})
 גם את
 $h$
 נחשב בשתי דרכים שונות על ידי שימוש בהגדרות של הפונקציות הטריגונומטריות:
@@ -432,12 +438,12 @@ $h$
 \end{center}
 \caption{חישוב שטח המשולש בשתי דרכים שונות}\label{f.sin-sum2}
 \end{figure}
-הוכחה השניה משתמשת במשפט שלהלן:
+ההוכחה השנייה משתמשת במשפט שלהלן:
 \begin{theorem}
 במעגל עם 
 \textbf{קוטר}
 $1$
-אורכו של מיתר התומך בזווית שווה לסינוס של הזווית
+אורך המיתר שווה לסינוס הזווית ההיקפית הנשענת עליו
 (איור.~\ref{f.chord-angle}).
 \end{theorem}
 
@@ -445,7 +451,7 @@ $1$
 \begin{figure}[tb]
 \centering
 \selectlanguage{hebrew}
-\subcaptionbox{כל הזוויות הנתמכות על ידי מיתר שוות
+\subcaptionbox{כל הזוויות הנשענות על אותו מיתר שוות
 \label{f.chord-angle}}
 [.45\textwidth]
 {
@@ -473,7 +479,7 @@ $1$
 \end{tikzpicture}
 }
 \hspace{1em}
-\subcaptionbox{מרובע חסום בתוך מעגל
+\subcaptionbox{מרובע חסום במעגל
 \label{f.trig-quad-circle}}
 [.45\textwidth]
 {
@@ -510,15 +516,15 @@ $1$
 \end{figure}
 
 \begin{proof}
-יהי
+יהיו
 $\overline{AB}$
 קוטר, 
 $\angle BAC=\alpha$
 ו-%
 $D$
-כל נקודה אחרת במעגל המייצרת את המשולש
+כל נקודה אחרת על המעגל היוצרת את המשולש
 $\triangle BDC$.
-בגלל שכל הזוויות שנתמכות על ידי אותו מיתר שוות,
+בגלל שכל הזוויות הנשענות על אותו מיתר שוות,
 $\angle BDC=\alpha$. 
 במשולש ישר-זווית
 $\triangle ABC$:
@@ -527,25 +533,25 @@ $\triangle ABC$:
 \]
 \end{proof}
 
-\begin{proof}(2)
+\begin{proof} (2)
 ההוכחה מבוססת על התרשים הימני באיור%
 ~\ref{f.sin-sum1}
 שנמצא גם ב-%
 ~\ref{f.trig-quad-circle},
 כאשר המרובע
 $\overline{ABCD}$ 
-חסום בתוך מעגל.
+חסום במעגל.
 \index{Quadrilateral!inscribed in a circle}
 לפי משפט
 ~\ref{thm.quad-circum}
-מרובע יכול להיות חסום בתוך מעגל אם ורק אם הסכום שכל זוג של זוויות 
+מרובע הוא בר-חסימה אם ורק אם סכום זוויות 
 \index{Circumscribed circle} 
-נגדיות שווה ל-%
+נגדיות שלו שווה ל-%
 $180^\circ$.
 $\angle ADC+\angle ABC=180^\circ$
-כי שתי הזוויות הן ישרות. לפי משפט%
+כי שתי הזוויות ישרות. לפי משפט%
 ~\ref{thm.interior-angles-of-a-polygon}
-סכום הזוויות המרכזיות במרובע הוא
+סכום הזוויות הפנימיות במרובע הוא
 $360^\circ$
 ולכן
 $\angle DAB+\angle DCB=180^\circ$. 
@@ -554,19 +560,18 @@ $\angle DAB+\angle DCB=180^\circ$.
 
 נניח שקוטר המעגל הוא
 $1$
-(אחרת הכפל הכל באורך הקוטר). הצלעות של המרובע הם:
+(אחרת הכפל הכול באורך הקוטר). צלעות המרובע הן:
 \[
 \overline{BC}=\sin\alpha,\quad \overline{CD}=\sin\beta,\quad \overline{AB}=\sin\gamma,\quad \overline{DA}=\sin\delta\,,
 \]
-והאלכסונים הם:
+ולפי משפט הסינוסים, האלכסונים הם:
 \[
 \overline{BD}=\sin(\alpha + \beta),\quad \overline{CA}=\sin (\alpha+\gamma)\,.
 \]
-לפי משפט 
-\L{Ptolemy}
+לפי משפט תלמי 
 \index{Ptolemy's theorem}
 (משפט.~\ref{thm.ptolemy})
-המכפלה של האלכסונים של מרובע חסום על ידי מעגל שווה לסכום המכפלות של הצלעות הנגדיות במרובע. 
+מכפלת האלכסונים של מרובע חסום במעגל שווה לסכום המכפלות של הצלעות הנגדיות. 
 $\angle ADC$
 ו-%
 $\angle ABC$
@@ -601,27 +606,29 @@ $\sin^2\alpha+\cos^2\alpha=1$:
 \cos 3\alpha &=& \cos (2\alpha +\alpha)\\
 &=& \cos 2\alpha\cos\alpha - \sin 2\alpha\sin\alpha\\
 &=& (\cos^2\alpha -\sin^2\alpha)\cos\alpha - (2\sin\alpha\cos\alpha)\sin\alpha\\
-&=&\cos^3\alpha - \cos\alpha\sin^2\alpha -2\sin^2\alpha\cos\alpha)\\
-&=&\cos^3\alpha - \cos\alpha +\cos^3\alpha -2\cos\alpha+2\cos^3\alpha\\
+&=&\cos^3\alpha - \cos\alpha\sin^2\alpha -2\sin^2\alpha\cos\alpha\\
+%&=&\cos^3\alpha - \cos\alpha +\cos^3\alpha -2\cos\alpha+2\cos^3\alpha\\
+&=&\cos^3\alpha - 3\cos\alpha \sin^2\alpha\\
+&=&\cos^3\alpha - 3\cos\alpha (1-\cos^2\alpha)\\
 &=&4\cos^3\alpha -3\cos\alpha\,.
 \end{eqn}
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{הסינוס והקוסינוס של חצי זווית}\label{s.sine-cosine-half}
+\subsection{סינוס וקוסינוס של חצי זווית}\label{s.sine-cosine-half}
 \index{Trigonometric identities!sine and cosine of a half-angle}
 \begin{theorem}\label{thm.sine-cosine-half}
 אם 
 $\alpha$
 היא זווית 
 \textbf{במעגל}
-אזי:%
+אז:%
 \footnote{
-הנוסחה הכללית מסובכת יותר משום שהשורשים יכולים להיות חיוביות או שליליות בתלות ברביע בו נמצאת 
+הנוסחה הכללית מסובכת יותר משום שהשורשים יכולים להיות חיוביים או שליליים בתלות ברביע בו נמצאת 
 
 $\alpha/2$.
-עבור משולש
+עבור משולש,
 $0\!<\!\alpha\!<\!180^\circ$
 ולכן
 $0\!<\!\alpha/2\!<\!90^\circ$
@@ -648,7 +655,7 @@ $\sin^2\alpha+\cos^2\alpha=1$:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{חוק הקוסינוסים}
+\subsection{משפט הקוסינוסים}
 
 \begin{theorem}[חוק הקוסינוסים]
 \label{thm.law-of-cosines}\index{Law of cosines}
@@ -667,7 +674,7 @@ c^2=a^2+b^2-2ab\cos \angle ACB\,.
 $C$
 אל
 $\overline{AB}$
-והשתמש בהגדרה של קוסינוס ובמשפט פיתגורס:
+והשתמש בהגדרת הקוסינוס ובמשפט פיתגורס:
 \begin{eqnlabels}
 c&=& x+(c-x)=a\cos \beta + b\cos \alpha\\
 c^2&=&ac\cos \beta + bc\cos \alpha\,.\label{eq.lc1}
@@ -718,32 +725,30 @@ c^2&=&a^2+b^2-2ab\cos \gamma\,.
 \draw[<->] (0,-1) -- node[fill=white] {$c-x$} ($(D)+(0,-1)$);
 \draw[<->] ($(D)+(0,-1)$) -- node[fill=white] {$x$} (6,-1);
 \end{tikzpicture}
-\caption{הוכחה ראשונה של חוק הקוסינוסים}\label{f.law-cosines2}
+\caption{הוכחה ראשונה של משפט הקוסינוסים}\label{f.law-cosines2}
 \end{center}
 \end{figure}
 
 \newpage
 
 \begin{proof}(2)
-ההוכחה השניה משתמשת במפשט
-\L{Ptolemy}
+ההוכחה השנייה משתמשת במשפט תלמי
+
 (משפט~\ref{thm.ptolemy}).%
 \footnote{%
 סעיף 
 ~\ref{a.ptolemy}
-השתמש בחוק הקוסינוסים כדי להוכיח משפט
-\L{Ptolemy}!
-ההוכחה הראשונה מאפשרת הוכחה לא מעגלית. בנוסף, קיימות הוכחות של משפט
-\L{Ptolemy}
-שאינן משתמשות בחוק הקוסינוסים.}
+השתמש במשפט הקוסינוסים כדי להוכיח את משפט תלמי. 
+ההוכחה הראשונה מאפשרת הוכחה לא מעגלית. בנוסף, קיימות הוכחות למשפט תלמי
+שאינן משתמשות במשפט הקוסינוסים.}
 
-נחסום את המשלוש
+נחסום את המשולש
 $\triangle ABC$
 במעגל. נבנה משולש נוסף
 $\triangle ABC'$
-שחופף את
+שחופף למשולש
 $\triangle ABC$
-וחסום על ידי אותו מעגל (איור%
+וחסום באותו מעגל (איור%
 ~\ref{f.law-cosines3}).
 כדי לבנות את 
 $\triangle ABC'$,
@@ -751,35 +756,34 @@ $\triangle ABC'$,
 $\overline{AB}$
 השווה ל-%
 $\angle CAB$
-שחותך את המעגל ב-%
+והשוק שלה חותכת את המעגל ב-%
 $C'$
-ואז נבנה את קטע הקו
-
+ואז נבנה את הקטע 
 $\overline{C'A}$.
-זווית שנתמכות על ידי אותו מיתר שוות
+זווית הנשענות על אותו מיתר שוות,
 $\angle AC'B =\angle BCA$, 
 ולכן גם
 $\angle CBA=\angle C'AB$
 ומכאן
 $\triangle ABC'\cong\triangle BAC$
-לפי זווית-צלע-זווית עם צלע משותפת
+לפי זווית, צלע, זווית עם צלע משותפת
 $\overline{AB}$.
 
-הורד ניצבים מ-%
+הורד ניצבים ל-%
+$\overline{AB}$
+מנקודה 
 $C$
 ל-%
 $D$
 ומ-%
 $C'$
 ל-%
-$D'$
-על
-$\overline{AB}$
+$D'$,
+,
 כך ש-%
 $x=a\cos \beta$.
-לפי משפט
-\L{Ptolemy}
-עבור המרובע
+לפי משפט תלמי
+במרובע
 $\overline{ABCC'}$:
 \begin{eqn}
 b^2&=&a^2+c(c-2x)\\
@@ -826,14 +830,14 @@ b^2&=&a^2+c(c-2x)\\
 \draw[->] ($(A)+(-.4,.5)$) -- +(-10:1.12);
 \end{tikzpicture}
 \end{center}
-\caption{הוכחה שנייה של חוק הקוסינוסים}\label{f.law-cosines3}
+\caption{הוכחה שנייה של משפט הקוסינוסים}\label{f.law-cosines3}
 \end{figure}                       
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\newpage
 
-\subsection{הטנגנס של הסכום של שתי זוויות}\label{s.tangent-sum}
+\subsection{הטנגנס של סכום שתי זוויות}\label{s.tangent-sum}
 
 \begin{theorem}\label{thm.tangent-sum}
 \[
@@ -944,9 +948,9 @@ $\alpha+\beta+\gamma=180^\circ$
   (c14) -- (c15) -- (c16) -- cycle;
 \end{scope}
 \end{tikzpicture}
-\caption{מצולעים משוכללים עם 
+\caption{מצולעים משוכללים בעלי 
 $16$, $8$, $3$
-צלעות חסומים על ידי מעגל%
+צלעות חסומים במעגלים%
 }\label{fig.regular-polygons}
 \end{center}
 \end{figure}
@@ -961,9 +965,9 @@ $16$, $8$, $3$
 \end{theorem}
 
 \begin{proof}
-נעיין במצולעים משוכללים החסומים בתוך מעגל (איור%
-~\ref{fig.regular-polygons})
-ונראה שככל שיש למצולע יותר צלעות, כך ההיקף שלו קרוב יותר להיקף המעגל. אורכו של קשת עם אותן נקודות קצה של הצלע הוא היקף המעגל חלקי מספר הצלעות במצולע, כי אורכם של כל הצלעות שווים. היחס בין היקף המעגל להיקף המצולע החסום שואף ל-$1$ ככל שיש יותר צלעות, כך גם היחס של אורך הקשת לאורך המיתר, כפי שניתן לראות מהדוגמאות שלהלן:
+נעיין במצולעים משוכללים החסומים במעגלים (איור%
+~\ref{fig.regular-polygons}),
+ונראה שככל שיש למצולע יותר צלעות, כך ההיקף שלו קרוב יותר להיקף המעגל. אורך הקשת שקצותיה הן נקודות הקצה של הצלע הוא היקף המעגל חלקי מספר הצלעות במצולע, כי אורכי כל הצלעות שווים. היחס בין היקף המעגל להיקף המצולע החסום שואף ל-$1$ ככל שיש יותר צלעות, כך גם היחס של אורך הקשת לאורך המיתר, כפי שניתן לראות מהדוגמאות שלהלן:
 \[
 \begin{array}{r@{\hspace{10pt}}r@{\hspace{10pt}}r@{\hspace{10pt}}r}
 \hline
@@ -974,13 +978,15 @@ $16$, $8$, $3$
 5  & 0.087 & 0.087 &1.000 \\\hline
 \end{array}
 \]
-$a=b=1$ 
+במעגל היחידה (איור%
+~\ref{fig.length-of-a-chord}),
+הרדיוסים 
+$a=b=1$, 
 ולכן ניתן לחשב את אורך המיתר 
 $c$
-התומך ב-%
+שעליו נשענת 
 $\alpha$ 
-מחוק הקוסינוסים (איור%
-\index{Law of cosines}~\ref{fig.length-of-a-chord}):
+בעזרת משפט הקוסינוסים:
 \begin{figure}[tb]
 \begin{center}
 \begin{tikzpicture}[scale=1.1]
@@ -1008,13 +1014,13 @@ c&=&\sqrt{2-2\cos \alpha}\\
 \]
 זה היחס בין אורכו של המיתר
 $\overline{PQ}$
-לאורכו של הקשת
+לאורך הקשת
 $\widehat{PQ}$.
 אבל ראינו שיחס זה שואף ל-%
 $1$
-כאשר הזווית הנתמכת
+כאשר הזווית הנשענת עלהמיתר
 $2\alpha$
-שואף ל-%
+שואפת ל-%
 $0$,
 ולכן:
 \[
@@ -1125,7 +1131,7 @@ $D$
 במשולש
 $\triangle ABC$,
 $\overline{AE}$,
-חוצה הזווית המשלימה לזווית
+חוצה הזווית הצמודה לזווית
 $\triangle BAC$
 (איור%
 ~\ref{f.angle-bisector-external}),
@@ -1171,7 +1177,7 @@ $E$
 
 \begin{proof} 
 $\overline{AC}$
-הוא קו ישר ולכן
+הוא ישר ולכן
 $\angle EAC=180^\circ-\alpha$:
 \begin{eqn}
 \triangle ABE&=&\frac{1}{2}\overline{BE}h=\frac{1}{2}\overline{AE}\,\overline{AB}\sin \alpha\\
@@ -1185,20 +1191,18 @@ $\angle EAC=180^\circ-\alpha$:
 
 \newpage
 
-\section{משפט
-\L{\normalsize Ptolemy}}\label{a.ptolemy}
+\section{משפט תלמי}\label{a.ptolemy}
 \index{Ptolemy's theorem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{מעגל החסום על ידי טרפז}\label{s.circumscribed}
 
-לפי שנוכיח את משפט
-\L{Ptolemy}
+לפי שנוכיח את משפט תלמי
 נוכיח משפטים על מרובעים וטרפזים.
 
 \begin{theorem}\label{thm.quad-circum}
-ניתן לחסום מרובע במעגל אם ורק אם הזוויות הנגדיות משלימות (הסכום שווה ל-%
+ניתן לחסום מרובע במעגל אם ורק אם הזוויות הנגדיות שלו משלימות (סכומן שווה ל-%
 $180^\circ$).
 \end{theorem}\index{Circumscribed circle}
 
@@ -1206,7 +1210,7 @@ $180^\circ$).
 
 \begin{proof}
 (רק אם)
-זווית היקפית במעגל שווה למחצית הקשת שתומך בו כך ש-%
+זווית היקפית במעגל שווה למחצית הקשת שעליה היא נשענת כך ש-%
 $\angle DAB$
 שווה לחצי הקשת 
 $\widehat{DCB}$
@@ -1216,7 +1220,7 @@ $\angle DCB$
 $\widehat{DAB}$ 
 (איור~%
 \ref{f.trap-1}).
-שתי הקשתות ביחד מקיפים את כל היקף המעגל ולכן סכומן 
+שתי הקשתות ביחד משלימות להיקף המעגל, ולכן סכומן 
 $360^\circ$. 
 מכאן ש-%
 $\angle DAB + \angle DCB = 180^\circ$
@@ -1229,7 +1233,7 @@ $\angle ADC + \angle ABC = 180^\circ$.
 \centering
 \selectlanguage{hebrew}
 \subcaptionbox{%
-מרובע חסום על ידי מעגל
+מרובע חסום במעגל
 \label{f.trap-1}}
 [.45\textwidth]
 {
@@ -1284,7 +1288,7 @@ $C$
 
 \begin{proof} 
 (אם)
-ניתן לחסום כל משולש על ידי מעגל. נחסום את 
+ניתן לחסום כל משולש במעגל. נחסום את 
 $\triangle DAB$
 במעגל ונניח שיש נקודה 
 $C'$
@@ -1305,7 +1309,7 @@ $\overline{DC'}$
 $C$
 נקודת החיתוך שלה עם המעגל.
 $\overline{ABCD}$
-חסום על ידי מעגל ולכן:
+חסום במעגל ולכן:
 \index{Circumscribed circle}
 \begin{eqn}
 \angle DAB + \angle DCB &=&  180^\circ = \angle DAB + \angle DC'B\\
@@ -1324,7 +1328,7 @@ $C'$
 הזוויות הנגדיות של טרפז שווה-שוקיים משלימות.
 \end{theorem}\index{Trapezoid, isoceles}\index{Circumscribed circle!trapezoid@around a trapezoid}
 \begin{proof}
-נבנה קו 
+נבנה קטע
 $\overline{AB'}$
 מקביל ל-%
 $\overline{CD}$
@@ -1350,7 +1354,7 @@ $\angle B +  \angle D = 180^\circ$.
 \end{proof}
 
 \begin{theorem}
-ניתן לחסום טרפז שווה-שוקיים על ידי מעגל.
+ניתן לחסום טרפז שווה-שוקיים במעגל.
 \end{theorem}
 ההוכחה מיידית מהמשפטים%
 \ref{thm.quad-circum}, ~\ref{thm.isoceles-trapezoid}.
@@ -1385,10 +1389,10 @@ $\angle B +  \angle D = 180^\circ$.
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{הוכחת המשפט של \L{Ptolemy}}
+\subsection{הוכחת משפט תלמי}
 
 \begin{theorem}[\L{Ptolemy}]
-נתון מרובע חסום על ידי מעגל, הנוסחה שלהלן מתאר את הקשר בין אורכי האלכסונים ואורכי הצלעות
+נתון מרובע חסום במעגל, הנוסחה שלהלן מתארת את הקשר בין אורכי האלכסונים ואורכי הצלעות במרובע
 (איור%
 ~\ref{f.trig-ptolemy}).\label{thm.ptolemy}\index{Circumscribed circle}
 \[
@@ -1417,11 +1421,11 @@ ef = ac + bd\,.
 \draw (B) -- node[left,near end,yshift=-6pt] {$f$} (D);
 \end{tikzpicture}
 \end{center}
-\caption{משפט \L{Ptolemy}}\label{f.trig-ptolemy}
+\caption{משפט תלמי}\label{f.trig-ptolemy}
 \end{figure}                       
 
 \begin{proof}
-לפי חוק הקוסינוס עבור ארבעת המשולשים
+לפי משפט הקוסינוסים עבור ארבעת המשולשים
 \index{Law of cosines}
 $\triangle ABC$, $\triangle ADC$, $\triangle DAB$, $\triangle DCB$:
 \begin{eqn}
@@ -1433,18 +1437,30 @@ f^2 &=& b^2 + c^2 - 2bc \cos \angle C\,.
 $\angle C = 180^\circ - \angle A$
 ו=%
 $\angle D = 180^\circ - \angle B$
-כי הן זוויות נגדיות של מרובע חסום על ידי מעגל, ולכן
+כי הן זוויות נגדיות במרובע חסום במעגל, ולכן
 $\cos \angle D = - \cos \angle B$
 ו-%
 $\cos \angle C = -\cos \angle A$.
-נצמצם את הקוסינוס כדי לקבל:
+נציב במשוואות ונקבל:
+\begin{eqn}
+e^2 &=& a^2 + b^2 - 2ab \cos \angle B\\
+e^2 &=& c^2 + d^2 + 2cd \cos \angle B\\
+f^2 &=& a^2 + d^2 - 2ad \cos \angle A\\
+f^2 &=& b^2 + c^2 + 2bc \cos \angle A\,.
+\end{eqn}
+נפתור את שתי המשוואות הראשונות כדי לקבל משוואה עבור 
+$e^2$
+ללא הקוסינוס:
 \begin{eqn}
 e^2(cd+ab)&=&abc^2+abd^2+a^2cd+b^2cd\\
-e^2 &=& \frac{(ac+bd)(ad+bc)}{(ab+cd)}\\
+e^2 &=& \frac{(ac+bd)(ad+bc)}{(ab+cd)}\,.
+\end{eqn}
+באופן דומה נקבל משוואה עבור
+$f^2$:
+\begin{eqn}
 f^2 &=& \frac{(ab+cd)(ac+bd)}{(ad+bc)}\,.
 \end{eqn}
-הכפל את שתי המשוואות ופשט כדי לקבל את משפטו של
-\L{Ptolemy}:
+הכפל את שתי המשוואות ופשט כדי לקבל את משפט תלמי:
 \begin{eqn}
 e^2\cdot f^2 &=& (ac+bd)^2\\
 ef &=& (ac+bd)\,.
@@ -1453,12 +1469,11 @@ ef &=& (ac+bd)\,.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{המשפט של
-\L{\normalsize Ceva}}\label{a.ceva}
+\section{משפט צ'בה}\label{a.ceva}
 
 \index{Ceva's theorem}\label{thm.ceva}
 \begin{theorem}[Ceva]
-נתון קטעי קו מהקודקודים של משלוש לצלעות הנגדיות שנחתכים בנקודה, אורכי הקטעים מקיימים את הנוסחה (איור%
+נתונים קטעים היוצאים מקודקודי המשלוש לצלעות הנגדיות ונחתכים בנקודה, אורכי הקטעים מקיימים את הנוסחה (איור%
 ~\ref{f.ceva1}):
 \[
 \frac{\overline{AM}}{\overline{MB}}\cdot\frac{\overline{BQ}}{\overline{QS}}\cdot\frac{\overline{SP}}{\overline{PA}} = 1\,.
@@ -1485,17 +1500,17 @@ ef &=& (ac+bd)\,.
 \draw (S) -- (M);
 \end{tikzpicture}
 \end{center}
-\caption{משפט \L{Ceva}}\label{f.ceva1}
+\caption{ משפט צ'בה}\label{f.ceva1}
 \end{figure}
 
 \begin{proof}
-אם הגבהים של שני משולשים שווים, אזי היחסים בין השטחים שווים ליחסים בין לבסיסים. בשתי התרשימים באיור%
+אם הגבהים של שני משולשים שווים, אז היחס בין שטחי המשולשים שווה ליחס בין הבסיסים שלהם. בשני התרשימים באיור%
 ~\ref{f.ceva2}
 הגבהים של המשולשים האפורים שווים ולכן:
 \[
 \frac{\triangle BQO}{\triangle SQO} = \frac{\overline{BQ}}{\overline{QS}}\;,\quad\quad \frac{\triangle BQA}{\triangle SQA} = \frac{\overline{BQ}}{\overline{QS}}\;.
 \]
-נחסיר את השטחים האפרים במשולשים ונקבל את היחס בין המשלושים האפורים באיור%
+נחסר את השטחים האפורים במשולשים ונקבל את היחס בין המשלושים האפורים באיור%
 ~\ref{f.ceva3}:
 \[
 \frac{\triangle BOA}{\triangle SOA}=\frac{\triangle BQA - \triangle BQO}{\triangle SQA-\triangle SQO} = \frac{\overline{BQ}}{\overline{QS}}\,.
@@ -1555,7 +1570,7 @@ ef &=& (ac+bd)\,.
 \end{scope}
 \end{tikzpicture}
 \end{center}
-\caption{משולשים במשפט \L{Ceva}}\label{f.ceva2}
+\caption{משולשים במשפט צ'בה}\label{f.ceva2}
 \end{figure}
 
 \begin{figure}[tb]
@@ -1582,10 +1597,10 @@ ef &=& (ac+bd)\,.
 \node[right,xshift=2pt] at (O) {$O$};
 \end{tikzpicture}
 \end{center}
-\caption{החסרת שטחים במשפט \L{Ceva}}\label{f.ceva3}
+\caption{החסרת שטחים במשפט צ'בהs}\label{f.ceva3}
 \end{figure}
 
-חישוב זה עלול להיראות מעט מוזר אז נסביר אותו בסימון פשוט יותר:
+חישוב זה עלול להיראות מעט מוזר, אז נסביר אותו בסימון פשוט יותר:
 \begin{eqn}
  \frac{c}{d} &=&\frac{a}{b}\\
  \frac{e}{f} &=&\frac{a}{b}\\
@@ -1604,7 +1619,7 @@ c-e &=& \frac{ad}{b} - \frac{af}{b}=\frac{a}{b}(d-f)\\
 \[
 \frac{\overline{AM}}{\overline{MB}}\frac{\overline{BQ}}{\overline{QS}}\frac{\overline{SP}}{\overline{PA}} = \frac{\triangle AOS}{\triangle BOS}\frac{\triangle BOA}{\triangle SOA}\frac{\triangle SOB}{\triangle AOB}=1\,,
 \]
-כי הסדר של הקודקודים במשולש לא משנה.
+כי הסדר של הקודקודים במשולש אינו משנה.
 \end{proof}
 
 \begin{figure}[tb]
@@ -1637,7 +1652,7 @@ c-e &=& \frac{ad}{b} - \frac{af}{b}=\frac{a}{b}(d-f)\\
 \draw (B) -- (P) -- (C);
 \end{tikzpicture}
 \end{center}
-\caption{המשפט של \L{Menelaus}}\label{f.menelaus}
+\caption{משפט מנלאוס}\label{f.menelaus}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1650,13 +1665,13 @@ c-e &=& \frac{ad}{b} - \frac{af}{b}=\frac{a}{b}(d-f)\\
 $\triangle ABC$
 משולש ויהי 
 $\overline{DBQ}$
-\textbf{קו חותך}
+\textbf{ישר חותך}
 \L{(transveral)}
-החותך את שלושת הצלעות של המשולש או את ההארכות שלהם
+החותך את שלוש צלעות המשולש או את המשכן
 (איור.~\ref{f.menelaus}).
 אזי:%
 \footnote{%
-כתלות המבנה המשולשים והקו החותך, המכלפה יכולה להיות
+כתלות במבנה המשולשים והקו החותך, המכפלה יכולה להיות
 $+1$
 או
 $-1$.}
@@ -1668,13 +1683,13 @@ $-1$.}
 \end{theorem}
 
 \begin{proof}
-נבנה קו דרך 
+נבנה דרך 
 $C$
-המקביל ל-%
+ישר מקביל ל-%
 $\overline{AB}$
 ונאריך את
 $\overline{DQ}$
-עד שהוא חותך את הקו המקביל ב-%
+עד שהוא חותך את המקביל ב-%
 $K$.
 מ-%
 $\triangle ADB \sim \triangle CDK$
@@ -1702,9 +1717,7 @@ $\overline{AB}\cdot\overline{CD}\cdot\overline{PQ}=\overline{QC}\cdot\overline{B
 
 פרק זה מבוסס בעיקר על
 \cite{gelfand}.
-ניתן להוכיח את משפט
-\L{Ceva}
-ומשפט
-\L{Menelaus}
-אחד המשני
+ניתן להוכיח את משפט צ'בה 
+ואת משפט מנלאוס
+זה על ידי זה
 \cite{silvester}.
