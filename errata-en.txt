@@ -26,6 +26,10 @@ p. 45 line 6: Thm. 4.4 -> Thm. 4.3
 
 p. 59 line -4: suprising -> surprising
 
+p. 75 line 4:
+"Figure. 7.1 shows the relationship for r_1=2, r_2=6, m_{12}=4, s=2. If we use [as before] (Fig. 7.2). The following table shows the additional examples for b=4, b=-33."
+[table here]
+
 p. 77 line 11: to clarify: the coeffecients of the x terms in the quadratic factor must be equal and of opposite signs since the coefficient of the x^3 term in the quartic equation is zero.
 
 p. 80 caption of Fig. 7.4 should be:
@@ -34,13 +38,25 @@ p. 80 caption of Fig. 7.4 should be:
 p. 81 caption of Fig. 7.5 should be:
   (a+b)^3 = \cdots + 3ab(a+b)
 
+p. 84 line 1. \sqrt{20}/2
+
 p. 86 line -7: r_2=c/b -> r_2\approx -c/b
+
+p. 89 line -4: delete (or both)
+
+p. 91 line -11: delete (or both)
+
+p. 101 line 4: (u^2+v^2)^2 = c^2
+
+p. 107 section title: N should be n
 
 p. 121 line 4-5: should be: "such that the distance from p_i to l_f is equal to the distance of its reflection p_i' from l_f"
 
 p. 135 line 6: 6 should be 1
 
 p. 137 line 6: is construct at -> is constructed at
+
+p. 141 line 6: polynomial should be polygon
 
 p. 141 line -6: $\angle AQQ'=\angle QAQ'=\alpha$ should be $\angle AQ'B=\angle BQQ'=\alpha$.
 
