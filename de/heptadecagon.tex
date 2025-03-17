@@ -10,7 +10,7 @@ Die einzigen regelmäßigen Polygone, die die Griechen mit Lineal und Zirkel kon
 In Abschnitt~\ref{s.hept-regular} wird die Beziehung zwischen der Seite eines in einen Kreis eingeschriebenen Polygons und dem zentralen Winkel, den es einschließt, erörtert. Abschnitt~\ref{s.fundamental} gibt ohne Beweis den Fundamentalsatz der Algebra an. Abschnitt~\ref{s.roots} stellt die \emph{roots of unity} vor, die Wurzeln des Polynoms $x^n-1$, die im Mittelpunkt des Gaußschen Beweises stehen. Die Abschnitte~\ref{s.gauss} und~\ref{s.derivation} stellen den Beweis von Gauß vor, der auf Symmetrien der Wurzeln von Polynomen beruht. Gauß leitete eine Formel ab, die beweist, dass das Heptadeck konstruierbar ist, aber eine geometrische Konstruktion wurde fast ein Jahrhundert lang nicht gegeben. Abschnitt~\ref{s.construction} enthält eine elegante Konstruktion von James J. Callagy. Abschnitt~\ref{s.hept-pentagon} zeigt, wie Konstruktionen eines regelmäßigen Fünfecks sowohl aus der Geometrie als auch aus der Trigonometrie abgeleitet werden können.
 
 Ein Teil des Materials ist einfacher, wenn es mit komplexen Zahlen dargestellt wird. Dieses Material ist in Kästen untergebracht, die übersprungen werden können.
-\begin{figure}[b]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.4]
 \coordinate (O) at (0,0);
@@ -35,12 +35,6 @@ F_0=3,\quad F_1=5,\quad F_2=17,\quad F_3=257,\quad F_4=65537\,.
 \]
 Ein regelmäßiges Polygon mit $257$ Seiten wurde von Magnus Georg Paucker in $1822$ und von Friedrich Julius Richelot $1832$ konstruiert. In $1894$ behauptete Johann Gustav Hermes, ein regelmäßiges Polygon mit $65537$ Seiten konstruiert zu haben.
 
-Um ein regelmäßiges Polygon zu konstruieren, reicht es aus, ein Liniensegment der Länge $\cos \theta$ zu konstruieren, wobei $\theta$ der zentrale Winkel ist, der von einer Sehne eingeschlossen wird, die eine in einen Einheitskreis eingeschriebene Seite des Polygons ist. Konstruieren Sie für die Strecke $\overline{OB}=\cos\theta$ eine Senkrechte bei $B$ und bezeichnen Sie ihren Schnittpunkt mit dem Einheitskreis mit $C$. Dann:
-\begin{eqnarray*}
-\cos \theta&=&\displaystyle\frac{\overline{OB}}{\overline{OC}}=\overline{OB}\\
-\theta &=& \cos^{-1} (\overline{OB})\,.
-\end{eqnarray*}
-Die Sehne $\overline{AC}$ ist eine Seite des regelmäßigen Vielecks (Abb.~\ref{f.hept-central1}).
 \begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=1.3]
@@ -61,6 +55,13 @@ Die Sehne $\overline{AC}$ ist eine Seite des regelmäßigen Vielecks (Abb.~\ref{
 \end{center}
 \caption{Kosinus des zentralen Winkels eines regelmäßigen Polygons}\label{f.hept-central1}
 \end{figure}
+
+Um ein regelmäßiges Polygon zu konstruieren, reicht es aus, ein Liniensegment der Länge $\cos \theta$ zu konstruieren, wobei $\theta$ der zentrale Winkel ist, der von einer Sehne eingeschlossen wird, die eine in einen Einheitskreis eingeschriebene Seite des Polygons ist. Konstruieren Sie für die Strecke $\overline{OB}=\cos\theta$ eine Senkrechte bei $B$ und bezeichnen Sie ihren Schnittpunkt mit dem Einheitskreis mit $C$. Dann:
+\begin{eqnarray*}
+\cos \theta&=&\displaystyle\frac{\overline{OB}}{\overline{OC}}=\overline{OB}\\
+\theta &=& \cos^{-1} (\overline{OB})\,.
+\end{eqnarray*}
+Die Sehne $\overline{AC}$ ist eine Seite des regelmäßigen Vielecks (Abb.~\ref{f.hept-central1}).
 
 Ausgehend von einem Liniensegment der Länge $1$ sind die Längen konstruierbar, die sich aus Liniensegmenten bekannter Länge mit Hilfe der Operationen $\{+,-,\times,/,\surd\}$ gewinnen lassen (Sect.~\ref{s.trisect-constructible}). Gauß zeigte, dass $\cos(360^\circ/17)$, der Kosinus des Zentralwinkels eines Heptadecks, konstruierbar ist, da er nur durch diese Operationen ausgedrückt werden kann:
 \begin{eqnarray*}

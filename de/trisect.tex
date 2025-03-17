@@ -1,3 +1,4 @@
+% !TeX Program=pdfLaTeX
 % !TeX root = surprises.tex
 
 \chapter{Dreiteilung eines Winkels}\label{c.trisect}
@@ -228,12 +229,12 @@ Sei $\theta=\angle AOB$ ein beliebiger Winkel und nehme ohne Verlust der Allgeme
 
 \begin{proof} Durch das Kosinusgesetz in $\triangle DOC$:
 \[
-\overline{CD}= \left(\frac{1}{3}\right)^2+\left(\frac{1}{3}\right)^2-2\left(\frac{1}{3}\right)\left(\frac{1}{3}\right)\cos (\theta/2)=\frac{2}{9}(1-\cos(\theta/2))\,.
+\overline{CD}^2= \left(\frac{1}{3}\right)^2+\left(\frac{1}{3}\right)^2-2\left(\frac{1}{3}\right)\left(\frac{1}{3}\right)\cos (\theta/2)=\frac{2}{9}(1-\cos(\theta/2))\,.
 \]
 
 Durch das Kosinusgesetz in $\triangle EOA$:
 \[
-\overline{AE} = 1^2+1^2-2\cdot 1\cdot 1\cdot \cos \phi=2(1-\cos \phi)\,.
+\overline{AE}^2 = 1^2+1^2-2\cdot 1\cdot 1\cdot \cos \phi=2(1-\cos \phi)\,.
 \]
 
 Wenn man die beiden Ausdrücke für $\overline{CD}=\overline{AE}$ gleichsetzt und vereinfacht, erhält man:
@@ -458,8 +459,8 @@ x&=&\sqrt[3]{2}\,.
 Sei $\overline{ABCD}$ ein Quadrat. Sei $l_1$ ein Liniensegment, das anfangs bei $\overline{DC}$ liegt, und sei $l_2$ ein Liniensegment, das anfangs bei $\overline{AD}$ liegt. Bewegen Sie $l_1$ mit einer konstanten linearen Geschwindigkeit, bis es $\overline{AB}$ erreicht, und drehen Sie $l_2$ mit einer konstanten Winkelgeschwindigkeit im Uhrzeigersinn um $A$, bis es ebenfalls $\overline{AB}$ erreicht. Nehmen wir an, dass sie $\overline{AB}$ gemeinsam erreichen. Wenn $l_2$ beispielsweise mit $1^\circ$/Sekunde rotiert und die Seite des Quadrats $9$ Zentimeter beträgt, muss sich $l_1$ mit $0,1$ cm/Sekunde bewegen. Die Spur ihres Schnittpunktes $P$ nennt man eine \emph{Quadratrixkurve} oder einfach eine \emph{Quadratrix} (Abb.~\ref{f.trisect-quad-curve}). Ihre Definition wird auf den Mathematiker Hippias zurückgeführt.
 
 \begin{figure}[b]
-\begin{minipage}{.48\textwidth}
-\begin{center}
+\subfigures
+\leftfigure[c]{
 \begin{tikzpicture}[scale=.6,domain=.03:1.555,samples=100]
 \draw (.1,.2)
   node[below left,xshift=-8pt] {$A$} -- 
@@ -476,12 +477,9 @@ Sei $\overline{ABCD}$ ein Quadrat. Sei $l_1$ ein Liniensegment, das anfangs bei 
 \vertex{A};
 \draw[thick] plot (4.6*.637*\x,{12.2*.637*\x*cot(\x r)});
 \end{tikzpicture}
-\caption{Eine Quadratrixkurve}\label{f.trisect-quad-curve}
-\end{center}
-\end{minipage}
+}
 \hfill
-\begin{minipage}{.48\textwidth}
-\begin{center}
+\rightfigure[c]{
 \begin{tikzpicture}[scale=.6,domain=.03:1.555,samples=100]
 \draw (.1,.2) node[below left,xshift=-8pt] {$A$} -- (7.8,.2) node[below right] {$B$} -- (8,7.8) node[above right] {$C$} -- (.1,7.8) node[above left,xshift=-8pt] {$D$} -- cycle;
 \draw[rounded corners,rotate=60] (0,-.2) rectangle (8.2,.2);
@@ -489,13 +487,13 @@ Sei $\overline{ABCD}$ ein Quadrat. Sei $l_1$ ein Liniensegment, das anfangs bei 
 \fill (2.9,5) circle [radius=2.5pt];
 \draw[thick] plot (4.6*.637*\x,{12.2*.637*\x*cot(\x r)});
 \end{tikzpicture}
-\caption{Ein Quadratzirkel}\label{f.trisect-quad-compass}
-\end{center}
-\end{minipage}
+}
+\leftcaption{Eine Quadratrixkurve}\label{f.trisect-quad-curve}
+\rightcaption{Ein Quadratzirkel}\label{f.trisect-quad-compass}
 \end{figure}
 
 Eine Quadratrix kann mit Hilfe eines Quadratrix-Zirkels konstruiert werden, wie in Abb.~\ref{f.trisect-quad-compass} gezeigt. Er besteht aus zwei (unmarkierten) geraden Linien, die sich wie oben beschrieben bewegen. Ein Gelenk zwingt sie dazu, sich gemeinsam zu bewegen und zeichnet die Kurve nach.
-\begin{figure}[b]
+\begin{figure}[t]
 \begin{center}
 \begin{tikzpicture}[scale=.8,domain=.03:1.562,samples=100]
 \draw (.1,7.8) coordinate (start)
@@ -568,9 +566,6 @@ Eine Zahl ist dann und nur dann konstruierbar, wenn sie der Wert eines Ausdrucks
 \begin{proof}
 Zunächst zeigen wir, dass die Werte dieser Ausdrücke konstruierbar sind.
 
-
-\medskip
-
 \begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.8]
@@ -619,8 +614,8 @@ By similar triangles in Fig.~\ref{f.trisect-division},
 $(1/b)=(\overline{OD}/a)$, so $\overline{OD}=(a/b)$.
 
 \begin{figure}[t]
-\begin{minipage}{.48\textwidth}
-\begin{center}
+\subfigures
+\leftfigure[c]{
 \begin{tikzpicture}[scale=.8]
 \draw[name path=horz] (0,0) coordinate (o) -- (7,0);
 \node[left] at (o) {$O$};
@@ -641,12 +636,9 @@ $(1/b)=(\overline{OD}/a)$, so $\overline{OD}=(a/b)$.
 \draw[<->] (0,-.8) -- node[fill=white] {$ab$} +(6,0);
 \path (o) -- node[below] {$a$} (d);
 \end{tikzpicture}
-\caption{Konstruktion der Multiplikation}\label{f.trisect-multiplication}
-\end{center}
-\end{minipage}
+}
 \hfill
-\begin{minipage}{.48\textwidth}
-\begin{center}
+\rightfigure[c]{
 \begin{tikzpicture}[scale=.8]
 \draw[name path=horz] (0,0) coordinate (o) -- (7,0);
 \node[left] at (o) {$O$};
@@ -667,9 +659,9 @@ $(1/b)=(\overline{OD}/a)$, so $\overline{OD}=(a/b)$.
 \draw[<->] (0,-.8) -- node[fill=white] {$a$} +(6,0);
 \path (o) -- node[below] {$a/b$} (d);
 \end{tikzpicture}
-\caption{Aufbau der Abteilung}\label{f.trisect-division}
-\end{center}
-\end{minipage}
+}
+\leftcaption{Konstruktion der Multiplikation}\label{f.trisect-multiplication}
+\rightcaption{Aufbau der Abteilung}\label{f.trisect-division}
 \end{figure}
 
 \medskip
@@ -722,7 +714,8 @@ $P=(\sqrt{2}, \sqrt{2})$ und $Q=(-\sqrt{2}, -\sqrt{2})$.
 \end{proof}
 
 \begin{figure}[t]
-\begin{minipage}{.45\textwidth}
+\subfigures
+\leftfigure[c]{
 \begin{tikzpicture}[scale=.66]
 \draw[step=10mm,white!50!black,very thin] (-4,-4) grid (4,4);
 \draw[thick] (-4,0) -- (4,0);
@@ -739,10 +732,9 @@ $P=(\sqrt{2}, \sqrt{2})$ und $Q=(-\sqrt{2}, -\sqrt{2})$.
 \path[name intersections={of=eq1 and eq2,by={P}}];
 \node[right] at (P) {$P$};
 \end{tikzpicture}
-\caption{Der Schnittpunkt von zwei Linien}\label{f.constructible-two-lines}
-\end{minipage}
+}
 \hfill
-\begin{minipage}{.45\textwidth}
+\rightfigure[c]{
 \begin{tikzpicture}[scale=.66]
 \coordinate (O) at (0,0);
 \draw[step=10mm,white!50!black,very thin] (-4,-4) grid (4,4);
@@ -761,10 +753,10 @@ $P=(\sqrt{2}, \sqrt{2})$ und $Q=(-\sqrt{2}, -\sqrt{2})$.
 \node[right] at (P) {$P$};
 \node[left] at (Q) {$Q$};
 \end{tikzpicture}
-\caption{Die Schnittpunkte einer Linie und eines Kreises}\label{f.constructible-line-circle}
-\end{minipage}
+}
+\leftcaption{Der Schnittpunkt von zwei Linien}\label{f.constructible-two-lines}
+\rightcaption{Die Schnittpunkte einer Linie und eines Kreises}\label{f.constructible-line-circle}
 \end{figure}
-
 
 \begin{figure}[b]
 \begin{center}
@@ -818,7 +810,7 @@ Ein Ausdruck der Tiefe $n$ kann ausgedrückt werden als $a+b\sqrt{c}$, wobei $a,
 Einfache Berechnungen zeigen, dass die Ausdrücke $(a_1+b_1\sqrt{c})\,\mathit{op}\,(a_2+b_2\sqrt{c})$ für die Operatoren $\mathit{op}=\{+,-,\times\}$ zu Ausdrücken $a+b\sqrt{c}$ der Tiefe $n-1$ führen. Bei der Division ist die Berechnung etwas komplizierter:
 \begin{eqnarray*}
 \frac{a_1+b_1\sqrt{c}}{a_2+b_2\sqrt{c}}&=&
-\frac{(a_1+b_1\sqrt{c})(a_2-b_2\sqrt{c_2})}{(a_2+b_2\sqrt{c})(a_2-b_2\sqrt{c})}\\
+\frac{(a_1+b_1\sqrt{c})(a_2-b_2\sqrt{c})}{(a_2+b_2\sqrt{c})(a_2-b_2\sqrt{c})}\\
 &=&\frac{a_1a_2-b_1b_2c}{a_2^2-b_2^2c}+\frac{a_2b_1-a_1b_2}{a_2^2-b_2^2c}\sqrt{c}\,,
 \end{eqnarray*}
 die die Form $a+b\sqrt{c}$ hat, wobei $a,b,c$ die Tiefe $n-1$ haben. Schließlich ist die Quadratwurzel aus einem Ausdruck der Tiefe $n-1$ ein Ausdruck der Tiefe $n$.
@@ -865,8 +857,13 @@ keine rationalen Wurzeln hat, ist keine seiner Wurzeln konstruierbar.
 a_2&=&-(r_1+r_2+r_3)\\
 r_3&=&-(a_2+r_1+r_2)\,.
 \end{subeqnarray}
+
+\pagebreak[2]
+
 Da $a_2$ rational ist, ist es das auch:
-\[r_3=-a_2-(r_1+r_2)=-a_2-2a\,,\]
+\[
+r_3=-a_2-(r_1+r_2)=-a_2-2a\,,
+\]
 was der Annahme widerspricht.
 \end{proof}
 
@@ -918,7 +915,7 @@ Um zu beweisen, dass das Polynom $y^3-3y-1$ keine rationalen Wurzeln hat, nehme 
 \begin{subeqnarray}
 (a/b)^3-3(a/b)-1&=&0\\
 a^3-3ab^2&=&b^3\\
-a(a-3b^2)&=&b^3\slabel{eq.trisect1}\\
+a(a^2-3b^2)&=&b^3\slabel{eq.trisect1}\\
 a^3&=&b(b^2+3ab)\slabel{eq.trisect2}\,.
 \end{subeqnarray}
 Nach Gl.~\ref{eq.trisect1} muss $b$ durch $a$ teilbar sein, und nach Gl.~\ref{eq.trisect2} muss $a$ durch $b$ teilbar sein, was nur möglich ist, wenn $a=b=\pm 1$ und $a/b=\pm 1$. Rein rechnerisch sind $y=a/b=1$ und $y=a/b=-1$ keine Wurzeln des Polynoms.
@@ -933,7 +930,7 @@ Um zu zeigen, dass es nicht möglich ist, einen Würfel zu duplizieren, müssen 
 \[
 x^3-2=(x-r_2)(x-r_1)(x-r_0)
 \]
-hat keine ganzzahligen Wurzeln. Da $r_0r_1r_2=-2$ ist, müssen alle Wurzeln durch $2$ geteilt werden, also sind die einzigen möglichen ganzzahligen Wurzeln $\pm 1, \pm 2$. Eine schnelle Berechnung zeigt, dass keine von ihnen Wurzeln sind.
+hat keine ganzzahligen Wurzeln. Da $(-r_2)(-r_1)(-r_0)=-2$ ist, müssen alle Wurzeln durch $2$ geteilt werden, also sind die einzigen möglichen ganzzahligen Wurzeln $\pm 1, \pm 2$. Eine schnelle Berechnung zeigt, dass keine von ihnen Wurzeln sind.
 
 Um die Unmöglichkeit der Dreiteilung eines Winkels zu zeigen, müssen wir zeigen, dass $y^3-3y-1$ keine ganzzahligen Wurzeln hat. Eine ganzzahlige Wurzel muss $-1$ teilen, aber weder $1$ noch $-1$ sind Wurzeln.
 

@@ -22,8 +22,8 @@ Ein Kreis ist definiert durch einen Punkt $O$, seinen \emph{Zentrum}, und durch 
 Der einzelne gegebene Kreis, der in den Konstruktionen verwendet wird, der so genannte \emph{fixed circle}, kann überall in der Ebene erscheinen und einen beliebigen Radius haben.
 
 \begin{figure}[t]
-\begin{minipage}{.45\textwidth}
-\begin{center}
+\subfigures
+\leftfigure[c]{
 \begin{tikzpicture}[scale=.8]
 \coordinate (O) at (0,0);
 \node[above right] at (O) {$O$};
@@ -37,12 +37,9 @@ Der einzelne gegebene Kreis, der in den Konstruktionen verwendet wird, der so ge
 %\vertex{X};
 %\vertex{Y};
 \end{tikzpicture}
-\caption{$X,Y$ sind die Schnittpunkte einer Linie und eines Kreises}\label{f.se-only-line-circle}
-\end{center}
-\end{minipage}
+}
 \hfill
-\begin{minipage}{.45\textwidth}
-\begin{center}
+\rightfigure[c]{
 \begin{tikzpicture}[scale=.8]
 \coordinate (O1) at (0,0);
 \coordinate (O2) at (3,0);
@@ -60,9 +57,9 @@ Der einzelne gegebene Kreis, der in den Konstruktionen verwendet wird, der so ge
 %\vertex{X};
 %\vertex{Y};
 \end{tikzpicture}
-\caption{$X,Y$ sind die Schnittpunkte von zwei Kreisen}\label{f.se-only-two-circles}
-\end{center}
-\end{minipage}
+}
+\leftcaption{$X,Y$ sind die Schnittpunkte einer Linie und eines Kreises}\label{f.se-only-line-circle}
+\rightcaption{$X,Y$ sind die Schnittpunkte von zwei Kreisen}\label{f.se-only-two-circles}
 \end{figure}
 
 \section{Konstruktion einer Linie parallel zu einer gegebenen Linie}\label{s.parallel}
@@ -137,8 +134,8 @@ Wählen Sie $M$, einen beliebigen Punkt auf $l$, und konstruieren Sie einen Stra
 $\overline{UV}$ ist ein gerichteter Linienabschnitt, weil $O$, der Mittelpunkt des Kreises, den Durchmesser $\overline{UV}$ halbiert. Man wählt einen Punkt $A$ auf $l$ und konstruiert mit Hilfe der Konstruktion für eine gerichtete Strecke (Fall 1) eine Linie durch $A$ parallel zu $\overline{UV}$, die den Kreis in $X,Y$ schneidet (Abb.~\ref{f.se-parallel-other2}).
 
 \begin{figure}[t]
-\begin{minipage}{.45\textwidth}
-\begin{center}
+\subfigures
+\leftfigure[c]{
 \begin{tikzpicture}[scale=.75]
 \coordinate (O) at (0,0);
 \node[below right] at (O) {$O$};
@@ -158,12 +155,9 @@ $\overline{UV}$ ist ein gerichteter Linienabschnitt, weil $O$, der Mittelpunkt d
 \vertex{O};
 \vertex{P};
 \end{tikzpicture}
-\caption{Konstruktion einer gerichteten Linie}\label{f.se-parallel-other1}
-\end{center}
-\end{minipage}
+}
 \hfill
-\begin{minipage}{.45\textwidth}
-\begin{center}
+\rightfigure[c]{
 \begin{tikzpicture}[scale=.75]
 \coordinate (O) at (0,0);
 \node[below right] at (O) {$O$};
@@ -190,9 +184,9 @@ $\overline{UV}$ ist ein gerichteter Linienabschnitt, weil $O$, der Mittelpunkt d
 \vertex{O};
 \vertex{P};
 \end{tikzpicture}
-\caption{Konstruktion einer Linie parallel zur gerichteten Linie}\label{f.se-parallel-other2}
-\end{center}
-\end{minipage}
+}
+\leftcaption{Konstruktion einer gerichteten Linie}\label{f.se-parallel-other1}
+\rightcaption{Konstruktion einer Linie parallel zur gerichteten Linie}\label{f.se-parallel-other2}
 \end{figure}
 
 \begin{figure}[b]
@@ -289,7 +283,7 @@ Bei einem Linienabschnitt $l$ und einem Punkt $P$, der nicht auf $l$ liegt, kann
 Nach Thm.~\ref{thm.straight-parallel} konstruiere eine zu $l$ parallele Linie $l'$, die den festen Kreis in $U,V$ schneidet. Konstruieren Sie den Durchmesser $\overline{UOU'}$ und die Sehne $\overline{VU'}$ (Abb.~\ref{f.se-perp}). $\angle UVU'$ ist ein rechter Winkel, weil er von einem Durchmesser begrenzt wird. Daher steht $\overline{VU'}$ senkrecht auf $\overline{UV}$ und $l$. Wiederum nach Thm.~\ref{thm.straight-parallel} konstruiert man die Parallele zu $\overline{VU'}$ durch $P$.
 \end{proof}
 
-\begin{figure}[htb]
+\begin{figure}[ht]
 \begin{center}
 \begin{tikzpicture}[scale=.7]
 \coordinate (O) at (0,0);
@@ -332,7 +326,7 @@ Die Bedeutung von ``Richtung'' ist, dass die durch zwei Punkte $A',H'$ definiert
 Durch Thm.~\ref{thm.parallel-equal} ist es möglich, einen Streckenabschnitt $\overline{AH}$ so zu konstruieren, dass $\overline{AH}\parallel\overline{A'H'}$, und einen Streckenabschnitt $\overline{AK}$ so zu konstruieren, dass $\overline{AK}\parallel\overline{PQ}$ und $\overline{AK}=\overline{PQ}$.
 $\angle HAK=\theta$, so dass es bleibt, einen Punkt $S$ auf $\overline{AH}$ zu finden, so dass $\overline{AS}=\overline{PQ}$.
 
-\begin{figure}[t]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.7]
 \coordinate (A) at (0,0);
@@ -469,7 +463,7 @@ h+k &=& \frac{d}{t}a + \frac{d}{t}b = \frac{d(a+b)}{t} = \frac{dt}{t} = d\,.
 \end{eqnarray*}
 
 Nach Thm.~\ref{thm.straight-direction} konstruiere $\overline{HA}= h$ auf einem Durchmesser $\overline{HK}$ des Festkreises. Aus $h+k=d$ ergibt sich $\overline{AK}=k$ (Abb.~\ref{f.se-sqrt}). Nach Thm.~\ref{thm.straight-perp} konstruieren wir eine Senkrechte zu $\overline{HK}$ bei $A$ und bezeichnen den Schnittpunkt dieser Linie mit dem Kreis mit $S$. $\overline{OS}=\overline{OK}=d/2$ und $\overline{OA}=(d/2)-k$. 
-\begin{figure}[t]
+\begin{figure}[b]
 \begin{center}
 \begin{tikzpicture}[scale=.7]
 \coordinate (O) at (0,0);

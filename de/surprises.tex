@@ -1,68 +1,44 @@
-\documentclass[openany]{book}
+% !TeX Program=pdfLaTeX
 
-% Used in the French translation
-%\usepackage[a5paper,margin=2cm]{geometry}
+% \RequirePackage needed because of \qed bug
+\RequirePackage{amsmath,amsfonts,amssymb}
 
-% Used in Springer's style
-\setlength{\textwidth}{117mm}
-\setlength{\textheight}{191mm}
-\setlength{\topmargin}{0cm}
-\setlength\oddsidemargin   {63pt}
-\setlength\evensidemargin  {63pt}
-\setlength\marginparwidth{90pt}
-\setlength\headsep   {12pt}
+\documentclass[envcountchap]{svmono}
 
-\usepackage{amsmath,amsfonts,amssymb,amsthm}
-\usepackage{graphicx}
-\usepackage[german]{babel}
-\usepackage[T1]{fontenc}
+% SV packages
 
-\usepackage{verbatim}
+\usepackage{makeidx}
+\usepackage{multicol}
+\usepackage[bottom]{footmisc}
 \usepackage{newtxtext}
 \usepackage{newtxmath}
-\usepackage{url}
-\usepackage{subeqnarray}
-
-\usepackage{titlesec}
-\titleformat{\chapter}[display]
-  {\normalfont\large\bfseries}
-  {\chaptertitlename\ \thechapter}{10pt}{\Large}
-\titleformat{\section}
-  {\normalfont\normalsize\bfseries}{\thesection}{1em}{}
-  \titleformat{\subsection}
-  {\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
-   \titlespacing{\chapter}{0pt}{0pt plus 2pt minus 2pt}
-   {20pt plus 1.5pt minus 0.25pt}  
-
-% Change LaTeX defaults for figures
-\renewcommand{\topfraction}{0.9}
-\renewcommand{\bottomfraction}{0.8}
-\setcounter{topnumber}{1}
-\setcounter{bottomnumber}{2}
-\setcounter{totalnumber}{3}
-\renewcommand{\textfraction}{0.07}
-\renewcommand{\floatpagefraction}{0.7}
-
-\theoremstyle{definition}
-\newtheorem{axiom}{Axiom}[chapter]
-\newtheorem{definition}{Definition}[chapter]
-
-\theoremstyle{remark}
-\newtheorem{example}{Beispiel}[chapter]
-
-\theoremstyle{plain}
-\newtheorem{theorem}{Satz}[chapter]
-
-\usepackage[textfont={it}]{caption}
-\captionsetup[figure]{name=Abb.}
-\captionsetup[table]{name=Tab.}
 
 % TOC contains chapters and sections
+
 \setcounter{tocdepth}{1}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Fix \smartqed bug
+
+\renewcommand\qedsymbol{\hbox{$\square$}}
+\smartqed
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% My added packages
+
+\usepackage{url}
+\usepackage{subeqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeindex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % TikZ
+
 \usepackage{tikz}
 \usetikzlibrary{through,calc,intersections}
 \usetikzlibrary{arrows.meta,shapes.geometric}
@@ -71,6 +47,8 @@
 \tikzexternalize[prefix=tikz/]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% My new commands
 
 % Display vertex not affected by tikz scale
 \newcommand*{\vertex}[1]
@@ -81,15 +59,14 @@
 % Very small math, used in drawings
 \newcommand*{\sm}[1]{$\scriptstyle #1$}
 
-% In heptadecagon chapter,
-%   stack numbers of occurrences and variables
+% In heptdecagon chapter, stack numbers of occurrences, variables
 \newcommand*{\occ}[2]{\underset{#2\quad}{r^{#1}}}
 
 % A bit more interline spacing
 \renewcommand{\baselinestretch}{1.1}
 
-% Smart qed
-\renewcommand\qedsymbol{\hbox{$\square$}}
+% Theorem-like environment for axioms
+\spnewtheorem{axiom}[theorem]{Axiom}{\bfseries}{\rmfamily}
 
 % Box advanced material
 \newenvironment{advanced}
@@ -105,9 +82,9 @@
 \end{center}
 }
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 %\includeonly{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 

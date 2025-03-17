@@ -191,8 +191,8 @@ Fügen Sie die beiden Polygone zusammen, um das ursprüngliche Polygon mit $n$ S
 \end{proof}
 
 \begin{figure}[t]
-\begin{minipage}{.45\textwidth}
-\begin{center}
+\subfigures
+\leftfigure[c]{
 \begin{tikzpicture}[scale=.6]
 \draw
   (0,0) coordinate (A) -- 
@@ -216,12 +216,9 @@ Fügen Sie die beiden Polygone zusammen, um das ursprüngliche Polygon mit $n$ S
 \draw[thick,dashed]
   (B) -- (D) -- (K) -- (F) -- (I) -- (K) -- (A) -- (D) -- (F) -- (H);
 \end{tikzpicture}
-\caption{Eine beliebige Diagonale in einem Polygon}\label{f.museum.three-1}
-\end{center}
-\end{minipage}
+}
 \hfill
-\begin{minipage}{.45\textwidth}
-\begin{center}
+\rightfigure[c]{
 \begin{tikzpicture}[scale=.6]
 \path
   (0,0) coordinate (A1) -- 
@@ -279,14 +276,14 @@ Fügen Sie die beiden Polygone zusammen, um das ursprüngliche Polygon mit $n$ S
 \draw[thick] (D2) -- (K2);
 \end{scope}
 \end{tikzpicture}
-\caption{Teilen Sie das Polygon}\label{f.museum.three-2}
-\end{center}
-\end{minipage}
+}
+\leftcaption{Eine beliebige Diagonale in einem Polygon}\label{f.museum.three-1}
+\rightcaption{Teilen Sie das Polygon}\label{f.museum.three-2}
 \end{figure}
 
 \begin{figure}[t]
-\begin{minipage}{.45\textwidth}
-\begin{center}
+\subfigures
+\leftfigure[c]{
 \begin{tikzpicture}[scale=.6]
 \path
   (0,0) coordinate (A1) -- 
@@ -349,12 +346,9 @@ Fügen Sie die beiden Polygone zusammen, um das ursprüngliche Polygon mit $n$ S
 
 \end{scope}
 \end{tikzpicture}
-\caption{Dreifarbige Darstellung der beiden kleineren Polygone}\label{f.museum.three-3}
-\end{center}
-\end{minipage}
+}
 \hfill
-\begin{minipage}{.45\textwidth}
-\begin{center}
+\rightfigure[c]{
 \begin{tikzpicture}[scale=.6]
 \path
   (0,0) coordinate (A1) -- 
@@ -417,9 +411,9 @@ Fügen Sie die beiden Polygone zusammen, um das ursprüngliche Polygon mit $n$ S
 
 \end{scope}
 \end{tikzpicture}
-\caption{Tauschen Sie die Farben eines Polygons aus, um sie an das andere anzupassen.}\label{f.museum.three-4}
-\end{center}
-\end{minipage}
+}
+\leftcaption{Dreifarbige Darstellung der beiden kleineren Polygone}\label{f.museum.three-3}
+\rightcaption{Tauschen Sie die Farben eines Polygons aus, um sie an das andere anzupassen.}\label{f.museum.three-4}
 \end{figure}
 
 \begin{figure}[t]
@@ -564,8 +558,8 @@ Daraus folgt, dass es mindestens drei Scheitelpunkte geben muss, die konvex und 
 Durch Induktion auf die Anzahl der Scheitelpunkte. Für $n=3$ gibt es nichts zu beweisen. Wenn $n>3$, muss es nach Thm.~\ref{thm.convex} einen konvexen Scheitelpunkt $C$ geben. Beschrifte seine benachbarten Scheitelpunkte mit $B,D$. Wenn $\overline{BD}$ im Polygon enthalten ist (Abb.~\ref{f.contained}), ist sie eine Diagonale und das Polygon kann in ein $\triangle BCD$ und ein weiteres Polygon $\overline{ABDE}$ mit $\overline{BD}$ als Kante zerlegt werden, das kleiner als das ursprüngliche Polygon ist (Abb.~\ref{f.contained}). Durch die induktive Hypothese kann das Polygon trianguliert und dann wieder in das $\triangle BCD$ eingefügt werden, wodurch das ursprüngliche Polygon trianguliert wird.
 
 \begin{figure}[t]
-\begin{minipage}{.45\textwidth}
-\begin{center}
+\subfigures
+\leftfigure[c]{
 \begin{tikzpicture}[scale=1.4]
 \clip (-.5,-.4) rectangle (3.8,2.2);
 \draw
@@ -581,12 +575,8 @@ Durch Induktion auf die Anzahl der Scheitelpunkte. Für $n=3$ gibt es nichts zu 
 \vertex{B};
 \vertex{D};
 \end{tikzpicture}
-\caption{Triangulation, bei der eine Diagonale im Polygon enthalten ist}\label{f.contained}
-\end{center}
-\end{minipage}
-\hfill
-\begin{minipage}{.45\textwidth}
-\begin{center}
+}
+\rightfigure[c]{
 \begin{tikzpicture}[scale=1.4]
 \clip (-.2,-.4) rectangle (3.8,2.2);
 \draw
@@ -609,12 +599,14 @@ Durch Induktion auf die Anzahl der Scheitelpunkte. Für $n=3$ gibt es nichts zu 
 \vertex{C};
 \vertex{F};
 \end{tikzpicture}
-\caption{Triangulation, bei der eine Diagonale nicht im Polygon enthalten ist}\label{f.museum.concave-vertices}
-\end{center}
-\end{minipage}
+}
+\leftcaption{Triangulation, bei der eine Diagonale im Polygon enthalten ist}\label{f.contained}
+\rightcaption{Triangulation, bei der eine Diagonale nicht im Polygon enthalten ist}\label{f.museum.concave-vertices}
 \end{figure}
 Wenn $\overline{BD}$ nicht im Polygon enthalten ist, muss es einen konkaven Scheitelpunkt $F$ geben, der $C$ am nächsten liegt (Abb.~\ref{f.museum.concave-vertices}). $\overline{CF}$ ist eine Diagonale und zerlegt das Polygon in zwei kleinere Polygone $\overline{CFED}$ und $\overline{CFAB}$. Durch die Induktionshypothese können diese trianguliert und zusammengeklebt werden.
 \end{proof}
+
+\newpage
 
 \subsection*{Was ist die Überraschung?}
 Das Museumstheorem ist überraschend, denn was wie ein Theorem in der Geometrie aussieht, wird recht elegant durch einen Appell zur Färbung eines Graphen bewiesen.

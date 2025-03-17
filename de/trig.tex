@@ -29,8 +29,8 @@ Abbildung~\ref{f.area-base-height-2} zeigt, dass man die schraffierten Dreiecke 
 \end{proof}
 
 \begin{figure}[t]
-\begin{minipage}{.45\textwidth}
-\begin{center}
+\subfigures
+\leftfigure[c]{
 \begin{tikzpicture}[scale=.7]
 \coordinate (A) at (0,0);
 \coordinate (C) at (7,0);
@@ -46,12 +46,9 @@ Abbildung~\ref{f.area-base-height-2} zeigt, dass man die schraffierten Dreiecke 
   (B|-A) coordinate (H);
 \draw[rotate=90] (H) rectangle +(8pt,8pt);
 \end{tikzpicture}
-\caption{Berechnung des Flächeninhalts eines Dreiecks aus der Basis und der Höhe}\label{f.area-base-height-1}
-\end{center}
-\end{minipage}
+}
 \hfill
-\begin{minipage}{.45\textwidth}
-\begin{center}
+\rightfigure[c]{
 \begin{tikzpicture}[scale=.7]
 \coordinate (A) at (0,0);
 \coordinate (C) at (7,0);
@@ -80,9 +77,9 @@ Abbildung~\ref{f.area-base-height-2} zeigt, dass man die schraffierten Dreiecke 
 \path (K) -- node[inner sep=1pt, fill=white,right,
                  xshift=2pt,yshift=-3pt] {$h/2$} (B);
 \end{tikzpicture}
-\caption{Berechnung des Flächeninhalts eines Dreiecks aus der Basis und der Höhe}\label{f.area-base-height-2}
-\end{center}
-\end{minipage}
+}
+\leftcaption{Berechnung des Flächeninhalts eines Dreiecks aus der Basis und der Höhe}\label{f.area-base-height-1}
+\rightcaption{Berechnung des Flächeninhalts eines Dreiecks aus der Basis und der Höhe}\label{f.area-base-height-2}
 \end{figure}
 
 \begin{theorem} Der Flächeninhalt des Dreiecks $\triangle ABC$ ist gegeben durch:
@@ -888,8 +885,8 @@ In den Geometrie-Lehrbüchern findet man den einfachen Beweis für die Vorwärts
 Ein eingeschriebener Winkel ist gleich der Hälfte des Bogens, der ihn unterspannt, so dass $\angle DAB$ die Hälfte des Bogens $\widehat{DCB}$ ist und $\angle DCB$ die Hälfte des Bogens $\widehat{DAB}$ (Abb.~\ref{f.trap-1}). Die beiden Bögen bilden den gesamten Umfang des Kreises, so dass ihre Summe $360^\circ$ beträgt. Daher ist $\angle DAB + \angle DCB = \frac{1}{2} \cdot 360^\circ = 180^\circ$, und in ähnlicher Weise $\angle ADC + \angle ABC = 180^\circ$.
 \end{proof}
 \begin{figure}[tb]
-\begin{minipage}{.45\textwidth}
-\begin{center}
+\subfigures
+\leftfigure[c]{
 \begin{tikzpicture}[scale=.55]
 \coordinate (origin) at (0,0);
 \coordinate (A) at (1,3);
@@ -906,12 +903,9 @@ Ein eingeschriebener Winkel ist gleich der Hälfte des Bogens, der ihn unterspan
 \node[above left] at (D) {$D$};
 \draw (A) -- (B) -- (C) -- (D) -- cycle;
 \end{tikzpicture}
-\caption{Ein Viereck, das von einem Kreis umschrieben wird}\label{f.trap-1}
-\end{center}
-\end{minipage}
+}
 \hfill
-\begin{minipage}{.45\textwidth}
-\begin{center}
+\rightfigure[c]{
 \begin{tikzpicture}[scale=.55]
 \coordinate (origin) at (0,0);
 \coordinate (A) at (1,3);
@@ -931,9 +925,9 @@ Ein eingeschriebener Winkel ist gleich der Hälfte des Bogens, der ihn unterspan
 \node[left,xshift=1pt,yshift=2pt] at (Cp) {$C'$};
 \draw (D) -- (B) -- (C) -- (Cp);
 \end{tikzpicture}
-\caption{Der vierte Scheitelpunkt muss auf dem Kreisumfang liegen}\label{f.trap-2}
-\end{center}
-\end{minipage}
+}
+\leftcaption{Ein Viereck, das von einem Kreis umschrieben wird}\label{f.trap-1}
+\rightcaption{Der vierte Scheitelpunkt muss auf dem Kreisumfang liegen}\label{f.trap-2}
 \end{figure}
 
 \begin{proof}(Umgekehrte Richtung)

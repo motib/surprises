@@ -15,8 +15,8 @@ Nachdem in Sect.~\ref{s.compass-what} erklärt wurde, was mit der Durchführung 
 Abbildung~\ref{f.compass-equi} zeigt die Konstruktion eines gleichseitigen Dreiecks mit einem Lineal und einem Zirkel. Wie kann man ein Dreieck ohne die Linienabschnitte $\overline{AB}, \overline{AC}, \overline{BC}$ konstruieren? Ein Streckenabschnitt wird durch zwei Punkte definiert, so dass es ausreicht, diese Punkte zu konstruieren, um eine Konstruktion zu erhalten, die derjenigen mit einem Lineal entspricht (Abb.~\ref{f.compass-equi-only}). Es ist nicht notwendig, die Liniensegmente tatsächlich zu sehen.
 In den Abbildungen dieses Kapitels wird es Linien geben, aber sie dienen nur dazu, die Konstruktion und den Beweis ihrer Korrektheit zu verstehen. Es ist wichtig, sich davon zu überzeugen, dass die Konstruktion selbst nur einen Zirkel verwendet.
 \begin{figure}[ht]
-\begin{minipage}{.45\textwidth}
-\begin{center}
+\subfigures
+\leftfigure[c]{
 \begin{tikzpicture}[scale=0.6]
 \coordinate (A) at (0,0);
 \coordinate (B) at (4,0);
@@ -31,12 +31,9 @@ In den Abbildungen dieses Kapitels wird es Linien geben, aber sie dienen nur daz
 \draw (A) -- (t);
 \draw (B) -- (t);
 \end{tikzpicture}
-\caption{Konstruktion eines gleichseitigen Dreiecks mit einem Lineal und einem Zirkel}\label{f.compass-equi}
-\end{center}
-\end{minipage}
+}
 \hfill
-\begin{minipage}{.45\textwidth}
-\begin{center}
+\rightfigure[c]{
 \begin{tikzpicture}[scale=0.6]
 \coordinate (A) at (0,0);
 \coordinate (B) at (4,0);
@@ -49,9 +46,9 @@ In den Abbildungen dieses Kapitels wird es Linien geben, aber sie dienen nur daz
 \node[above right,xshift=-2pt,yshift=3pt] at (t) {$C$};
 \vertex{t};
 \end{tikzpicture}
-\caption{Konstruktion eines gleichseitigen Dreiecks mit nur einem Zirkel}\label{f.compass-equi-only}
-\end{center}
-\end{minipage}
+}
+\leftcaption{Konstruktion eines gleichseitigen Dreiecks mit einem Lineal und einem Zirkel}\label{f.compass-equi}
+\rightcaption{Konstruktion eines gleichseitigen Dreiecks mit nur einem Zirkel}\label{f.compass-equi-only}
 \end{figure}
 
 Eine Konstruktion mit Lineal und Zirkel ist eine Abfolge von drei Vorgängen:
@@ -589,8 +586,8 @@ x = \frac{n}{m}s\,.
 Konstruieren Sie zwei konzentrische Kreise $c_1 = c(Z,m)$ und $c_2 = c(Z,n)$,\footnote{Wir nehmen an, dass $m>n$; falls nicht, tauschen Sie die Schreibweise aus.} und wählen Sie einen beliebigen Punkt $A$ auf $c_1$. Nach Thm.~\ref{thm.compass-radius} konstruiere eine Sehne $\overline{AB}$ der Länge $s$ auf $c_1$ (Abb.~\ref{f.compass-relative1}). Wenn $\overline{AB}$ den Kreis $c_2$ schneidet, multipliziert man nach Thm.~\ref{thm.add-subtract-mm} $m,n$ mit einer Zahl $k$, damit die Sehne den Kreis nicht schneidet. Beachten Sie, dass dies den Wert, den wir zu konstruieren versuchen, nicht ändert, da $x=\displaystyle\frac{kn}{km}s=\displaystyle\frac{n}{m}s$.
 
 \begin{figure}[b]
-\begin{minipage}{.45\textwidth}
-\begin{center}
+\subfigures
+\leftfigure[c]{
 \begin{tikzpicture}[scale=.4]
 \coordinate (Z) at (0,0);
 \coordinate (A) at (-130:5cm);
@@ -609,12 +606,9 @@ Konstruieren Sie zwei konzentrische Kreise $c_1 = c(Z,m)$ und $c_2 = c(Z,n)$,\fo
 \vertex{A};
 \vertex{B};
 \end{tikzpicture}
-\caption{Konstruktion von $x=\frac{n}{m}s$, Schritt 1}\label{f.compass-relative1}
-\end{center}
-\end{minipage}
+}
 \hfill
-\begin{minipage}{.45\textwidth}
-\begin{center}
+\rightfigure[c]{
 \begin{tikzpicture}[scale=.4]
 \coordinate (Z) at (0,0);
 \coordinate (A) at (-130:5cm);
@@ -637,16 +631,16 @@ Konstruieren Sie zwei konzentrische Kreise $c_1 = c(Z,m)$ und $c_2 = c(Z,n)$,\fo
 \vertex{H};
 \vertex{K};
 \end{tikzpicture}
-\caption{Konstruktion von $x=\frac{n}{m}s$, Schritt 2}\label{f.compass-relative2}
-\end{center}
-\end{minipage}
+}
+\leftcaption{Konstruktion von $x=\frac{n}{m}s$, Schritt 1}\label{f.compass-relative1}
+\rightcaption{Konstruktion von $x=\frac{n}{m}s$, Schritt 2}\label{f.compass-relative2}
 \end{figure}
 
 Wählen Sie einen Punkt $H$ auf $c_2$ und bezeichnen Sie die Länge von $\overline{AH}$ mit $w$. Konstruieren Sie $K$ auf $c_2$ so, dass die Länge von $\overline{BK}$ $w$ ist (Abb.~\ref{f.compass-relative2}). $\triangle AHZ\cong\triangle BZK$ durch side-side-side, da $\overline{ZA}=\overline{ZB}=m$ die Radien desselben Kreises sind, ebenso $\overline{ZH}=\overline{ZK}=n$, und $\overline{AH}=\overline{BK}=w$ durch Konstruktion (Fig.~\ref{f.compass-relative3}). Aus $\triangle AHZ\cong\triangle BZK$ folgt $\angle AZH = \angle BZK$ und dann $\angle AZB = \angle HZK$. Es ist schwierig, diese Gleichheit aus dem Diagramm zu erkennen, aber Abb.~\ref{f.compass-relative4} soll die Beziehung zwischen den Winkeln verdeutlichen. 
 
 \begin{figure}[t]
-\begin{minipage}{.45\textwidth}
-\begin{center}
+\subfigures
+\leftfigure[c]{
 \begin{tikzpicture}[scale=.45]
 \coordinate (Z) at (0,0);
 \coordinate (A) at (-130:5cm);
@@ -674,12 +668,9 @@ Wählen Sie einen Punkt $H$ auf $c_2$ und bezeichnen Sie die Länge von $\overli
 \vertex{H};
 \vertex{K};
 \end{tikzpicture}
-\caption{Konstruktion von $x=\frac{n}{m}s$, Schritt 3}\label{f.compass-relative3}
-\end{center}
-\end{minipage}
+}
 \hfill
-\begin{minipage}{.45\textwidth}
-\begin{center}
+\rightfigure[c]{
 \begin{tikzpicture}[scale=.55]
 \coordinate (Z) at (0,0);
 \coordinate (A) at (-150:5cm);
@@ -699,9 +690,9 @@ Wählen Sie einen Punkt $H$ auf $c_2$ und bezeichnen Sie die Länge von $\overli
 \node at (-40:5) {$\alpha - \beta$};
 \node at (-125:5) {$\alpha - \beta$};
 \end{tikzpicture}
-\caption{$\angle AZB=\angle HZK$}\label{f.compass-relative4}
-\end{center}
-\end{minipage}
+}
+\leftcaption{Konstruktion von $x=\frac{n}{m}s$, Schritt 3}\label{f.compass-relative3}
+\rightcaption{$\angle AZB=\angle HZK$}\label{f.compass-relative4}
 \end{figure}
 
 $\triangle ZAB\sim\triangle ZHK$, da beide gleichschenklige Dreiecke sind und wir gezeigt haben, dass sie denselben Scheitelwinkel haben. Beschriften Sie $\overline{HK}$ mit $x$. Dann:

@@ -1,3 +1,4 @@
+% !TeX Program=pdfLaTeX
 % !TeX root = surprises.tex
 
 \chapter{Der Zusammenfallenden Zirkel}\label{c.collapse}
@@ -6,8 +7,10 @@
 
 Ein moderner Kompass ist ein \emph{fester Kompass}: der Abstand zwischen den beiden Schenkeln kann festgelegt werden, so dass es möglich ist, ein Liniensegment oder einen Kreis von einer Position zu einer anderen zu kopieren (Abb.~\ref{fig.fixed-compass}). Euklid verwendete einen \emph{zusammenfallenden Zirkel}, wenn ein fester Abstand nicht eingehalten werden kann (Abb.~\ref{fig.collapsing-compass}). Lehrer verwenden häufig einen Zirkel, der aus einem an einer Schnur befestigten Marker besteht, mit dem man einen Kreis auf einer Tafel konstruiert. Es ist unmöglich, eine feste Länge beizubehalten, wenn der Zirkel von der Tafel entfernt wird. 
 
-\begin{figure}[htb]
-\begin{minipage}{.45\textwidth}
+\begin{figure}[hb]
+\subfigures
+\leftfigure[c]
+{
 \begin{tikzpicture}
 \begin{scope}[rotate=0,transform shape,scale=3]
 \draw (2.95,3.7) rectangle (3,3.95);
@@ -32,10 +35,10 @@ Ein moderner Kompass ist ein \emph{fester Kompass}: der Abstand zwischen den bei
 \fill[gray] (a) -- (0.2,-0.8) -- (b) -- cycle;
 \end{scope}
 \end{tikzpicture}
-\caption{Ein fester Kompass. Ein Schenkel hat eine Nadel, die im Mittelpunkt des Kreises platziert wird. Am anderen Schenkel ist ein Bleistift befestigt, mit dem der Kreis gezeichnet wird. Die Schenkel sind durch ein festes Scharnier verbunden, so dass der Abstand zwischen den Schenkeln (der Radius des Kreises) auch dann beibehalten wird, wenn der Zirkel vom Papier abgehoben wird.}\label{fig.fixed-compass}
-\end{minipage}
+}
 \hfill
-\begin{minipage}{.45\textwidth}
+\rightfigure[c]
+{
 \begin{tikzpicture}[rotate=0,scale=1]          
 \fill[gray!50] (0,4) -- (0.4,4) -- (0.4,0) --
                (0.3,-0.15) -- (0.2,0) -- (0.1,-0.14) --
@@ -66,8 +69,9 @@ Ein moderner Kompass ist ein \emph{fester Kompass}: der Abstand zwischen den bei
 \draw[dashed,thick,fill=white!70!gray] (0,3.5) -- ++(0,-.5) -- ++(.4,0) -- ++(0,.5);
 \end{scope}
 \end{tikzpicture}
-\caption{Ein kollabierender Kompass. Der Benutzer hält ein Stück Schnur in der Mitte des Kreises. Das andere Ende der Schnur ist an einen Bleistift gebunden und wird zum Zeichnen des Kreises verwendet. Wenn der Zirkel vom Papier abgehoben wird, können die Finger (gestrichelt) leicht in eine neue Position rutschen.}\label{fig.collapsing-compass}
-\end{minipage}
+}
+\leftcaption{Ein fester Kompass. Ein Schenkel hat eine Nadel, die im Mittelpunkt des Kreises platziert wird. Am anderen Schenkel ist ein Bleistift befestigt, mit dem der Kreis gezeichnet wird. Die Schenkel sind durch ein festes Scharnier verbunden, so dass der Abstand zwischen den Schenkeln (der Radius des Kreises) auch dann beibehalten wird, wenn der Zirkel vom Papier abgehoben wird.}\label{fig.fixed-compass}
+\rightcaption{Ein kollabierender Kompass. Der Benutzer hält ein Stück Schnur in der Mitte des Kreises. Das andere Ende der Schnur ist an einen Bleistift gebunden und wird zum Zeichnen des Kreises verwendet. Wenn der Zirkel vom Papier abgehoben wird, können die Finger (gestrichelt) leicht in eine neue Position rutschen.}\label{fig.collapsing-compass}
 \end{figure}
 
 This chapter begins with a discussion of the relevance of studying construction with a straightedge and compass (Sect.~\ref{s.relevance}).
@@ -90,8 +94,8 @@ Dennoch glaube ich, dass es Vorteile hat, Konstruktionen zu studieren:
 In einigen Geometrie-Lehrbüchern wird die Konstruktion einer rechtwinkligen Winkelhalbierenden eines Linienabschnitts dargestellt, indem zwei Kreise konstruiert werden, die an den Enden des Linienabschnitts zentriert sind, so dass die Radien gleich und \emph{größer als die halbe Länge des Abschnitts} sind (Abb.~\ref{f.collapse-perp-bisector-fixed}). Dies ist nur mit einem festen Zirkel möglich, da nach dem Zeichnen des Kreises in der Mitte von $A$ der Abstand zwischen den Schenkeln des Zirkels fest bleiben muss, um den Kreis in der Mitte von $B$ zu zeichnen.
 
 \begin{figure}[t]
-\begin{minipage}{.45\textwidth}
-\begin{center}
+\subfigures
+\leftfigure[c]{
 \begin{tikzpicture}[scale=0.5]
 \coordinate (A) at (0,0);
 \coordinate (B) at (4,0);
@@ -105,12 +109,8 @@ In einigen Geometrie-Lehrbüchern wird die Konstruktion einer rechtwinkligen Win
 \node[below left,xshift=2pt,yshift=-5pt] at (b) {$D$};
 \draw ($ (b) ! 1.2 ! (t)$) -- ($ (t) ! 1.2 ! (b)$);
 \end{tikzpicture}
-\caption{Konstruktion einer Mittelsenkrechten mit einem festen Zirkel}\label{f.collapse-perp-bisector-fixed}
-\end{center}
-\end{minipage}
-\hfill
-\begin{minipage}{.45\textwidth}
-\begin{center}
+}\hfill
+\rightfigure[c]{
 \begin{tikzpicture}[scale=0.5]
 \coordinate (A) at (0,0);
 \coordinate (B) at (4,0);
@@ -124,9 +124,9 @@ In einigen Geometrie-Lehrbüchern wird die Konstruktion einer rechtwinkligen Win
 \node[below left,xshift=2pt,yshift=-3pt] at (b) {$D$};
 \draw ($ (b) ! 1.2 ! (t)$) -- ($ (t) ! 1.2 ! (b)$);
 \end{tikzpicture}
-\caption{Konstruktion einer Mittelsenkrechten mit einem festen oder einem zusammenfallenden Zirkel}\label{f.collapse-perp-bisector-collapse}
-\end{center}
-\end{minipage}
+}
+\leftcaption{Konstruktion einer Mittelsenkrechten mit einem festen Zirkel}\label{f.collapse-perp-bisector-fixed}
+\rightcaption{Konstruktion einer Mittelsenkrechten mit einem festen oder einem zusammenfallenden Zirkel}\label{f.collapse-perp-bisector-collapse}
 \end{figure}
 
 Abbildung~\ref{f.collapse-perp-bisector-collapse} zeigt die Konstruktion einer Mittelsenkrechten entweder mit einem festen oder einem zusammenfallenden Zirkel. Es werden zwei Kreise konstruiert: einer mit Mittelpunkt $A$ und Radius $\overline{AB}$ und einer mit Mittelpunkt $B$ und Radius $\overline {BA}$. Dies kann mit einem kollabierenden Zirkel geschehen, weil (offensichtlich) $\overline{AB}=\overline{BA}$ ist, so dass der Zirkel sich nicht die Länge von $\overline{AB}$ merken muss, um einen Kreis mit dem Mittelpunkt $B$ und demselben Radius zu konstruieren.
@@ -145,8 +145,8 @@ Gegeben ein Liniensegment $\overline{AB}$ und einen Punkt $C$, kann ein Liniense
 \end{theorem}
 
 \begin{figure}[t]
-\begin{minipage}{.45\textwidth}
-\begin{center}
+\subfigures
+\leftfigure[c]{
 \begin{tikzpicture}[scale=0.5]
 \coordinate (A) at (0,0);
 \coordinate (B) at (4,0);
@@ -163,12 +163,9 @@ Gegeben ein Liniensegment $\overline{AB}$ und einen Punkt $C$, kann ein Liniense
 \draw (A) -- (t);
 \draw (B) -- (t);
 \end{tikzpicture}
-\caption{Konstruktion eines isokratischen Dreiecks mit einem festen Zirkel}\label{f.collapse-equilateral-fixed}
-\end{center}
-\end{minipage}
+}
 \hfill
-\begin{minipage}{.45\textwidth}
-\begin{center}
+\rightfigure[c]{
 \begin{tikzpicture}[scale=0.5]
 \coordinate (A) at (0,0);
 \coordinate (B) at (4,0);
@@ -185,14 +182,14 @@ Gegeben ein Liniensegment $\overline{AB}$ und einen Punkt $C$, kann ein Liniense
 \draw (A) -- (t);
 \draw (B) -- (t);
 \end{tikzpicture}
-\caption{Konstruktion eines gleichseitigen Dreiecks mit einem zusammenklappbaren Zirkel}\label{f.collapse-equilateral-collapse}
-\end{center}
-\end{minipage}
+}
+\leftcaption{Konstruktion eines isokratischen Dreiecks mit einem festen Zirkel}\label{f.collapse-equilateral-fixed}
+\rightcaption{Konstruktion eines gleichseitigen Dreiecks mit einem zusammenklappbaren Zirkel}\label{f.collapse-equilateral-collapse}
 \end{figure}
 
 \begin{figure}[b]
-\begin{minipage}{.45\textwidth}
-\begin{center}
+\subfigures
+\leftfigure[c]{
 \begin{tikzpicture}[scale=0.5]
 \coordinate (C) at (0,0);
 \coordinate (A) at (3,0);
@@ -204,12 +201,9 @@ Gegeben ein Liniensegment $\overline{AB}$ und einen Punkt $C$, kann ein Liniense
 \draw[thick,dashed] (C) -- +(160:4) coordinate (D) node[below] {$C'$};
 \vertex{D};
 \end{tikzpicture}
-\caption{Kopieren Sie das Liniensegment $\overline{AB}$. Die Ausrichtung von $\overline{CC'}$ ist nicht wichtig.}\label{f.collapse-copying-1}
-\end{center}
-\end{minipage}
+}
 \hfill
-\begin{minipage}{.45\textwidth}
-\begin{center}
+\rightfigure[c]{
 \begin{tikzpicture}[scale=0.5]
 \coordinate (C) at (0,0);
 \coordinate (A) at (3,0);
@@ -224,17 +218,17 @@ Gegeben ein Liniensegment $\overline{AB}$ und einen Punkt $C$, kann ein Liniense
 \draw (A) -- (D);
 \draw (C) -- (D);
 \end{tikzpicture}
-\caption{Kopieren eines Liniensegments mit einem zusammenfallenden Zirkel}\label{f.collapse-copying-2}
-\end{center}
-\end{minipage}
+}
+\leftcaption{Kopieren Sie das Liniensegment $\overline{AB}$. Die Ausrichtung von $\overline{CC'}$ ist nicht wichtig.}\label{f.collapse-copying-1}
+\rightcaption{Kopieren eines Liniensegments mit einem zusammenfallenden Zirkel}\label{f.collapse-copying-2}
 \end{figure}
 
 \begin{proof}
 Konstruieren Sie den Streckenabschnitt $\overline{AC}$. Konstruieren Sie das gleichseitige Dreieck $\triangle ACD$, dessen Basis $\overline{AC}$ ist (Abb.~\ref{f.collapse-copying-2}). Nach dem ersten Satz von Euklid lässt sich das Dreieck mit Hilfe eines zusammenfallenden Zirkels konstruieren. Konstruiere den Strahl, der eine Verlängerung des Liniensegments \emph{von $D$ nach $A$} ist, und konstruiere den Strahl, der eine Verlängerung des Liniensegments \emph{von $D$ nach $C$} ist (Abb.~\ref{f.collapse-copying-3}). Konstruieren Sie den Kreis mit dem Mittelpunkt $A$ und dem Radius $\overline{AB}$ und bezeichnen Sie den Schnittpunkt des Kreises mit dem Strahl, der $\overline{DA}$ verlängert, mit $E$ (Abb.~\ref{f.collapse-copying-4}). Konstruiere den Kreis mit dem Mittelpunkt $D$ und dem Radius $\overline{DE}$ und bezeichne den Schnittpunkt des Kreises und des Strahls, der $\overline{DC}$ verlängert, mit $F$ (Abb.~\ref{f.collapse-copying-5}).
 
 \begin{figure}[t]
-\begin{minipage}{.45\textwidth}
-\begin{center}
+\subfigures
+\leftfigure[c]{
 \begin{tikzpicture}[scale=0.4]
 \coordinate (C) at (0,0);
 \coordinate (A) at (3,0);
@@ -250,12 +244,9 @@ Konstruieren Sie den Streckenabschnitt $\overline{AC}$. Konstruieren Sie das gle
 \draw[name path=ray2] (D) -- ($ (D) ! 3 ! (C) $);
 \draw[name path=ray1] (D) -- ($ (D) ! 3 ! (A) $);
 \end{tikzpicture}
-\caption{Konstruktion von Strahlen aus $D$}\label{f.collapse-copying-3}
-\end{center}
-\end{minipage}
+}
 \hfill
-\begin{minipage}{.45\textwidth}
-\begin{center}
+\rightfigure[c]{
 \begin{tikzpicture}[scale=0.4]
 \coordinate (C) at (0,0);
 \coordinate (A) at (3,0);
@@ -274,9 +265,9 @@ Konstruieren Sie den Streckenabschnitt $\overline{AC}$. Konstruieren Sie das gle
 \path [name intersections={of=c1 and ray1,by={E,e}}];
 \node[right,xshift=2pt,yshift=-2pt] at (E) {$E$};
 \end{tikzpicture}
-\caption{Konstruktion eines Kreises mit Radius $\overline{AB}$}\label{f.collapse-copying-4}
-\end{center}
-\end{minipage}
+}
+\leftcaption{Konstruktion von Strahlen aus $D$}\label{f.collapse-copying-3}
+\rightcaption{Konstruktion eines Kreises mit Radius $\overline{AB}$}\label{f.collapse-copying-4}
 \end{figure}
 $\overline{DC}=\overline{DA}$ because $\triangle ACD$ is equilateral. $\overline{AE}=\overline{AB}$ are radii of the same circle, as are $\overline{DF}=\overline{DE}$. Therefore:
 \[
@@ -533,6 +524,8 @@ The \emph{logic} of the proof is correct, but the diagram upon which the proof i
 \subsection*{Was ist die Überraschung?}
 
 Als Schülerin hielt ich es für selbstverständlich, dass ein Kompass ein Reibungsgelenk hat, das den Abstand zwischen der Spitze und dem Bleistift beibehält, wenn er vom Papier abgehoben wird. Als der Lehrer einen Kompass benutzte, der aus einem Stück Schnur und einem Stück Kreide bestand, konnte ich mir nicht vorstellen, dass er sich von meinem Kompass unterscheidet. Der Artikel von Gotfried Toussaint war eine echte Überraschung, ebenso wie sein Nachweis, dass die Beweise nach Euklid falsch waren, weil sie auf Diagrammen beruhten, die ungerechtfertigte Annahmen machten. Ich empfehle den Artikel allen Lesern, die ihr Verständnis von Beweisen in der Mathematik vertiefen wollen.
+
+\newpage
 
 \subsection*{Quellen}
 
