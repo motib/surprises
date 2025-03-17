@@ -1,6 +1,6 @@
 # Mathematical Surprises
 
-## [Mordechai (Moti)Ben-Ari](https://www.weizmann.ac.il/sci-tea/benari/home)
+## [Mordechai (Moti) Ben-Ari](https://www.weizmann.ac.il/sci-tea/benari/home)
 
 This presents surprising results in mathematics that usually do not
 appear in textbooks although they are accessible with a good knowledge of
@@ -28,15 +28,19 @@ or [Cassini](https://store.cassini.fr/fr/hors-collection/145-surprises-mathemati
 
 **Spanish**
 
-The translation was prepared using DeepL and edited by Abraham Arcavi. You can download the PDF from the repository.
+The translation was prepared using DeepL and edited by Abraham Arcavi. You can download the PDF from this repository.
 
 **German**
 
-The translation was prepared using DeepL but has not yet been edited. Please contact me if you are a native speaker who is willing to edit a draft! You can download the PDF from the repository. 
+Open access book published by Springer-Nature. Copyright 2025 by
+Mordechai Ben-Ari, Creative Commons Attribution. Download PDF and order
+the printed book at
+[SpringerLink](https://link.springer.com/book/10.1007/978-3-031-76041-9).
+Note: The edited published is somewhat different from the LaTeX source code here.
 
 **Hebrew**
 
-I wrote the translation and it is in the process of editing. You can download the PDF from the repository.
+I wrote the translation which was edited by Rachel Zaks. You can download the PDF from this repository.
 
 ## Contents
 
