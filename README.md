@@ -1,17 +1,16 @@
-# Mathematical Surprises
+# Mathematical Surprises [Open-access book]
 
 ## [Mordechai (Moti) Ben-Ari](https://www.weizmann.ac.il/sci-tea/benari/home)
 
-This presents surprising results in mathematics that usually do not
-appear in textbooks although they are accessible with a good knowledge of
-secondary-school mathematics.
 
-The repository contains LaTeX / TikZ source code for five languages:
-English, French, Spanish, German, Hebrew. (Compile Hebrew with XeLaTeX.) The PDF and printed books are available as follows:
+
+This book presents surprising results in mathematics that usually do not appear in textbooks although they are accessible with a good knowledge of secondary-school mathematics.
+
+The repository contains LaTeX / TikZ source code for five languages: English, French, Spanish, German, Hebrew. (Compile Hebrew with XeLaTeX.)
 
 **English**
 
-Open access book published by Springer-Nature. Copyright 2022 by
+Published by Springer. Copyright 2022 by
 Mordechai Ben-Ari, Creative Commons Attribution. Download PDF and order
 the printed book at
 [SpringerLink](https://link.springer.com/book/10.1007/978-3-031-13566-8).
@@ -28,19 +27,19 @@ or [Cassini](https://store.cassini.fr/fr/hors-collection/145-surprises-mathemati
 
 **Spanish**
 
-The translation was prepared using DeepL and edited by Abraham Arcavi. You can download the PDF from this repository.
+This translation was prepared using DeepL and edited by Abraham Arcavi.
 
 **German**
 
-Open access book published by Springer-Nature. Copyright 2025 by
+Published by Springer. Copyright 2025 by
 Mordechai Ben-Ari, Creative Commons Attribution. Download PDF and order
 the printed book at
 [SpringerLink](https://link.springer.com/book/10.1007/978-3-031-76041-9).
-Note: The edited published is somewhat different from the LaTeX source code here.
+The published book has some editing differences the LaTeX source code in the repository.
 
 **Hebrew**
 
-I wrote the translation which was edited by Rachel Zaks. You can download the PDF from this repository.
+I wrote the translation which was edited by Rachel Zaks.
 
 ## Contents
 
