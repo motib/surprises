@@ -74,3 +74,11 @@ p. 203 line -3: on the circle one of whose ->
   one of whose
 
 p. 218 line -4: Thm. -> Eq.
+
+p. 217 section a.6: In Fig. A.20 the labels for B and P were exchanged. 
+  Equation A.6 should be $AP/BP \cdot PQ/QC \cdot CD/DA = 1$
+  The similar triangles are $\triangle ADP \sim \triangle CDK$
+  Thanks to Friedrich Gebhardt
+
+
+
